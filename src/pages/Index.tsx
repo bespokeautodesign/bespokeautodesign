@@ -14,68 +14,51 @@ import ceramicTintImage from "@/assets/ceramic-tint.jpg";
 import marinePpfImage from "@/assets/marine-ppf.jpg";
 import marineCeramicImage from "@/assets/marine-ceramic.jpg";
 import marineTintImage from "@/assets/marine-tint.jpg";
-
 const Index = () => {
-  const services = [
-    {
-      title: "Paint Protection Film (PPF)",
-      description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
-      image: ppfInstallationImage,
-      features: ["Self-healing technology", "10-year warranty", "UV protection", "Maintains original appearance"]
-    },
-    {
-      title: "Ceramic Coating",
-      description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
-      image: ceramicInstallationImage,
-      features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"]
-    },
-    {
-      title: "Vinyl Wraps",
-      description: "Transform your vehicle's appearance with high-quality color change vinyl wraps.",
-      image: vinylWrapImage,
-      features: ["Color customization", "Removable protection", "Premium materials", "Professional installation"]
-    },
-    {
-      title: "Ceramic Tint",
-      description: "Superior window tinting with ceramic technology for maximum comfort and protection.",
-      image: ceramicTintImage,
-      features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"]
-    }
-  ];
-
-  const marineServices = [
-    {
-      title: "Marine Paint Protection Film",
-      description: "Protect your vessel's gel coat and paint from saltwater, UV rays, and harsh marine conditions.",
-      image: marinePpfImage,
-      features: ["Saltwater resistance", "UV protection", "Impact protection", "Maintains resale value"]
-    },
-    {
-      title: "Marine Ceramic Coating",
-      description: "Advanced marine-grade ceramic coating for superior protection and easy maintenance.",
-      image: marineCeramicImage,
-      features: ["Hydrophobic surface", "Stain resistance", "Anti-fouling properties", "Extended protection"]
-    },
-    {
-      title: "Marine Ceramic Tint",
-      description: "Premium window tinting for boats and yachts providing comfort and protection on the water.",
-      image: marineTintImage,
-      features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"]
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const services = [{
+    title: "Paint Protection Film (PPF)",
+    description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
+    image: ppfInstallationImage,
+    features: ["Self-healing technology", "10-year warranty", "UV protection", "Maintains original appearance"]
+  }, {
+    title: "Ceramic Coating",
+    description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
+    image: ceramicInstallationImage,
+    features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"]
+  }, {
+    title: "Vinyl Wraps",
+    description: "Transform your vehicle's appearance with high-quality color change vinyl wraps.",
+    image: vinylWrapImage,
+    features: ["Color customization", "Removable protection", "Premium materials", "Professional installation"]
+  }, {
+    title: "Ceramic Tint",
+    description: "Superior window tinting with ceramic technology for maximum comfort and protection.",
+    image: ceramicTintImage,
+    features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"]
+  }];
+  const marineServices = [{
+    title: "Marine Paint Protection Film",
+    description: "Protect your vessel's gel coat and paint from saltwater, UV rays, and harsh marine conditions.",
+    image: marinePpfImage,
+    features: ["Saltwater resistance", "UV protection", "Impact protection", "Maintains resale value"]
+  }, {
+    title: "Marine Ceramic Coating",
+    description: "Advanced marine-grade ceramic coating for superior protection and easy maintenance.",
+    image: marineCeramicImage,
+    features: ["Hydrophobic surface", "Stain resistance", "Anti-fouling properties", "Extended protection"]
+  }, {
+    title: "Marine Ceramic Tint",
+    description: "Premium window tinting for boats and yachts providing comfort and protection on the water.",
+    image: marineTintImage,
+    features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"]
+  }];
+  return <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <img 
-                src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" 
-                alt="Bespoke Auto Design Logo" 
-                className="h-12 w-auto"
-              />
+              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-12 w-auto" />
               <span className="text-xl font-bold text-primary">Bespoke Auto Design</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
@@ -94,11 +77,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-hero text-primary-foreground py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-25">
-          <img 
-            src={heroSportscarImage} 
-            alt="Luxury sports car in professional garage" 
-            className="w-full h-full object-cover"
-          />
+          <img src={heroSportscarImage} alt="Luxury sports car in professional garage" className="w-full h-full object-cover" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -135,14 +114,9 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105">
+            {services.map((service, index) => <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105">
                 <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                  />
+                  
                 </div>
                 <CardHeader>
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
@@ -150,19 +124,16 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-2">
+                    {service.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center gap-2">
                         <Shield className="h-4 w-4 text-primary" />
                         <span className="text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                   <Button variant="premium" className="w-full mt-6">
                     Learn More
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -179,14 +150,9 @@ const Index = () => {
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8">
-            {marineServices.map((service, index) => (
-              <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105 animate-fade-in">
+            {marineServices.map((service, index) => <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105 animate-fade-in">
                 <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                  />
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
                 </div>
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
@@ -198,19 +164,16 @@ const Index = () => {
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-2">
+                    {service.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center gap-2">
                         <Shield className="h-4 w-4 text-blue-600" />
                         <span className="text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                   <Button variant="premium" className="w-full mt-6">
                     Learn More
                   </Button>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
           
           <div className="text-center mt-12">
@@ -381,10 +344,7 @@ const Index = () => {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Message</label>
-                  <textarea 
-                    className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" 
-                    placeholder="Tell us about your project..."
-                  ></textarea>
+                  <textarea className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
                 </div>
                 <Button variant="premium" className="w-full">
                   Submit Request
@@ -400,11 +360,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-3 mb-4 md:mb-0">
-              <img 
-                src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" 
-                alt="Bespoke Auto Design Logo" 
-                className="h-10 w-auto"
-              />
+              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-10 w-auto" />
               <span className="text-lg font-bold">Bespoke Auto Design</span>
             </div>
             <div className="text-center md:text-right text-primary-foreground/80">
@@ -418,8 +374,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
