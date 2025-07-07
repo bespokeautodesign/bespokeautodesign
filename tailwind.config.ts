@@ -26,11 +26,13 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					foreground: 'hsl(var(--secondary-foreground))',
+					dark: 'hsl(var(--secondary-dark))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -52,6 +54,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				xpel: {
+					yellow: 'hsl(var(--xpel-yellow))',
+					'yellow-dark': 'hsl(var(--xpel-yellow-dark))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +77,21 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-silver': 'var(--gradient-silver)',
+				'gradient-xpel': 'var(--gradient-xpel)',
+				'gradient-hero': 'var(--gradient-hero)'
+			},
+			boxShadow: {
+				'premium': 'var(--shadow-premium)',
+				'glow': 'var(--shadow-glow)',
+				'silver': 'var(--shadow-silver)'
+			},
+			transitionTimingFunction: {
+				'premium': 'var(--transition-premium)',
+				'fast': 'var(--transition-fast)'
 			},
 			keyframes: {
 				'accordion-down': {
