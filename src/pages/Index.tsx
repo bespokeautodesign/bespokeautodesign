@@ -2,27 +2,31 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Star, Shield, Palette, Eye, Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Star, Shield, Palette, Eye, Phone, Mail, MapPin, Clock, Anchor, Waves } from "lucide-react";
+import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 
 // Import assets
-import heroCarImage from "@/assets/hero-car.jpg";
-import ppfServiceImage from "@/assets/ppf-service.jpg";
-import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
+import heroSportscarImage from "@/assets/hero-sportscar.jpg";
+import ppfInstallationImage from "@/assets/ppf-installation.jpg";
+import ceramicInstallationImage from "@/assets/ceramic-installation.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
 import ceramicTintImage from "@/assets/ceramic-tint.jpg";
+import marinePpfImage from "@/assets/marine-ppf.jpg";
+import marineCeramicImage from "@/assets/marine-ceramic.jpg";
+import marineTintImage from "@/assets/marine-tint.jpg";
 
 const Index = () => {
   const services = [
     {
       title: "Paint Protection Film (PPF)",
       description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
-      image: ppfServiceImage,
+      image: ppfInstallationImage,
       features: ["Self-healing technology", "10-year warranty", "UV protection", "Maintains original appearance"]
     },
     {
       title: "Ceramic Coating",
       description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
-      image: ceramicCoatingImage,
+      image: ceramicInstallationImage,
       features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"]
     },
     {
@@ -39,24 +43,24 @@ const Index = () => {
     }
   ];
 
-  const testimonials = [
+  const marineServices = [
     {
-      name: "Michael Rodriguez",
-      vehicle: "2023 Porsche 911",
-      rating: 5,
-      text: "Exceptional craftsmanship! The PPF installation was flawless and the attention to detail is unmatched. My Porsche looks stunning and I have complete peace of mind."
+      title: "Marine Paint Protection Film",
+      description: "Protect your vessel's gel coat and paint from saltwater, UV rays, and harsh marine conditions.",
+      image: marinePpfImage,
+      features: ["Saltwater resistance", "UV protection", "Impact protection", "Maintains resale value"]
     },
     {
-      name: "Sarah Chen",
-      vehicle: "2022 Tesla Model S",
-      rating: 5,
-      text: "The ceramic coating exceeded my expectations. The depth of gloss is incredible and maintenance is so much easier. Highly recommend Bespoke Auto Design!"
+      title: "Marine Ceramic Coating",
+      description: "Advanced marine-grade ceramic coating for superior protection and easy maintenance.",
+      image: marineCeramicImage,
+      features: ["Hydrophobic surface", "Stain resistance", "Anti-fouling properties", "Extended protection"]
     },
     {
-      name: "David Thompson",
-      vehicle: "2024 BMW M4",
-      rating: 5,
-      text: "Professional team, premium results. The vinyl wrap transformation was exactly what I envisioned. Outstanding customer service throughout the entire process."
+      title: "Marine Ceramic Tint",
+      description: "Premium window tinting for boats and yachts providing comfort and protection on the water.",
+      image: marineTintImage,
+      features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"]
     }
   ];
 
@@ -76,7 +80,7 @@ const Index = () => {
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Services</a>
-              <a href="#xpel" className="text-muted-foreground hover:text-primary transition-colors">Xpel Partnership</a>
+              <a href="#marine" className="text-muted-foreground hover:text-primary transition-colors">Marine Services</a>
               <a href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors">Testimonials</a>
               <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
             </div>
@@ -89,10 +93,10 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-hero text-primary-foreground py-24 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-25">
           <img 
-            src={heroCarImage} 
-            alt="Luxury car in professional garage" 
+            src={heroSportscarImage} 
+            alt="Luxury sports car in professional garage" 
             className="w-full h-full object-cover"
           />
         </div>
@@ -163,7 +167,64 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Xpel Partnership Section */}
+      {/* Marine Services Section */}
+      <section id="marine" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <Badge variant="outline" className="mb-4 text-blue-600 border-blue-600">Marine Division</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Marine Protection Services</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Specialized protection services for boats, yachts, and marine vessels. We understand the unique challenges of the marine environment.
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8">
+            {marineServices.map((service, index) => (
+              <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105 animate-fade-in">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                </div>
+                <CardHeader>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Anchor className="h-5 w-5 text-blue-600" />
+                    <Waves className="h-4 w-4 text-blue-500" />
+                  </div>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardDescription className="text-base">{service.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center gap-2">
+                        <Shield className="h-4 w-4 text-blue-600" />
+                        <span className="text-muted-foreground">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button variant="premium" className="w-full mt-6">
+                    Learn More
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground mb-6">
+              Trusted by yacht owners, boat enthusiasts, and marine professionals
+            </p>
+            <Button variant="silver" size="lg">
+              Schedule Marine Consultation
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* XPEL Partnership Section */}
       <section id="xpel" className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-xpel opacity-90"></div>
         <div className="container mx-auto px-6 relative z-10">
@@ -212,34 +273,17 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-background">
+      <section id="testimonials" className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Client Reviews</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">What Our Clients Say</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied customers have to say about their experience.
+              From luxury sports cars to premium yachts, our clients trust us with their most prized possessions.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="shadow-silver hover:shadow-premium transition-all duration-300">
-                <CardHeader>
-                  <div className="flex items-center gap-1 mb-2">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-xpel-yellow text-xpel-yellow" />
-                    ))}
-                  </div>
-                  <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                  <CardDescription>{testimonial.vehicle}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <TestimonialCarousel />
         </div>
       </section>
 
