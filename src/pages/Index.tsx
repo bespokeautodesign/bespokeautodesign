@@ -6,34 +6,38 @@ import { Star, Shield, Palette, Eye, Phone, Mail, MapPin, Clock, Anchor, Waves }
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 
 // Import assets
-import heroSportscarImage from "@/assets/hero-sportscar.jpg";
-import ppfInstallationImage from "@/assets/ppf-installation.jpg";
-import ceramicInstallationImage from "@/assets/ceramic-installation.jpg";
-import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
-import ceramicTintImage from "@/assets/ceramic-tint.jpg";
+import heroSupercarImage from "@/assets/hero-supercar.jpg";
+import ppfWorkImage from "@/assets/ppf-work.jpg";
+import ceramicWorkImage from "@/assets/ceramic-work.jpg";
+import vinylWorkImage from "@/assets/vinyl-work.jpg";
+import tintWorkImage from "@/assets/tint-work.jpg";
 import marinePpfImage from "@/assets/marine-ppf.jpg";
 import marineCeramicImage from "@/assets/marine-ceramic.jpg";
 import marineTintImage from "@/assets/marine-tint.jpg";
 const Index = () => {
+  const scrollToQuote = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const services = [{
     title: "Paint Protection Film (PPF)",
     description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
-    image: ppfInstallationImage,
+    image: ppfWorkImage,
     features: ["Self-healing technology", "10-year warranty", "UV protection", "Maintains original appearance"]
   }, {
     title: "Ceramic Coating",
     description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
-    image: ceramicInstallationImage,
+    image: ceramicWorkImage,
     features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"]
   }, {
     title: "Vinyl Wraps",
     description: "Transform your vehicle's appearance with high-quality color change vinyl wraps.",
-    image: vinylWrapImage,
+    image: vinylWorkImage,
     features: ["Color customization", "Removable protection", "Premium materials", "Professional installation"]
   }, {
     title: "Ceramic Tint",
     description: "Superior window tinting with ceramic technology for maximum comfort and protection.",
-    image: ceramicTintImage,
+    image: tintWorkImage,
     features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"]
   }];
   const marineServices = [{
@@ -62,12 +66,12 @@ const Index = () => {
               <span className="text-xl font-bold text-primary">Bespoke Auto Design</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Services</a>
-              <a href="#marine" className="text-muted-foreground hover:text-primary transition-colors">Marine Services</a>
-              <a href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors">Testimonials</a>
-              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
+              <button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Services</button>
+              <button onClick={() => document.getElementById('marine')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Marine Services</button>
+              <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Testimonials</button>
+              <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Contact</button>
             </div>
-            <Button variant="premium" size="lg">
+            <Button variant="premium" size="lg" onClick={scrollToQuote}>
               Get Quote
             </Button>
           </div>
@@ -77,7 +81,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-hero text-primary-foreground py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-25">
-          <img src={heroSportscarImage} alt="Luxury sports car in professional garage" className="w-full h-full object-cover" />
+          <img src={heroSupercarImage} alt="Luxury supercar in professional garage" className="w-full h-full object-cover" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -91,10 +95,10 @@ const Index = () => {
               Elevating automotive excellence through precision protection, premium finishes, and uncompromising craftsmanship.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="silver" size="lg" className="text-lg px-8 py-4">
+              <Button variant="silver" size="lg" className="text-lg px-8 py-4" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
                 Explore Services
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
+              <Button variant="silver" size="lg" className="text-lg px-8 py-4">
                 Schedule Consultation
               </Button>
             </div>
@@ -116,7 +120,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, index) => <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105">
                 <div className="aspect-video overflow-hidden">
-                  
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
                 </div>
                 <CardHeader>
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
@@ -129,8 +133,8 @@ const Index = () => {
                         <span className="text-muted-foreground">{feature}</span>
                       </li>)}
                   </ul>
-                  <Button variant="premium" className="w-full mt-6">
-                    Learn More
+                  <Button variant="premium" className="w-full mt-6" onClick={scrollToQuote}>
+                    Get Quote
                   </Button>
                 </CardContent>
               </Card>)}
@@ -169,8 +173,8 @@ const Index = () => {
                         <span className="text-muted-foreground">{feature}</span>
                       </li>)}
                   </ul>
-                  <Button variant="premium" className="w-full mt-6">
-                    Learn More
+                  <Button variant="premium" className="w-full mt-6" onClick={scrollToQuote}>
+                    Get Quote
                   </Button>
                 </CardContent>
               </Card>)}
@@ -180,7 +184,7 @@ const Index = () => {
             <p className="text-muted-foreground mb-6">
               Trusted by yacht owners, boat enthusiasts, and marine professionals
             </p>
-            <Button variant="silver" size="lg">
+            <Button variant="silver" size="lg" onClick={scrollToQuote}>
               Schedule Marine Consultation
             </Button>
           </div>
@@ -228,8 +232,8 @@ const Index = () => {
               </div>
             </div>
             
-            <Button variant="xpel" size="lg" className="mt-12 bg-xpel-yellow text-primary hover:bg-xpel-yellow-dark">
-              Explore XPEL Solutions
+            <Button variant="xpel" size="lg" className="mt-12 bg-xpel-yellow text-primary hover:bg-xpel-yellow-dark" onClick={scrollToQuote}>
+              Get XPEL Quote
             </Button>
           </div>
         </div>
@@ -269,7 +273,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                  <p className="text-muted-foreground">(555) 123-4567</p>
+                  <a href="tel:+17863959172" className="text-muted-foreground hover:text-primary transition-colors">(786) 395-9172</a>
                 </div>
               </div>
               
@@ -279,7 +283,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Email</h3>
-                  <p className="text-muted-foreground">info@bespokeautodesign.com</p>
+                  <a href="mailto:sales@bespokeauto.design" className="text-muted-foreground hover:text-primary transition-colors">sales@bespokeauto.design</a>
                 </div>
               </div>
               
@@ -289,7 +293,7 @@ const Index = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Location</h3>
-                  <p className="text-muted-foreground">123 Premium Auto Drive<br />Luxury District, State 12345</p>
+                  <a href="https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">7943 NW 64th St<br />Miami, FL 33166</a>
                 </div>
               </div>
               
@@ -300,8 +304,8 @@ const Index = () => {
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Hours</h3>
                   <p className="text-muted-foreground">
-                    Monday - Friday: 8:00 AM - 6:00 PM<br />
-                    Saturday: 9:00 AM - 4:00 PM<br />
+                    Monday - Friday: 9:00 AM - 6:00 PM<br />
+                    Saturday: 10:00 AM - 4:00 PM<br />
                     Sunday: Closed
                   </p>
                 </div>
@@ -346,7 +350,7 @@ const Index = () => {
                   <label className="text-sm font-medium">Message</label>
                   <textarea className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
                 </div>
-                <Button variant="premium" className="w-full">
+                <Button variant="premium" className="w-full" onClick={() => alert('Thank you! We will contact you within 24 hours.')}>
                   Submit Request
                 </Button>
               </CardContent>
