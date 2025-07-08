@@ -67,6 +67,27 @@ const testimonials: Testimonial[] = [
     rating: 5,
     text: "Marine ceramic coating has made maintenance so much easier. Water beads off beautifully and the boat stays cleaner longer. Excellent marine expertise!",
     service: "Marine Ceramic Coating"
+  },
+  {
+    name: "Marcus Thompson",
+    vehicle: "2024 McLaren 720S",
+    rating: 5,
+    text: "The XPEL PPF installation on my McLaren is absolutely flawless. Every curve and contour is perfectly protected without affecting the stunning paint finish. Outstanding work!",
+    service: "XPEL PPF"
+  },
+  {
+    name: "Alexandra Rivera",
+    vehicle: "2023 Ferrari F8 Tributo",
+    rating: 5,
+    text: "Protecting my Ferrari was crucial, and Bespoke Auto Design delivered perfection. The PPF is completely invisible and the self-healing technology is incredible!",
+    service: "Paint Protection Film"
+  },
+  {
+    name: "Daniel Park",
+    vehicle: "2024 Aston Martin Vantage",
+    rating: 5,
+    text: "My Aston Martin looks showroom perfect thanks to the expert PPF installation. The attention to detail and precision cutting is remarkable. Highly recommend!",
+    service: "XPEL PPF"
   }
 ];
 

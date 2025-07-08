@@ -4,10 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Star, Shield, Palette, Eye, Phone, Mail, MapPin, Clock, Anchor, Waves } from "lucide-react";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
+import { FAQ } from "@/components/FAQ";
 
 // Import assets
 import heroSupercarImage from "@/assets/hero-supercar.jpg";
-import ppfWorkImage from "@/assets/ppf-work.jpg";
+import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png";
 import ceramicWorkImage from "@/assets/ceramic-work.jpg";
 import vinylWorkImage from "@/assets/vinyl-work.jpg";
 import tintWorkImage from "@/assets/tint-work.jpg";
@@ -192,8 +193,8 @@ const Index = () => {
       </section>
 
       {/* XPEL Partnership Section */}
-      <section id="xpel" className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-xpel opacity-90"></div>
+      <section id="xpel" className="py-20 bg-black text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 opacity-95"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-xpel-yellow text-primary">
@@ -253,6 +254,9 @@ const Index = () => {
           <TestimonialCarousel />
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-muted/30">
@@ -318,39 +322,55 @@ const Index = () => {
                 <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">First Name</label>
-                    <input className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
+                <form id="quote-form">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">First Name</label>
+                      <input name="firstName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Last Name</label>
+                      <input name="lastName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
+                    </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Last Name</label>
-                    <input className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
+                    <label className="text-sm font-medium">Email</label>
+                    <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
                   </div>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Email</label>
-                  <input type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Vehicle Make & Model</label>
-                  <input className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Service Interest</label>
-                  <select className="w-full px-3 py-2 border border-input rounded-md bg-background">
-                    <option>Paint Protection Film (PPF)</option>
-                    <option>Ceramic Coating</option>
-                    <option>Vinyl Wrap</option>
-                    <option>Ceramic Tint</option>
-                    <option>Multiple Services</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Message</label>
-                  <textarea className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
-                </div>
-                <Button variant="premium" className="w-full" onClick={() => alert('Thank you! We will contact you within 24 hours.')}>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Vehicle Make & Model</label>
+                    <input name="vehicle" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Phone</label>
+                    <input name="phone" type="tel" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Service Interest</label>
+                    <select name="service" className="w-full px-3 py-2 border border-input rounded-md bg-background">
+                      <option>Paint Protection Film (PPF)</option>
+                      <option>Ceramic Coating</option>
+                      <option>Vinyl Wrap</option>
+                      <option>Ceramic Tint</option>
+                      <option>Marine PPF</option>
+                      <option>Marine Ceramic Coating</option>
+                      <option>Marine Ceramic Tint</option>
+                      <option>Multiple Services</option>
+                    </select>
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Message</label>
+                    <textarea name="message" className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
+                  </div>
+                </form>
+                <Button variant="premium" className="w-full" onClick={() => {
+                  const form = document.querySelector('#quote-form') as HTMLFormElement;
+                  const formData = new FormData(form);
+                  const subject = `Quote Request - ${formData.get('service')}`;
+                  const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0AMessage: ${formData.get('message')}`;
+                  window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
+                  alert('Thank you! Your quote request has been prepared. Please send the email that just opened, or call us at (786) 395-9172.');
+                }}>
                   Submit Request
                 </Button>
               </CardContent>
