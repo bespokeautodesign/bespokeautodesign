@@ -102,6 +102,27 @@ const testimonials: Testimonial[] = [
     rating: 5,
     text: "Outstanding PPF work on my Lamborghini. The film is completely invisible and provides incredible protection. Professional installation with amazing results!",
     service: "Paint Protection Film"
+  },
+  {
+    name: "Vincent Chen",
+    vehicle: "2024 Bentley Continental GT",
+    rating: 5,
+    text: "Exceptional XPEL PPF installation on my Bentley. The self-healing technology is incredible and the finish is flawless. Best investment I've made for paint protection!",
+    service: "Paint Protection Film"
+  },
+  {
+    name: "Isabella Rodriguez",
+    vehicle: "2023 Rolls-Royce Cullinan",
+    rating: 5,
+    text: "Perfect PPF application on my Rolls-Royce. The precision cutting and seamless installation exceeded my expectations. Truly professional craftsmanship!",
+    service: "Paint Protection Film"
+  },
+  {
+    name: "Alexander Thompson",
+    vehicle: "2024 Maserati MC20",
+    rating: 5,
+    text: "The XPEL PPF on my Maserati is absolutely invisible and provides incredible protection. Outstanding attention to detail and professional service throughout!",
+    service: "Paint Protection Film"
   }
 ];
 

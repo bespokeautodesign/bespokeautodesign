@@ -56,7 +56,7 @@ export const FAQ = () => {
         <div className="max-w-4xl mx-auto">
           <Card className="shadow-premium">
             <CardHeader>
-              <CardTitle className="text-2xl text-center">XPEL Protection Services FAQ</CardTitle>
+              <CardTitle className="text-2xl text-center">FAQ</CardTitle>
             </CardHeader>
             <CardContent>
               <Accordion type="single" collapsible className="w-full">

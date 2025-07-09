@@ -64,7 +64,9 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-12 w-auto" />
-              <span className="text-xl font-bold text-primary">Bespoke Auto Design</span>
+              <span className="text-xl font-bold text-primary">
+                <span className="text-silver">Bespoke</span> Auto Design
+              </span>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Services</button>
@@ -385,7 +387,9 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-3 mb-4 md:mb-0">
               <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-10 w-auto" />
-              <span className="text-lg font-bold">Bespoke Auto Design</span>
+              <span className="text-lg font-bold">
+                <span className="text-silver">Bespoke</span> Auto Design
+              </span>
             </div>
             <div className="text-center md:text-right text-primary-foreground/80">
               <p>&copy; 2024 Bespoke Auto Design. All rights reserved.</p>
