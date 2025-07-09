@@ -2,15 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Star, Shield, Palette, Eye, Phone, Mail, MapPin, Clock, Anchor, Waves } from "lucide-react";
+import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves } from "lucide-react";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { FAQ } from "@/components/FAQ";
 
 // Import assets
 import heroSupercarImage from "@/assets/hero-supercar.jpg";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png";
-import ceramicWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.png";
-import vinylWorkImage from "/lovable-uploads/0dbb420e-a7b1-4b4e-87ec-f0e09e0b57f9.png";
+import ceramicWorkImage from "/lovable-uploads/0dbb420e-a7b1-4b4e-87ec-f0e09e0b57f9.png";
+import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.png";
 import tintWorkImage from "@/assets/tint-work.jpg";
 import marinePpfImage from "@/assets/marine-ppf.jpg";
 import marineCeramicImage from "@/assets/marine-ceramic.jpg";
@@ -218,7 +218,7 @@ const Index = () => {
               
               <div className="text-center">
                 <div className="bg-xpel-yellow text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Palette className="h-8 w-8" />
+                  <Sun className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">XPEL Prime Window Tint</h3>
                 <p className="text-primary-foreground/70">Superior heat rejection and UV protection for maximum comfort</p>
@@ -226,7 +226,7 @@ const Index = () => {
               
               <div className="text-center">
                 <div className="bg-xpel-yellow text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Eye className="h-8 w-8" />
+                  <Droplet className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-semibold mb-2">XPEL Fusion Plus Ceramic Coating</h3>
                 <p className="text-primary-foreground/70">Advanced ceramic coating with exceptional durability and gloss</p>
