@@ -12,12 +12,8 @@ const faqData = [
     answer: "Typical PPF installation takes 2-5 days depending on the coverage level (partial front end vs. full vehicle protection). We ensure precision cutting and proper curing time for optimal results."
   },
   {
-    question: "What's the difference between XPEL ULTIMATE and ULTIMATE PLUS?",
-    answer: "XPEL ULTIMATE PLUS offers enhanced clarity, improved self-healing properties, and better stain resistance compared to ULTIMATE. Both provide excellent protection with a 10-year warranty."
-  },
-  {
     question: "How long does XPEL Ceramic Coating last?",
-    answer: "XPEL Ceramic Coatings provide 2-10 years of protection depending on the product selected. Our professional-grade coatings offer superior durability, hydrophobic properties, and enhanced gloss."
+    answer: "XPEL Ceramic Coatings provide 2-5 years of protection depending on the product selected. Our professional-grade coatings offer superior durability, hydrophobic properties, and enhanced gloss."
   },
   {
     question: "Can PPF be removed without damaging the paint?",
@@ -41,7 +37,7 @@ const faqData = [
   },
   {
     question: "Do you offer warranties on your services?",
-    answer: "Yes! We provide comprehensive warranties: 10 years on XPEL PPF, 2-10 years on ceramic coatings (depending on product), and lifetime warranty on XPEL ceramic tint installations."
+    answer: "Yes! We provide comprehensive warranties: 10 years on XPEL PPF, 5 years on ceramic coatings, and lifetime warranty on XPEL ceramic tint installations."
   }
 ];
 

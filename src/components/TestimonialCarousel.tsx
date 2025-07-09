@@ -52,7 +52,7 @@ const testimonials: Testimonial[] = [
     vehicle: "2024 Lamborghini Huracán",
     rating: 5,
     text: "XPEL Ultimate Plus installation was phenomenal. The self-healing properties are incredible and the clarity is perfect. Worth every penny!",
-    service: "XPEL PPF"
+    service: "Paint Protection Film"
   },
   {
     name: "Emily Foster",
@@ -73,7 +73,7 @@ const testimonials: Testimonial[] = [
     vehicle: "2024 McLaren 720S",
     rating: 5,
     text: "The XPEL PPF installation on my McLaren is absolutely flawless. Every curve and contour is perfectly protected without affecting the stunning paint finish. Outstanding work!",
-    service: "XPEL PPF"
+    service: "Paint Protection Film"
   },
   {
     name: "Alexandra Rivera",
@@ -87,7 +87,21 @@ const testimonials: Testimonial[] = [
     vehicle: "2024 Aston Martin Vantage",
     rating: 5,
     text: "My Aston Martin looks showroom perfect thanks to the expert PPF installation. The attention to detail and precision cutting is remarkable. Highly recommend!",
-    service: "XPEL PPF"
+    service: "Paint Protection Film"
+  },
+  {
+    name: "Christopher Martinez",
+    vehicle: "2024 Ferrari SF90",
+    rating: 5,
+    text: "The XPEL PPF installation exceeded all expectations. Perfect coverage, invisible protection, and the self-healing properties are remarkable. My Ferrari is perfectly protected!",
+    service: "Paint Protection Film"
+  },
+  {
+    name: "Amanda Foster",
+    vehicle: "2023 Lamborghini Aventador",
+    rating: 5,
+    text: "Outstanding PPF work on my Lamborghini. The film is completely invisible and provides incredible protection. Professional installation with amazing results!",
+    service: "Paint Protection Film"
   }
 ];
 
@@ -137,12 +151,12 @@ export const TestimonialCarousel = () => {
   return (
     <div className="relative">
       <div className="flex items-center justify-between mb-8">
-        <div>
-          <h3 className="text-2xl font-bold mb-2">Client Success Stories</h3>
-          <p className="text-muted-foreground">
-            {testimonials.length} satisfied customers and counting
-          </p>
-        </div>
+          <div>
+            <h3 className="text-2xl font-bold mb-2">Client Success Stories</h3>
+            <p className="text-muted-foreground">
+              100+ satisfied customers and counting
+            </p>
+          </div>
         
         <div className="flex items-center gap-2">
           <Button

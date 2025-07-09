@@ -9,8 +9,8 @@ import { FAQ } from "@/components/FAQ";
 // Import assets
 import heroSupercarImage from "@/assets/hero-supercar.jpg";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png";
-import ceramicWorkImage from "@/assets/ceramic-work.jpg";
-import vinylWorkImage from "@/assets/vinyl-work.jpg";
+import ceramicWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.png";
+import vinylWorkImage from "/lovable-uploads/0dbb420e-a7b1-4b4e-87ec-f0e09e0b57f9.png";
 import tintWorkImage from "@/assets/tint-work.jpg";
 import marinePpfImage from "@/assets/marine-ppf.jpg";
 import marineCeramicImage from "@/assets/marine-ceramic.jpg";
@@ -99,7 +99,7 @@ const Index = () => {
               <Button variant="silver" size="lg" className="text-lg px-8 py-4" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
                 Explore Services
               </Button>
-              <Button variant="silver" size="lg" className="text-lg px-8 py-4">
+              <Button variant="silver" size="lg" className="text-lg px-8 py-4" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
                 Schedule Consultation
               </Button>
             </div>
@@ -212,24 +212,24 @@ const Index = () => {
                 <div className="bg-xpel-yellow text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Shield className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">ULTIMATE Protection</h3>
-                <p className="text-primary-foreground/70">Industry-leading 10-year warranty on all XPEL products</p>
+                <h3 className="text-xl font-semibold mb-2">XPEL Ultimate Plus</h3>
+                <p className="text-primary-foreground/70">Premium paint protection with enhanced self-healing technology</p>
               </div>
               
               <div className="text-center">
                 <div className="bg-xpel-yellow text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Palette className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">STEALTH Technology</h3>
-                <p className="text-primary-foreground/70">Matte finish protection that transforms your vehicle's appearance</p>
+                <h3 className="text-xl font-semibold mb-2">XPEL Prime Window Tint</h3>
+                <p className="text-primary-foreground/70">Superior heat rejection and UV protection for maximum comfort</p>
               </div>
               
               <div className="text-center">
                 <div className="bg-xpel-yellow text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Eye className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">ULTIMATE PLUS</h3>
-                <p className="text-primary-foreground/70">Enhanced clarity and self-healing capabilities</p>
+                <h3 className="text-xl font-semibold mb-2">XPEL Fusion Plus Ceramic Coating</h3>
+                <p className="text-primary-foreground/70">Advanced ceramic coating with exceptional durability and gloss</p>
               </div>
             </div>
             
@@ -334,16 +334,16 @@ const Index = () => {
                     </div>
                   </div>
                   <div className="space-y-2">
+                    <label className="text-sm font-medium">Phone</label>
+                    <input name="phone" type="tel" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
+                  </div>
+                  <div className="space-y-2">
                     <label className="text-sm font-medium">Email</label>
                     <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Vehicle Make & Model</label>
                     <input name="vehicle" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Phone</label>
-                    <input name="phone" type="tel" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Service Interest</label>
