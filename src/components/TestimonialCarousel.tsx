@@ -182,13 +182,13 @@ export const TestimonialCarousel = () => {
         <div 
           className="flex transition-transform duration-500 ease-in-out gap-6"
           style={{ 
-            transform: `translateX(-${currentIndex * (100 / (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1))}%)` 
+            transform: `translateX(-${currentIndex * 100}%)` 
           }}
         >
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3"
+              className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2 md:px-0"
             >
               <Card className="h-full shadow-silver hover:shadow-premium transition-all duration-300 animate-fade-in">
                 <CardHeader>
