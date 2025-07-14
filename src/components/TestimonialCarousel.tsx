@@ -203,7 +203,7 @@ export const TestimonialCarousel = () => {
         <div 
           className="flex transition-transform duration-500 ease-in-out gap-6"
           style={{ 
-            transform: `translateX(-${currentIndex * 100}%)` 
+            transform: `translateX(-${currentIndex * (100 / (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1))}%)` 
           }}
         >
           {testimonials.map((testimonial, index) => (
