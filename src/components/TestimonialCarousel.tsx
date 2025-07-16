@@ -179,7 +179,7 @@ export const TestimonialCarousel = () => {
             </p>
           </div>
         
-        <div className="flex items-center gap-2">
+        <div className="hidden md:flex items-center gap-2">
           <Button
             variant="outline"
             size="icon"
@@ -199,17 +199,13 @@ export const TestimonialCarousel = () => {
         </div>
       </div>
 
-      <div className="overflow-hidden">
-        <div 
-          className="flex transition-transform duration-500 ease-in-out gap-6"
-          style={{ 
-            transform: `translateX(-${currentIndex * (100 / (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1))}%)` 
-          }}
-        >
+      {/* Mobile: Horizontal scroll with snap */}
+      <div className="md:hidden">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-4 -mx-4">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-2 md:px-0"
+              className="flex-shrink-0 w-[90vw] snap-center"
             >
               <Card className="h-full shadow-silver hover:shadow-premium transition-all duration-300 animate-fade-in">
                 <CardHeader>
@@ -235,8 +231,45 @@ export const TestimonialCarousel = () => {
         </div>
       </div>
 
-      {/* Dots indicator */}
-      <div className="flex justify-center mt-8 gap-2">
+      {/* Desktop: Controlled carousel */}
+      <div className="hidden md:block overflow-hidden">
+        <div 
+          className="flex transition-transform duration-500 ease-in-out gap-6"
+          style={{ 
+            transform: `translateX(-${currentIndex * (100 / (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1))}%)` 
+          }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-1/2 lg:w-1/3"
+            >
+              <Card className="h-full shadow-silver hover:shadow-premium transition-all duration-300 animate-fade-in">
+                <CardHeader>
+                  <div className="flex items-center gap-1 mb-2">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-xpel-yellow text-xpel-yellow" />
+                    ))}
+                  </div>
+                  <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                  <CardDescription className="space-y-1">
+                    <div>{testimonial.vehicle}</div>
+                    <div className="text-xs bg-muted px-2 py-1 rounded-md inline-block">
+                      {testimonial.service}
+                    </div>
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
+                </CardContent>
+              </Card>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dots indicator - Desktop only */}
+      <div className="hidden md:flex justify-center mt-8 gap-2">
         {testimonials.map((_, index) => (
           <button
             key={index}
