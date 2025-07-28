@@ -195,7 +195,7 @@ const Projects = () => {
                           alt={vehicle.name}
                            className={`w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 ${
                              vehicle.name === "Aston Martin Vantage" ? "object-[center_60%]" : 
-                             vehicle.name === "Ferrari F8 Tributo" ? "object-[center_60%]" : "object-[center_70%]"
+                             vehicle.name === "Ferrari F8 Tributo" ? "object-[center_50%]" : "object-[center_70%]"
                            }`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
