@@ -22,7 +22,7 @@ const Projects = () => {
       image: "/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png",
       category: "PPF + Ceramic",
       
-      services: ["Full Body PPF", "Fusion Plus Ceramic Coating", "Paint Correction"],
+      services: ["Color Change", "Ceramic Tints"],
       vehicle: "McLaren 720S Coupe",
       completion: "7 days"
     },
