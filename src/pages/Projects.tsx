@@ -336,7 +336,7 @@ const Projects = () => {
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-semibold text-sm mb-2">Vehicle:</h4>
-                      <p className="text-sm text-muted-foreground">{project.vehicle}</p>
+                      <p className="text-sm text-muted-foreground">2019 McLaren 570S Coupe</p>
                     </div>
                     
                     <div>
