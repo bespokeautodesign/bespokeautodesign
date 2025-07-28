@@ -173,7 +173,7 @@ const Projects = () => {
             <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
               Explore our portfolio of completed projects showcasing premium automotive protection and customization work.
             </p>
-            <Link to="/">
+            <Link to="/#quote">
               <Button size="lg" className="animate-pulse">
                 Get Your Quote Today
               </Button>
