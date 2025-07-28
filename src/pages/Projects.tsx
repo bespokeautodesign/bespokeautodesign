@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ArrowLeft, Calendar, Car, Palette, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -82,6 +83,33 @@ const Projects = () => {
     }
   ];
 
+  // Clear PPF vehicle showcases
+  const clearPPFVehicles = [
+    { id: 1, name: "Porsche 911 GT3", image: ppfInstallationImage, year: "2023" },
+    { id: 2, name: "Lamborghini Huracán", image: ppfServiceImage, year: "2022" },
+    { id: 3, name: "BMW M4 Competition", image: ceramicCoatingImage, year: "2023" },
+    { id: 4, name: "McLaren 720S", image: ppfInstallationImage, year: "2024" },
+    { id: 5, name: "Audi R8 V10", image: ppfServiceImage, year: "2023" }
+  ];
+
+  // Stealth PPF vehicle showcases
+  const stealthPPFVehicles = [
+    { id: 1, name: "Ferrari 488 GTB", image: vinylWrapImage, year: "2023" },
+    { id: 2, name: "Mercedes AMG GT", image: ppfInstallationImage, year: "2024" },
+    { id: 3, name: "Aston Martin Vantage", image: ceramicInstallationImage, year: "2023" },
+    { id: 4, name: "Nissan GT-R", image: ppfServiceImage, year: "2022" },
+    { id: 5, name: "Corvette Z06", image: ceramicCoatingImage, year: "2024" }
+  ];
+
+  // Vinyl Wrap vehicle showcases
+  const vinylWrapVehicles = [
+    { id: 1, name: "Ferrari 488 Spider", image: vinylWrapImage, year: "2023" },
+    { id: 2, name: "Lamborghini Aventador", image: vinylWrapImage, year: "2024" },
+    { id: 3, name: "BMW M5 Competition", image: ceramicCoatingImage, year: "2023" },
+    { id: 4, name: "Tesla Model S Plaid", image: ceramicTintImage, year: "2024" },
+    { id: 5, name: "Range Rover Sport", image: ppfInstallationImage, year: "2023" }
+  ];
+
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case "PPF":
@@ -152,9 +180,134 @@ const Projects = () => {
         </div>
       </section>
 
+      {/* Vehicle Showcase Carousels */}
+      <section className="py-20 bg-gradient-subtle">
+        <div className="container mx-auto px-6">
+          {/* Clear PPF Section */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <Badge variant="secondary" className="mb-4 bg-blue-500/10 text-blue-600 border-blue-500/20">
+                <Shield className="h-4 w-4 mr-2" />
+                Clear PPF
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Clear Paint Protection Film</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Invisible protection that preserves your vehicle's original finish while providing superior defense against road debris and environmental damage.
+              </p>
+            </div>
+            <Carousel className="w-full max-w-6xl mx-auto">
+              <CarouselContent>
+                {clearPPFVehicles.map((vehicle) => (
+                  <CarouselItem key={vehicle.id} className="md:basis-1/2 lg:basis-1/3">
+                    <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={vehicle.image}
+                          alt={vehicle.name}
+                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                        <div className="absolute bottom-4 left-4 text-white">
+                          <h3 className="font-bold text-lg">{vehicle.name}</h3>
+                          <p className="text-sm opacity-90">{vehicle.year}</p>
+                        </div>
+                      </div>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+
+          {/* Stealth PPF Section */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <Badge variant="secondary" className="mb-4 bg-gray-500/10 text-gray-600 border-gray-500/20">
+                <Shield className="h-4 w-4 mr-2" />
+                Stealth PPF
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Stealth Paint Protection Film</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Matte finish protection that transforms your vehicle's appearance while providing the same superior protection as clear PPF.
+              </p>
+            </div>
+            <Carousel className="w-full max-w-6xl mx-auto">
+              <CarouselContent>
+                {stealthPPFVehicles.map((vehicle) => (
+                  <CarouselItem key={vehicle.id} className="md:basis-1/2 lg:basis-1/3">
+                    <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={vehicle.image}
+                          alt={vehicle.name}
+                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                        <div className="absolute bottom-4 left-4 text-white">
+                          <h3 className="font-bold text-lg">{vehicle.name}</h3>
+                          <p className="text-sm opacity-90">{vehicle.year}</p>
+                        </div>
+                      </div>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+
+          {/* Vinyl Wraps Section */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <Badge variant="secondary" className="mb-4 bg-purple-500/10 text-purple-600 border-purple-500/20">
+                <Palette className="h-4 w-4 mr-2" />
+                Vinyl Wraps
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Vinyl Wraps (Color Change)</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Complete color transformation with premium vinyl films, offering endless customization possibilities while protecting your original paint.
+              </p>
+            </div>
+            <Carousel className="w-full max-w-6xl mx-auto">
+              <CarouselContent>
+                {vinylWrapVehicles.map((vehicle) => (
+                  <CarouselItem key={vehicle.id} className="md:basis-1/2 lg:basis-1/3">
+                    <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+                      <div className="relative overflow-hidden">
+                        <img
+                          src={vehicle.image}
+                          alt={vehicle.name}
+                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                        <div className="absolute bottom-4 left-4 text-white">
+                          <h3 className="font-bold text-lg">{vehicle.name}</h3>
+                          <p className="text-sm opacity-90">{vehicle.year}</p>
+                        </div>
+                      </div>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Grid */}
       <section className="py-20">
         <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Detailed showcase of our premium automotive protection and customization work.
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {projects.map((project) => (
               <Card key={project.id} className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
