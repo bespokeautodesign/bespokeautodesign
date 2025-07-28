@@ -219,7 +219,7 @@ const Index = () => {
                   className="w-full h-64 object-cover object-[center_60%] transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-blue-500/10 text-blue-600 border-blue-500/20">
+                  <Badge className="bg-black/60 text-white border-white/20">
                     PPF + Ceramic
                   </Badge>
                 </div>
