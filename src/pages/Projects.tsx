@@ -54,7 +54,7 @@ const Projects = () => {
       title: "Corvette C8 Stingray",
       description: "Xpel Ultimate Plus Track Package Paint Protection Film – Enhanced Coverage for High-Performance Driving",
       image: "/lovable-uploads/171000e1-8047-462c-b8fd-a3e367867858.png",
-      category: "Vinyl Wrap + PPF",
+      category: "Track Package PPF",
       
       services: ["Track Package PPF"],
       vehicle: "2024 Chevrolet Corvette C8 Stingray",
