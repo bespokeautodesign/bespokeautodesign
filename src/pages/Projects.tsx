@@ -52,7 +52,7 @@ const Projects = () => {
     {
       id: 4,
       title: "Corvette C8 Stingray",
-      description: "Custom blue vinyl wrap with carbon fiber accents and protective film application.",
+      description: "Xpel Ultimate Plus Track Package Paint Protection Film – Enhanced Coverage for High-Performance Driving",
       image: "/lovable-uploads/171000e1-8047-462c-b8fd-a3e367867858.png",
       category: "Vinyl Wrap + PPF",
       
