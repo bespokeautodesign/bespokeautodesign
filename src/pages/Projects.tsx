@@ -18,7 +18,7 @@ const Projects = () => {
     {
       id: 1,
       title: "McLaren 570S",
-      description: "Full Body Xpel Ultimate Plus PPF Protection & Fusion Plus Ceramic Coating.",
+      description: "Super Gloss Metallic Kato's Kenmery Blue Inozetek Wrap & Prime XR Plus Ceramic Tints.",
       image: "/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png",
       category: "Color Change + Ceramic Tints",
       
