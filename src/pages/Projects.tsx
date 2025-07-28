@@ -42,7 +42,7 @@ const Projects = () => {
       title: "BMW X5 sDrive40i",
       description: "Full Body Xpel Stealth PPF Protection, Fusion Plus Ceramic Coating & Prime XR Plus Ceramic Tints.",
       image: "/lovable-uploads/2b4efeb0-51dc-4e2f-b7e3-9c4e9882c48e.png",
-      category: "Stealth PPF + Ceramic + Tint",
+      category: "Stealth PPF + Ceramic Coating + Ceramic Tints",
       
       services: ["Stealth PPF", "Fusion Plus Ceramic Coating", "Prime XR Plus Ceramic Tints"],
       vehicle: "BMW X5 sDrive40i",
