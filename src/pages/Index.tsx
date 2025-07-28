@@ -214,7 +214,7 @@ const Index = () => {
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img
-                  src={ppfInstallationImage}
+                  src="/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png"
                   alt="PPF Installation Project"
                   className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
