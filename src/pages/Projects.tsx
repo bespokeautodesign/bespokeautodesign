@@ -173,11 +173,16 @@ const Projects = () => {
             <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
               Explore our portfolio of completed projects showcasing premium automotive protection and customization work.
             </p>
-            <a href="/#contact">
-              <Button size="lg" className="animate-pulse">
-                Get Your Quote Today
-              </Button>
-            </a>
+            <Button size="lg" className="animate-pulse" onClick={() => {
+              window.location.href = '/#contact';
+              setTimeout(() => {
+                document.getElementById('contact')?.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }, 100);
+            }}>
+              Get Your Quote Today
+            </Button>
           </div>
         </div>
       </section>
@@ -397,11 +402,16 @@ const Projects = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join our satisfied clients and experience the Bespoke Auto Design difference.
           </p>
-          <a href="/#contact">
-            <Button size="lg" className="animate-pulse">
-              Get Your Quote Today
-            </Button>
-          </a>
+          <Button size="lg" className="animate-pulse" onClick={() => {
+            window.location.href = '/#contact';
+            setTimeout(() => {
+              document.getElementById('contact')?.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }, 100);
+          }}>
+            Get Your Quote Today
+          </Button>
         </div>
       </section>
     </div>
