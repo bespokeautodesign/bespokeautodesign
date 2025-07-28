@@ -397,6 +397,11 @@ const Projects = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join our satisfied clients and experience the Bespoke Auto Design difference.
           </p>
+          <Link to="/#contact">
+            <Button size="lg" className="animate-pulse">
+              Get Your Quote Today
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
