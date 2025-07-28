@@ -131,7 +131,7 @@ const Projects = () => {
       case "PPF + Ceramic":
         return "bg-blue-500/10 text-blue-600 border-blue-500/20";
       case "Color Change + Ceramic Tints":
-        return "bg-purple-500/10 text-purple-600 border-purple-500/20";
+        return "bg-white/90 text-black border-white/20";
       case "Stealth PPF + Ceramic + Tint":
         return "bg-gray-500/10 text-gray-600 border-gray-500/20";
       case "Vinyl Wrap":
