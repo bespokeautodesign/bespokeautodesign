@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ArrowLeft, Car, Palette, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 // Import project images
 import ppfInstallationImage from "@/assets/ppf-installation.jpg";
@@ -131,6 +132,10 @@ const Projects = () => {
     return "bg-white/90 text-black border-white/20";
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -163,9 +168,14 @@ const Projects = () => {
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Exceptional Results
             </h1>
-            <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
               Explore our portfolio of completed projects showcasing premium automotive protection and customization work.
             </p>
+            <Link to="/">
+              <Button size="lg" className="animate-pulse">
+                Get Your Quote Today
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -365,11 +375,6 @@ const Projects = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join our satisfied clients and experience the Bespoke Auto Design difference.
           </p>
-          <Link to="/">
-            <Button size="lg" className="animate-pulse">
-              Get Your Quote Today
-            </Button>
-          </Link>
         </div>
       </section>
     </div>
