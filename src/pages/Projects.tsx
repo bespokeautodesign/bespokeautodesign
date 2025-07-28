@@ -108,7 +108,7 @@ const Projects = () => {
 
   // Vinyl Wrap vehicle showcases
   const vinylWrapVehicles = [
-    { id: 1, name: "Ferrari 488 Spider", beforeImage: vinylWrapImage, afterImage: vinylWrapImage, year: "2023" },
+    { id: 1, name: "Aston Martin DBX", beforeImage: "/lovable-uploads/714ade11-8742-4c61-b8fc-1577ddc3dceb.png", afterImage: "/lovable-uploads/19163148-510a-4a7c-9bb2-ba187ab86dc4.png", year: "2023" },
     { id: 2, name: "Lamborghini Aventador", beforeImage: vinylWrapImage, afterImage: vinylWrapImage, year: "2024" },
     { id: 3, name: "BMW M5 Competition", beforeImage: ceramicCoatingImage, afterImage: ceramicCoatingImage, year: "2023" },
     { id: 4, name: "Tesla Model S Plaid", beforeImage: ceramicTintImage, afterImage: ceramicTintImage, year: "2024" },
