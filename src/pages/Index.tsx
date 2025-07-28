@@ -28,7 +28,7 @@ const Index = () => {
   const services = [{
     title: "Paint Protection Film (PPF)",
     description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
-    image: ppfWorkImage,
+    image: "/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png",
     features: ["Self-healing technology", "10-year warranty", "UV protection", "Maintains original appearance"]
   }, {
     title: "Ceramic Coating",
