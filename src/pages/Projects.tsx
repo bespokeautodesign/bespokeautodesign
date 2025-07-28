@@ -51,7 +51,7 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Chevrolet Corvette - Vinyl Wrap & PPF",
+      title: "Corvette C8 Stingray",
       description: "Custom blue vinyl wrap with carbon fiber accents and protective film application.",
       image: "/lovable-uploads/171000e1-8047-462c-b8fd-a3e367867858.png",
       category: "Vinyl Wrap + PPF",
