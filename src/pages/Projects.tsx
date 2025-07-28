@@ -56,7 +56,7 @@ const Projects = () => {
       image: "/lovable-uploads/171000e1-8047-462c-b8fd-a3e367867858.png",
       category: "Vinyl Wrap + PPF",
       
-      services: ["Custom Vinyl Wrap", "Carbon Fiber Accents", "Protective Film"],
+      services: ["Track Package PPF"],
       vehicle: "2024 Chevrolet Corvette C8 Stingray",
       completion: "6 days"
     },
