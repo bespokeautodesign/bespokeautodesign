@@ -173,11 +173,11 @@ const Projects = () => {
             <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
               Explore our portfolio of completed projects showcasing premium automotive protection and customization work.
             </p>
-            <Link to="/#quote">
+            <a href="/#contact">
               <Button size="lg" className="animate-pulse">
                 Get Your Quote Today
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -397,11 +397,11 @@ const Projects = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join our satisfied clients and experience the Bespoke Auto Design difference.
           </p>
-          <Link to="/#contact">
+          <a href="/#contact">
             <Button size="lg" className="animate-pulse">
               Get Your Quote Today
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
     </div>
