@@ -108,11 +108,11 @@ const Projects = () => {
 
   // Vinyl Wrap vehicle showcases
   const vinylWrapVehicles = [
-    { id: 1, name: "Ferrari 488 Spider", image: vinylWrapImage, year: "2023" },
-    { id: 2, name: "Lamborghini Aventador", image: vinylWrapImage, year: "2024" },
-    { id: 3, name: "BMW M5 Competition", image: ceramicCoatingImage, year: "2023" },
-    { id: 4, name: "Tesla Model S Plaid", image: ceramicTintImage, year: "2024" },
-    { id: 5, name: "Range Rover Sport", image: ppfInstallationImage, year: "2023" }
+    { id: 1, name: "Ferrari 488 Spider", beforeImage: vinylWrapImage, afterImage: vinylWrapImage, year: "2023" },
+    { id: 2, name: "Lamborghini Aventador", beforeImage: vinylWrapImage, afterImage: vinylWrapImage, year: "2024" },
+    { id: 3, name: "BMW M5 Competition", beforeImage: ceramicCoatingImage, afterImage: ceramicCoatingImage, year: "2023" },
+    { id: 4, name: "Tesla Model S Plaid", beforeImage: ceramicTintImage, afterImage: ceramicTintImage, year: "2024" },
+    { id: 5, name: "Range Rover Sport", beforeImage: ppfInstallationImage, afterImage: ppfInstallationImage, year: "2023" }
   ];
 
   const getCategoryIcon = (category: string) => {
@@ -284,20 +284,37 @@ const Projects = () => {
               <CarouselContent>
                 {vinylWrapVehicles.map((vehicle) => (
                   <CarouselItem key={vehicle.id} className="md:basis-1/2 lg:basis-1/3">
-                    <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
-                      <div className="relative overflow-hidden">
-                        <img
-                          src={vehicle.image}
-                          alt={vehicle.name}
-                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                        <div className="absolute bottom-4 left-4 text-white">
-                          <h3 className="font-bold text-lg">{vehicle.name}</h3>
-                          <p className="text-sm opacity-90">{vehicle.year}</p>
-                        </div>
-                      </div>
-                    </Card>
+                     <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+                       <div className="relative overflow-hidden">
+                         <div className="relative">
+                           <img
+                             src={vehicle.beforeImage}
+                             alt={`${vehicle.name} - Before`}
+                             className="w-full h-48 object-cover transition-all duration-500 group-hover:opacity-0"
+                           />
+                           <img
+                             src={vehicle.afterImage}
+                             alt={`${vehicle.name} - After`}
+                             className="absolute inset-0 w-full h-48 object-cover transition-all duration-500 opacity-0 group-hover:opacity-100"
+                           />
+                         </div>
+                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                         <div className="absolute top-4 right-4">
+                           <div className="bg-black/60 backdrop-blur-sm rounded-full px-3 py-1">
+                             <span className="text-white text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                               AFTER
+                             </span>
+                             <span className="text-white text-xs font-medium group-hover:opacity-0 transition-opacity duration-300">
+                               BEFORE
+                             </span>
+                           </div>
+                         </div>
+                         <div className="absolute bottom-4 left-4 text-white">
+                           <h3 className="font-bold text-lg">{vehicle.name}</h3>
+                           <p className="text-sm opacity-90">{vehicle.year}</p>
+                         </div>
+                       </div>
+                     </Card>
                   </CarouselItem>
                 ))}
               </CarouselContent>
