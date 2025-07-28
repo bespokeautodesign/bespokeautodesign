@@ -12,7 +12,7 @@ import heroSupercarImage from "@/assets/hero-supercar.jpg";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png";
 import ceramicWorkImage from "/lovable-uploads/0dbb420e-a7b1-4b4e-87ec-f0e09e0b57f9.png";
 import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.png";
-import tintWorkImage from "@/assets/tint-work.jpg";
+import tintWorkImage from "/lovable-uploads/870ad52a-53a2-4536-922b-33d54d2f71e0.png";
 import marinePpfImage from "@/assets/marine-ppf.jpg";
 import marineCeramicImage from "@/assets/marine-ceramic.jpg";
 import marineTintImage from "@/assets/marine-tint.jpg";
