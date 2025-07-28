@@ -314,7 +314,7 @@ const Projects = () => {
                 </div>
                 
                  <CardHeader>
-                   <CardTitle className="line-clamp-2">McLaren 570S Coupe</CardTitle>
+                   <CardTitle className="line-clamp-2">{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
                 
