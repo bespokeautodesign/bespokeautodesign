@@ -290,12 +290,12 @@ const Projects = () => {
                            <img
                              src={vehicle.beforeImage}
                              alt={`${vehicle.name} - Before`}
-                             className="w-full h-48 object-cover object-bottom transition-all duration-500 group-hover:opacity-0"
+                             className="w-full h-48 object-cover object-top transition-all duration-500 group-hover:opacity-0"
                            />
                            <img
                              src={vehicle.afterImage}
                              alt={`${vehicle.name} - After`}
-                             className="absolute inset-0 w-full h-48 object-cover object-bottom transition-all duration-500 opacity-0 group-hover:opacity-100"
+                             className="absolute inset-0 w-full h-48 object-cover object-top transition-all duration-500 opacity-0 group-hover:opacity-100"
                            />
                          </div>
                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
