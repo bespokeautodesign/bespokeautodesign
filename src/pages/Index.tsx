@@ -2,9 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves } from "lucide-react";
+import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, ArrowRight, Calendar } from "lucide-react";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { FAQ } from "@/components/FAQ";
+import { Link } from "react-router-dom";
 
 // Import assets
 import heroSupercarImage from "@/assets/hero-supercar.jpg";
@@ -15,6 +16,9 @@ import tintWorkImage from "@/assets/tint-work.jpg";
 import marinePpfImage from "@/assets/marine-ppf.jpg";
 import marineCeramicImage from "@/assets/marine-ceramic.jpg";
 import marineTintImage from "@/assets/marine-tint.jpg";
+import ppfInstallationImage from "@/assets/ppf-installation.jpg";
+import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
+import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
 const Index = () => {
   const scrollToQuote = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
@@ -71,6 +75,7 @@ const Index = () => {
             <div className="hidden md:flex items-center gap-8">
               <button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Services</button>
               <button onClick={() => document.getElementById('marine')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Marine Services</button>
+              <button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Projects</button>
               <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Testimonials</button>
               <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Contact</button>
             </div>
@@ -190,6 +195,99 @@ const Index = () => {
             <Button variant="silver" size="lg" onClick={scrollToQuote}>
               Schedule Marine Consultation
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Preview Section */}
+      <section id="projects" className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <Badge variant="outline" className="mb-4">Recent Work</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Latest Projects</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Explore our recent automotive protection and customization projects showcasing exceptional craftsmanship.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img
+                  src={ppfInstallationImage}
+                  alt="PPF Installation Project"
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute top-4 left-4">
+                  <Badge className="bg-blue-500/10 text-blue-600 border-blue-500/20">
+                    PPF + Ceramic
+                  </Badge>
+                </div>
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                  <Calendar className="h-4 w-4" />
+                  March 2024
+                </div>
+                <CardTitle className="line-clamp-2">Porsche 911 GT3 Full Protection</CardTitle>
+                <CardDescription>Complete PPF installation with ceramic coating for ultimate protection.</CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img
+                  src={vinylWrapImage}
+                  alt="Vinyl Wrap Project"
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute top-4 left-4">
+                  <Badge className="bg-purple-500/10 text-purple-600 border-purple-500/20">
+                    Vinyl Wrap
+                  </Badge>
+                </div>
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                  <Calendar className="h-4 w-4" />
+                  February 2024
+                </div>
+                <CardTitle className="line-clamp-2">Ferrari 488 Satin Black Transformation</CardTitle>
+                <CardDescription>Complete color change from red to satin black with gloss accents.</CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
+              <div className="relative overflow-hidden">
+                <img
+                  src={ceramicCoatingImage}
+                  alt="Ceramic Coating Project"
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute top-4 left-4">
+                  <Badge className="bg-green-500/10 text-green-600 border-green-500/20">
+                    Ceramic Coating
+                  </Badge>
+                </div>
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                  <Calendar className="h-4 w-4" />
+                  January 2024
+                </div>
+                <CardTitle className="line-clamp-2">BMW M4 Competition Enhancement</CardTitle>
+                <CardDescription>9H ceramic coating with ceramic window tinting for enhanced protection.</CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Link to="/projects">
+              <Button variant="premium" size="lg" className="flex items-center gap-2 mx-auto">
+                View All Projects
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
