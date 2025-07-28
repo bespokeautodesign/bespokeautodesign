@@ -127,7 +127,7 @@ const Projects = () => {
       case "Ceramic Tint":
         return <Car className="h-4 w-4" />;
       default:
-        return <Car className="h-4 w-4" />;
+        return <Palette className="h-4 w-4" />;
     }
   };
 
