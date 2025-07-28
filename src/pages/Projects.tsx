@@ -24,7 +24,7 @@ const Projects = () => {
       
       services: ["Color Change", "Ceramic Tints"],
       vehicle: "McLaren 720S Coupe",
-      completion: "7 days"
+      completion: "5 days"
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ const Projects = () => {
       
       services: ["Full Body PPF", "Fusion Plus Ceramic Coating", "Paint Correction"],
       vehicle: "2020 Ferrari F8 Tributo",
-      completion: "7 days"
+      completion: "5 days"
     },
     {
       id: 3,
@@ -46,7 +46,7 @@ const Projects = () => {
       
       services: ["Stealth PPF", "Fusion Plus Ceramic Coating", "Prime XR Plus Ceramic Tints"],
       vehicle: "BMW X5 sDrive40i",
-      completion: "8 days"
+      completion: "5 days"
     },
     {
       id: 4,
