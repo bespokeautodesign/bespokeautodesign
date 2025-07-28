@@ -45,7 +45,7 @@ const Projects = () => {
       category: "Stealth PPF + Ceramic Coating + Ceramic Tints",
       
       services: ["Stealth PPF", "Fusion Plus Ceramic Coating", "Prime XR Plus Ceramic Tints"],
-      vehicle: "BMW X5 sDrive40i",
+      vehicle: "2025 BMW X5 sDrive40i",
       completion: "5 days"
     },
     {
