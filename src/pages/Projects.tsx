@@ -20,7 +20,7 @@ const Projects = () => {
       title: "2024 McLaren 720S Coupe",
       description: "Full Body Xpel Ultimate Plus PPF Protection & Fusion Plus Ceramic Coating.",
       image: "/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png",
-      category: "PPF + Ceramic",
+      category: "Color Change + Ceramic Tints",
       
       services: ["Color Change", "Ceramic Tints"],
       vehicle: "McLaren 720S Coupe",
@@ -130,6 +130,8 @@ const Projects = () => {
       case "PPF":
       case "PPF + Ceramic":
         return "bg-blue-500/10 text-blue-600 border-blue-500/20";
+      case "Color Change + Ceramic Tints":
+        return "bg-purple-500/10 text-purple-600 border-purple-500/20";
       case "Stealth PPF + Ceramic + Tint":
         return "bg-gray-500/10 text-gray-600 border-gray-500/20";
       case "Vinyl Wrap":
