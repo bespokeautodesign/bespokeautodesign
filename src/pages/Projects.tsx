@@ -236,7 +236,8 @@ const Projects = () => {
                           src={vehicle.image}
                           alt={vehicle.name}
                           className={`w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 ${
-                            vehicle.name === "BMW X5" ? "" : "object-[center_70%]"
+                            vehicle.name === "BMW X5" ? "" : 
+                            vehicle.name === "Mercedes AMG GLC 63" ? "object-[center_80%]" : "object-[center_70%]"
                           }`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
