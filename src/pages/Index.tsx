@@ -21,9 +21,10 @@ import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
 const Index = () => {
   const scrollToQuote = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('contact')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
   const services = [{
     title: "Paint Protection Film (PPF)",
     description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
@@ -73,11 +74,21 @@ const Index = () => {
               </span>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Services</button>
-              <button onClick={() => document.getElementById('marine')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Marine Services</button>
-              <button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Projects</button>
-              <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Testimonials</button>
-              <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="text-muted-foreground hover:text-primary transition-colors">Contact</button>
+              <button onClick={() => document.getElementById('services')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="text-muted-foreground hover:text-primary transition-colors">Services</button>
+              <button onClick={() => document.getElementById('marine')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="text-muted-foreground hover:text-primary transition-colors">Marine Services</button>
+              <button onClick={() => document.getElementById('projects')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="text-muted-foreground hover:text-primary transition-colors">Projects</button>
+              <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="text-muted-foreground hover:text-primary transition-colors">Testimonials</button>
+              <button onClick={() => document.getElementById('contact')?.scrollIntoView({
+              behavior: 'smooth'
+            })} className="text-muted-foreground hover:text-primary transition-colors">Contact</button>
             </div>
             <Button variant="premium" size="lg" onClick={scrollToQuote}>
               Get Quote
@@ -103,10 +114,14 @@ const Index = () => {
               Elevating automotive excellence through precision protection, premium finishes, and uncompromising craftsmanship.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="silver" size="lg" className="text-lg px-8 py-4" onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button variant="silver" size="lg" className="text-lg px-8 py-4" onClick={() => document.getElementById('services')?.scrollIntoView({
+              behavior: 'smooth'
+            })}>
                 Explore Services
               </Button>
-              <Button variant="silver" size="lg" className="text-lg px-8 py-4" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Button variant="silver" size="lg" className="text-lg px-8 py-4" onClick={() => document.getElementById('contact')?.scrollIntoView({
+              behavior: 'smooth'
+            })}>
                 Schedule Consultation
               </Button>
             </div>
@@ -213,45 +228,28 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img
-                  src="/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png"
-                  alt="PPF Installation Project"
-                  className="w-full h-64 object-cover object-[center_60%] transition-transform duration-300 group-hover:scale-105"
-                />
+                <img src="/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png" alt="PPF Installation Project" className="w-full h-64 object-cover object-[center_60%] transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-black/60 text-white border-white/20">
-                    PPF + Ceramic
-                  </Badge>
+                  <Badge className="bg-black/60 text-white border-white/20">Vinyl Wrap
+                </Badge>
                 </div>
               </div>
               <CardHeader>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                  <Calendar className="h-4 w-4" />
-                  March 2024
-                </div>
+                
                 <CardTitle className="line-clamp-2">Porsche 911 GT3 Full Protection</CardTitle>
-                <CardDescription>Complete PPF installation with ceramic coating for ultimate protection.</CardDescription>
+                <CardDescription>Super Gloss Metallic Kato's Kenmery Blue Inozetek Wrap.</CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img
-                  src={vinylWrapImage}
-                  alt="Vinyl Wrap Project"
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+                <img src={vinylWrapImage} alt="Vinyl Wrap Project" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-purple-500/10 text-purple-600 border-purple-500/20">
-                    Vinyl Wrap
-                  </Badge>
+                  <Badge className="bg-purple-500/10 text-purple-600 border-purple-500/20"></Badge>
                 </div>
               </div>
               <CardHeader>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                  <Calendar className="h-4 w-4" />
-                  February 2024
-                </div>
+                
                 <CardTitle className="line-clamp-2">Ferrari 488 Satin Black Transformation</CardTitle>
                 <CardDescription>Complete color change from red to satin black with gloss accents.</CardDescription>
               </CardHeader>
@@ -259,11 +257,7 @@ const Index = () => {
 
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img
-                  src={ceramicCoatingImage}
-                  alt="Ceramic Coating Project"
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-                />
+                <img src={ceramicCoatingImage} alt="Ceramic Coating Project" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-green-500/10 text-green-600 border-green-500/20">
                     Ceramic Coating
@@ -271,10 +265,7 @@ const Index = () => {
                 </div>
               </div>
               <CardHeader>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                  <Calendar className="h-4 w-4" />
-                  January 2024
-                </div>
+                
                 <CardTitle className="line-clamp-2">BMW M4 Competition Enhancement</CardTitle>
                 <CardDescription>9H ceramic coating with ceramic window tinting for enhanced protection.</CardDescription>
               </CardHeader>
@@ -464,13 +455,13 @@ const Index = () => {
                   </div>
                 </form>
                 <Button variant="premium" className="w-full" onClick={() => {
-                  const form = document.querySelector('#quote-form') as HTMLFormElement;
-                  const formData = new FormData(form);
-                  const subject = `Quote Request - ${formData.get('service')}`;
-                  const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0AMessage: ${formData.get('message')}`;
-                  window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
-                  alert('Thank you! Your quote request has been prepared. Please send the email that just opened, or call us at (786) 395-9172.');
-                }}>
+                const form = document.querySelector('#quote-form') as HTMLFormElement;
+                const formData = new FormData(form);
+                const subject = `Quote Request - ${formData.get('service')}`;
+                const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0AMessage: ${formData.get('message')}`;
+                window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
+                alert('Thank you! Your quote request has been prepared. Please send the email that just opened, or call us at (786) 395-9172.');
+              }}>
                   Submit Request
                 </Button>
               </CardContent>
