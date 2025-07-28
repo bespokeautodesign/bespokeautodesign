@@ -88,7 +88,7 @@ const Projects = () => {
     { id: 1, name: "Toyota Land Cruiser", image: "/lovable-uploads/fdf28998-66d9-4078-980c-8d7cb1c0485f.png", year: "2024" },
     { id: 2, name: "Ram 1500", image: "/lovable-uploads/f14f599e-ddd2-47ac-ae95-ffbcd59b8f60.png", year: "2023" },
     { id: 3, name: "Corvette Z06", image: "/lovable-uploads/e456804b-63fa-4640-bebe-d3ade09ef953.png", year: "2023" },
-    { id: 4, name: "Tesla Roadster", image: "/lovable-uploads/a777b2aa-1d9f-42db-9b41-327227b99e44.png", year: "2024" },
+    { id: 4, name: "Tesla Model 3", image: "/lovable-uploads/a777b2aa-1d9f-42db-9b41-327227b99e44.png", year: "2024" },
     { id: 5, name: "Aston Martin Vantage", image: "/lovable-uploads/06b4e251-b273-487e-8f43-394aa71342f8.png", year: "2021" },
     { id: 6, name: "Ferrari F8 Tributo", image: "/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png", year: "2020" }
   ];
@@ -193,9 +193,10 @@ const Projects = () => {
                         <img
                           src={vehicle.image}
                           alt={vehicle.name}
-                          className={`w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 ${
-                            vehicle.name === "Aston Martin Vantage" ? "object-[center_60%]" : "object-[center_70%]"
-                          }`}
+                           className={`w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 ${
+                             vehicle.name === "Aston Martin Vantage" ? "object-[center_60%]" : 
+                             vehicle.name === "Ferrari F8 Tributo" ? "object-[center_60%]" : "object-[center_70%]"
+                           }`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                         <div className="absolute bottom-4 left-4 text-white">
