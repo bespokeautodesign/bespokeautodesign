@@ -120,6 +120,7 @@ const Projects = () => {
       case "PPF":
       case "PPF + Ceramic":
       case "Track Package PPF":
+      case "Stealth PPF + Ceramic Coating + Ceramic Tints":
         return <Shield className="h-4 w-4" />;
       case "Vinyl Wrap":
         return <Palette className="h-4 w-4" />;
