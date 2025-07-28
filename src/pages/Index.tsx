@@ -236,7 +236,7 @@ const Index = () => {
               </div>
               <CardHeader>
                 
-                <CardTitle className="line-clamp-2">McLaren 570S Color Change</CardTitle>
+                <CardTitle className="line-clamp-2">McLaren 570S </CardTitle>
                 <CardDescription>Super Gloss Metallic Kato's Kenmery Blue Inozetek Wrap.</CardDescription>
               </CardHeader>
             </Card>
@@ -245,13 +245,13 @@ const Index = () => {
               <div className="relative overflow-hidden">
                 <img src="/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png" alt="Ferrari in Bespoke Auto Design Shop" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-black/60 text-white border-white/20">Vinyl Wrap</Badge>
+                  <Badge className="bg-black/60 text-white border-white/20">PPF + Ceramic Coating</Badge>
                 </div>
               </div>
               <CardHeader>
                 
-                <CardTitle className="line-clamp-2">Ferrari F8 Tributo Shop Showcase</CardTitle>
-                <CardDescription>Professional installation and showcase in our state-of-the-art facility.</CardDescription>
+                <CardTitle className="line-clamp-2">Ferrari F8 Tributo</CardTitle>
+                <CardDescription>Full Body Xpel Ultimate Plus PPF Protection & Fusion Plus Ceramic Coating.</CardDescription>
               </CardHeader>
             </Card>
 
