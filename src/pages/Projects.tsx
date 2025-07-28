@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ArrowLeft, Calendar, Car, Palette, Shield } from "lucide-react";
+import { ArrowLeft, Car, Palette, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Import project images
@@ -21,7 +21,7 @@ const Projects = () => {
       description: "Complete paint protection film installation with ceramic coating topcoat for ultimate protection.",
       image: ppfInstallationImage,
       category: "PPF + Ceramic",
-      date: "March 2024",
+      
       services: ["Full Body PPF", "Ceramic Coating", "Paint Correction"],
       vehicle: "Porsche 911 GT3",
       completion: "7 days"
@@ -32,7 +32,7 @@ const Projects = () => {
       description: "Color change vinyl wrap transformation from red to satin black with gloss accents.",
       image: vinylWrapImage,
       category: "Vinyl Wrap",
-      date: "February 2024",
+      
       services: ["Color Change Wrap", "Gloss Accent Details", "Chrome Delete"],
       vehicle: "Ferrari 488 Spider",
       completion: "5 days"
@@ -43,7 +43,7 @@ const Projects = () => {
       description: "9H ceramic coating application with premium ceramic window tinting for enhanced protection.",
       image: ceramicCoatingImage,
       category: "Ceramic Coating",
-      date: "January 2024",
+      
       services: ["9H Ceramic Coating", "Ceramic Window Tint", "Paint Correction"],
       vehicle: "BMW M4 Competition",
       completion: "3 days"
@@ -54,7 +54,7 @@ const Projects = () => {
       description: "High-impact areas protected with premium PPF for track day enthusiasts.",
       image: ppfServiceImage,
       category: "PPF",
-      date: "December 2023",
+      
       services: ["Partial PPF", "Track Protection Package", "Clear Bra"],
       vehicle: "Lamborghini Huracán",
       completion: "4 days"
@@ -65,7 +65,7 @@ const Projects = () => {
       description: "Premium ceramic tint application for enhanced comfort and UV protection.",
       image: ceramicTintImage,
       category: "Ceramic Tint",
-      date: "November 2023",
+      
       services: ["Ceramic Window Tint", "UV Protection", "Heat Rejection"],
       vehicle: "Tesla Model S Plaid",
       completion: "1 day"
@@ -76,7 +76,7 @@ const Projects = () => {
       description: "Complete ceramic coating system with multi-layer protection for luxury vehicle.",
       image: ceramicInstallationImage,
       category: "Ceramic Coating",
-      date: "October 2023",
+      
       services: ["Multi-Layer Ceramic", "Paint Correction", "Interior Protection"],
       vehicle: "Aston Martin DB11",
       completion: "4 days"
@@ -325,12 +325,8 @@ const Projects = () => {
                   </div>
                 </div>
                 
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                    <Calendar className="h-4 w-4" />
-                    {project.date}
-                  </div>
-                  <CardTitle className="line-clamp-2">{project.title}</CardTitle>
+                 <CardHeader>
+                   <CardTitle className="line-clamp-2">{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
                 
