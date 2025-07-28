@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import ppfInstallationImage from "@/assets/ppf-installation.jpg";
 import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
-import ceramicTintImage from "@/assets/ceramic-tint.jpg";
+import ceramicTintImage from "/lovable-uploads/85ac03b2-7e26-4573-80f5-a2cdbb10cd1f.png";
 import ppfServiceImage from "@/assets/ppf-service.jpg";
 import ceramicInstallationImage from "@/assets/ceramic-installation.jpg";
 
