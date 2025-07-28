@@ -192,7 +192,9 @@ const Projects = () => {
                         <img
                           src={vehicle.image}
                           alt={vehicle.name}
-                          className="w-full h-48 object-cover object-[center_70%] transition-transform duration-300 group-hover:scale-105"
+                          className={`w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 ${
+                            vehicle.name === "Aston Martin Vantage" ? "object-[center_60%]" : "object-[center_70%]"
+                          }`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                         <div className="absolute bottom-4 left-4 text-white">
