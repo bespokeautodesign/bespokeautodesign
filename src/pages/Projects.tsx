@@ -90,7 +90,8 @@ const Projects = () => {
     { id: 3, name: "Corvette Z06", image: "/lovable-uploads/e456804b-63fa-4640-bebe-d3ade09ef953.png", year: "2023" },
     { id: 4, name: "Tesla Model 3", image: "/lovable-uploads/a777b2aa-1d9f-42db-9b41-327227b99e44.png", year: "2024" },
     { id: 5, name: "Aston Martin Vantage", image: "/lovable-uploads/06b4e251-b273-487e-8f43-394aa71342f8.png", year: "2021" },
-    { id: 6, name: "Ferrari F8 Tributo", image: "/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png", year: "2020" }
+    { id: 6, name: "Ferrari F8 Tributo", image: "/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png", year: "2020" },
+    { id: 7, name: "2024 BMW M4", image: "/lovable-uploads/2ba942d5-5b05-4d45-8455-fd19f9b765c6.png", year: "2024" }
   ];
 
   // Stealth PPF vehicle showcases
