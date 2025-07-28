@@ -243,15 +243,15 @@ const Index = () => {
 
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img src={vinylWrapImage} alt="Vinyl Wrap Project" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+                <img src="/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png" alt="Ferrari in Bespoke Auto Design Shop" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-purple-500/10 text-purple-600 border-purple-500/20"></Badge>
+                  <Badge className="bg-black/60 text-white border-white/20">Vinyl Wrap</Badge>
                 </div>
               </div>
               <CardHeader>
                 
-                <CardTitle className="line-clamp-2">Ferrari 488 Satin Black Transformation</CardTitle>
-                <CardDescription>Complete color change from red to satin black with gloss accents.</CardDescription>
+                <CardTitle className="line-clamp-2">Ferrari F8 Tributo Shop Showcase</CardTitle>
+                <CardDescription>Professional installation and showcase in our state-of-the-art facility.</CardDescription>
               </CardHeader>
             </Card>
 
