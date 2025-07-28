@@ -51,14 +51,14 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Lamborghini Huracán - Track Package PPF",
-      description: "High-impact areas protected with premium PPF for track day enthusiasts.",
-      image: ppfServiceImage,
-      category: "PPF",
+      title: "Chevrolet Corvette - Vinyl Wrap & PPF",
+      description: "Custom blue vinyl wrap with carbon fiber accents and protective film application.",
+      image: "/lovable-uploads/171000e1-8047-462c-b8fd-a3e367867858.png",
+      category: "Vinyl Wrap + PPF",
       
-      services: ["Partial PPF", "Track Protection Package", "Clear Bra"],
-      vehicle: "Lamborghini Huracán",
-      completion: "4 days"
+      services: ["Custom Vinyl Wrap", "Carbon Fiber Accents", "Protective Film"],
+      vehicle: "Chevrolet Corvette C8",
+      completion: "6 days"
     },
     {
       id: 5,
