@@ -272,7 +272,7 @@ const Index = () => {
           <div className="text-center">
             <Link to="/projects">
               <Button variant="premium" size="lg" className="flex items-center gap-2 mx-auto">
-                View All Projects
+                View Portfolio
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
