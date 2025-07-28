@@ -28,7 +28,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Ferrari F8 tributo",
+      title: "Ferrari F8 Tributo",
       description: "Full Body Xpel Ultimate Plus PPF Protection & Fusion Plus Ceramic Coating.",
       image: "/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png",
       category: "PPF + Ceramic",
