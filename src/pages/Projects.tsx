@@ -20,7 +20,7 @@ const Projects = () => {
       title: "McLaren 570S",
       description: "Super Gloss Metallic Kato's Kenmery Blue Inozetek Wrap & Prime XR Plus Ceramic Tints.",
       image: "/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png",
-      category: "Color Change + Ceramic Tints",
+      category: "Stealth PPF + Ceramic Coating + Ceramic Tints",
       
       services: ["Color Change", "Ceramic Tints"],
       vehicle: "2019 McLaren 570S Coupe",
