@@ -230,14 +230,13 @@ const Index = () => {
               <div className="relative overflow-hidden">
                 <img src="/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png" alt="PPF Installation Project" className="w-full h-64 object-cover object-[center_60%] transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-black/60 text-white border-white/20">Vinyl Wrap
-                </Badge>
+                  <Badge className="bg-black/60 text-white border-white/20">Vinyl Wrap + Ceramic Tints</Badge>
                 </div>
               </div>
               <CardHeader>
                 
                 <CardTitle className="line-clamp-2">McLaren 570S </CardTitle>
-                <CardDescription>Super Gloss Metallic Kato's Kenmery Blue Inozetek Wrap.</CardDescription>
+                <CardDescription>Super Gloss Metallic Kato's Kenmery Blue Inozetek Wrap & Prime XR Plus Ceramic Tints.</CardDescription>
               </CardHeader>
             </Card>
 
@@ -259,15 +258,13 @@ const Index = () => {
               <div className="relative overflow-hidden">
                 <img src="/lovable-uploads/2b4efeb0-51dc-4e2f-b7e3-9c4e9882c48e.png" alt="BMW X7 Tint Project" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-black/60 text-white border-white/20">
-                    Ceramic Tint
-                  </Badge>
+                  <Badge className="bg-black/60 text-white border-white/20">Stealth PPF + Ceramic Coating + Ceramic Tints</Badge>
                 </div>
               </div>
               <CardHeader>
                 
-                <CardTitle className="line-clamp-2">BMW X7 M50i Ceramic Tint</CardTitle>
-                <CardDescription>Premium ceramic window tinting for enhanced privacy and comfort.</CardDescription>
+                <CardTitle className="line-clamp-2">BMW X5 sDrive40i</CardTitle>
+                <CardDescription>Full Body Xpel Stealth PPF Protection, Fusion Plus Ceramic Coating & Prime XR Plus Ceramic Tints.</CardDescription>
               </CardHeader>
             </Card>
           </div>
