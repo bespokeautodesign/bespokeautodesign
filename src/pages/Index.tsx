@@ -216,7 +216,7 @@ const Index = () => {
                 <img
                   src="/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png"
                   alt="PPF Installation Project"
-                  className="w-full h-64 object-cover object-[center_bottom] transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-64 object-cover object-[center_60%] transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-blue-500/10 text-blue-600 border-blue-500/20">
