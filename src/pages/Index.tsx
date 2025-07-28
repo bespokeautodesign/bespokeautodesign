@@ -236,7 +236,7 @@ const Index = () => {
               </div>
               <CardHeader>
                 
-                <CardTitle className="line-clamp-2">Porsche 911 GT3 Full Protection</CardTitle>
+                <CardTitle className="line-clamp-2">McLaren 570S Color Change</CardTitle>
                 <CardDescription>Super Gloss Metallic Kato's Kenmery Blue Inozetek Wrap.</CardDescription>
               </CardHeader>
             </Card>
