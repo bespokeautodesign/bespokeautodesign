@@ -17,36 +17,36 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "2023 Porsche 911 GT3 - Full PPF & Ceramic Package",
-      description: "Complete paint protection film installation with ceramic coating topcoat for ultimate protection.",
-      image: ppfInstallationImage,
+      title: "2024 McLaren 720S Coupe",
+      description: "Full Body Xpel Ultimate Plus PPF Protection & Fusion Plus Ceramic Coating.",
+      image: "/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png",
       category: "PPF + Ceramic",
       
-      services: ["Full Body PPF", "Ceramic Coating", "Paint Correction"],
-      vehicle: "Porsche 911 GT3",
+      services: ["Full Body PPF", "Fusion Plus Ceramic Coating", "Paint Correction"],
+      vehicle: "McLaren 720S Coupe",
       completion: "7 days"
     },
     {
       id: 2,
-      title: "Ferrari 488 Spider - Satin Black Vinyl Wrap",
-      description: "Color change vinyl wrap transformation from red to satin black with gloss accents.",
-      image: vinylWrapImage,
-      category: "Vinyl Wrap",
+      title: "Ferrari F8 Tributo",
+      description: "Full Body Xpel Ultimate Plus PPF Protection & Fusion Plus Ceramic Coating.",
+      image: "/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png",
+      category: "PPF + Ceramic",
       
-      services: ["Color Change Wrap", "Gloss Accent Details", "Chrome Delete"],
-      vehicle: "Ferrari 488 Spider",
-      completion: "5 days"
+      services: ["Full Body PPF", "Fusion Plus Ceramic Coating", "Paint Correction"],
+      vehicle: "Ferrari F8 Tributo",
+      completion: "7 days"
     },
     {
       id: 3,
-      title: "BMW M4 Competition - Ceramic Coating & Tint",
-      description: "9H ceramic coating application with premium ceramic window tinting for enhanced protection.",
-      image: ceramicCoatingImage,
-      category: "Ceramic Coating",
+      title: "BMW X5 sDrive40i",
+      description: "Full Body Xpel Stealth PPF Protection, Fusion Plus Ceramic Coating & Prime XR Plus Ceramic Tints.",
+      image: "/lovable-uploads/2b4efeb0-51dc-4e2f-b7e3-9c4e9882c48e.png",
+      category: "Stealth PPF + Ceramic + Tint",
       
-      services: ["9H Ceramic Coating", "Ceramic Window Tint", "Paint Correction"],
-      vehicle: "BMW M4 Competition",
-      completion: "3 days"
+      services: ["Stealth PPF", "Fusion Plus Ceramic Coating", "Prime XR Plus Ceramic Tints"],
+      vehicle: "BMW X5 sDrive40i",
+      completion: "8 days"
     },
     {
       id: 4,
@@ -130,6 +130,8 @@ const Projects = () => {
       case "PPF":
       case "PPF + Ceramic":
         return "bg-blue-500/10 text-blue-600 border-blue-500/20";
+      case "Stealth PPF + Ceramic + Tint":
+        return "bg-gray-500/10 text-gray-600 border-gray-500/20";
       case "Vinyl Wrap":
         return "bg-purple-500/10 text-purple-600 border-purple-500/20";
       case "Ceramic Coating":
