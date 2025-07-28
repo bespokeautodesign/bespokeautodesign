@@ -58,7 +58,7 @@ const Projects = () => {
       
       services: ["Track Package PPF"],
       vehicle: "2024 Chevrolet Corvette C8 Stingray",
-      completion: "6 days"
+      completion: "3 days"
     },
     {
       id: 5,
