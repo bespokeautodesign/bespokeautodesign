@@ -257,17 +257,17 @@ const Index = () => {
 
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img src={ceramicCoatingImage} alt="Ceramic Coating Project" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+                <img src="/lovable-uploads/2b4efeb0-51dc-4e2f-b7e3-9c4e9882c48e.png" alt="BMW X7 Tint Project" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-green-500/10 text-green-600 border-green-500/20">
-                    Ceramic Coating
+                  <Badge className="bg-black/60 text-white border-white/20">
+                    Ceramic Tint
                   </Badge>
                 </div>
               </div>
               <CardHeader>
                 
-                <CardTitle className="line-clamp-2">BMW M4 Competition Enhancement</CardTitle>
-                <CardDescription>9H ceramic coating with ceramic window tinting for enhanced protection.</CardDescription>
+                <CardTitle className="line-clamp-2">BMW X7 M50i Ceramic Tint</CardTitle>
+                <CardDescription>Premium ceramic window tinting for enhanced privacy and comfort.</CardDescription>
               </CardHeader>
             </Card>
           </div>
