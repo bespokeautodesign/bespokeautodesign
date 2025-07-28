@@ -17,13 +17,13 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "2024 McLaren 720S Coupe",
+      title: "McLaren 570S",
       description: "Full Body Xpel Ultimate Plus PPF Protection & Fusion Plus Ceramic Coating.",
       image: "/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png",
       category: "Color Change + Ceramic Tints",
       
       services: ["Color Change", "Ceramic Tints"],
-      vehicle: "McLaren 720S Coupe",
+      vehicle: "2019 McLaren 570S Coupe",
       completion: "5 days"
     },
     {
