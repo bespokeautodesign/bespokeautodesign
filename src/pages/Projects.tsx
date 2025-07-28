@@ -175,11 +175,6 @@ const Projects = () => {
             </p>
             <Button size="lg" className="animate-pulse" onClick={() => {
               window.location.href = '/#contact';
-              setTimeout(() => {
-                document.getElementById('contact')?.scrollIntoView({
-                  behavior: 'smooth'
-                });
-              }, 100);
             }}>
               Get Your Quote Today
             </Button>
@@ -404,11 +399,6 @@ const Projects = () => {
           </p>
           <Button size="lg" className="animate-pulse" onClick={() => {
             window.location.href = '/#contact';
-            setTimeout(() => {
-              document.getElementById('contact')?.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }, 100);
           }}>
             Get Your Quote Today
           </Button>
