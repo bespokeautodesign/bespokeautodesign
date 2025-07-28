@@ -23,7 +23,7 @@ const Projects = () => {
       category: "Vinyl Wrap + Ceramic Tints",
       
       services: ["Color Change", "Ceramic Tints"],
-      vehicle: "2025 McLaren 570S Coupe",
+      vehicle: "2019 McLaren 570S Coupe",
       completion: "5 days"
     },
     {
