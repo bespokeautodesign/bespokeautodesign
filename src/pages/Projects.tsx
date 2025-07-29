@@ -89,7 +89,7 @@ const Projects = () => {
   const vinylWrapVehicles = [
     { id: 1, name: "Aston Martin DBX", beforeImage: "/lovable-uploads/714ade11-8742-4c61-b8fc-1577ddc3dceb.png", afterImage: "/lovable-uploads/19163148-510a-4a7c-9bb2-ba187ab86dc4.png", year: "2023" },
     { id: 2, name: "Mazda Miata", beforeImage: "/lovable-uploads/6313432b-9fe6-44eb-82af-82cd8cf3bc37.png", afterImage: "/lovable-uploads/57c73f3f-f506-407c-949f-9b6266f61d81.png", year: "2023" },
-    { id: 3, name: "McLaren 570S", beforeImage: "/lovable-uploads/0e6ef2c1-78f7-410c-a663-0c83402a98d5.png", afterImage: "/lovable-uploads/067b368c-69cf-4e91-a81e-01263ad83820.png", year: "2023" }
+    { id: 3, name: "McLaren 570S", beforeImage: "/lovable-uploads/0e6ef2c1-78f7-410c-a663-0c83402a98d5.png", afterImage: "/lovable-uploads/067b368c-69cf-4e91-a81e-01263ad83820.png", year: "2019" }
   ];
 
   const getCategoryIcon = (category: string) => {
