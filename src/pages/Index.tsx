@@ -104,8 +104,8 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero text-primary-foreground py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
+      <section className="relative text-primary-foreground py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-primary-foreground/10 text-primary-foreground border-primary-foreground/20">
