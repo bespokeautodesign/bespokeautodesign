@@ -98,10 +98,14 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero text-primary-foreground py-24 overflow-hidden">
-        <div className="fixed inset-0 opacity-25 -z-10">
-          <img src={heroBugattiBolideImage} alt="Bugatti Bolide hypercar in professional studio" className="w-full h-full object-cover" />
-        </div>
+      <section className="relative bg-gradient-hero text-primary-foreground py-24 overflow-hidden" style={{
+        backgroundImage: `url(${heroBugattiBolideImage})`,
+        backgroundAttachment: 'fixed',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
+        <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-primary-foreground/10 text-primary-foreground border-primary-foreground/20">
