@@ -66,7 +66,7 @@ const Index = () => {
       backgroundImage: `url(${heroBugattiBolideImage})`,
       backgroundAttachment: 'fixed',
       backgroundSize: 'cover',
-      backgroundPosition: 'center 20%',
+      backgroundPosition: 'center 10%',
       backgroundRepeat: 'no-repeat'
     }}>
       {/* Navigation */}
