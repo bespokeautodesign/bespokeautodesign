@@ -233,7 +233,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Recent Work</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Latest Projects</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Portfolio Highlights</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Explore our recent automotive protection and customization projects showcasing exceptional craftsmanship.
             </p>
