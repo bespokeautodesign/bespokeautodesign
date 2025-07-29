@@ -254,7 +254,7 @@ const Index = () => {
 
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img src="/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png" alt="Ferrari in Bespoke Auto Design Shop" className="w-full h-64 object-cover object-[center_30%] transition-transform duration-300 group-hover:scale-105" />
+                <img src="/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png" alt="Ferrari in Bespoke Auto Design Shop" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-black/60 text-white border-white/20">PPF + Ceramic Coating</Badge>
                 </div>
