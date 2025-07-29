@@ -140,7 +140,15 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Background Image - Cover for mobile visibility, contain + fixed for desktop */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat md:bg-contain z-0"
+        style={{
+          backgroundImage: `url(/lovable-uploads/ab1ac973-95da-4423-878b-7808fe62cc38.png)`
+        }}
+      ></div>
+      <div className="relative z-10 min-h-screen">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
@@ -405,6 +413,7 @@ const Projects = () => {
           </Button>
         </div>
       </section>
+      </div>
     </div>
   );
 };
