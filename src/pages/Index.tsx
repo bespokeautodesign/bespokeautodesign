@@ -65,8 +65,8 @@ const Index = () => {
   return <div className="min-h-screen bg-background relative" style={{
       backgroundImage: `url(${heroBugattiBolideImage})`,
       backgroundAttachment: 'fixed',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center 10%',
+      backgroundSize: 'contain',
+      backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
     }}>
       {/* Navigation */}
