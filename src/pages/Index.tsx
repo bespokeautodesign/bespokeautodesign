@@ -19,6 +19,7 @@ import marineTintImage from "@/assets/marine-tint.jpg";
 import ppfInstallationImage from "@/assets/ppf-installation.jpg";
 import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
+
 const Index = () => {
   const scrollToQuote = () => {
     document.getElementById('contact')?.scrollIntoView({
@@ -147,7 +148,15 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, index) => <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105">
                 <div className="aspect-video overflow-hidden">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className={`w-full h-full transition-transform duration-300 hover:scale-110 ${
+                      service.title === "Vinyl Wraps" 
+                        ? "object-cover object-bottom" 
+                        : "object-cover"
+                    }`} 
+                  />
                 </div>
                 <CardHeader>
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
