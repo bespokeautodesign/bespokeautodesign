@@ -66,11 +66,12 @@ const Index = () => {
   return <div className="min-h-screen bg-background relative">
       {/* Background Image - Cover for mobile visibility, contain + fixed for desktop */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-contain md:bg-fixed"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat md:bg-contain z-0"
         style={{
           backgroundImage: `url(${heroBugattiBolideImage})`
         }}
       ></div>
+      <div className="relative z-10 min-h-screen">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
@@ -502,6 +503,7 @@ const Index = () => {
           </div>
         </div>
       </footer>
+      </div>
     </div>;
 };
 export default Index;
