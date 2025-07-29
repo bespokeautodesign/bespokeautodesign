@@ -62,7 +62,13 @@ const Index = () => {
     image: marineTintImage,
     features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"]
   }];
-  return <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background relative" style={{
+      backgroundImage: `url(${heroBugattiBolideImage})`,
+      backgroundAttachment: 'fixed',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
@@ -98,13 +104,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-hero text-primary-foreground py-24 overflow-hidden" style={{
-        backgroundImage: `url(${heroBugattiBolideImage})`,
-        backgroundAttachment: 'fixed',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}>
+      <section className="relative bg-gradient-hero text-primary-foreground py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero opacity-75"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -134,7 +134,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-muted/30">
+      <section id="services" className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Our Expertise</Badge>
@@ -170,7 +170,7 @@ const Index = () => {
       </section>
 
       {/* Marine Services Section */}
-      <section id="marine" className="py-20 bg-background">
+      <section id="marine" className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 text-blue-600 border-blue-600">Marine Division</Badge>
@@ -219,7 +219,7 @@ const Index = () => {
       </section>
 
       {/* Projects Preview Section */}
-      <section id="projects" className="py-20 bg-background">
+      <section id="projects" className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Recent Work</Badge>
@@ -333,7 +333,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-muted/30">
+      <section id="testimonials" className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Client Reviews</Badge>
@@ -351,7 +351,7 @@ const Index = () => {
       <FAQ />
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-muted/30">
+      <section id="contact" className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Get In Touch</Badge>
