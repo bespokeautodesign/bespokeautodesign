@@ -292,13 +292,13 @@ const Projects = () => {
                              src={vehicle.beforeImage}
                              alt={`${vehicle.name} - Before`}
                                className="w-full h-48 object-cover transition-all duration-500 group-hover:opacity-0"
-                               style={{ objectPosition: 'center 60%' }}
+                               style={{ objectPosition: vehicle.name === "McLaren 570S" ? 'center 50%' : 'center 60%' }}
                            />
                            <img
                              src={vehicle.afterImage}
                              alt={`${vehicle.name} - After`}
                                className="absolute inset-0 w-full h-48 object-cover transition-all duration-500 opacity-0 group-hover:opacity-100"
-                                style={{ objectPosition: vehicle.name === "Aston Martin DBX" ? 'center 70%' : 'center 75%' }}
+                                style={{ objectPosition: vehicle.name === "Aston Martin DBX" ? 'center 70%' : vehicle.name === "McLaren 570S" ? 'center 50%' : 'center 75%' }}
                            />
                          </div>
                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -344,7 +344,7 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className={`w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 ${project.id === 1 ? 'object-[center_40%]' : ''} ${project.id === 4 ? 'object-[center_75%]' : ''}`}
+                    className={`w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 ${project.id === 1 ? 'object-[center_50%]' : ''} ${project.id === 4 ? 'object-[center_75%]' : ''}`}
                   />
                   <div className="absolute top-4 left-4">
                     <Badge className={`flex items-center gap-1 ${getCategoryColor(project.category)}`}>
