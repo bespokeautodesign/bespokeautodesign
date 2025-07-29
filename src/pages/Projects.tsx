@@ -192,7 +192,7 @@ const Projects = () => {
       </section>
 
       {/* Vehicle Showcase Carousels */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           {/* Clear PPF Section */}
           <div className="mb-16">
@@ -398,7 +398,7 @@ const Projects = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Transform Your Vehicle?
