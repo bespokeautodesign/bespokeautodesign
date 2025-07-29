@@ -297,7 +297,7 @@ const Projects = () => {
                              src={vehicle.afterImage}
                              alt={`${vehicle.name} - After`}
                                className="absolute inset-0 w-full h-48 object-cover transition-all duration-500 opacity-0 group-hover:opacity-100"
-                                style={{ objectPosition: vehicle.name === "Aston Martin DBX" ? 'center 77%' : 'center 75%' }}
+                                style={{ objectPosition: vehicle.name === "Aston Martin DBX" ? 'center 78%' : 'center 75%' }}
                            />
                          </div>
                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
