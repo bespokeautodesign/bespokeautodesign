@@ -153,7 +153,7 @@ const Index = () => {
                     alt={service.title} 
                     className={`w-full h-full transition-transform duration-300 hover:scale-110 ${
                       service.title === "Vinyl Wraps" 
-                        ? "object-cover object-[center_65%]" 
+                        ? "object-cover object-[center_70%]" 
                         : "object-cover"
                     }`} 
                   />
