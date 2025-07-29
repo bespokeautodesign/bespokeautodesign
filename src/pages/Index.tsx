@@ -15,7 +15,7 @@ import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b85
 import tintWorkImage from "/lovable-uploads/870ad52a-53a2-4536-922b-33d54d2f71e0.png";
 const marinePpfImage = "/lovable-uploads/3277221d-7bd6-4133-8717-e69dd4715eb2.png";
 import marineCeramicImage from "@/assets/marine-ceramic.jpg";
-import marineTintImage from "@/assets/marine-tint.jpg";
+const marineTintImage = "/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.png";
 import ppfInstallationImage from "@/assets/ppf-installation.jpg";
 import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
