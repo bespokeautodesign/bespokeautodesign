@@ -170,7 +170,7 @@ const Projects = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-hero text-primary-foreground py-20">
+      <section className="relative text-primary-foreground py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-primary-foreground/10 text-primary-foreground border-primary-foreground/20">
@@ -337,7 +337,7 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20">
+      <section className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Portfolio</h2>
