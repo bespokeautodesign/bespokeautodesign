@@ -109,7 +109,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6 bg-primary-foreground/10 text-primary-foreground border-primary-foreground/20">
+            <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 shadow-glow text-base px-6 py-2 font-semibold animate-pulse">
               Premium Automotive Protection
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
