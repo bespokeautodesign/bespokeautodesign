@@ -59,28 +59,6 @@ const Projects = () => {
       services: ["Track Package PPF"],
       vehicle: "2024 Chevrolet Corvette C8 Stingray",
       completion: "3 days"
-    },
-    {
-      id: 5,
-      title: "Tesla Model S Plaid - Ceramic Tint Installation",
-      description: "Premium ceramic tint application for enhanced comfort and UV protection.",
-      image: ceramicTintImage,
-      category: "Ceramic Tint",
-      
-      services: ["Ceramic Window Tint", "UV Protection", "Heat Rejection"],
-      vehicle: "Tesla Model S Plaid",
-      completion: "1 day"
-    },
-    {
-      id: 6,
-      title: "Aston Martin DB11 - Full Ceramic Protection",
-      description: "Complete ceramic coating system with multi-layer protection for luxury vehicle.",
-      image: ceramicInstallationImage,
-      category: "Ceramic Coating",
-      
-      services: ["Multi-Layer Ceramic", "Paint Correction", "Interior Protection"],
-      vehicle: "Aston Martin DB11",
-      completion: "4 days"
     }
   ];
 
