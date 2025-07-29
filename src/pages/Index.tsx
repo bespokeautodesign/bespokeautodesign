@@ -8,7 +8,7 @@ import { FAQ } from "@/components/FAQ";
 import { Link } from "react-router-dom";
 
 // Import assets
-import heroSupercarImage from "@/assets/hero-supercar.jpg";
+import heroBugattiBolideImage from "@/assets/hero-bugatti-bolide.jpg";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png";
 import ceramicWorkImage from "/lovable-uploads/0dbb420e-a7b1-4b4e-87ec-f0e09e0b57f9.png";
 import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.png";
@@ -100,7 +100,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-hero text-primary-foreground py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-25">
-          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Dramatic mountain landscape" className="w-full h-full object-cover" />
+          <img src={heroBugattiBolideImage} alt="Bugatti Bolide hypercar in professional studio" className="w-full h-full object-cover" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
