@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ArrowLeft, Car, Palette, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Import project images
 import ppfInstallationImage from "@/assets/ppf-installation.jpg";
@@ -15,6 +15,7 @@ import ppfServiceImage from "@/assets/ppf-service.jpg";
 import ceramicInstallationImage from "@/assets/ceramic-installation.jpg";
 
 const Projects = () => {
+  const [clickedVinyls, setClickedVinyls] = useState<Set<number>>(new Set());
   const projects = [
     {
       id: 1,
@@ -111,6 +112,18 @@ const Projects = () => {
 
   const getCategoryColor = (category: string) => {
     return "bg-white/90 text-black border-white/20";
+  };
+
+  const handleVinylClick = (vehicleId: number) => {
+    setClickedVinyls(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(vehicleId)) {
+        newSet.delete(vehicleId);
+      } else {
+        newSet.add(vehicleId);
+      }
+      return newSet;
+    });
   };
 
   useEffect(() => {
@@ -272,28 +285,47 @@ const Projects = () => {
                 {vinylWrapVehicles.map((vehicle) => (
                   <CarouselItem key={vehicle.id} className="md:basis-1/2 lg:basis-1/3">
                      <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
-                       <div className="relative overflow-hidden">
+                       <div 
+                         className="relative overflow-hidden cursor-pointer md:cursor-default"
+                         onClick={() => handleVinylClick(vehicle.id)}
+                       >
                          <div className="relative">
                            <img
                              src={vehicle.beforeImage}
                              alt={`${vehicle.name} - Before`}
-                               className="w-full h-48 object-cover transition-all duration-500 group-hover:opacity-0"
-                               style={{ objectPosition: vehicle.name === "McLaren 570S" ? 'center 75%' : 'center 60%' }}
+                             className={`w-full h-48 object-cover transition-all duration-500 ${
+                               clickedVinyls.has(vehicle.id) 
+                                 ? 'md:group-hover:opacity-0 opacity-0' 
+                                 : 'md:group-hover:opacity-0'
+                             }`}
+                             style={{ objectPosition: vehicle.name === "McLaren 570S" ? 'center 75%' : 'center 60%' }}
                            />
                            <img
                              src={vehicle.afterImage}
                              alt={`${vehicle.name} - After`}
-                               className="absolute inset-0 w-full h-48 object-cover transition-all duration-500 opacity-0 group-hover:opacity-100"
-                                style={{ objectPosition: vehicle.name === "Aston Martin DBX" ? 'center 70%' : vehicle.name === "McLaren 570S" ? 'center 75%' : 'center 75%' }}
+                             className={`absolute inset-0 w-full h-48 object-cover transition-all duration-500 ${
+                               clickedVinyls.has(vehicle.id) 
+                                 ? 'md:group-hover:opacity-100 opacity-100' 
+                                 : 'opacity-0 md:group-hover:opacity-100'
+                             }`}
+                             style={{ objectPosition: vehicle.name === "Aston Martin DBX" ? 'center 70%' : vehicle.name === "McLaren 570S" ? 'center 75%' : 'center 75%' }}
                            />
                          </div>
                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                          <div className="absolute top-4 right-4">
                            <div className="bg-black/60 backdrop-blur-sm rounded-full px-3 py-1">
-                             <span className="text-white text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                             <span className={`text-white text-xs font-medium transition-opacity duration-300 ${
+                               clickedVinyls.has(vehicle.id) 
+                                 ? 'md:opacity-0 md:group-hover:opacity-100 opacity-100' 
+                                 : 'opacity-0 md:group-hover:opacity-100'
+                             }`}>
                                AFTER
                              </span>
-                             <span className="text-white text-xs font-medium group-hover:opacity-0 transition-opacity duration-300">
+                             <span className={`text-white text-xs font-medium transition-opacity duration-300 ${
+                               clickedVinyls.has(vehicle.id) 
+                                 ? 'md:group-hover:opacity-0 opacity-0' 
+                                 : 'md:group-hover:opacity-0'
+                             }`}>
                                BEFORE
                              </span>
                            </div>
@@ -301,6 +333,13 @@ const Projects = () => {
                          <div className="absolute bottom-4 left-4 text-white">
                            <h3 className="font-bold text-lg">{vehicle.name}</h3>
                            <p className="text-sm opacity-90">{vehicle.year}</p>
+                         </div>
+                         <div className="absolute top-4 left-4 md:hidden">
+                           <div className="bg-black/60 backdrop-blur-sm rounded px-2 py-1">
+                             <span className="text-white text-xs font-medium">
+                               Tap to toggle
+                             </span>
+                           </div>
                          </div>
                        </div>
                      </Card>
