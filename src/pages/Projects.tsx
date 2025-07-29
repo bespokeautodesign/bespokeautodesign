@@ -117,6 +117,7 @@ const Projects = () => {
     switch (category) {
       case "PPF":
       case "PPF + Ceramic":
+      case "PPF + Ceramic Coating":
       case "Track Package PPF":
       case "Stealth PPF + Ceramic Coating + Ceramic Tints":
         return <Shield className="h-4 w-4" />;
