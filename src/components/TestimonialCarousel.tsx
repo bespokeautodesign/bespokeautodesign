@@ -171,32 +171,11 @@ export const TestimonialCarousel = () => {
 
   return (
     <div className="relative">
-      <div className="flex items-center justify-between mb-8">
-          <div>
-            <h3 className="text-2xl font-bold mb-2">Client Success Stories</h3>
-            <p className="text-muted-foreground">
-              100+ satisfied customers and counting
-            </p>
-          </div>
-        
-        <div className="hidden md:flex items-center gap-2">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={goToPrevious}
-            className="h-10 w-10"
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={goToNext}
-            className="h-10 w-10"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </div>
+      <div className="mb-8">
+        <h3 className="text-2xl font-bold mb-2">Client Success Stories</h3>
+        <p className="text-muted-foreground">
+          100+ satisfied customers and counting
+        </p>
       </div>
 
       {/* Mobile: Horizontal scroll with snap */}
@@ -231,40 +210,62 @@ export const TestimonialCarousel = () => {
         </div>
       </div>
 
-      {/* Desktop: Controlled carousel */}
-      <div className="hidden md:block overflow-hidden">
-        <div 
-          className="flex transition-transform duration-500 ease-in-out gap-6"
-          style={{ 
-            transform: `translateX(-${currentIndex * (100 / (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1))}%)` 
-          }}
+      {/* Desktop: Controlled carousel with side navigation */}
+      <div className="hidden md:block relative">
+        {/* Left navigation button */}
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={goToPrevious}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 h-10 w-10 shadow-lg"
         >
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-1/2 lg:w-1/3"
-            >
-              <Card className="h-full shadow-silver hover:shadow-premium transition-all duration-300 animate-fade-in">
-                <CardHeader>
-                  <div className="flex items-center gap-1 mb-2">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-xpel-yellow text-xpel-yellow" />
-                    ))}
-                  </div>
-                  <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                  <CardDescription className="space-y-1">
-                    <div>{testimonial.vehicle}</div>
-                    <div className="text-xs bg-muted px-2 py-1 rounded-md inline-block">
-                      {testimonial.service}
+          <ChevronLeft className="h-4 w-4" />
+        </Button>
+
+        {/* Right navigation button */}
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={goToNext}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 h-10 w-10 shadow-lg"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </Button>
+
+        <div className="overflow-hidden mx-12">
+          <div 
+            className="flex transition-transform duration-500 ease-in-out gap-6"
+            style={{ 
+              transform: `translateX(-${currentIndex * (100 / (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1))}%)` 
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-1/2 lg:w-1/3"
+              >
+                <Card className="h-full shadow-silver hover:shadow-premium transition-all duration-300 animate-fade-in">
+                  <CardHeader>
+                    <div className="flex items-center gap-1 mb-2">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-xpel-yellow text-xpel-yellow" />
+                      ))}
                     </div>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground italic">"{testimonial.text}"</p>
-                </CardContent>
-              </Card>
-            </div>
-          ))}
+                    <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                    <CardDescription className="space-y-1">
+                      <div>{testimonial.vehicle}</div>
+                      <div className="text-xs bg-muted px-2 py-1 rounded-md inline-block">
+                        {testimonial.service}
+                      </div>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground italic">"{testimonial.text}"</p>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
