@@ -242,7 +242,7 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img src="/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png" alt="PPF Installation Project" className="w-full h-64 object-cover object-[center_30%] transition-transform duration-300 group-hover:scale-105" />
+                <img src="/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png" alt="PPF Installation Project" className="w-full h-64 object-cover object-[center_20%] transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-black/60 text-white border-white/20">Vinyl Wrap + Ceramic Tints</Badge>
                 </div>
