@@ -63,13 +63,14 @@ const Index = () => {
     image: marineTintImage,
     features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"]
   }];
-  return <div className="min-h-screen bg-background relative" style={{
-      backgroundImage: `url(${heroBugattiBolideImage})`,
-      backgroundAttachment: 'fixed',
-      backgroundSize: 'contain',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
-    }}>
+  return <div className="min-h-screen bg-background relative">
+      {/* Background Image - Desktop with fixed attachment, Mobile with cover */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:bg-fixed md:bg-contain"
+        style={{
+          backgroundImage: `url(${heroBugattiBolideImage})`
+        }}
+      ></div>
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
