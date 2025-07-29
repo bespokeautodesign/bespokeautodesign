@@ -62,13 +62,7 @@ const Index = () => {
     image: marineTintImage,
     features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"]
   }];
-  return <div className="min-h-screen bg-background relative" style={{
-      backgroundImage: `url(${heroBugattiBolideImage})`,
-      backgroundAttachment: 'fixed',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
-    }}>
+  return <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
@@ -104,8 +98,10 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative text-primary-foreground py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+      <section className="relative bg-gradient-hero text-primary-foreground py-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-25">
+          <img src={heroBugattiBolideImage} alt="Bugatti Bolide hypercar in professional studio" className="w-full h-full object-cover" />
+        </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-primary-foreground/10 text-primary-foreground border-primary-foreground/20">
@@ -134,7 +130,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-background/80 backdrop-blur-sm">
+      <section id="services" className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Our Expertise</Badge>
@@ -170,7 +166,7 @@ const Index = () => {
       </section>
 
       {/* Marine Services Section */}
-      <section id="marine" className="py-20 bg-background/80 backdrop-blur-sm">
+      <section id="marine" className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4 text-blue-600 border-blue-600">Marine Division</Badge>
@@ -219,7 +215,7 @@ const Index = () => {
       </section>
 
       {/* Projects Preview Section */}
-      <section id="projects" className="py-20 bg-background/80 backdrop-blur-sm">
+      <section id="projects" className="py-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Recent Work</Badge>
@@ -333,7 +329,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-background/80 backdrop-blur-sm">
+      <section id="testimonials" className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Client Reviews</Badge>
@@ -351,7 +347,7 @@ const Index = () => {
       <FAQ />
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-background/80 backdrop-blur-sm">
+      <section id="contact" className="py-20 bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Get In Touch</Badge>

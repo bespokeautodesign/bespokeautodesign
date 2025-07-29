@@ -43,7 +43,7 @@ const faqData = [
 
 export const FAQ = () => {
   return (
-    <section className="py-20 bg-background/80 backdrop-blur-sm">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-4">Frequently Asked Questions</Badge>
