@@ -89,9 +89,7 @@ const Index = () => {
               <button onClick={() => document.getElementById('marine')?.scrollIntoView({
               behavior: 'smooth'
             })} className="text-muted-foreground hover:text-primary transition-colors">Marine Services</button>
-              <button onClick={() => document.getElementById('projects')?.scrollIntoView({
-              behavior: 'smooth'
-            })} className="text-muted-foreground hover:text-primary transition-colors">Portfolio</button>
+              <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
               <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({
               behavior: 'smooth'
             })} className="text-muted-foreground hover:text-primary transition-colors">Testimonials</button>
