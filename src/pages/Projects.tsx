@@ -290,8 +290,7 @@ const Projects = () => {
                            <img
                              src={vehicle.beforeImage}
                              alt={`${vehicle.name} - Before`}
-                              className="w-full h-48 object-cover transition-all duration-500 group-hover:opacity-0"
-                              style={{ objectPosition: 'center 70%' }}
+                               className="w-full h-48 object-contain transition-all duration-500 group-hover:opacity-0"
                            />
                            <img
                              src={vehicle.afterImage}
