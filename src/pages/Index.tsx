@@ -100,7 +100,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative bg-gradient-hero text-primary-foreground py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-25">
-          <img src={heroSupercarImage} alt="Luxury supercar in professional garage" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Dramatic mountain landscape" className="w-full h-full object-cover" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
