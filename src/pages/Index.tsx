@@ -32,7 +32,7 @@ const Index = () => {
   }, {
     title: "Ceramic Coating",
     description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
-    image: ceramicWorkImage,
+    image: ceramicCoatingImage,
     features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"]
   }, {
     title: "Vinyl Wraps",
