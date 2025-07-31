@@ -6,16 +6,14 @@ import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, 
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { FAQ } from "@/components/FAQ";
 import { Link } from "react-router-dom";
+import MobileMenu from "@/components/MobileMenu";
 
 // Import assets
 const heroBugattiBolideImage = "/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png";
-import ceramicWorkImage from "/lovable-uploads/0dbb420e-a7b1-4b4e-87ec-f0e09e0b57f9.png";
+const ceramicWorkImage = "/lovable-uploads/83f64f7b-88e3-468d-9f88-d13e551c6289.png";
 import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.png";
 import tintWorkImage from "/lovable-uploads/870ad52a-53a2-4536-922b-33d54d2f71e0.png";
-const marinePpfImage = "/lovable-uploads/3277221d-7bd6-4133-8717-e69dd4715eb2.png";
-const marineCeramicImage = "/lovable-uploads/5c42c793-ad6a-4e61-b23a-712869764f9b.png";
-const marineTintImage = "/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.png";
 import ppfInstallationImage from "@/assets/ppf-installation.jpg";
 import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
@@ -47,22 +45,6 @@ const Index = () => {
     image: tintWorkImage,
     features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"]
   }];
-  const marineServices = [{
-    title: "Marine Paint Protection Film",
-    description: "Protect your vessel's gel coat and paint from saltwater, UV rays, and harsh marine conditions.",
-    image: marinePpfImage,
-    features: ["Saltwater resistance", "UV protection", "Impact protection", "Maintains resale value"]
-  }, {
-    title: "Marine Ceramic Coating",
-    description: "Advanced marine-grade ceramic coating for superior protection and easy maintenance.",
-    image: marineCeramicImage,
-    features: ["Hydrophobic surface", "Stain resistance", "Anti-fouling properties", "Extended protection"]
-  }, {
-    title: "Marine Ceramic Tint",
-    description: "Premium window tinting for boats and yachts providing comfort and protection on the water.",
-    image: marineTintImage,
-    features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"]
-  }];
   return <div className="min-h-screen bg-background relative">
       {/* Background Image - Cover for mobile visibility, contain + fixed for desktop */}
       <div 
@@ -86,9 +68,7 @@ const Index = () => {
               <button onClick={() => document.getElementById('services')?.scrollIntoView({
               behavior: 'smooth'
             })} className="text-muted-foreground hover:text-primary transition-colors">Services</button>
-              <button onClick={() => document.getElementById('marine')?.scrollIntoView({
-              behavior: 'smooth'
-            })} className="text-muted-foreground hover:text-primary transition-colors">Marine Services</button>
+              <Link to="/marine" className="text-muted-foreground hover:text-primary transition-colors">Marine Services</Link>
               <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
               <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({
               behavior: 'smooth'
@@ -97,9 +77,12 @@ const Index = () => {
               behavior: 'smooth'
             })} className="text-muted-foreground hover:text-primary transition-colors">Contact</button>
             </div>
-            <Button variant="premium" size="lg" onClick={scrollToQuote}>
-              Get Quote
-            </Button>
+            <div className="flex items-center gap-4">
+              <MobileMenu />
+              <Button variant="premium" size="lg" onClick={scrollToQuote}>
+                Get Quote
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
@@ -177,54 +160,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Marine Services Section */}
-      <section id="marine" className="py-20 bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 text-blue-600 border-blue-600">Marine Division</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Marine Protection Services</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Specialized protection services for boats, yachts, and marine vessels. We understand the unique challenges of the marine environment.
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gap-8">
-            {marineServices.map((service, index) => <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105 animate-fade-in">
-                <div className="aspect-video overflow-hidden">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
-                </div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Anchor className="h-5 w-5 text-blue-600" />
-                    <Waves className="h-4 w-4 text-blue-500" />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                  <CardDescription className="text-base">{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center gap-2">
-                        <Shield className="h-4 w-4 text-blue-600" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </li>)}
-                  </ul>
-                  <Button variant="premium" className="w-full mt-6" onClick={scrollToQuote}>
-                    Get Quote
-                  </Button>
-                </CardContent>
-              </Card>)}
-          </div>
-          
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-6">
-              Trusted by yacht owners, boat enthusiasts, and marine professionals
-            </p>
-            <Button variant="silver" size="lg" onClick={scrollToQuote}>
-              Schedule Marine Consultation
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Projects Preview Section */}
       <section id="projects" className="py-20 bg-background/80 backdrop-blur-sm">
