@@ -70,11 +70,6 @@ const Marine = () => {
               <Button variant="premium" size="lg" onClick={scrollToQuote}>
                 Get Marine Quote
               </Button>
-              <Link to="/projects">
-                <Button variant="outline" size="lg">
-                  View Marine Portfolio
-                </Button>
-              </Link>
             </div>
           </div>
         </div>
@@ -87,7 +82,7 @@ const Marine = () => {
             {marineServices.map((service, index) => (
               <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105">
                 <div className="aspect-video overflow-hidden">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-110" />
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover object-[center_30%] transition-transform duration-300 hover:scale-110" />
                 </div>
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
