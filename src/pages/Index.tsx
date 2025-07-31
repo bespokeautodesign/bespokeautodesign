@@ -136,6 +136,8 @@ const Index = () => {
                     className={`w-full h-full transition-transform duration-300 hover:scale-110 ${
                       service.title === "Vinyl Wraps" 
                         ? "object-cover object-[center_70%]" 
+                        : service.title === "Ceramic Coating"
+                        ? "object-cover object-[center_30%]"
                         : "object-cover"
                     }`} 
                   />
