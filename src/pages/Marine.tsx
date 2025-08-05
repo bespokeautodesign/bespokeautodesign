@@ -17,12 +17,12 @@ const Marine = () => {
   const marineServices = [{
     title: "Marine Paint Protection Film",
     description: "Protect your vessel's gel coat and paint from saltwater, UV rays, and harsh marine conditions.",
-    image: "/lovable-uploads/3277221d-7bd6-4133-8717-e69dd4715eb2.png",
+    image: "/lovable-uploads/19e444ef-f150-42ce-b195-9a306b95f8d5.png",
     features: ["Saltwater resistance", "UV protection", "Impact protection", "Maintains resale value"]
   }, {
     title: "Marine Ceramic Coating",
     description: "Advanced marine-grade ceramic coating for superior protection and easy maintenance.",
-    image: "/lovable-uploads/5c42c793-ad6a-4e61-b23a-712869764f9b.png",
+    image: "/lovable-uploads/b0ee1d07-d81d-4edf-8181-95046e093b94.png",
     features: ["Hydrophobic surface", "Stain resistance", "Anti-fouling properties", "Extended protection"]
   }, {
     title: "Marine Ceramic Tint",
@@ -61,12 +61,21 @@ const Marine = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900/20 to-background">
-        <div className="container mx-auto px-6">
+      <section className="relative py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.png')`,
+            transform: 'translateZ(0)',
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/95"></div>
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="outline" className="mb-6 text-blue-600 border-blue-600">Marine Division</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Marine Protection Services</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+            <Badge variant="outline" className="mb-6 text-blue-600 border-blue-600 bg-background/80 backdrop-blur-sm">Marine Division</Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-shadow-lg">Marine Protection Services</h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 bg-background/60 backdrop-blur-sm rounded-lg p-4">
               Specialized protection services for boats, yachts, and marine vessels. We understand the unique challenges of the marine environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
