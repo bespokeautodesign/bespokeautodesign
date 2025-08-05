@@ -3,8 +3,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Anchor, Waves, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Marine = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const scrollToQuote = () => {
     document.getElementById('contact')?.scrollIntoView({
       behavior: 'smooth'
