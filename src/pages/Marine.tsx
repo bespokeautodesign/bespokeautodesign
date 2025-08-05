@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Anchor, Waves, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import MobileMenu from "@/components/MobileMenu";
 
 const Marine = () => {
   useEffect(() => {
@@ -17,12 +18,12 @@ const Marine = () => {
   const marineServices = [{
     title: "Marine Paint Protection Film",
     description: "Protect your vessel's gel coat and paint from saltwater, UV rays, and harsh marine conditions.",
-    image: "/lovable-uploads/3277221d-7bd6-4133-8717-e69dd4715eb2.png",
+    image: "/lovable-uploads/19e444ef-f150-42ce-b195-9a306b95f8d5.png",
     features: ["Saltwater resistance", "UV protection", "Impact protection", "Maintains resale value"]
   }, {
     title: "Marine Ceramic Coating",
     description: "Advanced marine-grade ceramic coating for superior protection and easy maintenance.",
-    image: "/lovable-uploads/5c42c793-ad6a-4e61-b23a-712869764f9b.png",
+    image: "/lovable-uploads/b0ee1d07-d81d-4edf-8181-95046e093b94.png",
     features: ["Hydrophobic surface", "Stain resistance", "Anti-fouling properties", "Extended protection"]
   }, {
     title: "Marine Ceramic Tint",
@@ -48,25 +49,25 @@ const Marine = () => {
               <Link to="/marine" className="text-primary font-medium">Marine Services</Link>
               <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
             </div>
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <Button variant="ghost" size="sm">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </Button>
-            </div>
+            <MobileMenu />
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-900/20 to-background">
-        <div className="container mx-auto px-6">
+      <section className="relative py-32 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.png')`,
+            transform: 'translateZ(0)',
+          }}
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="outline" className="mb-6 text-blue-600 border-blue-600">Marine Division</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Marine Protection Services</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+            <Badge variant="outline" className="mb-6 text-blue-600 border-blue-600 bg-background/80 backdrop-blur-sm">Marine Division</Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-shadow-lg">Marine Protection Services</h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 bg-background/60 backdrop-blur-sm rounded-lg p-4">
               Specialized protection services for boats, yachts, and marine vessels. We understand the unique challenges of the marine environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -117,20 +118,29 @@ const Marine = () => {
       {/* Why Choose Marine Protection Section */}
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Why Marine Protection Matters</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="text-left">
-                <h3 className="text-xl font-semibold mb-4 text-blue-600">Harsh Marine Environment</h3>
-                <p className="text-muted-foreground">
-                  Saltwater, UV rays, and constant moisture create unique challenges for marine vessels. Our specialized protection services are designed to combat these harsh conditions and keep your vessel looking pristine.
-                </p>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Why Marine Protection Matters</h2>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-blue-600">Harsh Marine Environment</h3>
+                  <p className="text-muted-foreground">
+                    Saltwater, UV rays, and constant moisture create unique challenges for marine vessels. Our specialized protection services are designed to combat these harsh conditions and keep your vessel looking pristine.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-blue-600">Preserve Your Investment</h3>
+                  <p className="text-muted-foreground">
+                    Marine vessels represent significant investments. Our protection services help maintain their appearance, performance, and resale value while reducing maintenance costs over time.
+                  </p>
+                </div>
               </div>
-              <div className="text-left">
-                <h3 className="text-xl font-semibold mb-4 text-blue-600">Preserve Your Investment</h3>
-                <p className="text-muted-foreground">
-                  Marine vessels represent significant investments. Our protection services help maintain their appearance, performance, and resale value while reducing maintenance costs over time.
-                </p>
+              <div className="flex justify-center">
+                <img 
+                  src="/lovable-uploads/8225318e-5a65-40a0-90ed-9a488787ed64.png" 
+                  alt="XPEL Marine Protection Solutions" 
+                  className="w-full max-w-md rounded-lg shadow-premium"
+                />
               </div>
             </div>
           </div>
