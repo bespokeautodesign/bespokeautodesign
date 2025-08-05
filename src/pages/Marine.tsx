@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Anchor, Waves, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import MobileMenu from "@/components/MobileMenu";
 
 const Marine = () => {
   useEffect(() => {
@@ -49,7 +48,14 @@ const Marine = () => {
               <Link to="/marine" className="text-primary font-medium">Marine Services</Link>
               <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
             </div>
-            <MobileMenu />
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <Button variant="ghost" size="sm">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
@@ -62,6 +68,8 @@ const Marine = () => {
             backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.png')`,
             transform: 'translateZ(0)',
           }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/95"></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -118,29 +126,20 @@ const Marine = () => {
       {/* Why Choose Marine Protection Section */}
       <section className="py-20 bg-muted/50">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Why Marine Protection Matters</h2>
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-blue-600">Harsh Marine Environment</h3>
-                  <p className="text-muted-foreground">
-                    Saltwater, UV rays, and constant moisture create unique challenges for marine vessels. Our specialized protection services are designed to combat these harsh conditions and keep your vessel looking pristine.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-blue-600">Preserve Your Investment</h3>
-                  <p className="text-muted-foreground">
-                    Marine vessels represent significant investments. Our protection services help maintain their appearance, performance, and resale value while reducing maintenance costs over time.
-                  </p>
-                </div>
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8">Why Marine Protection Matters</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="text-left">
+                <h3 className="text-xl font-semibold mb-4 text-blue-600">Harsh Marine Environment</h3>
+                <p className="text-muted-foreground">
+                  Saltwater, UV rays, and constant moisture create unique challenges for marine vessels. Our specialized protection services are designed to combat these harsh conditions and keep your vessel looking pristine.
+                </p>
               </div>
-              <div className="flex justify-center">
-                <img 
-                  src="/lovable-uploads/8225318e-5a65-40a0-90ed-9a488787ed64.png" 
-                  alt="XPEL Marine Protection Solutions" 
-                  className="w-full max-w-md rounded-lg shadow-premium"
-                />
+              <div className="text-left">
+                <h3 className="text-xl font-semibold mb-4 text-blue-600">Preserve Your Investment</h3>
+                <p className="text-muted-foreground">
+                  Marine vessels represent significant investments. Our protection services help maintain their appearance, performance, and resale value while reducing maintenance costs over time.
+                </p>
               </div>
             </div>
           </div>
