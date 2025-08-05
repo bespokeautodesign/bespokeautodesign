@@ -10,16 +10,8 @@ const Marine = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const scrollToQuote = () => {
-    // If we're already on the homepage, just scroll
-    if (window.location.pathname === '/') {
-      document.getElementById('contact')?.scrollIntoView({
-        behavior: 'smooth'
-      });
-    } else {
-      // Navigate to homepage then scroll to contact
-      window.location.href = '/#contact';
-    }
+  const navigateToContact = () => {
+    window.location.href = '/#contact';
   };
 
   const marineServices = [{
@@ -78,7 +70,7 @@ const Marine = () => {
               Specialized protection services for boats, yachts, and marine vessels. We understand the unique challenges of the marine environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="premium" size="lg" onClick={scrollToQuote}>
+              <Button variant="premium" size="lg" onClick={navigateToContact}>
                 Get Marine Quote
               </Button>
             </div>
@@ -112,7 +104,7 @@ const Marine = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="premium" className="w-full mt-6" onClick={scrollToQuote}>
+                  <Button variant="premium" className="w-full mt-6" onClick={navigateToContact}>
                     Get Quote
                   </Button>
                 </CardContent>
@@ -153,7 +145,7 @@ const Marine = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Contact us for a consultation and discover how our marine protection services can benefit your vessel.
             </p>
-            <Button variant="premium" size="lg" onClick={scrollToQuote}>
+            <Button variant="premium" size="lg" onClick={navigateToContact}>
               Schedule Marine Consultation
             </Button>
           </div>
