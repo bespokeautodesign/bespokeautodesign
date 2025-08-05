@@ -72,9 +72,11 @@ const Marine = () => {
               Specialized protection services for boats, yachts, and marine vessels. We understand the unique challenges of the marine environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="premium" size="lg" onClick={scrollToQuote}>
-                Get Marine Quote
-              </Button>
+              <Link to="/#contact">
+                <Button variant="premium" size="lg">
+                  Get Marine Quote
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -106,9 +108,11 @@ const Marine = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="premium" className="w-full mt-6" onClick={scrollToQuote}>
-                    Get Quote
-                  </Button>
+                  <Link to="/#contact" className="w-full">
+                    <Button variant="premium" className="w-full mt-6">
+                      Get Quote
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
