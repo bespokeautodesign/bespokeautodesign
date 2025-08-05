@@ -11,9 +11,15 @@ const Marine = () => {
   }, []);
 
   const scrollToQuote = () => {
-    document.getElementById('contact')?.scrollIntoView({
-      behavior: 'smooth'
-    });
+    // If we're already on the homepage, just scroll
+    if (window.location.pathname === '/') {
+      document.getElementById('contact')?.scrollIntoView({
+        behavior: 'smooth'
+      });
+    } else {
+      // Navigate to homepage then scroll to contact
+      window.location.href = '/#contact';
+    }
   };
 
   const marineServices = [{
@@ -72,11 +78,9 @@ const Marine = () => {
               Specialized protection services for boats, yachts, and marine vessels. We understand the unique challenges of the marine environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/#contact">
-                <Button variant="premium" size="lg">
-                  Get Marine Quote
-                </Button>
-              </Link>
+              <Button variant="premium" size="lg" onClick={scrollToQuote}>
+                Get Marine Quote
+              </Button>
             </div>
           </div>
         </div>
@@ -108,11 +112,9 @@ const Marine = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link to="/#contact" className="w-full">
-                    <Button variant="premium" className="w-full mt-6">
-                      Get Quote
-                    </Button>
-                  </Link>
+                  <Button variant="premium" className="w-full mt-6" onClick={scrollToQuote}>
+                    Get Quote
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -151,11 +153,9 @@ const Marine = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Contact us for a consultation and discover how our marine protection services can benefit your vessel.
             </p>
-            <Link to="/#contact">
-              <Button variant="premium" size="lg">
-                Schedule Marine Consultation
-              </Button>
-            </Link>
+            <Button variant="premium" size="lg" onClick={scrollToQuote}>
+              Schedule Marine Consultation
+            </Button>
           </div>
         </div>
       </section>
