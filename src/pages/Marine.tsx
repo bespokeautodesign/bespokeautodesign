@@ -33,7 +33,15 @@ const Marine = () => {
   }];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Background Image - Cover for mobile visibility, contain + fixed for desktop */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat md:bg-contain z-0"
+        style={{
+          backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.png')`
+        }}
+      ></div>
+      <div className="relative z-10 min-h-screen">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
@@ -55,19 +63,12 @@ const Marine = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-32 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.png')`,
-            transform: 'translateZ(0)',
-          }}
-        />
-        <div className="container mx-auto px-6 relative z-10">
+      <section className="relative text-primary-foreground py-32">
+        <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="outline" className="mb-6 text-blue-600 border-blue-600 bg-background/80 backdrop-blur-sm">Marine Division</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white text-shadow-lg">Marine Protection Services</h1>
-            <p className="text-xl text-white max-w-2xl mx-auto mb-8 text-shadow-lg">
+            <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 backdrop-blur-sm">Marine Division</Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary-foreground">Marine Protection Services</h1>
+            <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
               Specialized protection services for boats, yachts, and marine vessels. We understand the unique challenges of the marine environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -161,6 +162,7 @@ const Marine = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };

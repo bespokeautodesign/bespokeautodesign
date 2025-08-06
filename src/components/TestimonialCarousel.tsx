@@ -182,8 +182,9 @@ export const TestimonialCarousel = () => {
       <div className="md:hidden">
         {/* Mobile scroll indicator */}
         <div className="text-center mb-4">
-          <div className="bg-primary/10 border border-primary/20 rounded px-3 py-1 text-sm text-primary inline-block">
-            👈 Swipe to read more reviews
+          <div className="bg-accent/20 border border-accent/30 rounded-lg px-4 py-2 text-sm text-accent-foreground inline-flex items-center gap-2 font-medium">
+            <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+            Swipe to read more reviews
           </div>
         </div>
         <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-4 -mx-4">
