@@ -67,7 +67,7 @@ const Marine = () => {
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="outline" className="mb-6 text-blue-600 border-blue-600 bg-background/80 backdrop-blur-sm">Marine Division</Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white text-shadow-lg">Marine Protection Services</h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+            <p className="text-xl text-white max-w-2xl mx-auto mb-8 text-shadow-lg">
               Specialized protection services for boats, yachts, and marine vessels. We understand the unique challenges of the marine environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
