@@ -50,7 +50,12 @@ const MobileMenu = () => {
               className="mt-6"
               onClick={() => {
                 setIsOpen(false);
-                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                // Navigate to home page contact section if not already there
+                if (window.location.pathname !== '/') {
+                  window.location.href = '/#contact';
+                } else {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }
               }}
             >
               Get Quote
