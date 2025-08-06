@@ -63,7 +63,7 @@ const Marine = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative text-primary-foreground py-32">
+      <section className="relative text-primary-foreground min-h-screen flex items-center justify-center">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 backdrop-blur-sm">Marine Division</Badge>
@@ -117,21 +117,21 @@ const Marine = () => {
       </section>
 
       {/* Why Choose Marine Protection Section */}
-      <section className="py-20 bg-muted/50">
+      <section className="py-20 bg-background/95 backdrop-blur-sm">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Why Marine Protection Matters</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-foreground">Why Marine Protection Matters</h2>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
-                <div>
+                <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-border">
                   <h3 className="text-xl font-semibold mb-4 text-blue-600">Harsh Marine Environment</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     Saltwater, UV rays, and constant moisture create unique challenges for marine vessels. Our specialized protection services are designed to combat these harsh conditions and keep your vessel looking pristine.
                   </p>
                 </div>
-                <div>
+                <div className="bg-background/80 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-border">
                   <h3 className="text-xl font-semibold mb-4 text-blue-600">Preserve Your Investment</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     Marine vessels represent significant investments. Our protection services help maintain their appearance, performance, and resale value while reducing maintenance costs over time.
                   </p>
                 </div>
