@@ -197,9 +197,16 @@ const Projects = () => {
                 Invisible protection that preserves your vehicle's original finish while providing superior defense against road debris and environmental damage.
               </p>
             </div>
-            <Carousel className="w-full max-w-6xl mx-auto">
-              <CarouselContent>
-                {clearPPFVehicles.map((vehicle) => (
+            <div className="relative">
+              {/* Mobile scroll indicator */}
+              <div className="md:hidden text-center mb-4">
+                <div className="bg-primary/10 border border-primary/20 rounded px-3 py-1 text-sm text-primary inline-block">
+                  👈 Swipe to see more vehicles
+                </div>
+              </div>
+              <Carousel className="w-full max-w-6xl mx-auto">
+                <CarouselContent>
+                  {clearPPFVehicles.map((vehicle) => (
                   <CarouselItem key={vehicle.id} className="md:basis-1/2 lg:basis-1/3">
                     <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
                       <div className="relative overflow-hidden">
@@ -220,10 +227,11 @@ const Projects = () => {
                     </Card>
                   </CarouselItem>
                 ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
           </div>
 
           {/* Stealth PPF Section */}
@@ -238,9 +246,16 @@ const Projects = () => {
                 Matte finish protection that transforms your vehicle's appearance while providing the same superior protection as clear PPF.
               </p>
             </div>
-            <Carousel className="w-full max-w-6xl mx-auto">
-              <CarouselContent>
-                {stealthPPFVehicles.map((vehicle) => (
+            <div className="relative">
+              {/* Mobile scroll indicator */}
+              <div className="md:hidden text-center mb-4">
+                <div className="bg-primary/10 border border-primary/20 rounded px-3 py-1 text-sm text-primary inline-block">
+                  👈 Swipe to see more vehicles
+                </div>
+              </div>
+              <Carousel className="w-full max-w-6xl mx-auto">
+                <CarouselContent>
+                  {stealthPPFVehicles.map((vehicle) => (
                   <CarouselItem key={vehicle.id} className="md:basis-1/2 lg:basis-1/3">
                     <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
                       <div className="relative overflow-hidden">
@@ -262,10 +277,11 @@ const Projects = () => {
                     </Card>
                   </CarouselItem>
                 ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
           </div>
 
           {/* Vinyl Wraps Section */}
@@ -280,9 +296,16 @@ const Projects = () => {
                 Complete color transformation with premium vinyl films, offering endless customization possibilities while protecting your original paint.
               </p>
             </div>
-            <Carousel className="w-full max-w-6xl mx-auto">
-              <CarouselContent>
-                {vinylWrapVehicles.map((vehicle) => (
+            <div className="relative">
+              {/* Mobile scroll indicator */}
+              <div className="md:hidden text-center mb-4">
+                <div className="bg-primary/10 border border-primary/20 rounded px-3 py-1 text-sm text-primary inline-block">
+                  👈 Swipe to see more vehicles
+                </div>
+              </div>
+              <Carousel className="w-full max-w-6xl mx-auto">
+                <CarouselContent>
+                  {vinylWrapVehicles.map((vehicle) => (
                   <CarouselItem key={vehicle.id} className="md:basis-1/2 lg:basis-1/3">
                      <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
                        <div 
@@ -345,10 +368,11 @@ const Projects = () => {
                      </Card>
                   </CarouselItem>
                 ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
           </div>
         </div>
       </section>

@@ -180,6 +180,12 @@ export const TestimonialCarousel = () => {
 
       {/* Mobile: Horizontal scroll with snap */}
       <div className="md:hidden">
+        {/* Mobile scroll indicator */}
+        <div className="text-center mb-4">
+          <div className="bg-primary/10 border border-primary/20 rounded px-3 py-1 text-sm text-primary inline-block">
+            👈 Swipe to read more reviews
+          </div>
+        </div>
         <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 px-4 -mx-4">
           {testimonials.map((testimonial, index) => (
             <div
