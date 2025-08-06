@@ -62,7 +62,7 @@ const Marine = () => {
             backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.png')`,
             transform: 'translateZ(0)',
           }}
-        </div>
+        />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="outline" className="mb-6 text-blue-600 border-blue-600 bg-background/80 backdrop-blur-sm">Marine Division</Badge>
