@@ -265,11 +265,12 @@ const Projects = () => {
                         <img
                           src={vehicle.image}
                           alt={vehicle.name}
-                          className={`w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 ${
-                            vehicle.name === "2024 BMW M2" ? "object-[center_80%]" : 
-                            vehicle.name === "BMW X5" ? "" : 
-                            vehicle.name === "Mercedes GLC 300 AMG" ? "object-[center_80%]" : "object-[center_70%]"
-                          }`}
+                           className={`w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 ${
+                             vehicle.name === "2024 BMW M2" ? "object-[center_80%]" : 
+                             vehicle.name === "BMW X5" ? "" : 
+                             vehicle.name === "2025 Mercedes G-Wagon G63 AMG" ? "object-[center_85%] scale-90" :
+                             vehicle.name === "Mercedes GLC 300 AMG" ? "object-[center_80%]" : "object-[center_70%]"
+                           }`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                         <div className="absolute bottom-4 left-4 text-white">
