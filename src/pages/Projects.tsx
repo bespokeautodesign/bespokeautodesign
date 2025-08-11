@@ -268,7 +268,7 @@ const Projects = () => {
                             className={`w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 ${
                               vehicle.name === "2024 BMW M2" ? "object-[center_80%]" : 
                               vehicle.name === "BMW X5" ? "" : 
-                              vehicle.name === "Mercedes G-Wagon G63 AMG" ? "object-[center_30%] scale-85" :
+                              vehicle.name === "Mercedes G-Wagon G63 AMG" ? "object-[center_40%] scale-85" :
                               vehicle.name === "Mercedes GLC 300 AMG" ? "object-[center_80%]" : "object-[center_70%]"
                             }`}
                         />
