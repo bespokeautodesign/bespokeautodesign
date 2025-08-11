@@ -41,6 +41,17 @@ const Projects = () => {
     },
     {
       id: 3,
+      title: "Mercedes G-Wagon G63 AMG",
+      description: "Full Body Xpel Stealth PPF Protection & Prime XR Plus Ceramic Tints.",
+      image: "/lovable-uploads/954a24eb-a0e4-4854-a5ae-cc3558261924.png",
+      category: "Stealth PPF + Ceramic Tints",
+      
+      services: ["Stealth PPF", "Prime XR Plus Ceramic Tints"],
+      vehicle: "2025 Mercedes Benz G-Wagon G63 AMG",
+      completion: "5 days"
+    },
+    {
+      id: 4,
       title: "BMW X5 sDrive40i",
       description: "Full Body Xpel Stealth PPF Protection, Fusion Plus Ceramic Coating & Prime XR Plus Ceramic Tints.",
       image: "/lovable-uploads/2b4efeb0-51dc-4e2f-b7e3-9c4e9882c48e.png",
@@ -51,7 +62,7 @@ const Projects = () => {
       completion: "5 days"
     },
     {
-      id: 4,
+      id: 5,
       title: "Corvette C8 Stingray",
       description: "Xpel Ultimate Plus Track Package Paint Protection Film – Enhanced Coverage for High-Performance Driving",
       image: "/lovable-uploads/171000e1-8047-462c-b8fd-a3e367867858.png",
@@ -100,8 +111,10 @@ const Projects = () => {
       case "PPF + Ceramic Coating":
       case "Track Package PPF":
       case "Stealth PPF + Ceramic Coating + Ceramic Tints":
+      case "Stealth PPF + Ceramic Tints":
         return <Shield className="h-4 w-4" />;
       case "Vinyl Wrap":
+      case "Vinyl Wrap + Ceramic Tints":
         return <Palette className="h-4 w-4" />;
       case "Ceramic Coating":
       case "Ceramic Tint":
