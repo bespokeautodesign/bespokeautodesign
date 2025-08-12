@@ -411,7 +411,7 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className={`w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 ${project.id === 1 ? 'object-[center_65%]' : ''} ${project.id === 3 ? 'object-[center_60%]' : ''} ${project.id === 4 ? 'object-[center_45%]' : ''} ${project.id === 5 ? 'object-[center_75%]' : ''}`}
+                    className={`w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 ${project.id === 1 ? 'object-[center_65%]' : ''} ${project.id === 3 ? 'object-[center_50%]' : ''} ${project.id === 4 ? 'object-[center_45%]' : ''} ${project.id === 5 ? 'object-[center_75%]' : ''}`}
                   />
                   <div className="absolute top-4 left-4">
                     <Badge className={`flex items-center gap-1 ${getCategoryColor(project.category)}`}>
