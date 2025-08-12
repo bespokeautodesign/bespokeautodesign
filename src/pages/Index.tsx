@@ -205,15 +205,15 @@ const Index = () => {
 
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img src="/lovable-uploads/2b4efeb0-51dc-4e2f-b7e3-9c4e9882c48e.png" alt="BMW X7 Tint Project" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+                <img src="/lovable-uploads/954a24eb-a0e4-4854-a5ae-cc3558261924.png" alt="Mercedes G-Wagon G63 AMG" className="w-full h-64 object-cover object-[center_45%] transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-black/60 text-white border-white/20">Stealth PPF + Ceramic Coating + Ceramic Tints</Badge>
+                  <Badge className="bg-black/60 text-white border-white/20">Stealth PPF + Ceramic Tints</Badge>
                 </div>
               </div>
               <CardHeader>
                 
-                <CardTitle className="line-clamp-2">BMW X5 sDrive40i</CardTitle>
-                <CardDescription>Full Body Xpel Stealth PPF Protection, Fusion Plus Ceramic Coating & Prime XR Plus Ceramic Tints.</CardDescription>
+                <CardTitle className="line-clamp-2">Mercedes Benz G-Wagon G63 AMG</CardTitle>
+                <CardDescription>Full Body Xpel Stealth PPF Protection & Prime XR Plus Ceramic Tints.</CardDescription>
               </CardHeader>
             </Card>
           </div>
