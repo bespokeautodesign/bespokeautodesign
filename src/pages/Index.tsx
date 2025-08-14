@@ -234,9 +234,12 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 opacity-95"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6 bg-xpel-yellow text-primary">
-              Official Partner
-            </Badge>
+            <div className="flex flex-col items-center mb-8">
+              <img src="/src/assets/xpel-logo.svg" alt="XPEL Logo" className="h-16 mb-4" />
+              <Badge variant="secondary" className="mb-6 bg-xpel-yellow text-primary">
+                Official Partner
+              </Badge>
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground">
               XPEL Authorized Dealer
             </h2>
