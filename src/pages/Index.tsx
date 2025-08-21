@@ -238,7 +238,7 @@ const Index = () => {
               Official Partner
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground flex items-center justify-center gap-4">
-              <img src="/assets/xpel-logo.svg" alt="XPEL" className="h-28 md:h-32 brightness-0 invert translate-y-2" />
+              XPEL
               Authorized Dealer
             </h2>
             <p className="text-xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
