@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, ArrowRight, Calendar } from "lucide-react";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { FAQ } from "@/components/FAQ";
+import InteractiveMap from "@/components/InteractiveMap";
 import { Link } from "react-router-dom";
 import MobileMenu from "@/components/MobileMenu";
 
@@ -316,7 +317,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
             <div className="space-y-8">
               <div className="flex items-start gap-4">
                 <div className="bg-primary text-primary-foreground rounded-full p-3">
@@ -363,7 +364,7 @@ const Index = () => {
               </div>
             </div>
             
-            <Card className="shadow-premium">
+            <Card className="shadow-premium lg:col-span-2">
               <CardHeader>
                 <CardTitle>Request a Quote</CardTitle>
                 <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
@@ -422,6 +423,11 @@ const Index = () => {
                 </Button>
               </CardContent>
             </Card>
+          </div>
+          
+          {/* Interactive Map Section */}
+          <div className="mt-16">
+            <InteractiveMap />
           </div>
         </div>
       </section>
