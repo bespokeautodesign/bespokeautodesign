@@ -347,7 +347,7 @@ const Index = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Location</h3>
-                    <a href="https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">7943 NW 64th St<br />Miami, FL 33166</a>
+                    <a href="https://maps.google.com/?q=7943+Ritchie+Hwy+Glen+Burnie+MD+21061" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">7943 Ritchie Hwy<br />Glen Burnie, MD 21061</a>
                   </div>
                 </div>
                 
@@ -374,7 +374,7 @@ const Index = () => {
                 </h3>
                 <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg border">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.8746624265947!2d-80.33659262378845!3d25.838912777359095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9c3e8f5f5f5f5%3A0x1234567890abcdef!2s7943%20NW%2064th%20St%2C%20Miami%2C%20FL%2033166!5e0!3m2!1sen!2sus!4v1234567890123"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195.3!2d-76.62037!3d39.17045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c81f6b6b6b6b6b%3A0x1234567890abcdef!2s7943%20Ritchie%20Hwy%2C%20Glen%20Burnie%2C%20MD%2021061!5e0!3m2!1sen!2sus!4v1234567890123&q=7943+Ritchie+Hwy+Glen+Burnie+MD+21061"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -389,14 +389,14 @@ const Index = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    onClick={() => window.open('https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166', '_blank')}
+                    onClick={() => window.open('https://maps.google.com/?q=7943+Ritchie+Hwy+Glen+Burnie+MD+21061', '_blank')}
                   >
                     Open in Google Maps
                   </Button>
                   <Button 
                     variant="outline" 
                     size="sm"
-                    onClick={() => window.open('https://maps.apple.com/?q=7943+NW+64th+St+Miami+FL+33166', '_blank')}
+                    onClick={() => window.open('https://maps.apple.com/?q=7943+Ritchie+Hwy+Glen+Burnie+MD+21061', '_blank')}
                   >
                     Apple Maps
                   </Button>
