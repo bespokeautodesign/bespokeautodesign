@@ -116,6 +116,55 @@ const Index = () => {
         </div>
       </section>
 
+      {/* XPEL Partnership Section */}
+      <section id="xpel" className="py-20 bg-black text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 opacity-95"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <Badge variant="secondary" className="mb-6 bg-xpel-yellow text-primary">
+              Official Partner
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground flex items-center justify-center gap-4">
+              XPEL
+              Authorized Dealer
+            </h2>
+            <p className="text-xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
+              As an authorized XPEL dealer, we bring you the world's leading paint protection film technology with unmatched clarity, durability, and self-healing properties.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-8 mt-12">
+              <div className="text-center">
+                <div className="bg-xpel-yellow text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">XPEL Ultimate Plus</h3>
+                <p className="text-primary-foreground/70">Premium paint protection with enhanced self-healing technology</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-xpel-yellow text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Sun className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">XPEL Prime Window Tint</h3>
+                <p className="text-primary-foreground/70">Superior heat rejection and UV protection for maximum comfort</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-xpel-yellow text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Droplet className="h-8 w-8" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">XPEL Fusion Plus Ceramic Coating</h3>
+                <p className="text-primary-foreground/70">Advanced ceramic coating with exceptional durability and gloss</p>
+              </div>
+            </div>
+            
+            <Button variant="xpel" size="lg" className="mt-12 bg-xpel-yellow text-primary hover:bg-xpel-yellow-dark" onClick={scrollToQuote}>
+              Get XPEL Quote
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
@@ -229,54 +278,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* XPEL Partnership Section */}
-      <section id="xpel" className="py-20 bg-black text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 opacity-95"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6 bg-xpel-yellow text-primary">
-              Official Partner
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground flex items-center justify-center gap-4">
-              XPEL
-              Authorized Dealer
-            </h2>
-            <p className="text-xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
-              As an authorized XPEL dealer, we bring you the world's leading paint protection film technology with unmatched clarity, durability, and self-healing properties.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-8 mt-12">
-              <div className="text-center">
-                <div className="bg-xpel-yellow text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Shield className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">XPEL Ultimate Plus</h3>
-                <p className="text-primary-foreground/70">Premium paint protection with enhanced self-healing technology</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="bg-xpel-yellow text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Sun className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">XPEL Prime Window Tint</h3>
-                <p className="text-primary-foreground/70">Superior heat rejection and UV protection for maximum comfort</p>
-              </div>
-              
-              <div className="text-center">
-                <div className="bg-xpel-yellow text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Droplet className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">XPEL Fusion Plus Ceramic Coating</h3>
-                <p className="text-primary-foreground/70">Advanced ceramic coating with exceptional durability and gloss</p>
-              </div>
-            </div>
-            
-            <Button variant="xpel" size="lg" className="mt-12 bg-xpel-yellow text-primary hover:bg-xpel-yellow-dark" onClick={scrollToQuote}>
-              Get XPEL Quote
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials Section */}
       <section id="testimonials" className="py-20 bg-background/80 backdrop-blur-sm">
