@@ -5,7 +5,6 @@ import { Separator } from "@/components/ui/separator";
 import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, ArrowRight, Calendar } from "lucide-react";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { FAQ } from "@/components/FAQ";
-import InteractiveMap from "@/components/InteractiveMap";
 import { Link } from "react-router-dom";
 import MobileMenu from "@/components/MobileMenu";
 
@@ -317,10 +316,10 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Left Column - Contact Info + Map */}
-            <div className="space-y-8">
-              {/* Contact Information */}
+            <div className="flex flex-col space-y-8">
+              {/* Contact Information - Top Left */}
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="bg-primary text-primary-foreground rounded-full p-3">
@@ -367,72 +366,106 @@ const Index = () => {
                 </div>
               </div>
               
-              {/* Interactive Map */}
-              <div className="mt-8">
-                <InteractiveMap />
+              {/* Interactive Map - Bottom Left */}
+              <div className="flex-1">
+                <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <MapPin className="h-5 w-5" />
+                  Visit Our Shop
+                </h3>
+                <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg border">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.8746624265947!2d-80.33659262378845!3d25.838912777359095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9c3e8f5f5f5f5%3A0x1234567890abcdef!2s7943%20NW%2064th%20St%2C%20Miami%2C%20FL%2033166!5e0!3m2!1sen!2sus!4v1234567890123"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Bespoke Auto Design Location"
+                  />
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-background/5 to-transparent" />
+                </div>
+                <div className="flex gap-2 mt-3">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => window.open('https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166', '_blank')}
+                  >
+                    Open in Google Maps
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => window.open('https://maps.apple.com/?q=7943+NW+64th+St+Miami+FL+33166', '_blank')}
+                  >
+                    Apple Maps
+                  </Button>
+                </div>
               </div>
             </div>
             
             {/* Right Column - Quote Form */}
-            <Card className="shadow-premium h-fit">
-              <CardHeader>
-                <CardTitle>Request a Quote</CardTitle>
-                <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <form id="quote-form">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">First Name</label>
-                      <input name="firstName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
+            <div className="flex flex-col">
+              <Card className="shadow-premium flex-1">
+                <CardHeader>
+                  <CardTitle>Request a Quote</CardTitle>
+                  <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <form id="quote-form">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">First Name</label>
+                        <input name="firstName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">Last Name</label>
+                        <input name="lastName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
+                      </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Last Name</label>
-                      <input name="lastName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
+                      <label className="text-sm font-medium">Phone</label>
+                      <input name="phone" type="tel" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Phone</label>
-                    <input name="phone" type="tel" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Email</label>
-                    <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Vehicle Make & Model</label>
-                    <input name="vehicle" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Service Interest</label>
-                    <select name="service" className="w-full px-3 py-2 border border-input rounded-md bg-background">
-                      <option>Paint Protection Film (PPF)</option>
-                      <option>Ceramic Coating</option>
-                      <option>Vinyl Wrap</option>
-                      <option>Ceramic Tint</option>
-                      <option>Marine PPF</option>
-                      <option>Marine Ceramic Coating</option>
-                      <option>Marine Ceramic Tint</option>
-                      <option>Multiple Services</option>
-                    </select>
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Message</label>
-                    <textarea name="message" className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
-                  </div>
-                </form>
-                <Button variant="premium" className="w-full" onClick={() => {
-                const form = document.querySelector('#quote-form') as HTMLFormElement;
-                const formData = new FormData(form);
-                const subject = `Quote Request - ${formData.get('service')}`;
-                const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0AMessage: ${formData.get('message')}`;
-                window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
-                alert('Thank you! Your quote request has been prepared. Please send the email that just opened, or call us at (786) 395-9172.');
-              }}>
-                  Submit Request
-                </Button>
-              </CardContent>
-            </Card>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Email</label>
+                      <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Vehicle Make & Model</label>
+                      <input name="vehicle" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Service Interest</label>
+                      <select name="service" className="w-full px-3 py-2 border border-input rounded-md bg-background">
+                        <option>Paint Protection Film (PPF)</option>
+                        <option>Ceramic Coating</option>
+                        <option>Vinyl Wrap</option>
+                        <option>Ceramic Tint</option>
+                        <option>Marine PPF</option>
+                        <option>Marine Ceramic Coating</option>
+                        <option>Marine Ceramic Tint</option>
+                        <option>Multiple Services</option>
+                      </select>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Message</label>
+                      <textarea name="message" className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                  </form>
+                  <Button variant="premium" className="w-full" onClick={() => {
+                  const form = document.querySelector('#quote-form') as HTMLFormElement;
+                  const formData = new FormData(form);
+                  const subject = `Quote Request - ${formData.get('service')}`;
+                  const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0AMessage: ${formData.get('message')}`;
+                  window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
+                  alert('Thank you! Your quote request has been prepared. Please send the email that just opened, or call us at (786) 395-9172.');
+                }}>
+                    Submit Request
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
