@@ -389,14 +389,14 @@ const Index = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    onClick={() => window.open('https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166', '_blank')}
+                    onClick={() => window.location.href = 'https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166'}
                   >
                     Open in Google Maps
                   </Button>
                   <Button 
                     variant="outline" 
                     size="sm"
-                    onClick={() => window.open('https://maps.apple.com/?q=7943+NW+64th+St+Miami+FL+33166', '_blank')}
+                    onClick={() => window.location.href = 'https://maps.apple.com/?q=7943+NW+64th+St+Miami+FL+33166'}
                   >
                     Apple Maps
                   </Button>
