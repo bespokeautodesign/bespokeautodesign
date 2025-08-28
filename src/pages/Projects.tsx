@@ -146,9 +146,9 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      {/* Background Image - Cover for mobile visibility, contain + fixed for desktop */}
+      {/* Background Image - Full width coverage */}
       <div 
-        className="fixed inset-0 bg-cover bg-[center_30%] bg-no-repeat md:bg-contain z-0"
+        className="fixed inset-0 w-screen bg-cover bg-[center_30%] bg-no-repeat z-0"
         style={{
           backgroundImage: `url(/lovable-uploads/ab1ac973-95da-4423-878b-7808fe62cc38.png)`
         }}

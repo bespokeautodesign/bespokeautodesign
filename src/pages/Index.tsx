@@ -46,9 +46,9 @@ const Index = () => {
     features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"]
   }];
   return <div className="min-h-screen bg-background relative">
-      {/* Background Image - Cover for mobile visibility, contain + fixed for desktop */}
+      {/* Background Image - Full width coverage */}
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat md:bg-contain z-0"
+        className="fixed inset-0 w-screen bg-cover bg-center bg-no-repeat z-0"
         style={{
           backgroundImage: `url(${heroBugattiBolideImage})`
         }}

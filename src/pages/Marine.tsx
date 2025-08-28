@@ -34,9 +34,9 @@ const Marine = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
-      {/* Background Image - Cover for mobile visibility, contain + fixed for desktop */}
+      {/* Background Image - Full width coverage */}
       <div 
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat md:bg-contain z-0"
+        className="fixed inset-0 w-screen bg-cover bg-center bg-no-repeat z-0"
         style={{
           backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.png')`
         }}
