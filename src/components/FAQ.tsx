@@ -4,40 +4,44 @@ import { Badge } from "@/components/ui/badge";
 
 const faqData = [
   {
-    question: "What is XPEL Paint Protection Film (PPF)?",
-    answer: "XPEL PPF is a premium, virtually invisible urethane film that protects your vehicle's paint from rock chips, scratches, bug damage, and environmental contaminants. It features self-healing technology and comes with a 10-year warranty."
+    question: "Why is Paint Protection Film essential for cars in Miami?",
+    answer: "In Miami's intense UV environment and coastal conditions, XPEL PPF is crucial protection against salt air corrosion, bird droppings, tree sap, and road debris. Our Miami location specializes in protecting luxury vehicles from South Florida's unique challenges with premium XPEL films."
   },
   {
-    question: "How long does PPF installation take?",
-    answer: "Typical PPF installation takes 2-5 days depending on the coverage level (partial front end vs. full vehicle protection). We ensure precision cutting and proper curing time for optimal results."
+    question: "How does Miami's climate affect PPF and ceramic coating installation?",
+    answer: "Miami's humidity and heat require specialized installation techniques. Our climate-controlled facility in Miami ensures optimal curing conditions for PPF and ceramic coatings, typically taking 2-5 days for complete installation and proper bonding."
   },
   {
-    question: "How long does XPEL Ceramic Coating last?",
-    answer: "XPEL Ceramic Coatings provide 2-5 years of protection depending on the product selected. Our professional-grade coatings offer superior durability, hydrophobic properties, and enhanced gloss."
+    question: "What ceramic coating protection do Miami drivers need?",
+    answer: "Miami's salt air, intense sun, and frequent rain make XPEL Ceramic Coatings essential. Our professional-grade coatings provide 2-5 years of protection against UV damage, salt corrosion, and water spots common in South Florida driving conditions."
   },
   {
-    question: "Can PPF be removed without damaging the paint?",
-    answer: "Yes, XPEL PPF can be safely removed by trained professionals without damaging the original paint. The film is designed to come off cleanly when proper removal techniques are used."
+    question: "Is ceramic window tint legal in Miami-Dade County?",
+    answer: "Yes, XPEL ceramic tint meets Florida's legal requirements. In Miami, front side windows must allow 28% light transmission, while rear windows can be darker. Our ceramic tint provides maximum heat rejection - crucial for Miami's year-round heat."
   },
   {
-    question: "What is XPEL STEALTH Paint Protection Film?",
-    answer: "XPEL STEALTH is a matte finish PPF that transforms your vehicle's appearance while providing the same protection as clear PPF. It creates a unique satin look that's becoming increasingly popular."
+    question: "Can PPF handle Miami's beach and highway driving conditions?",
+    answer: "Absolutely. XPEL PPF is specifically designed for harsh environments like Miami's coastal roads. It protects against sand, salt spray from ocean driving, and road debris from I-95 and other busy Miami highways."
   },
   {
-    question: "How do I maintain my XPEL Ceramic Coating?",
-    answer: "Maintain your ceramic coating with regular washing using pH-neutral soap, avoid automatic car washes with brushes, and apply a ceramic booster every 6-12 months to extend the coating's life."
+    question: "How do I maintain ceramic coating in Miami's humid climate?",
+    answer: "In Miami's humidity, maintain ceramic coatings with bi-weekly washing using pH-neutral soap, avoid automatic car washes, and apply ceramic boosters every 6 months due to increased environmental stress from salt air and UV exposure."
   },
   {
-    question: "What's the difference between dyed, metallic, and ceramic window tint?",
-    answer: "XPEL Ceramic Tint offers superior heat rejection, no signal interference, and doesn't fade like dyed films. It provides better clarity and performance compared to metallic or dyed alternatives."
+    question: "What makes XPEL STEALTH PPF popular with Miami luxury car owners?",
+    answer: "XPEL STEALTH PPF's matte finish is perfect for Miami's exotic car scene. It provides full paint protection while creating a unique satin appearance that stands out on Ocean Drive and throughout Miami's luxury automotive community."
   },
   {
-    question: "How long does ceramic tint installation take?",
-    answer: "Professional ceramic tint installation typically takes 2-4 hours for a standard vehicle. We ensure proper curing and precise installation for optimal performance and appearance."
+    question: "How long does ceramic tint installation take in Miami?",
+    answer: "Professional XPEL ceramic tint installation takes 2-4 hours at our Miami facility. We use climate-controlled conditions to ensure proper adhesion despite Miami's humidity, with 24-48 hour curing time for optimal performance."
   },
   {
-    question: "Do you offer warranties on your services?",
-    answer: "Yes! We provide comprehensive warranties: 10 years on XPEL PPF, 5 years on ceramic coatings, and lifetime warranty on XPEL ceramic tint installations."
+    question: "Do you offer vinyl wraps for Miami's car customization scene?",
+    answer: "Yes! Our Miami location specializes in premium vinyl wraps for South Florida's vibrant car culture. From color changes to custom designs, we use high-quality materials that withstand Miami's sun and salt air exposure."
+  },
+  {
+    question: "What warranties do you provide for Miami customers?",
+    answer: "We stand behind our work with comprehensive warranties: 10 years on XPEL PPF, 5 years on ceramic coatings, and lifetime warranty on ceramic tint installations - all backed by our local Miami service commitment."
   }
 ];
 
