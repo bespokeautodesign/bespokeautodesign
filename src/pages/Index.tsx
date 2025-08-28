@@ -317,54 +317,64 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Left Column - Contact Info + Map */}
             <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-primary text-primary-foreground rounded-full p-3">
-                  <Phone className="h-6 w-6" />
+              {/* Contact Information */}
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-primary-foreground rounded-full p-3">
+                    <Phone className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Phone</h3>
+                    <a href="tel:+17863959172" className="text-muted-foreground hover:text-primary transition-colors">(786) 395-9172</a>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                  <a href="tel:+17863959172" className="text-muted-foreground hover:text-primary transition-colors">(786) 395-9172</a>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-primary-foreground rounded-full p-3">
+                    <Mail className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Email</h3>
+                    <a href="mailto:sales@bespokeauto.design" className="text-muted-foreground hover:text-primary transition-colors">sales@bespokeauto.design</a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-primary-foreground rounded-full p-3">
+                    <MapPin className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Location</h3>
+                    <a href="https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">7943 NW 64th St<br />Miami, FL 33166</a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-primary text-primary-foreground rounded-full p-3">
+                    <Clock className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1">Hours</h3>
+                    <p className="text-muted-foreground">
+                      Monday - Friday: 9:00 AM - 6:00 PM<br />
+                      Saturday: 10:00 AM - 4:00 PM<br />
+                      Sunday: Closed
+                    </p>
+                  </div>
                 </div>
               </div>
               
-              <div className="flex items-start gap-4">
-                <div className="bg-primary text-primary-foreground rounded-full p-3">
-                  <Mail className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Email</h3>
-                  <a href="mailto:sales@bespokeauto.design" className="text-muted-foreground hover:text-primary transition-colors">sales@bespokeauto.design</a>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="bg-primary text-primary-foreground rounded-full p-3">
-                  <MapPin className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Location</h3>
-                  <a href="https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">7943 NW 64th St<br />Miami, FL 33166</a>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="bg-primary text-primary-foreground rounded-full p-3">
-                  <Clock className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Hours</h3>
-                  <p className="text-muted-foreground">
-                    Monday - Friday: 9:00 AM - 6:00 PM<br />
-                    Saturday: 10:00 AM - 4:00 PM<br />
-                    Sunday: Closed
-                  </p>
-                </div>
+              {/* Interactive Map */}
+              <div className="mt-8">
+                <InteractiveMap />
               </div>
             </div>
             
-            <Card className="shadow-premium lg:col-span-2">
+            {/* Right Column - Quote Form */}
+            <Card className="shadow-premium h-fit">
               <CardHeader>
                 <CardTitle>Request a Quote</CardTitle>
                 <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
@@ -423,11 +433,6 @@ const Index = () => {
                 </Button>
               </CardContent>
             </Card>
-          </div>
-          
-          {/* Interactive Map Section */}
-          <div className="mt-16">
-            <InteractiveMap />
           </div>
         </div>
       </section>
