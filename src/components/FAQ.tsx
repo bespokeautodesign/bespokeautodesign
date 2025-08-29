@@ -33,7 +33,7 @@ const faqData = [
   },
   {
     question: "Can ceramic tint reduce heat in Florida's climate?",
-    answer: "Yes, XPEL ceramic tint dramatically reduces heat in Florida's climate, blocking up to 98% of infrared heat. This translates to significantly cooler interiors in Miami's 90°F+ temperatures, reduced AC usage, and improved fuel efficiency - making it essential for South Florida driving comfort."
+    answer: "Yes, XPEL ceramic tint dramatically reduces heat in Florida's climate, providing up to 98% heat rejection. This translates to significantly cooler interiors in Miami's 90°F+ temperatures, reduced AC usage, and improved fuel efficiency - making it essential for South Florida driving comfort."
   },
   {
     question: "What's the difference between vinyl wrap and PPF protection?",
