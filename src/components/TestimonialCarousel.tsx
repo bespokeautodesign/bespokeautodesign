@@ -174,7 +174,7 @@ export const TestimonialCarousel = () => {
       <div className="mb-8">
         <h3 className="text-2xl font-bold mb-2">Client Success Stories</h3>
         <p className="text-muted-foreground">
-          100+ satisfied customers and counting
+          150+ satisfied customers and counting
         </p>
       </div>
 
