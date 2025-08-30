@@ -105,7 +105,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
               Bespoke Auto Design
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
-              Elevating automotive excellence through precision protection, premium finishes, and uncompromising craftsmanship.
+              Elevating automotive excellence through seamless protection, premium finishes, and uncompromising craftsmanship
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
