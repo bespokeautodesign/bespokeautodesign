@@ -4,6 +4,10 @@ import { Badge } from "@/components/ui/badge";
 
 const faqData = [
   {
+    question: "What warranties do you offer for PPF, ceramic coatings, and ceramic tints?",
+    answer: "We provide comprehensive warranties backed by XPEL's industry-leading protection. PPF installations include a 10-year manufacturer warranty against yellowing, cracking, and peeling. Ceramic coatings come with a 2-5 year warranty depending on the product tier. Ceramic tint installations include a lifetime warranty against fading, bubbling, and delamination. All warranties are transferable and include our craftsmanship guarantee."
+  },
+  {
     question: "Does PPF protect against Miami's intense sun and UV rays?",
     answer: "Yes, XPEL PPF provides superior UV protection crucial for Miami's climate. Our premium films block 99% of harmful UV rays, preventing paint fading and oxidation common in South Florida's year-round sunshine. Miami's intense UV index makes PPF essential for maintaining your vehicle's appearance and resale value."
   },
