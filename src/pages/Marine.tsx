@@ -55,7 +55,7 @@ const Marine = () => {
             <div className="hidden md:flex items-center gap-8">
               <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
               <Link to="/marine" className="text-primary font-medium">Marine Services</Link>
-              <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
+              <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
             </div>
             <MobileMenu />
           </div>

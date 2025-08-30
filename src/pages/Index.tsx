@@ -79,7 +79,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
               behavior: 'smooth'
             })} className="text-muted-foreground hover:text-primary transition-colors">Services</button>
               <Link to="/marine" className="text-muted-foreground hover:text-primary transition-colors">Marine Services</Link>
-              <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
+              <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
               <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({
               behavior: 'smooth'
             })} className="text-muted-foreground hover:text-primary transition-colors">Testimonials</button>
@@ -286,7 +286,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
           </div>
 
           <div className="text-center">
-            <Link to="/projects">
+            <Link to="/portfolio">
               <Button variant="premium" size="lg" className="flex items-center gap-2 mx-auto">
                 View Portfolio
                 <ArrowRight className="h-4 w-4" />

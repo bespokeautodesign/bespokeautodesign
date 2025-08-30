@@ -19,7 +19,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/quote" element={<Index autoScrollToContact />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/portfolio" element={<Projects />} />
           <Route path="/marine" element={<Marine />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

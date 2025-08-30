@@ -11,7 +11,7 @@ const MobileMenu = () => {
     { label: "Home", href: "/" },
     { label: "Services", href: "/#services" },
     { label: "Marine Services", href: "/marine" },
-    { label: "Portfolio", href: "/projects" },
+    { label: "Portfolio", href: "/portfolio" },
     { label: "Testimonials", href: "/#testimonials" },
     { label: "Contact", href: "/#contact" },
   ];
