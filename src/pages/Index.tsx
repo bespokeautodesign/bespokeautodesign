@@ -1,3 +1,4 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -18,12 +19,21 @@ import ppfInstallationImage from "@/assets/ppf-installation.jpg";
 import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
 
-const Index = () => {
+const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) => {
   const scrollToQuote = () => {
     document.getElementById('contact')?.scrollIntoView({
       behavior: 'smooth'
     });
   };
+
+  React.useEffect(() => {
+    if (autoScrollToContact) {
+      // Small delay to ensure page is loaded
+      setTimeout(() => {
+        scrollToQuote();
+      }, 100);
+    }
+  }, [autoScrollToContact]);
   const services = [{
     title: "Paint Protection Film (PPF)",
     description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
