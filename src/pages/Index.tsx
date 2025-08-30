@@ -124,7 +124,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({
                 behavior: 'smooth'
               })}>
-                Schedule Consultation
+                Schedule Today
               </Button>
             </div>
           </div>
