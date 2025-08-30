@@ -83,9 +83,6 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
               <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({
               behavior: 'smooth'
             })} className="text-muted-foreground hover:text-primary transition-colors">Testimonials</button>
-              <button onClick={() => document.getElementById('contact')?.scrollIntoView({
-              behavior: 'smooth'
-            })} className="text-muted-foreground hover:text-primary transition-colors">Contact</button>
             </div>
             <div className="flex items-center gap-4">
               <MobileMenu />
