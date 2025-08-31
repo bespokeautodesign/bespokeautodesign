@@ -25,11 +25,11 @@ const MobileMenu = () => {
         </SheetTrigger>
         <SheetContent side="right" className="w-80">
           <div className="flex flex-col gap-6 mt-8">
-            <div className="flex items-center gap-3 mb-6">
-              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-8 w-auto" />
-              <span className="text-sm font-bold text-primary whitespace-nowrap">
+            <div className="flex items-center gap-2 mb-6 min-w-0">
+              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-7 w-auto flex-shrink-0" />
+              <div className="text-xs font-bold text-primary whitespace-nowrap overflow-hidden">
                 <span className="text-silver">Bespoke</span> Auto Design
-              </span>
+              </div>
             </div>
             
             {menuItems.map((item, index) => (
