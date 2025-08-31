@@ -84,11 +84,11 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
               behavior: 'smooth'
             })} className="text-muted-foreground hover:text-primary transition-colors">Testimonials</button>
             </div>
-            <div className="flex items-center gap-4">
-              <MobileMenu />
-              <Button variant="premium" size="lg" onClick={scrollToQuote}>
+            <div className="flex items-center gap-2">
+              <Button variant="premium" size="sm" onClick={scrollToQuote} className="hidden sm:flex">
                 Get Quote
               </Button>
+              <MobileMenu />
             </div>
           </div>
         </div>
