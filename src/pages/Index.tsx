@@ -68,9 +68,9 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-12 w-auto" />
-              <span className="text-lg md:text-xl font-bold text-primary">
+            <div className="flex items-center gap-2">
+              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-10 w-auto" />
+              <span className="text-sm md:text-lg font-bold text-primary whitespace-nowrap">
                 <span className="text-silver">Bespoke</span> Auto Design
               </span>
             </div>
