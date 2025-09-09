@@ -93,11 +93,11 @@ const XPELColorPPF = () => {
 
           {/* Benefits Hero Section */}
           <div className="mb-8">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg transform translate-x-4 translate-y-4 md:translate-x-0 md:translate-y-0">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img 
                 src="/lovable-uploads/4b56ee72-ca4c-452a-9f3a-9a3df7fca4e0.png" 
                 alt="XPEL Color Paint Protection Film Benefits" 
-                className="w-full h-[500px] object-cover"
+                className="w-full h-[500px] object-cover transform translate-x-4 translate-y-4 md:translate-x-0 md:translate-y-0"
               />
             </div>
           </div>
