@@ -97,7 +97,7 @@ const XPELColorPPF = () => {
               <img 
                 src="/lovable-uploads/4b56ee72-ca4c-452a-9f3a-9a3df7fca4e0.png" 
                 alt="XPEL Color Paint Protection Film Benefits" 
-                className="w-full h-auto max-h-[400px] md:h-[500px] object-cover object-[60%_60%] md:object-[50%_60%]"
+                className="w-full h-auto max-h-[400px] md:h-[500px] object-cover object-[60%_60%] md:object-[50%_20%]"
               />
             </div>
           </div>
