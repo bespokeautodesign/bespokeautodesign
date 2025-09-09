@@ -436,6 +436,23 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                       </select>
                     </div>
                     <div className="space-y-2">
+                      <label className="text-sm font-medium">Preferred Contact Method</label>
+                      <div className="flex gap-4">
+                        <label className="flex items-center space-x-2">
+                          <input type="checkbox" name="contactMethod" value="text" className="rounded border-input" />
+                          <span className="text-sm">Text</span>
+                        </label>
+                        <label className="flex items-center space-x-2">
+                          <input type="checkbox" name="contactMethod" value="phone" className="rounded border-input" />
+                          <span className="text-sm">Phone</span>
+                        </label>
+                        <label className="flex items-center space-x-2">
+                          <input type="checkbox" name="contactMethod" value="email" className="rounded border-input" />
+                          <span className="text-sm">Email</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
                       <label className="text-sm font-medium">Message</label>
                       <textarea name="message" className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
                     </div>
@@ -443,8 +460,9 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                   <Button variant="premium" className="w-full" onClick={() => {
                   const form = document.querySelector('#quote-form') as HTMLFormElement;
                   const formData = new FormData(form);
+                  const contactMethods = Array.from(form.querySelectorAll('input[name="contactMethod"]:checked')).map(input => (input as HTMLInputElement).value);
                   const subject = `Quote Request - ${formData.get('service')}`;
-                  const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0AMessage: ${formData.get('message')}`;
+                  const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0APreferred Contact: ${contactMethods.join(', ')}%0D%0AMessage: ${formData.get('message')}`;
                   window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
                   alert('Thank you! Your quote request has been prepared. Please send the email that just opened, or call us at (786) 395-9172.');
                 }}>
