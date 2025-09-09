@@ -202,7 +202,18 @@ const XPELColorPPF = () => {
 
           {/* CTA */}
           <div className="mt-8 pt-6 border-t border-gray-200">
-            <Button className="w-full mb-3" size="lg">
+            <Button 
+              className="w-full mb-3" 
+              size="lg"
+              onClick={() => {
+                // Navigate to home page contact section
+                if (window.location.pathname !== '/') {
+                  window.location.href = '/#contact';
+                } else {
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               Get Quote for {selectedColor.name}
             </Button>
             <p className="text-xs text-gray-500 text-center">
