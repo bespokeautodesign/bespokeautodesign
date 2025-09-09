@@ -75,7 +75,7 @@ const XPELColorPPF = () => {
               <img 
                 src="/lovable-uploads/8b43fed7-f7fb-4afb-9e85-d49fe7a3f5dc.png" 
                 alt="Professional PPF Installation Process" 
-                className="w-full h-36 object-cover"
+                className="w-full h-64 object-cover"
               />
             </div>
           </div>
