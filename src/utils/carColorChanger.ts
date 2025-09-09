@@ -94,25 +94,45 @@ function hexToRgb(hex: string): { r: number; g: number; b: number } | null {
 
 function isCarBodyPixel(r: number, g: number, b: number): boolean {
   // This function determines if a pixel is part of the car body that should be recolored
-  // We exclude very dark pixels (likely wheels, tires, shadows) and very bright/clear pixels (windows, lights)
+  // We need to be very precise to exclude background, headlights, windows, etc.
   
   const brightness = (r + g + b) / 3;
   const saturation = Math.max(r, g, b) - Math.min(r, g, b);
   
-  // Exclude very dark pixels (wheels, tires, shadows)
-  if (brightness < 30) return false;
+  // Exclude very dark pixels (wheels, tires, shadows, windows)
+  if (brightness < 50) return false;
   
-  // Exclude very bright pixels (lights, reflections)
-  if (brightness > 240) return false;
+  // Exclude very bright pixels (headlights, reflections, chrome)
+  if (brightness > 220) return false;
   
-  // Exclude pixels that are too saturated (already colored elements)
-  if (saturation > 100) return false;
+  // Exclude pixels that are too close to pure black (tires, shadows)
+  if (r < 30 && g < 30 && b < 30) return false;
   
-  // Exclude pixels that are too close to pure black or white
-  if ((r < 20 && g < 20 && b < 20) || (r > 235 && g > 235 && b > 235)) return false;
+  // Exclude pixels that are too close to pure white (headlights, reflections)
+  if (r > 230 && g > 230 && b > 230) return false;
   
-  // This should catch most of the car body pixels (metal surfaces)
-  return true;
+  // Exclude blue-ish pixels (likely sky/background)
+  if (b > r + 30 && b > g + 30) return false;
+  
+  // Exclude very saturated pixels (already colored elements, lights)
+  if (saturation > 80) return false;
+  
+  // Exclude pixels with very low saturation (likely chrome, glass, or background)
+  if (saturation < 10 && brightness > 180) return false;
+  
+  // Target mid-range brightness with some color variation (typical car paint)
+  if (brightness >= 50 && brightness <= 220 && saturation >= 10 && saturation <= 80) {
+    // Additional check: exclude very blue or very white pixels (sky, clouds)
+    const blueRatio = b / (r + g + b);
+    const whiteBalance = Math.abs(r - g) + Math.abs(g - b) + Math.abs(r - b);
+    
+    // Exclude if too blue (sky) or too balanced and bright (clouds/background)
+    if (blueRatio > 0.4 || (whiteBalance < 30 && brightness > 150)) return false;
+    
+    return true;
+  }
+  
+  return false;
 }
 
 export const loadImage = (src: string): Promise<HTMLImageElement> => {
