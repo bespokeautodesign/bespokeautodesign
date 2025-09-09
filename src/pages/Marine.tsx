@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Anchor, Waves, Shield } from "lucide-react";
+import { Anchor, Waves, Shield, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import MobileMenu from "@/components/MobileMenu";
@@ -88,11 +88,12 @@ const Marine = () => {
                 <span className="text-silver">Bespoke</span> Auto Design
               </span>
             </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
-              <Link to="/marine" className="text-primary font-medium">Marine Services</Link>
-              <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
-            </div>
+            <Link to="/">
+              <Button variant="outline" className="flex items-center gap-2">
+                <ArrowLeft className="h-4 w-4" />
+                Back to Home
+              </Button>
+            </Link>
             <MobileMenu />
           </div>
           <Breadcrumbs 
