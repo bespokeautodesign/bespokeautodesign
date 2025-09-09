@@ -46,28 +46,6 @@ const vehicleModels: VehicleModel[] = [
 
 const vehicleTypes = ['Sport', 'SUV'];
 
-const getColorFilter = (color: XPELColor) => {
-  const colorMap: { [key: string]: string } = {
-    '#FFD700': 'hue-rotate(45deg) saturate(1.8) brightness(1.1)', // Yellow
-    '#FF4500': 'hue-rotate(15deg) saturate(1.6) brightness(1.0)', // Orange
-    '#DC143C': 'hue-rotate(350deg) saturate(1.5) brightness(0.9)', // Red
-    '#D2B48C': 'hue-rotate(35deg) saturate(0.8) brightness(1.1)', // Beige
-    '#556B2F': 'hue-rotate(80deg) saturate(1.2) brightness(0.8)', // Battle Green
-    '#228B22': 'hue-rotate(120deg) saturate(1.4) brightness(0.9)', // Moss Green
-    '#4169E1': 'hue-rotate(230deg) saturate(1.3) brightness(0.8)', // Blue
-    '#191970': 'hue-rotate(240deg) saturate(1.1) brightness(0.6)', // Abyss Blue
-    '#8B008B': 'hue-rotate(300deg) saturate(1.5) brightness(0.8)', // Purple
-    '#C0C0C0': 'saturate(0.3) brightness(1.2)', // Silver
-    '#708090': 'saturate(0.5) brightness(0.9)', // Grey
-    '#2F4F4F': 'saturate(0.4) brightness(0.7)', // Tarmac
-    '#000000': 'brightness(0.3) contrast(1.2)', // Black
-    '#2C2C2C': 'brightness(0.4) contrast(1.1)', // Midnight Black
-    '#36454F': 'brightness(0.5) contrast(1.0)', // Grey Black
-    '#F8F8FF': 'brightness(1.3) contrast(0.9)', // Pearl White
-  };
-  return colorMap[color.color] || 'none';
-};
-
 const XPELColorPPF = () => {
   const [selectedColor, setSelectedColor] = useState<XPELColor>(xpelColors[0]);
   const [selectedVehicleType, setSelectedVehicleType] = useState<string>('Sport');
@@ -265,19 +243,8 @@ const XPELColorPPF = () => {
               <div className="relative max-w-4xl mx-auto">
                 <img
                   src={selectedVehicle.image}
-                  alt={`${selectedVehicle.name} with ${selectedColor.name} PPF`}
-                  className="w-full h-auto rounded-lg shadow-2xl transition-all duration-700 ease-in-out"
-                  style={{
-                    filter: getColorFilter(selectedColor),
-                  }}
-                />
-                
-                {/* Color overlay for enhanced effect */}
-                <div
-                  className="absolute inset-0 rounded-lg transition-all duration-700 ease-in-out mix-blend-overlay opacity-15"
-                  style={{
-                    backgroundColor: selectedColor.color,
-                  }}
+                  alt={`${selectedVehicle.name}`}
+                  className="w-full h-auto rounded-lg shadow-2xl"
                 />
               </div>
             </div>
@@ -287,9 +254,9 @@ const XPELColorPPF = () => {
         {/* Color Selection Section */}
         <section id="colors" className="mb-16">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-primary mb-4">Choose Your XPEL Color</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">Available XPEL Colors</h3>
             <p className="text-muted-foreground">
-              Click any color below to see how it would look on your selected vehicle.
+              Browse our selection of premium XPEL colored PPF options. Each color provides the same superior protection with a unique aesthetic finish.
             </p>
           </div>
 
@@ -338,8 +305,9 @@ const XPELColorPPF = () => {
             variant="premium" 
             size="lg" 
             className="text-lg px-8 py-4"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Find an Installer
+            Get Your Quote
           </Button>
           <p className="text-muted-foreground mt-4">
             Professional installation • Premium XPEL materials • 10-year warranty
