@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, ArrowRight, Calendar } from "lucide-react";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { FAQ } from "@/components/FAQ";
+import { PPFColorPreview } from "@/components/PPFColorPreview";
 import { Link } from "react-router-dom";
 import MobileMenu from "@/components/MobileMenu";
 
@@ -226,6 +227,8 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
         </div>
       </section>
 
+      {/* PPF Color Preview Section */}
+      <PPFColorPreview />
 
       {/* Projects Preview Section */}
       <section id="projects" className="py-20 bg-background/80 backdrop-blur-sm">
