@@ -115,7 +115,7 @@ export const XPELTeaser = () => {
 
             {/* CTA */}
             <div className="text-center pt-6 border-t border-border">
-              <Link to="/xpel-color">
+              <Link to="/colorppf">
                 <Button variant="premium" size="lg" className="text-lg px-8 py-4 group">
                   Explore XPEL COLOR
                   <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -144,7 +144,7 @@ export const XPELTeaser = () => {
               <p className="text-muted-foreground text-sm max-w-md mx-auto">
                 Transform your vehicle's appearance while providing ultimate protection. Browse our complete collection of colored PPF options.
               </p>
-              <Link to="/xpel-color">
+              <Link to="/colorppf">
                 <Button variant="outline" className="group">
                   View All Colors
                   <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />

@@ -115,7 +115,7 @@ const XPELColorPPF = () => {
           <Breadcrumbs 
             items={[
               { name: "Home", path: "/" },
-              { name: "XPEL COLOR PPF", path: "/xpel-color", current: true }
+              { name: "XPEL COLOR PPF", path: "/colorppf", current: true }
             ]} 
           />
         </div>

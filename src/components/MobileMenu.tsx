@@ -10,7 +10,7 @@ const MobileMenu = () => {
   const menuItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/#services" },
-    { label: "Color PPF", href: "/xpel-color" },
+    { label: "Color PPF", href: "/colorppf" },
     { label: "Marine Services", href: "/marine" },
     { label: "Portfolio", href: "/portfolio" },
   ];

@@ -22,7 +22,7 @@ const App = () => (
           <Route path="/quote" element={<Index autoScrollToContact />} />
           <Route path="/portfolio" element={<Projects />} />
           <Route path="/marine" element={<Marine />} />
-          <Route path="/xpel-color" element={<XPELColorPPF />} />
+          <Route path="/colorppf" element={<XPELColorPPF />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

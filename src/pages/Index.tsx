@@ -118,7 +118,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
               <button onClick={() => document.getElementById('services')?.scrollIntoView({
               behavior: 'smooth'
             })} className="text-muted-foreground hover:text-primary transition-colors">Services</button>
-              <Link to="/xpel-color" className="text-muted-foreground hover:text-primary transition-colors">Color PPF</Link>
+              <Link to="/colorppf" className="text-muted-foreground hover:text-primary transition-colors">Color PPF</Link>
               <Link to="/marine" className="text-muted-foreground hover:text-primary transition-colors">Marine Services</Link>
               <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
             </div>
@@ -224,7 +224,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                     Now available in 16 bold colors. Style + protection in one.
                   </p>
                   <div className="pt-2">
-                    <Link to="/xpel-color">
+                    <Link to="/colorppf">
                       <Button 
                         variant="secondary" 
                         size="sm" 
