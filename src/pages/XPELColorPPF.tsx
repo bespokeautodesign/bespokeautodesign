@@ -69,52 +69,41 @@ const XPELColorPPF = () => {
             <p className="text-gray-600 text-sm">Browse and configure your paint protection film colors</p>
           </div>
 
-          {/* Selected Color Display - Top Priority */}
-          <div className="bg-card rounded-2xl p-8 shadow-sm border mb-8">
-            <div className="flex flex-col lg:flex-row gap-8 items-center">
-              {/* Large Color Preview */}
-              <div className="flex-shrink-0">
-                <div className="relative">
-                  <div
-                    className="w-32 h-32 rounded-2xl shadow-2xl border-4 border-background"
-                    style={{
-                      backgroundColor: selectedColor.color,
-                      background: selectedColor.finish === 'Metallic'
-                        ? `linear-gradient(135deg, ${selectedColor.color}, #ffffff60, ${selectedColor.color})`
-                        : selectedColor.color,
-                      filter: selectedColor.finish === 'Satin' ? 'brightness(0.85) contrast(1.1)' : 'none'
-                    }}
-                  />
-                  <div className="absolute -bottom-2 -right-2">
-                    <Badge variant="default" className="shadow-lg">
-                      {selectedColor.finish}
-                    </Badge>
-                  </div>
-                </div>
-              </div>
+          {/* Benefits Hero Section */}
+          <div className="mb-12">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src="/lovable-uploads/4b56ee72-ca4c-452a-9f3a-9a3df7fca4e0.png" 
+                alt="XPEL Color Paint Protection Film Benefits" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
 
-              {/* Color Information */}
-              <div className="flex-1 text-center lg:text-left">
-                <h4 className="text-3xl font-bold text-foreground mb-2">
-                  {selectedColor.name}
-                </h4>
-                <p className="text-lg text-muted-foreground mb-4">
-                  {selectedColor.finish} Finish • Premium Paint Protection Film
-                </p>
-                <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
-                    <Shield className="h-4 w-4 text-primary" />
-                    <span>10-year warranty</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
-                    <Zap className="h-4 w-4 text-primary" />
-                    <span>Self-healing</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
-                    <Star className="h-4 w-4 text-primary" />
-                    <span>UV resistant</span>
-                  </div>
-                </div>
+          {/* Color Showcase Section */}
+          <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+              <img 
+                src="/lovable-uploads/79c435f6-2f6b-4ece-87b1-9dce26b621a7.png" 
+                alt="XPEL PPF Color Motion" 
+                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <h4 className="font-semibold text-lg">Dynamic Protection</h4>
+                <p className="text-sm opacity-90">Advanced film technology</p>
+              </div>
+            </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+              <img 
+                src="/lovable-uploads/86d579b0-d6bd-414a-a58b-23744306a9dd.png" 
+                alt="XPEL PPF Color Spectrum" 
+                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+              <div className="absolute bottom-4 left-4 text-white">
+                <h4 className="font-semibold text-lg">Vibrant Colors</h4>
+                <p className="text-sm opacity-90">Endless customization options</p>
               </div>
             </div>
           </div>
@@ -158,59 +147,115 @@ const XPELColorPPF = () => {
             </div>
           </div>
 
-          {/* XPEL Color Palette */}
+          {/* XPEL Color Selection */}
           <div className="space-y-6">
             <div className="text-center">
               <h3 className="text-2xl font-bold text-foreground mb-2">XPEL Color Collection</h3>
               <p className="text-muted-foreground">Premium paint protection films in stunning colors</p>
             </div>
             
-            <div className="bg-card rounded-2xl p-8 shadow-sm border">
-              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                {xpelColors.map((color) => (
-                  <div
-                    key={color.name}
-                    className="flex flex-col items-center space-y-3 group cursor-pointer"
-                    onClick={() => setSelectedColor(color)}
-                  >
-                    <div
-                      className={`relative w-16 h-16 rounded-full border-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg ${
-                        selectedColor.name === color.name
-                          ? 'border-primary shadow-xl scale-110'
-                          : 'border-border group-hover:border-primary/50'
-                      }`}
-                    >
+            {/* Color Selector and Selected Color Display Side by Side */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Color Palette */}
+              <div className="lg:col-span-2">
+                <div className="bg-card rounded-2xl p-8 shadow-sm border">
+                  <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    {xpelColors.map((color) => (
                       <div
-                        className="w-full h-full rounded-full overflow-hidden"
+                        key={color.name}
+                        className="flex flex-col items-center space-y-3 group cursor-pointer"
+                        onClick={() => setSelectedColor(color)}
+                      >
+                        <div
+                          className={`relative w-16 h-16 rounded-full border-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg ${
+                            selectedColor.name === color.name
+                              ? 'border-primary shadow-xl scale-110'
+                              : 'border-border group-hover:border-primary/50'
+                          }`}
+                        >
+                          <div
+                            className="w-full h-full rounded-full overflow-hidden"
+                            style={{
+                              backgroundColor: color.color,
+                              background: color.finish === 'Metallic'
+                                ? `linear-gradient(135deg, ${color.color}, #ffffff60, ${color.color})`
+                                : color.color,
+                              filter: color.finish === 'Satin' ? 'brightness(0.85) contrast(1.1)' : 'none'
+                            }}
+                          />
+                          {selectedColor.name === color.name && (
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <CheckCircle className="w-6 h-6 text-primary bg-background rounded-full" />
+                            </div>
+                          )}
+                        </div>
+                        <div className="text-center">
+                          <p className={`text-sm font-medium transition-colors ${
+                            selectedColor.name === color.name ? 'text-primary' : 'text-foreground'
+                          }`}>
+                            {color.name.replace('XPEL ', '')}
+                          </p>
+                          <Badge 
+                            variant={selectedColor.name === color.name ? 'default' : 'secondary'}
+                            className="text-xs mt-1"
+                          >
+                            {color.finish}
+                          </Badge>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Selected Color Display */}
+              <div className="lg:col-span-1">
+                <div className="bg-card rounded-2xl p-6 shadow-sm border h-full">
+                  <div className="flex flex-col items-center text-center h-full justify-center">
+                    {/* Large Color Preview */}
+                    <div className="relative mb-6">
+                      <div
+                        className="w-24 h-24 rounded-2xl shadow-2xl border-4 border-background"
                         style={{
-                          backgroundColor: color.color,
-                          background: color.finish === 'Metallic'
-                            ? `linear-gradient(135deg, ${color.color}, #ffffff60, ${color.color})`
-                            : color.color,
-                          filter: color.finish === 'Satin' ? 'brightness(0.85) contrast(1.1)' : 'none'
+                          backgroundColor: selectedColor.color,
+                          background: selectedColor.finish === 'Metallic'
+                            ? `linear-gradient(135deg, ${selectedColor.color}, #ffffff60, ${selectedColor.color})`
+                            : selectedColor.color,
+                          filter: selectedColor.finish === 'Satin' ? 'brightness(0.85) contrast(1.1)' : 'none'
                         }}
                       />
-                      {selectedColor.name === color.name && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <CheckCircle className="w-6 h-6 text-primary bg-background rounded-full" />
-                        </div>
-                      )}
+                      <div className="absolute -bottom-2 -right-2">
+                        <Badge variant="default" className="shadow-lg">
+                          {selectedColor.finish}
+                        </Badge>
+                      </div>
                     </div>
-                    <div className="text-center">
-                      <p className={`text-sm font-medium transition-colors ${
-                        selectedColor.name === color.name ? 'text-primary' : 'text-foreground'
-                      }`}>
-                        {color.name.replace('XPEL ', '')}
+
+                    {/* Color Information */}
+                    <div className="flex-1">
+                      <h4 className="text-xl font-bold text-foreground mb-2">
+                        {selectedColor.name}
+                      </h4>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        {selectedColor.finish} Finish
                       </p>
-                      <Badge 
-                        variant={selectedColor.name === color.name ? 'default' : 'secondary'}
-                        className="text-xs mt-1"
-                      >
-                        {color.finish}
-                      </Badge>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <Shield className="h-3 w-3 text-primary" />
+                          <span>10-year warranty</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <Zap className="h-3 w-3 text-primary" />
+                          <span>Self-healing</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <Star className="h-3 w-3 text-primary" />
+                          <span>UV resistant</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
