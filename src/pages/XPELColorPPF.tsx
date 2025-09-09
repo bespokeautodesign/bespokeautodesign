@@ -55,7 +55,18 @@ const XPELColorPPF = () => {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <Button variant="default" size="sm">Get Quote</Button>
+              <Button 
+                variant="default" 
+                size="sm"
+                onClick={() => {
+                  navigate('/');
+                  setTimeout(() => {
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 300);
+                }}
+              >
+                Get Quote
+              </Button>
             </div>
           </div>
         </div>
@@ -264,20 +275,10 @@ const XPELColorPPF = () => {
               className="w-full mb-3" 
               size="lg"
               onClick={() => {
-                console.log('Get Quote button clicked');
-                // Navigate to home page and then scroll to contact section
                 navigate('/');
                 setTimeout(() => {
-                  console.log('Looking for contact element');
-                  const contactElement = document.getElementById('contact');
-                  console.log('Contact element found:', contactElement);
-                  if (contactElement) {
-                    console.log('Scrolling to contact element');
-                    contactElement.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    console.log('Contact element not found');
-                  }
-                }, 500);
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                }, 300);
               }}
             >
               Get Quote for {selectedColor.name}
