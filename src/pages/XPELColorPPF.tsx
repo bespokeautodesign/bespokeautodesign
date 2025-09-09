@@ -125,13 +125,53 @@ const XPELColorPPF = () => {
             </div>
           </div>
 
-          {/* Selected Color Info */}
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">{selectedColor.name}</h4>
-            <p className="text-sm text-gray-600 mb-2">{selectedColor.finish} Finish</p>
-            <div className="flex items-center gap-2 text-sm text-gray-500">
-              <Shield className="h-4 w-4" />
-              <span>10-year warranty included</span>
+          {/* Selected Color Display */}
+          <div className="bg-card rounded-2xl p-8 shadow-sm border">
+            <div className="flex flex-col lg:flex-row gap-8 items-center">
+              {/* Large Color Preview */}
+              <div className="flex-shrink-0">
+                <div className="relative">
+                  <div
+                    className="w-32 h-32 rounded-2xl shadow-2xl border-4 border-background"
+                    style={{
+                      backgroundColor: selectedColor.color,
+                      background: selectedColor.finish === 'Metallic'
+                        ? `linear-gradient(135deg, ${selectedColor.color}, #ffffff60, ${selectedColor.color})`
+                        : selectedColor.color,
+                      filter: selectedColor.finish === 'Satin' ? 'brightness(0.85) contrast(1.1)' : 'none'
+                    }}
+                  />
+                  <div className="absolute -bottom-2 -right-2">
+                    <Badge variant="default" className="shadow-lg">
+                      {selectedColor.finish}
+                    </Badge>
+                  </div>
+                </div>
+              </div>
+
+              {/* Color Information */}
+              <div className="flex-1 text-center lg:text-left">
+                <h4 className="text-3xl font-bold text-foreground mb-2">
+                  {selectedColor.name}
+                </h4>
+                <p className="text-lg text-muted-foreground mb-4">
+                  {selectedColor.finish} Finish • Premium Paint Protection Film
+                </p>
+                <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
+                    <Shield className="h-4 w-4 text-primary" />
+                    <span>10-year warranty</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
+                    <Zap className="h-4 w-4 text-primary" />
+                    <span>Self-healing</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
+                    <Star className="h-4 w-4 text-primary" />
+                    <span>UV resistant</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
