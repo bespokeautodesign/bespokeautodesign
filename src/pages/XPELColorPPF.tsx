@@ -69,17 +69,6 @@ const XPELColorPPF = () => {
             <p className="text-gray-600 text-sm">Browse and configure your paint protection film colors</p>
           </div>
 
-          {/* Benefits Hero Section */}
-          <div className="mb-8">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
-              <img 
-                src="/lovable-uploads/4b56ee72-ca4c-452a-9f3a-9a3df7fca4e0.png" 
-                alt="XPEL Color Paint Protection Film Benefits" 
-                className="w-full h-96 object-contain bg-gray-50"
-              />
-            </div>
-          </div>
-
           {/* Installation Process */}
           <div className="mb-8">
             <div className="relative rounded-2xl overflow-hidden shadow-lg max-w-2xl mx-auto">
@@ -87,6 +76,17 @@ const XPELColorPPF = () => {
                 src="/lovable-uploads/8b43fed7-f7fb-4afb-9e85-d49fe7a3f5dc.png" 
                 alt="Professional PPF Installation Process" 
                 className="w-full h-48 object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Benefits Hero Section */}
+          <div className="mb-8">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/4b56ee72-ca4c-452a-9f3a-9a3df7fca4e0.png" 
+                alt="XPEL Color Paint Protection Film Benefits" 
+                className="w-full h-96 object-contain bg-gray-50"
               />
             </div>
           </div>
