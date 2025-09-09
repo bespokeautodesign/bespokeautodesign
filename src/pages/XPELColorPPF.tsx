@@ -48,12 +48,12 @@ const XPELColorPPF = () => {
                 <span className="font-medium">Back to Home</span>
               </Link>
               <div className="hidden md:block h-6 w-px bg-gray-300"></div>
-              <div className="flex items-center gap-2">
+              <Link to="/" className="flex items-center gap-2">
                 <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-8 w-auto" />
                 <span className="text-lg font-bold text-primary">
                   <span className="text-silver">Bespoke</span> Auto Design
                 </span>
-              </div>
+              </Link>
             </div>
             <div className="flex items-center gap-4">
               <Button 
