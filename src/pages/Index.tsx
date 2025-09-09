@@ -9,6 +9,8 @@ import { HomeFAQ } from "@/components/HomeFAQ";
 import { XPELTeaser } from "@/components/XPELTeaser";
 import { Link } from "react-router-dom";
 import MobileMenu from "@/components/MobileMenu";
+import { SEO } from "@/components/SEO";
+import { generateBusinessSchema, generateServiceSchema, generateFAQSchema } from "@/utils/structuredData";
 
 // Import assets
 const heroBugattiBolideImage = "/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png";
@@ -56,7 +58,36 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
     image: tintWorkImage,
     features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"]
   }];
+  
+  // Generate structured data for SEO
+  const businessSchema = generateBusinessSchema();
+  const faqSchema = generateFAQSchema([
+    {
+      question: "What is paint protection film (PPF)?",
+      answer: "Paint protection film (PPF) is a transparent, durable polyurethane film designed to protect a vehicle's paint from scratches, chips, stains, and environmental damage."
+    },
+    {
+      question: "How long does PPF last?",
+      answer: "Paint protection film (PPF) typically lasts between 5 to 10 years, depending on factors such as the quality of the film, installation techniques, and environmental conditions."
+    },
+    {
+      question: "What does ceramic coating do for a car?",
+      answer: "Ceramic coating provides a protective shield against environmental damage like UV rays, bird droppings, and road grime while enhancing the vehicle's gloss and shine."
+    }
+  ]);
+
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [businessSchema, faqSchema]
+  };
+
   return <div className="min-h-screen bg-background relative">
+      <SEO 
+        title="Premium PPF, Ceramic Coating & Window Tint Miami | Bespoke Auto Design"
+        description="Professional XPEL paint protection film, ceramic coating & window tint installation in Miami. Authorized dealer with lifetime warranties. Protect your luxury vehicle investment."
+        keywords="PPF Miami, paint protection film Miami, ceramic coating Miami, window tint Miami, XPEL dealer Miami, luxury car protection, automotive detailing Miami"
+        schemaData={combinedSchema}
+      />
       {/* Background Image - Full width coverage */}
       <div 
         className="fixed inset-0 w-screen bg-cover bg-center bg-no-repeat z-0"
@@ -70,7 +101,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-10 w-auto" />
+              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design - Premium Automotive Protection Services Miami" className="h-10 w-auto" />
               <span className="text-sm md:text-lg font-bold text-primary whitespace-nowrap">
                 <span className="text-silver">Bespoke</span> Auto Design
               </span>
@@ -96,15 +127,15 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
       {/* Hero Section */}
       <section className="relative text-primary-foreground py-24">
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <header className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 shadow-glow text-base px-6 py-2 font-semibold animate-pulse">
               Premium Automotive Protection
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Bespoke Auto Design
+              Miami's Premier Automotive Protection Experts
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
-              Elevating automotive excellence through seamless protection, premium finishes, and uncompromising craftsmanship
+              Professional XPEL paint protection film, ceramic coating, and window tint services. Protecting Miami's finest vehicles since 2020.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
@@ -126,7 +157,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                 Schedule Today
               </Button>
             </div>
-          </div>
+          </header>
         </div>
       </section>
 
@@ -134,16 +165,15 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
       <section id="xpel" className="py-20 bg-black text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 opacity-95"></div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <article className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-xpel-yellow text-primary">
-              Official Partner
+              Official XPEL Partner
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground flex items-center justify-center gap-4">
-              XPEL
-              Authorized Dealer
+              XPEL Authorized Dealer Miami
             </h2>
             <p className="text-xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
-              As an authorized XPEL dealer, we bring you the world's leading paint protection film technology with unmatched clarity, durability, and self-healing properties.
+              As Miami's premier XPEL authorized dealer, we bring you the world's leading paint protection film technology with unmatched clarity, durability, and self-healing properties. Protecting South Florida's luxury vehicles with industry-leading warranties.
             </p>
             
             <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -205,20 +235,20 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                 </div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-background/80 backdrop-blur-sm">
+      <main id="services" className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <header className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Our Expertise</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Premium Services</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Premium Protection Services</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We specialize in advanced automotive protection and customization services using only the finest materials and techniques.
+              We specialize in advanced automotive protection and customization services using only the finest XPEL materials and proven techniques. Serving Miami's luxury automotive community with excellence.
             </p>
-          </div>
+          </header>
           
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, index) => <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105">
@@ -253,7 +283,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
               </Card>)}
           </div>
         </div>
-      </section>
+      </main>
 
 
       {/* Projects Preview Section */}
@@ -270,7 +300,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img src="/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png" alt="PPF Installation Project" className="w-full h-64 object-cover object-[center_65%] transition-transform duration-300 group-hover:scale-105" />
+                <img src="/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png" alt="McLaren 570S Inozetek vinyl wrap and ceramic tint installation at Bespoke Auto Design Miami" className="w-full h-64 object-cover object-[center_65%] transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-black/60 text-white border-white/20">Vinyl Wrap + Ceramic Tints</Badge>
                 </div>
@@ -284,7 +314,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
 
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img src="/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png" alt="Ferrari in Bespoke Auto Design Shop" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
+                <img src="/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png" alt="Ferrari F8 Tributo XPEL Ultimate Plus PPF and Fusion ceramic coating installation Miami" className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-black/60 text-white border-white/20">PPF + Ceramic Coating</Badge>
                 </div>
@@ -298,7 +328,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
 
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img src="/lovable-uploads/954a24eb-a0e4-4854-a5ae-cc3558261924.png" alt="Mercedes G-Wagon G63 AMG" className="w-full h-64 object-cover object-[center_45%] transition-transform duration-300 group-hover:scale-105" />
+                <img src="/lovable-uploads/954a24eb-a0e4-4854-a5ae-cc3558261924.png" alt="Mercedes G-Wagon G63 AMG XPEL Stealth PPF and ceramic window tint Miami installation" className="w-full h-64 object-cover object-[center_45%] transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-black/60 text-white border-white/20">Stealth PPF + Ceramic Tints</Badge>
                 </div>

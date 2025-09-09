@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import MobileMenu from "@/components/MobileMenu";
 import { MarineFAQ } from "@/components/MarineFAQ";
+import { SEO } from "@/components/SEO";
+import { generateServiceSchema, generateFAQSchema } from "@/utils/structuredData";
 
 const Marine = () => {
   useEffect(() => {
@@ -33,8 +35,34 @@ const Marine = () => {
     features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"]
   }];
 
+  // Generate structured data for Marine page
+  const marineServiceSchema = generateServiceSchema(
+    "Marine Protection Services",
+    "Specialized protection services for boats, yachts, and marine vessels including PPF, ceramic coating, and window tint."
+  );
+
+  const marineFaqSchema = generateFAQSchema([
+    {
+      question: "Can XPEL paint protection film be applied to marine vessels?",
+      answer: "Yes, XPEL paint protection film can be applied to boats and marine vessels to protect gel coat and painted surfaces from saltwater, UV rays, and harsh marine conditions."
+    },
+    {
+      question: "Is ceramic coating worth it for boats?",
+      answer: "Yes, ceramic coating a boat is worth it as it provides superior protection against harsh marine environments, preventing oxidation, corrosion, and fading."
+    }
+  ]);
+
   return (
     <div className="min-h-screen bg-background relative">
+      <SEO 
+        title="Marine Protection Services Miami | Boat PPF & Ceramic Coating | Bespoke Auto Design"
+        description="Professional marine protection services for boats and yachts in Miami. XPEL marine PPF, ceramic coating, and window tint. Protect your vessel from saltwater and UV damage."
+        keywords="marine PPF Miami, boat protection Miami, yacht ceramic coating, marine window tint, boat paint protection film, marine detailing Miami"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@graph": [marineServiceSchema, marineFaqSchema]
+        }}
+      />
       {/* Background Image - Full width coverage */}
       <div 
         className="fixed inset-0 w-screen bg-cover bg-center bg-no-repeat z-0"
@@ -48,7 +76,7 @@ const Marine = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3">
-              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-12 w-auto" />
+              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design - Marine Protection Services Miami" className="h-12 w-auto" />
               <span className="text-lg md:text-xl font-bold text-primary">
                 <span className="text-silver">Bespoke</span> Auto Design
               </span>
@@ -64,13 +92,13 @@ const Marine = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative text-primary-foreground min-h-screen flex items-center justify-center">
+      <header className="relative text-primary-foreground min-h-screen flex items-center justify-center">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 backdrop-blur-sm">Marine Division</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary-foreground">Marine Protection Services</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary-foreground">Professional Marine Protection Services Miami</h1>
             <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-              Specialized protection services for boats, yachts, and marine vessels. We understand the unique challenges of the marine environment.
+              Specialized XPEL protection services for boats, yachts, and marine vessels. Expert protection against saltwater, UV damage, and harsh marine environments in South Florida.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="premium" size="lg" onClick={navigateToContact}>
@@ -79,7 +107,7 @@ const Marine = () => {
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Why Choose Marine Protection Section */}
       <section className="py-20 bg-background/95 backdrop-blur-sm">
@@ -104,7 +132,7 @@ const Marine = () => {
               <div className="flex justify-center">
                 <img 
                   src="/lovable-uploads/8225318e-5a65-40a0-90ed-9a488787ed64.png" 
-                  alt="XPEL Marine Protection Solutions" 
+                  alt="XPEL Marine Protection Solutions for boats and yachts in Miami Florida" 
                   className="w-full max-w-md rounded-lg shadow-premium"
                 />
               </div>

@@ -6,6 +6,8 @@ import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle, ChevronDown, Chevro
 import { Link, useNavigate } from 'react-router-dom';
 import MobileMenu from '@/components/MobileMenu';
 import { ColorPPFFAQ } from '@/components/ColorPPFFAQ';
+import { SEO } from '@/components/SEO';
+import { generateServiceSchema, generateFAQSchema } from '@/utils/structuredData';
 
 interface XPELColor {
   name: string;
@@ -37,8 +39,34 @@ const XPELColorPPF = () => {
   const [selectedColor, setSelectedColor] = useState<XPELColor>(xpelColors[0]);
   const navigate = useNavigate();
 
+  // Generate structured data for Color PPF page
+  const colorPpfServiceSchema = generateServiceSchema(
+    "XPEL COLOR Paint Protection Film",
+    "Premium colored paint protection film that provides both protection and style. Available in 16 vibrant colors with gloss, satin, and metallic finishes."
+  );
+
+  const colorPpfFaqSchema = generateFAQSchema([
+    {
+      question: "What is XPEL COLOR PPF?",
+      answer: "XPEL COLOR PPF is a paint protection film that not only safeguards your vehicle's paint from scratches, chips, and UV damage but also adds a stylish, custom color finish."
+    },
+    {
+      question: "How is COLOR PPF different from traditional vinyl wrap?",
+      answer: "Unlike vinyl, COLOR PPF is 60% thicker, self-healing, and offers superior protection against rock chips, swirl marks, and environmental contaminants."
+    }
+  ]);
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="XPEL COLOR PPF Miami | Colored Paint Protection Film | 16 Colors Available"
+        description="Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors available in gloss, satin, and metallic finishes. Protection meets style."
+        keywords="XPEL COLOR PPF Miami, colored paint protection film, vehicle color change Miami, XPEL COLOR dealer, automotive customization Miami"
+        schemaData={{
+          "@context": "https://schema.org",
+          "@graph": [colorPpfServiceSchema, colorPpfFaqSchema]
+        }}
+      />
       {/* Top Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div className="container mx-auto px-6 py-4">
@@ -50,7 +78,7 @@ const XPELColorPPF = () => {
               </Link>
               <div className="hidden md:block h-6 w-px bg-gray-300"></div>
               <Link to="/" className="flex items-center gap-2">
-                <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-8 w-auto" />
+                <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design - XPEL COLOR PPF Specialist Miami" className="h-8 w-auto" />
                 <span className="text-lg font-bold text-primary">
                   <span className="text-silver">Bespoke</span> Auto Design
                 </span>
@@ -89,7 +117,7 @@ const XPELColorPPF = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img 
                 src="/lovable-uploads/8b43fed7-f7fb-4afb-9e85-d49fe7a3f5dc.png" 
-                alt="Professional PPF Installation Process" 
+                alt="Professional XPEL COLOR PPF installation process at Bespoke Auto Design Miami" 
                 className="w-full h-64 object-cover"
               />
             </div>
@@ -100,7 +128,7 @@ const XPELColorPPF = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img 
                 src="/lovable-uploads/4b56ee72-ca4c-452a-9f3a-9a3df7fca4e0.png" 
-                alt="XPEL Color Paint Protection Film Benefits" 
+                alt="XPEL COLOR Paint Protection Film benefits - protection meets style in 16 colors" 
                 className="w-full h-auto max-h-[400px] md:h-[500px] object-cover object-[60%_80%] md:object-[50%_70%]"
               />
             </div>
