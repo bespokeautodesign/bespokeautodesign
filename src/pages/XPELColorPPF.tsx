@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle, ChevronDown, ChevronUp, Info } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import MobileMenu from '@/components/MobileMenu';
 
 interface XPELColor {
   name: string;
@@ -58,6 +59,7 @@ const XPELColorPPF = () => {
               <Button 
                 variant="default" 
                 size="sm"
+                className="hidden md:flex"
                 onClick={() => {
                   navigate('/');
                   setTimeout(() => {
@@ -67,6 +69,7 @@ const XPELColorPPF = () => {
               >
                 Get Quote
               </Button>
+              <MobileMenu />
             </div>
           </div>
         </div>
