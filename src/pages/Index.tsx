@@ -355,8 +355,71 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
           </div>
           
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Left Column - Contact Info + Map */}
-            <div className="flex flex-col space-y-8">
+            {/* Right Column - Quote Form (Mobile: First, Desktop: Second) */}
+            <div className="flex flex-col order-2 md:order-2">
+              <Card className="shadow-premium flex-1">
+                <CardHeader>
+                  <CardTitle>Request a Quote</CardTitle>
+                  <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <form id="quote-form">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">First Name</label>
+                        <input name="firstName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium">Last Name</label>
+                        <input name="lastName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Phone</label>
+                      <input name="phone" type="tel" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Email</label>
+                      <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Vehicle Make & Model</label>
+                      <input name="vehicle" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Service Interest</label>
+                      <select name="service" className="w-full px-3 py-2 border border-input rounded-md bg-background">
+                        <option>Paint Protection Film (PPF)</option>
+                        <option>Ceramic Coating</option>
+                        <option>Vinyl Wrap</option>
+                        <option>Ceramic Tint</option>
+                        <option>Marine PPF</option>
+                        <option>Marine Ceramic Coating</option>
+                        <option>Marine Ceramic Tint</option>
+                        <option>Multiple Services</option>
+                      </select>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-medium">Message</label>
+                      <textarea name="message" className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                  </form>
+                  <Button variant="premium" className="w-full" onClick={() => {
+                  const form = document.querySelector('#quote-form') as HTMLFormElement;
+                  const formData = new FormData(form);
+                  const subject = `Quote Request - ${formData.get('service')}`;
+                  const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0AMessage: ${formData.get('message')}`;
+                  window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
+                  alert('Thank you! Your quote request has been prepared. Please send the email that just opened, or call us at (786) 395-9172.');
+                }}>
+                    Submit Request
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+            
+            {/* Left Column - Contact Info + Map (Mobile: Second, Desktop: First) */}
+            <div className="flex flex-col space-y-8 order-1 md:order-1">
               {/* Contact Information - Top Left */}
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -440,69 +503,6 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                   </Button>
                 </div>
               </div>
-            </div>
-            
-            {/* Right Column - Quote Form */}
-            <div className="flex flex-col">
-              <Card className="shadow-premium flex-1">
-                <CardHeader>
-                  <CardTitle>Request a Quote</CardTitle>
-                  <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <form id="quote-form">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium">First Name</label>
-                        <input name="firstName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium">Last Name</label>
-                        <input name="lastName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Phone</label>
-                      <input name="phone" type="tel" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Email</label>
-                      <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Vehicle Make & Model</label>
-                      <input name="vehicle" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Service Interest</label>
-                      <select name="service" className="w-full px-3 py-2 border border-input rounded-md bg-background">
-                        <option>Paint Protection Film (PPF)</option>
-                        <option>Ceramic Coating</option>
-                        <option>Vinyl Wrap</option>
-                        <option>Ceramic Tint</option>
-                        <option>Marine PPF</option>
-                        <option>Marine Ceramic Coating</option>
-                        <option>Marine Ceramic Tint</option>
-                        <option>Multiple Services</option>
-                      </select>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Message</label>
-                      <textarea name="message" className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
-                    </div>
-                  </form>
-                  <Button variant="premium" className="w-full" onClick={() => {
-                  const form = document.querySelector('#quote-form') as HTMLFormElement;
-                  const formData = new FormData(form);
-                  const subject = `Quote Request - ${formData.get('service')}`;
-                  const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0AMessage: ${formData.get('message')}`;
-                  window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
-                  alert('Thank you! Your quote request has been prepared. Please send the email that just opened, or call us at (786) 395-9172.');
-                }}>
-                    Submit Request
-                  </Button>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>
