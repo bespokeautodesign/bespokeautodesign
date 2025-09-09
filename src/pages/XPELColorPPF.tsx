@@ -30,36 +30,9 @@ const xpelColors: XPELColor[] = [
   { name: 'XPEL Pearl White', color: '#F8F8FF', finish: 'Metallic' },
 ];
 
-interface VehicleModel {
-  name: string;
-  type: 'Sedan' | 'Sport' | 'SUV';
-  image: string;
-}
-
-const vehicleModels: VehicleModel[] = [
-  { name: 'Porsche GT3 RS', type: 'Sport', image: '/lovable-uploads/91bdd6c7-9fa5-400d-be4b-fdbb223d5f74.png' },
-  { name: 'Bugatti Bolide', type: 'Sport', image: '/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png' },
-  { name: 'Ferrari F8', type: 'Sport', image: '/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png' },
-  { name: 'McLaren 570S', type: 'Sport', image: '/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png' },
-  { name: 'Mercedes G-Wagon', type: 'SUV', image: '/lovable-uploads/954a24eb-a0e4-4854-a5ae-cc3558261924.png' },
-];
-
-const vehicleTypes = ['Sport', 'SUV'];
 
 const XPELColorPPF = () => {
   const [selectedColor, setSelectedColor] = useState<XPELColor>(xpelColors[0]);
-  const [selectedVehicleType, setSelectedVehicleType] = useState<string>('Sport');
-  const [selectedVehicle, setSelectedVehicle] = useState<VehicleModel>(vehicleModels[0]);
-
-  const filteredVehicles = vehicleModels.filter(vehicle => vehicle.type === selectedVehicleType);
-
-  // Update selected vehicle when type changes
-  React.useEffect(() => {
-    const firstVehicleOfType = vehicleModels.find(v => v.type === selectedVehicleType);
-    if (firstVehicleOfType) {
-      setSelectedVehicle(firstVehicleOfType);
-    }
-  }, [selectedVehicleType]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -175,92 +148,49 @@ const XPELColorPPF = () => {
           </Card>
         </div>
 
-        {/* Vehicle Type and Model Selector */}
-        <section className="mb-16">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl font-bold text-primary mb-4">Your Car. Your Color. Your Style.</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Express yourself without saying a word. Select your vehicle type and model to see how our paint protection film colors would look.
-            </p>
-          </div>
-
-          {/* Vehicle Type Selector */}
-          <div className="flex justify-center mb-8">
-            <div className="flex gap-2 p-1 bg-secondary rounded-lg">
-              {vehicleTypes.map((type) => (
-                <button
-                  key={type}
-                  onClick={() => setSelectedVehicleType(type)}
-                  className={`px-6 py-2 rounded-md font-medium transition-all flex items-center gap-2 ${
-                    selectedVehicleType === type
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  <Car className="h-4 w-4" />
-                  {type}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Vehicle Model Selector */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-            {filteredVehicles.map((vehicle) => (
-              <button
-                key={vehicle.name}
-                onClick={() => setSelectedVehicle(vehicle)}
-                className={`p-4 rounded-lg border-2 transition-all hover:scale-105 ${
-                  selectedVehicle.name === vehicle.name
-                    ? 'border-primary shadow-lg scale-105'
-                    : 'border-border hover:border-primary/50'
-                }`}
-              >
-                <div className="space-y-3">
-                  <img
-                    src={vehicle.image}
-                    alt={vehicle.name}
-                    className="w-full h-24 object-cover object-center rounded-md"
-                  />
-                  <p className="font-medium text-sm text-center">{vehicle.name}</p>
-                </div>
-              </button>
-            ))}
-          </div>
-
-          {/* Selected Vehicle with Color Preview */}
-          <Card className="p-8 mb-8 bg-background/50 backdrop-blur-sm">
-            <div className="text-center space-y-6">
-              <div className="space-y-2">
-                <Badge variant="outline" className="text-lg px-4 py-2">
-                  {selectedVehicle.name}
-                </Badge>
-                <Badge variant="secondary" className="text-sm px-3 py-1">
-                  {selectedColor.name} - {selectedColor.finish} Finish
-                </Badge>
-              </div>
-              
-              <div className="relative max-w-4xl mx-auto">
-                <img
-                  src={selectedVehicle.image}
-                  alt={`${selectedVehicle.name}`}
-                  className="w-full h-auto rounded-lg shadow-2xl"
-                />
-              </div>
-            </div>
-          </Card>
-        </section>
-
         {/* Color Selection Section */}
         <section id="colors" className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-primary mb-4">Available XPEL Colors</h3>
-            <p className="text-muted-foreground">
-              Browse our selection of premium XPEL colored PPF options. Each color provides the same superior protection with a unique aesthetic finish.
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-primary mb-4">XPEL Color Collection</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Express yourself without saying a word. Our premium paint protection film comes in a variety of bold colors to show off your signature style.
             </p>
           </div>
 
+          {/* Selected Color Display */}
+          <Card className="p-8 mb-12 bg-background/50 backdrop-blur-sm">
+            <div className="text-center space-y-6">
+              <Badge variant="outline" className="text-2xl px-6 py-3">
+                {selectedColor.name}
+              </Badge>
+              <Badge variant="secondary" className="text-lg px-4 py-2">
+                {selectedColor.finish} Finish
+              </Badge>
+              <div className="flex justify-center">
+                <div
+                  className="w-48 h-48 rounded-full border-8 border-white shadow-2xl"
+                  style={{
+                    backgroundColor: selectedColor.color,
+                    background: selectedColor.finish === 'Metallic'
+                      ? `linear-gradient(135deg, ${selectedColor.color}, #ffffff20, ${selectedColor.color})`
+                      : selectedColor.color,
+                    filter: selectedColor.finish === 'Satin' ? 'brightness(0.9) contrast(1.1)' : 'none'
+                  }}
+                />
+              </div>
+              <p className="text-muted-foreground max-w-xl mx-auto">
+                This premium {selectedColor.finish.toLowerCase()} finish provides superior protection while delivering stunning visual impact.
+              </p>
+            </div>
+          </Card>
+
           {/* Color Grid */}
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-primary mb-4">All Available Colors</h3>
+            <p className="text-muted-foreground">
+              Click on any color to view details. Each color provides the same superior protection with a unique aesthetic finish.
+            </p>
+          </div>
           <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-4 mb-8">
             {xpelColors.map((color) => (
               <button
