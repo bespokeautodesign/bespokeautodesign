@@ -12,22 +12,22 @@ interface XPELColor {
 }
 
 const xpelColors: XPELColor[] = [
-  { name: 'XPEL Yellow', color: '#FFB900', finish: 'Gloss' },
-  { name: 'XPEL Molten Orange', color: '#FF8C00', finish: 'Gloss' },
-  { name: 'XPEL Monza Red', color: '#E31E24', finish: 'Gloss' },
-  { name: 'XPEL Satin Thermal Beige', color: '#C4A484', finish: 'Satin' },
-  { name: 'XPEL Satin Battle Green', color: '#4A5D23', finish: 'Satin' },
-  { name: 'XPEL Moss Green', color: '#355E3B', finish: 'Gloss' },
-  { name: 'XPEL South Beach Blue', color: '#0077BE', finish: 'Gloss' },
-  { name: 'XPEL Satin Abyss Blue', color: '#1B365D', finish: 'Satin' },
-  { name: 'XPEL Ultra Plum', color: '#673147', finish: 'Gloss' },
-  { name: 'XPEL Bond Silver', color: '#C0C0C0', finish: 'Metallic' },
-  { name: 'XPEL Heritage Grey', color: '#6C7B7F', finish: 'Gloss' },
-  { name: 'XPEL Satin Tarmac', color: '#414A4C', finish: 'Satin' },
-  { name: 'XPEL Obsidian Black', color: '#1C1C1C', finish: 'Gloss' },
-  { name: 'XPEL Satin Midnight Black', color: '#2F2F2F', finish: 'Satin' },
-  { name: 'XPEL Grey Black', color: '#36454F', finish: 'Gloss' },
-  { name: 'XPEL Pearl White', color: '#F8F8FF', finish: 'Metallic' },
+  { name: 'XPEL Yellow', color: '#F2C94C', finish: 'Gloss' },
+  { name: 'XPEL Molten Orange', color: '#E17B47', finish: 'Gloss' },
+  { name: 'XPEL Monza Red', color: '#C4312F', finish: 'Gloss' },
+  { name: 'XPEL Satin Thermal Beige', color: '#C4A574', finish: 'Satin' },
+  { name: 'XPEL Satin Battle Green', color: '#4A5542', finish: 'Satin' },
+  { name: 'XPEL Moss Green', color: '#6B7C32', finish: 'Gloss' },
+  { name: 'XPEL South Beach Blue', color: '#4A90A4', finish: 'Gloss' },
+  { name: 'XPEL Satin Abyss Blue', color: '#2C3E50', finish: 'Satin' },
+  { name: 'XPEL Ultra Plum', color: '#4A2C4A', finish: 'Gloss' },
+  { name: 'XPEL Bond Silver', color: '#E8E8E8', finish: 'Metallic' },
+  { name: 'XPEL Heritage Grey', color: '#9B9B9B', finish: 'Gloss' },
+  { name: 'XPEL Satin Tarmac', color: '#4A525A', finish: 'Satin' },
+  { name: 'XPEL Obsidian Black', color: '#2C2C2C', finish: 'Gloss' },
+  { name: 'XPEL Satin Midnight Black', color: '#1A1A1A', finish: 'Satin' },
+  { name: 'XPEL Grey Black', color: '#3A3A3A', finish: 'Gloss' },
+  { name: 'XPEL Pearl White', color: '#F5F5F5', finish: 'Metallic' },
 ];
 
 
