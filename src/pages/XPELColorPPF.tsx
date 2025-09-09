@@ -12,22 +12,26 @@ interface XPELColor {
 }
 
 const xpelColors: XPELColor[] = [
-  { name: 'XPEL Yellow', color: '#FFD700', finish: 'Gloss' },
-  { name: 'XPEL Molten Orange', color: '#FF7F00', finish: 'Gloss' },
-  { name: 'XPEL Monza Red', color: '#DC143C', finish: 'Gloss' },
-  { name: 'XPEL South Beach Blue', color: '#00BFFF', finish: 'Gloss' },
-  { name: 'XPEL Ultra Plum', color: '#8B008B', finish: 'Gloss' },
-  { name: 'XPEL Moss Green', color: '#8FBC8F', finish: 'Gloss' },
-  { name: 'XPEL Bond Silver', color: '#C0C0C0', finish: 'Metallic' },
-  { name: 'XPEL Pearl White', color: '#FFFFFF', finish: 'Metallic' },
+  // XPEL's official color order - Darks first
   { name: 'XPEL Obsidian Black', color: '#000000', finish: 'Gloss' },
   { name: 'XPEL Satin Midnight Black', color: '#1C1C1C', finish: 'Satin' },
   { name: 'XPEL Grey Black', color: '#36454F', finish: 'Gloss' },
-  { name: 'XPEL Satin Abyss Blue', color: '#191970', finish: 'Satin' },
   { name: 'XPEL Satin Tarmac', color: '#2F4F4F', finish: 'Satin' },
-  { name: 'XPEL Satin Thermal Beige', color: '#D2B48C', finish: 'Satin' },
-  { name: 'XPEL Satin Battle Green', color: '#355E3B', finish: 'Satin' },
   { name: 'XPEL Heritage Grey', color: '#808080', finish: 'Gloss' },
+  { name: 'XPEL Bond Silver', color: '#C0C0C0', finish: 'Metallic' },
+  { name: 'XPEL Pearl White', color: '#FFFFFF', finish: 'Metallic' },
+  // Blues
+  { name: 'XPEL Satin Abyss Blue', color: '#191970', finish: 'Satin' },
+  { name: 'XPEL South Beach Blue', color: '#00BFFF', finish: 'Gloss' },
+  // Greens
+  { name: 'XPEL Satin Battle Green', color: '#355E3B', finish: 'Satin' },
+  { name: 'XPEL Moss Green', color: '#8FBC8F', finish: 'Gloss' },
+  // Warm colors
+  { name: 'XPEL Satin Thermal Beige', color: '#D2B48C', finish: 'Satin' },
+  { name: 'XPEL Yellow', color: '#FFD700', finish: 'Gloss' },
+  { name: 'XPEL Molten Orange', color: '#FF7F00', finish: 'Gloss' },
+  { name: 'XPEL Monza Red', color: '#DC143C', finish: 'Gloss' },
+  { name: 'XPEL Ultra Plum', color: '#8B008B', finish: 'Gloss' },
 ];
 
 const XPELColorPPF = () => {
@@ -66,6 +70,56 @@ const XPELColorPPF = () => {
           <div className="mb-6">
             <h1 className="text-2xl font-bold text-gray-900 mb-2">XPEL Color PPF</h1>
             <p className="text-gray-600 text-sm">Browse and configure your paint protection film colors</p>
+          </div>
+
+          {/* Selected Color Display - Top Priority */}
+          <div className="bg-card rounded-2xl p-8 shadow-sm border mb-8">
+            <div className="flex flex-col lg:flex-row gap-8 items-center">
+              {/* Large Color Preview */}
+              <div className="flex-shrink-0">
+                <div className="relative">
+                  <div
+                    className="w-32 h-32 rounded-2xl shadow-2xl border-4 border-background"
+                    style={{
+                      backgroundColor: selectedColor.color,
+                      background: selectedColor.finish === 'Metallic'
+                        ? `linear-gradient(135deg, ${selectedColor.color}, #ffffff60, ${selectedColor.color})`
+                        : selectedColor.color,
+                      filter: selectedColor.finish === 'Satin' ? 'brightness(0.85) contrast(1.1)' : 'none'
+                    }}
+                  />
+                  <div className="absolute -bottom-2 -right-2">
+                    <Badge variant="default" className="shadow-lg">
+                      {selectedColor.finish}
+                    </Badge>
+                  </div>
+                </div>
+              </div>
+
+              {/* Color Information */}
+              <div className="flex-1 text-center lg:text-left">
+                <h4 className="text-3xl font-bold text-foreground mb-2">
+                  {selectedColor.name}
+                </h4>
+                <p className="text-lg text-muted-foreground mb-4">
+                  {selectedColor.finish} Finish • Premium Paint Protection Film
+                </p>
+                <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
+                    <Shield className="h-4 w-4 text-primary" />
+                    <span>10-year warranty</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
+                    <Zap className="h-4 w-4 text-primary" />
+                    <span>Self-healing</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
+                    <Star className="h-4 w-4 text-primary" />
+                    <span>UV resistant</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* XPEL Color Palette */}
@@ -125,55 +179,6 @@ const XPELColorPPF = () => {
             </div>
           </div>
 
-          {/* Selected Color Display */}
-          <div className="bg-card rounded-2xl p-8 shadow-sm border">
-            <div className="flex flex-col lg:flex-row gap-8 items-center">
-              {/* Large Color Preview */}
-              <div className="flex-shrink-0">
-                <div className="relative">
-                  <div
-                    className="w-32 h-32 rounded-2xl shadow-2xl border-4 border-background"
-                    style={{
-                      backgroundColor: selectedColor.color,
-                      background: selectedColor.finish === 'Metallic'
-                        ? `linear-gradient(135deg, ${selectedColor.color}, #ffffff60, ${selectedColor.color})`
-                        : selectedColor.color,
-                      filter: selectedColor.finish === 'Satin' ? 'brightness(0.85) contrast(1.1)' : 'none'
-                    }}
-                  />
-                  <div className="absolute -bottom-2 -right-2">
-                    <Badge variant="default" className="shadow-lg">
-                      {selectedColor.finish}
-                    </Badge>
-                  </div>
-                </div>
-              </div>
-
-              {/* Color Information */}
-              <div className="flex-1 text-center lg:text-left">
-                <h4 className="text-3xl font-bold text-foreground mb-2">
-                  {selectedColor.name}
-                </h4>
-                <p className="text-lg text-muted-foreground mb-4">
-                  {selectedColor.finish} Finish • Premium Paint Protection Film
-                </p>
-                <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
-                    <Shield className="h-4 w-4 text-primary" />
-                    <span>10-year warranty</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
-                    <Zap className="h-4 w-4 text-primary" />
-                    <span>Self-healing</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-3 py-2 rounded-full">
-                    <Star className="h-4 w-4 text-primary" />
-                    <span>UV resistant</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           {/* Features */}
           <div className="mt-6 space-y-3">
