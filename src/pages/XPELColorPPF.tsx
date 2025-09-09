@@ -10,52 +10,29 @@ interface XPELColor {
   name: string;
   color: string;
   finish: 'Gloss' | 'Satin' | 'Metallic';
-  category: 'Bright' | 'Metallic' | 'Dark' | 'Natural';
 }
 
 const xpelColors: XPELColor[] = [
-  // Bright Colors
-  { name: 'XPEL Yellow', color: '#FFD700', finish: 'Gloss', category: 'Bright' },
-  { name: 'XPEL Molten Orange', color: '#FF7F00', finish: 'Gloss', category: 'Bright' },
-  { name: 'XPEL Monza Red', color: '#DC143C', finish: 'Gloss', category: 'Bright' },
-  { name: 'XPEL South Beach Blue', color: '#00BFFF', finish: 'Gloss', category: 'Bright' },
-  { name: 'XPEL Ultra Plum', color: '#8B008B', finish: 'Gloss', category: 'Bright' },
-  { name: 'XPEL Moss Green', color: '#8FBC8F', finish: 'Gloss', category: 'Bright' },
-  
-  // Metallic Colors
-  { name: 'XPEL Bond Silver', color: '#C0C0C0', finish: 'Metallic', category: 'Metallic' },
-  { name: 'XPEL Pearl White', color: '#FFFFFF', finish: 'Metallic', category: 'Metallic' },
-  
-  // Dark Colors
-  { name: 'XPEL Obsidian Black', color: '#000000', finish: 'Gloss', category: 'Dark' },
-  { name: 'XPEL Satin Midnight Black', color: '#1C1C1C', finish: 'Satin', category: 'Dark' },
-  { name: 'XPEL Grey Black', color: '#36454F', finish: 'Gloss', category: 'Dark' },
-  { name: 'XPEL Satin Abyss Blue', color: '#191970', finish: 'Satin', category: 'Dark' },
-  { name: 'XPEL Satin Tarmac', color: '#2F4F4F', finish: 'Satin', category: 'Dark' },
-  
-  // Natural Colors
-  { name: 'XPEL Satin Thermal Beige', color: '#D2B48C', finish: 'Satin', category: 'Natural' },
-  { name: 'XPEL Satin Battle Green', color: '#355E3B', finish: 'Satin', category: 'Natural' },
-  { name: 'XPEL Heritage Grey', color: '#808080', finish: 'Gloss', category: 'Natural' },
+  { name: 'XPEL Yellow', color: '#FFD700', finish: 'Gloss' },
+  { name: 'XPEL Molten Orange', color: '#FF7F00', finish: 'Gloss' },
+  { name: 'XPEL Monza Red', color: '#DC143C', finish: 'Gloss' },
+  { name: 'XPEL South Beach Blue', color: '#00BFFF', finish: 'Gloss' },
+  { name: 'XPEL Ultra Plum', color: '#8B008B', finish: 'Gloss' },
+  { name: 'XPEL Moss Green', color: '#8FBC8F', finish: 'Gloss' },
+  { name: 'XPEL Bond Silver', color: '#C0C0C0', finish: 'Metallic' },
+  { name: 'XPEL Pearl White', color: '#FFFFFF', finish: 'Metallic' },
+  { name: 'XPEL Obsidian Black', color: '#000000', finish: 'Gloss' },
+  { name: 'XPEL Satin Midnight Black', color: '#1C1C1C', finish: 'Satin' },
+  { name: 'XPEL Grey Black', color: '#36454F', finish: 'Gloss' },
+  { name: 'XPEL Satin Abyss Blue', color: '#191970', finish: 'Satin' },
+  { name: 'XPEL Satin Tarmac', color: '#2F4F4F', finish: 'Satin' },
+  { name: 'XPEL Satin Thermal Beige', color: '#D2B48C', finish: 'Satin' },
+  { name: 'XPEL Satin Battle Green', color: '#355E3B', finish: 'Satin' },
+  { name: 'XPEL Heritage Grey', color: '#808080', finish: 'Gloss' },
 ];
 
 const XPELColorPPF = () => {
   const [selectedColor, setSelectedColor] = useState<XPELColor>(xpelColors[0]);
-  const [expandedCategories, setExpandedCategories] = useState<string[]>(['Bright', 'Metallic', 'Dark', 'Natural']);
-  
-  const categories = ['Bright', 'Metallic', 'Dark', 'Natural'];
-  
-  const toggleCategory = (category: string) => {
-    setExpandedCategories(prev => 
-      prev.includes(category) 
-        ? prev.filter(c => c !== category)
-        : [...prev, category]
-    );
-  };
-
-  const getColorsByCategory = (category: string) => {
-    return xpelColors.filter(color => color.category === category);
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -137,9 +114,6 @@ const XPELColorPPF = () => {
             <Button variant="outline" size="sm" className="bg-white/80 backdrop-blur-sm">
               Exterior
             </Button>
-            <Button variant="ghost" size="sm" className="bg-white/80 backdrop-blur-sm">
-              Interior
-            </Button>
           </div>
         </div>
 
@@ -151,71 +125,47 @@ const XPELColorPPF = () => {
               <p className="text-gray-600 text-sm">Configure your paint protection film</p>
             </div>
 
-            {/* Color Categories */}
+            {/* XPEL Colors */}
             <div className="space-y-1">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">PPF Colors</h3>
+                <h3 className="text-lg font-semibold text-gray-900">XPEL Colors</h3>
                 <Info className="h-4 w-4 text-gray-400" />
               </div>
               
-              {categories.map((category) => {
-                const categoryColors = getColorsByCategory(category);
-                const isExpanded = expandedCategories.includes(category);
-                
-                return (
-                  <div key={category} className="border border-gray-200 rounded-lg overflow-hidden">
-                    <button
-                      onClick={() => toggleCategory(category)}
-                      className="w-full px-4 py-3 bg-gray-50 hover:bg-gray-100 flex items-center justify-between transition-colors"
-                    >
-                      <span className="font-medium text-gray-900">{category}</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-500">{categoryColors.length}</span>
-                        {isExpanded ? (
-                          <ChevronUp className="h-4 w-4 text-gray-400" />
-                        ) : (
-                          <ChevronDown className="h-4 w-4 text-gray-400" />
+              <div className="border border-gray-200 rounded-lg overflow-hidden">
+                <div className="p-4 bg-white">
+                  <div className="grid grid-cols-4 gap-2">
+                    {xpelColors.map((color) => (
+                      <button
+                        key={color.name}
+                        onClick={() => setSelectedColor(color)}
+                        className={`relative aspect-square rounded-lg border-2 transition-all hover:scale-105 ${
+                          selectedColor.name === color.name
+                            ? 'border-blue-500 ring-2 ring-blue-200'
+                            : 'border-gray-200 hover:border-gray-300'
+                        }`}
+                        title={color.name}
+                      >
+                        <div
+                          className="w-full h-full rounded-md"
+                          style={{
+                            backgroundColor: color.color,
+                            background: color.finish === 'Metallic'
+                              ? `linear-gradient(135deg, ${color.color}, #ffffff40, ${color.color})`
+                              : color.color,
+                            filter: color.finish === 'Satin' ? 'brightness(0.9)' : 'none'
+                          }}
+                        />
+                        {selectedColor.name === color.name && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-3 h-3 bg-blue-500 rounded-full border-2 border-white"></div>
+                          </div>
                         )}
-                      </div>
-                    </button>
-                    
-                    {isExpanded && (
-                      <div className="p-4 bg-white">
-                        <div className="grid grid-cols-4 gap-2">
-                          {categoryColors.map((color) => (
-                            <button
-                              key={color.name}
-                              onClick={() => setSelectedColor(color)}
-                              className={`relative aspect-square rounded-lg border-2 transition-all hover:scale-105 ${
-                                selectedColor.name === color.name
-                                  ? 'border-blue-500 ring-2 ring-blue-200'
-                                  : 'border-gray-200 hover:border-gray-300'
-                              }`}
-                              title={color.name}
-                            >
-                              <div
-                                className="w-full h-full rounded-md"
-                                style={{
-                                  backgroundColor: color.color,
-                                  background: color.finish === 'Metallic'
-                                    ? `linear-gradient(135deg, ${color.color}, #ffffff40, ${color.color})`
-                                    : color.color,
-                                  filter: color.finish === 'Satin' ? 'brightness(0.9)' : 'none'
-                                }}
-                              />
-                              {selectedColor.name === color.name && (
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                  <div className="w-3 h-3 bg-blue-500 rounded-full border-2 border-white"></div>
-                                </div>
-                              )}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+                      </button>
+                    ))}
                   </div>
-                );
-              })}
+                </div>
+              </div>
             </div>
 
             {/* Selected Color Info */}
