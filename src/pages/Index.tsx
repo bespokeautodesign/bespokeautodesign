@@ -187,12 +187,14 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                   <p className="text-sm text-primary-foreground/80">
                     Now available in 16 bold colors. Style + protection in one.
                   </p>
-                  <Link to="/xpel-color">
-                    <Button variant="outline" size="sm" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                      View Colors
-                      <ArrowRight className="h-4 w-4 ml-2" />
-                    </Button>
-                  </Link>
+                  <div className="pt-2">
+                    <Link to="/xpel-color">
+                      <Button variant="secondary" size="sm" className="bg-xpel-yellow text-primary hover:bg-xpel-yellow/90">
+                        View Colors
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
