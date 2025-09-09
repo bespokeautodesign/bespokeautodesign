@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle, ChevronDown, ChevronUp, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import porsche911TurboS from '@/assets/porsche-911-turbo-s.jpg';
+import porsche911TurboS from '/lovable-uploads/39666a97-9844-44fd-b4db-bb37a3a066cd.png';
 
 interface XPELColor {
   name: string;
