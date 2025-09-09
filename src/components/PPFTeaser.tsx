@@ -2,9 +2,8 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, Shield, Star } from 'lucide-react';
+import { ArrowRight, Sparkles, Shield, Star, Palette, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Ferrari488Pista } from '@/components/Ferrari488Pista';
 
 export const PPFTeaser = () => {
   return (
@@ -32,35 +31,41 @@ export const PPFTeaser = () => {
         <Card className="max-w-5xl mx-auto p-8 bg-background/50 backdrop-blur-sm border-primary/20 group hover:shadow-elegant transition-all duration-500">
           <CardHeader className="text-center pb-8">
             <CardTitle className="text-2xl text-primary flex items-center justify-center gap-3">
-              <Star className="h-6 w-6 text-yellow-500" />
-              Ferrari 488 Pista Preview
-              <Star className="h-6 w-6 text-yellow-500" />
+            <Star className="h-6 w-6 text-yellow-500" />
+            Interactive PPF Color Preview
+            <Star className="h-6 w-6 text-yellow-500" />
             </CardTitle>
           </CardHeader>
           
           <CardContent className="space-y-8">
-            {/* Car Preview */}
+            {/* Visual Preview Grid */}
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-secondary/30 to-background/50 p-12">
-              <div className="relative mx-auto max-w-3xl transform group-hover:scale-105 transition-transform duration-700">
-                <Ferrari488Pista
-                  color="#dc2626"
-                  filter="hue-rotate(0deg) saturate(1.8) brightness(0.9)"
-                  className="drop-shadow-2xl"
-                />
-                
-                {/* Animated highlights */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-3xl mx-auto">
+                {/* Color preview circles */}
+                <div className="flex flex-col items-center space-y-3">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-green-600 ring-4 ring-white shadow-lg transform hover:scale-110 transition-transform"></div>
+                  <span className="text-xs font-medium">Mint Green</span>
+                </div>
+                <div className="flex flex-col items-center space-y-3">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-red-700 ring-4 ring-white shadow-lg transform hover:scale-110 transition-transform"></div>
+                  <span className="text-xs font-medium">Racing Red</span>
+                </div>
+                <div className="flex flex-col items-center space-y-3">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 ring-4 ring-white shadow-lg transform hover:scale-110 transition-transform"></div>
+                  <span className="text-xs font-medium">Ocean Blue</span>
+                </div>
+                <div className="flex flex-col items-center space-y-3">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 ring-4 ring-white shadow-lg transform hover:scale-110 transition-transform"></div>
+                  <span className="text-xs font-medium">Royal Purple</span>
+                </div>
+                <div className="flex flex-col items-center space-y-3">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 ring-4 ring-white shadow-lg transform hover:scale-110 transition-transform"></div>
+                  <span className="text-xs font-medium">Sunset Orange</span>
+                </div>
               </div>
               
-              {/* Color dots preview */}
-              <div className="flex justify-center mt-8 gap-3">
-                <div className="w-4 h-4 rounded-full bg-red-600 ring-2 ring-white shadow-lg"></div>
-                <div className="w-4 h-4 rounded-full bg-blue-600 ring-2 ring-white shadow-lg"></div>
-                <div className="w-4 h-4 rounded-full bg-green-600 ring-2 ring-white shadow-lg"></div>
-                <div className="w-4 h-4 rounded-full bg-purple-600 ring-2 ring-white shadow-lg"></div>
-                <div className="w-4 h-4 rounded-full bg-orange-600 ring-2 ring-white shadow-lg"></div>
-                <span className="text-muted-foreground text-sm ml-3 self-center">+5 more colors</span>
-              </div>
+              {/* Animated highlight */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </div>
 
             {/* Features Quick List */}
@@ -70,15 +75,15 @@ export const PPFTeaser = () => {
                 <p className="font-medium text-sm">Ultimate Protection</p>
               </div>
               <div className="space-y-2">
-                <Sparkles className="h-8 w-8 text-yellow-500 mx-auto" />
+                <Palette className="h-8 w-8 text-yellow-500 mx-auto" />
                 <p className="font-medium text-sm">10 Color Options</p>
               </div>
               <div className="space-y-2">
-                <Star className="h-8 w-8 text-orange-500 mx-auto" />
+                <Zap className="h-8 w-8 text-orange-500 mx-auto" />
                 <p className="font-medium text-sm">Self-Healing Tech</p>
               </div>
               <div className="space-y-2">
-                <ArrowRight className="h-8 w-8 text-green-500 mx-auto" />
+                <Star className="h-8 w-8 text-green-500 mx-auto" />
                 <p className="font-medium text-sm">10-Year Warranty</p>
               </div>
             </div>
@@ -92,7 +97,7 @@ export const PPFTeaser = () => {
                 </Button>
               </Link>
               <p className="text-muted-foreground mt-4 text-sm">
-                See your vehicle in 10 different PPF colors • Interactive 3D preview
+                Interactive 3D Porsche GT3 RS • 10 color options • Real-time preview
               </p>
             </div>
           </CardContent>

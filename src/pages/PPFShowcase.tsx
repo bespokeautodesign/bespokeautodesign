@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Shield, Star, Droplet, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Ferrari488Pista } from '@/components/Ferrari488Pista';
+import { PorscheGT3RS } from '@/components/PorscheGT3RS';
 
 interface PPFColor {
   name: string;
@@ -17,7 +17,7 @@ interface PPFColor {
 const ppfColors: PPFColor[] = [
   { 
     name: 'Clear', 
-    color: '#dc2626', 
+    color: '#4ade80', 
     filter: 'none', 
     popular: true,
     description: 'Original paint color with invisible protection'
@@ -33,7 +33,7 @@ const ppfColors: PPFColor[] = [
     color: '#dc2626', 
     filter: 'hue-rotate(0deg) saturate(1.8) brightness(0.9)', 
     popular: true,
-    description: 'Classic Ferrari racing red enhanced'
+    description: 'Classic racing red enhanced'
   },
   { 
     name: 'Ocean Blue', 
@@ -81,7 +81,7 @@ const ppfColors: PPFColor[] = [
 ];
 
 const PPFShowcase = () => {
-  const [selectedColor, setSelectedColor] = useState<PPFColor>(ppfColors[2]); // Default to Racing Red
+  const [selectedColor, setSelectedColor] = useState<PPFColor>(ppfColors[0]); // Default to Clear (mint green)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-secondary/10 to-background">
@@ -114,7 +114,7 @@ const PPFShowcase = () => {
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Experience the future of automotive protection with XPEL's revolutionary colored Paint Protection Film. 
-            See how your Ferrari 488 Pista would look with our premium colored PPF options.
+            See how your Porsche GT3 RS would look with our premium colored PPF options.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ const PPFShowcase = () => {
           <CardHeader className="text-center pb-8">
             <CardTitle className="text-3xl text-primary flex items-center justify-center gap-3">
               <Star className="h-8 w-8 text-yellow-500" />
-              Ferrari 488 Pista
+              Porsche GT3 RS
               <Star className="h-8 w-8 text-yellow-500" />
             </CardTitle>
             <Badge variant="secondary" className="text-lg px-6 py-2 mx-auto">
@@ -135,7 +135,7 @@ const PPFShowcase = () => {
             {/* Car Display with Hover Effect */}
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-secondary/30 to-background/50 p-12">
               <div className="relative mx-auto max-w-4xl transform hover:scale-105 transition-transform duration-500">
-                <Ferrari488Pista
+                <PorscheGT3RS
                   color={selectedColor.color}
                   filter={selectedColor.filter}
                   className="drop-shadow-2xl"
@@ -143,7 +143,7 @@ const PPFShowcase = () => {
                 
                 {/* Floating animation effect */}
                 <div className="absolute inset-0 animate-pulse opacity-30">
-                  <Ferrari488Pista
+                  <PorscheGT3RS
                     color={selectedColor.color}
                     filter={`${selectedColor.filter} blur(2px)`}
                     className="scale-110"
