@@ -68,45 +68,59 @@ const XPELColorPPF = () => {
             <p className="text-gray-600 text-sm">Browse and configure your paint protection film colors</p>
           </div>
 
-          {/* XPEL Colors */}
-          <div className="space-y-1">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold text-gray-900">XPEL Colors</h3>
-              <Info className="h-4 w-4 text-gray-400" />
+          {/* XPEL Color Palette */}
+          <div className="space-y-6">
+            <div className="text-center">
+              <h3 className="text-2xl font-bold text-foreground mb-2">XPEL Color Collection</h3>
+              <p className="text-muted-foreground">Premium paint protection films in stunning colors</p>
             </div>
             
-            <div className="border border-gray-200 rounded-lg overflow-hidden">
-              <div className="p-4 bg-white">
-                <div className="grid grid-cols-4 gap-2">
-                  {xpelColors.map((color) => (
-                    <button
-                      key={color.name}
-                      onClick={() => setSelectedColor(color)}
-                      className={`relative aspect-square rounded-lg border-2 transition-all hover:scale-105 ${
+            <div className="bg-card rounded-2xl p-8 shadow-sm border">
+              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                {xpelColors.map((color) => (
+                  <div
+                    key={color.name}
+                    className="flex flex-col items-center space-y-3 group cursor-pointer"
+                    onClick={() => setSelectedColor(color)}
+                  >
+                    <div
+                      className={`relative w-16 h-16 rounded-full border-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg ${
                         selectedColor.name === color.name
-                          ? 'border-blue-500 ring-2 ring-blue-200'
-                          : 'border-gray-200 hover:border-gray-300'
+                          ? 'border-primary shadow-xl scale-110'
+                          : 'border-border group-hover:border-primary/50'
                       }`}
-                      title={color.name}
                     >
                       <div
-                        className="w-full h-full rounded-md"
+                        className="w-full h-full rounded-full overflow-hidden"
                         style={{
                           backgroundColor: color.color,
                           background: color.finish === 'Metallic'
-                            ? `linear-gradient(135deg, ${color.color}, #ffffff40, ${color.color})`
+                            ? `linear-gradient(135deg, ${color.color}, #ffffff60, ${color.color})`
                             : color.color,
-                          filter: color.finish === 'Satin' ? 'brightness(0.9)' : 'none'
+                          filter: color.finish === 'Satin' ? 'brightness(0.85) contrast(1.1)' : 'none'
                         }}
                       />
                       {selectedColor.name === color.name && (
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-3 h-3 bg-blue-500 rounded-full border-2 border-white"></div>
+                          <CheckCircle className="w-6 h-6 text-primary bg-background rounded-full" />
                         </div>
                       )}
-                    </button>
-                  ))}
-                </div>
+                    </div>
+                    <div className="text-center">
+                      <p className={`text-sm font-medium transition-colors ${
+                        selectedColor.name === color.name ? 'text-primary' : 'text-foreground'
+                      }`}>
+                        {color.name.replace('XPEL ', '')}
+                      </p>
+                      <Badge 
+                        variant={selectedColor.name === color.name ? 'default' : 'secondary'}
+                        className="text-xs mt-1"
+                      >
+                        {color.finish}
+                      </Badge>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
