@@ -356,7 +356,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
           
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Right Column - Quote Form (Mobile: First, Desktop: Second) */}
-            <div className="flex flex-col order-2 md:order-2">
+            <div className="flex flex-col order-1 md:order-2">
               <Card className="shadow-premium flex-1">
                 <CardHeader>
                   <CardTitle>Request a Quote</CardTitle>
@@ -419,7 +419,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
             </div>
             
             {/* Left Column - Contact Info + Map (Mobile: Second, Desktop: First) */}
-            <div className="flex flex-col space-y-8 order-1 md:order-1">
+            <div className="flex flex-col space-y-8 order-2 md:order-1">
               {/* Contact Information - Top Left */}
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
