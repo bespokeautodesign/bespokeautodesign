@@ -5,6 +5,7 @@ import { Anchor, Waves, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import MobileMenu from "@/components/MobileMenu";
+import { MarineFAQ } from "@/components/MarineFAQ";
 
 const Marine = () => {
   useEffect(() => {
@@ -147,6 +148,9 @@ const Marine = () => {
           </div>
         </div>
       </section>
+
+      {/* Marine FAQ Section */}
+      <MarineFAQ />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-background">

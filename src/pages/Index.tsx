@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, ArrowRight, Calendar } from "lucide-react";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
-import { FAQ } from "@/components/FAQ";
+import { HomeFAQ } from "@/components/HomeFAQ";
 import { XPELTeaser } from "@/components/XPELTeaser";
 import { Link } from "react-router-dom";
 import MobileMenu from "@/components/MobileMenu";
@@ -339,7 +339,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
       </section>
 
       {/* FAQ Section */}
-      <FAQ />
+      <HomeFAQ />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-background/80 backdrop-blur-sm">

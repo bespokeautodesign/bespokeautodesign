@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle, ChevronDown, ChevronUp, Info } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import MobileMenu from '@/components/MobileMenu';
+import { ColorPPFFAQ } from '@/components/ColorPPFFAQ';
 
 interface XPELColor {
   name: string;
@@ -292,6 +293,9 @@ const XPELColorPPF = () => {
           </div>
         </div>
       </div>
+
+      {/* FAQ Section */}
+      <ColorPPFFAQ />
     </div>
   );
 };
