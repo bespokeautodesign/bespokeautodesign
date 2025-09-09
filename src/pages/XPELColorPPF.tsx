@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ChevronLeft, ChevronRight, Shield, Droplet, Star, Zap, CheckCircle, Car } from 'lucide-react';
+import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle, Car } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface XPELColor {
@@ -30,26 +30,58 @@ const xpelColors: XPELColor[] = [
   { name: 'XPEL Pearl White', color: '#F8F8FF', finish: 'Metallic' },
 ];
 
-const vehicleTypes = ['Sedan', 'Sport', 'SUV'];
+interface VehicleModel {
+  name: string;
+  type: 'Sedan' | 'Sport' | 'SUV';
+  image: string;
+}
 
-const showcaseImages = [
-  '/lovable-uploads/91bdd6c7-9fa5-400d-be4b-fdbb223d5f74.png',
-  '/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png',
-  '/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.png',
+const vehicleModels: VehicleModel[] = [
+  { name: 'Porsche GT3 RS', type: 'Sport', image: '/lovable-uploads/91bdd6c7-9fa5-400d-be4b-fdbb223d5f74.png' },
+  { name: 'Bugatti Bolide', type: 'Sport', image: '/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png' },
+  { name: 'Ferrari F8', type: 'Sport', image: '/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png' },
+  { name: 'McLaren 570S', type: 'Sport', image: '/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png' },
+  { name: 'Mercedes G-Wagon', type: 'SUV', image: '/lovable-uploads/954a24eb-a0e4-4854-a5ae-cc3558261924.png' },
 ];
+
+const vehicleTypes = ['Sport', 'SUV'];
+
+const getColorFilter = (color: XPELColor) => {
+  const colorMap: { [key: string]: string } = {
+    '#FFD700': 'hue-rotate(45deg) saturate(1.8) brightness(1.1)', // Yellow
+    '#FF4500': 'hue-rotate(15deg) saturate(1.6) brightness(1.0)', // Orange
+    '#DC143C': 'hue-rotate(350deg) saturate(1.5) brightness(0.9)', // Red
+    '#D2B48C': 'hue-rotate(35deg) saturate(0.8) brightness(1.1)', // Beige
+    '#556B2F': 'hue-rotate(80deg) saturate(1.2) brightness(0.8)', // Battle Green
+    '#228B22': 'hue-rotate(120deg) saturate(1.4) brightness(0.9)', // Moss Green
+    '#4169E1': 'hue-rotate(230deg) saturate(1.3) brightness(0.8)', // Blue
+    '#191970': 'hue-rotate(240deg) saturate(1.1) brightness(0.6)', // Abyss Blue
+    '#8B008B': 'hue-rotate(300deg) saturate(1.5) brightness(0.8)', // Purple
+    '#C0C0C0': 'saturate(0.3) brightness(1.2)', // Silver
+    '#708090': 'saturate(0.5) brightness(0.9)', // Grey
+    '#2F4F4F': 'saturate(0.4) brightness(0.7)', // Tarmac
+    '#000000': 'brightness(0.3) contrast(1.2)', // Black
+    '#2C2C2C': 'brightness(0.4) contrast(1.1)', // Midnight Black
+    '#36454F': 'brightness(0.5) contrast(1.0)', // Grey Black
+    '#F8F8FF': 'brightness(1.3) contrast(0.9)', // Pearl White
+  };
+  return colorMap[color.color] || 'none';
+};
 
 const XPELColorPPF = () => {
   const [selectedColor, setSelectedColor] = useState<XPELColor>(xpelColors[0]);
-  const [selectedVehicle, setSelectedVehicle] = useState<string>('Sport');
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [selectedVehicleType, setSelectedVehicleType] = useState<string>('Sport');
+  const [selectedVehicle, setSelectedVehicle] = useState<VehicleModel>(vehicleModels[0]);
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % showcaseImages.length);
-  };
+  const filteredVehicles = vehicleModels.filter(vehicle => vehicle.type === selectedVehicleType);
 
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + showcaseImages.length) % showcaseImages.length);
-  };
+  // Update selected vehicle when type changes
+  React.useEffect(() => {
+    const firstVehicleOfType = vehicleModels.find(v => v.type === selectedVehicleType);
+    if (firstVehicleOfType) {
+      setSelectedVehicle(firstVehicleOfType);
+    }
+  }, [selectedVehicleType]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -70,56 +102,6 @@ const XPELColorPPF = () => {
           </div>
         </div>
       </nav>
-
-      {/* Hero Section with Image Carousel */}
-      <section className="relative">
-        <div className="relative h-[60vh] overflow-hidden">
-          <img
-            src={showcaseImages[currentImageIndex]}
-            alt="XPEL Color PPF Showcase"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
-          
-          {/* Carousel Controls */}
-          <button
-            onClick={prevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all"
-          >
-            <ChevronLeft className="h-6 w-6 text-white" />
-          </button>
-          <button
-            onClick={nextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all"
-          >
-            <ChevronRight className="h-6 w-6 text-white" />
-          </button>
-
-          {/* Carousel Indicators */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-            {showcaseImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentImageIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === currentImageIndex ? 'bg-white' : 'bg-white/50'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Floating CTA */}
-        <div className="absolute bottom-8 right-8 z-10">
-          <Button 
-            variant="premium" 
-            size="lg"
-            onClick={() => document.getElementById('colors')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Find an Installer
-          </Button>
-        </div>
-      </section>
 
       {/* Main Content */}
       <div className="container mx-auto px-6 py-16">
@@ -215,12 +197,12 @@ const XPELColorPPF = () => {
           </Card>
         </div>
 
-        {/* Color Selection Section */}
-        <section id="colors" className="mb-16">
-          <div className="text-center mb-12">
+        {/* Vehicle Type and Model Selector */}
+        <section className="mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-4xl font-bold text-primary mb-4">Your Car. Your Color. Your Style.</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Express yourself without saying a word. Our latest paint protection film comes in a variety of bold colors to show off your signature style.
+              Express yourself without saying a word. Select your vehicle type and model to see how our paint protection film colors would look.
             </p>
           </div>
 
@@ -230,9 +212,9 @@ const XPELColorPPF = () => {
               {vehicleTypes.map((type) => (
                 <button
                   key={type}
-                  onClick={() => setSelectedVehicle(type)}
+                  onClick={() => setSelectedVehicleType(type)}
                   className={`px-6 py-2 rounded-md font-medium transition-all flex items-center gap-2 ${
-                    selectedVehicle === type
+                    selectedVehicleType === type
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:text-foreground'
                   }`}
@@ -244,26 +226,72 @@ const XPELColorPPF = () => {
             </div>
           </div>
 
-          {/* Selected Color Display */}
+          {/* Vehicle Model Selector */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+            {filteredVehicles.map((vehicle) => (
+              <button
+                key={vehicle.name}
+                onClick={() => setSelectedVehicle(vehicle)}
+                className={`p-4 rounded-lg border-2 transition-all hover:scale-105 ${
+                  selectedVehicle.name === vehicle.name
+                    ? 'border-primary shadow-lg scale-105'
+                    : 'border-border hover:border-primary/50'
+                }`}
+              >
+                <div className="space-y-3">
+                  <img
+                    src={vehicle.image}
+                    alt={vehicle.name}
+                    className="w-full h-24 object-cover object-center rounded-md"
+                  />
+                  <p className="font-medium text-sm text-center">{vehicle.name}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* Selected Vehicle with Color Preview */}
           <Card className="p-8 mb-8 bg-background/50 backdrop-blur-sm">
-            <div className="text-center space-y-4">
-              <Badge variant="outline" className="text-lg px-4 py-2">
-                {selectedColor.name} - {selectedColor.finish} Finish
-              </Badge>
-              <div className="flex justify-center">
+            <div className="text-center space-y-6">
+              <div className="space-y-2">
+                <Badge variant="outline" className="text-lg px-4 py-2">
+                  {selectedVehicle.name}
+                </Badge>
+                <Badge variant="secondary" className="text-sm px-3 py-1">
+                  {selectedColor.name} - {selectedColor.finish} Finish
+                </Badge>
+              </div>
+              
+              <div className="relative max-w-4xl mx-auto">
+                <img
+                  src={selectedVehicle.image}
+                  alt={`${selectedVehicle.name} with ${selectedColor.name} PPF`}
+                  className="w-full h-auto rounded-lg shadow-2xl transition-all duration-700 ease-in-out"
+                  style={{
+                    filter: getColorFilter(selectedColor),
+                  }}
+                />
+                
+                {/* Color overlay for enhanced effect */}
                 <div
-                  className="w-32 h-32 rounded-full border-4 border-white shadow-2xl"
+                  className="absolute inset-0 rounded-lg transition-all duration-700 ease-in-out mix-blend-overlay opacity-15"
                   style={{
                     backgroundColor: selectedColor.color,
-                    background: selectedColor.finish === 'Metallic'
-                      ? `linear-gradient(135deg, ${selectedColor.color}, #ffffff20, ${selectedColor.color})`
-                      : selectedColor.color,
-                    filter: selectedColor.finish === 'Satin' ? 'brightness(0.9) contrast(1.1)' : 'none'
                   }}
                 />
               </div>
             </div>
           </Card>
+        </section>
+
+        {/* Color Selection Section */}
+        <section id="colors" className="mb-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-primary mb-4">Choose Your XPEL Color</h3>
+            <p className="text-muted-foreground">
+              Click any color below to see how it would look on your selected vehicle.
+            </p>
+          </div>
 
           {/* Color Grid */}
           <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-4 mb-8">
