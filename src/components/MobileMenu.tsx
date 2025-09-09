@@ -49,12 +49,8 @@ const MobileMenu = () => {
               className="mt-6"
               onClick={() => {
                 setIsOpen(false);
-                // Navigate to home page contact section if not already there
-                if (window.location.pathname !== '/') {
-                  window.location.href = '/#contact';
-                } else {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }
+                // Always navigate to home page contact section
+                window.location.href = '/#contact';
               }}
             >
               Get Quote
