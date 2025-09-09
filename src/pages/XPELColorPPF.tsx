@@ -3,7 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle, ChevronDown, ChevronUp, Info } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface XPELColor {
   name: string;
@@ -33,6 +33,7 @@ const xpelColors: XPELColor[] = [
 
 const XPELColorPPF = () => {
   const [selectedColor, setSelectedColor] = useState<XPELColor>(xpelColors[0]);
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-white">
@@ -206,12 +207,14 @@ const XPELColorPPF = () => {
               className="w-full mb-3" 
               size="lg"
               onClick={() => {
-                // Navigate to home page contact section
-                window.location.href = '/#contact';
-                // Force scroll after navigation
+                // Navigate to home page and then scroll to contact section
+                navigate('/');
                 setTimeout(() => {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
+                  const contactElement = document.getElementById('contact');
+                  if (contactElement) {
+                    contactElement.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 300);
               }}
             >
               Get Quote for {selectedColor.name}
