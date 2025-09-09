@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle, ChevronDown, ChevronUp, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import porsche911TurboS from '@/assets/porsche-911-turbo-s.jpg';
 
 interface XPELColor {
   name: string;
@@ -91,8 +92,8 @@ const XPELColorPPF = () => {
             <div className="relative max-w-4xl w-full">
               <div className="relative group">
                 <img
-                  src="/lovable-uploads/91bdd6c7-9fa5-400d-be4b-fdbb223d5f74.png"
-                  alt="Vehicle with XPEL Color PPF"
+                  src={porsche911TurboS}
+                  alt="Porsche 911 Turbo S with XPEL Color PPF"
                   className="w-full h-auto drop-shadow-2xl transition-all duration-500"
                 />
                 
