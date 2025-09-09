@@ -60,101 +60,98 @@ const XPELColorPPF = () => {
         </div>
       </nav>
 
-      {/* Main Layout */}
-      <div className="min-h-screen bg-white">
-        {/* Configuration Panel - Full Width */}
-        <div className="container mx-auto px-6 py-8 max-w-4xl">
-          <div className="p-6">
-            <div className="mb-6">
-              <h1 className="text-2xl font-bold text-gray-900 mb-2">XPEL Color PPF</h1>
-              <p className="text-gray-600 text-sm">Configure your paint protection film</p>
-            </div>
+      {/* Main Content */}
+      <div className="container mx-auto px-6 py-8 max-w-4xl">
+        <div className="p-6">
+          <div className="mb-6">
+            <h1 className="text-2xl font-bold text-gray-900 mb-2">XPEL Color PPF</h1>
+            <p className="text-gray-600 text-sm">Browse and configure your paint protection film colors</p>
+          </div>
 
-            {/* XPEL Colors */}
-            <div className="space-y-1">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">XPEL Colors</h3>
-                <Info className="h-4 w-4 text-gray-400" />
-              </div>
-              
-              <div className="border border-gray-200 rounded-lg overflow-hidden">
-                <div className="p-4 bg-white">
-                  <div className="grid grid-cols-4 gap-2">
-                    {xpelColors.map((color) => (
-                      <button
-                        key={color.name}
-                        onClick={() => setSelectedColor(color)}
-                        className={`relative aspect-square rounded-lg border-2 transition-all hover:scale-105 ${
-                          selectedColor.name === color.name
-                            ? 'border-blue-500 ring-2 ring-blue-200'
-                            : 'border-gray-200 hover:border-gray-300'
-                        }`}
-                        title={color.name}
-                      >
-                        <div
-                          className="w-full h-full rounded-md"
-                          style={{
-                            backgroundColor: color.color,
-                            background: color.finish === 'Metallic'
-                              ? `linear-gradient(135deg, ${color.color}, #ffffff40, ${color.color})`
-                              : color.color,
-                            filter: color.finish === 'Satin' ? 'brightness(0.9)' : 'none'
-                          }}
-                        />
-                        {selectedColor.name === color.name && (
-                          <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-3 h-3 bg-blue-500 rounded-full border-2 border-white"></div>
-                          </div>
-                        )}
-                      </button>
-                    ))}
-                  </div>
+          {/* XPEL Colors */}
+          <div className="space-y-1">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-semibold text-gray-900">XPEL Colors</h3>
+              <Info className="h-4 w-4 text-gray-400" />
+            </div>
+            
+            <div className="border border-gray-200 rounded-lg overflow-hidden">
+              <div className="p-4 bg-white">
+                <div className="grid grid-cols-4 gap-2">
+                  {xpelColors.map((color) => (
+                    <button
+                      key={color.name}
+                      onClick={() => setSelectedColor(color)}
+                      className={`relative aspect-square rounded-lg border-2 transition-all hover:scale-105 ${
+                        selectedColor.name === color.name
+                          ? 'border-blue-500 ring-2 ring-blue-200'
+                          : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                      title={color.name}
+                    >
+                      <div
+                        className="w-full h-full rounded-md"
+                        style={{
+                          backgroundColor: color.color,
+                          background: color.finish === 'Metallic'
+                            ? `linear-gradient(135deg, ${color.color}, #ffffff40, ${color.color})`
+                            : color.color,
+                          filter: color.finish === 'Satin' ? 'brightness(0.9)' : 'none'
+                        }}
+                      />
+                      {selectedColor.name === color.name && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-3 h-3 bg-blue-500 rounded-full border-2 border-white"></div>
+                        </div>
+                      )}
+                    </button>
+                  ))}
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Selected Color Info */}
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <h4 className="font-semibold text-gray-900 mb-2">{selectedColor.name}</h4>
-              <p className="text-sm text-gray-600 mb-2">{selectedColor.finish} Finish</p>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
-                <Shield className="h-4 w-4" />
-                <span>10-year warranty included</span>
+          {/* Selected Color Info */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+            <h4 className="font-semibold text-gray-900 mb-2">{selectedColor.name}</h4>
+            <p className="text-sm text-gray-600 mb-2">{selectedColor.finish} Finish</p>
+            <div className="flex items-center gap-2 text-sm text-gray-500">
+              <Shield className="h-4 w-4" />
+              <span>10-year warranty included</span>
+            </div>
+          </div>
+
+          {/* Features */}
+          <div className="mt-6 space-y-3">
+            <h4 className="font-semibold text-gray-900">Features</h4>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Zap className="h-4 w-4 text-green-500" />
+                <span>Self-healing technology</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Shield className="h-4 w-4 text-blue-500" />
+                <span>Rock chip protection</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Star className="h-4 w-4 text-yellow-500" />
+                <span>UV resistance</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <Droplet className="h-4 w-4 text-cyan-500" />
+                <span>Hydrophobic surface</span>
               </div>
             </div>
+          </div>
 
-            {/* Features */}
-            <div className="mt-6 space-y-3">
-              <h4 className="font-semibold text-gray-900">Features</h4>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Zap className="h-4 w-4 text-green-500" />
-                  <span>Self-healing technology</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Shield className="h-4 w-4 text-blue-500" />
-                  <span>Rock chip protection</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Star className="h-4 w-4 text-yellow-500" />
-                  <span>UV resistance</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Droplet className="h-4 w-4 text-cyan-500" />
-                  <span>Hydrophobic surface</span>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="mt-8 pt-6 border-t border-gray-200">
-              <Button className="w-full mb-3" size="lg">
-                Get Quote for {selectedColor.name}
-              </Button>
-              <p className="text-xs text-gray-500 text-center">
-                Professional installation • Premium materials • Warranty included
-              </p>
-            </div>
+          {/* CTA */}
+          <div className="mt-8 pt-6 border-t border-gray-200">
+            <Button className="w-full mb-3" size="lg">
+              Get Quote for {selectedColor.name}
+            </Button>
+            <p className="text-xs text-gray-500 text-center">
+              Professional installation • Premium materials • Warranty included
+            </p>
           </div>
         </div>
       </div>
