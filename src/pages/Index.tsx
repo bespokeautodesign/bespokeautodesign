@@ -176,7 +176,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
             
             {/* Colored PPF Teaser */}
             <div className="mt-12 mb-8">
-              <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg p-6 max-w-md mx-auto">
+              <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg p-6 max-w-2xl mx-auto">
                 <div className="text-center space-y-4">
                   <Badge variant="secondary" className="bg-xpel-yellow text-primary text-xs px-3 py-1">
                     NEW
