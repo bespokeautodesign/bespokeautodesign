@@ -338,8 +338,6 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <HomeFAQ />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-background/80 backdrop-blur-sm">
@@ -505,6 +503,9 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <HomeFAQ />
 
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-12">
