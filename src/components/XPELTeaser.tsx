@@ -127,6 +127,32 @@ export const XPELTeaser = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Colored PPF Extension */}
+        <div className="mt-8 max-w-3xl mx-auto">
+          <Card className="p-6 bg-gradient-to-r from-primary/5 to-secondary/10 border-primary/20 hover:shadow-lg transition-all duration-300">
+            <div className="text-center space-y-4">
+              <div className="flex items-center justify-center gap-2">
+                <Palette className="h-5 w-5 text-primary" />
+                <Badge variant="outline" className="text-sm px-3 py-1">
+                  New Addition
+                </Badge>
+              </div>
+              <h3 className="text-xl font-bold text-primary">
+                Colored Paint Protection Film
+              </h3>
+              <p className="text-muted-foreground text-sm max-w-md mx-auto">
+                Transform your vehicle's appearance while providing ultimate protection. Browse our complete collection of colored PPF options.
+              </p>
+              <Link to="/xpel-color">
+                <Button variant="outline" className="group">
+                  View All Colors
+                  <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+            </div>
+          </Card>
+        </div>
       </div>
     </section>
   );
