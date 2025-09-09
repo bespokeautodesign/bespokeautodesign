@@ -9,6 +9,9 @@ import { HomeFAQ } from "@/components/HomeFAQ";
 import { XPELTeaser } from "@/components/XPELTeaser";
 import { Link } from "react-router-dom";
 import MobileMenu from "@/components/MobileMenu";
+import { addStructuredData, businessSchema, faqSchema } from "@/utils/seoHelpers";
+import { addOpenGraphTags, addCanonicalUrl, preloadCriticalImages } from "@/utils/metaHelpers";
+import { LazyImage } from "@/components/LazyImage";
 
 // Import assets
 const heroBugattiBolideImage = "/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png";
@@ -38,18 +41,38 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
 
   // Set page title and meta description for SEO
   React.useEffect(() => {
-    document.title = "Premium PPF, Ceramic Coating & Window Tint Miami | Bespoke Auto Design";
+    const title = "Premium PPF, Ceramic Coating & Window Tint Miami | Bespoke Auto Design";
+    const description = "Professional XPEL paint protection film, ceramic coating & window tint installation in Miami. Authorized dealer with lifetime warranties. Protect your luxury vehicle investment.";
+    
+    document.title = title;
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional XPEL paint protection film, ceramic coating & window tint installation in Miami. Authorized dealer with lifetime warranties. Protect your luxury vehicle investment.');
+      metaDescription.setAttribute('content', description);
     } else {
       const meta = document.createElement('meta');
       meta.name = 'description';
-      meta.content = 'Professional XPEL paint protection film, ceramic coating & window tint installation in Miami. Authorized dealer with lifetime warranties. Protect your luxury vehicle investment.';
+      meta.content = description;
       document.head.appendChild(meta);
     }
+
+    // Add comprehensive social media and geo tags
+    addOpenGraphTags(title, description, '/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png');
+    addCanonicalUrl(window.location.origin + '/');
+    
+    // Preload critical images
+    preloadCriticalImages([
+      '/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png', // Hero image
+      '/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png'  // Logo
+    ]);
+
+    // Add structured data for local business and FAQ
+    const combinedSchema = {
+      "@context": "https://schema.org",
+      "@graph": [businessSchema, faqSchema]
+    };
+    addStructuredData(combinedSchema);
   }, []);
   const services = [{
     title: "Paint Protection Film (PPF)",
@@ -240,7 +263,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                 <div className="aspect-video overflow-hidden">
                   <img 
                     src={service.image} 
-                    alt={service.title} 
+                    alt={`Professional ${service.title} installation at Bespoke Auto Design Miami - XPEL authorized dealer`} 
                     className={`w-full h-full transition-transform duration-300 hover:scale-110 ${
                       service.title === "Vinyl Wraps" 
                         ? "object-cover object-[center_70%]" 
@@ -248,6 +271,8 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                         ? "object-cover object-[center_30%]"
                         : "object-cover"
                     }`} 
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <CardHeader>

@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import MobileMenu from "@/components/MobileMenu";
 import { MarineFAQ } from "@/components/MarineFAQ";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { addStructuredData } from "@/utils/seoHelpers";
 
 const Marine = () => {
   useEffect(() => {
@@ -23,6 +25,26 @@ const Marine = () => {
       meta.content = 'Professional marine protection services for boats and yachts in Miami. XPEL marine PPF, ceramic coating, and window tint. Protect your vessel from saltwater and UV damage.';
       document.head.appendChild(meta);
     }
+
+    // Add marine-specific structured data
+    const marineSchema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Marine Protection Services",
+      "description": "Specialized XPEL protection services for boats, yachts, and marine vessels in Miami",
+      "provider": {
+        "@type": "AutomotiveBusiness",
+        "name": "Bespoke Auto Design",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Miami",
+          "addressRegion": "FL"
+        }
+      },
+      "areaServed": "South Florida",
+      "serviceType": "Marine Protection"
+    };
+    addStructuredData(marineSchema);
   }, []);
 
   const navigateToContact = () => {
@@ -73,6 +95,12 @@ const Marine = () => {
             </div>
             <MobileMenu />
           </div>
+          <Breadcrumbs 
+            items={[
+              { name: "Home", path: "/" },
+              { name: "Marine Services", path: "/marine", current: true }
+            ]} 
+          />
         </div>
       </nav>
 

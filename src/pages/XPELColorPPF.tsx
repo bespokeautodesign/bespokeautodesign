@@ -6,6 +6,8 @@ import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle, ChevronDown, Chevro
 import { Link, useNavigate } from 'react-router-dom';
 import MobileMenu from '@/components/MobileMenu';
 import { ColorPPFFAQ } from '@/components/ColorPPFFAQ';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { addStructuredData } from '@/utils/seoHelpers';
 
 interface XPELColor {
   name: string;
@@ -50,6 +52,28 @@ const XPELColorPPF = () => {
       meta.content = 'Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors available in gloss, satin, and metallic finishes. Protection meets style.';
       document.head.appendChild(meta);
     }
+
+    // Add COLOR PPF specific structured data
+    const colorPpfSchema = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "XPEL COLOR Paint Protection Film",
+      "description": "Premium colored paint protection film available in 16 vibrant colors with gloss, satin, and metallic finishes",
+      "brand": {
+        "@type": "Brand",
+        "name": "XPEL"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2024-12-31",
+        "seller": {
+          "@type": "Organization",
+          "name": "Bespoke Auto Design"
+        }
+      }
+    };
+    addStructuredData(colorPpfSchema);
   }, []);
 
   return (
@@ -88,6 +112,12 @@ const XPELColorPPF = () => {
               <MobileMenu />
             </div>
           </div>
+          <Breadcrumbs 
+            items={[
+              { name: "Home", path: "/" },
+              { name: "XPEL COLOR PPF", path: "/xpel-color", current: true }
+            ]} 
+          />
         </div>
       </nav>
 
