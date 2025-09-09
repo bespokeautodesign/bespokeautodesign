@@ -148,41 +148,79 @@ const XPELColorPPF = () => {
           </Card>
         </div>
 
+        {/* Car Model Showcase */}
+        <section className="mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold text-primary mb-4">See It On Your Vehicle</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Visualize how your selected XPEL color would transform your vehicle's appearance.
+            </p>
+          </div>
+
+          <Card className="p-8 bg-background/50 backdrop-blur-sm">
+            <div className="text-center space-y-6">
+              <div className="space-y-2">
+                <Badge variant="outline" className="text-lg px-4 py-2">
+                  Color Preview
+                </Badge>
+                <Badge variant="secondary" className="text-sm px-3 py-1">
+                  {selectedColor.name} - {selectedColor.finish} Finish
+                </Badge>
+              </div>
+              
+              <div className="relative max-w-4xl mx-auto">
+                <div className="relative group">
+                  <img
+                    src="/lovable-uploads/91bdd6c7-9fa5-400d-be4b-fdbb223d5f74.png"
+                    alt="Vehicle with XPEL Color PPF"
+                    className="w-full h-auto rounded-lg shadow-2xl transition-all duration-500"
+                  />
+                  
+                  {/* Color overlay */}
+                  <div
+                    className="absolute inset-0 rounded-lg transition-all duration-700 ease-in-out opacity-25 mix-blend-multiply"
+                    style={{
+                      backgroundColor: selectedColor.color,
+                    }}
+                  />
+                  
+                  {/* Metallic effect for metallic finishes */}
+                  {selectedColor.finish === 'Metallic' && (
+                    <div
+                      className="absolute inset-0 rounded-lg transition-all duration-700 ease-in-out opacity-15 mix-blend-screen"
+                      style={{
+                        background: `linear-gradient(45deg, transparent 30%, ${selectedColor.color}40 50%, transparent 70%)`,
+                      }}
+                    />
+                  )}
+                  
+                  {/* Satin effect for satin finishes */}
+                  {selectedColor.finish === 'Satin' && (
+                    <div className="absolute inset-0 rounded-lg bg-black/5 mix-blend-multiply transition-all duration-700" />
+                  )}
+                </div>
+                
+                <div className="mt-6 text-center">
+                  <p className="text-muted-foreground">
+                    This preview shows an approximation of how {selectedColor.name} would appear on your vehicle.
+                  </p>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Actual results may vary based on lighting conditions and base paint color.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </section>
+
         {/* Color Selection Section */}
         <section id="colors" className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-primary mb-4">XPEL Color Collection</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Express yourself without saying a word. Our premium paint protection film comes in a variety of bold colors to show off your signature style.
+              Click any color below to see it showcased on the vehicle above. Each color provides superior protection with a unique aesthetic finish.
             </p>
           </div>
-
-          {/* Selected Color Display */}
-          <Card className="p-8 mb-12 bg-background/50 backdrop-blur-sm">
-            <div className="text-center space-y-6">
-              <Badge variant="outline" className="text-2xl px-6 py-3">
-                {selectedColor.name}
-              </Badge>
-              <Badge variant="secondary" className="text-lg px-4 py-2">
-                {selectedColor.finish} Finish
-              </Badge>
-              <div className="flex justify-center">
-                <div
-                  className="w-48 h-48 rounded-full border-8 border-white shadow-2xl"
-                  style={{
-                    backgroundColor: selectedColor.color,
-                    background: selectedColor.finish === 'Metallic'
-                      ? `linear-gradient(135deg, ${selectedColor.color}, #ffffff20, ${selectedColor.color})`
-                      : selectedColor.color,
-                    filter: selectedColor.finish === 'Satin' ? 'brightness(0.9) contrast(1.1)' : 'none'
-                  }}
-                />
-              </div>
-              <p className="text-muted-foreground max-w-xl mx-auto">
-                This premium {selectedColor.finish.toLowerCase()} finish provides superior protection while delivering stunning visual impact.
-              </p>
-            </div>
-          </Card>
 
           {/* Color Grid */}
           <div className="text-center mb-8">
