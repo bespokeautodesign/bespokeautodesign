@@ -174,9 +174,28 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
               </div>
             </div>
             
-            <Button variant="xpel" size="lg" className="mt-12 bg-xpel-yellow text-primary hover:bg-xpel-yellow-dark" onClick={scrollToQuote}>
-              Get XPEL Quote
-            </Button>
+            {/* Colored PPF Teaser */}
+            <div className="mt-12 mb-8">
+              <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg p-6 max-w-md mx-auto">
+                <div className="text-center space-y-4">
+                  <Badge variant="secondary" className="bg-xpel-yellow text-primary text-xs px-3 py-1">
+                    NEW
+                  </Badge>
+                  <h3 className="text-lg font-bold text-primary-foreground">
+                    XPEL COLOR PPF
+                  </h3>
+                  <p className="text-sm text-primary-foreground/80">
+                    Now available in 16 bold colors. Style + protection in one.
+                  </p>
+                  <Link to="/xpel-color">
+                    <Button variant="outline" size="sm" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                      View Colors
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -227,8 +246,6 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
         </div>
       </section>
 
-      {/* XPEL Color Teaser Section */}
-      <XPELTeaser />
 
       {/* Projects Preview Section */}
       <section id="projects" className="py-20 bg-background/80 backdrop-blur-sm">
