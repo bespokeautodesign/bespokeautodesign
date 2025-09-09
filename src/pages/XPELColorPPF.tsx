@@ -108,16 +108,6 @@ const XPELColorPPF = () => {
             </div>
           </div>
 
-          {/* Benefits Hero Section */}
-          <div className="mb-12">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src="/lovable-uploads/4b56ee72-ca4c-452a-9f3a-9a3df7fca4e0.png" 
-                alt="XPEL Color Paint Protection Film Benefits" 
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
 
 
           {/* XPEL Color Selection */}
