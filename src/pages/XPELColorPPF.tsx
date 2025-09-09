@@ -55,7 +55,6 @@ const XPELColorPPF = () => {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <Button variant="outline" size="sm">Summary</Button>
               <Button variant="default" size="sm">Get Quote</Button>
             </div>
           </div>
