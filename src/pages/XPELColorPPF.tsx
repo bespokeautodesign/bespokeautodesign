@@ -119,33 +119,6 @@ const XPELColorPPF = () => {
             </div>
           </div>
 
-          {/* Color Showcase Section */}
-          <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-              <img 
-                src="/lovable-uploads/79c435f6-2f6b-4ece-87b1-9dce26b621a7.png" 
-                alt="XPEL PPF Color Motion" 
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-semibold text-lg">Dynamic Protection</h4>
-                <p className="text-sm opacity-90">Advanced film technology</p>
-              </div>
-            </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-              <img 
-                src="/lovable-uploads/86d579b0-d6bd-414a-a58b-23744306a9dd.png" 
-                alt="XPEL PPF Color Spectrum" 
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="font-semibold text-lg">Vibrant Colors</h4>
-                <p className="text-sm opacity-90">Endless customization options</p>
-              </div>
-            </div>
-          </div>
 
           {/* XPEL Color Selection */}
           <div className="space-y-6">
