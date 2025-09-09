@@ -6,8 +6,6 @@ import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle, ChevronDown, Chevro
 import { Link, useNavigate } from 'react-router-dom';
 import MobileMenu from '@/components/MobileMenu';
 import { ColorPPFFAQ } from '@/components/ColorPPFFAQ';
-import { SEO } from '@/components/SEO';
-import { generateServiceSchema, generateFAQSchema } from '@/utils/structuredData';
 
 interface XPELColor {
   name: string;
@@ -39,34 +37,23 @@ const XPELColorPPF = () => {
   const [selectedColor, setSelectedColor] = useState<XPELColor>(xpelColors[0]);
   const navigate = useNavigate();
 
-  // Generate structured data for Color PPF page
-  const colorPpfServiceSchema = generateServiceSchema(
-    "XPEL COLOR Paint Protection Film",
-    "Premium colored paint protection film that provides both protection and style. Available in 16 vibrant colors with gloss, satin, and metallic finishes."
-  );
-
-  const colorPpfFaqSchema = generateFAQSchema([
-    {
-      question: "What is XPEL COLOR PPF?",
-      answer: "XPEL COLOR PPF is a paint protection film that not only safeguards your vehicle's paint from scratches, chips, and UV damage but also adds a stylish, custom color finish."
-    },
-    {
-      question: "How is COLOR PPF different from traditional vinyl wrap?",
-      answer: "Unlike vinyl, COLOR PPF is 60% thicker, self-healing, and offers superior protection against rock chips, swirl marks, and environmental contaminants."
+  // Set page title and meta description for SEO
+  React.useEffect(() => {
+    document.title = "XPEL COLOR PPF Miami | Colored Paint Protection Film | 16 Colors Available";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors available in gloss, satin, and metallic finishes. Protection meets style.');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors available in gloss, satin, and metallic finishes. Protection meets style.';
+      document.head.appendChild(meta);
     }
-  ]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
-      <SEO 
-        title="XPEL COLOR PPF Miami | Colored Paint Protection Film | 16 Colors Available"
-        description="Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors available in gloss, satin, and metallic finishes. Protection meets style."
-        keywords="XPEL COLOR PPF Miami, colored paint protection film, vehicle color change Miami, XPEL COLOR dealer, automotive customization Miami"
-        schemaData={{
-          "@context": "https://schema.org",
-          "@graph": [colorPpfServiceSchema, colorPpfFaqSchema]
-        }}
-      />
       {/* Top Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div className="container mx-auto px-6 py-4">

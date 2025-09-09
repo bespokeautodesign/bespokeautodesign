@@ -9,8 +9,6 @@ import { HomeFAQ } from "@/components/HomeFAQ";
 import { XPELTeaser } from "@/components/XPELTeaser";
 import { Link } from "react-router-dom";
 import MobileMenu from "@/components/MobileMenu";
-import { SEO } from "@/components/SEO";
-import { generateBusinessSchema, generateServiceSchema, generateFAQSchema } from "@/utils/structuredData";
 
 // Import assets
 const heroBugattiBolideImage = "/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png";
@@ -37,6 +35,22 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
       }, 100);
     }
   }, [autoScrollToContact]);
+
+  // Set page title and meta description for SEO
+  React.useEffect(() => {
+    document.title = "Premium PPF, Ceramic Coating & Window Tint Miami | Bespoke Auto Design";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Professional XPEL paint protection film, ceramic coating & window tint installation in Miami. Authorized dealer with lifetime warranties. Protect your luxury vehicle investment.');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Professional XPEL paint protection film, ceramic coating & window tint installation in Miami. Authorized dealer with lifetime warranties. Protect your luxury vehicle investment.';
+      document.head.appendChild(meta);
+    }
+  }, []);
   const services = [{
     title: "Paint Protection Film (PPF)",
     description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
@@ -58,36 +72,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
     image: tintWorkImage,
     features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"]
   }];
-  
-  // Generate structured data for SEO
-  const businessSchema = generateBusinessSchema();
-  const faqSchema = generateFAQSchema([
-    {
-      question: "What is paint protection film (PPF)?",
-      answer: "Paint protection film (PPF) is a transparent, durable polyurethane film designed to protect a vehicle's paint from scratches, chips, stains, and environmental damage."
-    },
-    {
-      question: "How long does PPF last?",
-      answer: "Paint protection film (PPF) typically lasts between 5 to 10 years, depending on factors such as the quality of the film, installation techniques, and environmental conditions."
-    },
-    {
-      question: "What does ceramic coating do for a car?",
-      answer: "Ceramic coating provides a protective shield against environmental damage like UV rays, bird droppings, and road grime while enhancing the vehicle's gloss and shine."
-    }
-  ]);
-
-  const combinedSchema = {
-    "@context": "https://schema.org",
-    "@graph": [businessSchema, faqSchema]
-  };
-
   return <div className="min-h-screen bg-background relative">
-      <SEO 
-        title="Premium PPF, Ceramic Coating & Window Tint Miami | Bespoke Auto Design"
-        description="Professional XPEL paint protection film, ceramic coating & window tint installation in Miami. Authorized dealer with lifetime warranties. Protect your luxury vehicle investment."
-        keywords="PPF Miami, paint protection film Miami, ceramic coating Miami, window tint Miami, XPEL dealer Miami, luxury car protection, automotive detailing Miami"
-        schemaData={combinedSchema}
-      />
       {/* Background Image - Full width coverage */}
       <div 
         className="fixed inset-0 w-screen bg-cover bg-center bg-no-repeat z-0"

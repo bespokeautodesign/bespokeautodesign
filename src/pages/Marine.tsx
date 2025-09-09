@@ -6,12 +6,23 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import MobileMenu from "@/components/MobileMenu";
 import { MarineFAQ } from "@/components/MarineFAQ";
-import { SEO } from "@/components/SEO";
-import { generateServiceSchema, generateFAQSchema } from "@/utils/structuredData";
 
 const Marine = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Set page title and meta description for SEO
+    document.title = "Marine Protection Services Miami | Boat PPF & Ceramic Coating | Bespoke Auto Design";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Professional marine protection services for boats and yachts in Miami. XPEL marine PPF, ceramic coating, and window tint. Protect your vessel from saltwater and UV damage.');
+    } else {
+      const meta = document.createElement('meta');
+      meta.name = 'description';
+      meta.content = 'Professional marine protection services for boats and yachts in Miami. XPEL marine PPF, ceramic coating, and window tint. Protect your vessel from saltwater and UV damage.';
+      document.head.appendChild(meta);
+    }
   }, []);
 
   const navigateToContact = () => {
@@ -35,34 +46,8 @@ const Marine = () => {
     features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"]
   }];
 
-  // Generate structured data for Marine page
-  const marineServiceSchema = generateServiceSchema(
-    "Marine Protection Services",
-    "Specialized protection services for boats, yachts, and marine vessels including PPF, ceramic coating, and window tint."
-  );
-
-  const marineFaqSchema = generateFAQSchema([
-    {
-      question: "Can XPEL paint protection film be applied to marine vessels?",
-      answer: "Yes, XPEL paint protection film can be applied to boats and marine vessels to protect gel coat and painted surfaces from saltwater, UV rays, and harsh marine conditions."
-    },
-    {
-      question: "Is ceramic coating worth it for boats?",
-      answer: "Yes, ceramic coating a boat is worth it as it provides superior protection against harsh marine environments, preventing oxidation, corrosion, and fading."
-    }
-  ]);
-
   return (
     <div className="min-h-screen bg-background relative">
-      <SEO 
-        title="Marine Protection Services Miami | Boat PPF & Ceramic Coating | Bespoke Auto Design"
-        description="Professional marine protection services for boats and yachts in Miami. XPEL marine PPF, ceramic coating, and window tint. Protect your vessel from saltwater and UV damage."
-        keywords="marine PPF Miami, boat protection Miami, yacht ceramic coating, marine window tint, boat paint protection film, marine detailing Miami"
-        schemaData={{
-          "@context": "https://schema.org",
-          "@graph": [marineServiceSchema, marineFaqSchema]
-        }}
-      />
       {/* Background Image - Full width coverage */}
       <div 
         className="fixed inset-0 w-screen bg-cover bg-center bg-no-repeat z-0"
