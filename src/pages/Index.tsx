@@ -189,7 +189,16 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                   </p>
                   <div className="pt-2">
                     <Link to="/xpel-color">
-                      <Button variant="secondary" size="sm" className="bg-xpel-yellow text-primary hover:bg-xpel-yellow/90">
+                      <Button 
+                        variant="secondary" 
+                        size="sm" 
+                        className="bg-xpel-yellow text-primary hover:bg-xpel-yellow/90"
+                        onClick={() => {
+                          setTimeout(() => {
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }, 100);
+                        }}
+                      >
                         View Colors
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
