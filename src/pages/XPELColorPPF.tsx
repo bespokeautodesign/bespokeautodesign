@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle, ChevronDown, ChevronUp, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { changeCarColor, loadImage } from '@/utils/carColorChanger';
-import porsche911TurboS from '/lovable-uploads/39666a97-9844-44fd-b4db-bb37a3a066cd.png';
 
 interface XPELColor {
   name: string;
@@ -34,30 +32,6 @@ const xpelColors: XPELColor[] = [
 
 const XPELColorPPF = () => {
   const [selectedColor, setSelectedColor] = useState<XPELColor>(xpelColors[0]);
-  const [processedImageSrc, setProcessedImageSrc] = useState<string>(porsche911TurboS);
-  const [isProcessing, setIsProcessing] = useState(false);
-  const imageRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    const processColorChange = async () => {
-      if (!imageRef.current) return;
-      
-      setIsProcessing(true);
-      try {
-        const img = await loadImage(porsche911TurboS);
-        const newImageSrc = await changeCarColor(img, selectedColor.color);
-        setProcessedImageSrc(newImageSrc);
-      } catch (error) {
-        console.error('Failed to process color change:', error);
-        // Fallback to original image if processing fails
-        setProcessedImageSrc(porsche911TurboS);
-      } finally {
-        setIsProcessing(false);
-      }
-    };
-
-    processColorChange();
-  }, [selectedColor.color]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -87,42 +61,9 @@ const XPELColorPPF = () => {
       </nav>
 
       {/* Main Layout */}
-      <div className="flex h-[calc(100vh-80px)]">
-        {/* Car Viewer - Left Side */}
-        <div className="flex-1 relative bg-gradient-to-br from-gray-50 to-gray-100">
-          <div className="absolute inset-0 flex items-center justify-center p-8">
-            <div className="relative max-w-4xl w-full">
-              <div className="relative group">
-                <img
-                  ref={imageRef}
-                  src={processedImageSrc}
-                  alt="Porsche 911 Turbo S with XPEL Color PPF"
-                  className="w-full h-auto drop-shadow-2xl transition-all duration-500"
-                />
-                
-                {/* Processing overlay */}
-                {isProcessing && (
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center rounded-lg">
-                    <div className="bg-white/90 px-4 py-2 rounded-lg">
-                      <p className="text-sm font-medium">Processing color change...</p>
-                    </div>
-                  </div>
-                )}
-              </div>
-              
-            </div>
-          </div>
-          
-          {/* View Controls */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-            <Button variant="outline" size="sm" className="bg-white/80 backdrop-blur-sm">
-              Exterior
-            </Button>
-          </div>
-        </div>
-
-        {/* Configuration Panel - Right Side */}
-        <div className="w-96 bg-white border-l border-gray-200 overflow-y-auto">
+      <div className="min-h-screen bg-white">
+        {/* Configuration Panel - Full Width */}
+        <div className="container mx-auto px-6 py-8 max-w-4xl">
           <div className="p-6">
             <div className="mb-6">
               <h1 className="text-2xl font-bold text-gray-900 mb-2">XPEL Color PPF</h1>
