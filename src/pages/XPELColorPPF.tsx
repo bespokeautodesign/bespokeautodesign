@@ -70,7 +70,7 @@ const XPELColorPPF = () => {
           </div>
 
           {/* Benefits Hero Section */}
-          <div className="mb-12 space-y-6">
+          <div className="mb-8">
             <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img 
                 src="/lovable-uploads/4b56ee72-ca4c-452a-9f3a-9a3df7fca4e0.png" 
@@ -78,6 +78,10 @@ const XPELColorPPF = () => {
                 className="w-full h-64 object-cover"
               />
             </div>
+          </div>
+
+          {/* Installation Process */}
+          <div className="mb-8">
             <div className="relative rounded-2xl overflow-hidden shadow-lg max-w-2xl mx-auto">
               <img 
                 src="/lovable-uploads/8b43fed7-f7fb-4afb-9e85-d49fe7a3f5dc.png" 
