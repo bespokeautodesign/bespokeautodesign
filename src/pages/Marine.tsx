@@ -149,9 +149,6 @@ const Marine = () => {
         </div>
       </section>
 
-      {/* Marine FAQ Section */}
-      <MarineFAQ />
-
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-background">
         <div className="container mx-auto px-6">
@@ -166,6 +163,9 @@ const Marine = () => {
           </div>
         </div>
       </section>
+
+      {/* Marine FAQ Section */}
+      <MarineFAQ />
       </div>
     </div>
   );
