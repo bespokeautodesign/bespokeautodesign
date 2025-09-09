@@ -42,11 +42,11 @@ const XPELColorPPF = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-6">
-              <Link to="/" className="flex items-center gap-3 text-gray-600 hover:text-gray-800 transition-colors">
+              <Link to="/" className="hidden md:flex items-center gap-3 text-gray-600 hover:text-gray-800 transition-colors">
                 <ArrowLeft className="h-5 w-5" />
                 <span className="font-medium">Back to Home</span>
               </Link>
-              <div className="h-6 w-px bg-gray-300"></div>
+              <div className="hidden md:block h-6 w-px bg-gray-300"></div>
               <div className="flex items-center gap-2">
                 <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-8 w-auto" />
                 <span className="text-lg font-bold text-primary">
