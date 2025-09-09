@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle, ChevronDown, ChevronUp, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { changeCarColor, loadImage } from '@/utils/carColorChanger';
 import porsche911TurboS from '/lovable-uploads/39666a97-9844-44fd-b4db-bb37a3a066cd.png';
 
 interface XPELColor {
@@ -33,6 +34,30 @@ const xpelColors: XPELColor[] = [
 
 const XPELColorPPF = () => {
   const [selectedColor, setSelectedColor] = useState<XPELColor>(xpelColors[0]);
+  const [processedImageSrc, setProcessedImageSrc] = useState<string>(porsche911TurboS);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const imageRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const processColorChange = async () => {
+      if (!imageRef.current) return;
+      
+      setIsProcessing(true);
+      try {
+        const img = await loadImage(porsche911TurboS);
+        const newImageSrc = await changeCarColor(img, selectedColor.color);
+        setProcessedImageSrc(newImageSrc);
+      } catch (error) {
+        console.error('Failed to process color change:', error);
+        // Fallback to original image if processing fails
+        setProcessedImageSrc(porsche911TurboS);
+      } finally {
+        setIsProcessing(false);
+      }
+    };
+
+    processColorChange();
+  }, [selectedColor.color]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -69,32 +94,19 @@ const XPELColorPPF = () => {
             <div className="relative max-w-4xl w-full">
               <div className="relative group">
                 <img
-                  src={porsche911TurboS}
+                  ref={imageRef}
+                  src={processedImageSrc}
                   alt="Porsche 911 Turbo S with XPEL Color PPF"
                   className="w-full h-auto drop-shadow-2xl transition-all duration-500"
                 />
                 
-                {/* Color overlay */}
-                <div
-                  className="absolute inset-0 transition-all duration-700 ease-in-out opacity-30 mix-blend-multiply"
-                  style={{
-                    backgroundColor: selectedColor.color,
-                  }}
-                />
-                
-                {/* Metallic effect */}
-                {selectedColor.finish === 'Metallic' && (
-                  <div
-                    className="absolute inset-0 transition-all duration-700 ease-in-out opacity-20 mix-blend-screen"
-                    style={{
-                      background: `linear-gradient(45deg, transparent 30%, ${selectedColor.color}60 50%, transparent 70%)`,
-                    }}
-                  />
-                )}
-                
-                {/* Satin effect */}
-                {selectedColor.finish === 'Satin' && (
-                  <div className="absolute inset-0 bg-black/10 mix-blend-multiply transition-all duration-700" />
+                {/* Processing overlay */}
+                {isProcessing && (
+                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center rounded-lg">
+                    <div className="bg-white/90 px-4 py-2 rounded-lg">
+                      <p className="text-sm font-medium">Processing color change...</p>
+                    </div>
+                  </div>
                 )}
               </div>
               
