@@ -81,9 +81,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
             })} className="text-muted-foreground hover:text-primary transition-colors">Services</button>
               <Link to="/marine" className="text-muted-foreground hover:text-primary transition-colors">Marine Services</Link>
               <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
-              <button onClick={() => document.getElementById('testimonials')?.scrollIntoView({
-              behavior: 'smooth'
-            })} className="text-muted-foreground hover:text-primary transition-colors">Testimonials</button>
+              <Link to="/xpel-color" className="text-muted-foreground hover:text-primary transition-colors">Color PPF</Link>
             </div>
             <div className="flex items-center gap-2">
               <Button variant="premium" size="sm" onClick={scrollToQuote} className="hidden sm:flex">
