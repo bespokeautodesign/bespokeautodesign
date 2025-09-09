@@ -110,14 +110,6 @@ const XPELColorPPF = () => {
                 )}
               </div>
               
-              {/* Car Info Overlay */}
-              <div className="absolute bottom-0 left-0 bg-white/90 backdrop-blur-sm p-6 rounded-tr-lg">
-                <h2 className="text-2xl font-bold text-gray-900">Porsche GT3 RS</h2>
-                <p className="text-gray-600">with XPEL Color PPF</p>
-                <Badge variant="secondary" className="mt-2">
-                  {selectedColor.name} - {selectedColor.finish}
-                </Badge>
-              </div>
             </div>
           </div>
           
