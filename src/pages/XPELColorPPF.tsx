@@ -207,11 +207,11 @@ const XPELColorPPF = () => {
               size="lg"
               onClick={() => {
                 // Navigate to home page contact section
-                if (window.location.pathname !== '/') {
-                  window.location.href = '/#contact';
-                } else {
+                window.location.href = '/#contact';
+                // Force scroll after navigation
+                setTimeout(() => {
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }
+                }, 100);
               }}
             >
               Get Quote for {selectedColor.name}
