@@ -402,29 +402,30 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                   <form id="quote-form">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium">First Name</label>
-                        <input name="firstName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
+                        <label className="text-sm font-medium">First Name *</label>
+                        <input name="firstName" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium">Last Name</label>
-                        <input name="lastName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
+                        <label className="text-sm font-medium">Last Name *</label>
+                        <input name="lastName" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Phone</label>
-                      <input name="phone" type="tel" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
+                      <label className="text-sm font-medium">Phone *</label>
+                      <input name="phone" type="tel" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Email</label>
                       <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Vehicle Make & Model</label>
-                      <input name="vehicle" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
+                      <label className="text-sm font-medium">Vehicle Make & Model *</label>
+                      <input name="vehicle" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Service Interest</label>
-                      <select name="service" className="w-full px-3 py-2 border border-input rounded-md bg-background">
+                      <label className="text-sm font-medium">Service Interest *</label>
+                      <select name="service" required className="w-full px-3 py-2 border border-input rounded-md bg-background">
+                        <option value="">Select a service...</option>
                         <option>Paint Protection Film (PPF)</option>
                         <option>Ceramic Coating</option>
                         <option>Vinyl Wrap</option>
@@ -436,7 +437,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                       </select>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Preferred Contact Method</label>
+                      <label className="text-sm font-medium">Preferred Contact Method *</label>
                       <div className="flex gap-4">
                         <label className="flex items-center space-x-2">
                           <input type="checkbox" name="contactMethod" value="text" className="rounded border-input" />
@@ -453,14 +454,27 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Message</label>
-                      <textarea name="message" className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
+                      <label className="text-sm font-medium">Message *</label>
+                      <textarea name="message" required className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
                     </div>
                   </form>
                   <Button variant="premium" className="w-full" onClick={() => {
                   const form = document.querySelector('#quote-form') as HTMLFormElement;
-                  const formData = new FormData(form);
+                  
+                  // Check if form is valid
+                  if (!form.checkValidity()) {
+                    form.reportValidity();
+                    return;
+                  }
+                  
+                  // Check if at least one contact method is selected
                   const contactMethods = Array.from(form.querySelectorAll('input[name="contactMethod"]:checked')).map(input => (input as HTMLInputElement).value);
+                  if (contactMethods.length === 0) {
+                    alert('Please select at least one preferred contact method.');
+                    return;
+                  }
+                  
+                  const formData = new FormData(form);
                   const subject = `Quote Request - ${formData.get('service')}`;
                   const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0APreferred Contact: ${contactMethods.join(', ')}%0D%0AMessage: ${formData.get('message')}`;
                   window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
