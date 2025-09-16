@@ -437,7 +437,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                       </select>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Preferred Contact Method *</label>
+                      <label className="text-sm font-medium">Preferred Contact Method</label>
                       <div className="flex gap-4">
                         <label className="flex items-center space-x-2">
                           <input type="checkbox" name="contactMethod" value="text" className="rounded border-input" />
@@ -469,10 +469,6 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                   
                   // Check if at least one contact method is selected
                   const contactMethods = Array.from(form.querySelectorAll('input[name="contactMethod"]:checked')).map(input => (input as HTMLInputElement).value);
-                  if (contactMethods.length === 0) {
-                    alert('Please select at least one preferred contact method.');
-                    return;
-                  }
                   
                   const formData = new FormData(form);
                   const subject = `Quote Request - ${formData.get('service')}`;
