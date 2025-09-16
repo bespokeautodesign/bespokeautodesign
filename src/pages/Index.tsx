@@ -406,8 +406,8 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                         <input name="firstName" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium">Last Name *</label>
-                        <input name="lastName" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
+                        <label className="text-sm font-medium">Last Name</label>
+                        <input name="lastName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
                       </div>
                     </div>
                     <div className="space-y-2">
