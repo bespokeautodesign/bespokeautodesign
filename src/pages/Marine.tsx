@@ -83,7 +83,7 @@ const Marine = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3">
-              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design - Marine Protection Services Miami" className="h-12 w-auto" />
+              <img src="/bespoke-logo.png" alt="Bespoke Auto Design - Marine Protection Services Miami" className="h-12 w-auto" />
               <span className="text-lg md:text-xl font-bold text-primary">
                 <span className="text-silver">Bespoke</span> Auto Design
               </span>

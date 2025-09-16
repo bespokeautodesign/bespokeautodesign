@@ -58,13 +58,13 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
     }
 
     // Add comprehensive social media and geo tags
-    addOpenGraphTags(title, description, '/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png');
+    addOpenGraphTags(title, description, '/bespoke-logo.png');
     addCanonicalUrl(window.location.origin + '/');
     
     // Preload critical images
     preloadCriticalImages([
       '/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png', // Hero image
-      '/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png'  // Logo
+      '/bespoke-logo.png'  // Logo
     ]);
 
     // Add structured data for local business and FAQ
@@ -109,7 +109,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design - Premium Automotive Protection Services Miami" className="h-10 w-auto" />
+              <img src="/bespoke-logo.png" alt="Bespoke Auto Design - Premium Automotive Protection Services Miami" className="h-10 w-auto" />
               <span className="text-sm md:text-lg font-bold text-primary whitespace-nowrap">
                 <span className="text-silver">Bespoke</span> Auto Design
               </span>
@@ -580,7 +580,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center gap-3 mb-4 md:mb-0">
-              <img src="/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png" alt="Bespoke Auto Design Logo" className="h-10 w-auto" />
+              <img src="/bespoke-logo.png" alt="Bespoke Auto Design Logo" className="h-10 w-auto" />
               <span className="text-lg font-bold">
                 <span className="text-silver">Bespoke</span> Auto Design
               </span>
