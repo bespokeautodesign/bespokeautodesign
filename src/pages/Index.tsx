@@ -310,15 +310,15 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <Card className="group overflow-hidden hover:shadow-elegant transition-all duration-300">
               <div className="relative overflow-hidden">
-                <img src="/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png" alt="McLaren 570S Inozetek vinyl wrap and ceramic tint installation at Bespoke Auto Design Miami" className="w-full h-64 object-cover object-[center_65%] transition-transform duration-300 group-hover:scale-105" />
+                <img src="/lovable-uploads/ferrari-laferrari-shop-enhanced.png" alt="Ferrari LaFerrari XPEL Ultimate Plus PPF, Fusion Plus Ceramic Coating and Prime XR Plus Ceramic Tints installation at Bespoke Auto Design Miami" className="w-full h-64 object-cover object-[center_65%] transition-transform duration-300 group-hover:scale-105" />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-black/60 text-white border-white/20">Vinyl Wrap + Ceramic Tints</Badge>
+                  <Badge className="bg-black/60 text-white border-white/20">PPF + Ceramic Coating + Ceramic Tints</Badge>
                 </div>
               </div>
               <CardHeader>
                 
                 <CardTitle className="line-clamp-2">McLaren 570S </CardTitle>
-                <CardDescription>Super Gloss Metallic Kato's Kenmery Blue Inozetek Wrap & Prime XR Plus Ceramic Tints.</CardDescription>
+                <CardDescription>Full Body Xpel Ultimate Plus PPF, Fusion Plus Ceramic Coating & Prime XR Plus Ceramic Tints</CardDescription>
               </CardHeader>
             </Card>
 
