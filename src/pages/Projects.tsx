@@ -87,14 +87,15 @@ const Projects = () => {
 
   // Clear PPF vehicle showcases
   const clearPPFVehicles = [
-    { id: 1, name: "Aston Martin Vantage", image: "/lovable-uploads/06b4e251-b273-487e-8f43-394aa71342f8.png", year: "2021" },
-    { id: 2, name: "2024 BMW M4", image: "/lovable-uploads/2ba942d5-5b05-4d45-8455-fd19f9b765c6.png", year: "2024" },
-    { id: 3, name: "Ferrari F8 Tributo", image: "/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png", year: "2020" },
-    { id: 4, name: "2024 Corvette Stingray", image: "/lovable-uploads/e1a77901-cd16-499b-9d39-f725cce775d5.png", year: "2024" },
-    { id: 5, name: "Toyota Land Cruiser", image: "/lovable-uploads/fdf28998-66d9-4078-980c-8d7cb1c0485f.png", year: "2024" },
-    { id: 6, name: "Ram 1500", image: "/lovable-uploads/f14f599e-ddd2-47ac-ae95-ffbcd59b8f60.png", year: "2023" },
-    { id: 7, name: "Corvette Z06", image: "/lovable-uploads/e456804b-63fa-4640-bebe-d3ade09ef953.png", year: "2023" },
-    { id: 8, name: "Tesla Model 3", image: "/lovable-uploads/a777b2aa-1d9f-42db-9b41-327227b99e44.png", year: "2024" }
+    { id: 1, name: "Ferrari LaFerrari", image: "/lovable-uploads/ferrari-laferrari-shop-enhanced.png", year: "2016" },
+    { id: 2, name: "Aston Martin Vantage", image: "/lovable-uploads/06b4e251-b273-487e-8f43-394aa71342f8.png", year: "2021" },
+    { id: 3, name: "2024 BMW M4", image: "/lovable-uploads/2ba942d5-5b05-4d45-8455-fd19f9b765c6.png", year: "2024" },
+    { id: 4, name: "Ferrari F8 Tributo", image: "/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png", year: "2020" },
+    { id: 5, name: "2024 Corvette Stingray", image: "/lovable-uploads/e1a77901-cd16-499b-9d39-f725cce775d5.png", year: "2024" },
+    { id: 6, name: "Toyota Land Cruiser", image: "/lovable-uploads/fdf28998-66d9-4078-980c-8d7cb1c0485f.png", year: "2024" },
+    { id: 7, name: "Ram 1500", image: "/lovable-uploads/f14f599e-ddd2-47ac-ae95-ffbcd59b8f60.png", year: "2023" },
+    { id: 8, name: "Corvette Z06", image: "/lovable-uploads/e456804b-63fa-4640-bebe-d3ade09ef953.png", year: "2023" },
+    { id: 9, name: "Tesla Model 3", image: "/lovable-uploads/a777b2aa-1d9f-42db-9b41-327227b99e44.png", year: "2024" }
   ];
 
   // Stealth PPF vehicle showcases
@@ -111,8 +112,7 @@ const Projects = () => {
   // Vinyl Wrap vehicle showcases
   const vinylWrapVehicles = [
     { id: 1, name: "Aston Martin DBX", beforeImage: "/lovable-uploads/714ade11-8742-4c61-b8fc-1577ddc3dceb.png", afterImage: "/lovable-uploads/19163148-510a-4a7c-9bb2-ba187ab86dc4.png", year: "2023" },
-    { id: 2, name: "Mazda Miata", beforeImage: "/lovable-uploads/6313432b-9fe6-44eb-82af-82cd8cf3bc37.png", afterImage: "/lovable-uploads/57c73f3f-f506-407c-949f-9b6266f61d81.png", year: "2023" },
-    { id: 3, name: "McLaren 570S", beforeImage: "/lovable-uploads/0e6ef2c1-78f7-410c-a663-0c83402a98d5.png", afterImage: "/lovable-uploads/067b368c-69cf-4e91-a81e-01263ad83820.png", year: "2019" }
+    { id: 2, name: "Mazda Miata", beforeImage: "/lovable-uploads/6313432b-9fe6-44eb-82af-82cd8cf3bc37.png", afterImage: "/lovable-uploads/57c73f3f-f506-407c-949f-9b6266f61d81.png", year: "2023" }
   ];
 
   const getCategoryIcon = (category: string) => {
