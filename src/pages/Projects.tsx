@@ -21,7 +21,7 @@ const Projects = () => {
       id: 1,
       title: "Ferrari LaFerrari",
       description: "Full Body Xpel Ultimate Plus PPF, Fusion Plus Ceramic Coating & Prime XR Plus Ceramic Tints",
-      image: "/lovable-uploads/ferrari-laferrari-shop.png",
+      image: "/lovable-uploads/ferrari-laferrari-shop-enhanced.png",
       category: "PPF + Ceramic Coating + Ceramic Tints",
       
       services: ["Full Body PPF", "Fusion Plus Ceramic Coating", "Prime XR Plus Ceramic Tints"],
