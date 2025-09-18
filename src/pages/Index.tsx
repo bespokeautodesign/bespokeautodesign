@@ -317,7 +317,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
               </div>
               <CardHeader>
                 
-                <CardTitle className="line-clamp-2">McLaren 570S </CardTitle>
+                <CardTitle className="line-clamp-2"><CardTitle className="line-clamp-2">Ferrari LaFerrari</CardTitle> </CardTitle>
                 <CardDescription>Full Body Xpel Ultimate Plus PPF, Fusion Plus Ceramic Coating & Prime XR Plus Ceramic Tints</CardDescription>
               </CardHeader>
             </Card>
