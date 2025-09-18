@@ -19,6 +19,17 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Ferrari LaFerrari",
+      description: "Full Body Xpel Ultimate Plus PPF, Fusion Plus Ceramic Coating & Prime XR Plus Ceramic Tints",
+      image: "/lovable-uploads/ferrari-laferrari-shop.png",
+      category: "PPF + Ceramic Coating + Ceramic Tints",
+      
+      services: ["Full Body PPF", "Fusion Plus Ceramic Coating", "Prime XR Plus Ceramic Tints"],
+      vehicle: "2016 Ferrari LaFerrari",
+      completion: "5 Days"
+    },
+    {
+      id: 2,
       title: "McLaren 570S",
       description: "Super Gloss Metallic Kato's Kenmery Blue Inozetek Wrap & Prime XR Plus Ceramic Tints.",
       image: "/lovable-uploads/0043b483-74ac-46c5-916a-44e46e97b88b.png",
@@ -29,7 +40,7 @@ const Projects = () => {
       completion: "5 days"
     },
     {
-      id: 2,
+      id: 3,
       title: "Ferrari F8 Tributo",
       description: "Full Body Xpel Ultimate Plus PPF Protection & Fusion Plus Ceramic Coating.",
       image: "/lovable-uploads/3f1daf49-c3df-4080-ae59-f3d51dde5a5e.png",
@@ -40,7 +51,7 @@ const Projects = () => {
       completion: "5 days"
     },
     {
-      id: 3,
+      id: 4,
       title: "Mercedes G-Wagon G63 AMG",
       description: "Full Body Xpel Stealth PPF Protection & Prime XR Plus Ceramic Tints.",
       image: "/lovable-uploads/954a24eb-a0e4-4854-a5ae-cc3558261924.png",
@@ -51,7 +62,7 @@ const Projects = () => {
       completion: "5 days"
     },
     {
-      id: 4,
+      id: 5,
       title: "BMW X5 sDrive40i",
       description: "Full Body Xpel Stealth PPF Protection, Fusion Plus Ceramic Coating & Prime XR Plus Ceramic Tints.",
       image: "/lovable-uploads/2b4efeb0-51dc-4e2f-b7e3-9c4e9882c48e.png",
@@ -62,7 +73,7 @@ const Projects = () => {
       completion: "5 days"
     },
     {
-      id: 5,
+      id: 6,
       title: "Corvette C8 Stingray",
       description: "Xpel Ultimate Plus Track Package Paint Protection Film – Enhanced Coverage for High-Performance Driving",
       image: "/lovable-uploads/171000e1-8047-462c-b8fd-a3e367867858.png",
