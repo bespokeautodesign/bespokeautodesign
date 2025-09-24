@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,6 +9,13 @@ import { HomeFAQ } from "@/components/HomeFAQ";
 import { XPELTeaser } from "@/components/XPELTeaser";
 import { Link } from "react-router-dom";
 import MobileMenu from "@/components/MobileMenu";
+import { GalleryErrorBoundary } from "@/components/ErrorBoundary";
+import { SkeletonGrid, SkeletonTestimonial } from "@/components/ui/skeleton-grid";
+import { FormSubmissionLoading } from "@/components/LoadingStates";
+import { useScrollTracking } from "@/hooks/useScrollTracking";
+import { useFormTracking } from "@/hooks/useFormTracking";
+import { useHeroCTA } from "@/components/ABTestProvider";
+import { trackServiceInterest, trackPhoneCall, trackPortfolioEngagement } from "@/utils/analytics";
 import { addStructuredData, businessSchema, faqSchema } from "@/utils/seoHelpers";
 import { addOpenGraphTags, addCanonicalUrl, preloadCriticalImages } from "@/utils/metaHelpers";
 import { LazyImage } from "@/components/LazyImage";
@@ -24,10 +31,19 @@ import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
 
 const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPortfolio, setShowPortfolio] = useState(false);
+  
+  // Initialize tracking hooks
+  useScrollTracking('homepage');
+  const { trackFocus, trackBlur, trackSubmit } = useFormTracking('contact');
+  const { buttonText: heroCTAText, handleClick: handleHeroCTAClick } = useHeroCTA();
+
   const scrollToQuote = () => {
     document.getElementById('contact')?.scrollIntoView({
       behavior: 'smooth'
     });
+    trackServiceInterest('ppf', 'hero_cta');
   };
 
   React.useEffect(() => {
@@ -73,6 +89,9 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
       "@graph": [businessSchema, faqSchema]
     };
     addStructuredData(combinedSchema);
+    
+    // Load portfolio after initial render
+    setTimeout(() => setShowPortfolio(true), 1000);
   }, []);
   const services = [{
     title: "Paint Protection Film (PPF)",
@@ -123,8 +142,16 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
               <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
             </div>
             <div className="flex items-center gap-2">
-              <Button variant="premium" size="sm" onClick={scrollToQuote} className="hidden sm:flex">
-                Get Quote
+              <Button 
+                variant="premium" 
+                size="sm" 
+                onClick={() => {
+                  handleHeroCTAClick();
+                  scrollToQuote();
+                }} 
+                className="hidden sm:flex"
+              >
+                {heroCTAText}
               </Button>
               <MobileMenu />
             </div>
@@ -286,8 +313,20 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                         <span className="text-muted-foreground">{feature}</span>
                       </li>)}
                   </ul>
-                  <Button variant="premium" className="w-full mt-6" onClick={scrollToQuote}>
-                    Get Quote
+                  <Button 
+                    variant="premium" 
+                    className="w-full mt-6" 
+                    onClick={() => {
+                      trackServiceInterest(
+                        service.title.includes('PPF') ? 'ppf' : 
+                        service.title.includes('Ceramic') ? 'ceramic_coating' :
+                        service.title.includes('Vinyl') ? 'vinyl_wrap' : 'window_tint',
+                        'service_card'
+                      );
+                      scrollToQuote();
+                    }}
+                  >
+                    {heroCTAText}
                   </Button>
                 </CardContent>
               </Card>)}
@@ -351,8 +390,10 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
             </Card>
           </div>
 
+          </div>
+
           <div className="text-center">
-            <Link to="/portfolio">
+            <Link to="/portfolio" onClick={() => trackPortfolioEngagement('view', 'homepage_preview')}>
               <Button variant="premium" size="lg" className="flex items-center gap-2 mx-auto">
                 View Portfolio
                 <ArrowRight className="h-4 w-4" />
@@ -596,7 +637,6 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
           </div>
         </div>
       </footer>
-      </div>
     </div>;
 };
 export default Index;

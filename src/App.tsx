@@ -3,6 +3,11 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ABTestProvider } from "@/components/ABTestProvider";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import { addResourceHints, addMicrosoftClarity } from "@/utils/metaHelpers";
+import { initPerformanceTracking } from "@/utils/analytics";
+import { useEffect } from "react";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import Marine from "./pages/Marine";
@@ -11,24 +16,37 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/quote" element={<Index autoScrollToContact />} />
-          <Route path="/portfolio" element={<Projects />} />
-          <Route path="/marine" element={<Marine />} />
-          <Route path="/colorppf" element={<XPELColorPPF />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  useEffect(() => {
+    // Initialize performance optimizations
+    addResourceHints();
+    addMicrosoftClarity(); // Add your Clarity ID when you have one
+    initPerformanceTracking();
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <ErrorBoundary>
+        <ABTestProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/quote" element={<Index autoScrollToContact />} />
+                <Route path="/portfolio" element={<Projects />} />
+                <Route path="/marine" element={<Marine />} />
+                <Route path="/colorppf" element={<XPELColorPPF />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </TooltipProvider>
+        </ABTestProvider>
+      </ErrorBoundary>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
