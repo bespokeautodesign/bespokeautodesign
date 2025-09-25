@@ -72,19 +72,20 @@ const Marine = () => {
     <div className="min-h-screen bg-background relative">
       {/* Background Image - Full width coverage */}
       <div 
-        className="fixed inset-0 w-screen bg-cover bg-center bg-no-repeat z-0"
+        className="fixed inset-0 w-screen bg-cover bg-no-repeat z-0"
         style={{
-          backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.png')`
+          backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.png')`,
+          backgroundPosition: 'center top'
         }}
       ></div>
       <div className="relative z-10 min-h-screen">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-6 py-2">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3">
-              <img src="/bespoke-logo.png" alt="Bespoke Auto Design - Marine Protection Services Miami" className="h-12 w-auto" />
-              <span className="text-lg md:text-xl font-bold text-primary">
+              <img src="/bespoke-logo.png" alt="Bespoke Auto Design - Marine Protection Services Miami" className="h-10 w-auto" />
+              <span className="text-lg font-bold text-primary">
                 <span className="text-silver">Bespoke</span> Auto Design
               </span>
             </Link>
