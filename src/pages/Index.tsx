@@ -344,7 +344,6 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                 </div>
               </div>
               <CardHeader>
-                
                 <CardTitle className="line-clamp-2">Mercedes Benz G-Wagon G63 AMG</CardTitle>
                 <CardDescription>Full Body Xpel Stealth PPF Protection & Prime XR Plus Ceramic Tints.</CardDescription>
               </CardHeader>
