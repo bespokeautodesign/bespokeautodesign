@@ -12,6 +12,10 @@ import MobileMenu from "@/components/MobileMenu";
 import { addStructuredData, businessSchema, faqSchema } from "@/utils/seoHelpers";
 import { addOpenGraphTags, addCanonicalUrl, preloadCriticalImages } from "@/utils/metaHelpers";
 import { LazyImage } from "@/components/LazyImage";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { ContactForm } from "@/components/ContactForm";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { SkeletonGrid } from "@/components/ui/skeleton-grid";
 
 // Import assets
 const heroBugattiBolideImage = "/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png";
@@ -123,6 +127,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
               <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
             </div>
             <div className="flex items-center gap-2">
+              <ThemeToggle />
               <Button variant="premium" size="sm" onClick={scrollToQuote} className="hidden sm:flex">
                 Get Quote
               </Button>
@@ -250,47 +255,56 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
       {/* Services Section */}
       <main id="services" className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
-          <header className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Our Expertise</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Premium Protection Services</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               We specialize in advanced automotive protection and customization services using only the finest XPEL materials and proven techniques. Serving Miami's luxury automotive community with excellence.
             </p>
-          </header>
+          </AnimatedSection>
           
           <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, index) => <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={`Professional ${service.title} installation at Bespoke Auto Design Miami - XPEL authorized dealer`} 
-                    className={`w-full h-full transition-transform duration-300 hover:scale-110 ${
-                      service.title === "Vinyl Wraps" 
-                        ? "object-cover object-[center_70%]" 
-                        : service.title === "Ceramic Coating"
-                        ? "object-cover object-[center_30%]"
-                        : "object-cover"
-                    }`} 
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
-                  <CardDescription className="text-lg">{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center gap-2">
-                        <Shield className="h-4 w-4 text-primary" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </li>)}
-                  </ul>
-                  <Button variant="premium" className="w-full mt-6" onClick={scrollToQuote}>
-                    Get Quote
-                  </Button>
-                </CardContent>
-              </Card>)}
+            {services.map((service, index) => 
+              <AnimatedSection 
+                key={index} 
+                animation="fade-in" 
+                delay={index * 150}
+              >
+                <Card className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105 h-full">
+                  <div className="aspect-video overflow-hidden">
+                    <LazyImage 
+                      src={service.image} 
+                      alt={`Professional ${service.title} installation at Bespoke Auto Design Miami - XPEL authorized dealer`} 
+                      className={`w-full h-full transition-transform duration-300 hover:scale-110 ${
+                        service.title === "Vinyl Wraps" 
+                          ? "object-cover object-[center_70%]" 
+                          : service.title === "Ceramic Coating"
+                          ? "object-cover object-[center_30%]"
+                          : "object-cover"
+                      }`}
+                      priority={index < 2}
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="text-2xl">{service.title}</CardTitle>
+                    <CardDescription className="text-lg">{service.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, featureIndex) => 
+                        <li key={featureIndex} className="flex items-center gap-2">
+                          <Shield className="h-4 w-4 text-primary" />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </li>
+                      )}
+                    </ul>
+                    <Button variant="premium" className="w-full mt-6" onClick={scrollToQuote}>
+                      Get Quote
+                    </Button>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+            )}
           </div>
         </div>
       </main>
@@ -381,108 +395,22 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <Badge variant="outline" className="mb-4">Get In Touch</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Ready to protect and enhance your vehicle? Get in touch with our expert team today.
             </p>
-          </div>
+          </AnimatedSection>
           
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Right Column - Quote Form (Mobile: First, Desktop: Second) */}
-            <div className="flex flex-col order-1 md:order-2">
-              <Card className="shadow-premium flex-1">
-                <CardHeader>
-                  <CardTitle>Request a Quote</CardTitle>
-                  <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <form id="quote-form">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium">First Name *</label>
-                        <input name="firstName" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium">Last Name</label>
-                        <input name="lastName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Phone *</label>
-                      <input name="phone" type="tel" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Email</label>
-                      <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Vehicle Make & Model *</label>
-                      <input name="vehicle" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Service Interest *</label>
-                      <select name="service" required className="w-full px-3 py-2 border border-input rounded-md bg-background">
-                        <option value="">Select a service...</option>
-                        <option>Paint Protection Film (PPF)</option>
-                        <option>Ceramic Coating</option>
-                        <option>Vinyl Wrap</option>
-                        <option>Ceramic Tint</option>
-                        <option>Marine PPF</option>
-                        <option>Marine Ceramic Coating</option>
-                        <option>Marine Ceramic Tint</option>
-                        <option>Multiple Services</option>
-                      </select>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Preferred Contact Method</label>
-                      <div className="flex gap-4">
-                        <label className="flex items-center space-x-2">
-                          <input type="checkbox" name="contactMethod" value="text" className="rounded border-input" />
-                          <span className="text-sm">Text</span>
-                        </label>
-                        <label className="flex items-center space-x-2">
-                          <input type="checkbox" name="contactMethod" value="phone" className="rounded border-input" />
-                          <span className="text-sm">Phone</span>
-                        </label>
-                        <label className="flex items-center space-x-2">
-                          <input type="checkbox" name="contactMethod" value="email" className="rounded border-input" />
-                          <span className="text-sm">Email</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">Message *</label>
-                      <textarea name="message" required className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
-                    </div>
-                  </form>
-                  <Button variant="premium" className="w-full" onClick={() => {
-                  const form = document.querySelector('#quote-form') as HTMLFormElement;
-                  
-                  // Check if form is valid
-                  if (!form.checkValidity()) {
-                    form.reportValidity();
-                    return;
-                  }
-                  
-                  // Check if at least one contact method is selected
-                  const contactMethods = Array.from(form.querySelectorAll('input[name="contactMethod"]:checked')).map(input => (input as HTMLInputElement).value);
-                  
-                  const formData = new FormData(form);
-                  const subject = `Quote Request - ${formData.get('service')}`;
-                  const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0APreferred Contact: ${contactMethods.join(', ')}%0D%0AMessage: ${formData.get('message')}`;
-                  window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
-                  alert('Thank you! Your quote request has been prepared. Please send the email that just opened, or call us at (786) 395-9172.');
-                }}>
-                    Submit Request
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
+            <AnimatedSection animation="slide-left" className="flex flex-col order-1 md:order-2">
+              <ContactForm />
+            </AnimatedSection>
             
             {/* Left Column - Contact Info + Map (Mobile: Second, Desktop: First) */}
-            <div className="flex flex-col space-y-8 order-2 md:order-1">
+            <AnimatedSection animation="slide-right" className="flex flex-col space-y-8 order-2 md:order-1">
               {/* Contact Information - Top Left */}
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -566,13 +494,15 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
                   </Button>
                 </div>
               </div>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <HomeFAQ />
+      <AnimatedSection>
+        <HomeFAQ />
+      </AnimatedSection>
 
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-12">
@@ -594,8 +524,10 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
             <p>XPEL Authorized Dealer | Professional Installation | Lifetime Support</p>
           </div>
         </div>
-      </footer>
+       </footer>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
