@@ -95,7 +95,8 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
     image: tintWorkImage,
     features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"]
   }];
-  return <div className="min-h-screen bg-background relative">
+  return (
+    <div className="min-h-screen bg-background relative">
       {/* Background Image - Full width coverage */}
       <div 
         className="fixed inset-0 w-screen bg-cover bg-center bg-no-repeat z-0"
@@ -596,6 +597,7 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
         </div>
       </footer>
       </div>
-    </div>;
+    </div>
+  );
 };
 export default Index;
