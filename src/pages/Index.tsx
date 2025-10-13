@@ -23,9 +23,15 @@ import ppfInstallationImage from "@/assets/ppf-installation.jpg";
 import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
 
-const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) => {
+const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToContact?: boolean; autoScrollToServices?: boolean } = {}) => {
   const scrollToQuote = () => {
     document.getElementById('contact')?.scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollToServices = () => {
+    document.getElementById('services')?.scrollIntoView({
       behavior: 'smooth'
     });
   };
@@ -37,7 +43,13 @@ const Index = ({ autoScrollToContact }: { autoScrollToContact?: boolean } = {}) 
         scrollToQuote();
       }, 100);
     }
-  }, [autoScrollToContact]);
+    if (autoScrollToServices) {
+      // Small delay to ensure page is loaded
+      setTimeout(() => {
+        scrollToServices();
+      }, 100);
+    }
+  }, [autoScrollToContact, autoScrollToServices]);
 
   // Set page title and meta description for SEO
   React.useEffect(() => {
