@@ -474,28 +474,45 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
                   </form>
                   {formSubmitted && (
                     <div className="mb-4 p-4 bg-primary/10 border border-primary/20 rounded-md text-primary">
-                      <p className="font-medium">✓ Quote request prepared!</p>
-                      <p className="text-sm mt-1">Please send the email that opened, or call us at (786) 395-9172.</p>
+                      <p className="font-medium">✓ Quote request sent successfully!</p>
+                      <p className="text-sm mt-1">We'll get back to you soon at the contact information you provided.</p>
                     </div>
                   )}
-                  <Button variant="premium" className="w-full" onClick={() => {
+                  <Button variant="premium" className="w-full" onClick={async () => {
                   const form = document.querySelector('#quote-form') as HTMLFormElement;
                   
-                  // Check if form is valid
                   if (!form.checkValidity()) {
                     form.reportValidity();
                     return;
                   }
                   
-                  // Check if at least one contact method is selected
                   const contactMethods = Array.from(form.querySelectorAll('input[name="contactMethod"]:checked')).map(input => (input as HTMLInputElement).value);
-                  
                   const formData = new FormData(form);
-                  const subject = `Quote Request - ${formData.get('service')}`;
-                  const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0APreferred Contact: ${contactMethods.join(', ')}%0D%0AMessage: ${formData.get('message')}`;
-                  window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
-                  setFormSubmitted(true);
-                  form.reset();
+                  
+                  try {
+                    const { supabase } = await import('@/integrations/supabase/client');
+                    
+                    const { error } = await supabase.functions.invoke('send-quote-email', {
+                      body: {
+                        firstName: formData.get('firstName'),
+                        lastName: formData.get('lastName'),
+                        email: formData.get('email'),
+                        phone: formData.get('phone'),
+                        vehicle: formData.get('vehicle'),
+                        service: formData.get('service'),
+                        contactMethods: contactMethods,
+                        message: formData.get('message'),
+                      }
+                    });
+
+                    if (error) throw error;
+
+                    setFormSubmitted(true);
+                    form.reset();
+                  } catch (error) {
+                    console.error('Error sending quote:', error);
+                    alert('There was an error sending your quote. Please try again or call us at (786) 395-9172.');
+                  }
                 }}>
                     Submit Request
                   </Button>
