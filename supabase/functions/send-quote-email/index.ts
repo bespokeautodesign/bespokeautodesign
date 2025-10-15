@@ -45,7 +45,7 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     const emailResponse = await resend.emails.send({
-      from: "Bespoke Auto Design <onboarding@resend.dev>",
+      from: "Bespoke Auto Design <noreply@bespokeauto.design>",
       to: ["sales@bespokeauto.design"],
       subject: `Quote Request - ${quoteData.service}`,
       html: emailHtml,
