@@ -174,9 +174,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
                 variant="outline" 
                 size="lg" 
                 className="text-lg px-10 py-5 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50 shadow-premium hover:shadow-glow transform hover:scale-105 transition-all duration-300 animate-fade-in" 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({
-                behavior: 'smooth'
-              })}>
+                onClick={() => setQuoteModalOpen(true)}>
                 Schedule Today
               </Button>
             </div>
