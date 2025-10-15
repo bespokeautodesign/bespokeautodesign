@@ -24,6 +24,8 @@ import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
 
 const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToContact?: boolean; autoScrollToServices?: boolean } = {}) => {
+  const [formSubmitted, setFormSubmitted] = React.useState(false);
+
   const scrollToQuote = () => {
     document.getElementById('contact')?.scrollIntoView({
       behavior: 'smooth'
@@ -470,6 +472,12 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
                       <textarea name="message" required className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
                     </div>
                   </form>
+                  {formSubmitted && (
+                    <div className="mb-4 p-4 bg-primary/10 border border-primary/20 rounded-md text-primary">
+                      <p className="font-medium">✓ Quote request prepared!</p>
+                      <p className="text-sm mt-1">Please send the email that opened, or call us at (786) 395-9172.</p>
+                    </div>
+                  )}
                   <Button variant="premium" className="w-full" onClick={() => {
                   const form = document.querySelector('#quote-form') as HTMLFormElement;
                   
@@ -486,7 +494,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
                   const subject = `Quote Request - ${formData.get('service')}`;
                   const body = `Name: ${formData.get('firstName')} ${formData.get('lastName')}%0D%0AEmail: ${formData.get('email')}%0D%0APhone: ${formData.get('phone')}%0D%0AVehicle: ${formData.get('vehicle')}%0D%0AService: ${formData.get('service')}%0D%0APreferred Contact: ${contactMethods.join(', ')}%0D%0AMessage: ${formData.get('message')}`;
                   window.location.href = `mailto:sales@bespokeauto.design?subject=${subject}&body=${body}`;
-                  alert('Thank you! Your quote request has been prepared. Please send the email that just opened, or call us at (786) 395-9172.');
+                  setFormSubmitted(true);
+                  form.reset();
                 }}>
                     Submit Request
                   </Button>
