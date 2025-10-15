@@ -7,6 +7,7 @@ import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, 
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { HomeFAQ } from "@/components/HomeFAQ";
 import { XPELTeaser } from "@/components/XPELTeaser";
+import { QuoteModal } from "@/components/QuoteModal";
 import { Link } from "react-router-dom";
 import MobileMenu from "@/components/MobileMenu";
 import { addStructuredData, businessSchema, faqSchema } from "@/utils/seoHelpers";
@@ -25,11 +26,10 @@ import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
 
 const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToContact?: boolean; autoScrollToServices?: boolean } = {}) => {
   const [formSubmitted, setFormSubmitted] = React.useState(false);
+  const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
 
   const scrollToQuote = () => {
-    document.getElementById('contact')?.scrollIntoView({
-      behavior: 'smooth'
-    });
+    setQuoteModalOpen(true);
   };
 
   const scrollToServices = () => {
@@ -635,6 +635,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
         </div>
       </footer>
       </div>
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );
 };

@@ -1,0 +1,142 @@
+import { useState } from "react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+interface QuoteModalProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleSubmit = async () => {
+    const form = document.querySelector('#quote-modal-form') as HTMLFormElement;
+    
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    
+    const contactMethods = Array.from(form.querySelectorAll('input[name="contactMethod"]:checked')).map(input => (input as HTMLInputElement).value);
+    const formData = new FormData(form);
+    
+    try {
+      const { supabase } = await import('@/integrations/supabase/client');
+      
+      const { error } = await supabase.functions.invoke('send-quote-email', {
+        body: {
+          firstName: formData.get('firstName'),
+          lastName: formData.get('lastName'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          vehicle: formData.get('vehicle'),
+          service: formData.get('service'),
+          contactMethods: contactMethods,
+          message: formData.get('message'),
+        }
+      });
+
+      if (error) throw error;
+
+      setFormSubmitted(true);
+      form.reset();
+      
+      // Close modal after 2 seconds
+      setTimeout(() => {
+        onOpenChange(false);
+        setFormSubmitted(false);
+      }, 2000);
+    } catch (error) {
+      console.error('Error sending quote:', error);
+      alert('There was an error sending your quote. Please try again or call us at (786) 395-9172.');
+    }
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle>Request a Quote</DialogTitle>
+          <DialogDescription>
+            Fill out the form below and we'll get back to you within 24 hours.
+          </DialogDescription>
+        </DialogHeader>
+        
+        <div className="space-y-4">
+          <form id="quote-modal-form">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <label className="text-sm font-medium">First Name *</label>
+                <input name="firstName" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Last Name</label>
+                <input name="lastName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Phone *</label>
+              <input name="phone" type="tel" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Email</label>
+              <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Vehicle Make & Model *</label>
+              <input name="vehicle" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Service Interest *</label>
+              <select name="service" required className="w-full px-3 py-2 border border-input rounded-md bg-background">
+                <option value="">Select a service...</option>
+                <option>Paint Protection Film (PPF)</option>
+                <option>Ceramic Coating</option>
+                <option>Vinyl Wrap</option>
+                <option>Ceramic Tint</option>
+                <option>Marine PPF</option>
+                <option>Marine Ceramic Coating</option>
+                <option>Marine Ceramic Tint</option>
+                <option>Multiple Services</option>
+              </select>
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Preferred Contact Method</label>
+              <div className="flex gap-4">
+                <label className="flex items-center space-x-2">
+                  <input type="checkbox" name="contactMethod" value="text" className="rounded border-input" />
+                  <span className="text-sm">Text</span>
+                </label>
+                <label className="flex items-center space-x-2">
+                  <input type="checkbox" name="contactMethod" value="phone" className="rounded border-input" />
+                  <span className="text-sm">Phone</span>
+                </label>
+                <label className="flex items-center space-x-2">
+                  <input type="checkbox" name="contactMethod" value="email" className="rounded border-input" />
+                  <span className="text-sm">Email</span>
+                </label>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Message *</label>
+              <textarea name="message" required className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
+            </div>
+          </form>
+          
+          {formSubmitted && (
+            <div className="p-4 bg-primary/10 border border-primary/20 rounded-md text-primary">
+              <p className="font-medium">✓ Quote request sent successfully!</p>
+              <p className="text-sm mt-1">We'll get back to you soon!</p>
+            </div>
+          )}
+          
+          <Button variant="premium" className="w-full" onClick={handleSubmit}>
+            Submit Request
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
