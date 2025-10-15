@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import MobileMenu from '@/components/MobileMenu';
 import { ColorPPFFAQ } from '@/components/ColorPPFFAQ';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { QuoteModal } from '@/components/QuoteModal';
 import { addStructuredData } from '@/utils/seoHelpers';
 
 interface XPELColor {
@@ -37,6 +38,7 @@ const xpelColors: XPELColor[] = [
 
 const XPELColorPPF = () => {
   const [selectedColor, setSelectedColor] = useState<XPELColor>(xpelColors[0]);
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const navigate = useNavigate();
 
   // Set page title and meta description for SEO
@@ -100,12 +102,7 @@ const XPELColorPPF = () => {
                 variant="default" 
                 size="sm"
                 className="hidden md:flex"
-                onClick={() => {
-                  navigate('/');
-                  setTimeout(() => {
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }, 300);
-                }}
+                onClick={() => setQuoteModalOpen(true)}
               >
                 Get Quote
               </Button>
@@ -323,12 +320,7 @@ const XPELColorPPF = () => {
             <Button 
               className="w-full mb-3" 
               size="lg"
-              onClick={() => {
-                navigate('/');
-                setTimeout(() => {
-                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                }, 300);
-              }}
+              onClick={() => setQuoteModalOpen(true)}
             >
               Get Quote for {selectedColor.name}
             </Button>
@@ -341,6 +333,7 @@ const XPELColorPPF = () => {
 
       {/* FAQ Section */}
       <ColorPPFFAQ />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );
 };

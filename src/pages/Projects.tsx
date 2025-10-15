@@ -5,6 +5,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ArrowLeft, Car, Palette, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { QuoteModal } from "@/components/QuoteModal";
 
 // Import project images
 import ppfInstallationImage from "@/assets/ppf-installation.jpg";
@@ -16,6 +17,7 @@ import ceramicInstallationImage from "@/assets/ceramic-installation.jpg";
 
 const Projects = () => {
   const [clickedVinyls, setClickedVinyls] = useState<Set<number>>(new Set());
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const projects = [
     {
       id: 1,
@@ -199,9 +201,7 @@ const Projects = () => {
             <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
               Explore our portfolio of completed projects showcasing premium automotive protection and customization work.
             </p>
-            <Button size="lg" className="animate-pulse" onClick={() => {
-              window.location.href = '/#contact';
-            }}>
+            <Button size="lg" className="animate-pulse" onClick={() => setQuoteModalOpen(true)}>
               Get Your Quote Today
             </Button>
           </div>
@@ -477,14 +477,13 @@ const Projects = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join our satisfied clients and experience the Bespoke Auto Design difference.
           </p>
-          <Button size="lg" className="animate-pulse" onClick={() => {
-            window.location.href = '/#contact';
-          }}>
+          <Button size="lg" className="animate-pulse" onClick={() => setQuoteModalOpen(true)}>
             Get Your Quote Today
           </Button>
         </div>
       </section>
       </div>
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );
 };

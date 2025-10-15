@@ -3,13 +3,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Anchor, Waves, Shield, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import MobileMenu from "@/components/MobileMenu";
 import { MarineFAQ } from "@/components/MarineFAQ";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { QuoteModal } from "@/components/QuoteModal";
 import { addStructuredData } from "@/utils/seoHelpers";
 
 const Marine = () => {
+  const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     
@@ -46,10 +49,6 @@ const Marine = () => {
     };
     addStructuredData(marineSchema);
   }, []);
-
-  const navigateToContact = () => {
-    window.location.href = '/#contact';
-  };
 
   const marineServices = [{
     title: "Marine Paint Protection Film",
@@ -116,7 +115,7 @@ const Marine = () => {
               Specialized XPEL protection services for boats, yachts, and marine vessels. Expert protection against saltwater, UV damage, and harsh marine environments in South Florida.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="premium" size="lg" onClick={navigateToContact}>
+              <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
                 Get Marine Quote
               </Button>
             </div>
@@ -182,7 +181,7 @@ const Marine = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="premium" className="w-full mt-6" onClick={navigateToContact}>
+                  <Button variant="premium" className="w-full mt-6" onClick={() => setQuoteModalOpen(true)}>
                     Get Quote
                   </Button>
                 </CardContent>
@@ -200,7 +199,7 @@ const Marine = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Contact us for a consultation and discover how our marine protection services can benefit your vessel.
             </p>
-            <Button variant="premium" size="lg" onClick={navigateToContact}>
+            <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
               Schedule Marine Consultation
             </Button>
           </div>
@@ -210,6 +209,7 @@ const Marine = () => {
       {/* Marine FAQ Section */}
       <MarineFAQ />
       </div>
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );
 };
