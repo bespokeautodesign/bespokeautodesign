@@ -157,7 +157,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Bespoke Auto Care
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl mb-8 text-primary-foreground max-w-2xl mx-auto font-semibold drop-shadow-lg">
               Elegance in Every Detail. Protection in Every Curve.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
