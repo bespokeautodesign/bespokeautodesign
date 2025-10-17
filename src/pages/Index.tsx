@@ -158,7 +158,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
               Bespoke Auto Care
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
-              Professional XPEL paint protection film, ceramic coating, and window tint services. Protecting Miami's finest vehicles since 2020.
+              Elegance in Every Detail. Protection in Every Curve.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
