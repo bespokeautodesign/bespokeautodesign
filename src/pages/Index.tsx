@@ -155,7 +155,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
               Premium Automotive Protection
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Miami's Premier Automotive Protection Experts
+              Bespoke Auto Care
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
               Professional XPEL paint protection film, ceramic coating, and window tint services. Protecting Miami's finest vehicles since 2020.
