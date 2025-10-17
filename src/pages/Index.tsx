@@ -154,12 +154,14 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
             <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 shadow-glow text-base px-6 py-2 font-semibold animate-pulse">
               Premium Automotive Protection
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Bespoke Auto Care
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-primary-foreground max-w-2xl mx-auto font-semibold drop-shadow-lg">
-              Elegance in Every Detail. Protection in Every Curve.
-            </p>
+            <div className="backdrop-blur-md bg-black/30 rounded-2xl p-8 shadow-2xl">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+                Bespoke Auto Care
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 text-primary-foreground max-w-2xl mx-auto font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+                Elegance in Every Detail. Protection in Every Curve.
+              </p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
                 variant="premium" 
