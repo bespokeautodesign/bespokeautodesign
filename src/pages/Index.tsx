@@ -162,15 +162,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
-                variant="premium" 
-                size="lg" 
-                className="text-lg px-10 py-5 shadow-glow hover:shadow-elegant transform hover:scale-105 transition-all duration-300 animate-fade-in bg-gradient-to-r from-primary to-primary-variant text-primary-foreground border-2 border-primary-variant/50 hover:border-primary-variant" 
-                onClick={() => document.getElementById('services')?.scrollIntoView({
-                behavior: 'smooth'
-              })}>
-                Explore Services
-              </Button>
-              <Button 
                 variant="outline" 
                 size="lg" 
                 className="text-lg px-10 py-5 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50 shadow-premium hover:shadow-glow transform hover:scale-105 transition-all duration-300 animate-fade-in" 
