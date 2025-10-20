@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,18 +43,29 @@ const MobileMenu = () => {
               </Link>
             ))}
             
-            <Button 
-              variant="premium" 
-              size="lg" 
-              className="mt-6"
-              onClick={() => {
-                setIsOpen(false);
-                // Always navigate to home page contact section
-                window.location.href = '/#contact';
-              }}
-            >
-              Get Quote
-            </Button>
+            <div className="flex flex-col gap-3 mt-6">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                asChild
+              >
+                <a href="tel:7863959172" className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  Call Us
+                </a>
+              </Button>
+              <Button 
+                variant="premium" 
+                size="lg" 
+                onClick={() => {
+                  setIsOpen(false);
+                  // Always navigate to home page contact section
+                  window.location.href = '/#contact';
+                }}
+              >
+                Get Quote
+              </Button>
+            </div>
           </div>
         </SheetContent>
       </Sheet>

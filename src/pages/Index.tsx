@@ -138,6 +138,17 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
               <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
             </div>
             <div className="flex items-center gap-2">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                asChild
+                className="hidden sm:flex"
+              >
+                <a href="tel:7863959172" className="flex items-center gap-2">
+                  <Phone className="h-4 w-4" />
+                  Call
+                </a>
+              </Button>
               <Button variant="premium" size="sm" onClick={scrollToQuote} className="hidden sm:flex">
                 Get Quote
               </Button>
