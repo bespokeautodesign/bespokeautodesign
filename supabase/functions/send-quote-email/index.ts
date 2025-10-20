@@ -39,7 +39,6 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Send email asynchronously without waiting for response
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #333;">New Quote Request</h2>
@@ -59,25 +58,29 @@ const handler = async (req: Request): Promise<Response> => {
     const ccRecipients = submitterEmail !== "sales@bespokeauto.design" ? [submitterEmail] : [];
 
     const fromEmail = "Bespoke Auto Design <quotes@bespokeauto.design>";
-    console.log("Dispatching email via Resend", { from: fromEmail, to: toRecipients, cc: ccRecipients });
+    console.log("Sending email via Resend", { from: fromEmail, to: toRecipients, cc: ccRecipients });
 
-    // Send email without awaiting response for faster form feedback
-    resend.emails.send({
+    const emailResponse = await resend.emails.send({
       from: fromEmail,
       to: toRecipients,
       cc: ccRecipients,
       subject: `Quote Request - ${quoteData.service}`,
       html: emailHtml,
       reply_to: submitterEmail,
-    }).then(emailResponse => {
-      if ((emailResponse as any)?.error) {
-        console.error("Resend send error:", (emailResponse as any).error);
-      } else {
-        console.log("Email sent successfully:", emailResponse);
-      }
-    }).catch(error => {
-      console.error("Email send error:", error);
     });
+
+    if ((emailResponse as any)?.error) {
+      console.error("Resend error:", (emailResponse as any).error);
+      return new Response(
+        JSON.stringify({ error: "Failed to send email" }),
+        {
+          status: 500,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    console.log("Email sent successfully:", emailResponse);
 
     // Return immediate success response
     return new Response(
