@@ -60,7 +60,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Dispatching email via Resend", { from: "onboarding@resend.dev", to: toRecipients, bcc: bccRecipients });
 
     const emailResponse = await resend.emails.send({
-      from: "Bespoke Auto Design <onboarding@resend.dev>",
+      from: "Bespoke Auto Design <quotes@bespokeauto.design>",
       to: toRecipients,
       bcc: bccRecipients,
       subject: `Quote Request - ${quoteData.service}`,
