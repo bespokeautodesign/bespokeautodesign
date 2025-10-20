@@ -248,6 +248,11 @@ const Projects = () => {
                              vehicle.name === "Aston Martin Vantage" ? "object-[center_60%]" : 
                              vehicle.name === "Ferrari F8 Tributo" ? "object-[center_50%]" : "object-[center_70%]"
                            }`}
+                           style={
+                             vehicle.name === "Ferrari California T" || vehicle.name === "Rolls-Royce Cullinan"
+                               ? { imageRendering: '-webkit-optimize-contrast', filter: 'contrast(1.05) sharpen(1px)' }
+                               : undefined
+                           }
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                         <div className="absolute bottom-4 left-4 text-white">
