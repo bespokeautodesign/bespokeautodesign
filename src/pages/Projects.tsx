@@ -244,7 +244,7 @@ const Projects = () => {
                           alt={vehicle.name}
                            className={`w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 ${
                              vehicle.name === "Ferrari California T" ? "object-[center_60%]" :
-                             vehicle.name === "Rolls-Royce Cullinan" ? "object-[center_40%]" :
+                             vehicle.name === "Rolls-Royce Cullinan" ? "object-[center_55%]" :
                              vehicle.name === "Aston Martin Vantage" ? "object-[center_60%]" : 
                              vehicle.name === "Ferrari F8 Tributo" ? "object-[center_50%]" : "object-[center_70%]"
                            }`}
