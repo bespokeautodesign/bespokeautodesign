@@ -347,7 +347,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
                     alt={`Professional ${service.title} installation at Bespoke Auto Design Miami - XPEL authorized dealer`} 
                     className={`w-full h-full transition-transform duration-300 hover:scale-110 ${
                       service.title === "Vinyl Wraps" 
-                        ? "object-cover object-[center_70%]" 
+                        ? "object-cover object-[center_40%]" 
                         : service.title === "Ceramic Coating"
                         ? "object-cover object-[center_30%]"
                         : "object-cover"
