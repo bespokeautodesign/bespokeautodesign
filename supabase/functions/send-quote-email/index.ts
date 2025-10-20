@@ -58,7 +58,7 @@ const handler = async (req: Request): Promise<Response> => {
     const ccRecipients = submitterEmail !== "sales@bespokeauto.design" ? [submitterEmail] : [];
 
     const fromEmail = "Bespoke Auto Design <quotes@bespokeauto.design>";
-    console.log("Sending email via Resend", { from: fromEmail, to: toRecipients, cc: ccRecipients });
+    console.log("Dispatching email via Resend", { from: fromEmail, to: toRecipients, cc: ccRecipients });
 
     const emailResponse = await resend.emails.send({
       from: fromEmail,
@@ -70,11 +70,11 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     if ((emailResponse as any)?.error) {
-      console.error("Resend error:", (emailResponse as any).error);
+      console.error("Resend send error:", (emailResponse as any).error);
       return new Response(
-        JSON.stringify({ error: "Failed to send email" }),
+        JSON.stringify({ success: false, error: (emailResponse as any).error.message }),
         {
-          status: 500,
+          status: 502,
           headers: { "Content-Type": "application/json", ...corsHeaders },
         }
       );
@@ -82,7 +82,6 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Email sent successfully:", emailResponse);
 
-    // Return immediate success response
     return new Response(
       JSON.stringify({ success: true, message: "Quote request sent successfully" }),
       {
@@ -91,7 +90,7 @@ const handler = async (req: Request): Promise<Response> => {
       }
     );
   } catch (error: any) {
-    console.error("Error processing quote:", error);
+    console.error("Error sending quote email:", error);
     return new Response(
       JSON.stringify({ error: error.message }),
       {
