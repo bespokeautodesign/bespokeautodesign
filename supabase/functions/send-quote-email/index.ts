@@ -39,49 +39,53 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    const emailHtml = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #333;">New Quote Request</h2>
-        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
-          <p><strong>Name:</strong> ${quoteData.firstName} ${quoteData.lastName}</p>
-          <p><strong>Email:</strong> ${quoteData.email}</p>
-          <p><strong>Phone:</strong> ${quoteData.phone}</p>
-          <p><strong>Vehicle:</strong> ${quoteData.vehicle}</p>
-          <p><strong>Service:</strong> ${quoteData.service}</p>
-          <p><strong>Preferred Contact:</strong> ${quoteData.contactMethods.join(', ')}</p>
-          <p><strong>Message:</strong><br/>${quoteData.message}</p>
-        </div>
-      </div>
-    `;
+    // Send email in background task for instant response
+    const sendEmailTask = async () => {
+      try {
+        const emailHtml = `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #333;">New Quote Request</h2>
+            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
+              <p><strong>Name:</strong> ${quoteData.firstName} ${quoteData.lastName}</p>
+              <p><strong>Email:</strong> ${quoteData.email}</p>
+              <p><strong>Phone:</strong> ${quoteData.phone}</p>
+              <p><strong>Vehicle:</strong> ${quoteData.vehicle}</p>
+              <p><strong>Service:</strong> ${quoteData.service}</p>
+              <p><strong>Preferred Contact:</strong> ${quoteData.contactMethods.join(', ')}</p>
+              <p><strong>Message:</strong><br/>${quoteData.message}</p>
+            </div>
+          </div>
+        `;
 
-    const toRecipients = ["sales@bespokeauto.design"];
-    const ccRecipients = submitterEmail !== "sales@bespokeauto.design" ? [submitterEmail] : [];
+        const toRecipients = ["sales@bespokeauto.design"];
+        const ccRecipients = submitterEmail !== "sales@bespokeauto.design" ? [submitterEmail] : [];
 
-    const fromEmail = "Bespoke Auto Design <quotes@bespokeauto.design>";
-    console.log("Dispatching email via Resend", { from: fromEmail, to: toRecipients, cc: ccRecipients });
+        const fromEmail = "Bespoke Auto Design <quotes@bespokeauto.design>";
+        console.log("Dispatching email via Resend", { from: fromEmail, to: toRecipients, cc: ccRecipients });
 
-    const emailResponse = await resend.emails.send({
-      from: fromEmail,
-      to: toRecipients,
-      cc: ccRecipients,
-      subject: `Quote Request - ${quoteData.service}`,
-      html: emailHtml,
-      reply_to: submitterEmail,
-    });
+        const emailResponse = await resend.emails.send({
+          from: fromEmail,
+          to: toRecipients,
+          cc: ccRecipients,
+          subject: `Quote Request - ${quoteData.service}`,
+          html: emailHtml,
+          reply_to: submitterEmail,
+        });
 
-    if ((emailResponse as any)?.error) {
-      console.error("Resend send error:", (emailResponse as any).error);
-      return new Response(
-        JSON.stringify({ success: false, error: (emailResponse as any).error.message }),
-        {
-          status: 502,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
+        if ((emailResponse as any)?.error) {
+          console.error("Resend send error:", (emailResponse as any).error);
+        } else {
+          console.log("Email sent successfully:", emailResponse);
         }
-      );
-    }
+      } catch (error: any) {
+        console.error("Background email error:", error);
+      }
+    };
 
-    console.log("Email sent successfully:", emailResponse);
+    // Queue email as background task
+    EdgeRuntime.waitUntil(sendEmailTask());
 
+    // Return immediate success response
     return new Response(
       JSON.stringify({ success: true, message: "Quote request sent successfully" }),
       {
@@ -90,7 +94,7 @@ const handler = async (req: Request): Promise<Response> => {
       }
     );
   } catch (error: any) {
-    console.error("Error sending quote email:", error);
+    console.error("Error processing quote:", error);
     return new Response(
       JSON.stringify({ error: error.message }),
       {
