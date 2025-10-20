@@ -45,17 +45,6 @@ const MobileMenu = () => {
             
             <div className="flex flex-col gap-3 mt-6">
               <Button 
-                variant="outline" 
-                size="lg" 
-                asChild
-                className="bg-gradient-to-r from-emerald-500 to-green-600 text-white border-0 shadow-md hover:shadow-lg hover:from-emerald-400 hover:to-green-500 hover:scale-105 transition-all duration-300 font-semibold"
-              >
-                <a href="tel:7863959172" className="flex items-center justify-center gap-2">
-                  <Phone className="h-5 w-5" />
-                  Call Now
-                </a>
-              </Button>
-              <Button 
                 variant="premium" 
                 size="lg" 
                 onClick={() => {

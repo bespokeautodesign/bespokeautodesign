@@ -152,6 +152,17 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
               <Button variant="premium" size="sm" onClick={scrollToQuote} className="hidden sm:flex">
                 Get Quote
               </Button>
+              {/* Mobile Call Button - Icon Only */}
+              <Button 
+                variant="outline" 
+                size="sm" 
+                asChild
+                className="md:hidden bg-gradient-to-r from-emerald-500 to-green-600 text-white border-0 shadow-md hover:shadow-lg hover:from-emerald-400 hover:to-green-500 hover:scale-105 transition-all duration-300 p-2"
+              >
+                <a href="tel:7863959172" className="flex items-center justify-center">
+                  <Phone className="h-5 w-5" />
+                </a>
+              </Button>
               <MobileMenu />
             </div>
           </div>
