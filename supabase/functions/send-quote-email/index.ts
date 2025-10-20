@@ -54,16 +54,16 @@ const handler = async (req: Request): Promise<Response> => {
       </div>
     `;
 
-    const toRecipients = [submitterEmail];
-    const bccRecipients = ["sales@bespokeauto.design"];
+    const toRecipients = ["sales@bespokeauto.design"];
+    const ccRecipients = submitterEmail !== "sales@bespokeauto.design" ? [submitterEmail] : [];
 
     const fromEmail = "Bespoke Auto Design <quotes@bespokeauto.design>";
-    console.log("Dispatching email via Resend", { from: fromEmail, to: toRecipients, bcc: bccRecipients });
+    console.log("Dispatching email via Resend", { from: fromEmail, to: toRecipients, cc: ccRecipients });
 
     const emailResponse = await resend.emails.send({
       from: fromEmail,
       to: toRecipients,
-      bcc: bccRecipients,
+      cc: ccRecipients,
       subject: `Quote Request - ${quoteData.service}`,
       html: emailHtml,
       reply_to: submitterEmail,
