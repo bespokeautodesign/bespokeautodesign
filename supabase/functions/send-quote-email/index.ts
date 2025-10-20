@@ -29,6 +29,16 @@ const handler = async (req: Request): Promise<Response> => {
     
     console.log("Received quote request:", { email: quoteData.email, service: quoteData.service });
 
+    // Basic server-side validation for a valid submitter email
+    const submitterEmail = String(quoteData.email || '').trim().toLowerCase();
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(submitterEmail);
+    if (!isValidEmail) {
+      return new Response(
+        JSON.stringify({ error: "A valid email is required to submit a quote." }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #333;">New Quote Request</h2>
@@ -44,17 +54,18 @@ const handler = async (req: Request): Promise<Response> => {
       </div>
     `;
 
-    const recipients = ["sales@bespokeauto.design"];
-    if (quoteData.email && quoteData.email !== "sales@bespokeauto.design") {
-      recipients.push(quoteData.email);
-    }
+    const toRecipients = [submitterEmail];
+    const bccRecipients = ["sales@bespokeauto.design"];
+
+    console.log("Dispatching email via Resend", { from: "onboarding@resend.dev", to: toRecipients, bcc: bccRecipients });
 
     const emailResponse = await resend.emails.send({
       from: "Bespoke Auto Design <onboarding@resend.dev>",
-      to: recipients,
+      to: toRecipients,
+      bcc: bccRecipients,
       subject: `Quote Request - ${quoteData.service}`,
       html: emailHtml,
-      reply_to: quoteData.email,
+      reply_to: submitterEmail,
     });
 
     console.log("Email sent successfully:", emailResponse);
