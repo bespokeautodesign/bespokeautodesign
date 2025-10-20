@@ -250,7 +250,7 @@ const Projects = () => {
                            }`}
                            style={
                              vehicle.name === "Ferrari California T" || vehicle.name === "Rolls-Royce Cullinan"
-                               ? { imageRendering: '-webkit-optimize-contrast', filter: 'contrast(1.05) sharpen(1px)' }
+                               ? { imageRendering: 'auto', filter: 'contrast(1.1) brightness(1.05)', transform: 'translateZ(0)' }
                                : undefined
                            }
                         />
