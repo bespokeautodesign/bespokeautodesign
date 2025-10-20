@@ -57,16 +57,28 @@ const handler = async (req: Request): Promise<Response> => {
     const toRecipients = [submitterEmail];
     const bccRecipients = ["sales@bespokeauto.design"];
 
-    console.log("Dispatching email via Resend", { from: "onboarding@resend.dev", to: toRecipients, bcc: bccRecipients });
+    const fromEmail = "Bespoke Auto Design <quotes@bespokeauto.design>";
+    console.log("Dispatching email via Resend", { from: fromEmail, to: toRecipients, bcc: bccRecipients });
 
     const emailResponse = await resend.emails.send({
-      from: "Bespoke Auto Design <quotes@bespokeauto.design>",
+      from: fromEmail,
       to: toRecipients,
       bcc: bccRecipients,
       subject: `Quote Request - ${quoteData.service}`,
       html: emailHtml,
       reply_to: submitterEmail,
     });
+
+    if ((emailResponse as any)?.error) {
+      console.error("Resend send error:", (emailResponse as any).error);
+      return new Response(
+        JSON.stringify({ success: false, error: (emailResponse as any).error.message }),
+        {
+          status: 502,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
 
     console.log("Email sent successfully:", emailResponse);
 
