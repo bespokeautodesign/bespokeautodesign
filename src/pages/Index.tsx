@@ -319,22 +319,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       </main>
 
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Client Reviews</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">What Our Clients Say</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From luxury sports cars to premium yachts, our clients trust us with their most prized possessions.
-            </p>
-          </div>
-          
-          <TestimonialCarousel />
-        </div>
-      </section>
-
-
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
@@ -551,6 +535,23 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
           </div>
         </div>
       </section>
+
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 bg-background/80 backdrop-blur-sm">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <Badge variant="outline" className="mb-4">Client Reviews</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">What Our Clients Say</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              From luxury sports cars to premium yachts, our clients trust us with their most prized possessions.
+            </p>
+          </div>
+          
+          <TestimonialCarousel />
+        </div>
+      </section>
+
 
       {/* FAQ Section */}
       <HomeFAQ />
