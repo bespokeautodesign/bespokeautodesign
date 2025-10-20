@@ -282,7 +282,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
           </header>
           
           <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, index) => <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105">
+            {services.map((service, index) => <Card key={index} className={`overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105 ${
+                index % 2 === 0 ? 'md:mt-0' : 'md:mt-12'
+              }`}>
                 <div className="aspect-video overflow-hidden">
                   <img 
                     src={service.image} 
