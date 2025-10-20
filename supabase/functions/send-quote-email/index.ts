@@ -39,51 +39,45 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Send email in background task for instant response
-    const sendEmailTask = async () => {
-      try {
-        const emailHtml = `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-            <h2 style="color: #333;">New Quote Request</h2>
-            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
-              <p><strong>Name:</strong> ${quoteData.firstName} ${quoteData.lastName}</p>
-              <p><strong>Email:</strong> ${quoteData.email}</p>
-              <p><strong>Phone:</strong> ${quoteData.phone}</p>
-              <p><strong>Vehicle:</strong> ${quoteData.vehicle}</p>
-              <p><strong>Service:</strong> ${quoteData.service}</p>
-              <p><strong>Preferred Contact:</strong> ${quoteData.contactMethods.join(', ')}</p>
-              <p><strong>Message:</strong><br/>${quoteData.message}</p>
-            </div>
-          </div>
-        `;
+    // Send email asynchronously without waiting for response
+    const emailHtml = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #333;">New Quote Request</h2>
+        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
+          <p><strong>Name:</strong> ${quoteData.firstName} ${quoteData.lastName}</p>
+          <p><strong>Email:</strong> ${quoteData.email}</p>
+          <p><strong>Phone:</strong> ${quoteData.phone}</p>
+          <p><strong>Vehicle:</strong> ${quoteData.vehicle}</p>
+          <p><strong>Service:</strong> ${quoteData.service}</p>
+          <p><strong>Preferred Contact:</strong> ${quoteData.contactMethods.join(', ')}</p>
+          <p><strong>Message:</strong><br/>${quoteData.message}</p>
+        </div>
+      </div>
+    `;
 
-        const toRecipients = ["sales@bespokeauto.design"];
-        const ccRecipients = submitterEmail !== "sales@bespokeauto.design" ? [submitterEmail] : [];
+    const toRecipients = ["sales@bespokeauto.design"];
+    const ccRecipients = submitterEmail !== "sales@bespokeauto.design" ? [submitterEmail] : [];
 
-        const fromEmail = "Bespoke Auto Design <quotes@bespokeauto.design>";
-        console.log("Dispatching email via Resend", { from: fromEmail, to: toRecipients, cc: ccRecipients });
+    const fromEmail = "Bespoke Auto Design <quotes@bespokeauto.design>";
+    console.log("Dispatching email via Resend", { from: fromEmail, to: toRecipients, cc: ccRecipients });
 
-        const emailResponse = await resend.emails.send({
-          from: fromEmail,
-          to: toRecipients,
-          cc: ccRecipients,
-          subject: `Quote Request - ${quoteData.service}`,
-          html: emailHtml,
-          reply_to: submitterEmail,
-        });
-
-        if ((emailResponse as any)?.error) {
-          console.error("Resend send error:", (emailResponse as any).error);
-        } else {
-          console.log("Email sent successfully:", emailResponse);
-        }
-      } catch (error: any) {
-        console.error("Background email error:", error);
+    // Send email without awaiting response for faster form feedback
+    resend.emails.send({
+      from: fromEmail,
+      to: toRecipients,
+      cc: ccRecipients,
+      subject: `Quote Request - ${quoteData.service}`,
+      html: emailHtml,
+      reply_to: submitterEmail,
+    }).then(emailResponse => {
+      if ((emailResponse as any)?.error) {
+        console.error("Resend send error:", (emailResponse as any).error);
+      } else {
+        console.log("Email sent successfully:", emailResponse);
       }
-    };
-
-    // Queue email as background task
-    EdgeRuntime.waitUntil(sendEmailTask());
+    }).catch(error => {
+      console.error("Email send error:", error);
+    });
 
     // Return immediate success response
     return new Response(
