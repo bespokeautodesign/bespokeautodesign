@@ -282,14 +282,19 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
           </header>
           
           <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, index) => <Card key={index} className={`overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105 ${
-                index % 2 === 0 ? 'md:mt-0' : 'md:mt-12'
-              }`}>
-                <div className="aspect-video overflow-hidden">
+            {services.map((service, index) => {
+              const staggerClass = index === 0 ? 'md:mt-0' : 
+                                 index === 1 ? 'md:mt-16' : 
+                                 index === 2 ? 'md:mt-8' : 
+                                 'md:mt-20';
+              
+              return <Card key={index} className={`overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 ${staggerClass}`}>
+                <div className="aspect-video overflow-hidden relative group">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <img 
                     src={service.image} 
                     alt={`Professional ${service.title} installation at Bespoke Auto Design Miami - XPEL authorized dealer`} 
-                    className={`w-full h-full transition-transform duration-300 hover:scale-110 ${
+                    className={`w-full h-full transition-transform duration-300 group-hover:scale-110 ${
                       service.title === "Vinyl Wraps" 
                         ? "object-cover object-[center_70%]" 
                         : service.title === "Ceramic Coating"
@@ -315,7 +320,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
                     Get Quote
                   </Button>
                 </CardContent>
-              </Card>)}
+              </Card>
+            })}
           </div>
         </div>
       </main>
