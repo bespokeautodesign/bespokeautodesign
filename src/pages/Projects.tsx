@@ -104,13 +104,14 @@ const Projects = () => {
 
   // Stealth PPF vehicle showcases
   const stealthPPFVehicles = [
-    { id: 1, name: "2024 BMW M2", image: "/lovable-uploads/2a622203-bfde-4c8c-99bb-c9fb7ee08311.png", year: "2024" },
-    { id: 2, name: "BMW X5", image: "/lovable-uploads/da44c7f8-8dcf-47d1-81f6-9171955481d6.png", year: "2024" },
-    { id: 3, name: "Mercedes G-Wagon G63 AMG", image: "/lovable-uploads/954a24eb-a0e4-4854-a5ae-cc3558261924.png", year: "2025" },
-    { id: 4, name: "Mercedes GLC 300 AMG", image: "/lovable-uploads/f9e187dd-581d-4e92-8353-50180501ec8a.png", year: "2023" },
-    { id: 5, name: "Porsche 911", image: "/lovable-uploads/562b3389-466e-41a1-ac50-df897f65bde7.png", year: "2024" },
-    { id: 6, name: "Porsche Taycan", image: "/lovable-uploads/d315e50e-7d7b-4141-91a7-0c12cbb561b1.png", year: "2023" },
-    { id: 7, name: "Tesla Model Y", image: "/lovable-uploads/357fab8a-95e2-43dc-a92f-5e792952f28e.png", year: "2024" }
+    { id: 1, name: "Porsche Carrera", image: "/lovable-uploads/porsche-carrera.jpg", year: "2024" },
+    { id: 2, name: "Mercedes G-Wagon G63 AMG", image: "/lovable-uploads/954a24eb-a0e4-4854-a5ae-cc3558261924.png", year: "2025" },
+    { id: 3, name: "2024 BMW M2", image: "/lovable-uploads/2a622203-bfde-4c8c-99bb-c9fb7ee08311.png", year: "2024" },
+    { id: 4, name: "BMW X5", image: "/lovable-uploads/da44c7f8-8dcf-47d1-81f6-9171955481d6.png", year: "2024" },
+    { id: 5, name: "Mercedes GLC 300 AMG", image: "/lovable-uploads/f9e187dd-581d-4e92-8353-50180501ec8a.png", year: "2023" },
+    { id: 6, name: "Porsche 911", image: "/lovable-uploads/562b3389-466e-41a1-ac50-df897f65bde7.png", year: "2024" },
+    { id: 7, name: "Porsche Taycan", image: "/lovable-uploads/d315e50e-7d7b-4141-91a7-0c12cbb561b1.png", year: "2023" },
+    { id: 8, name: "Tesla Model Y", image: "/lovable-uploads/357fab8a-95e2-43dc-a92f-5e792952f28e.png", year: "2024" }
   ];
 
   // Vinyl Wrap vehicle showcases
