@@ -201,12 +201,12 @@ export const TestimonialCarousel = () => {
                     ))}
                   </div>
                   <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                  <CardDescription className="space-y-1">
+                  <div className="text-sm text-muted-foreground space-y-1">
                     <div>{testimonial.vehicle}</div>
-                    <div className="text-xs bg-muted px-2 py-1 rounded-md inline-block">
+                    <span className="text-xs bg-muted px-2 py-1 rounded-md inline-block">
                       {testimonial.service}
-                    </div>
-                  </CardDescription>
+                    </span>
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground italic">"{testimonial.text}"</p>
@@ -259,12 +259,12 @@ export const TestimonialCarousel = () => {
                       ))}
                     </div>
                     <CardTitle className="text-lg">{testimonial.name}</CardTitle>
-                    <CardDescription className="space-y-1">
+                    <div className="text-sm text-muted-foreground space-y-1">
                       <div>{testimonial.vehicle}</div>
-                      <div className="text-xs bg-muted px-2 py-1 rounded-md inline-block">
+                      <span className="text-xs bg-muted px-2 py-1 rounded-md inline-block">
                         {testimonial.service}
-                      </div>
-                    </CardDescription>
+                      </span>
+                    </div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground italic">"{testimonial.text}"</p>
