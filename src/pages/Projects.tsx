@@ -97,7 +97,8 @@ const Projects = () => {
     { id: 6, name: "Toyota Land Cruiser", image: "/lovable-uploads/fdf28998-66d9-4078-980c-8d7cb1c0485f.png", year: "2024" },
     { id: 7, name: "Ram 1500", image: "/lovable-uploads/f14f599e-ddd2-47ac-ae95-ffbcd59b8f60.png", year: "2023" },
     { id: 8, name: "Corvette Z06", image: "/lovable-uploads/e456804b-63fa-4640-bebe-d3ade09ef953.png", year: "2023" },
-    { id: 9, name: "Tesla Model 3", image: "/lovable-uploads/a777b2aa-1d9f-42db-9b41-327227b99e44.png", year: "2024" }
+    { id: 9, name: "Tesla Model 3", image: "/lovable-uploads/a777b2aa-1d9f-42db-9b41-327227b99e44.png", year: "2024" },
+    { id: 10, name: "Ferrari California T", image: "/lovable-uploads/ferrari-california-t.jpg", year: "2018" }
   ];
 
   // Stealth PPF vehicle showcases
