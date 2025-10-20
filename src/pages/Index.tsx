@@ -110,25 +110,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       warranty: "XPEL Ultimate Plus comes with a 10-year manufacturer warranty and lifetime installation warranty from Bespoke Auto Design."
     }
   }, {
-    title: "Ceramic Coating",
-    description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
-    image: "/lovable-uploads/210820a3-2a16-4238-857f-70b41f9e1807.png",
-    features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"],
-    detailedInfo: {
-      overview: "XPEL Fusion Plus Ceramic Coating uses advanced nanotechnology to create a permanent bond with your vehicle's paint, providing superior protection and an incredible depth of gloss that lasts for years.",
-      benefits: [
-        "9H hardness ceramic coating - superior scratch resistance",
-        "Extreme hydrophobic effect creates a 'self-cleaning' surface",
-        "Chemical resistant - protects against bird droppings, bug splatter, and harsh detergents",
-        "UV resistant - prevents oxidation and fading",
-        "Enhanced gloss and depth - makes paint colors pop",
-        "Reduces swirl marks and light scratches during washing",
-        "Lasts 5+ years with proper maintenance"
-      ],
-      coverage: "Applied to all painted surfaces, wheels, glass, and trim. We offer multi-year warranties depending on the package selected.",
-      warranty: "5-year warranty on Fusion Plus coating with annual maintenance inspections included."
-    }
-  }, {
     title: "Vinyl Wraps",
     description: "Transform your vehicle's appearance with high-quality color change vinyl wraps.",
     image: vinylGT2RSImage,
@@ -146,6 +127,25 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       ],
       coverage: "Full vehicle wraps, partial wraps, accent wraps, and chrome delete packages available. We use only premium 3M and Avery Dennison films.",
       warranty: "Manufacturer warranty on materials plus our installation warranty against peeling and lifting."
+    }
+  }, {
+    title: "Ceramic Coating",
+    description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
+    image: "/lovable-uploads/210820a3-2a16-4238-857f-70b41f9e1807.png",
+    features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"],
+    detailedInfo: {
+      overview: "XPEL Fusion Plus Ceramic Coating uses advanced nanotechnology to create a permanent bond with your vehicle's paint, providing superior protection and an incredible depth of gloss that lasts for years.",
+      benefits: [
+        "9H hardness ceramic coating - superior scratch resistance",
+        "Extreme hydrophobic effect creates a 'self-cleaning' surface",
+        "Chemical resistant - protects against bird droppings, bug splatter, and harsh detergents",
+        "UV resistant - prevents oxidation and fading",
+        "Enhanced gloss and depth - makes paint colors pop",
+        "Reduces swirl marks and light scratches during washing",
+        "Lasts 5+ years with proper maintenance"
+      ],
+      coverage: "Applied to all painted surfaces, wheels, glass, and trim. We offer multi-year warranties depending on the package selected.",
+      warranty: "5-year warranty on Fusion Plus coating with annual maintenance inspections included."
     }
   }, {
     title: "Ceramic Tint",
