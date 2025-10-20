@@ -48,10 +48,11 @@ const MobileMenu = () => {
                 variant="outline" 
                 size="lg" 
                 asChild
+                className="bg-gradient-to-r from-green-600 to-emerald-600 text-white border-0 shadow-glow hover:from-green-500 hover:to-emerald-500 hover:scale-105 hover:shadow-elegant transition-all duration-300"
               >
-                <a href="tel:7863959172" className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" />
-                  Call Us
+                <a href="tel:7863959172" className="flex items-center justify-center gap-2">
+                  <Phone className="h-5 w-5" />
+                  Call Now
                 </a>
               </Button>
               <Button 
