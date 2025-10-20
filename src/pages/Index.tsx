@@ -206,9 +206,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary-foreground flex items-center justify-center gap-4">
               XPEL Authorized Dealer Miami
             </h2>
-            <p className="text-xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
-              As Miami's premier XPEL authorized dealer, we bring you the world's leading paint protection film technology with unmatched clarity, durability, and self-healing properties. Protecting South Florida's luxury vehicles with industry-leading warranties.
-            </p>
             
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
