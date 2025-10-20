@@ -81,8 +81,8 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
               <input name="phone" type="tel" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
             </div>
             <div className="space-y-2">
-              <label className="text-sm font-medium">Email</label>
-              <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
+              <label className="text-sm font-medium">Email *</label>
+              <input name="email" type="email" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Vehicle Make & Model *</label>
