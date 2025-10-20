@@ -24,6 +24,7 @@ import tintWorkImage from "/lovable-uploads/870ad52a-53a2-4536-922b-33d54d2f71e0
 import ppfInstallationImage from "@/assets/ppf-installation.jpg";
 import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
+import vinylGT2RSImage from "@/assets/vinyl-gt2rs.jpg";
 
 const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToContact?: boolean; autoScrollToServices?: boolean } = {}) => {
   const [formSubmitted, setFormSubmitted] = React.useState(false);
@@ -130,7 +131,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
   }, {
     title: "Vinyl Wraps",
     description: "Transform your vehicle's appearance with high-quality color change vinyl wraps.",
-    image: vinylWorkImage,
+    image: vinylGT2RSImage,
     features: ["Color customization", "Removable protection", "Premium materials", "Professional installation"],
     detailedInfo: {
       overview: "Color change vinyl wraps allow you to completely transform your vehicle's appearance while protecting the original paint. Choose from hundreds of colors and finishes including matte, gloss, satin, chrome, and textured options.",
