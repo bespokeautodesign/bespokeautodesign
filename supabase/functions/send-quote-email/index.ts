@@ -44,9 +44,14 @@ const handler = async (req: Request): Promise<Response> => {
       </div>
     `;
 
+    const recipients = ["sales@bespokeauto.design"];
+    if (quoteData.email && quoteData.email !== "sales@bespokeauto.design") {
+      recipients.push(quoteData.email);
+    }
+
     const emailResponse = await resend.emails.send({
       from: "Bespoke Auto Design <onboarding@resend.dev>",
-      to: ["sales@bespokeauto.design"],
+      to: recipients,
       subject: `Quote Request - ${quoteData.service}`,
       html: emailHtml,
       reply_to: quoteData.email,
