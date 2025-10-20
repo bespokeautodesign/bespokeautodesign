@@ -301,7 +301,7 @@ const Projects = () => {
                           src={vehicle.image}
                           alt={vehicle.name}
                             className={`w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 ${
-                              vehicle.name === "Porsche Carrera" ? "object-[center_65%]" :
+                              vehicle.name === "Porsche Carrera" ? "object-[center_62%]" :
                               vehicle.name === "2024 BMW M2" ? "object-[center_80%]" :
                               vehicle.name === "BMW X5" ? "" : 
                               vehicle.name === "Mercedes G-Wagon G63 AMG" ? "object-[center_45%] scale-85" :
