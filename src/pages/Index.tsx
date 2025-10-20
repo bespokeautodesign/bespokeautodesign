@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, ArrowRight, Calendar } from "lucide-react";
@@ -27,6 +28,7 @@ import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
 const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToContact?: boolean; autoScrollToServices?: boolean } = {}) => {
   const [formSubmitted, setFormSubmitted] = React.useState(false);
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
+  const [selectedService, setSelectedService] = React.useState<number | null>(null);
 
   const scrollToQuote = () => {
     setQuoteModalOpen(true);
@@ -92,22 +94,77 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
     title: "Paint Protection Film (PPF)",
     description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
     image: ppfWorkImage,
-    features: ["Self-healing technology", "10-year warranty", "UV protection", "Maintains original appearance"]
+    features: ["Self-healing technology", "10-year warranty", "UV protection", "Maintains original appearance"],
+    detailedInfo: {
+      overview: "XPEL Paint Protection Film is the world's leading automotive paint protection solution. Our premium film provides an invisible barrier against rock chips, scratches, and environmental damage while maintaining your vehicle's factory finish.",
+      benefits: [
+        "Self-healing top coat eliminates minor scratches and swirl marks with heat",
+        "10-year manufacturer warranty against yellowing, cracking, and peeling",
+        "Blocks 99% of harmful UV rays to prevent paint fading",
+        "Hydrophobic surface makes cleaning easier and repels water and dirt",
+        "Optically clear - virtually invisible once applied",
+        "Can be removed without damaging original paint"
+      ],
+      coverage: "We offer full-front coverage, full-body coverage, or custom packages tailored to your needs. Popular areas include hood, fenders, bumper, mirrors, door edges, and rocker panels.",
+      warranty: "XPEL Ultimate Plus comes with a 10-year manufacturer warranty and lifetime installation warranty from Bespoke Auto Design."
+    }
   }, {
     title: "Ceramic Coating",
     description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
     image: "/lovable-uploads/210820a3-2a16-4238-857f-70b41f9e1807.png",
-    features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"]
+    features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"],
+    detailedInfo: {
+      overview: "XPEL Fusion Plus Ceramic Coating uses advanced nanotechnology to create a permanent bond with your vehicle's paint, providing superior protection and an incredible depth of gloss that lasts for years.",
+      benefits: [
+        "9H hardness ceramic coating - superior scratch resistance",
+        "Extreme hydrophobic effect creates a 'self-cleaning' surface",
+        "Chemical resistant - protects against bird droppings, bug splatter, and harsh detergents",
+        "UV resistant - prevents oxidation and fading",
+        "Enhanced gloss and depth - makes paint colors pop",
+        "Reduces swirl marks and light scratches during washing",
+        "Lasts 5+ years with proper maintenance"
+      ],
+      coverage: "Applied to all painted surfaces, wheels, glass, and trim. We offer multi-year warranties depending on the package selected.",
+      warranty: "5-year warranty on Fusion Plus coating with annual maintenance inspections included."
+    }
   }, {
     title: "Vinyl Wraps",
     description: "Transform your vehicle's appearance with high-quality color change vinyl wraps.",
     image: vinylWorkImage,
-    features: ["Color customization", "Removable protection", "Premium materials", "Professional installation"]
+    features: ["Color customization", "Removable protection", "Premium materials", "Professional installation"],
+    detailedInfo: {
+      overview: "Color change vinyl wraps allow you to completely transform your vehicle's appearance while protecting the original paint. Choose from hundreds of colors and finishes including matte, gloss, satin, chrome, and textured options.",
+      benefits: [
+        "Unlimited color and finish options - matte, gloss, satin, metallic, chrome",
+        "Protects original paint from UV damage and minor scratches",
+        "Completely removable - return to factory color anytime",
+        "More affordable than a quality paint job",
+        "Can be repaired in sections if damaged",
+        "Maintains vehicle resale value by preserving original paint",
+        "Durable 5-7 year lifespan with proper care"
+      ],
+      coverage: "Full vehicle wraps, partial wraps, accent wraps, and chrome delete packages available. We use only premium 3M and Avery Dennison films.",
+      warranty: "Manufacturer warranty on materials plus our installation warranty against peeling and lifting."
+    }
   }, {
     title: "Ceramic Tint",
     description: "Superior window tinting with ceramic technology for maximum comfort and protection.",
     image: tintWorkImage,
-    features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"]
+    features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"],
+    detailedInfo: {
+      overview: "XPEL PRIME XR PLUS ceramic window film combines infrared heat rejection with superior optical clarity. Experience cooler cabin temperatures, reduced glare, and ultimate UV protection without affecting electronics or signals.",
+      benefits: [
+        "Up to 88% infrared heat rejection - significantly cooler interior",
+        "Blocks 99% of harmful UV rays - protects skin and prevents interior fading",
+        "Won't interfere with cell phones, GPS, or radio signals",
+        "Superior optical clarity - true color perception",
+        "Nano-ceramic technology - no metal, won't corrode",
+        "Reduces glare for safer driving",
+        "Shatter-resistant - holds glass together in accidents"
+      ],
+      coverage: "Available in multiple shades to meet legal requirements. We tint all windows including windshield strip, front windows, rear window, and sunroof.",
+      warranty: "Lifetime manufacturer warranty against fading, bubbling, peeling, and cracking. Lifetime installation warranty."
+    }
   }];
   return (
     <div className="min-h-screen bg-background relative">
@@ -309,9 +366,14 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
                         <span className="text-muted-foreground">{feature}</span>
                       </li>)}
                   </ul>
-                  <Button variant="premium" className="w-full mt-6" onClick={scrollToQuote}>
-                    Get Quote
-                  </Button>
+                  <div className="flex gap-3 mt-6">
+                    <Button variant="outline" className="flex-1" onClick={() => setSelectedService(index)}>
+                      Learn More
+                    </Button>
+                    <Button variant="premium" className="flex-1" onClick={scrollToQuote}>
+                      Get Quote
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>)}
           </div>
@@ -579,6 +641,58 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       </footer>
       </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      
+      {/* Service Details Modal */}
+      <Dialog open={selectedService !== null} onOpenChange={(open) => !open && setSelectedService(null)}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+          {selectedService !== null && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl">{services[selectedService].title}</DialogTitle>
+                <DialogDescription className="text-base">
+                  {services[selectedService].detailedInfo.overview}
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="space-y-6 mt-4">
+                <div>
+                  <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                    <Shield className="h-5 w-5 text-primary" />
+                    Key Benefits
+                  </h3>
+                  <ul className="space-y-2">
+                    {services[selectedService].detailedInfo.benefits.map((benefit, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="text-primary mt-1">•</span>
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Coverage Options</h3>
+                  <p className="text-sm text-muted-foreground">{services[selectedService].detailedInfo.coverage}</p>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Warranty</h3>
+                  <p className="text-sm text-muted-foreground">{services[selectedService].detailedInfo.warranty}</p>
+                </div>
+                
+                <div className="pt-4 border-t">
+                  <Button variant="premium" className="w-full" onClick={() => {
+                    setSelectedService(null);
+                    scrollToQuote();
+                  }}>
+                    Get a Quote for {services[selectedService].title}
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
