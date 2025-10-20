@@ -57,7 +57,7 @@ const handler = async (req: Request): Promise<Response> => {
     const toRecipients = ["sales@bespokeauto.design"];
     const ccRecipients = submitterEmail !== "sales@bespokeauto.design" ? [submitterEmail] : [];
 
-    const fromEmail = "Bespoke Auto Design <quotes@bespokeauto.design>";
+    const fromEmail = "Bespoke Auto Design <onboarding@resend.dev>";
     console.log("Dispatching email via Resend", { from: fromEmail, to: toRecipients, cc: ccRecipients });
 
     const emailResponse = await resend.emails.send({
