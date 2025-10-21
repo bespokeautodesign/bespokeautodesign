@@ -29,16 +29,6 @@ const handler = async (req: Request): Promise<Response> => {
     
     console.log("Received quote request:", { email: quoteData.email, service: quoteData.service });
 
-    // Basic server-side validation for a valid submitter email
-    const submitterEmail = String(quoteData.email || '').trim().toLowerCase();
-    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(submitterEmail);
-    if (!isValidEmail) {
-      return new Response(
-        JSON.stringify({ error: "A valid email is required to submit a quote." }),
-        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
-      );
-    }
-
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #333;">New Quote Request</h2>
@@ -54,31 +44,13 @@ const handler = async (req: Request): Promise<Response> => {
       </div>
     `;
 
-    const toRecipients = ["sales@bespokeauto.design"];
-    const ccRecipients = submitterEmail !== "sales@bespokeauto.design" ? [submitterEmail] : [];
-
-    const fromEmail = "Bespoke Auto Design <quotes@bespokeauto.design>";
-    console.log("Dispatching email via Resend", { from: fromEmail, to: toRecipients, cc: ccRecipients });
-
     const emailResponse = await resend.emails.send({
-      from: fromEmail,
-      to: toRecipients,
-      cc: ccRecipients,
+      from: "Bespoke Auto Design <onboarding@resend.dev>",
+      to: ["sales@bespokeauto.design"],
       subject: `Quote Request - ${quoteData.service}`,
       html: emailHtml,
-      reply_to: submitterEmail,
+      reply_to: quoteData.email,
     });
-
-    if ((emailResponse as any)?.error) {
-      console.error("Resend send error:", (emailResponse as any).error);
-      return new Response(
-        JSON.stringify({ success: false, error: (emailResponse as any).error.message }),
-        {
-          status: 502,
-          headers: { "Content-Type": "application/json", ...corsHeaders },
-        }
-      );
-    }
 
     console.log("Email sent successfully:", emailResponse);
 
