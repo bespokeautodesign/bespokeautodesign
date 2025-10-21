@@ -110,25 +110,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       warranty: "XPEL Ultimate Plus comes with a 10-year manufacturer warranty and lifetime installation warranty from Bespoke Auto Design."
     }
   }, {
-    title: "Vinyl Wraps",
-    description: "Transform your vehicle's appearance with high-quality color change vinyl wraps.",
-    image: vinylGT2RSImage,
-    features: ["Color customization", "Removable protection", "Premium materials", "Professional installation"],
-    detailedInfo: {
-      overview: "Color change vinyl wraps allow you to completely transform your vehicle's appearance while protecting the original paint. Choose from hundreds of colors and finishes including matte, gloss, satin, chrome, and textured options.",
-      benefits: [
-        "Unlimited color and finish options - matte, gloss, satin, metallic, chrome",
-        "Protects original paint from UV damage and minor scratches",
-        "Completely removable - return to factory color anytime",
-        "More affordable than a quality paint job",
-        "Can be repaired in sections if damaged",
-        "Maintains vehicle resale value by preserving original paint",
-        "Durable 5-7 year lifespan with proper care"
-      ],
-      coverage: "Full vehicle wraps, partial wraps, accent wraps, and chrome delete packages available. We use only premium 3M and Avery Dennison films.",
-      warranty: "Manufacturer warranty on materials plus our installation warranty against peeling and lifting."
-    }
-  }, {
     title: "Ceramic Coating",
     description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
     image: "/lovable-uploads/210820a3-2a16-4238-857f-70b41f9e1807.png",
@@ -146,6 +127,25 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       ],
       coverage: "Applied to all painted surfaces, wheels, glass, and trim. We offer multi-year warranties depending on the package selected.",
       warranty: "5-year warranty on Fusion Plus coating with annual maintenance inspections included."
+    }
+  }, {
+    title: "Vinyl Wraps",
+    description: "Transform your vehicle's appearance with high-quality color change vinyl wraps.",
+    image: vinylGT2RSImage,
+    features: ["Color customization", "Removable protection", "Premium materials", "Professional installation"],
+    detailedInfo: {
+      overview: "Color change vinyl wraps allow you to completely transform your vehicle's appearance while protecting the original paint. Choose from hundreds of colors and finishes including matte, gloss, satin, chrome, and textured options.",
+      benefits: [
+        "Unlimited color and finish options - matte, gloss, satin, metallic, chrome",
+        "Protects original paint from UV damage and minor scratches",
+        "Completely removable - return to factory color anytime",
+        "More affordable than a quality paint job",
+        "Can be repaired in sections if damaged",
+        "Maintains vehicle resale value by preserving original paint",
+        "Durable 5-7 year lifespan with proper care"
+      ],
+      coverage: "Full vehicle wraps, partial wraps, accent wraps, and chrome delete packages available. We use only premium 3M and Avery Dennison films.",
+      warranty: "Manufacturer warranty on materials plus our installation warranty against peeling and lifting."
     }
   }, {
     title: "Ceramic Tint",
