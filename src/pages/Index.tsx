@@ -238,7 +238,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
               Bespoke Auto Care
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white max-w-2xl mx-auto font-semibold" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>
-              Elegance in Every Detail. Protection in Every Curve.
+              Miami's Most Trusted Car Boutique
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
