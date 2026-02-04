@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface QuoteModalProps {
   open: boolean;
@@ -10,6 +9,15 @@ interface QuoteModalProps {
 
 export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
+  const [ppfType, setPpfType] = useState("");
+
+  // Reset PPF type when service changes away from PPF
+  useEffect(() => {
+    if (selectedService !== "Paint Protection Film (PPF)") {
+      setPpfType("");
+    }
+  }, [selectedService]);
 
   const handleSubmit = async () => {
     const form = document.querySelector('#quote-modal-form') as HTMLFormElement;
@@ -25,6 +33,12 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
     try {
       const { supabase } = await import('@/integrations/supabase/client');
       
+      // Build service string with PPF type if applicable
+      let serviceValue = formData.get('service') as string;
+      if (serviceValue === "Paint Protection Film (PPF)" && ppfType) {
+        serviceValue = `PPF - ${ppfType}`;
+      }
+      
       const { error } = await supabase.functions.invoke('send-quote-email', {
         body: {
           firstName: formData.get('firstName'),
@@ -32,7 +46,7 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
           email: formData.get('email'),
           phone: formData.get('phone'),
           vehicle: formData.get('vehicle'),
-          service: formData.get('service'),
+          service: serviceValue,
           contactMethods: contactMethods,
           message: formData.get('message'),
         }
@@ -42,6 +56,8 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
 
       setFormSubmitted(true);
       form.reset();
+      setSelectedService("");
+      setPpfType("");
       
       // Close modal after 2 seconds
       setTimeout(() => {
@@ -90,18 +106,41 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Service Interest *</label>
-              <select name="service" required className="w-full px-3 py-2 border border-input rounded-md bg-background">
+              <select 
+                name="service" 
+                required 
+                className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                value={selectedService}
+                onChange={(e) => setSelectedService(e.target.value)}
+              >
                 <option value="">Select a service...</option>
-                <option>Paint Protection Film (PPF)</option>
-                <option>Ceramic Coating</option>
-                <option>Vinyl Wrap</option>
-                <option>Ceramic Tint</option>
-                <option>Marine PPF</option>
-                <option>Marine Ceramic Coating</option>
-                <option>Marine Ceramic Tint</option>
-                <option>Multiple Services</option>
+                <option value="Paint Protection Film (PPF)">Paint Protection Film (PPF)</option>
+                <option value="Ceramic Coating">Ceramic Coating</option>
+                <option value="Vinyl Wrap">Vinyl Wrap</option>
+                <option value="Ceramic Tint">Ceramic Tint</option>
+                <option value="Marine PPF">Marine PPF</option>
+                <option value="Marine Ceramic Coating">Marine Ceramic Coating</option>
+                <option value="Marine Ceramic Tint">Marine Ceramic Tint</option>
+                <option value="Multiple Services">Multiple Services</option>
               </select>
             </div>
+            {selectedService === "Paint Protection Film (PPF)" && (
+              <div className="space-y-2">
+                <label className="text-sm font-medium">PPF Type *</label>
+                <select 
+                  name="ppfType" 
+                  required 
+                  className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                  value={ppfType}
+                  onChange={(e) => setPpfType(e.target.value)}
+                >
+                  <option value="">Select PPF type...</option>
+                  <option value="Clear Paint Protection Film">Clear Paint Protection Film</option>
+                  <option value="Stealth (Satin Finish)">Stealth (Satin Finish)</option>
+                  <option value="Color PPF">Color PPF</option>
+                </select>
+              </div>
+            )}
             <div className="space-y-2">
               <label className="text-sm font-medium">Preferred Contact Method</label>
               <div className="flex gap-4">
