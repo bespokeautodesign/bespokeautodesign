@@ -627,16 +627,13 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
 
 
       {/* Instagram Feed Section */}
-      <section className="py-20 bg-black text-primary-foreground">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
+      <section className="py-12 bg-black text-primary-foreground">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
             <Badge variant="outline" className="mb-4 border-primary-foreground/30 text-primary-foreground">Follow Us</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Latest from Instagram</h2>
-            <p className="text-lg text-primary-foreground/70 max-w-2xl mx-auto">
-              See our latest work and transformations on Instagram.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">Latest from Instagram</h2>
           </div>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <iframe
               src="https://cdn.lightwidget.com/widgets/9a8f74d2954154f3a96a8ea3e94b3b8f.html"
               scrolling="no"
