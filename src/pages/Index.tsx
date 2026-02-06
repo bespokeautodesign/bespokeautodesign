@@ -627,10 +627,10 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
 
 
       {/* Instagram Feed Section */}
-      <section className="py-12 bg-black text-primary-foreground">
+      <section className="py-12 bg-background/80 backdrop-blur-sm text-foreground">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <Badge variant="outline" className="mb-4 border-primary-foreground/30 text-primary-foreground">Follow Us</Badge>
+            <Badge variant="outline" className="mb-4">Follow Us</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-3">Latest from Instagram</h2>
           </div>
           <div className="max-w-6xl mx-auto">
