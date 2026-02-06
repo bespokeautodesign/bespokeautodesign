@@ -91,6 +91,16 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
     };
     addStructuredData(combinedSchema);
   }, []);
+
+  // Load LightWidget script
+  React.useEffect(() => {
+    if (!document.querySelector('script[src*="lightwidget"]')) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.lightwidget.com/widgets/lightwidget.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
   const services = [{
     title: "Paint Protection Film (PPF)",
     description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
@@ -628,11 +638,10 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
           </div>
           <div className="max-w-4xl mx-auto">
             <iframe
-              src="//lightwidget.com/widgets/9a8f74d2954154f3a96a8ea3e94b3b8f.html"
+              src="https://cdn.lightwidget.com/widgets/9a8f74d2954154f3a96a8ea3e94b3b8f.html"
               scrolling="no"
               allowTransparency={true}
-              className="w-full border-0 overflow-hidden"
-              style={{ minHeight: '400px' }}
+              className="lightwidget-widget w-full border-0 overflow-hidden"
               title="Bespoke Auto Design Instagram Feed"
             />
           </div>
