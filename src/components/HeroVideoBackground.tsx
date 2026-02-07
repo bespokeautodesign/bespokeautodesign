@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 
 const videoSources = [
-  "/videos/hero-1.mp4?v=3",
-  "/videos/hero-2.mp4?v=1",
-  "/videos/hero-3.mp4?v=1",
+  { src: "/videos/hero-1.mp4?v=3", position: "center 65%" },
+  { src: "/videos/hero-2.mp4?v=1", position: "center 65%" },
+  { src: "/videos/hero-3.mp4?v=1", position: "center 70%" },
 ];
 
 const HeroVideoBackground = () => {
@@ -15,12 +15,12 @@ const HeroVideoBackground = () => {
     const v0 = videoRefs[0].current;
     const v1 = videoRefs[1].current;
     if (v0) {
-      v0.src = videoSources[0];
+      v0.src = videoSources[0].src;
       v0.load();
       v0.play().catch(() => {});
     }
     if (v1) {
-      v1.src = videoSources[1];
+      v1.src = videoSources[1].src;
       v1.load();
     }
   }, []);
@@ -43,7 +43,7 @@ const HeroVideoBackground = () => {
     setTimeout(() => {
       const preloadVideo = videoRefs[finishedSlot].current;
       if (preloadVideo) {
-        preloadVideo.src = videoSources[nextSourceIndex];
+        preloadVideo.src = videoSources[nextSourceIndex].src;
         preloadVideo.load();
       }
       setSlots((prev) => {
@@ -62,7 +62,7 @@ const HeroVideoBackground = () => {
           ref={videoRefs[slot]}
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            objectPosition: "center 65%",
+            objectPosition: videoSources[slots[slot]]?.position || "center 65%",
             opacity: activeSlot === slot ? 1 : 0,
             willChange: "opacity",
             transform: "translateZ(0)",
