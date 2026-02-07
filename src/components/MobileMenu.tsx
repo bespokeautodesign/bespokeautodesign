@@ -2,23 +2,25 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
+
+const ppfSubItems = [
+  { label: "PPF Packages", href: "/ppf-packages" },
+  { label: "Stealth PPF", href: "/stealth-ppf" },
+  { label: "Color PPF", href: "/colorppf" },
+];
+
+const otherItems = [
+  { label: "Ceramic Coating", href: "/ceramic-coating" },
+  { label: "Ceramic Tint", href: "/ceramic-tint" },
+  { label: "Color Change Wrap", href: "/color-change-wrap" },
+  { label: "Marine Services", href: "/marine" },
+  { label: "Portfolio", href: "/portfolio" },
+];
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const menuItems = [
-    { label: "Home", href: "/" },
-    { label: "Paint Protection Film", href: "/paint-protection-film" },
-    { label: "Color PPF", href: "/colorppf" },
-    { label: "Stealth PPF", href: "/stealth-ppf" },
-    { label: "PPF Packages", href: "/ppf-packages" },
-    { label: "Ceramic Coating", href: "/ceramic-coating" },
-    { label: "Ceramic Tint", href: "/ceramic-tint" },
-    { label: "Color Change Wrap", href: "/color-change-wrap" },
-    { label: "Marine Services", href: "/marine" },
-    { label: "Portfolio", href: "/portfolio" },
-  ];
+  const [ppfExpanded, setPpfExpanded] = useState(false);
 
   return (
     <div className="md:hidden">
@@ -37,7 +39,47 @@ const MobileMenu = () => {
               </div>
             </div>
             
-            {menuItems.map((item, index) => (
+            <Link
+              to="/"
+              onClick={() => setIsOpen(false)}
+              className="text-lg text-muted-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
+            >
+              Home
+            </Link>
+
+            {/* PPF Dropdown */}
+            <div className="border-b border-border/50">
+              <button
+                onClick={() => setPpfExpanded(!ppfExpanded)}
+                className="flex items-center justify-between w-full text-lg text-muted-foreground hover:text-primary transition-colors py-2"
+              >
+                Paint Protection Film
+                <ChevronDown className={`h-5 w-5 transition-transform ${ppfExpanded ? "rotate-180" : ""}`} />
+              </button>
+              {ppfExpanded && (
+                <div className="flex flex-col pl-4 pb-2 gap-3">
+                  <Link
+                    to="/paint-protection-film"
+                    onClick={() => setIsOpen(false)}
+                    className="text-base text-muted-foreground hover:text-primary transition-colors py-1"
+                  >
+                    Overview
+                  </Link>
+                  {ppfSubItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-base text-muted-foreground hover:text-primary transition-colors py-1"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {otherItems.map((item, index) => (
               <Link
                 key={index}
                 to={item.href}
@@ -54,7 +96,6 @@ const MobileMenu = () => {
                 size="lg" 
                 onClick={() => {
                   setIsOpen(false);
-                  // Always navigate to home page contact section
                   window.location.href = '/#contact';
                 }}
               >
