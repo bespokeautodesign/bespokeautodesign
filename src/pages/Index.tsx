@@ -180,7 +180,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       {/* Background Video */}
       <div className="fixed inset-0 w-screen h-screen z-0 overflow-hidden bg-black">
         <video
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-bottom"
           src="/videos/hero-1.mp4?v=2"
           autoPlay
           loop
