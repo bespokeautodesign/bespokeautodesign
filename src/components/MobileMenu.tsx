@@ -9,7 +9,10 @@ const MobileMenu = () => {
 
   const menuItems = [
     { label: "Home", href: "/" },
-    { label: "Services", href: "/#services" },
+    { label: "Paint Protection Film", href: "/paint-protection-film" },
+    { label: "Ceramic Coating", href: "/ceramic-coating" },
+    { label: "Ceramic Tint", href: "/ceramic-tint" },
+    { label: "Color Change Wrap", href: "/color-change-wrap" },
     { label: "Color PPF", href: "/colorppf" },
     { label: "Marine Services", href: "/marine" },
     { label: "Portfolio", href: "/portfolio" },

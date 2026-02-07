@@ -8,6 +8,10 @@ import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import Marine from "./pages/Marine";
 import XPELColorPPF from "./pages/XPELColorPPF";
+import PaintProtectionFilm from "./pages/PaintProtectionFilm";
+import CeramicCoating from "./pages/CeramicCoating";
+import CeramicTint from "./pages/CeramicTint";
+import ColorChangeWrap from "./pages/ColorChangeWrap";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +29,10 @@ const App = () => (
           <Route path="/portfolio" element={<Projects />} />
           <Route path="/marine" element={<Marine />} />
           <Route path="/colorppf" element={<XPELColorPPF />} />
+          <Route path="/paint-protection-film" element={<PaintProtectionFilm />} />
+          <Route path="/ceramic-coating" element={<CeramicCoating />} />
+          <Route path="/ceramic-tint" element={<CeramicTint />} />
+          <Route path="/color-change-wrap" element={<ColorChangeWrap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

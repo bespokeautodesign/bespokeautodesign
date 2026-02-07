@@ -191,9 +191,10 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
               </span>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <button onClick={() => document.getElementById('services')?.scrollIntoView({
-              behavior: 'smooth'
-            })} className="text-muted-foreground hover:text-primary transition-colors">Services</button>
+              <Link to="/paint-protection-film" className="text-muted-foreground hover:text-primary transition-colors">Paint Protection Film</Link>
+              <Link to="/ceramic-coating" className="text-muted-foreground hover:text-primary transition-colors">Ceramic Coating</Link>
+              <Link to="/ceramic-tint" className="text-muted-foreground hover:text-primary transition-colors">Ceramic Tint</Link>
+              <Link to="/color-change-wrap" className="text-muted-foreground hover:text-primary transition-colors">Color Change Wrap</Link>
               <Link to="/colorppf" className="text-muted-foreground hover:text-primary transition-colors">Color PPF</Link>
               <Link to="/marine" className="text-muted-foreground hover:text-primary transition-colors">Marine Services</Link>
               <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
