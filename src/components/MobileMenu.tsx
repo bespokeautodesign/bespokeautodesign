@@ -49,22 +49,20 @@ const MobileMenu = () => {
 
             {/* PPF Dropdown */}
             <div className="border-b border-border/50">
-              <button
-                onClick={() => setPpfExpanded(!ppfExpanded)}
-                className="flex items-center justify-between w-full text-lg text-muted-foreground hover:text-primary transition-colors py-2"
-              >
-                Paint Protection Film
-                <ChevronDown className={`h-5 w-5 transition-transform ${ppfExpanded ? "rotate-180" : ""}`} />
-              </button>
+              <div className="flex items-center justify-between py-2">
+                <Link
+                  to="/paint-protection-film"
+                  onClick={() => setIsOpen(false)}
+                  className="text-lg text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Paint Protection Film
+                </Link>
+                <button onClick={() => setPpfExpanded(!ppfExpanded)}>
+                  <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform ${ppfExpanded ? "rotate-180" : ""}`} />
+                </button>
+              </div>
               {ppfExpanded && (
                 <div className="flex flex-col pl-4 pb-2 gap-3">
-                  <Link
-                    to="/paint-protection-film"
-                    onClick={() => setIsOpen(false)}
-                    className="text-base text-muted-foreground hover:text-primary transition-colors py-1"
-                  >
-                    Overview
-                  </Link>
                   {ppfSubItems.map((item) => (
                     <Link
                       key={item.href}
