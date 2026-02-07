@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const videoSources = [
   { src: "/videos/hero-1.mp4?v=3", position: "center 65%" },
@@ -12,6 +13,7 @@ const videoSources = [
 ];
 
 const HeroVideoBackground = () => {
+  const isMobile = useIsMobile();
   const [activeSlot, setActiveSlot] = useState<0 | 1>(0);
   const [slots, setSlots] = useState([0, 1]);
   const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
@@ -67,7 +69,7 @@ const HeroVideoBackground = () => {
           ref={videoRefs[slot]}
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            objectPosition: videoSources[slots[slot]]?.position || "center 65%",
+            objectPosition: isMobile ? "center 45%" : (videoSources[slots[slot]]?.position || "center 65%"),
             opacity: activeSlot === slot ? 1 : 0,
             willChange: "opacity",
             transform: "translateZ(0)",
