@@ -2,14 +2,14 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const videoSources = [
-  { src: "/videos/hero-1.mp4?v=3", position: "center 65%" },
-  { src: "/videos/hero-2.mp4?v=2", position: "center 50%" },
-  { src: "/videos/hero-3.mp4?v=1", position: "center 60%" },
-  { src: "/videos/hero-4.mp4?v=1", position: "center 65%" },
-  { src: "/videos/hero-5.mp4?v=1", position: "center 65%" },
-  { src: "/videos/hero-6.mp4?v=1", position: "center 65%" },
-  { src: "/videos/hero-7.mp4?v=1", position: "center 65%" },
-  { src: "/videos/hero-8.mp4?v=1", position: "center 65%" },
+  { src: "/videos/hero-1.mp4?v=3", position: "center 55%" },
+  { src: "/videos/hero-2.mp4?v=2", position: "center 40%" },
+  { src: "/videos/hero-3.mp4?v=1", position: "center 50%" },
+  { src: "/videos/hero-4.mp4?v=1", position: "center 55%" },
+  { src: "/videos/hero-5.mp4?v=1", position: "center 55%" },
+  { src: "/videos/hero-6.mp4?v=1", position: "center 55%" },
+  { src: "/videos/hero-7.mp4?v=1", position: "center 55%" },
+  { src: "/videos/hero-8.mp4?v=1", position: "center 55%" },
 ];
 
 const HeroVideoBackground = () => {
