@@ -33,6 +33,8 @@ const App = () => (
           <Route path="/ceramic-coating" element={<CeramicCoating />} />
           <Route path="/ceramic-tint" element={<CeramicTint />} />
           <Route path="/color-change-wrap" element={<ColorChangeWrap />} />
+          <Route path="/stealth-ppf" element={<NotFound />} />
+          <Route path="/ppf-packages" element={<NotFound />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

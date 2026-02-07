@@ -10,10 +10,12 @@ const MobileMenu = () => {
   const menuItems = [
     { label: "Home", href: "/" },
     { label: "Paint Protection Film", href: "/paint-protection-film" },
+    { label: "Color PPF", href: "/colorppf" },
+    { label: "Stealth PPF", href: "/stealth-ppf" },
+    { label: "PPF Packages", href: "/ppf-packages" },
     { label: "Ceramic Coating", href: "/ceramic-coating" },
     { label: "Ceramic Tint", href: "/ceramic-tint" },
     { label: "Color Change Wrap", href: "/color-change-wrap" },
-    { label: "Color PPF", href: "/colorppf" },
     { label: "Marine Services", href: "/marine" },
     { label: "Portfolio", href: "/portfolio" },
   ];

@@ -10,7 +10,7 @@ import { HomeFAQ } from "@/components/HomeFAQ";
 import { XPELTeaser } from "@/components/XPELTeaser";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Link } from "react-router-dom";
-import MobileMenu from "@/components/MobileMenu";
+import Navbar from "@/components/Navbar";
 import { addStructuredData, businessSchema, faqSchema } from "@/utils/seoHelpers";
 import { addOpenGraphTags, addCanonicalUrl, preloadCriticalImages } from "@/utils/metaHelpers";
 import { LazyImage } from "@/components/LazyImage";
@@ -181,55 +181,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       <HeroVideoBackground />
       <div className="relative z-10 min-h-screen">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <img src="/bespoke-logo.png" alt="Bespoke Auto Design - Premium Automotive Protection Services Miami" className="h-10 w-auto" />
-              <span className="text-sm md:text-lg font-bold text-primary whitespace-nowrap">
-                <span className="text-silver">Bespoke</span> Auto Design
-              </span>
-            </div>
-            <div className="hidden md:flex items-center gap-8">
-              <Link to="/paint-protection-film" className="text-muted-foreground hover:text-primary transition-colors">Paint Protection Film</Link>
-              <Link to="/ceramic-coating" className="text-muted-foreground hover:text-primary transition-colors">Ceramic Coating</Link>
-              <Link to="/ceramic-tint" className="text-muted-foreground hover:text-primary transition-colors">Ceramic Tint</Link>
-              <Link to="/color-change-wrap" className="text-muted-foreground hover:text-primary transition-colors">Color Change Wrap</Link>
-              <Link to="/colorppf" className="text-muted-foreground hover:text-primary transition-colors">Color PPF</Link>
-              <Link to="/marine" className="text-muted-foreground hover:text-primary transition-colors">Marine Services</Link>
-              <Link to="/portfolio" className="text-muted-foreground hover:text-primary transition-colors">Portfolio</Link>
-            </div>
-            <div className="flex items-center gap-2">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                asChild
-                className="hidden sm:flex bg-gradient-to-r from-emerald-500 to-green-600 text-white border-0 shadow-md hover:shadow-lg hover:from-emerald-400 hover:to-green-500 hover:scale-105 transition-all duration-300 font-semibold"
-              >
-                <a href="tel:7863959172" className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" />
-                  Call Now
-                </a>
-              </Button>
-              <Button variant="premium" size="sm" onClick={scrollToQuote} className="hidden sm:flex">
-                Get Quote
-              </Button>
-              {/* Mobile Call Button - Icon Only */}
-              <Button 
-                variant="outline" 
-                size="sm" 
-                asChild
-                className="md:hidden bg-gradient-to-r from-emerald-500 to-green-600 text-white border-0 shadow-md hover:shadow-lg hover:from-emerald-400 hover:to-green-500 hover:scale-105 transition-all duration-300 p-2"
-              >
-                <a href="tel:7863959172" className="flex items-center justify-center">
-                  <Phone className="h-5 w-5" />
-                </a>
-              </Button>
-              <MobileMenu />
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative text-primary-foreground py-44 md:py-36">
