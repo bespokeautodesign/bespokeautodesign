@@ -99,26 +99,26 @@ const Navbar = () => {
               ))}
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-shrink-0">
               <Button
                 variant="outline"
                 size="sm"
                 asChild
-                className="hidden sm:flex bg-gradient-to-r from-emerald-500 to-green-600 text-white border-0 shadow-md hover:shadow-lg hover:from-emerald-400 hover:to-green-500 hover:scale-105 transition-all duration-300 font-semibold"
+                className="hidden xl:flex bg-gradient-to-r from-emerald-500 to-green-600 text-white border-0 shadow-md hover:shadow-lg hover:from-emerald-400 hover:to-green-500 hover:scale-105 transition-all duration-300 font-semibold"
               >
                 <a href="tel:7863959172" className="flex items-center gap-2">
                   <Phone className="h-4 w-4" />
                   Call Now
                 </a>
               </Button>
-              <Button variant="premium" size="sm" onClick={() => setQuoteModalOpen(true)} className="hidden sm:flex">
+              <Button variant="premium" size="sm" onClick={() => setQuoteModalOpen(true)} className="hidden xl:flex">
                 Get Quote
               </Button>
               <Button
                 variant="outline"
                 size="sm"
                 asChild
-                className="lg:hidden bg-gradient-to-r from-emerald-500 to-green-600 text-white border-0 shadow-md p-2"
+                className="xl:hidden bg-gradient-to-r from-emerald-500 to-green-600 text-white border-0 shadow-md p-2"
               >
                 <a href="tel:7863959172">
                   <Phone className="h-5 w-5" />
