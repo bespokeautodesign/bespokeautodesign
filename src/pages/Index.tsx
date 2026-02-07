@@ -14,7 +14,7 @@ import MobileMenu from "@/components/MobileMenu";
 import { addStructuredData, businessSchema, faqSchema } from "@/utils/seoHelpers";
 import { addOpenGraphTags, addCanonicalUrl, preloadCriticalImages } from "@/utils/metaHelpers";
 import { LazyImage } from "@/components/LazyImage";
-
+import HeroVideoBackground from "@/components/HeroVideoBackground";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png";
 const ceramicWorkImage = "/lovable-uploads/83f64f7b-88e3-468d-9f88-d13e551c6289.png";
 import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.png";
@@ -177,19 +177,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
   }];
   return (
     <div className="min-h-screen bg-background relative">
-      {/* Background Video */}
-      <div className="fixed inset-0 w-screen h-screen z-0 overflow-hidden bg-black">
-        <video
-          className="w-full h-full object-cover"
-          style={{ objectPosition: "center 65%", transform: "translateZ(0)" }}
-          src="/videos/hero-1.mp4?v=3"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-        <div className="absolute inset-0 bg-black/40" />
-      </div>
+      {/* Background Video - Rotating */}
+      <HeroVideoBackground />
       <div className="relative z-10 min-h-screen">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
