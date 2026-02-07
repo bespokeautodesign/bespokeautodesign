@@ -5,6 +5,7 @@ const videoSources = [
   { src: "/videos/hero-2.mp4?v=2", position: "center 50%" },
   { src: "/videos/hero-3.mp4?v=1", position: "center 60%" },
   { src: "/videos/hero-4.mp4?v=1", position: "center 65%" },
+  { src: "/videos/hero-5.mp4?v=1", position: "center 65%" },
 ];
 
 const HeroVideoBackground = () => {
