@@ -7,73 +7,77 @@ const videoSources = [
 ];
 
 const HeroVideoBackground = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState(1 % videoSources.length);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [activeSlot, setActiveSlot] = useState<0 | 1>(0);
+  const [slots, setSlots] = useState([0, 1]); // [currentSourceIndex, nextSourceIndex]
+  const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
 
-  const activeVideoRef = useRef<HTMLVideoElement>(null);
-  const nextVideoRef = useRef<HTMLVideoElement>(null);
+  // On mount: play slot 0, preload slot 1
+  useEffect(() => {
+    const v0 = videoRefs[0].current;
+    const v1 = videoRefs[1].current;
+    if (v0) {
+      v0.src = videoSources[0];
+      v0.load();
+      v0.play().catch(() => {});
+    }
+    if (v1) {
+      v1.src = videoSources[1];
+      v1.load();
+    }
+  }, []);
 
-  // When active video ends, crossfade to the preloaded next video
   const handleEnded = useCallback(() => {
-    setIsTransitioning(true);
+    const nextSlot = activeSlot === 0 ? 1 : 0;
+    const nextVideo = videoRefs[nextSlot].current;
 
-    // After the CSS transition completes, swap roles
+    // Play the preloaded next video
+    if (nextVideo) {
+      nextVideo.currentTime = 0;
+      nextVideo.play().catch(() => {});
+    }
+
+    setActiveSlot(nextSlot as 0 | 1);
+
+    // Preload the NEXT-next video into the slot that just finished
+    const finishedSlot = activeSlot;
+    const currentSourceIndex = slots[nextSlot];
+    const nextSourceIndex = (currentSourceIndex + 1) % videoSources.length;
+
     setTimeout(() => {
-      setCurrentIndex(nextIndex);
-      setNextIndex((nextIndex + 1) % videoSources.length);
-      setIsTransitioning(false);
-    }, 800);
-  }, [nextIndex]);
-
-  // Play active video whenever currentIndex changes
-  useEffect(() => {
-    const video = activeVideoRef.current;
-    if (video) {
-      video.play().catch(() => {});
-    }
-  }, [currentIndex]);
-
-  // Preload next video silently
-  useEffect(() => {
-    const video = nextVideoRef.current;
-    if (video) {
-      video.load();
-    }
-  }, [nextIndex]);
-
-  // Start the next video playing when transitioning
-  useEffect(() => {
-    if (isTransitioning && nextVideoRef.current) {
-      nextVideoRef.current.play().catch(() => {});
-    }
-  }, [isTransitioning]);
+      const preloadVideo = videoRefs[finishedSlot].current;
+      if (preloadVideo) {
+        preloadVideo.src = videoSources[nextSourceIndex];
+        preloadVideo.load();
+      }
+      setSlots((prev) => {
+        const updated = [...prev];
+        updated[finishedSlot] = nextSourceIndex;
+        return updated;
+      });
+    }, 1000);
+  }, [activeSlot, slots]);
 
   return (
     <div className="fixed inset-0 w-screen h-screen z-0 overflow-hidden bg-black">
-      {/* Active video */}
-      <video
-        ref={activeVideoRef}
-        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-        style={{ opacity: isTransitioning ? 0 : 1 }}
-        src={videoSources[currentIndex]}
-        autoPlay
-        muted
-        playsInline
-        onEnded={handleEnded}
-      />
-      {/* Next video (preloaded, shown during transition) */}
-      <video
-        ref={nextVideoRef}
-        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-        style={{ opacity: isTransitioning ? 1 : 0 }}
-        src={videoSources[nextIndex]}
-        muted
-        playsInline
-        preload="auto"
-      />
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/40" />
+      {[0, 1].map((slot) => (
+        <video
+          key={slot}
+          ref={videoRefs[slot]}
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{
+            opacity: activeSlot === slot ? 1 : 0,
+            transition: "opacity 1s ease-in-out",
+            willChange: "opacity",
+            transform: "translateZ(0)",
+          }}
+          muted
+          playsInline
+          preload="auto"
+          onEnded={activeSlot === slot ? handleEnded : undefined}
+        />
+      ))}
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/40" style={{ transform: "translateZ(0)" }} />
     </div>
   );
 };
