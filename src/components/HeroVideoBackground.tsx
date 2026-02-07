@@ -63,7 +63,6 @@ const HeroVideoBackground = () => {
           style={{
             objectPosition: "center 65%",
             opacity: activeSlot === slot ? 1 : 0,
-            transition: "opacity 1s ease-in-out",
             willChange: "opacity",
             transform: "translateZ(0)",
           }}
