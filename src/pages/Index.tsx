@@ -177,8 +177,19 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
   }];
   return (
     <div className="min-h-screen bg-background relative">
-      {/* Background */}
-      <div className="fixed inset-0 w-screen h-screen z-0 bg-black"></div>
+      {/* Background Video */}
+      <div className="fixed inset-0 w-screen h-screen z-0 overflow-hidden bg-black">
+        <video
+          className="w-full h-full object-cover"
+          src="/videos/hero-1.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ transform: "translateZ(0)" }}
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
       <div className="relative z-10 min-h-screen">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
