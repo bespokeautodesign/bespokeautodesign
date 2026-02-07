@@ -181,7 +181,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       <div className="fixed inset-0 w-screen h-screen z-0 overflow-hidden bg-black">
         <video
           className="w-full h-full object-cover"
-          style={{ objectPosition: "center 60%", transform: "translateZ(0)" }}
+          style={{ objectPosition: "center 70%", transform: "translateZ(0)" }}
           src="/videos/hero-1.mp4?v=2"
           autoPlay
           loop
