@@ -41,15 +41,15 @@ const Navbar = () => {
     <>
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2">
-              <img src="/bespoke-logo.png" alt="Bespoke Auto Design" className="h-10 w-auto" />
-              <span className="text-sm md:text-lg font-bold text-primary whitespace-nowrap">
+          <div className="flex items-center justify-between gap-4 min-w-0">
+            <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+              <img src="/bespoke-logo.png" alt="Bespoke Auto Design" className="h-8 lg:h-10 w-auto" />
+              <span className="text-xs lg:text-sm xl:text-base font-bold text-primary whitespace-nowrap">
                 <span className="text-silver">Bespoke</span> Auto Design
               </span>
             </Link>
 
-            <div className="hidden lg:flex items-center gap-5 xl:gap-7">
+            <div className="hidden lg:flex items-center gap-3 xl:gap-5 min-w-0">
               {/* PPF Dropdown */}
               <div className="relative" ref={dropdownRef} onMouseLeave={() => setPpfOpen(false)}>
                 <Link
