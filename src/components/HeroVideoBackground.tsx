@@ -69,7 +69,7 @@ const HeroVideoBackground = () => {
           ref={videoRefs[slot]}
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            objectPosition: isMobile ? "center 85%" : (videoSources[slots[slot]]?.position || "center 65%"),
+            objectPosition: isMobile ? "center 95%" : (videoSources[slots[slot]]?.position || "center 65%"),
             opacity: activeSlot === slot ? 1 : 0,
             willChange: "opacity",
             transform: "translateZ(0)",
