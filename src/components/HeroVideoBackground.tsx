@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 const videoSources = [
   { src: "/videos/hero-1.mp4?v=3", position: "center 65%" },
   { src: "/videos/hero-2.mp4?v=1", position: "center 65%" },
-  { src: "/videos/hero-3.mp4?v=1", position: "center 55%" },
+  { src: "/videos/hero-3.mp4?v=1", position: "center 60%" },
 ];
 
 const HeroVideoBackground = () => {
