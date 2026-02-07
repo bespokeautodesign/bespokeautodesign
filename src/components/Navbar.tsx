@@ -49,18 +49,18 @@ const Navbar = () => {
               </span>
             </Link>
 
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-5 xl:gap-7">
               {/* PPF Dropdown */}
               <div className="relative" ref={dropdownRef} onMouseLeave={() => setPpfOpen(false)}>
                 <Link
                   to="/paint-protection-film"
                   onMouseEnter={() => setPpfOpen(true)}
-                  className={`flex items-center gap-1 transition-colors ${
+                  className={`flex items-center gap-1 text-sm xl:text-base whitespace-nowrap transition-colors ${
                     isPPFActive || location.pathname === "/paint-protection-film" ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"
                   }`}
                 >
                   Paint Protection Film
-                  <ChevronDown className={`h-4 w-4 transition-transform ${ppfOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${ppfOpen ? "rotate-180" : ""}`} />
                 </Link>
                 {ppfOpen && (
                   <div className="absolute top-full left-0 pt-2">
@@ -88,7 +88,7 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className={`transition-colors ${
+                  className={`text-sm xl:text-base whitespace-nowrap transition-colors ${
                     location.pathname === item.href
                       ? "text-primary font-semibold"
                       : "text-muted-foreground hover:text-primary"
@@ -118,13 +118,15 @@ const Navbar = () => {
                 variant="outline"
                 size="sm"
                 asChild
-                className="md:hidden bg-gradient-to-r from-emerald-500 to-green-600 text-white border-0 shadow-md p-2"
+                className="lg:hidden bg-gradient-to-r from-emerald-500 to-green-600 text-white border-0 shadow-md p-2"
               >
                 <a href="tel:7863959172">
                   <Phone className="h-5 w-5" />
                 </a>
               </Button>
-              <MobileMenu />
+              <div className="lg:hidden">
+                <MobileMenu />
+              </div>
             </div>
           </div>
         </div>

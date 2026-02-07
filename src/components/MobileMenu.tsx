@@ -23,7 +23,7 @@ const MobileMenu = () => {
   const [ppfExpanded, setPpfExpanded] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <Button variant="ghost" size="sm">
