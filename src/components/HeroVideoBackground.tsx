@@ -13,24 +13,50 @@ const videoSources = [
   { src: "/videos/hero-9.mp4?v=1", position: "center 55%" },
 ];
 
+function shuffleArray<T>(arr: T[]): T[] {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+function createShuffledOrder(): number[] {
+  return shuffleArray(Array.from({ length: videoSources.length }, (_, i) => i));
+}
+
 const HeroVideoBackground = () => {
   const isMobile = useIsMobile();
   const [activeSlot, setActiveSlot] = useState<0 | 1>(0);
-  const [slots, setSlots] = useState([0, 1]);
+  const orderRef = useRef<number[]>(createShuffledOrder());
+  const posRef = useRef(0);
+  const slotsRef = useRef([orderRef.current[0], orderRef.current[1]]);
+  const [slots, setSlots] = useState(slotsRef.current);
   const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
+
+  const getNextIndex = useCallback(() => {
+    posRef.current++;
+    if (posRef.current >= orderRef.current.length) {
+      orderRef.current = createShuffledOrder();
+      posRef.current = 0;
+    }
+    return orderRef.current[posRef.current];
+  }, []);
 
   useEffect(() => {
     const v0 = videoRefs[0].current;
     const v1 = videoRefs[1].current;
     if (v0) {
-      v0.src = videoSources[0].src;
+      v0.src = videoSources[slotsRef.current[0]].src;
       v0.load();
       v0.play().catch(() => {});
     }
     if (v1) {
-      v1.src = videoSources[1].src;
+      v1.src = videoSources[slotsRef.current[1]].src;
       v1.load();
     }
+    posRef.current = 1;
   }, []);
 
   const handleEnded = useCallback(() => {
@@ -45,8 +71,7 @@ const HeroVideoBackground = () => {
     setActiveSlot(nextSlot as 0 | 1);
 
     const finishedSlot = activeSlot;
-    const currentSourceIndex = slots[nextSlot];
-    const nextSourceIndex = (currentSourceIndex + 1) % videoSources.length;
+    const nextSourceIndex = getNextIndex();
 
     setTimeout(() => {
       const preloadVideo = videoRefs[finishedSlot].current;
@@ -54,13 +79,10 @@ const HeroVideoBackground = () => {
         preloadVideo.src = videoSources[nextSourceIndex].src;
         preloadVideo.load();
       }
-      setSlots((prev) => {
-        const updated = [...prev];
-        updated[finishedSlot] = nextSourceIndex;
-        return updated;
-      });
+      slotsRef.current[finishedSlot] = nextSourceIndex;
+      setSlots([...slotsRef.current]);
     }, 1000);
-  }, [activeSlot, slots]);
+  }, [activeSlot, getNextIndex]);
 
   return (
     <div className="fixed inset-0 w-screen h-screen z-0 overflow-hidden bg-black">
