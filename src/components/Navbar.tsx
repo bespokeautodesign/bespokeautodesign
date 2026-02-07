@@ -6,10 +6,9 @@ import MobileMenu from "@/components/MobileMenu";
 import { QuoteModal } from "@/components/QuoteModal";
 
 const ppfSubItems = [
-  { label: "Clear PPF", href: "/paint-protection-film" },
-  { label: "Color PPF", href: "/colorppf" },
-  { label: "Stealth PPF", href: "/stealth-ppf" },
   { label: "PPF Packages", href: "/ppf-packages" },
+  { label: "Stealth PPF", href: "/stealth-ppf" },
+  { label: "Color PPF", href: "/colorppf" },
 ];
 
 const navItems = [
@@ -52,32 +51,35 @@ const Navbar = () => {
 
             <div className="hidden md:flex items-center gap-8">
               {/* PPF Dropdown */}
-              <div className="relative" ref={dropdownRef}>
-                <button
-                  onClick={() => setPpfOpen(!ppfOpen)}
+              <div className="relative" ref={dropdownRef} onMouseLeave={() => setPpfOpen(false)}>
+                <Link
+                  to="/paint-protection-film"
+                  onMouseEnter={() => setPpfOpen(true)}
                   className={`flex items-center gap-1 transition-colors ${
-                    isPPFActive ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"
+                    isPPFActive || location.pathname === "/paint-protection-film" ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"
                   }`}
                 >
                   Paint Protection Film
                   <ChevronDown className={`h-4 w-4 transition-transform ${ppfOpen ? "rotate-180" : ""}`} />
-                </button>
+                </Link>
                 {ppfOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-lg shadow-lg z-50 py-2">
-                    {ppfSubItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        to={item.href}
-                        onClick={() => setPpfOpen(false)}
-                        className={`block px-4 py-2 text-sm transition-colors ${
-                          location.pathname === item.href
-                            ? "text-primary font-semibold bg-accent"
-                            : "text-muted-foreground hover:text-primary hover:bg-accent"
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
+                  <div className="absolute top-full left-0 pt-2">
+                    <div className="w-48 bg-background border border-border rounded-lg shadow-lg z-50 py-2">
+                      {ppfSubItems.map((item) => (
+                        <Link
+                          key={item.href}
+                          to={item.href}
+                          onClick={() => setPpfOpen(false)}
+                          className={`block px-4 py-2 text-sm transition-colors ${
+                            location.pathname === item.href
+                              ? "text-primary font-semibold bg-accent"
+                              : "text-muted-foreground hover:text-primary hover:bg-accent"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
