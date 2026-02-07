@@ -180,13 +180,13 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       {/* Background Video */}
       <div className="fixed inset-0 w-screen h-screen z-0 overflow-hidden bg-black">
         <video
-          className="w-full h-full object-cover object-bottom"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: "center 60%", transform: "translateZ(0)" }}
           src="/videos/hero-1.mp4?v=2"
           autoPlay
           loop
           muted
           playsInline
-          style={{ transform: "translateZ(0)" }}
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>
