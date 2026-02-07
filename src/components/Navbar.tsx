@@ -49,7 +49,7 @@ const Navbar = () => {
               </span>
             </Link>
 
-            <div className="hidden lg:flex items-center gap-3 xl:gap-5 min-w-0">
+            <div className="hidden lg:flex items-center gap-5 xl:gap-8 min-w-0">
               {/* PPF Dropdown */}
               <div className="relative" ref={dropdownRef} onMouseLeave={() => setPpfOpen(false)}>
                 <Link
