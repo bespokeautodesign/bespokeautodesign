@@ -14,9 +14,7 @@ import MobileMenu from "@/components/MobileMenu";
 import { addStructuredData, businessSchema, faqSchema } from "@/utils/seoHelpers";
 import { addOpenGraphTags, addCanonicalUrl, preloadCriticalImages } from "@/utils/metaHelpers";
 import { LazyImage } from "@/components/LazyImage";
-
-// Import assets
-const heroBugattiBolideImage = "/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png";
+import HeroVideoBackground from "@/components/HeroVideoBackground";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png";
 const ceramicWorkImage = "/lovable-uploads/83f64f7b-88e3-468d-9f88-d13e551c6289.png";
 import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.png";
@@ -179,13 +177,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
   }];
   return (
     <div className="min-h-screen bg-background relative">
-      {/* Background Image - Full width coverage */}
-      <div 
-        className="fixed inset-0 w-screen bg-cover bg-center bg-no-repeat z-0"
-        style={{
-          backgroundImage: `url(${heroBugattiBolideImage})`
-        }}
-      ></div>
+      {/* Background Video - Rotating */}
+      <HeroVideoBackground />
       <div className="relative z-10 min-h-screen">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
