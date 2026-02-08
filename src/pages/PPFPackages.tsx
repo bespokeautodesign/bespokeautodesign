@@ -5,6 +5,7 @@ import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { Link, useLocation } from "react-router-dom";
+import xpelLogo from "@/assets/xpel-logo.svg";
 const packages = [{
   id: "full-front",
   name: "Full Front Package",
@@ -53,8 +54,8 @@ const PPFPackages = () => {
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-accent/20" />
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <Shield className="h-6 w-6 text-primary" />
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <img src={xpelLogo} alt="XPEL" className="h-8 w-auto opacity-80" />
             <span className="text-primary font-semibold tracking-wider uppercase text-sm">XPEL AUTHORIZED DEALER</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-playfair">
@@ -104,6 +105,7 @@ const PPFPackages = () => {
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center space-y-8">
+            <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80 mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold font-playfair">Why XPEL Paint Protection Film?</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               XPEL is the global leader in automotive paint protection technology. Their Ultimate Plus™ film features a proprietary self-healing clear coat that eliminates fine scratches and swirl marks with exposure to heat — keeping your vehicle looking flawless year after year. With industry-leading optical clarity and a 10-year manufacturer warranty, XPEL sets the standard that every other film tries to match.
