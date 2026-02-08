@@ -13,6 +13,7 @@ import CeramicCoating from "./pages/CeramicCoating";
 import CeramicTint from "./pages/CeramicTint";
 import ColorChangeWrap from "./pages/ColorChangeWrap";
 import PPFPackages from "./pages/PPFPackages";
+import StealthPPF from "./pages/StealthPPF";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,7 +35,7 @@ const App = () => (
           <Route path="/ceramic-coating" element={<CeramicCoating />} />
           <Route path="/ceramic-tint" element={<CeramicTint />} />
           <Route path="/color-change-wrap" element={<ColorChangeWrap />} />
-          <Route path="/stealth-ppf" element={<NotFound />} />
+          <Route path="/stealth-ppf" element={<StealthPPF />} />
           <Route path="/ppf-packages" element={<PPFPackages />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

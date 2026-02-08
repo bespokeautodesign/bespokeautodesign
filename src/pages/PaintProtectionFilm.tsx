@@ -9,6 +9,7 @@ import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award } fr
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { Link } from "react-router-dom";
+import xpelLogo from "@/assets/xpel-logo.svg";
 
 const ppfFaqs = [
   {
@@ -108,8 +109,8 @@ const PaintProtectionFilm = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="flex items-center justify-center gap-2">
-              <Shield className="h-6 w-6 text-primary" />
+            <div className="flex items-center justify-center gap-3">
+              <img src={xpelLogo} alt="XPEL" className="h-8 w-auto opacity-80" />
               <span className="text-primary font-semibold tracking-wider uppercase text-sm">
                 Miami's XPEL Certified Installer
               </span>
@@ -324,9 +325,10 @@ const PaintProtectionFilm = () => {
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-10">
-            <div className="text-center">
-              <Badge variant="outline" className="mb-4">Why XPEL?</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+            <div className="text-center space-y-4">
+              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80" />
+              <Badge variant="outline">Why XPEL?</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair">
                 The XPEL Advantage
               </h2>
             </div>
