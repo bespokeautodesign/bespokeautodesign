@@ -53,24 +53,24 @@ const brands = [
 
 const benefits = [
   {
-    icon: Shield,
-    title: "Paint Protection",
-    desc: "A full vinyl wrap acts as a sacrificial barrier, protecting your factory paint from rock chips, minor abrasions, UV fading, and environmental contaminants. When the wrap is removed, your original paint is pristine underneath.",
-  },
-  {
     icon: Palette,
     title: "Unlimited Color Options",
     desc: "Choose from hundreds of colors across gloss, matte, satin, metallic, chrome, carbon fiber, brushed metal, and color-shifting finishes. Achieve looks that are impossible or prohibitively expensive with traditional paint.",
   },
   {
-    icon: RefreshCw,
-    title: "Fully Reversible",
-    desc: "Unlike a full respray, vinyl wraps can be professionally removed without damaging your factory paint. Change colors as often as you like, or restore the original finish when it's time to sell — preserving resale value.",
+    icon: Sparkles,
+    title: "Unique Finishes & Textures",
+    desc: "From satin chrome to color-shifting chameleon, from brushed titanium to candy gloss — vinyl wrap finishes go far beyond what automotive paint can achieve, giving your vehicle a truly bespoke, head-turning look.",
   },
   {
-    icon: Sun,
-    title: "UV & Fade Resistance",
-    desc: "Premium films from 3M, Avery, and KPMF are engineered with UV-stabilized pigments and protective overlaminates that resist fading, even under Miami's relentless sun exposure with UV indices exceeding 11.",
+    icon: RefreshCw,
+    title: "Fully Reversible",
+    desc: "Unlike a full respray, vinyl wraps can be professionally removed without damaging your factory paint. Change colors as often as you like, or restore the original finish when it's time to sell.",
+  },
+  {
+    icon: Eye,
+    title: "Stand Out From the Crowd",
+    desc: "Your vehicle should be as unique as you are. A custom color change wrap lets you express your personality — whether it's a subtle satin shift or an eye-catching chrome finish that commands attention.",
   },
   {
     icon: Clock,
@@ -83,14 +83,14 @@ const benefits = [
     desc: "Wrapping instead of repainting keeps your vehicle's factory finish intact — a critical factor for luxury and exotic cars where original paint condition directly impacts resale and collector value.",
   },
   {
-    icon: Sparkles,
-    title: "Unique Finishes & Textures",
-    desc: "From satin chrome to color-shifting chameleon, from brushed titanium to candy gloss — vinyl wrap finishes go far beyond what automotive paint can achieve, giving your vehicle a truly bespoke look.",
+    icon: Sun,
+    title: "Built for Miami's Climate",
+    desc: "Premium cast vinyl films are engineered with UV-stabilized pigments and protective overlaminates that resist fading, even under Miami's relentless sun exposure with UV indices exceeding 11.",
   },
   {
     icon: Award,
     title: "Warranty-Backed Quality",
-    desc: "Every film we use comes with a manufacturer warranty. 3M, Avery, and KPMF stand behind their products with documented performance guarantees — and so do we with our installation craftsmanship.",
+    desc: "Every film we use comes with a manufacturer warranty and documented performance guarantees — and so do we with our installation craftsmanship.",
   },
 ];
 
@@ -131,12 +131,12 @@ const faqs = [
   {
     question: "How long does a vinyl wrap last in Miami's climate?",
     answer:
-      "Premium wraps from 3M, Avery, and KPMF are engineered to last 5–7 years with proper care. Miami's intense UV and heat can reduce lifespan if the vehicle is constantly exposed without garage parking. We use only UV-stabilized, top-tier films and recommend ceramic coating over the wrap for maximum longevity.",
+      "Premium cast vinyl wraps are engineered to last 5–7 years with proper care. Miami's intense UV and heat can reduce lifespan if the vehicle is constantly exposed without garage parking. We use only UV-stabilized, top-tier films and recommend ceramic coating over the wrap for maximum longevity.",
   },
   {
     question: "Will a wrap damage my factory paint?",
     answer:
-      "No — when installed and removed by professionals, a vinyl wrap will not damage factory paint. In fact, it protects the paint underneath from UV, chips, and scratches. All the films we use (3M, Avery, KPMF) feature pressure-sensitive adhesives designed for clean, residue-free removal.",
+      "No — when installed and removed by professionals, a vinyl wrap will not damage factory paint. The premium films we use feature pressure-sensitive adhesives designed for clean, residue-free removal.",
   },
   {
     question: "Can I wrap a leased vehicle?",
@@ -159,9 +159,9 @@ const faqs = [
       "Yes — partial wraps are very popular. Common options include roof wraps, mirror caps, hood accents, racing stripes, and chrome delete (wrapping chrome trim in gloss or satin black). Partial wraps start at $500–$1,500 depending on the scope.",
   },
   {
-    question: "Why do you use 3M, Avery, and KPMF instead of cheaper films?",
+    question: "Why does the quality of wrap film matter?",
     answer:
-      "Cheap films use inferior adhesives that can damage paint on removal, have poor UV stability (fading and cracking within months), and don't conform well to complex body lines. 3M, Avery, and KPMF invest heavily in adhesive R&D, color consistency, and conformability. The difference in quality is dramatic — and so is the longevity of the finished result.",
+      "Cheap films use inferior adhesives that can damage paint on removal, have poor UV stability (fading and cracking within months), and don't conform well to complex body lines. The premium films we source invest heavily in adhesive R&D, color consistency, and conformability. The difference in quality is dramatic — and so is the longevity of the finished result.",
   },
 ];
 
@@ -169,17 +169,17 @@ const ColorChangeWrap = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
 
   useEffect(() => {
-    document.title = "Color Change Vinyl Wrap Miami | 3M, Avery, KPMF | Bespoke Auto Design";
+    document.title = "Color Change Vinyl Wrap Miami | Custom Vehicle Wraps | Bespoke Auto Design";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute(
         "content",
-        "Premium color change vinyl wraps in Miami using 3M, Avery Dennison & KPMF films. Full body wraps, chrome deletes, and custom finishes for luxury and exotic vehicles. Get a free quote."
+        "Premium color change vinyl wraps in Miami. Full body wraps, chrome deletes, and custom finishes for luxury and exotic vehicles using top-quality materials. Get a free quote."
       );
     }
     addOpenGraphTags(
-      "Color Change Vinyl Wrap Miami | 3M, Avery, KPMF | Bespoke Auto Design",
-      "Premium color change vinyl wraps in Miami using 3M, Avery Dennison & KPMF films. Full body wraps, chrome deletes, and custom finishes for luxury and exotic vehicles."
+      "Color Change Vinyl Wrap Miami | Custom Vehicle Wraps | Bespoke Auto Design",
+      "Premium color change vinyl wraps in Miami. Full body wraps, chrome deletes, and custom finishes for luxury and exotic vehicles using top-quality materials."
     );
     addCanonicalUrl("https://bespokeautodesign.com/color-change-wrap");
     addStructuredData({
@@ -201,7 +201,7 @@ const ColorChangeWrap = () => {
       },
       areaServed: { "@type": "City", name: "Miami" },
       description:
-        "Professional color change vinyl wraps in Miami using only premium 3M, Avery Dennison, and KPMF films.",
+        "Professional color change vinyl wraps in Miami using premium-grade cast vinyl films for complete vehicle customization.",
     });
     addStructuredData({
       "@context": "https://schema.org",
@@ -231,10 +231,8 @@ const ColorChangeWrap = () => {
               <span className="text-muted-foreground">Vinyl Wraps</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Transform your vehicle with a full color change using only the world's finest wrap films —{" "}
-              <strong className="text-foreground">3M</strong>,{" "}
-              <strong className="text-foreground">Avery Dennison</strong>, &{" "}
-              <strong className="text-foreground">KPMF</strong>. Installed by certified professionals in Miami.
+              Transform your vehicle into something truly one-of-a-kind. We use only premium-grade cast vinyl films
+              and expert installation techniques to deliver a finish that turns heads everywhere you go in Miami.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
@@ -269,26 +267,24 @@ const ColorChangeWrap = () => {
             <h2 className="text-3xl md:text-5xl font-bold font-playfair text-center">
               Not All Wrap Film Is Created Equal
             </h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
               <p>
                 The wrap film industry is flooded with budget brands that promise the world but deliver cracking, fading,
                 and adhesive failure within months — especially in Miami's brutal UV and heat. At Bespoke Auto Design, we{" "}
-                <strong className="text-foreground">exclusively use 3M, Avery Dennison, and KPMF</strong> — the three
-                brands that every professional installer trusts.
+                <strong className="text-foreground">focus on sourcing only premium-grade cast vinyl films</strong> from
+                trusted manufacturers with proven track records in extreme climates.
               </p>
               <p>
-                These manufacturers invest millions in adhesive R&D, color consistency testing, and UV-stability
-                engineering. Their films are designed to conform to the most complex body lines without lifting, bubble,
-                or crease — and to remove cleanly years later without damaging your factory paint. When you choose
-                Bespoke, you're choosing the same films used by OEM manufacturers, Formula 1 teams, and the world's
+                The films we select are backed by millions in adhesive R&D, color consistency testing, and UV-stability
+                engineering. They're designed to conform to the most complex body lines without lifting, bubbling,
+                or creasing — and to remove cleanly years later without damaging your factory paint. When you choose
+                Bespoke, you're choosing the same caliber of materials used by OEM manufacturers, Formula 1 teams, and the world's
                 finest custom shops.
               </p>
               <p>
-                Cheaper alternatives use inferior calendered vinyl with aggressive adhesives that can{" "}
-                <strong className="text-foreground">permanently damage your paint on removal</strong>, have poor color
-                match consistency between rolls, and crack under Miami's sun within 6–12 months. The cost savings
-                disappear when the wrap fails prematurely and needs replacement — or worse, when it takes your paint with
-                it.
+                Cheaper alternatives use inferior calendered vinyl with aggressive adhesives that have poor color
+                match consistency between rolls and crack under Miami's sun within 6–12 months. The cost savings
+                disappear when the wrap fails prematurely and needs replacement.
               </p>
             </div>
           </div>
@@ -300,13 +296,13 @@ const ColorChangeWrap = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">
-              Our Film Partners
+              Premium Materials
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
-              Trusted by the World's Best
+              Brands We Trust
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We use only manufacturer-certified, premium cast vinyl films with proven performance in extreme climates.
+              We work with the industry's leading film manufacturers — here are a few of the brands we frequently use.
             </p>
           </div>
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -349,7 +345,7 @@ const ColorChangeWrap = () => {
               Benefits of a Color Change Wrap
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A professional vinyl wrap delivers style, protection, and value — without the permanence of paint.
+              A professional vinyl wrap lets you fully customize your vehicle's appearance — without the permanence of paint.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
