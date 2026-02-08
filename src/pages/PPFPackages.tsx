@@ -4,10 +4,11 @@ import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const packages = [
   {
+    id: "full-front",
     name: "Full Front Package",
     image: "/lovable-uploads/ppf-full-front.png",
     description:
@@ -20,6 +21,7 @@ const packages = [
     ],
   },
   {
+    id: "track",
     name: "Track Package",
     image: "/lovable-uploads/ppf-track-package.png",
     description:
@@ -32,6 +34,7 @@ const packages = [
     ],
   },
   {
+    id: "full-body",
     name: "Full Body",
     image: "/lovable-uploads/ppf-full-body.png",
     description:
@@ -48,6 +51,8 @@ const packages = [
 const PPFPackages = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
 
+  const location = useLocation();
+
   useEffect(() => {
     document.title = "PPF Packages | XPEL Paint Protection Film | Bespoke Auto Design Miami";
     const metaDesc = document.querySelector('meta[name="description"]');
@@ -60,6 +65,15 @@ const PPFPackages = () => {
     );
     addCanonicalUrl("https://bespokeautodesign.com/ppf-packages");
   }, []);
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 300);
+      }
+    }
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -88,8 +102,9 @@ const PPFPackages = () => {
           <div className="space-y-24">
             {packages.map((pkg, index) => (
               <div
+                id={pkg.id}
                 key={pkg.name}
-                className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-10 lg:gap-16 items-center`}
+                className={`flex flex-col ${index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-10 lg:gap-16 items-center scroll-mt-24`}
               >
                 {/* Image */}
                 <div className="w-full lg:w-1/2">
