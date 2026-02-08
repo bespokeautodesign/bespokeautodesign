@@ -267,18 +267,21 @@ const PaintProtectionFilm = () => {
             {[
               {
                 name: "Full Front",
+                anchor: "full-front",
                 coverage: "Hood, bumper, fenders, headlights, mirrors",
                 ideal: "Daily drivers & commuters",
                 highlight: "Most Popular",
               },
               {
                 name: "Track Package",
+                anchor: "track",
                 coverage: "Full front + rockers, rear bumper, A-pillars, door edges",
                 ideal: "Performance & spirited driving",
                 highlight: "Best Value",
               },
               {
                 name: "Full Body",
+                anchor: "full-body",
                 coverage: "Every painted surface, bumper to bumper",
                 ideal: "Exotic & luxury vehicles",
                 highlight: "Maximum Protection",
@@ -290,7 +293,7 @@ const PaintProtectionFilm = () => {
                   <h3 className="text-2xl font-bold font-playfair">{pkg.name}</h3>
                   <p className="text-muted-foreground">{pkg.coverage}</p>
                   <p className="text-sm text-muted-foreground italic">Ideal for: {pkg.ideal}</p>
-                  <Link to="/ppf-packages">
+                  <Link to={`/ppf-packages#${pkg.anchor}`}>
                     <Button variant="silver" className="w-full mt-2">
                       Learn More <ChevronRight className="h-4 w-4" />
                     </Button>
