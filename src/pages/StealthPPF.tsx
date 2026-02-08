@@ -10,58 +10,40 @@ import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { Link } from "react-router-dom";
 import xpelLogo from "@/assets/xpel-logo.svg";
-
-const stealthFaqs = [
-  {
-    question: "What is Stealth PPF and how is it different from clear PPF?",
-    answer: "Stealth PPF (also known as matte or satin PPF) is a paint protection film with a matte-finish top coat instead of a glossy one. While it provides the same impact protection, self-healing properties, and UV resistance as clear PPF, Stealth transforms any gloss paint into a stunning satin finish — or preserves the factory matte on vehicles that come with it."
-  },
-  {
-    question: "Can I put Stealth PPF on a glossy painted car?",
-    answer: "Absolutely. That's one of the most popular uses of Stealth PPF. It takes a standard gloss-finish vehicle and gives it a head-turning satin/matte appearance while simultaneously protecting the paint. The best part? It's fully reversible — remove the film and your original gloss paint is pristine underneath."
-  },
-  {
-    question: "Does Stealth PPF self-heal like clear PPF?",
-    answer: "Yes. XPEL Stealth uses the same self-healing elastomeric polymer technology as Ultimate Plus™. Light scratches and swirl marks disappear with heat exposure — whether from Miami's sun, warm water, or a heat gun. The matte texture is maintained throughout the healing process."
-  },
-  {
-    question: "How do I wash a car with Stealth PPF?",
-    answer: "Hand wash only with a pH-neutral, wax-free soap. Avoid automatic car washes, polishes, and waxes — these can add gloss to the matte surface. For spot cleaning, use a matte-specific detailer. We provide detailed aftercare instructions with every Stealth installation."
-  },
-  {
-    question: "How much does Stealth PPF cost in Miami?",
-    answer: "Stealth PPF typically costs 15–25% more than clear XPEL Ultimate Plus™ due to the specialty finish. A Full Front Stealth package runs $1,800–$3,500, and Full Body Stealth ranges from $5,500–$10,000+ depending on vehicle size and complexity. Contact us for a personalized quote."
-  },
-  {
-    question: "Will Stealth PPF yellow or change texture over time?",
-    answer: "No. XPEL Stealth is engineered with UV-stabilized polymers that resist yellowing, even in Miami's extreme UV environment. The satin texture remains consistent throughout the film's lifespan. It's backed by XPEL's 10-year manufacturer warranty against yellowing, cracking, and peeling."
-  },
-  {
-    question: "Can you wrap only certain panels in Stealth for a two-tone look?",
-    answer: "Yes. Many clients combine Stealth PPF on specific panels (hood, roof, mirrors) with clear PPF on the rest of the vehicle for a unique two-tone satin-and-gloss aesthetic. This is especially popular on sports cars and exotics."
-  },
-  {
-    question: "Is Stealth PPF good for factory matte paint?",
-    answer: "It's essential. Factory matte paint is notoriously difficult and expensive to repair — you can't polish out scratches or buff imperfections like you can on gloss paint. Stealth PPF protects your matte finish from damage while preserving its exact factory texture. It's the only way to truly safeguard a matte-painted vehicle."
-  },
-];
-
+const stealthFaqs = [{
+  question: "What is Stealth PPF and how is it different from clear PPF?",
+  answer: "Stealth PPF (also known as matte or satin PPF) is a paint protection film with a matte-finish top coat instead of a glossy one. While it provides the same impact protection, self-healing properties, and UV resistance as clear PPF, Stealth transforms any gloss paint into a stunning satin finish — or preserves the factory matte on vehicles that come with it."
+}, {
+  question: "Can I put Stealth PPF on a glossy painted car?",
+  answer: "Absolutely. That's one of the most popular uses of Stealth PPF. It takes a standard gloss-finish vehicle and gives it a head-turning satin/matte appearance while simultaneously protecting the paint. The best part? It's fully reversible — remove the film and your original gloss paint is pristine underneath."
+}, {
+  question: "Does Stealth PPF self-heal like clear PPF?",
+  answer: "Yes. XPEL Stealth uses the same self-healing elastomeric polymer technology as Ultimate Plus™. Light scratches and swirl marks disappear with heat exposure — whether from Miami's sun, warm water, or a heat gun. The matte texture is maintained throughout the healing process."
+}, {
+  question: "How do I wash a car with Stealth PPF?",
+  answer: "Hand wash only with a pH-neutral, wax-free soap. Avoid automatic car washes, polishes, and waxes — these can add gloss to the matte surface. For spot cleaning, use a matte-specific detailer. We provide detailed aftercare instructions with every Stealth installation."
+}, {
+  question: "How much does Stealth PPF cost in Miami?",
+  answer: "Stealth PPF typically costs 15–25% more than clear XPEL Ultimate Plus™ due to the specialty finish. A Full Front Stealth package runs $1,800–$3,500, and Full Body Stealth ranges from $5,500–$10,000+ depending on vehicle size and complexity. Contact us for a personalized quote."
+}, {
+  question: "Will Stealth PPF yellow or change texture over time?",
+  answer: "No. XPEL Stealth is engineered with UV-stabilized polymers that resist yellowing, even in Miami's extreme UV environment. The satin texture remains consistent throughout the film's lifespan. It's backed by XPEL's 10-year manufacturer warranty against yellowing, cracking, and peeling."
+}, {
+  question: "Can you wrap only certain panels in Stealth for a two-tone look?",
+  answer: "Yes. Many clients combine Stealth PPF on specific panels (hood, roof, mirrors) with clear PPF on the rest of the vehicle for a unique two-tone satin-and-gloss aesthetic. This is especially popular on sports cars and exotics."
+}, {
+  question: "Is Stealth PPF good for factory matte paint?",
+  answer: "It's essential. Factory matte paint is notoriously difficult and expensive to repair — you can't polish out scratches or buff imperfections like you can on gloss paint. Stealth PPF protects your matte finish from damage while preserving its exact factory texture. It's the only way to truly safeguard a matte-painted vehicle."
+}];
 const StealthPPF = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
-
   useEffect(() => {
     document.title = "Stealth PPF Miami | Matte & Satin Paint Protection Film | Bespoke Auto Design";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute(
-        "content",
-        "XPEL Stealth PPF installation in Miami. Transform your gloss paint to satin or protect factory matte finishes. Self-healing matte paint protection film with 10-year warranty."
-      );
+      metaDesc.setAttribute("content", "XPEL Stealth PPF installation in Miami. Transform your gloss paint to satin or protect factory matte finishes. Self-healing matte paint protection film with 10-year warranty.");
     }
-    addOpenGraphTags(
-      "Stealth PPF Miami | Matte Paint Protection Film | Bespoke Auto Design",
-      "Miami's premier XPEL Stealth PPF installer. Convert gloss to satin or protect factory matte paint with self-healing, invisible matte protection film."
-    );
+    addOpenGraphTags("Stealth PPF Miami | Matte Paint Protection Film | Bespoke Auto Design", "Miami's premier XPEL Stealth PPF installer. Convert gloss to satin or protect factory matte paint with self-healing, invisible matte protection film.");
     addCanonicalUrl("https://bespokeautodesign.com/stealth-ppf");
     addStructuredData({
       "@context": "https://schema.org",
@@ -80,13 +62,14 @@ const StealthPPF = () => {
         },
         "telephone": "+1-786-395-9172"
       },
-      "areaServed": { "@type": "City", "name": "Miami" },
-      "description": "Professional XPEL Stealth matte/satin paint protection film installation in Miami. Self-healing technology with 10-year warranty.",
+      "areaServed": {
+        "@type": "City",
+        "name": "Miami"
+      },
+      "description": "Professional XPEL Stealth matte/satin paint protection film installation in Miami. Self-healing technology with 10-year warranty."
     });
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* HERO */}
@@ -96,13 +79,11 @@ const StealthPPF = () => {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex flex-col items-center gap-3">
               <img src={xpelLogo} alt="XPEL" className="h-20 w-auto opacity-80" />
-              <span className="text-primary font-semibold tracking-wider uppercase text-sm">
-                Authorized Stealth Installer
-              </span>
+              <span className="text-primary font-semibold tracking-wider uppercase text-sm">AUTHORIZED XPEL DEALER</span>
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight">
               Stealth PPF <br className="hidden md:block" />
-              <span className="text-muted-foreground">Matte & Satin Protection</span>
+              <span className="text-muted-foreground">Satin Protection</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               Transform any gloss finish into a head-turning satin look — or preserve your factory matte paint — with XPEL's self-healing Stealth paint protection film.
@@ -194,19 +175,10 @@ const StealthPPF = () => {
                   Satin/matte finish that transforms or preserves your paint's look while providing full protection.
                 </p>
                 <ul className="space-y-3">
-                  {[
-                    "Converts gloss paint to satin/matte finish",
-                    "Preserves factory matte paint (BMW, Mercedes, Porsche)",
-                    "Understated, luxury aesthetic",
-                    "Same self-healing technology as Ultimate Plus™",
-                    "Unique two-tone options when combined with clear PPF",
-                    "Ideal for high-end and exotic vehicles",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
+                  {["Converts gloss paint to satin/matte finish", "Preserves factory matte paint (BMW, Mercedes, Porsche)", "Understated, luxury aesthetic", "Same self-healing technology as Ultimate Plus™", "Unique two-tone options when combined with clear PPF", "Ideal for high-end and exotic vehicles"].map(item => <li key={item} className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-foreground text-sm">{item}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </CardContent>
             </Card>
@@ -224,19 +196,10 @@ const StealthPPF = () => {
                   Crystal-clear, high-gloss finish that is virtually invisible on any paint color.
                 </p>
                 <ul className="space-y-3">
-                  {[
-                    "Invisible protection — preserves factory gloss",
-                    "Industry-leading optical clarity",
-                    "Self-healing clear coat eliminates scratches",
-                    "Best choice for maintaining original appearance",
-                    "Easier maintenance — compatible with waxes & sealants",
-                    "Ideal for daily drivers and all vehicle types",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
+                  {["Invisible protection — preserves factory gloss", "Industry-leading optical clarity", "Self-healing clear coat eliminates scratches", "Best choice for maintaining original appearance", "Easier maintenance — compatible with waxes & sealants", "Ideal for daily drivers and all vehicle types"].map(item => <li key={item} className="flex items-start gap-3">
                       <Check className="h-5 w-5 text-muted-foreground mt-0.5 flex-shrink-0" />
                       <span className="text-foreground text-sm">{item}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </CardContent>
             </Card>
@@ -254,39 +217,31 @@ const StealthPPF = () => {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                icon: Car,
-                title: "Factory Matte Paint Owners",
-                desc: "If your vehicle has factory matte or frozen paint (BMW Frozen Grey, Mercedes Magno, Porsche Chalk), Stealth PPF is essential. Matte paint can't be polished or buffed — any scratch or stain is permanent without PPF protection.",
-              },
-              {
-                icon: Paintbrush,
-                title: "Gloss-to-Satin Converts",
-                desc: "Want the satin look without a permanent paint job or vinyl wrap? Stealth PPF gives you a stunning matte transformation that also protects your paint. It's fully reversible — remove it and your original gloss is untouched.",
-              },
-              {
-                icon: Layers,
-                title: "Two-Tone Enthusiasts",
-                desc: "Combine Stealth on select panels (hood, roof, mirrors) with clear PPF on the rest for a unique satin-and-gloss contrast. It's a popular choice on sports cars, supercars, and custom builds in Miami.",
-              },
-              {
-                icon: Sun,
-                title: "Miami & South Florida Drivers",
-                desc: "Miami's UV index, salt air, and year-round heat accelerate paint degradation. Stealth PPF blocks UV damage, prevents salt corrosion, and resists environmental contaminants while keeping your matte finish pristine.",
-              },
-              {
-                icon: Award,
-                title: "Exotic & Luxury Collectors",
-                desc: "High-value vehicles deserve the highest level of protection. Stealth PPF is a favorite among Ferrari, Lamborghini, McLaren, and Porsche GT owners who want understated elegance with uncompromised protection.",
-              },
-              {
-                icon: Shield,
-                title: "Lease Return Protection",
-                desc: "Protect your leased vehicle's paint throughout the lease term. When it's time to return, remove the Stealth PPF and reveal flawless paint — avoiding costly turn-in penalties for chips, scratches, and wear.",
-              },
-            ].map((item) => (
-              <Card key={item.title} className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300">
+            {[{
+            icon: Car,
+            title: "Factory Matte Paint Owners",
+            desc: "If your vehicle has factory matte or frozen paint (BMW Frozen Grey, Mercedes Magno, Porsche Chalk), Stealth PPF is essential. Matte paint can't be polished or buffed — any scratch or stain is permanent without PPF protection."
+          }, {
+            icon: Paintbrush,
+            title: "Gloss-to-Satin Converts",
+            desc: "Want the satin look without a permanent paint job or vinyl wrap? Stealth PPF gives you a stunning matte transformation that also protects your paint. It's fully reversible — remove it and your original gloss is untouched."
+          }, {
+            icon: Layers,
+            title: "Two-Tone Enthusiasts",
+            desc: "Combine Stealth on select panels (hood, roof, mirrors) with clear PPF on the rest for a unique satin-and-gloss contrast. It's a popular choice on sports cars, supercars, and custom builds in Miami."
+          }, {
+            icon: Sun,
+            title: "Miami & South Florida Drivers",
+            desc: "Miami's UV index, salt air, and year-round heat accelerate paint degradation. Stealth PPF blocks UV damage, prevents salt corrosion, and resists environmental contaminants while keeping your matte finish pristine."
+          }, {
+            icon: Award,
+            title: "Exotic & Luxury Collectors",
+            desc: "High-value vehicles deserve the highest level of protection. Stealth PPF is a favorite among Ferrari, Lamborghini, McLaren, and Porsche GT owners who want understated elegance with uncompromised protection."
+          }, {
+            icon: Shield,
+            title: "Lease Return Protection",
+            desc: "Protect your leased vehicle's paint throughout the lease term. When it's time to return, remove the Stealth PPF and reveal flawless paint — avoiding costly turn-in penalties for chips, scratches, and wear."
+          }].map(item => <Card key={item.title} className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <item.icon className="h-6 w-6 text-primary" />
@@ -294,8 +249,7 @@ const StealthPPF = () => {
                   <h3 className="text-xl font-bold">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -330,21 +284,10 @@ const StealthPPF = () => {
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-6 py-4">
-              {[
-                "Self-healing satin top coat",
-                "UV-stabilized — no yellowing in Florida sun",
-                "8-mil thick impact protection",
-                "Stain-resistant surface",
-                "Preserves factory matte texture exactly",
-                "Clean removal with zero paint damage",
-                "Precision DAP cut templates",
-                "10-year XPEL manufacturer warranty",
-              ].map((point) => (
-                <div key={point} className="flex items-start gap-3">
+              {["Self-healing satin top coat", "UV-stabilized — no yellowing in Florida sun", "8-mil thick impact protection", "Stain-resistant surface", "Preserves factory matte texture exactly", "Clean removal with zero paint damage", "Precision DAP cut templates", "10-year XPEL manufacturer warranty"].map(point => <div key={point} className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-foreground">{point}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -363,20 +306,29 @@ const StealthPPF = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {[
-              { step: "01", title: "Hand Wash Only", desc: "Use a pH-neutral, wax-free car shampoo. Avoid automatic car washes — brushes and harsh chemicals can affect the matte texture." },
-              { step: "02", title: "No Wax or Polish", desc: "Traditional waxes and polishes will add unwanted gloss to the matte surface. Use only matte-specific detailing products." },
-              { step: "03", title: "Spot Clean Promptly", desc: "Remove bird droppings, bug splatter, and tree sap quickly using a matte-safe detailer. The self-healing coat helps, but prompt removal is best." },
-              { step: "04", title: "Avoid High Pressure", desc: "When rinsing, keep the pressure washer at a safe distance and avoid spraying directly on film edges, especially during the first two weeks." },
-            ].map((item) => (
-              <div key={item.step} className="space-y-4 text-center">
+            {[{
+            step: "01",
+            title: "Hand Wash Only",
+            desc: "Use a pH-neutral, wax-free car shampoo. Avoid automatic car washes — brushes and harsh chemicals can affect the matte texture."
+          }, {
+            step: "02",
+            title: "No Wax or Polish",
+            desc: "Traditional waxes and polishes will add unwanted gloss to the matte surface. Use only matte-specific detailing products."
+          }, {
+            step: "03",
+            title: "Spot Clean Promptly",
+            desc: "Remove bird droppings, bug splatter, and tree sap quickly using a matte-safe detailer. The self-healing coat helps, but prompt removal is best."
+          }, {
+            step: "04",
+            title: "Avoid High Pressure",
+            desc: "When rinsing, keep the pressure washer at a safe distance and avoid spraying directly on film edges, especially during the first two weeks."
+          }].map(item => <div key={item.step} className="space-y-4 text-center">
                 <div className="h-16 w-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-bold">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -386,11 +338,9 @@ const StealthPPF = () => {
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold font-playfair text-center mb-10">Stealth PPF Installations</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="aspect-square rounded-xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
+            {[1, 2, 3, 4].map(i => <div key={i} className="aspect-square rounded-xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
                 <p className="text-muted-foreground text-sm">📸 Gallery {i}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
           <div className="text-center mt-8">
             <Link to="/portfolio">
@@ -416,12 +366,10 @@ const StealthPPF = () => {
             <Card className="shadow-premium">
               <CardContent className="pt-6">
                 <Accordion type="single" collapsible className="w-full">
-                  {stealthFaqs.map((faq, index) => (
-                    <AccordionItem key={index} value={`item-${index}`}>
+                  {stealthFaqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`}>
                       <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
-                    </AccordionItem>
-                  ))}
+                    </AccordionItem>)}
                 </Accordion>
               </CardContent>
             </Card>
@@ -452,8 +400,6 @@ const StealthPPF = () => {
       </section>
 
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-    </div>
-  );
+    </div>;
 };
-
 export default StealthPPF;
