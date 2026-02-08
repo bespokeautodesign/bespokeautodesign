@@ -95,7 +95,7 @@ const StealthPPF = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex items-center justify-center gap-3">
-              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto opacity-80" />
+              <img src={xpelLogo} alt="XPEL" className="h-16 w-auto opacity-80" />
               <span className="text-primary font-semibold tracking-wider uppercase text-sm">
                 Authorized Stealth Installer
               </span>
