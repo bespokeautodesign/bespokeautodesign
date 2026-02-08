@@ -8,6 +8,7 @@ import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award, Sparkles, Layers } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { addStructuredData } from "@/utils/seoHelpers";
+import xpelLogo from "@/assets/xpel-logo.svg";
 
 const ceramicFaqs = [
   {
@@ -97,15 +98,18 @@ const CeramicCoating = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <Badge variant="outline" className="text-primary font-semibold tracking-wider uppercase text-sm">
-              Professional Ceramic Coating
-            </Badge>
+            <div className="flex flex-col items-center gap-3">
+              <img src={xpelLogo} alt="XPEL" className="h-16 w-auto opacity-80" />
+              <span className="text-primary font-semibold tracking-wider uppercase text-sm">
+                Authorized XPEL Ceramic Installer
+              </span>
+            </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight">
-              Ceramic Coating <br className="hidden md:block" />
+              XPEL Ceramic Coating <br className="hidden md:block" />
               <span className="text-muted-foreground">in Miami</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              A semi-permanent nano-ceramic shield that delivers unmatched gloss, UV defense, and hydrophobic performance — engineered to thrive in Miami's extreme climate.
+              XPEL Fusion Plus™ — a professional-grade nano-ceramic coating that delivers unmatched gloss, UV defense, and hydrophobic performance, engineered to thrive in Miami's extreme climate.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
@@ -147,10 +151,10 @@ const CeramicCoating = () => {
                 Ceramic coating is a liquid polymer made of silicon dioxide (SiO₂) that chemically bonds to your vehicle's factory paint, creating a permanent or semi-permanent layer of protection. Unlike traditional wax or sealant that sits on top of the paint and washes away within weeks, ceramic coating becomes part of the surface — forming an ultra-hard, glass-like shell rated at <strong className="text-foreground">9H hardness</strong>.
               </p>
               <p>
-                At Bespoke Auto Design in Miami, we apply professional-grade, multi-layer ceramic coatings that are <strong className="text-foreground">not available in consumer-grade products</strong>. Our coatings contain higher concentrations of SiO₂ and TiO₂ (titanium dioxide) for superior UV protection, chemical resistance, and longevity — critical advantages in South Florida's relentless sun and salt-air environment.
+                At Bespoke Auto Design in Miami, we exclusively install <strong className="text-foreground">XPEL Fusion Plus™</strong> — the professional-grade ceramic coating system from XPEL, the same brand trusted for our paint protection film installations. Fusion Plus is <strong className="text-foreground">not available in consumer-grade products</strong> and contains higher concentrations of SiO₂ and TiO₂ (titanium dioxide) for superior UV protection, chemical resistance, and longevity — critical advantages in South Florida's relentless sun and salt-air environment.
               </p>
               <p>
-                The result is a vehicle that repels water, resists contamination, and maintains an intense, liquid-like gloss that turns heads on Ocean Drive, Brickell, and everywhere in between. Ceramic coating doesn't just protect your paint — it transforms the way your vehicle looks and feels.
+                The result is a vehicle that repels water, resists contamination, and maintains an intense, liquid-like gloss that turns heads on Ocean Drive, Brickell, and everywhere in between. XPEL Fusion Plus doesn't just protect your paint — it transforms the way your vehicle looks and feels.
               </p>
             </div>
           </div>
@@ -277,6 +281,48 @@ const CeramicCoating = () => {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          THE XPEL FUSION PLUS ADVANTAGE
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="text-center space-y-4">
+              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80" />
+              <Badge variant="outline">Why XPEL Fusion Plus?</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair">
+                The XPEL Fusion Plus™ Advantage
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                XPEL Fusion Plus™ is a professional-only ceramic coating system designed to complement XPEL's paint protection film lineup. As a <strong className="text-foreground">certified XPEL installer in Miami</strong>, Bespoke Auto Design applies Fusion Plus using XPEL's proprietary process — ensuring maximum bonding, durability, and performance in South Florida's demanding climate.
+              </p>
+              <p>
+                Unlike generic ceramic coatings available online, XPEL Fusion Plus is formulated with a <strong className="text-foreground">higher SiO₂ concentration</strong> and advanced UV inhibitors that are purpose-built for high-UV, high-humidity environments like Miami. The result is a coating that lasts longer, shines deeper, and protects harder than anything you can buy off a shelf.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-6 py-4">
+              {[
+                "Professional-only formula — not available retail",
+                "Pairs seamlessly with XPEL Ultimate Plus PPF",
+                "Advanced UV inhibitors for Miami's extreme sun",
+                "Extreme hydrophobic surface — water contact angle 115°+",
+                "Chemical resistant against bird droppings, sap & salt",
+                "Backed by XPEL's manufacturer warranty",
+                "Can be applied to paint, PPF, wheels, glass & trim",
+                "Installed by certified XPEL technicians only",
+              ].map((point) => (
+                <div key={point} className="flex items-start gap-3">
+                  <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-foreground">{point}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
