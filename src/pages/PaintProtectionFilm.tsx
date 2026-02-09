@@ -107,7 +107,7 @@ const PaintProtectionFilm = () => {
           ═══════════════════════════════════════════════════════ */}
       <section className="relative py-28 md:py-36 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={clearPPFVehicles[2].image} alt="Ferrari LaFerrari with PPF" className="w-full h-full object-cover object-[center_40%]" />
+          <img src={clearPPFVehicles[6].image} alt="2024 Corvette Stingray with PPF" className="w-full h-full object-cover object-[center_45%]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
