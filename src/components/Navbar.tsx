@@ -20,8 +20,8 @@ const navItemsBefore = [
   { label: "Ceramic Tint", href: "/ceramic-tint" },
   { label: "Color Change Wrap", href: "/color-change-wrap" },
 ];
-const navItemsAfter = [
-  { label: "Portfolio", href: "/portfolio" },
+const navItemsAfter: { label: string; href: string }[] = [
+  // { label: "Portfolio", href: "/portfolio" },
 ];
 
 const NavLink = ({ href, active, children, className = "" }: { href: string; active: boolean; children: React.ReactNode; className?: string }) => (
