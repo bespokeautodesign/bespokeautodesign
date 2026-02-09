@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Shield, Droplet, Star, Zap, CheckCircle } from 'lucide-react';
+import { Shield, Droplet, Star, Zap, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import MobileMenu from '@/components/MobileMenu';
+import Navbar from '@/components/Navbar';
 import { ColorPPFFAQ } from '@/components/ColorPPFFAQ';
 import { ColorPPFBenefits } from '@/components/ColorPPFBenefits';
 import { ColorPPFComparison } from '@/components/ColorPPFComparison';
@@ -69,36 +69,7 @@ const XPELColorPPF = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-card border-b border-border">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-6">
-              <Link to="/" className="hidden md:flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
-                <ArrowLeft className="h-5 w-5" />
-                <span className="font-medium">Back to Home</span>
-              </Link>
-              <div className="hidden md:block h-6 w-px bg-border"></div>
-              <Link to="/" className="flex items-center gap-2">
-                <img src="/bespoke-logo.png" alt="Bespoke Auto Design" className="h-8 w-auto" />
-                <span className="text-lg font-bold text-primary">
-                  <span className="text-silver">Bespoke</span> Auto Design
-                </span>
-              </Link>
-            </div>
-            <div className="flex items-center gap-4">
-              <Button variant="default" size="sm" className="hidden md:flex" onClick={() => setQuoteModalOpen(true)}>
-                Get Quote
-              </Button>
-              <MobileMenu />
-            </div>
-          </div>
-          <Breadcrumbs items={[
-            { name: "Home", path: "/" },
-            { name: "XPEL COLOR PPF", path: "/colorppf", current: true }
-          ]} />
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <ColorPPFHero onGetQuote={() => setQuoteModalOpen(true)} />
