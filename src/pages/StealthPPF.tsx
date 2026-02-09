@@ -10,6 +10,8 @@ import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { Link } from "react-router-dom";
 import xpelLogo from "@/assets/xpel-logo.svg";
+import { VehicleShowcase } from "@/components/VehicleShowcase";
+import { stealthPPFVehicles, stealthPPFImageStyles } from "@/data/portfolioVehicles";
 const stealthFaqs = [{
   question: "What is Stealth PPF and how is it different from clear PPF?",
   answer: "Stealth PPF (also known as matte or satin PPF) is a paint protection film with a matte-finish top coat instead of a glossy one. While it provides the same impact protection, self-healing properties, and UV resistance as clear PPF, Stealth transforms any gloss paint into a stunning satin finish — or preserves the factory matte on vehicles that come with it."
@@ -102,12 +104,17 @@ const StealthPPF = () => {
         </div>
       </section>
 
-      {/* HERO PLACEHOLDER */}
-      <section className="pb-16">
+      {/* ═══════════════════ OUR WORK ═══════════════════ */}
+      <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="w-full h-[300px] md:h-[500px] rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-            <p className="text-muted-foreground text-lg">📸 Hero image — Stealth PPF on a vehicle showing satin finish</p>
-          </div>
+          <VehicleShowcase
+            title="Stealth PPF Portfolio"
+            description="See the stunning satin transformation on these vehicles — all protected with XPEL Stealth."
+            vehicles={stealthPPFVehicles}
+            imageStyles={stealthPPFImageStyles}
+            badgeLabel="Stealth PPF"
+            badgeColor="bg-gray-500/10 text-gray-600 border-gray-500/20"
+          />
         </div>
       </section>
 
@@ -134,19 +141,6 @@ const StealthPPF = () => {
         </div>
       </section>
 
-      {/* IMAGE PLACEHOLDERS */}
-      <section className="pb-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="h-[250px] md:h-[350px] rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-              <p className="text-muted-foreground">📸 Stealth PPF close-up / satin texture</p>
-            </div>
-            <div className="h-[250px] md:h-[350px] rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-              <p className="text-muted-foreground">📸 Stealth vs. Gloss comparison</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* STEALTH VS CLEAR PPF */}
       <section className="py-20 bg-accent/30">
@@ -254,16 +248,8 @@ const StealthPPF = () => {
         </div>
       </section>
 
-      {/* VIDEO PLACEHOLDER */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="w-full aspect-video rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-              <p className="text-muted-foreground text-lg">🎬 Video placeholder — Stealth PPF installation / before-and-after</p>
-            </div>
-          </div>
-        </div>
-      </section>
+
+
 
       {/* XPEL STEALTH TECHNOLOGY */}
       <section className="py-20 bg-accent/30">

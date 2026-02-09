@@ -8,6 +8,8 @@ import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Palette, Sun, Zap, Car, Clock, Award, Sparkles, Layers, Paintbrush, RefreshCw, Eye } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { addStructuredData } from "@/utils/seoHelpers";
+import { VinylWrapShowcase } from "@/components/VehicleShowcase";
+import { vinylWrapVehicles } from "@/data/portfolioVehicles";
 
 const brands = [
   {
@@ -248,12 +250,10 @@ const ColorChangeWrap = () => {
         </div>
       </section>
 
-      {/* ═══════════════════ HERO IMAGE PLACEHOLDER ═══════════════════ */}
-      <section className="pb-16">
+      {/* ═══════════════════ OUR WORK ═══════════════════ */}
+      <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="w-full h-[300px] md:h-[500px] rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-            <p className="text-muted-foreground text-lg">📸 Hero image — color change wrap showcase</p>
-          </div>
+          <VinylWrapShowcase vehicles={vinylWrapVehicles} />
         </div>
       </section>
 
