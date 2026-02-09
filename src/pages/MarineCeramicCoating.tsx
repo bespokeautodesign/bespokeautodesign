@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Droplets, CheckCircle, Shield } from "lucide-react";
+import { Droplets, CheckCircle, Shield, Award } from "lucide-react";
+import xpelLogo from "@/assets/xpel-logo.svg";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -70,7 +71,8 @@ const MarineCeramicCoating = () => {
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 backdrop-blur-sm">Marine Division</Badge>
+          <img src={xpelLogo} alt="XPEL" className="h-20 md:h-28 mx-auto mb-4 opacity-80" />
+          <p className="text-sm uppercase tracking-widest text-white/60 mb-6">Authorized Dealer</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">Marine Ceramic Coating</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
             Advanced marine-grade ceramic protection that delivers superior hydrophobic performance and long-lasting defense against the elements.
@@ -92,6 +94,36 @@ const MarineCeramicCoating = () => {
                 <p className="text-sm text-muted-foreground">{b.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* XPEL Product Info */}
+      <section className="py-16 bg-card border-y border-border">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <img src={xpelLogo} alt="XPEL" className="h-12 mx-auto mb-6 opacity-70" />
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">XPEL Fusion Plus™ Marine Ceramic Coating</h2>
+            <p className="text-muted-foreground mb-6 max-w-3xl mx-auto">
+              We apply XPEL Fusion Plus™ ceramic coating — a professional-grade nano-ceramic formulation with high concentrations of SiO₂ and TiO₂. This marine-specific coating creates a permanent bond with the surface, delivering extreme hydrophobic performance, chemical resistance, and UV protection engineered for the harshest saltwater environments.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-6 mt-8">
+              <div className="flex flex-col items-center gap-2">
+                <Award className="h-8 w-8 text-primary" />
+                <span className="font-semibold text-foreground">Professional Grade</span>
+                <span className="text-sm text-muted-foreground">High SiO₂/TiO₂ concentration</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <Droplets className="h-8 w-8 text-primary" />
+                <span className="font-semibold text-foreground">Extreme Hydrophobic</span>
+                <span className="text-sm text-muted-foreground">120°+ water contact angle</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <Shield className="h-8 w-8 text-primary" />
+                <span className="font-semibold text-foreground">Multi-Year Protection</span>
+                <span className="text-sm text-muted-foreground">Permanent surface bond</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
