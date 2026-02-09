@@ -31,7 +31,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/quote" element={<Index autoScrollToContact />} />
           <Route path="/services" element={<Index autoScrollToServices />} />
-          <Route path="/portfolio" element={<Projects />} />
+          {/* <Route path="/portfolio" element={<Projects />} /> */}
           <Route path="/marine" element={<Marine />} />
           <Route path="/marine-ppf" element={<MarinePPF />} />
           <Route path="/marine-ceramic-coating" element={<MarineCeramicCoating />} />

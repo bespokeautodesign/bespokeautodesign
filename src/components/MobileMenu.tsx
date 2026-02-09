@@ -22,8 +22,8 @@ const otherItemsBefore = [
   { label: "Color Change Wrap", href: "/color-change-wrap" },
 ];
 
-const otherItemsAfter = [
-  { label: "Portfolio", href: "/portfolio" },
+const otherItemsAfter: { label: string; href: string }[] = [
+  // { label: "Portfolio", href: "/portfolio" },
 ];
 
 const MobileMenu = () => {
