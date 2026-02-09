@@ -33,7 +33,7 @@ export const ColorPPFHero = ({ onGetQuote }: ColorPPFHeroProps) => {
             <Button variant="secondary" size="lg" onClick={onGetQuote}>
               Get a Quote
             </Button>
-            <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground bg-transparent hover:bg-primary-foreground/10">
               Explore Colors ↓
             </Button>
           </div>
