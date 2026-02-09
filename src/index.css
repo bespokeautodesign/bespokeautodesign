@@ -40,6 +40,15 @@
     --xpel-yellow: 45 100% 50%;
     --xpel-yellow-dark: 45 100% 40%;
 
+    /* Navbar - Dark Premium */
+    --nav-bg: 0 0% 5%;
+    --nav-foreground: 0 0% 75%;
+    --nav-foreground-active: 0 0% 100%;
+    --nav-border: 0 0% 15%;
+    --nav-dropdown-bg: 0 0% 8%;
+    --nav-dropdown-border: 0 0% 18%;
+    --nav-highlight: 45 100% 50%;
+
     /* Status Colors */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
