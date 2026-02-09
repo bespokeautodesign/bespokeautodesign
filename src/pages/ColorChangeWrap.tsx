@@ -168,7 +168,7 @@ const faqs = [
 
 const ColorChangeWrap = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
-  const [flippedVinyls, setFlippedVinyls] = React.useState<Set<number>>(new Set());
+  
 
   useEffect(() => {
     document.title = "Color Change Vinyl Wrap Miami | Custom Vehicle Wraps | Bespoke Auto Design";
@@ -253,90 +253,73 @@ const ColorChangeWrap = () => {
         </div>
       </section>
 
-      {/* ═══════════════════ TRANSFORMATIONS ═══════════════════ */}
+      {/* ═══════════════════ EDITORIAL: ASTON MARTIN DBX ═══════════════════ */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4">Our Work</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-4">Before & After</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Tap any image to see the transformation.
-            </p>
-          </div>
-          <div className="max-w-6xl mx-auto space-y-8">
-            {vinylWrapVehicles.map((vehicle) => {
-              const showAfter = flippedVinyls.has(vehicle.id);
-              return (
-                <div
-                  key={vehicle.id}
-                  className="group relative overflow-hidden rounded-2xl cursor-pointer shadow-premium"
-                  onClick={() => {
-                    setFlippedVinyls(prev => {
-                      const next = new Set(prev);
-                      next.has(vehicle.id) ? next.delete(vehicle.id) : next.add(vehicle.id);
-                      return next;
-                    });
-                  }}
-                >
-                  <img
-                    src={showAfter ? vehicle.afterImage : vehicle.beforeImage}
-                    alt={`${vehicle.name} - ${showAfter ? "After" : "Before"} wrap`}
-                    loading="lazy"
-                    className="w-full h-[300px] md:h-[450px] object-cover object-[center_70%] transition-transform duration-700 group-hover:scale-[1.02]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
-                  <div className="absolute top-4 right-4">
-                    <Badge className={`text-sm px-4 py-1.5 ${showAfter ? "bg-primary text-primary-foreground" : "bg-white/90 text-black"}`}>
-                      {showAfter ? "After" : "Before"} — Tap to toggle
-                    </Badge>
-                  </div>
-                  <div className="absolute bottom-0 left-0 p-6 md:p-10">
-                    <h3 className="text-2xl md:text-3xl font-bold font-playfair text-white mb-1">{vehicle.name}</h3>
-                    <p className="text-white/70">{vehicle.year} · Color Change Wrap</p>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <Badge variant="outline">Featured Transformation</Badge>
+              <h2 className="text-3xl md:text-4xl font-bold font-playfair">
+                Aston Martin DBX
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                A complete color change that redefined this luxury SUV's presence on the road. Premium cast vinyl, precision-fitted around every contour — finished in under a week.
+              </p>
+              <p className="text-sm text-muted-foreground italic">{vinylWrapVehicles[0].year} · Full Body Wrap</p>
+            </div>
+            <div className="space-y-4">
+              <div className="relative rounded-2xl overflow-hidden shadow-premium">
+                <img src={vinylWrapVehicles[0].beforeImage} alt="Aston Martin DBX — before wrap" loading="lazy" className="w-full h-[280px] object-cover object-[center_70%]" />
+                <div className="absolute bottom-3 left-3"><Badge className="bg-white/90 text-black">Before</Badge></div>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden shadow-premium">
+                <img src={vinylWrapVehicles[0].afterImage} alt="Aston Martin DBX — after wrap" loading="lazy" className="w-full h-[280px] object-cover object-[center_70%]" />
+                <div className="absolute bottom-3 left-3"><Badge className="bg-primary text-primary-foreground">After</Badge></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════ WHY QUALITY FILM MATTERS ═══════════════════ */}
-      <section className="py-20">
+      <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <Badge variant="outline" className="block w-fit mx-auto">
-              Why Film Quality Matters
-            </Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair text-center">
-              Not All Wrap Film Is Created Equal
-            </h2>
-           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                The wrap film industry is flooded with budget brands that promise the world but deliver cracking, fading,
-                and adhesive failure within months — especially in Miami's brutal UV and heat. At Bespoke Auto Design, we{" "}
-                <strong className="text-foreground">focus on sourcing only premium-grade cast vinyl films</strong> from
-                trusted manufacturers with proven track records in extreme climates.
-              </p>
-              <p>
-                The films we select are backed by millions in adhesive R&D, color consistency testing, and UV-stability
-                engineering. They're designed to conform to the most complex body lines without lifting, bubbling,
-                or creasing — and to remove cleanly years later without damaging your factory paint. When you choose
-                Bespoke, you're choosing the same caliber of materials used by OEM manufacturers, Formula 1 teams, and the world's
-                finest custom shops.
-              </p>
-              <p>
-                Cheaper alternatives use inferior calendered vinyl with aggressive adhesives that have poor color
-                match consistency between rolls and crack under Miami's sun within 6–12 months. The cost savings
-                disappear when the wrap fails prematurely and needs replacement.
-              </p>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            {/* Image first on this one — reversed layout */}
+            <div className="relative rounded-2xl overflow-hidden shadow-premium md:order-1">
+              <img src={vinylWrapVehicles[1].afterImage} alt="Mazda Miata wrapped" loading="lazy" className="w-full h-[400px] md:h-[500px] object-cover object-[center_70%]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="absolute bottom-4 left-4 text-white">
+                <p className="font-bold text-lg">{vinylWrapVehicles[1].name}</p>
+                <p className="text-sm text-white/70">{vinylWrapVehicles[1].year} · Color Change</p>
+              </div>
+            </div>
+            <div className="space-y-8 md:order-0">
+              <Badge variant="outline" className="block w-fit">
+                Why Film Quality Matters
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair">
+                Not All Wrap Film Is Created Equal
+              </h2>
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  The wrap film industry is flooded with budget brands that promise the world but deliver cracking, fading,
+                  and adhesive failure within months — especially in Miami's brutal UV and heat. At Bespoke Auto Design, we{" "}
+                  <strong className="text-foreground">focus on sourcing only premium-grade cast vinyl films</strong> from
+                  trusted manufacturers with proven track records in extreme climates.
+                </p>
+                <p>
+                  Cheaper alternatives use inferior calendered vinyl with aggressive adhesives that crack under Miami's sun within 6–12 months. The cost savings
+                  disappear when the wrap fails prematurely and needs replacement.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════ BRAND SPOTLIGHTS ═══════════════════ */}
-      <section className="py-20 bg-accent/30">
+      <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">
@@ -411,22 +394,27 @@ const ColorChangeWrap = () => {
         </div>
       </section>
 
-      {/* ═══════════════════ GALLERY PLACEHOLDER ═══════════════════ */}
+      {/* ═══════════════════ EDITORIAL: McLAREN ═══════════════════ */}
       <section className="py-16 bg-accent/30">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-10">
-            <Badge variant="outline" className="mb-4">Our Work</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair">Recent Wrap Projects</h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div
-                key={i}
-                className="h-[250px] rounded-2xl bg-background border-2 border-dashed border-border flex items-center justify-center"
-              >
-                <p className="text-muted-foreground text-sm">📸 Wrap project {i}</p>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10">
+              <Badge variant="outline" className="mb-4">Transformation</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair">McLaren 570S</h2>
+              <p className="text-lg text-muted-foreground mt-3">
+                A bold color change that brought new life to this supercar — showcasing what's possible with premium vinyl.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="relative rounded-2xl overflow-hidden shadow-premium">
+                <img src={vinylWrapVehicles[2].beforeImage} alt="McLaren 570S before wrap" loading="lazy" className="w-full h-[300px] md:h-[380px] object-cover object-[center_70%]" />
+                <div className="absolute bottom-3 left-3"><Badge className="bg-white/90 text-black">Before</Badge></div>
               </div>
-            ))}
+              <div className="relative rounded-2xl overflow-hidden shadow-premium">
+                <img src={vinylWrapVehicles[2].afterImage} alt="McLaren 570S after wrap" loading="lazy" className="w-full h-[300px] md:h-[380px] object-cover object-[center_70%]" />
+                <div className="absolute bottom-3 left-3"><Badge className="bg-primary text-primary-foreground">After</Badge></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
