@@ -7,6 +7,9 @@ import { LiveChat } from "@/components/LiveChat";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import Marine from "./pages/Marine";
+import MarinePPF from "./pages/MarinePPF";
+import MarineCeramicCoating from "./pages/MarineCeramicCoating";
+import MarineCeramicTint from "./pages/MarineCeramicTint";
 import XPELColorPPF from "./pages/XPELColorPPF";
 import PaintProtectionFilm from "./pages/PaintProtectionFilm";
 import CeramicCoating from "./pages/CeramicCoating";
@@ -30,6 +33,9 @@ const App = () => (
           <Route path="/services" element={<Index autoScrollToServices />} />
           <Route path="/portfolio" element={<Projects />} />
           <Route path="/marine" element={<Marine />} />
+          <Route path="/marine-ppf" element={<MarinePPF />} />
+          <Route path="/marine-ceramic-coating" element={<MarineCeramicCoating />} />
+          <Route path="/marine-ceramic-tint" element={<MarineCeramicTint />} />
           <Route path="/colorppf" element={<XPELColorPPF />} />
           <Route path="/paint-protection-film" element={<PaintProtectionFilm />} />
           <Route path="/ceramic-coating" element={<CeramicCoating />} />
