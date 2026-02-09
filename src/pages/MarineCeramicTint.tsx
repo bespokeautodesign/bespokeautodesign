@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Sun, CheckCircle, Eye } from "lucide-react";
+import { Sun, CheckCircle, Eye, Award, Shield } from "lucide-react";
+import xpelLogo from "@/assets/xpel-logo.svg";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -70,7 +71,8 @@ const MarineCeramicTint = () => {
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 backdrop-blur-sm">Marine Division</Badge>
+          <img src={xpelLogo} alt="XPEL" className="h-20 md:h-28 mx-auto mb-4 opacity-80" />
+          <p className="text-sm uppercase tracking-widest text-white/60 mb-6">Authorized Dealer</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">Marine Ceramic Tint</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
             Premium ceramic window tinting engineered for the demands of the open water — superior heat rejection, UV protection, and crystal-clear optics.
@@ -92,6 +94,36 @@ const MarineCeramicTint = () => {
                 <p className="text-sm text-muted-foreground">{b.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* XPEL Product Info */}
+      <section className="py-16 bg-card border-y border-border">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <img src={xpelLogo} alt="XPEL" className="h-12 mx-auto mb-6 opacity-70" />
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">XPEL Prime XR Plus™ Marine Ceramic Tint</h2>
+            <p className="text-muted-foreground mb-6 max-w-3xl mx-auto">
+              We install XPEL Prime XR Plus™ — the most advanced ceramic window film available. Utilizing multi-layer nano-ceramic particle technology, it delivers up to 98% infrared heat rejection and 99% UV blocking without signal interference. Recommended by the Skin Cancer Foundation as an effective UV protectant, it's the premium choice for marine applications.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-6 mt-8">
+              <div className="flex flex-col items-center gap-2">
+                <Award className="h-8 w-8 text-primary" />
+                <span className="font-semibold text-foreground">98% IR Rejection</span>
+                <span className="text-sm text-muted-foreground">Industry-leading heat block</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <Sun className="h-8 w-8 text-primary" />
+                <span className="font-semibold text-foreground">99% UV Protection</span>
+                <span className="text-sm text-muted-foreground">Skin Cancer Foundation recommended</span>
+              </div>
+              <div className="flex flex-col items-center gap-2">
+                <Shield className="h-8 w-8 text-primary" />
+                <span className="font-semibold text-foreground">Signal-Safe</span>
+                <span className="text-sm text-muted-foreground">No electronics interference</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
