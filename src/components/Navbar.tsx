@@ -24,7 +24,7 @@ const marineSubItems = [{
   label: "Marine Ceramic Tint",
   href: "/marine-ceramic-tint"
 }];
-const navItems = [{
+const navItemsBefore = [{
   label: "Ceramic Coating",
   href: "/ceramic-coating"
 }, {
@@ -33,7 +33,8 @@ const navItems = [{
 }, {
   label: "Color Change Wrap",
   href: "/color-change-wrap"
-}, {
+}];
+const navItemsAfter = [{
   label: "Portfolio",
   href: "/portfolio"
 }];
@@ -85,7 +86,7 @@ const Navbar = () => {
                   </div>}
               </div>
 
-              {navItems.map(item => <Link key={item.href} to={item.href} className={`text-sm xl:text-base whitespace-nowrap transition-colors ${location.pathname === item.href ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"}`}>
+              {navItemsBefore.map(item => <Link key={item.href} to={item.href} className={`text-sm xl:text-base whitespace-nowrap transition-colors ${location.pathname === item.href ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"}`}>
                   {item.label}
                 </Link>)}
 
@@ -101,6 +102,10 @@ const Navbar = () => {
                     </div>
                   </div>}
               </div>
+
+              {navItemsAfter.map(item => <Link key={item.href} to={item.href} className={`text-sm xl:text-base whitespace-nowrap transition-colors ${location.pathname === item.href ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"}`}>
+                  {item.label}
+                </Link>)}
             </div>
 
             <div className="flex items-center gap-2 flex-shrink-0">
