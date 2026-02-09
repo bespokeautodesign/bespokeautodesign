@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Anchor, Waves, Shield, ArrowLeft } from "lucide-react";
+import { Anchor, Waves, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import MobileMenu from "@/components/MobileMenu";
+import Navbar from "@/components/Navbar";
 import { MarineFAQ } from "@/components/MarineFAQ";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuoteModal } from "@/components/QuoteModal";
@@ -54,17 +54,20 @@ const Marine = () => {
     title: "Marine Paint Protection Film",
     description: "Protect your vessel's gel coat and paint from saltwater, UV rays, and harsh marine conditions.",
     image: "/lovable-uploads/19e444ef-f150-42ce-b195-9a306b95f8d5.png",
-    features: ["Saltwater resistance", "UV protection", "Impact protection", "Maintains resale value"]
+    features: ["Saltwater resistance", "UV protection", "Impact protection", "Maintains resale value"],
+    href: "/marine-ppf"
   }, {
     title: "Marine Ceramic Coating",
     description: "Advanced marine-grade ceramic coating for superior protection and easy maintenance.",
     image: "/lovable-uploads/b0ee1d07-d81d-4edf-8181-95046e093b94.png",
-    features: ["Hydrophobic surface", "Stain resistance", "Anti-fouling properties", "Extended protection"]
+    features: ["Hydrophobic surface", "Stain resistance", "Anti-fouling properties", "Extended protection"],
+    href: "/marine-ceramic-coating"
   }, {
     title: "Marine Ceramic Tint",
     description: "Premium window tinting for boats and yachts providing comfort and protection on the water.",
     image: "/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.png",
-    features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"]
+    features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"],
+    href: "/marine-ceramic-tint"
   }];
 
   return (
@@ -78,32 +81,13 @@ const Marine = () => {
         }}
       ></div>
       <div className="relative z-10 min-h-screen">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="container mx-auto px-6 py-2">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-3">
-              <img src="/bespoke-logo.png" alt="Bespoke Auto Design - Marine Protection Services Miami" className="h-10 w-auto" />
-              <span className="text-lg font-bold text-primary">
-                <span className="text-silver">Bespoke</span> Auto Design
-              </span>
-            </Link>
-            <Link to="/">
-              <Button variant="outline" className="flex items-center gap-2">
-                <ArrowLeft className="h-4 w-4" />
-                Back to Home
-              </Button>
-            </Link>
-            <MobileMenu />
-          </div>
-          <Breadcrumbs 
-            items={[
-              { name: "Home", path: "/" },
-              { name: "Marine Services", path: "/marine", current: true }
-            ]} 
-          />
-        </div>
-      </nav>
+      <Navbar />
+      <Breadcrumbs 
+        items={[
+          { name: "Home", path: "/" },
+          { name: "Marine Services", path: "/marine", current: true }
+        ]} 
+      />
 
       {/* Hero Section */}
       <header className="relative text-primary-foreground min-h-screen flex items-center justify-center">
@@ -181,9 +165,11 @@ const Marine = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button variant="premium" className="w-full mt-6" onClick={() => setQuoteModalOpen(true)}>
-                    Get Quote
-                  </Button>
+                  <Link to={service.href}>
+                    <Button variant="premium" className="w-full mt-6">
+                      Learn More
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}

@@ -10,17 +10,23 @@ const ppfSubItems = [
   { label: "Color PPF", href: "/colorppf" },
 ];
 
+const marineSubItems = [
+  { label: "Marine PPF", href: "/marine-ppf" },
+  { label: "Marine Ceramic Coating", href: "/marine-ceramic-coating" },
+  { label: "Marine Ceramic Tint", href: "/marine-ceramic-tint" },
+];
+
 const otherItems = [
   { label: "Ceramic Coating", href: "/ceramic-coating" },
   { label: "Ceramic Tint", href: "/ceramic-tint" },
   { label: "Color Change Wrap", href: "/color-change-wrap" },
-  { label: "Marine Services", href: "/marine" },
   { label: "Portfolio", href: "/portfolio" },
 ];
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [ppfExpanded, setPpfExpanded] = useState(false);
+  const [marineExpanded, setMarineExpanded] = useState(false);
 
   return (
     <div>
@@ -64,6 +70,36 @@ const MobileMenu = () => {
               {ppfExpanded && (
                 <div className="flex flex-col pl-4 pb-2 gap-3">
                   {ppfSubItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-base text-muted-foreground hover:text-primary transition-colors py-1"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Marine Dropdown */}
+            <div className="border-b border-border/50">
+              <div className="flex items-center justify-between py-2">
+                <Link
+                  to="/marine"
+                  onClick={() => setIsOpen(false)}
+                  className="text-lg text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Marine Services
+                </Link>
+                <button onClick={() => setMarineExpanded(!marineExpanded)}>
+                  <ChevronDown className={`h-5 w-5 text-muted-foreground transition-transform ${marineExpanded ? "rotate-180" : ""}`} />
+                </button>
+              </div>
+              {marineExpanded && (
+                <div className="flex flex-col pl-4 pb-2 gap-3">
+                  {marineSubItems.map((item) => (
                     <Link
                       key={item.href}
                       to={item.href}
