@@ -374,21 +374,6 @@ const CeramicTint = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          🔲 PLACEHOLDER: Gallery
-          ═══════════════════════════════════════════════════════ */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold font-playfair text-center mb-10">Recent Ceramic Tint Projects</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="aspect-square rounded-xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-                <p className="text-muted-foreground text-sm">📸 Gallery {i}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ═══════════════════════════════════════════════════════
           FAQ
