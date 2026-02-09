@@ -76,7 +76,7 @@ const StealthPPF = () => {
       {/* HERO */}
       <section className="relative py-28 md:py-36 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={stealthPPFVehicles[0].image} alt="Porsche Carrera with Stealth PPF" className="w-full h-full object-cover object-[center_62%]" />
+          <img src="/lovable-uploads/stealth-ppf-rolls-royce.png" alt="Rolls Royce with Stealth PPF" className="w-full h-full object-cover object-[center_55%]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
