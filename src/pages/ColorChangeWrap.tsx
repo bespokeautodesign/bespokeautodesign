@@ -222,17 +222,20 @@ const ColorChangeWrap = () => {
 
       {/* ═══════════════════ HERO ═══════════════════ */}
       <section className="relative py-28 md:py-36 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
+        <div className="absolute inset-0">
+          <img src={vinylWrapVehicles[2].afterImage} alt="McLaren 570S color change wrap" className="w-full h-full object-cover object-[center_70%]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+        </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <Badge variant="outline" className="text-sm tracking-wider">
+            <Badge variant="outline" className="text-sm tracking-wider border-white/30 text-white">
               PREMIUM VINYL WRAPS
             </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
               Color Change <br className="hidden md:block" />
-              <span className="text-muted-foreground">Vinyl Wraps</span>
+              <span className="text-white/70">Vinyl Wraps</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               Transform your vehicle into something truly one-of-a-kind. We use only premium-grade cast vinyl films
               and expert installation techniques to deliver a finish that turns heads everywhere you go in Miami.
             </p>
@@ -250,23 +253,23 @@ const ColorChangeWrap = () => {
         </div>
       </section>
 
-      {/* ═══════════════════ OUR WORK ═══════════════════ */}
-      <section className="py-16">
+      {/* ═══════════════════ TRANSFORMATIONS ═══════════════════ */}
+      <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <Badge variant="outline" className="mb-4">Our Work</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-4">Color Change Transformations</h2>
+            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-4">Before & After</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Before and after — tap any image to see the transformation.
+              Tap any image to see the transformation.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto space-y-8">
             {vinylWrapVehicles.map((vehicle) => {
               const showAfter = flippedVinyls.has(vehicle.id);
               return (
                 <div
                   key={vehicle.id}
-                  className="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer"
+                  className="group relative overflow-hidden rounded-2xl cursor-pointer shadow-premium"
                   onClick={() => {
                     setFlippedVinyls(prev => {
                       const next = new Set(prev);
@@ -277,19 +280,19 @@ const ColorChangeWrap = () => {
                 >
                   <img
                     src={showAfter ? vehicle.afterImage : vehicle.beforeImage}
-                    alt={`${vehicle.name} - ${showAfter ? "After" : "Before"}`}
+                    alt={`${vehicle.name} - ${showAfter ? "After" : "Before"} wrap`}
                     loading="lazy"
-                    className="w-full h-full object-cover object-[center_70%] transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-[300px] md:h-[450px] object-cover object-[center_70%] transition-transform duration-700 group-hover:scale-[1.02]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent" />
-                  <div className="absolute top-3 right-3">
-                    <Badge className={showAfter ? "bg-primary" : "bg-muted"}>
-                      {showAfter ? "After" : "Before"}
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
+                  <div className="absolute top-4 right-4">
+                    <Badge className={`text-sm px-4 py-1.5 ${showAfter ? "bg-primary text-primary-foreground" : "bg-white/90 text-black"}`}>
+                      {showAfter ? "After" : "Before"} — Tap to toggle
                     </Badge>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <p className="text-white font-semibold">{vehicle.name}</p>
-                    <p className="text-white/70 text-sm">{vehicle.year} · Tap to toggle</p>
+                  <div className="absolute bottom-0 left-0 p-6 md:p-10">
+                    <h3 className="text-2xl md:text-3xl font-bold font-playfair text-white mb-1">{vehicle.name}</h3>
+                    <p className="text-white/70">{vehicle.year} · Color Change Wrap</p>
                   </div>
                 </div>
               );
