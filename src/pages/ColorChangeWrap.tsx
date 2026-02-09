@@ -223,7 +223,7 @@ const ColorChangeWrap = () => {
       {/* ═══════════════════ HERO ═══════════════════ */}
       <section className="relative py-28 md:py-36 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={vinylWrapVehicles[2].afterImage} alt="McLaren 570S color change wrap" className="w-full h-full object-cover object-[center_70%]" />
+          <img src="/lovable-uploads/mercedes-amg-green-wrap.jpg" alt="Mercedes AMG color change wrap" className="w-full h-full object-cover object-[center_55%]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
