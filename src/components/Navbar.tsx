@@ -85,10 +85,10 @@ const Navbar = () => {
                 className="h-9 lg:h-11 w-auto transition-transform duration-300 group-hover:scale-105"
               />
               <div className="flex flex-col leading-none">
-                <span className="text-xs lg:text-sm tracking-[0.2em] uppercase font-light text-[hsl(var(--nav-foreground))]">
+                <span className="text-xs lg:text-sm tracking-[0.2em] uppercase font-bold text-[hsl(var(--nav-foreground-active))]">
                   Bespoke
                 </span>
-                <span className="text-sm lg:text-base font-bold tracking-wider uppercase text-[hsl(var(--nav-foreground-active))]">
+                <span className="text-sm lg:text-base font-light tracking-wider uppercase text-[hsl(var(--nav-foreground))]">
                   Auto Design
                 </span>
               </div>
