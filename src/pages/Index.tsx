@@ -103,6 +103,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
     title: "Paint Protection Film (PPF)",
     description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
     image: ppfWorkImage,
+    link: "/paint-protection-film",
     features: ["Self-healing technology", "10-year warranty", "UV protection", "Maintains original appearance"],
     detailedInfo: {
       overview: "XPEL Paint Protection Film is the world's leading automotive paint protection solution. Our premium film provides an invisible barrier against rock chips, scratches, and environmental damage while maintaining your vehicle's factory finish.",
@@ -121,6 +122,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
     title: "Ceramic Coating",
     description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
     image: "/lovable-uploads/210820a3-2a16-4238-857f-70b41f9e1807.png",
+    link: "/ceramic-coating",
     features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"],
     detailedInfo: {
       overview: "XPEL Fusion Plus Ceramic Coating uses advanced nanotechnology to create a permanent bond with your vehicle's paint, providing superior protection and an incredible depth of gloss that lasts for years.",
@@ -140,6 +142,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
     title: "Vinyl Wraps",
     description: "Transform your vehicle's appearance with high-quality color change vinyl wraps.",
     image: vinylGT2RSImage,
+    link: "/color-change-wrap",
     features: ["Color customization", "Removable protection", "Premium materials", "Professional installation"],
     detailedInfo: {
       overview: "Color change vinyl wraps allow you to completely transform your vehicle's appearance while protecting the original paint. Choose from hundreds of colors and finishes including matte, gloss, satin, chrome, and textured options.",
@@ -159,6 +162,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
     title: "Ceramic Tint",
     description: "Superior window tinting with ceramic technology for maximum comfort and protection.",
     image: tintWorkImage,
+    link: "/ceramic-tint",
     features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"],
     detailedInfo: {
       overview: "XPEL PRIME XR PLUS ceramic window film combines infrared heat rejection with superior optical clarity. Experience cooler cabin temperatures, reduced glare, and ultimate UV protection without affecting electronics or signals.",
@@ -324,8 +328,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
                       </li>)}
                   </ul>
                   <div className="flex gap-3 mt-6">
-                    <Button variant="outline" className="flex-1" onClick={() => setSelectedService(index)}>
-                      Learn More
+                    <Button variant="outline" className="flex-1" asChild>
+                      <Link to={service.link}>Learn More</Link>
                     </Button>
                     <Button variant="premium" className="flex-1" onClick={scrollToQuote}>
                       Get Quote
