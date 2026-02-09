@@ -107,7 +107,7 @@ const PaintProtectionFilm = () => {
           ═══════════════════════════════════════════════════════ */}
       <section className="relative py-28 md:py-36 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={clearPPFVehicles[6].image} alt="2024 Corvette Stingray with PPF" className="w-full h-full object-cover object-[center_45%]" />
+          <img src={clearPPFVehicles[5].image} alt="Ferrari F8 Tributo with PPF" className="w-full h-full object-cover object-[center_45%]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
@@ -168,7 +168,7 @@ const PaintProtectionFilm = () => {
                   <img src={clearPPFVehicles[0].image} alt="Ferrari California T with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_60%]" />
                 </div>
                 <div className="rounded-xl overflow-hidden shadow-premium">
-                  <img src={clearPPFVehicles[5].image} alt="Ferrari F8 Tributo with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_50%]" />
+                  <img src={clearPPFVehicles[4].image} alt="2024 BMW M4 with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_50%]" />
                 </div>
               </div>
             </div>
