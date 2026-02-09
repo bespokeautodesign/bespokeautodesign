@@ -106,21 +106,23 @@ const PaintProtectionFilm = () => {
           HERO SECTION
           ═══════════════════════════════════════════════════════ */}
       <section className="relative py-28 md:py-36 overflow-hidden">
-        {/* 🔲 PLACEHOLDER: Add a hero background image or video here */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
+        <div className="absolute inset-0">
+          <img src={clearPPFVehicles[2].image} alt="Ferrari LaFerrari with PPF" className="w-full h-full object-cover object-[center_40%]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+        </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex items-center justify-center gap-3">
-              <img src={xpelLogo} alt="XPEL" className="h-8 w-auto opacity-80" />
-              <span className="text-primary font-semibold tracking-wider uppercase text-sm">
+              <img src={xpelLogo} alt="XPEL" className="h-8 w-auto opacity-80 brightness-200" />
+              <span className="text-white font-semibold tracking-wider uppercase text-sm">
                 Miami's XPEL Certified Installer
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
               Paint Protection Film <br className="hidden md:block" />
-              <span className="text-muted-foreground">in Miami</span>
+              <span className="text-white/70">in Miami</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               Invisible, self-healing armor that shields your vehicle's paint from rock chips, scratches, UV fading, and Miami's harsh environmental elements — backed by a 10-year XPEL warranty.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -137,58 +139,38 @@ const PaintProtectionFilm = () => {
         </div>
       </section>
 
-      {/* ═══════════════════ OUR WORK ═══════════════════ */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4">Our Work</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-4">Clear PPF Installations</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See how XPEL Ultimate Plus™ protects these vehicles while remaining completely invisible.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {clearPPFVehicles.map((vehicle) => (
-              <div key={vehicle.id} className="group relative overflow-hidden rounded-xl aspect-[4/3]">
-                <img
-                  src={vehicle.image}
-                  alt={`${vehicle.name} - Clear PPF`}
-                  loading="lazy"
-                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${
-                    clearPPFImageStyles[vehicle.name] || "object-[center_70%]"
-                  }`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-white font-semibold text-sm">{vehicle.name}</p>
-                  <p className="text-white/70 text-xs">{vehicle.year}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ═══════════════════════════════════════════════════════
           WHAT IS PPF?
           ═══════════════════════════════════════════════════════ */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <Badge variant="outline" className="block w-fit mx-auto">What Is PPF?</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair text-center">
-              The Ultimate Shield for Your Vehicle's Paint
-            </h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Paint Protection Film (PPF) is a virtually invisible, thermoplastic urethane film applied to your vehicle's exterior painted surfaces. Originally developed for military helicopter blades to resist sand and debris erosion, PPF technology has evolved into the gold standard for automotive paint preservation.
-              </p>
-              <p>
-                At Bespoke Auto Design in Miami, we exclusively install <strong className="text-foreground">XPEL Ultimate Plus™</strong> — the world's most advanced self-healing paint protection film. Unlike inferior films that yellow, crack, or peel in Florida's extreme UV environment, XPEL's proprietary formulation is engineered to withstand the harshest conditions while remaining completely invisible on your vehicle.
-              </p>
-              <p>
-                Whether you drive a daily commuter on I-95 or a weekend exotic along Ocean Drive, PPF provides a barrier between your paint and everything Miami throws at it: rock chips, road debris, bird droppings, tree sap, salt air, construction dust, and relentless UV radiation.
-              </p>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <Badge variant="outline" className="block w-fit">What Is PPF?</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair">
+                The Ultimate Shield for Your Vehicle's Paint
+              </h2>
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  Paint Protection Film (PPF) is a virtually invisible, thermoplastic urethane film applied to your vehicle's exterior painted surfaces. Originally developed for military helicopter blades to resist sand and debris erosion, PPF technology has evolved into the gold standard for automotive paint preservation.
+                </p>
+                <p>
+                  At Bespoke Auto Design in Miami, we exclusively install <strong className="text-foreground">XPEL Ultimate Plus™</strong> — the world's most advanced self-healing paint protection film.
+                </p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="rounded-2xl overflow-hidden shadow-premium">
+                <img src={clearPPFVehicles[3].image} alt="Aston Martin Vantage with clear PPF" loading="lazy" className="w-full h-[300px] md:h-[400px] object-cover object-[center_60%]" />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden shadow-premium">
+                  <img src={clearPPFVehicles[0].image} alt="Ferrari California T with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_60%]" />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-premium">
+                  <img src={clearPPFVehicles[5].image} alt="Ferrari F8 Tributo with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_50%]" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -312,14 +294,16 @@ const PaintProtectionFilm = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          🔲 PLACEHOLDER: Video Section
-          ═══════════════════════════════════════════════════════ */}
+      {/* ═══════════════════ FEATURED VEHICLE ═══════════════════ */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="w-full aspect-video rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-              <p className="text-muted-foreground text-lg">🎬 Video placeholder — installation process, testimonials, etc.</p>
+          <div className="max-w-6xl mx-auto relative rounded-2xl overflow-hidden">
+            <img src={clearPPFVehicles[1].image} alt="Rolls-Royce Cullinan with XPEL PPF" loading="lazy" className="w-full h-[350px] md:h-[500px] object-cover object-[center_65%]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 max-w-lg">
+              <Badge className="bg-primary text-primary-foreground mb-4">Full Body PPF</Badge>
+              <h3 className="text-2xl md:text-3xl font-bold font-playfair text-white mb-3">Rolls-Royce Cullinan</h3>
+              <p className="text-white/80 leading-relaxed">Complete bumper-to-bumper XPEL Ultimate Plus™ protection — preserving the finish on one of the world's most prestigious SUVs.</p>
             </div>
           </div>
         </div>
@@ -397,16 +381,19 @@ const PaintProtectionFilm = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          🔲 PLACEHOLDER: Gallery / Portfolio
-          ═══════════════════════════════════════════════════════ */}
+      {/* ═══════════════════ RECENT INSTALLATIONS ═══════════════════ */}
       <section className="py-16">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold font-playfair text-center mb-10">Recent PPF Installations</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="aspect-square rounded-xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-                <p className="text-muted-foreground text-sm">📸 Gallery {i}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {[clearPPFVehicles[4], clearPPFVehicles[6], clearPPFVehicles[9], clearPPFVehicles[10]].map((vehicle) => (
+              <div key={vehicle.id} className="group relative overflow-hidden rounded-xl aspect-square">
+                <img src={vehicle.image} alt={`${vehicle.name} with clear PPF`} loading="lazy" className="w-full h-full object-cover object-[center_70%] transition-transform duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-3 left-3 text-white">
+                  <p className="font-semibold text-sm">{vehicle.name}</p>
+                  <p className="text-xs text-white/70">{vehicle.year}</p>
+                </div>
               </div>
             ))}
           </div>

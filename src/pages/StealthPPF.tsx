@@ -75,18 +75,21 @@ const StealthPPF = () => {
 
       {/* HERO */}
       <section className="relative py-28 md:py-36 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
+        <div className="absolute inset-0">
+          <img src={stealthPPFVehicles[0].image} alt="Porsche Carrera with Stealth PPF" className="w-full h-full object-cover object-[center_62%]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+        </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex flex-col items-center gap-3">
-              <img src={xpelLogo} alt="XPEL" className="h-28 w-auto opacity-80" />
-              <span className="text-primary font-semibold tracking-wider uppercase text-sm">AUTHORIZED XPEL DEALER</span>
+              <img src={xpelLogo} alt="XPEL" className="h-28 w-auto opacity-80 brightness-200" />
+              <span className="text-white font-semibold tracking-wider uppercase text-sm">AUTHORIZED XPEL DEALER</span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
               Stealth PPF <br className="hidden md:block" />
-              <span className="text-muted-foreground">Satin Protection</span>
+              <span className="text-white/70">Satin Protection</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               Transform any gloss finish into a head-turning satin look — or preserve your factory matte paint — with XPEL's self-healing Stealth paint protection film.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -103,56 +106,36 @@ const StealthPPF = () => {
         </div>
       </section>
 
-      {/* ═══════════════════ OUR WORK ═══════════════════ */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4">Our Work</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-4">Stealth PPF Installations</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See the stunning satin transformation on these vehicles — all protected with XPEL Stealth.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {stealthPPFVehicles.map((vehicle) => (
-              <div key={vehicle.id} className="group relative overflow-hidden rounded-xl aspect-[4/3]">
-                <img
-                  src={vehicle.image}
-                  alt={`${vehicle.name} - Stealth PPF`}
-                  loading="lazy"
-                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${
-                    stealthPPFImageStyles[vehicle.name] || "object-[center_70%]"
-                  }`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <p className="text-white font-semibold text-sm">{vehicle.name}</p>
-                  <p className="text-white/70 text-xs">{vehicle.year}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* WHAT IS STEALTH PPF */}
       <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-8">
-            <Badge variant="outline" className="block w-fit mx-auto">What Is Stealth PPF?</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair text-center">
-              The Satin Finish That Protects
-            </h2>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                XPEL Stealth is a specialty paint protection film that delivers all the protective properties of XPEL Ultimate Plus™ — self-healing, impact resistance, UV protection, and stain resistance — with one critical difference: <strong className="text-foreground">a matte/satin finish</strong> instead of a high-gloss clear coat.
-              </p>
-              <p>
-                This makes it the perfect solution for two distinct groups of vehicle owners: those who want to <strong className="text-foreground">transform a glossy vehicle into a satin masterpiece</strong>, and those who need to <strong className="text-foreground">protect existing factory matte paint</strong> that is otherwise nearly impossible to maintain.
-              </p>
-              <p>
-                Unlike vinyl wraps that merely change appearance, Stealth PPF provides genuine physical protection against rock chips, scratches, bird droppings, UV fading, and all the environmental hazards that Miami throws at your vehicle — while delivering that coveted understated aesthetic.
-              </p>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <Badge variant="outline" className="block w-fit">What Is Stealth PPF?</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair">
+                The Satin Finish That Protects
+              </h2>
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  XPEL Stealth is a specialty paint protection film that delivers all the protective properties of XPEL Ultimate Plus™ — self-healing, impact resistance, UV protection, and stain resistance — with one critical difference: <strong className="text-foreground">a matte/satin finish</strong> instead of a high-gloss clear coat.
+                </p>
+                <p>
+                  Unlike vinyl wraps that merely change appearance, Stealth PPF provides genuine physical protection while delivering that coveted understated aesthetic.
+                </p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="rounded-2xl overflow-hidden shadow-premium">
+                <img src={stealthPPFVehicles[1].image} alt="Mercedes G-Wagon G63 AMG with Stealth PPF" loading="lazy" className="w-full h-[300px] md:h-[400px] object-cover object-[center_45%]" />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden shadow-premium">
+                  <img src={stealthPPFVehicles[2].image} alt="BMW M2 with Stealth PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_80%]" />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-premium">
+                  <img src={stealthPPFVehicles[5].image} alt="Porsche 911 with Stealth PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_70%]" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -336,14 +319,21 @@ const StealthPPF = () => {
         </div>
       </section>
 
-      {/* GALLERY PLACEHOLDER */}
+      {/* RECENT INSTALLATIONS */}
       <section className="py-16">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold font-playfair text-center mb-10">Stealth PPF Installations</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map(i => <div key={i} className="aspect-square rounded-xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-                <p className="text-muted-foreground text-sm">📸 Gallery {i}</p>
-              </div>)}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {[stealthPPFVehicles[3], stealthPPFVehicles[4], stealthPPFVehicles[6], stealthPPFVehicles[7]].map((vehicle) => (
+              <div key={vehicle.id} className="group relative overflow-hidden rounded-xl aspect-square">
+                <img src={vehicle.image} alt={`${vehicle.name} with Stealth PPF`} loading="lazy" className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${stealthPPFImageStyles[vehicle.name] || "object-[center_70%]"}`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-3 left-3 text-white">
+                  <p className="font-semibold text-sm">{vehicle.name}</p>
+                  <p className="text-xs text-white/70">{vehicle.year}</p>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="text-center mt-8">
             <Link to="/portfolio">
