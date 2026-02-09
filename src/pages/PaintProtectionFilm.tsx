@@ -161,11 +161,11 @@ const PaintProtectionFilm = () => {
             </div>
             <div className="space-y-4">
               <div className="rounded-2xl overflow-hidden shadow-premium">
-                <img src={clearPPFVehicles[3].image} alt="Aston Martin Vantage with clear PPF" loading="lazy" className="w-full h-[300px] md:h-[400px] object-cover object-[center_60%]" />
+                <img src={clearPPFVehicles[0].image} alt="Ferrari California T with clear PPF" loading="lazy" className="w-full h-[300px] md:h-[400px] object-cover object-[center_60%]" />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden shadow-premium">
-                  <img src={clearPPFVehicles[0].image} alt="Ferrari California T with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_60%]" />
+                  <img src={clearPPFVehicles[3].image} alt="Aston Martin Vantage with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_60%]" />
                 </div>
                 <div className="rounded-xl overflow-hidden shadow-premium">
                   <img src={clearPPFVehicles[4].image} alt="2024 BMW M4 with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_75%]" />
