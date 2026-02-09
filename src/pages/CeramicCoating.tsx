@@ -156,22 +156,6 @@ const CeramicCoating = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          🔲 PLACEHOLDER: Before/After Images
-          ═══════════════════════════════════════════════════════ */}
-      <section className="pb-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="h-[250px] md:h-[350px] rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-              <p className="text-muted-foreground">📸 Before ceramic coating</p>
-            </div>
-            <div className="h-[250px] md:h-[350px] rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-              <p className="text-muted-foreground">📸 After ceramic coating — mirror gloss</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════
           BENEFITS OF CERAMIC COATING
           ═══════════════════════════════════════════════════════ */}
       <section className="py-20 bg-accent/30">
