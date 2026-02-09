@@ -251,39 +251,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
               </div>
             </div>
             
-            {/* Colored PPF Teaser */}
-            <div className="mt-12 mb-8">
-              <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg p-6 max-w-2xl mx-auto">
-                <div className="text-center space-y-4">
-                  <Badge variant="secondary" className="bg-xpel-yellow text-primary text-xs px-3 py-1">
-                    NEW
-                  </Badge>
-                  <h3 className="text-lg font-bold text-primary-foreground">
-                    XPEL COLOR PPF
-                  </h3>
-                  <p className="text-sm text-primary-foreground/80">
-                    Now available in 16 bold colors. Style + protection in one.
-                  </p>
-                  <div className="pt-2">
-                    <Link to="/colorppf">
-                      <Button 
-                        variant="secondary" 
-                        size="sm" 
-                        className="bg-xpel-yellow text-primary hover:bg-xpel-yellow/90"
-                        onClick={() => {
-                          setTimeout(() => {
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                          }, 100);
-                        }}
-                      >
-                        View Colors
-                        <ArrowRight className="h-4 w-4 ml-2" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+
           </article>
         </div>
       </section>
