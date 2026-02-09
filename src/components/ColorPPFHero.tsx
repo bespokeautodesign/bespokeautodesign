@@ -9,7 +9,7 @@ export const ColorPPFHero = ({ onGetQuote }: ColorPPFHeroProps) => {
   return (
     <section className="relative py-28 md:py-36 overflow-hidden">
       <div className="absolute inset-0">
-        <img src="/lovable-uploads/color-ppf-gt2rs.jpg" alt="Porsche GT2 RS with XPEL Color PPF" className="w-full h-full object-cover object-[center_45%] scale-110" />
+        <img src="/lovable-uploads/color-ppf-gt2rs.jpg" alt="Porsche GT2 RS with XPEL Color PPF" className="w-full h-full object-cover object-[center_45%] scale-105" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 via-60% to-background/80 to-90%" />
       </div>
       <div className="container mx-auto px-6 relative z-10">
