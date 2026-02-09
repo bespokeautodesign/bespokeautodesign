@@ -319,29 +319,6 @@ const StealthPPF = () => {
         </div>
       </section>
 
-      {/* RECENT INSTALLATIONS */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold font-playfair text-center mb-10">Stealth PPF Installations</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {[stealthPPFVehicles[3], stealthPPFVehicles[4], stealthPPFVehicles[6], stealthPPFVehicles[7]].map((vehicle) => (
-              <div key={vehicle.id} className="group relative overflow-hidden rounded-xl aspect-square">
-                <img src={vehicle.image} alt={`${vehicle.name} with Stealth PPF`} loading="lazy" className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${stealthPPFImageStyles[vehicle.name] || "object-[center_70%]"}`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-3 left-3 text-white">
-                  <p className="font-semibold text-sm">{vehicle.name}</p>
-                  <p className="text-xs text-white/70">{vehicle.year}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link to="/portfolio">
-              <Button variant="silver">View Full Portfolio <ChevronRight className="h-4 w-4" /></Button>
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <section className="py-20 bg-accent/30">
