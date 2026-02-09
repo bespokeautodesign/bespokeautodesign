@@ -10,6 +10,8 @@ import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { Link } from "react-router-dom";
 import xpelLogo from "@/assets/xpel-logo.svg";
+import { VehicleShowcase } from "@/components/VehicleShowcase";
+import { clearPPFVehicles, clearPPFImageStyles } from "@/data/portfolioVehicles";
 
 const ppfFaqs = [
   {
@@ -136,15 +138,17 @@ const PaintProtectionFilm = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          🔲 PLACEHOLDER: Hero Image / Video Gallery
-          Add a full-width image or video showcasing PPF installation
-          ═══════════════════════════════════════════════════════ */}
-      <section className="pb-16">
+      {/* ═══════════════════ OUR WORK ═══════════════════ */}
+      <section className="py-16">
         <div className="container mx-auto px-6">
-          <div className="w-full h-[300px] md:h-[500px] rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-            <p className="text-muted-foreground text-lg">📸 Hero image or video placeholder</p>
-          </div>
+          <VehicleShowcase
+            title="Clear PPF Portfolio"
+            description="See how XPEL Ultimate Plus™ protects these vehicles while remaining completely invisible."
+            vehicles={clearPPFVehicles}
+            imageStyles={clearPPFImageStyles}
+            badgeLabel="Clear PPF"
+            badgeColor="bg-blue-500/10 text-blue-600 border-blue-500/20"
+          />
         </div>
       </section>
 
@@ -173,21 +177,6 @@ const PaintProtectionFilm = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          🔲 PLACEHOLDER: Before/After or Process Images
-          ═══════════════════════════════════════════════════════ */}
-      <section className="pb-16">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="h-[250px] md:h-[350px] rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-              <p className="text-muted-foreground">📸 Before/after or installation photo</p>
-            </div>
-            <div className="h-[250px] md:h-[350px] rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-              <p className="text-muted-foreground">📸 Before/after or installation photo</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ═══════════════════════════════════════════════════════
           WHY PPF IN MIAMI?
