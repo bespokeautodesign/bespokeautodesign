@@ -10,7 +10,6 @@ import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { Link } from "react-router-dom";
 import xpelLogo from "@/assets/xpel-logo.svg";
-import { VehicleShowcase } from "@/components/VehicleShowcase";
 import { clearPPFVehicles, clearPPFImageStyles } from "@/data/portfolioVehicles";
 
 const ppfFaqs = [
@@ -141,14 +140,32 @@ const PaintProtectionFilm = () => {
       {/* ═══════════════════ OUR WORK ═══════════════════ */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <VehicleShowcase
-            title="Clear PPF Portfolio"
-            description="See how XPEL Ultimate Plus™ protects these vehicles while remaining completely invisible."
-            vehicles={clearPPFVehicles}
-            imageStyles={clearPPFImageStyles}
-            badgeLabel="Clear PPF"
-            badgeColor="bg-blue-500/10 text-blue-600 border-blue-500/20"
-          />
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="mb-4">Our Work</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-4">Clear PPF Installations</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              See how XPEL Ultimate Plus™ protects these vehicles while remaining completely invisible.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {clearPPFVehicles.map((vehicle) => (
+              <div key={vehicle.id} className="group relative overflow-hidden rounded-xl aspect-[4/3]">
+                <img
+                  src={vehicle.image}
+                  alt={`${vehicle.name} - Clear PPF`}
+                  loading="lazy"
+                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${
+                    clearPPFImageStyles[vehicle.name] || "object-[center_70%]"
+                  }`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-white font-semibold text-sm">{vehicle.name}</p>
+                  <p className="text-white/70 text-xs">{vehicle.year}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

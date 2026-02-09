@@ -8,7 +8,6 @@ import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Palette, Sun, Zap, Car, Clock, Award, Sparkles, Layers, Paintbrush, RefreshCw, Eye } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { addStructuredData } from "@/utils/seoHelpers";
-import { VinylWrapShowcase } from "@/components/VehicleShowcase";
 import { vinylWrapVehicles } from "@/data/portfolioVehicles";
 
 const brands = [
@@ -169,6 +168,7 @@ const faqs = [
 
 const ColorChangeWrap = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
+  const [flippedVinyls, setFlippedVinyls] = React.useState<Set<number>>(new Set());
 
   useEffect(() => {
     document.title = "Color Change Vinyl Wrap Miami | Custom Vehicle Wraps | Bespoke Auto Design";
@@ -253,7 +253,48 @@ const ColorChangeWrap = () => {
       {/* ═══════════════════ OUR WORK ═══════════════════ */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <VinylWrapShowcase vehicles={vinylWrapVehicles} />
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="mb-4">Our Work</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-4">Color Change Transformations</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Before and after — tap any image to see the transformation.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {vinylWrapVehicles.map((vehicle) => {
+              const showAfter = flippedVinyls.has(vehicle.id);
+              return (
+                <div
+                  key={vehicle.id}
+                  className="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer"
+                  onClick={() => {
+                    setFlippedVinyls(prev => {
+                      const next = new Set(prev);
+                      next.has(vehicle.id) ? next.delete(vehicle.id) : next.add(vehicle.id);
+                      return next;
+                    });
+                  }}
+                >
+                  <img
+                    src={showAfter ? vehicle.afterImage : vehicle.beforeImage}
+                    alt={`${vehicle.name} - ${showAfter ? "After" : "Before"}`}
+                    loading="lazy"
+                    className="w-full h-full object-cover object-[center_70%] transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent" />
+                  <div className="absolute top-3 right-3">
+                    <Badge className={showAfter ? "bg-primary" : "bg-muted"}>
+                      {showAfter ? "After" : "Before"}
+                    </Badge>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <p className="text-white font-semibold">{vehicle.name}</p>
+                    <p className="text-white/70 text-sm">{vehicle.year} · Tap to toggle</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 

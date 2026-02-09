@@ -10,7 +10,6 @@ import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { Link } from "react-router-dom";
 import xpelLogo from "@/assets/xpel-logo.svg";
-import { VehicleShowcase } from "@/components/VehicleShowcase";
 import { stealthPPFVehicles, stealthPPFImageStyles } from "@/data/portfolioVehicles";
 const stealthFaqs = [{
   question: "What is Stealth PPF and how is it different from clear PPF?",
@@ -107,14 +106,32 @@ const StealthPPF = () => {
       {/* ═══════════════════ OUR WORK ═══════════════════ */}
       <section className="py-16">
         <div className="container mx-auto px-6">
-          <VehicleShowcase
-            title="Stealth PPF Portfolio"
-            description="See the stunning satin transformation on these vehicles — all protected with XPEL Stealth."
-            vehicles={stealthPPFVehicles}
-            imageStyles={stealthPPFImageStyles}
-            badgeLabel="Stealth PPF"
-            badgeColor="bg-gray-500/10 text-gray-600 border-gray-500/20"
-          />
+          <div className="text-center mb-12">
+            <Badge variant="outline" className="mb-4">Our Work</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-4">Stealth PPF Installations</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              See the stunning satin transformation on these vehicles — all protected with XPEL Stealth.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+            {stealthPPFVehicles.map((vehicle) => (
+              <div key={vehicle.id} className="group relative overflow-hidden rounded-xl aspect-[4/3]">
+                <img
+                  src={vehicle.image}
+                  alt={`${vehicle.name} - Stealth PPF`}
+                  loading="lazy"
+                  className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ${
+                    stealthPPFImageStyles[vehicle.name] || "object-[center_70%]"
+                  }`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <p className="text-white font-semibold text-sm">{vehicle.name}</p>
+                  <p className="text-white/70 text-xs">{vehicle.year}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
