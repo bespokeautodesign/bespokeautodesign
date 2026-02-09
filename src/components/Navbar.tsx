@@ -85,9 +85,13 @@ const Navbar = () => {
                   </div>}
               </div>
 
+              {navItems.map(item => <Link key={item.href} to={item.href} className={`text-sm xl:text-base whitespace-nowrap transition-colors ${location.pathname === item.href ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"}`}>
+                  {item.label}
+                </Link>)}
+
               {/* Marine Dropdown */}
               <div className="relative" ref={marineDropdownRef} onMouseLeave={() => setMarineOpen(false)}>
-                <Link to="/marine" onMouseEnter={() => setMarineOpen(true)} className={`flex items-center gap-1 text-sm xl:text-base whitespace-nowrap transition-colors ${isMarineActive || location.pathname === "/marine" ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"}`}>Marine <ChevronDown className={`h-3.5 w-3.5 transition-transform ${marineOpen ? "rotate-180" : ""}`} />
+                <Link to="/marine" onMouseEnter={() => setMarineOpen(true)} className={`flex items-center gap-1 text-sm xl:text-base whitespace-nowrap transition-colors ${isMarineActive || location.pathname === "/marine" ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"}`}>Marine <ChevronDown className={`h-3.5 w-3.5 transition-transform ${marineOpen ? "rotate-180" : ""}`} />
                 </Link>
                 {marineOpen && <div className="absolute top-full left-0 pt-2">
                     <div className="w-56 bg-background border border-border rounded-lg shadow-lg z-50 py-2">
@@ -97,10 +101,6 @@ const Navbar = () => {
                     </div>
                   </div>}
               </div>
-
-              {navItems.map(item => <Link key={item.href} to={item.href} className={`text-sm xl:text-base whitespace-nowrap transition-colors ${location.pathname === item.href ? "text-primary font-semibold" : "text-muted-foreground hover:text-primary"}`}>
-                  {item.label}
-                </Link>)}
             </div>
 
             <div className="flex items-center gap-2 flex-shrink-0">

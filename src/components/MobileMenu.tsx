@@ -83,6 +83,17 @@ const MobileMenu = () => {
               )}
             </div>
 
+            {otherItems.map((item, index) => (
+              <Link
+                key={index}
+                to={item.href}
+                onClick={() => setIsOpen(false)}
+                className="text-lg text-muted-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
+              >
+                {item.label}
+              </Link>
+            ))}
+
             {/* Marine Dropdown */}
             <div className="border-b border-border/50">
               <div className="flex items-center justify-between py-2">
@@ -113,16 +124,8 @@ const MobileMenu = () => {
               )}
             </div>
 
-            {otherItems.map((item, index) => (
-              <Link
-                key={index}
-                to={item.href}
-                onClick={() => setIsOpen(false)}
-                className="text-lg text-muted-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
-              >
-                {item.label}
-              </Link>
-            ))}
+
+
             
             <div className="flex flex-col gap-3 mt-6">
               <Button 
