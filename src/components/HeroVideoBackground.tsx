@@ -29,6 +29,7 @@ function createShuffledOrder(): number[] {
 const HeroVideoBackground = () => {
   const isMobile = useIsMobile();
   const [activeSlot, setActiveSlot] = useState<0 | 1>(0);
+  const activeSlotRef = useRef<0 | 1>(0);
   const orderRef = useRef<number[]>(createShuffledOrder());
   const posRef = useRef(0);
   const slotsRef = useRef([orderRef.current[0], orderRef.current[1]]);
@@ -57,6 +58,15 @@ const HeroVideoBackground = () => {
       v1.load();
     }
     posRef.current = 1;
+
+    // Safety net: if videos stall, restart the active one
+    const interval = setInterval(() => {
+      const active = videoRefs[activeSlotRef.current].current;
+      if (active && active.paused && active.readyState >= 2) {
+        active.play().catch(() => {});
+      }
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   const handleEnded = useCallback(() => {
@@ -68,6 +78,7 @@ const HeroVideoBackground = () => {
       nextVideo.play().catch(() => {});
     }
 
+    activeSlotRef.current = nextSlot as 0 | 1;
     setActiveSlot(nextSlot as 0 | 1);
 
     const finishedSlot = activeSlot;
