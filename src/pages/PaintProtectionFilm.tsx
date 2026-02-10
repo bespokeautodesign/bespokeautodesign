@@ -9,6 +9,7 @@ import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award } fr
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { Link } from "react-router-dom";
+import { WhyChooseUs, ppfDifferentiators } from "@/components/WhyChooseUs";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { clearPPFVehicles, clearPPFImageStyles } from "@/data/portfolioVehicles";
 
@@ -383,6 +384,9 @@ const PaintProtectionFilm = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Bespoke */}
+      <WhyChooseUs variant="service" differentiators={ppfDifferentiators} title="Why Choose Bespoke for PPF" />
 
       {/* ═══════════════════════════════════════════════════════
           FAQ
