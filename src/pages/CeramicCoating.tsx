@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useScrollFade } from "@/hooks/use-scroll-fade";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -50,7 +50,7 @@ const ceramicFaqs = [
 
 const CeramicCoating = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
-  const { ref: heroRef, opacity: heroOpacity } = useScrollFade();
+  
 
   useEffect(() => {
     document.title = "Ceramic Coating Miami | Professional Paint Protection | Bespoke Auto Design";
@@ -98,8 +98,8 @@ const CeramicCoating = () => {
       {/* ═══════════════════════════════════════════════════════
           HERO SECTION
           ═══════════════════════════════════════════════════════ */}
-      <section ref={heroRef as React.RefObject<HTMLElement>} className="relative py-28 md:py-36 overflow-hidden">
-        <div className="absolute inset-0 transition-opacity duration-100" style={{ opacity: heroOpacity }}>
+      <section className="relative py-28 md:py-36 hero-parallax">
+        <div className="hero-parallax-bg">
           <img src={clearPPFVehicles[9].image} alt="2023 Corvette Z06 with ceramic coating" className="w-full h-full object-cover object-[center_60%] brightness-125" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 via-60% to-black/50" />
         </div>

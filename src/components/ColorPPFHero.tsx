@@ -1,17 +1,14 @@
-import React from 'react';
 import { Button } from '@/components/ui/button';
 import xpelLogo from '@/assets/xpel-logo.svg';
-import { useScrollFade } from '@/hooks/use-scroll-fade';
 
 interface ColorPPFHeroProps {
   onGetQuote: () => void;
 }
 
 export const ColorPPFHero = ({ onGetQuote }: ColorPPFHeroProps) => {
-  const { ref: heroRef, opacity: heroOpacity } = useScrollFade();
   return (
-    <section ref={heroRef as React.RefObject<HTMLElement>} className="relative py-28 md:py-36 overflow-hidden">
-      <div className="absolute inset-[-5%] transition-opacity duration-100" style={{ opacity: heroOpacity }}>
+    <section className="relative py-28 md:py-36 hero-parallax">
+      <div className="hero-parallax-bg">
         <img src="/lovable-uploads/color-ppf-gt2rs.jpg" alt="Porsche GT2 RS with XPEL Color PPF" className="w-full h-full object-cover object-[center_45%] scale-[0.95]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 via-60% to-black/70 to-100%" />
       </div>
