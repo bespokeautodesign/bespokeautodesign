@@ -566,10 +566,12 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
               variant="premium"
               size="lg"
               className="text-lg px-10"
-              onClick={() => window.open('https://g.page/r/CVyMGIzAlqxEEAE/review', '_blank')}
+              asChild
             >
-              <Star className="h-5 w-5 mr-2" />
-              Leave a Google Review
+              <a href="https://g.page/r/CVyMGIzAlqxEEAE/review" target="_blank" rel="noopener noreferrer">
+                <Star className="h-5 w-5 mr-2" />
+                Leave a Google Review
+              </a>
             </Button>
           </div>
         </div>
