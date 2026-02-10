@@ -92,21 +92,24 @@ const CeramicTint = () => {
       {/* ═══════════════════════════════════════════════════════
           HERO SECTION
           ═══════════════════════════════════════════════════════ */}
-      <section className="relative py-28 md:py-36 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
+      <section className="relative py-44 md:py-36 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/lovable-uploads/ceramic-tint-lexus.png" alt="Red Lexus LC with XPEL ceramic window tint at Bespoke Auto Design" className="w-full h-full object-cover saturate-[1.25] contrast-[1.05]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 via-60% to-black/90" />
+        </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex flex-col items-center gap-3">
-              <img src={xpelLogo} alt="XPEL" className="h-16 w-auto opacity-80" />
-              <span className="text-primary font-semibold tracking-wider uppercase text-sm">
+              <img src={xpelLogo} alt="XPEL" className="h-16 w-auto opacity-80 brightness-200" />
+              <span className="text-white/60 font-semibold tracking-wider uppercase text-sm">
                 Authorized XPEL Window Film Installer
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
               XPEL XR Plus <br className="hidden md:block" />
-              <span className="text-muted-foreground">Ceramic Tint in Miami</span>
+              <span className="text-white/70">Ceramic Tint in Miami</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               The world's most advanced ceramic window film — blocking 99% of UV rays, rejecting up to 98% of infrared heat, and recommended by The Skin Cancer Foundation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
@@ -121,15 +124,7 @@ const CeramicTint = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Hero Image */}
-      <section className="pb-16">
-        <div className="container mx-auto px-6">
-          <div className="w-full h-[300px] md:h-[500px] rounded-2xl overflow-hidden">
-            <img src="/lovable-uploads/ceramic-tint-lexus.png" alt="Red Lexus LC with XPEL ceramic window tint at Bespoke Auto Design" className="w-full h-full object-cover" />
-          </div>
-        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-background" />
       </section>
 
       {/* ═══════════════════════════════════════════════════════
