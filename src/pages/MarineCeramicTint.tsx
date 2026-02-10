@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuoteModal } from "@/components/QuoteModal";
 import { addStructuredData } from "@/utils/seoHelpers";
+import { WhyChooseUs, marineTintDifferentiators } from "@/components/WhyChooseUs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge as UIBadge } from "@/components/ui/badge";
@@ -167,6 +168,9 @@ const MarineCeramicTint = () => {
           <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>Schedule Marine Consultation</Button>
         </div>
       </section>
+
+      {/* Why Choose Bespoke */}
+      <WhyChooseUs variant="service" differentiators={marineTintDifferentiators} title="Why Choose Bespoke for Marine Ceramic Tint" />
 
       {/* FAQ */}
       <section className="py-20 bg-background/80 backdrop-blur-sm">

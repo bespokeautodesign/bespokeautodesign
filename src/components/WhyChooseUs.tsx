@@ -1,4 +1,4 @@
-import { Shield, Award, Car, Clock, CheckCircle, Thermometer, Zap, Droplets, Sun, Eye, Sparkles, Palette, Paintbrush, Layers } from 'lucide-react';
+import { Shield, Award, Car, Clock, CheckCircle, Thermometer, Zap, Droplets, Sun, Eye, Sparkles, Palette, Paintbrush, Layers, Anchor, Waves } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { LucideIcon } from 'lucide-react';
 
@@ -75,6 +75,27 @@ export const stealthDifferentiators: ServiceDifferentiator[] = [
   { icon: Zap, title: "Self-Healing Matte Technology", description: "XPEL Stealth's satin top coat heals scratches just like clear PPF — keeping your matte finish pristine without the impossible task of buffing matte paint." },
   { icon: CheckCircle, title: "10-Year XPEL Warranty", description: "Stealth carries the same comprehensive 10-year manufacturer warranty as Ultimate Plus™ — against yellowing, cracking, peeling, and texture degradation." },
   { icon: Car, title: "Factory Matte Paint Experts", description: "BMW Frozen, Mercedes Magno, Porsche Chalk — we protect factory matte finishes that can't be polished or repaired. Stealth PPF is the only solution." },
+];
+
+export const marinePPFDifferentiators: ServiceDifferentiator[] = [
+  { icon: Anchor, title: "Marine-Grade XPEL Film", description: "We use XPEL paint protection film engineered to withstand constant saltwater exposure, dock abrasion, and harsh UV — protecting gel coat and painted marine surfaces." },
+  { icon: Shield, title: "XPEL Certified Installers", description: "Our factory-trained technicians bring 7+ years of precision installation experience to every vessel — from center consoles to superyachts." },
+  { icon: Waves, title: "Built for Miami Waters", description: "Salt spray, tropical UV, and constant moisture demand specialized protection. We understand South Florida's marine environment inside and out." },
+  { icon: CheckCircle, title: "Impact & Abrasion Defense", description: "Marine PPF shields against dock rash, fender contact, anchor chain marks, and waterline debris — preserving your hull's finish and resale value." },
+];
+
+export const marineCeramicDifferentiators: ServiceDifferentiator[] = [
+  { icon: Droplets, title: "Saltwater-Resistant Coating", description: "XPEL Fusion Plus™ creates a hydrophobic barrier that repels salt, minerals, and marine contaminants — dramatically reducing corrosion and staining on gel coat." },
+  { icon: Anchor, title: "Marine Application Experts", description: "Coating a boat isn't like coating a car. We understand marine surfaces — gel coat, fiberglass, painted hulls — and the prep required for lasting adhesion." },
+  { icon: CheckCircle, title: "5-Year Marine Warranty", description: "Professional-grade ceramic coating backed by a 5-year warranty. Annual maintenance inspections keep your vessel's coating performing at its peak." },
+  { icon: Sun, title: "UV & Oxidation Shield", description: "Miami's relentless sun oxidizes marine surfaces fast. Ceramic coating blocks UV degradation, keeping gel coat and paint vibrant season after season." },
+];
+
+export const marineTintDifferentiators: ServiceDifferentiator[] = [
+  { icon: Sun, title: "99% UV Rejection on the Water", description: "XPEL XR Plus blocks over 99% of harmful UV rays — critical for captains and passengers spending extended hours on open water under Miami's intense sun." },
+  { icon: Eye, title: "Glare Reduction Without Distortion", description: "Nano-ceramic technology cuts blinding water glare while maintaining crystal-clear visibility — essential for safe navigation and spotting markers." },
+  { icon: CheckCircle, title: "Lifetime Marine Tint Warranty", description: "XPEL XR Plus comes with a lifetime warranty against fading, bubbling, and peeling — even in the harsh saltwater marine environment." },
+  { icon: Anchor, title: "Zero Electronic Interference", description: "Metal-free ceramic film won't interfere with GPS, radar, VHF, depth finders, or any marine electronics. Full protection with zero compromise." },
 ];
 
 interface WhyChooseUsProps {

@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Shield, Anchor, CheckCircle, Award } from "lucide-react";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { Link } from "react-router-dom";
+import { WhyChooseUs, marinePPFDifferentiators } from "@/components/WhyChooseUs";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -163,6 +164,9 @@ const MarinePPF = () => {
           <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>Schedule Marine Consultation</Button>
         </div>
       </section>
+
+      {/* Why Choose Bespoke */}
+      <WhyChooseUs variant="service" differentiators={marinePPFDifferentiators} title="Why Choose Bespoke for Marine PPF" />
 
       {/* FAQ */}
       <section className="py-20 bg-background/80 backdrop-blur-sm">
