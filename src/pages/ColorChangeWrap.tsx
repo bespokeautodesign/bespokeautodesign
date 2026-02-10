@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useScrollFade } from "@/hooks/use-scroll-fade";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -170,7 +170,7 @@ const faqs = [
 
 const ColorChangeWrap = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
-  const { ref: heroRef, opacity: heroOpacity } = useScrollFade();
+  
   
 
   useEffect(() => {
@@ -224,8 +224,8 @@ const ColorChangeWrap = () => {
       <Navbar />
 
       {/* ═══════════════════ HERO ═══════════════════ */}
-      <section ref={heroRef as React.RefObject<HTMLElement>} className="relative py-28 md:py-36 overflow-hidden">
-        <div className="absolute inset-0 transition-opacity duration-100" style={{ opacity: heroOpacity }}>
+      <section className="relative py-28 md:py-36 hero-parallax">
+        <div className="hero-parallax-bg">
           <img src="/lovable-uploads/mercedes-amg-green-wrap.jpg" alt="Mercedes AMG color change wrap" className="w-full h-full object-cover object-[center_55%] saturate-[1.25] contrast-[1.05]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 via-60% to-background/80 to-90%" />
         </div>

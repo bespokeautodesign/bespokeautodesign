@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useScrollFade } from "@/hooks/use-scroll-fade";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -49,7 +49,7 @@ const tintFaqs = [
 
 const CeramicTint = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
-  const { ref: heroRef, opacity: heroOpacity } = useScrollFade();
+  
 
   useEffect(() => {
     document.title = "Ceramic Window Tint Miami | XPEL XR Plus Installation | Bespoke Auto Design";
@@ -94,8 +94,8 @@ const CeramicTint = () => {
       {/* ═══════════════════════════════════════════════════════
           HERO SECTION
           ═══════════════════════════════════════════════════════ */}
-      <section ref={heroRef as React.RefObject<HTMLElement>} className="relative py-44 md:py-36 overflow-hidden">
-        <div className="absolute inset-0 transition-opacity duration-100" style={{ opacity: heroOpacity }}>
+      <section className="relative py-44 md:py-36 hero-parallax">
+        <div className="hero-parallax-bg">
           <img src="/lovable-uploads/ceramic-tint-lexus.png" alt="Red Lexus LC with XPEL ceramic window tint at Bespoke Auto Design" className="w-full h-full object-cover saturate-[1.25] contrast-[1.05]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent via-60% to-black/40" />
         </div>
