@@ -550,7 +550,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
 
 
       {/* Google Review CTA */}
-      <section className="py-16 bg-primary/5 backdrop-blur-sm">
+      <section className="py-16 bg-black/90 backdrop-blur-md">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto text-center">
             <div className="flex justify-center gap-1 mb-4">
@@ -558,8 +558,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
                 <Star key={i} className="h-7 w-7 fill-yellow-400 text-yellow-400" />
               ))}
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">Love Your Experience?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Love Your Experience?</h2>
+            <p className="text-lg text-white/70 mb-8">
               Your feedback means the world to us. Share your experience and help others discover Miami's most trusted car boutique.
             </p>
             <Button
