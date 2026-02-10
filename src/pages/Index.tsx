@@ -566,7 +566,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
               variant="premium"
               size="lg"
               className="text-lg px-10"
-              onClick={() => window.open('https://g.page/r/YOUR_BUSINESS_ID/review', '_blank')}
+              onClick={() => window.open('https://g.page/r/CVyMGIzAlqxEEAE/review', '_blank')}
             >
               <Star className="h-5 w-5 mr-2" />
               Leave a Google Review
