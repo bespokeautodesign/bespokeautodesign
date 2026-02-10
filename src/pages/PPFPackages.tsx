@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
+import { addStructuredData } from "@/utils/seoHelpers";
 import { Link, useLocation } from "react-router-dom";
 import xpelLogo from "@/assets/xpel-logo.svg";
 const packages = [{
@@ -36,6 +37,35 @@ const PPFPackages = () => {
     }
     addOpenGraphTags("PPF Packages | Bespoke Auto Design", "Choose the right XPEL paint protection film package for your vehicle. Full Front, Track, and Full Body options available.");
     addCanonicalUrl("https://bespokeautodesign.com/ppf-packages");
+    addStructuredData({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "PPF Packages - Paint Protection Film Installation",
+      "provider": {
+        "@type": "AutomotiveBusiness",
+        "name": "Bespoke Auto Design",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "7943 NW 64th St",
+          "addressLocality": "Miami",
+          "addressRegion": "FL",
+          "postalCode": "33166",
+          "addressCountry": "US"
+        },
+        "telephone": "+1-786-395-9172"
+      },
+      "areaServed": { "@type": "City", "name": "Miami" },
+      "description": "XPEL paint protection film packages in Miami. Full Front, Track, and Full Body coverage options with 10-year warranty.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "PPF Packages",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Front Package", "description": "Hood, front fenders, front bumper, headlights, and mirror caps protection" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Track Package", "description": "Full front coverage plus rocker panels, rear bumper, A-pillars, and lower door edges" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Body", "description": "Complete bumper-to-bumper paint protection film coverage" } }
+        ]
+      }
+    });
   }, []);
   useEffect(() => {
     if (location.hash) {
