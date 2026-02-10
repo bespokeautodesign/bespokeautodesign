@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useScrollFade } from "@/hooks/use-scroll-fade";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -39,6 +40,7 @@ const stealthFaqs = [{
 }];
 const StealthPPF = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
+  const { ref: heroRef, opacity: heroOpacity } = useScrollFade();
   useEffect(() => {
     document.title = "Stealth PPF Miami | Matte & Satin Paint Protection Film | Bespoke Auto Design";
     const metaDesc = document.querySelector('meta[name="description"]');
@@ -75,8 +77,8 @@ const StealthPPF = () => {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative py-28 md:py-36 overflow-hidden">
-        <div className="absolute inset-0">
+      <section ref={heroRef as React.RefObject<HTMLElement>} className="relative py-28 md:py-36 overflow-hidden">
+        <div className="absolute inset-0 transition-opacity duration-100" style={{ opacity: heroOpacity }}>
           <img src="/lovable-uploads/stealth-ppf-rolls-royce.png" alt="Rolls Royce with Stealth PPF" className="w-full h-full object-cover object-[center_55%]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 via-60% to-background/80 to-90%" />
         </div>

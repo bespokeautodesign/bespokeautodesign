@@ -1,8 +1,10 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sun, CheckCircle, Eye, Award, Shield } from "lucide-react";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { useEffect, useState } from "react";
+import { useScrollFade } from "@/hooks/use-scroll-fade";
 import Navbar from "@/components/Navbar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuoteModal } from "@/components/QuoteModal";
@@ -36,6 +38,7 @@ const faqItems = [
 
 const MarineCeramicTint = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const { ref: heroRef, opacity: heroOpacity } = useScrollFade();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -66,8 +69,8 @@ const MarineCeramicTint = () => {
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Marine Services", path: "/marine" }, { name: "Marine Ceramic Tint", path: "/marine-ceramic-tint", current: true }]} />
 
       {/* Hero */}
-      <header className="relative py-24 md:py-32">
-        <div className="absolute inset-0">
+      <header ref={heroRef as React.RefObject<HTMLElement>} className="relative py-24 md:py-32">
+        <div className="absolute inset-0 transition-opacity duration-100" style={{ opacity: heroOpacity }}>
           <img src="/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.png" alt="Marine ceramic window tinting" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
