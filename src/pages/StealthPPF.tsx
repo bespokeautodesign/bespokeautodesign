@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Eye, Paintbrush, Sun, Car, Clock, Award, Layers } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
+import { WhyChooseUs, stealthDifferentiators } from "@/components/WhyChooseUs";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { Link } from "react-router-dom";
 import xpelLogo from "@/assets/xpel-logo.svg";
@@ -319,6 +320,9 @@ const StealthPPF = () => {
         </div>
       </section>
 
+
+      {/* Why Choose Bespoke */}
+      <WhyChooseUs variant="service" differentiators={stealthDifferentiators} title="Why Choose Bespoke for Stealth PPF" />
 
       {/* FAQ */}
       <section className="py-20 bg-accent/30">

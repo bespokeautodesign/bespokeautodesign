@@ -1,7 +1,14 @@
-import { Shield, Award, Car, Clock, CheckCircle, Thermometer } from 'lucide-react';
+import { Shield, Award, Car, Clock, CheckCircle, Thermometer, Zap, Droplets, Sun, Eye, Sparkles, Palette, Paintbrush, Layers } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import type { LucideIcon } from 'lucide-react';
 
-const differentiators = [
+export interface ServiceDifferentiator {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+const defaultDifferentiators: ServiceDifferentiator[] = [
   {
     icon: Shield,
     title: "XPEL Authorized Dealer",
@@ -34,29 +41,71 @@ const differentiators = [
   }
 ];
 
+// Service-specific differentiator presets
+export const ppfDifferentiators: ServiceDifferentiator[] = [
+  { icon: Shield, title: "XPEL Certified Installers", description: "Factory-trained technicians with 500+ PPF installations completed — precision-cut using XPEL's DAP templates for seamless edge-to-edge coverage." },
+  { icon: Zap, title: "Self-Healing Film Technology", description: "XPEL Ultimate Plus™ features an elastomeric top coat that eliminates scratches with heat. In Miami's sun, blemishes disappear in minutes." },
+  { icon: CheckCircle, title: "10-Year XPEL Warranty", description: "Every PPF installation is backed by XPEL's comprehensive 10-year manufacturer warranty against yellowing, cracking, peeling, and delamination." },
+  { icon: Car, title: "Exotic & Luxury Specialists", description: "We specialize in high-value vehicles — Ferrari, Lamborghini, Porsche, McLaren, Rolls-Royce — where flawless installation is non-negotiable." },
+];
+
+export const ceramicDifferentiators: ServiceDifferentiator[] = [
+  { icon: Shield, title: "XPEL Authorized Dealer", description: "We exclusively install XPEL Fusion Plus™ — a professional-grade nano-ceramic coating not available in consumer products, with higher SiO₂ concentrations for superior performance." },
+  { icon: Sparkles, title: "Multi-Stage Paint Correction", description: "Every ceramic coating begins with meticulous paint correction — removing swirl marks, scratches, and oxidation so the coating locks in a flawless, mirror-like finish." },
+  { icon: CheckCircle, title: "5-Year Coating Warranty", description: "XPEL Fusion Plus comes with a 5-year manufacturer warranty and annual maintenance inspections to ensure your coating performs at its peak." },
+  { icon: Thermometer, title: "Climate-Controlled Curing", description: "Proper curing is critical. Our facility maintains ideal temperature and humidity for ceramic bonding — something outdoor or garage-based installers simply can't replicate." },
+];
+
+export const tintDifferentiators: ServiceDifferentiator[] = [
+  { icon: Sun, title: "99% UV + 98% IR Rejection", description: "XPEL XR Plus blocks over 99% of harmful UV rays and rejects up to 98% of infrared heat — the highest performance ratings in the ceramic tint category." },
+  { icon: Eye, title: "Crystal-Clear Optical Clarity", description: "No haze, no purple fading, no distortion. XR Plus maintains perfect visibility day and night — even in lighter shades that maximize heat rejection." },
+  { icon: CheckCircle, title: "Lifetime Tint Warranty", description: "XPEL XR Plus comes with a lifetime manufacturer warranty against fading, bubbling, peeling, and cracking. One installation, permanent protection." },
+  { icon: Award, title: "Skin Cancer Foundation Recommended", description: "XR Plus is officially recommended by The Skin Cancer Foundation as an effective UV protectant — science-backed health protection for every drive." },
+];
+
+export const wrapDifferentiators: ServiceDifferentiator[] = [
+  { icon: Palette, title: "Premium Film Only", description: "We source exclusively from 3M, Avery Dennison, and KPMF — the three most trusted names in cast vinyl. No budget films, no shortcuts, no exceptions." },
+  { icon: Car, title: "Exotic Vehicle Expertise", description: "Complex body lines on supercars and luxury vehicles demand advanced technique. Our 7+ years of experience means confident, flawless installations on even the most aggressive curves." },
+  { icon: Clock, title: "3–5 Day Turnaround", description: "A full color change wrap is completed in 3–5 days — significantly faster than a quality respray, with less downtime and a fully reversible result." },
+  { icon: Layers, title: "Warranty-Backed Craftsmanship", description: "Every wrap includes a manufacturer warranty on film plus our installation warranty against peeling, lifting, and edge failure." },
+];
+
+export const stealthDifferentiators: ServiceDifferentiator[] = [
+  { icon: Paintbrush, title: "Satin Finish Specialists", description: "We've wrapped hundreds of vehicles in XPEL Stealth — from gloss-to-satin conversions to factory matte preservation. Precision is everything with matte film." },
+  { icon: Zap, title: "Self-Healing Matte Technology", description: "XPEL Stealth's satin top coat heals scratches just like clear PPF — keeping your matte finish pristine without the impossible task of buffing matte paint." },
+  { icon: CheckCircle, title: "10-Year XPEL Warranty", description: "Stealth carries the same comprehensive 10-year manufacturer warranty as Ultimate Plus™ — against yellowing, cracking, peeling, and texture degradation." },
+  { icon: Car, title: "Factory Matte Paint Experts", description: "BMW Frozen, Mercedes Magno, Porsche Chalk — we protect factory matte finishes that can't be polished or repaired. Stealth PPF is the only solution." },
+];
+
 interface WhyChooseUsProps {
   variant?: 'homepage' | 'service';
+  differentiators?: ServiceDifferentiator[];
+  title?: string;
 }
 
-export const WhyChooseUs = ({ variant = 'homepage' }: WhyChooseUsProps) => {
+export const WhyChooseUs = ({ variant = 'homepage', differentiators, title }: WhyChooseUsProps) => {
   if (variant === 'service') {
+    const items = differentiators || defaultDifferentiators;
     return (
-      <section className="py-16 bg-accent/30">
+      <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <Badge variant="outline" className="mb-3">WHY BESPOKE</Badge>
+              <Badge variant="secondary" className="mb-3 bg-xpel-yellow text-primary">WHY BESPOKE</Badge>
               <h2 className="text-2xl md:text-3xl font-bold font-playfair">
-                Miami's Most Trusted Auto Boutique
+                {title || "Why Choose Bespoke Auto Design"}
               </h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {differentiators.map((item, index) => (
-                <div key={index} className="text-center space-y-2">
-                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                    <item.icon className="h-5 w-5 text-primary" />
+            <div className="grid md:grid-cols-2 gap-6">
+              {items.map((item, index) => (
+                <div key={index} className="flex gap-4 items-start bg-primary-foreground/5 border border-primary-foreground/10 rounded-xl p-5">
+                  <div className="w-10 h-10 bg-xpel-yellow/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <item.icon className="h-5 w-5 text-xpel-yellow" />
                   </div>
-                  <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+                  <div>
+                    <h3 className="text-sm font-semibold text-primary-foreground mb-1">{item.title}</h3>
+                    <p className="text-xs text-primary-foreground/60 leading-relaxed">{item.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -106,7 +155,7 @@ export const WhyChooseUs = ({ variant = 'homepage' }: WhyChooseUsProps) => {
 
         {/* Differentiator cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {differentiators.map((item, index) => (
+          {defaultDifferentiators.map((item, index) => (
             <div
               key={index}
               className="group relative bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-6 hover:bg-primary-foreground/10 transition-all duration-300"

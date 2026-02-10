@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award, Sparkles, Layers } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
+import { WhyChooseUs, ceramicDifferentiators } from "@/components/WhyChooseUs";
 import { addStructuredData } from "@/utils/seoHelpers";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { clearPPFVehicles } from "@/data/portfolioVehicles";
@@ -383,6 +384,9 @@ const CeramicCoating = () => {
         </div>
       </section>
 
+
+      {/* Why Choose Bespoke */}
+      <WhyChooseUs variant="service" differentiators={ceramicDifferentiators} title="Why Choose Bespoke for Ceramic Coating" />
 
       {/* ═══════════════════════════════════════════════════════
           FAQ

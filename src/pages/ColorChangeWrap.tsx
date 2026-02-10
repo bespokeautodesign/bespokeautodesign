@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Palette, Sun, Zap, Car, Clock, Award, Sparkles, Layers, Paintbrush, RefreshCw, Eye } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
+import { WhyChooseUs, wrapDifferentiators } from "@/components/WhyChooseUs";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { vinylWrapVehicles } from "@/data/portfolioVehicles";
 
@@ -490,6 +491,9 @@ const ColorChangeWrap = () => {
           </div>
         </div>
       </section>
+
+      {/* Why Choose Bespoke */}
+      <WhyChooseUs variant="service" differentiators={wrapDifferentiators} title="Why Choose Bespoke for Wraps" />
 
       {/* ═══════════════════ FAQ ═══════════════════ */}
       <section className="py-20">
