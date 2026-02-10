@@ -99,7 +99,7 @@ const CeramicCoating = () => {
       <section className="relative py-28 md:py-36 overflow-hidden">
         <div className="absolute inset-0">
           <img src={clearPPFVehicles[9].image} alt="2023 Corvette Z06 with ceramic coating" className="w-full h-full object-cover object-[center_60%] brightness-125" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent via-60% to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 via-60% to-black/50" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
@@ -109,11 +109,11 @@ const CeramicCoating = () => {
                 Authorized XPEL Ceramic Installer
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white drop-shadow-lg">
               XPEL Ceramic Coating <br className="hidden md:block" />
               <span className="text-white/70">in Miami</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
               XPEL Fusion Plus™ — a professional-grade nano-ceramic coating that delivers unmatched gloss, UV defense, and hydrophobic performance, engineered to thrive in Miami's extreme climate.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
