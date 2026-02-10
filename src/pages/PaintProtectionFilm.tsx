@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useScrollFade } from "@/hooks/use-scroll-fade";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -50,6 +51,7 @@ const ppfFaqs = [
 
 const PaintProtectionFilm = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
+  const { ref: heroRef, opacity: heroOpacity } = useScrollFade();
 
   useEffect(() => {
     document.title = "Paint Protection Film Miami | XPEL PPF Installation | Bespoke Auto Design";
@@ -106,8 +108,8 @@ const PaintProtectionFilm = () => {
       {/* ═══════════════════════════════════════════════════════
           HERO SECTION
           ═══════════════════════════════════════════════════════ */}
-      <section className="relative py-28 md:py-36 overflow-hidden">
-        <div className="absolute inset-0">
+      <section ref={heroRef as React.RefObject<HTMLElement>} className="relative py-28 md:py-36 overflow-hidden">
+        <div className="absolute inset-0 transition-opacity duration-100" style={{ opacity: heroOpacity }}>
           <img src={clearPPFVehicles[5].image} alt="Ferrari F8 Tributo with PPF" className="w-full h-full object-cover object-[center_45%]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent via-60% to-black/40" />
         </div>
