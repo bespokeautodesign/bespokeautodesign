@@ -123,13 +123,11 @@ const CeramicTint = () => {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-          🔲 PLACEHOLDER: Hero Image
-          ═══════════════════════════════════════════════════════ */}
+      {/* Hero Image */}
       <section className="pb-16">
         <div className="container mx-auto px-6">
-          <div className="w-full h-[300px] md:h-[500px] rounded-2xl bg-accent/40 border-2 border-dashed border-border flex items-center justify-center">
-            <p className="text-muted-foreground text-lg">📸 Hero image placeholder — ceramic tint installation</p>
+          <div className="w-full h-[300px] md:h-[500px] rounded-2xl overflow-hidden">
+            <img src="/lovable-uploads/ceramic-tint-lexus.png" alt="Red Lexus LC with XPEL ceramic window tint at Bespoke Auto Design" className="w-full h-full object-cover" />
           </div>
         </div>
       </section>
