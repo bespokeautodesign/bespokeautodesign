@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -13,59 +12,40 @@ import { Link } from "react-router-dom";
 import { WhyChooseUs, ppfDifferentiators } from "@/components/WhyChooseUs";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { clearPPFVehicles, clearPPFImageStyles } from "@/data/portfolioVehicles";
-
-const ppfFaqs = [
-  {
-    question: "How much does paint protection film cost in Miami?",
-    answer: "PPF pricing in Miami depends on coverage area and vehicle size. A Full Front package typically runs $1,500–$3,000, a Track package $2,500–$4,500, and Full Body coverage $4,500–$8,000+. Exotic and larger SUVs may cost more due to surface area. Contact us for a personalized quote based on your vehicle."
-  },
-  {
-    question: "How long does XPEL PPF last in Miami's climate?",
-    answer: "XPEL Ultimate Plus™ is rated to last 10+ years, even in Miami's intense UV, humidity, and salt-air environment. The film's self-healing top coat and UV-stabilized adhesive are specifically engineered for extreme climates like South Florida. With proper care, your PPF will protect your paint for the lifetime of ownership."
-  },
-  {
-    question: "Does PPF protect against rock chips on I-95 and the Turnpike?",
-    answer: "Absolutely. XPEL PPF is 8 mils thick and engineered to absorb impact from gravel, road debris, and construction material common on I-95, the Palmetto Expressway, and Florida's Turnpike. It prevents paint chips that would otherwise require expensive touch-ups or repainting."
-  },
-  {
-    question: "Can PPF be removed without damaging my paint?",
-    answer: "Yes. XPEL films use a pressure-sensitive adhesive designed for clean removal. When professionally removed, there is zero adhesive residue and your factory paint remains pristine underneath. This makes PPF ideal for leased vehicles or owners who plan to sell."
-  },
-  {
-    question: "What is the self-healing feature of XPEL PPF?",
-    answer: "XPEL Ultimate Plus™ features a proprietary elastomeric polymer top coat that 'heals' light scratches and swirl marks when exposed to heat — whether from the sun, warm water, or a heat gun. In Miami's climate, most surface scratches disappear within minutes while parked outdoors."
-  },
-  {
-    question: "Do you offer PPF for luxury and exotic cars in Miami?",
-    answer: "Yes. Bespoke Auto Design specializes in PPF for exotic and luxury vehicles including Ferrari, Lamborghini, Porsche, McLaren, Rolls-Royce, and Bentley. We use XPEL's DAP precision-cut templates and hand-finish every edge for a seamless, invisible installation."
-  },
-  {
-    question: "How long does PPF installation take?",
-    answer: "Installation time depends on the package. A Full Front typically takes 1–2 days, a Track Package 2–3 days, and a Full Body installation 3–5 days. We never rush installations — every panel is precision-fitted in our climate-controlled facility in Miami."
-  },
-  {
-    question: "Can I wash my car normally after PPF installation?",
-    answer: "Yes. After a 48-hour cure period, you can wash your vehicle normally. We recommend hand washing or touchless car washes. Avoid high-pressure spraying directly on film edges for the first two weeks. PPF actually makes washing easier because contaminants don't bond to the film surface."
-  },
-];
-
+const ppfFaqs = [{
+  question: "How much does paint protection film cost in Miami?",
+  answer: "PPF pricing in Miami depends on coverage area and vehicle size. A Full Front package typically runs $1,500–$3,000, a Track package $2,500–$4,500, and Full Body coverage $4,500–$8,000+. Exotic and larger SUVs may cost more due to surface area. Contact us for a personalized quote based on your vehicle."
+}, {
+  question: "How long does XPEL PPF last in Miami's climate?",
+  answer: "XPEL Ultimate Plus™ is rated to last 10+ years, even in Miami's intense UV, humidity, and salt-air environment. The film's self-healing top coat and UV-stabilized adhesive are specifically engineered for extreme climates like South Florida. With proper care, your PPF will protect your paint for the lifetime of ownership."
+}, {
+  question: "Does PPF protect against rock chips on I-95 and the Turnpike?",
+  answer: "Absolutely. XPEL PPF is 8 mils thick and engineered to absorb impact from gravel, road debris, and construction material common on I-95, the Palmetto Expressway, and Florida's Turnpike. It prevents paint chips that would otherwise require expensive touch-ups or repainting."
+}, {
+  question: "Can PPF be removed without damaging my paint?",
+  answer: "Yes. XPEL films use a pressure-sensitive adhesive designed for clean removal. When professionally removed, there is zero adhesive residue and your factory paint remains pristine underneath. This makes PPF ideal for leased vehicles or owners who plan to sell."
+}, {
+  question: "What is the self-healing feature of XPEL PPF?",
+  answer: "XPEL Ultimate Plus™ features a proprietary elastomeric polymer top coat that 'heals' light scratches and swirl marks when exposed to heat — whether from the sun, warm water, or a heat gun. In Miami's climate, most surface scratches disappear within minutes while parked outdoors."
+}, {
+  question: "Do you offer PPF for luxury and exotic cars in Miami?",
+  answer: "Yes. Bespoke Auto Design specializes in PPF for exotic and luxury vehicles including Ferrari, Lamborghini, Porsche, McLaren, Rolls-Royce, and Bentley. We use XPEL's DAP precision-cut templates and hand-finish every edge for a seamless, invisible installation."
+}, {
+  question: "How long does PPF installation take?",
+  answer: "Installation time depends on the package. A Full Front typically takes 1–2 days, a Track Package 2–3 days, and a Full Body installation 3–5 days. We never rush installations — every panel is precision-fitted in our climate-controlled facility in Miami."
+}, {
+  question: "Can I wash my car normally after PPF installation?",
+  answer: "Yes. After a 48-hour cure period, you can wash your vehicle normally. We recommend hand washing or touchless car washes. Avoid high-pressure spraying directly on film edges for the first two weeks. PPF actually makes washing easier because contaminants don't bond to the film surface."
+}];
 const PaintProtectionFilm = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
-  
-
   useEffect(() => {
     document.title = "Paint Protection Film Miami | XPEL PPF Installation | Bespoke Auto Design";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
-      metaDesc.setAttribute(
-        "content",
-        "Professional XPEL paint protection film (PPF) installation in Miami, FL. Self-healing, invisible protection for luxury and exotic cars. Certified installer with 10-year warranty."
-      );
+      metaDesc.setAttribute("content", "Professional XPEL paint protection film (PPF) installation in Miami, FL. Self-healing, invisible protection for luxury and exotic cars. Certified installer with 10-year warranty.");
     }
-    addOpenGraphTags(
-      "Paint Protection Film Miami | XPEL PPF | Bespoke Auto Design",
-      "Miami's premier XPEL PPF installer. Full Front, Track, and Full Body packages with 10-year warranty. Protect your vehicle from rock chips, scratches, and UV damage."
-    );
+    addOpenGraphTags("Paint Protection Film Miami | XPEL PPF | Bespoke Auto Design", "Miami's premier XPEL PPF installer. Full Front, Track, and Full Body packages with 10-year warranty. Protect your vehicle from rock chips, scratches, and UV damage.");
     addCanonicalUrl("https://bespokeautodesign.com/paint-protection-film");
     addStructuredData({
       "@context": "https://schema.org",
@@ -92,17 +72,29 @@ const PaintProtectionFilm = () => {
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "PPF Packages",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Front PPF Package" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Track PPF Package" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Body PPF" } }
-        ]
+        "itemListElement": [{
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Full Front PPF Package"
+          }
+        }, {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Track PPF Package"
+          }
+        }, {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Full Body PPF"
+          }
+        }]
       }
     });
   }, []);
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* ═══════════════════════════════════════════════════════
@@ -121,8 +113,8 @@ const PaintProtectionFilm = () => {
                 Miami's XPEL Certified Installer
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
-              Paint Protection Film <br className="hidden md:block" />
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">Xpel Paint Protection Film 
+in Miami<br className="hidden md:block" />
               <span className="text-white/70">in Miami</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
@@ -198,39 +190,31 @@ const PaintProtectionFilm = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                icon: Sun,
-                title: "UV & Sun Protection",
-                desc: "Miami ranks among the highest UV index cities in the U.S. XPEL PPF blocks harmful UV rays that cause paint oxidation, fading, and clear coat failure — keeping your finish factory-fresh.",
-              },
-              {
-                icon: Zap,
-                title: "Rock Chip Defense",
-                desc: "I-95, the Palmetto, and Florida's Turnpike are notorious for road debris. PPF absorbs impact energy from stones, gravel, and construction material that would otherwise chip your paint.",
-              },
-              {
-                icon: Droplets,
-                title: "Salt Air & Humidity",
-                desc: "Living near Miami Beach, Brickell, or the Keys means constant exposure to corrosive salt air. PPF creates an impermeable barrier that prevents salt-induced micro-corrosion and water spotting.",
-              },
-              {
-                icon: Shield,
-                title: "Self-Healing Technology",
-                desc: "XPEL's elastomeric polymer top coat eliminates light scratches and swirl marks when exposed to heat. In Miami's sun, most surface blemishes disappear within minutes while parked.",
-              },
-              {
-                icon: Car,
-                title: "Resale Value Preservation",
-                desc: "Paint condition is one of the biggest factors in resale value. PPF keeps your paint in concours condition, adding thousands of dollars to your vehicle's trade-in or private sale price.",
-              },
-              {
-                icon: Award,
-                title: "10-Year XPEL Warranty",
-                desc: "Every installation is backed by XPEL's comprehensive 10-year manufacturer warranty against yellowing, cracking, peeling, staining, and delamination — even in Florida's harsh climate.",
-              },
-            ].map((item) => (
-              <Card key={item.title} className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300">
+            {[{
+            icon: Sun,
+            title: "UV & Sun Protection",
+            desc: "Miami ranks among the highest UV index cities in the U.S. XPEL PPF blocks harmful UV rays that cause paint oxidation, fading, and clear coat failure — keeping your finish factory-fresh."
+          }, {
+            icon: Zap,
+            title: "Rock Chip Defense",
+            desc: "I-95, the Palmetto, and Florida's Turnpike are notorious for road debris. PPF absorbs impact energy from stones, gravel, and construction material that would otherwise chip your paint."
+          }, {
+            icon: Droplets,
+            title: "Salt Air & Humidity",
+            desc: "Living near Miami Beach, Brickell, or the Keys means constant exposure to corrosive salt air. PPF creates an impermeable barrier that prevents salt-induced micro-corrosion and water spotting."
+          }, {
+            icon: Shield,
+            title: "Self-Healing Technology",
+            desc: "XPEL's elastomeric polymer top coat eliminates light scratches and swirl marks when exposed to heat. In Miami's sun, most surface blemishes disappear within minutes while parked."
+          }, {
+            icon: Car,
+            title: "Resale Value Preservation",
+            desc: "Paint condition is one of the biggest factors in resale value. PPF keeps your paint in concours condition, adding thousands of dollars to your vehicle's trade-in or private sale price."
+          }, {
+            icon: Award,
+            title: "10-Year XPEL Warranty",
+            desc: "Every installation is backed by XPEL's comprehensive 10-year manufacturer warranty against yellowing, cracking, peeling, staining, and delamination — even in Florida's harsh climate."
+          }].map(item => <Card key={item.title} className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <item.icon className="h-6 w-6 text-primary" />
@@ -238,8 +222,7 @@ const PaintProtectionFilm = () => {
                   <h3 className="text-xl font-bold">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -259,30 +242,25 @@ const PaintProtectionFilm = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                name: "Full Front",
-                anchor: "full-front",
-                coverage: "Hood, bumper, fenders, headlights, mirrors",
-                ideal: "Daily drivers & commuters",
-                highlight: "Most Popular",
-              },
-              {
-                name: "Track Package",
-                anchor: "track",
-                coverage: "Full front + rockers, rear bumper, A-pillars, door edges",
-                ideal: "Performance & spirited driving",
-                highlight: "Best Value",
-              },
-              {
-                name: "Full Body",
-                anchor: "full-body",
-                coverage: "Every painted surface, bumper to bumper",
-                ideal: "Exotic & luxury vehicles",
-                highlight: "Maximum Protection",
-              },
-            ].map((pkg) => (
-              <Card key={pkg.name} className="bg-background border-border shadow-premium text-center">
+            {[{
+            name: "Full Front",
+            anchor: "full-front",
+            coverage: "Hood, bumper, fenders, headlights, mirrors",
+            ideal: "Daily drivers & commuters",
+            highlight: "Most Popular"
+          }, {
+            name: "Track Package",
+            anchor: "track",
+            coverage: "Full front + rockers, rear bumper, A-pillars, door edges",
+            ideal: "Performance & spirited driving",
+            highlight: "Best Value"
+          }, {
+            name: "Full Body",
+            anchor: "full-body",
+            coverage: "Every painted surface, bumper to bumper",
+            ideal: "Exotic & luxury vehicles",
+            highlight: "Maximum Protection"
+          }].map(pkg => <Card key={pkg.name} className="bg-background border-border shadow-premium text-center">
                 <CardContent className="pt-8 pb-6 px-6 space-y-5">
                   <Badge className="bg-primary text-primary-foreground">{pkg.highlight}</Badge>
                   <h3 className="text-2xl font-bold font-playfair">{pkg.name}</h3>
@@ -294,8 +272,7 @@ const PaintProtectionFilm = () => {
                     </Button>
                   </Link>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -333,21 +310,10 @@ const PaintProtectionFilm = () => {
                 Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-foreground">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — from the Design Access Program (DAP) for precision-cut templates to the Ultimate Plus™ film and Fusion Plus™ ceramic coating for post-installation care.
               </p>
               <div className="grid sm:grid-cols-2 gap-6 py-4">
-                {[
-                  "Precision DAP templates for 100,000+ vehicle fitments",
-                  "Optically clear — invisible on any paint color",
-                  "Self-healing top coat eliminates swirl marks",
-                  "Stain-resistant against bird droppings & tree sap",
-                  "Non-yellowing formula engineered for high-UV climates",
-                  "Edge-seal technology prevents lifting and peeling",
-                  "Transferable 10-year manufacturer warranty",
-                  "Safe removal with zero paint damage",
-                ].map((point) => (
-                  <div key={point} className="flex items-start gap-3">
+                {["Precision DAP templates for 100,000+ vehicle fitments", "Optically clear — invisible on any paint color", "Self-healing top coat eliminates swirl marks", "Stain-resistant against bird droppings & tree sap", "Non-yellowing formula engineered for high-UV climates", "Edge-seal technology prevents lifting and peeling", "Transferable 10-year manufacturer warranty", "Safe removal with zero paint damage"].map(point => <div key={point} className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-foreground">{point}</span>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -369,20 +335,29 @@ const PaintProtectionFilm = () => {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {[
-              { step: "01", title: "Consultation", desc: "We assess your vehicle, discuss your driving habits, and recommend the ideal coverage package." },
-              { step: "02", title: "Surface Prep", desc: "Your vehicle is hand-washed, clay-barred, and any existing paint imperfections are polished before film application." },
-              { step: "03", title: "Precision Install", desc: "XPEL DAP templates are applied with surgical precision, edges are tucked, and every seam is sealed." },
-              { step: "04", title: "Quality Inspection", desc: "Multi-point inspection under controlled lighting ensures flawless coverage before delivery." },
-            ].map((item) => (
-              <div key={item.step} className="space-y-4 text-center">
+            {[{
+            step: "01",
+            title: "Consultation",
+            desc: "We assess your vehicle, discuss your driving habits, and recommend the ideal coverage package."
+          }, {
+            step: "02",
+            title: "Surface Prep",
+            desc: "Your vehicle is hand-washed, clay-barred, and any existing paint imperfections are polished before film application."
+          }, {
+            step: "03",
+            title: "Precision Install",
+            desc: "XPEL DAP templates are applied with surgical precision, edges are tucked, and every seam is sealed."
+          }, {
+            step: "04",
+            title: "Quality Inspection",
+            desc: "Multi-point inspection under controlled lighting ensures flawless coverage before delivery."
+          }].map(item => <div key={item.step} className="space-y-4 text-center">
                 <div className="h-16 w-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-bold">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -408,12 +383,10 @@ const PaintProtectionFilm = () => {
             <Card className="shadow-premium">
               <CardContent className="pt-6">
                 <Accordion type="single" collapsible className="w-full">
-                  {ppfFaqs.map((faq, index) => (
-                    <AccordionItem key={index} value={`item-${index}`}>
+                  {ppfFaqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`}>
                       <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
                       <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
-                    </AccordionItem>
-                  ))}
+                    </AccordionItem>)}
                 </Accordion>
               </CardContent>
             </Card>
@@ -446,8 +419,6 @@ const PaintProtectionFilm = () => {
       </section>
 
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
-    </div>
-  );
+    </div>;
 };
-
 export default PaintProtectionFilm;
