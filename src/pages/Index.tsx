@@ -549,6 +549,32 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       </section>
 
 
+      {/* Google Review CTA */}
+      <section className="py-16 bg-primary/5 backdrop-blur-sm">
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="flex justify-center gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-7 w-7 fill-yellow-400 text-yellow-400" />
+              ))}
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">Love Your Experience?</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Your feedback means the world to us. Share your experience and help others discover Miami's most trusted car boutique.
+            </p>
+            <Button
+              variant="premium"
+              size="lg"
+              className="text-lg px-10"
+              onClick={() => window.open('https://g.page/r/YOUR_BUSINESS_ID/review', '_blank')}
+            >
+              <Star className="h-5 w-5 mr-2" />
+              Leave a Google Review
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Instagram Feed Section */}
       <section className="py-12 bg-background/80 backdrop-blur-sm text-foreground">
         <div className="container mx-auto px-4">
