@@ -5,6 +5,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, ArrowRight, Calendar } from "lucide-react";
+import Footer from "@/components/Footer";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { HomeFAQ } from "@/components/HomeFAQ";
 import { XPELTeaser } from "@/components/XPELTeaser";
@@ -600,26 +601,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       <HomeFAQ />
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-12">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center gap-3 mb-4 md:mb-0">
-              <img src="/bespoke-logo.png" alt="Bespoke Auto Design Logo" className="h-10 w-auto" />
-              <span className="text-lg font-bold">
-                <span className="text-silver">Bespoke</span> Auto Design
-              </span>
-            </div>
-            <div className="text-center md:text-right text-primary-foreground/80">
-              <p>&copy; 2024 Bespoke Auto Design. All rights reserved.</p>
-              <p className="text-sm mt-1">Premium automotive protection and customization</p>
-            </div>
-          </div>
-          <Separator className="my-8 bg-primary-foreground/20" />
-          <div className="text-center text-primary-foreground/60 text-sm">
-            <p>XPEL Authorized Dealer | Professional Installation | Lifetime Support</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
       

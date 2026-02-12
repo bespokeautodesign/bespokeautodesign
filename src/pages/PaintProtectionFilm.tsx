@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -418,6 +419,7 @@ in Miami<br className="hidden md:block" />
         </div>
       </section>
 
+      <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>;
 };
