@@ -19,7 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'playfair': ['Playfair Display', 'serif'],
+				'playfair': ['Libre Caslon Display', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
