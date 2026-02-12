@@ -183,7 +183,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
         <div className="container mx-auto px-6 relative z-10">
           <header className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
-              <img src={xpelLogo} alt="XPEL Authorized Dealer" className="h-16 md:h-20 w-auto brightness-0 invert opacity-90 translate-y-1" />
+              <img src={xpelLogo} alt="XPEL Authorized Dealer" className="h-16 md:h-20 w-auto brightness-0 invert opacity-90 translate-y-1.5" />
               <span className="text-lg md:text-xl font-semibold tracking-widest uppercase text-white/90 border-l border-white/30 pl-4">Authorized Dealer</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight font-playfair">Miami's Leading Paint Protection Film (PPF) & Vehicle Wrap Specialists</h1>
