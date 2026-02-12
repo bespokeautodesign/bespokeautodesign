@@ -196,7 +196,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
             <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 shadow-glow text-base px-6 py-2 font-semibold animate-pulse">
               Premium Automotive Protection
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight font-playfair">Miami PPF, Ceramic Coating & Wraps
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight font-playfair">Miami’s Leading Paint Protection Film (PPF) & Vehicle Wrap Specialists
 
               </h1>
             <p className="text-xl md:text-2xl mb-8 text-white max-w-2xl mx-auto font-semibold" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>
