@@ -32,7 +32,6 @@ const NavLink = ({ href, active, children, className = "" }: {href: string;activ
   "text-[hsl(var(--nav-foreground-active))] font-semibold" :
   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))]"} ${
   className}`}>
-  Color Change Wrap
   {children}
   </Link>;
 
