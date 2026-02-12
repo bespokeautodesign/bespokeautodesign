@@ -272,7 +272,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
             {services.map((service, index) => (
               <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 group cursor-pointer" onClick={() => setSelectedService(index)}>
                 <div className="relative h-64 overflow-hidden">
-                  <LazyImage src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <LazyImage src={service.image} alt={service.title} className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${index === 1 ? "object-[center_30%]" : ""}`} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-2xl font-bold text-white font-playfair">{service.title}</h3>
