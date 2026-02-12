@@ -25,6 +25,7 @@ import ppfInstallationImage from "@/assets/ppf-installation.jpg";
 import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
 import vinylGT2RSImage from "@/assets/vinyl-gt2rs.jpg";
+import xpelLogo from "@/assets/xpel-logo.svg";
 
 const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToContact?: boolean;autoScrollToServices?: boolean;} = {}) => {
   const [formSubmitted, setFormSubmitted] = React.useState(false);
@@ -181,9 +182,10 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       <section className="relative text-primary-foreground py-44 md:py-36">
         <div className="container mx-auto px-6 relative z-10">
           <header className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 shadow-glow text-base px-6 py-2 font-semibold animate-pulse">
-              Premium Automotive Protection
-            </Badge>
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <img src={xpelLogo} alt="XPEL Authorized Dealer" className="h-8 md:h-10 w-auto brightness-0 invert opacity-90" />
+              <span className="text-sm md:text-base font-semibold tracking-widest uppercase text-white/90 border-l border-white/30 pl-3">Authorized Dealer</span>
+            </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight font-playfair">Miami's Leading Paint Protection Film (PPF) & Vehicle Wrap Specialists</h1>
             <p className="text-xl md:text-2xl mb-8 text-white max-w-2xl mx-auto font-semibold" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>
               Miami's Most Trusted Car Protection Boutique
