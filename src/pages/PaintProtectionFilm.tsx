@@ -52,64 +52,64 @@ const PaintProtectionFilm = () => {
     addStructuredData({
       "@context": "https://schema.org",
       "@graph": [
-        {
-          "@type": "Service",
-          "name": "Paint Protection Film Installation",
-          "provider": {
-            "@type": "AutomotiveBusiness",
-            "name": "Bespoke Auto Design",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "7943 NW 64th St",
-              "addressLocality": "Miami",
-              "addressRegion": "FL",
-              "postalCode": "33166",
-              "addressCountry": "US"
-            },
-            "telephone": "+1-786-395-9172",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5.0",
-              "reviewCount": "47",
-              "bestRating": "5",
-              "worstRating": "1"
-            }
+      {
+        "@type": "Service",
+        "name": "Paint Protection Film Installation",
+        "provider": {
+          "@type": "AutomotiveBusiness",
+          "name": "Bespoke Auto Design",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "7943 NW 64th St",
+            "addressLocality": "Miami",
+            "addressRegion": "FL",
+            "postalCode": "33166",
+            "addressCountry": "US"
           },
-          "areaServed": [
-            { "@type": "City", "name": "Miami" },
-            { "@type": "City", "name": "Miami Beach" },
-            { "@type": "City", "name": "Coral Gables" },
-            { "@type": "City", "name": "Doral" },
-            { "@type": "City", "name": "Brickell" }
-          ],
-          "description": "Professional XPEL paint protection film installation in Miami. Self-healing, invisible armor for luxury and exotic vehicles.",
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "PPF Packages",
-            "itemListElement": [
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Front PPF Package" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Track PPF Package" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Body PPF" } }
-            ]
+          "telephone": "+1-786-395-9172",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "47",
+            "bestRating": "5",
+            "worstRating": "1"
           }
         },
-        {
-          "@type": "FAQPage",
-          "mainEntity": ppfFaqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-          }))
+        "areaServed": [
+        { "@type": "City", "name": "Miami" },
+        { "@type": "City", "name": "Miami Beach" },
+        { "@type": "City", "name": "Coral Gables" },
+        { "@type": "City", "name": "Doral" },
+        { "@type": "City", "name": "Brickell" }],
+
+        "description": "Professional XPEL paint protection film installation in Miami. Self-healing, invisible armor for luxury and exotic vehicles.",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "PPF Packages",
+          "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Front PPF Package" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Track PPF Package" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Body PPF" } }]
+
         }
-      ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": ppfFaqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+        }))
+      }]
+
     });
   }, []);
   return <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* ═══════════════════════════════════════════════════════
-          HERO SECTION
-          ═══════════════════════════════════════════════════════ */}
+         HERO SECTION
+         ═══════════════════════════════════════════════════════ */}
       <section className="relative py-28 md:py-36 hero-parallax">
         <div className="hero-parallax-bg">
           <img src={clearPPFVehicles[5].image} alt="Ferrari F8 Tributo with PPF" className="w-full h-full object-cover object-[center_45%]" />
@@ -124,7 +124,7 @@ const PaintProtectionFilm = () => {
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">XPEL Paint Protection Film<br className="hidden md:block" />
-              <span className="text-white/70">in Miami, FL</span>
+              <span className="text-white/70"> in Miami, FL</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               Invisible, self-healing armor that shields your vehicle's paint from rock chips, scratches, UV fading, and Miami's harsh environmental elements — backed by a 10-year XPEL warranty.
@@ -147,8 +147,8 @@ const PaintProtectionFilm = () => {
       <div className="h-24 bg-gradient-to-b from-black/40 to-background" />
 
       {/* ═══════════════════════════════════════════════════════
-          WHAT IS PPF?
-          ═══════════════════════════════════════════════════════ */}
+         WHAT IS PPF?
+         ═══════════════════════════════════════════════════════ */}
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -185,8 +185,8 @@ const PaintProtectionFilm = () => {
 
 
       {/* ═══════════════════════════════════════════════════════
-          WHY PPF IN MIAMI?
-          ═══════════════════════════════════════════════════════ */}
+         WHY PPF IN MIAMI?
+         ═══════════════════════════════════════════════════════ */}
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -223,7 +223,7 @@ const PaintProtectionFilm = () => {
             icon: Award,
             title: "10-Year XPEL Warranty",
             desc: "Every installation is backed by XPEL's comprehensive 10-year manufacturer warranty against yellowing, cracking, peeling, staining, and delamination — even in Florida's harsh climate."
-          }].map(item => <Card key={item.title} className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300">
+          }].map((item) => <Card key={item.title} className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <item.icon className="h-6 w-6 text-primary" />
@@ -237,8 +237,8 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          PPF PACKAGES OVERVIEW
-          ═══════════════════════════════════════════════════════ */}
+         PPF PACKAGES OVERVIEW
+         ═══════════════════════════════════════════════════════ */}
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -269,7 +269,7 @@ const PaintProtectionFilm = () => {
             coverage: "Every painted surface, bumper to bumper",
             ideal: "Exotic & luxury vehicles",
             highlight: "Maximum Protection"
-          }].map(pkg => <Card key={pkg.name} className="bg-background border-border shadow-premium text-center">
+          }].map((pkg) => <Card key={pkg.name} className="bg-background border-border shadow-premium text-center">
                 <CardContent className="pt-8 pb-6 px-6 space-y-5">
                   <Badge className="bg-primary text-primary-foreground">{pkg.highlight}</Badge>
                   <h3 className="text-2xl font-bold font-playfair">{pkg.name}</h3>
@@ -302,8 +302,8 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          THE XPEL ADVANTAGE
-          ═══════════════════════════════════════════════════════ */}
+         THE XPEL ADVANTAGE
+         ═══════════════════════════════════════════════════════ */}
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-10">
@@ -319,7 +319,7 @@ const PaintProtectionFilm = () => {
                 Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-foreground">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — from the Design Access Program (DAP) for precision-cut templates to the Ultimate Plus™ film and Fusion Plus™ ceramic coating for post-installation care.
               </p>
               <div className="grid sm:grid-cols-2 gap-6 py-4">
-                {["Precision DAP templates for 100,000+ vehicle fitments", "Optically clear — invisible on any paint color", "Self-healing top coat eliminates swirl marks", "Stain-resistant against bird droppings & tree sap", "Non-yellowing formula engineered for high-UV climates", "Edge-seal technology prevents lifting and peeling", "Transferable 10-year manufacturer warranty", "Safe removal with zero paint damage"].map(point => <div key={point} className="flex items-start gap-3">
+                {["Precision DAP templates for 100,000+ vehicle fitments", "Optically clear — invisible on any paint color", "Self-healing top coat eliminates swirl marks", "Stain-resistant against bird droppings & tree sap", "Non-yellowing formula engineered for high-UV climates", "Edge-seal technology prevents lifting and peeling", "Transferable 10-year manufacturer warranty", "Safe removal with zero paint damage"].map((point) => <div key={point} className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-foreground">{point}</span>
                   </div>)}
@@ -330,8 +330,8 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          OUR PROCESS
-          ═══════════════════════════════════════════════════════ */}
+         OUR PROCESS
+         ═══════════════════════════════════════════════════════ */}
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -360,7 +360,7 @@ const PaintProtectionFilm = () => {
             step: "04",
             title: "Quality Inspection",
             desc: "Multi-point inspection under controlled lighting ensures flawless coverage before delivery."
-          }].map(item => <div key={item.step} className="space-y-4 text-center">
+          }].map((item) => <div key={item.step} className="space-y-4 text-center">
                 <div className="h-16 w-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
@@ -375,8 +375,8 @@ const PaintProtectionFilm = () => {
       <WhyChooseUs variant="service" differentiators={ppfDifferentiators} title="Why Choose Bespoke for PPF" />
 
       {/* ═══════════════════════════════════════════════════════
-          FAQ
-          ═══════════════════════════════════════════════════════ */}
+         FAQ
+         ═══════════════════════════════════════════════════════ */}
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
@@ -404,8 +404,8 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-          FINAL CTA
-          ═══════════════════════════════════════════════════════ */}
+         FINAL CTA
+         ═══════════════════════════════════════════════════════ */}
       <section className="py-24">
         <div className="container mx-auto px-6 text-center space-y-6">
           <h2 className="text-3xl md:text-5xl font-bold font-playfair">
