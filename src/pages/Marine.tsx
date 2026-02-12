@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Anchor, Waves, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { MarineFAQ } from "@/components/MarineFAQ";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -194,6 +195,7 @@ const Marine = () => {
 
       {/* Marine FAQ Section */}
       <MarineFAQ />
+      <Footer />
       </div>
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>

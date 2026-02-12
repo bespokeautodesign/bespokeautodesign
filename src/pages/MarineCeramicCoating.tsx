@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Droplets, CheckCircle, Shield, Award } from "lucide-react";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
 
 import Navbar from "@/components/Navbar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -191,6 +192,7 @@ const MarineCeramicCoating = () => {
           </div>
         </div>
       </section>
+      <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );

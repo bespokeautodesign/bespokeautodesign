@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Footer from "@/components/Footer";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -550,6 +551,7 @@ const ColorChangeWrap = () => {
         </div>
       </section>
 
+      <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );

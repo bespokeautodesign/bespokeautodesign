@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Footer from "@/components/Footer";
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Shield, Droplet, Star, Zap, CheckCircle } from 'lucide-react';
@@ -194,6 +195,7 @@ const XPELColorPPF = () => {
       {/* FAQ */}
       <ColorPPFFAQ />
 
+      <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );

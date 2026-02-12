@@ -6,6 +6,7 @@ import xpelLogo from "@/assets/xpel-logo.svg";
 import { Link } from "react-router-dom";
 import { WhyChooseUs, marinePPFDifferentiators } from "@/components/WhyChooseUs";
 import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
 
 import Navbar from "@/components/Navbar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -194,6 +195,7 @@ const MarinePPF = () => {
           </div>
         </div>
       </section>
+      <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );
