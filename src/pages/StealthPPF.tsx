@@ -52,26 +52,39 @@ const StealthPPF = () => {
     addCanonicalUrl("https://bespokeautodesign.com/stealth-ppf");
     addStructuredData({
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Stealth PPF (Matte Paint Protection Film) Installation",
-      "provider": {
-        "@type": "AutomotiveBusiness",
-        "name": "Bespoke Auto Design",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "7943 NW 64th St",
-          "addressLocality": "Miami",
-          "addressRegion": "FL",
-          "postalCode": "33166",
-          "addressCountry": "US"
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Stealth PPF (Matte Paint Protection Film) Installation",
+          "provider": {
+            "@type": "AutomotiveBusiness",
+            "name": "Bespoke Auto Design",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "7943 NW 64th St",
+              "addressLocality": "Miami",
+              "addressRegion": "FL",
+              "postalCode": "33166",
+              "addressCountry": "US"
+            },
+            "telephone": "+1-786-395-9172"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Miami" },
+            { "@type": "City", "name": "Miami Beach" },
+            { "@type": "City", "name": "Coral Gables" }
+          ],
+          "description": "Professional XPEL Stealth matte/satin paint protection film installation in Miami. Self-healing technology with 10-year warranty."
         },
-        "telephone": "+1-786-395-9172"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Miami"
-      },
-      "description": "Professional XPEL Stealth matte/satin paint protection film installation in Miami. Self-healing technology with 10-year warranty."
+        {
+          "@type": "FAQPage",
+          "mainEntity": stealthFaqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+          }))
+        }
+      ]
     });
   }, []);
   return <div className="min-h-screen bg-background">

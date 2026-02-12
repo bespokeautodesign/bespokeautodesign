@@ -68,23 +68,40 @@ const CeramicTint = () => {
     addCanonicalUrl("https://bespokeautodesign.com/ceramic-tint");
     addStructuredData({
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Ceramic Window Tint Installation",
-      "provider": {
-        "@type": "AutomotiveBusiness",
-        "name": "Bespoke Auto Design",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "7943 NW 64th St",
-          "addressLocality": "Miami",
-          "addressRegion": "FL",
-          "postalCode": "33166",
-          "addressCountry": "US"
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Ceramic Window Tint Installation",
+          "provider": {
+            "@type": "AutomotiveBusiness",
+            "name": "Bespoke Auto Design",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "7943 NW 64th St",
+              "addressLocality": "Miami",
+              "addressRegion": "FL",
+              "postalCode": "33166",
+              "addressCountry": "US"
+            },
+            "telephone": "+1-786-395-9172"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Miami" },
+            { "@type": "City", "name": "Miami Beach" },
+            { "@type": "City", "name": "Doral" },
+            { "@type": "City", "name": "Wynwood" }
+          ],
+          "description": "Professional XPEL XR Plus ceramic window tint installation in Miami. Blocks 99% UV, rejects up to 98% infrared heat. Skin Cancer Foundation recommended."
         },
-        "telephone": "+1-786-395-9172"
-      },
-      "areaServed": { "@type": "City", "name": "Miami" },
-      "description": "Professional XPEL XR Plus ceramic window tint installation in Miami. Blocks 99% UV, rejects up to 98% infrared heat. Skin Cancer Foundation recommended."
+        {
+          "@type": "FAQPage",
+          "mainEntity": tintFaqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+          }))
+        }
+      ]
     });
   }, []);
 

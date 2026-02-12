@@ -69,26 +69,40 @@ const CeramicCoating = () => {
     addCanonicalUrl("https://bespokeautodesign.com/ceramic-coating");
     addStructuredData({
       "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Ceramic Coating Installation",
-      "provider": {
-        "@type": "AutomotiveBusiness",
-        "name": "Bespoke Auto Design",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "7943 NW 64th St",
-          "addressLocality": "Miami",
-          "addressRegion": "FL",
-          "postalCode": "33166",
-          "addressCountry": "US"
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Ceramic Coating Installation",
+          "provider": {
+            "@type": "AutomotiveBusiness",
+            "name": "Bespoke Auto Design",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "7943 NW 64th St",
+              "addressLocality": "Miami",
+              "addressRegion": "FL",
+              "postalCode": "33166",
+              "addressCountry": "US"
+            },
+            "telephone": "+1-786-395-9172"
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Miami" },
+            { "@type": "City", "name": "Miami Beach" },
+            { "@type": "City", "name": "Coral Gables" },
+            { "@type": "City", "name": "Brickell" }
+          ],
+          "description": "Professional ceramic coating installation in Miami. Multi-layer nano-ceramic protection for luxury and exotic vehicles."
         },
-        "telephone": "+1-786-395-9172"
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": "Miami"
-      },
-      "description": "Professional ceramic coating installation in Miami. Multi-layer nano-ceramic protection for luxury and exotic vehicles."
+        {
+          "@type": "FAQPage",
+          "mainEntity": ceramicFaqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+          }))
+        }
+      ]
     });
   }, []);
 
