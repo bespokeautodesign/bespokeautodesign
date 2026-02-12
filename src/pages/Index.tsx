@@ -182,9 +182,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       <section className="relative text-primary-foreground py-44 md:py-36">
         <div className="container mx-auto px-6 relative z-10">
           <header className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <img src={xpelLogo} alt="XPEL Authorized Dealer" className="h-8 md:h-10 w-auto brightness-0 invert opacity-90" />
-              <span className="text-sm md:text-base font-semibold tracking-widest uppercase text-white/90 border-l border-white/30 pl-3">Authorized Dealer</span>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <img src={xpelLogo} alt="XPEL Authorized Dealer" className="h-6 md:h-7 w-auto brightness-0 invert opacity-90" />
+              <span className="text-sm md:text-base font-semibold tracking-widest uppercase text-white/90 border-l border-white/30 pl-4">Authorized Dealer</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight font-playfair">Miami's Leading Paint Protection Film (PPF) & Vehicle Wrap Specialists</h1>
             <p className="text-xl md:text-2xl mb-8 text-white max-w-2xl mx-auto font-semibold" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>
