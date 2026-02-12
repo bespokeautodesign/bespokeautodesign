@@ -255,6 +255,16 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
             
 
 
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+              <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
+                Request a Free Quote
+              </Button>
+              <Button variant="silver" size="lg" asChild>
+                <a href="tel:+17863959172">
+                  <Phone className="h-4 w-4" /> Call (786) 395-9172
+                </a>
+              </Button>
+            </div>
           </article>
         </div>
       </section>
@@ -546,6 +556,17 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
           </div>
           
           <TestimonialCarousel />
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+            <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
+              Get Your Free Quote
+            </Button>
+            <Button variant="silver" size="lg" asChild>
+              <a href="tel:+17863959172">
+                <Phone className="h-4 w-4" /> (786) 395-9172
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -603,6 +624,19 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
       {/* Footer */}
       <Footer />
       </div>
+
+      {/* Sticky Mobile CTA Bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background/95 backdrop-blur-md border-t border-border px-4 py-3 flex gap-3">
+        <Button variant="premium" className="flex-1" onClick={() => setQuoteModalOpen(true)}>
+          Get Quote
+        </Button>
+        <Button variant="silver" className="flex-1" asChild>
+          <a href="tel:+17863959172">
+            <Phone className="h-4 w-4" /> Call Now
+          </a>
+        </Button>
+      </div>
+
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
       
       {/* Service Details Modal */}
