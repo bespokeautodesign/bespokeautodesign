@@ -11,6 +11,7 @@ import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { Link } from "react-router-dom";
 import { WhyChooseUs, ppfDifferentiators } from "@/components/WhyChooseUs";
+import { RelatedServices } from "@/components/RelatedServices";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { clearPPFVehicles, clearPPFImageStyles } from "@/data/portfolioVehicles";
 const ppfFaqs = [{
@@ -426,6 +427,7 @@ const PaintProtectionFilm = () => {
         </div>
       </section>
 
+      <RelatedServices currentSlug="paint-protection-film" />
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>;

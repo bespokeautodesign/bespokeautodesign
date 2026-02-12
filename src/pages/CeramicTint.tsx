@@ -10,6 +10,7 @@ import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Sun, Thermometer, Clock, Award, Eye, Zap, Car, Heart } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { WhyChooseUs, tintDifferentiators } from "@/components/WhyChooseUs";
+import { RelatedServices } from "@/components/RelatedServices";
 import { addStructuredData } from "@/utils/seoHelpers";
 import xpelLogo from "@/assets/xpel-logo.svg";
 
@@ -447,6 +448,7 @@ const CeramicTint = () => {
         </div>
       </section>
 
+      <RelatedServices currentSlug="ceramic-tint" />
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>

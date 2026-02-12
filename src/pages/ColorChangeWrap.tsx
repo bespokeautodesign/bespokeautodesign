@@ -10,6 +10,7 @@ import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Palette, Sun, Zap, Car, Clock, Award, Sparkles, Layers, Paintbrush, RefreshCw, Eye } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { WhyChooseUs, wrapDifferentiators } from "@/components/WhyChooseUs";
+import { RelatedServices } from "@/components/RelatedServices";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { vinylWrapVehicles } from "@/data/portfolioVehicles";
 
@@ -205,7 +206,13 @@ const ColorChangeWrap = () => {
         },
         telephone: "+1-786-395-9172",
       },
-      areaServed: { "@type": "City", name: "Miami" },
+      areaServed: [
+        { "@type": "City", name: "Miami" },
+        { "@type": "City", name: "Miami Beach" },
+        { "@type": "City", name: "Coral Gables" },
+        { "@type": "City", name: "Doral" },
+        { "@type": "City", name: "Wynwood" }
+      ],
       description:
         "Professional color change vinyl wraps in Miami using premium-grade cast vinyl films for complete vehicle customization.",
     });
@@ -551,6 +558,7 @@ const ColorChangeWrap = () => {
         </div>
       </section>
 
+      <RelatedServices currentSlug="color-change-wrap" />
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>

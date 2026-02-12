@@ -10,6 +10,7 @@ import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Eye, Paintbrush, Sun, Car, Clock, Award, Layers } from "lucide-react";
 import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 import { WhyChooseUs, stealthDifferentiators } from "@/components/WhyChooseUs";
+import { RelatedServices } from "@/components/RelatedServices";
 import { addStructuredData } from "@/utils/seoHelpers";
 import { Link } from "react-router-dom";
 import xpelLogo from "@/assets/xpel-logo.svg";
@@ -389,6 +390,7 @@ const StealthPPF = () => {
         </div>
       </section>
 
+      <RelatedServices currentSlug="stealth-ppf" />
       <Footer />
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>;
