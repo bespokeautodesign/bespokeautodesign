@@ -381,10 +381,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                           <input type="checkbox" name="contactMethod" value="phone" className="rounded border-input" />
                           <span className="text-sm">Phone</span>
                         </label>
-                        <label className="flex items-center space-x-2">
-                          <input type="checkbox" name="contactMethod" value="email" className="rounded border-input" />
-                          <span className="text-sm">Email</span>
-                        </label>
                       </div>
                     </div>
                     <div className="space-y-2">
