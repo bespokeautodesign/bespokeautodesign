@@ -23,7 +23,7 @@ const otherItemsBefore = [
 ];
 
 const otherItemsAfter: { label: string; href: string }[] = [
-  { label: "Find Us", href: "/locations" },
+  // { label: "Portfolio", href: "/portfolio" },
 ];
 
 const MobileMenu = () => {
