@@ -258,7 +258,52 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       </section>
 
       {/* Services Section */}
-      <ServiceCategoryCards />
+      <section id="services" className="py-20 bg-background/80 backdrop-blur-sm">
+        <div className="container mx-auto px-6">
+          <header className="text-center mb-16">
+            <Badge variant="outline" className="mb-4">Our Services</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">Premium Protection Services</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive vehicle protection solutions using only the finest XPEL products. Every service backed by manufacturer warranties.
+            </p>
+          </header>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {services.map((service, index) => (
+              <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 group cursor-pointer" onClick={() => setSelectedService(index)}>
+                <div className="relative h-64 overflow-hidden">
+                  <LazyImage src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-2xl font-bold text-white font-playfair">{service.title}</h3>
+                  </div>
+                </div>
+                <CardContent className="pt-6">
+                  <p className="text-muted-foreground mb-4">{service.description}</p>
+                  <div className="grid grid-cols-2 gap-2 mb-4">
+                    {service.features.map((feature, fIndex) => (
+                      <div key={fIndex} className="flex items-center gap-2 text-sm">
+                        <Shield className="h-3 w-3 text-primary flex-shrink-0" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex gap-3">
+                    <Button variant="outline" size="sm" asChild className="flex-1">
+                      <Link to={service.link}>
+                        Learn More <ArrowRight className="h-3 w-3 ml-1" />
+                      </Link>
+                    </Button>
+                    <Button variant="premium" size="sm" className="flex-1" onClick={(e) => { e.stopPropagation(); setQuoteModalOpen(true); }}>
+                      Get Quote
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
 
       {/* Why Choose Us */}
