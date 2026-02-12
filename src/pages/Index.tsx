@@ -17,6 +17,7 @@ import { addOpenGraphTags, addCanonicalUrl, preloadCriticalImages } from "@/util
 import { LazyImage } from "@/components/LazyImage";
 import HeroVideoBackground from "@/components/HeroVideoBackground";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { ServiceCategoryCards } from "@/components/ServiceCategoryCards";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png";
 const ceramicWorkImage = "/lovable-uploads/83f64f7b-88e3-468d-9f88-d13e551c6289.png";
 import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.png";
@@ -257,57 +258,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       </section>
 
       {/* Services Section */}
-      <main id="services" className="py-20 bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto px-6">
-          <header className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Our Expertise</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Premium Protection Services</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We specialize in advanced automotive protection and customization services using only the finest XPEL materials and proven techniques. Serving Miami's luxury automotive community with excellence.
-            </p>
-          </header>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, index) => <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105">
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={`Professional ${service.title} installation at Bespoke Auto Design Miami - XPEL authorized dealer`}
-                    className={`w-full h-full transition-transform duration-300 hover:scale-110 ${
-                    service.title === "Vinyl Wraps" ?
-                    "object-cover object-[center_48%] brightness-115 contrast-115 saturate-115" :
-                    service.title === "Ceramic Coating" ?
-                    "object-cover object-[center_30%]" :
-                    "object-cover"}`
-                    }
-                    loading="lazy"
-                    decoding="async" />
-
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
-                  <CardDescription className="text-lg">{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-center gap-2">
-                        <Shield className="h-4 w-4 text-primary" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </li>)}
-                  </ul>
-                  <div className="flex gap-3 mt-6">
-                    <Button variant="outline" className="flex-1" asChild>
-                      <Link to={service.link}>Learn More</Link>
-                    </Button>
-                    <Button variant="premium" className="flex-1" onClick={scrollToQuote}>
-                      Get Quote
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>)}
-          </div>
-        </div>
-      </main>
+      <ServiceCategoryCards />
 
 
       {/* Why Choose Us */}
