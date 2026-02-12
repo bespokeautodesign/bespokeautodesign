@@ -197,10 +197,10 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: { autoScrollToCont
               Premium Automotive Protection
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight font-playfair">
-              Bespoke Auto Care
+              Miami PPF, Ceramic Coating & Auto Wraps
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white max-w-2xl mx-auto font-semibold" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>
-              Miami's Most Trusted Car Boutique
+              Miami's Most Trusted Car Protection Boutique
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 

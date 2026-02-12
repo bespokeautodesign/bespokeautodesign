@@ -55,7 +55,13 @@ const PPFPackages = () => {
         },
         "telephone": "+1-786-395-9172"
       },
-      "areaServed": { "@type": "City", "name": "Miami" },
+      "areaServed": [
+        { "@type": "City", "name": "Miami" },
+        { "@type": "City", "name": "Miami Beach" },
+        { "@type": "City", "name": "Coral Gables" },
+        { "@type": "City", "name": "Doral" },
+        { "@type": "City", "name": "Fort Lauderdale" }
+      ],
       "description": "XPEL paint protection film packages in Miami. Full Front, Track, and Full Body coverage options with 10-year warranty.",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
