@@ -43,27 +43,23 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
 
   React.useEffect(() => {
     if (autoScrollToContact) {
-      // Small delay to ensure page is loaded
       setTimeout(() => {
         scrollToQuote();
       }, 100);
     }
     if (autoScrollToServices) {
-      // Small delay to ensure page is loaded
       setTimeout(() => {
         scrollToServices();
       }, 100);
     }
   }, [autoScrollToContact, autoScrollToServices]);
 
-  // Set page title and meta description for SEO
   React.useEffect(() => {
     const title = "Premium PPF, Ceramic Coating & Window Tint Miami | Bespoke Auto Design";
     const description = "Professional XPEL paint protection film, ceramic coating & window tint installation in Miami. Authorized dealer with lifetime warranties. Protect your luxury vehicle investment.";
 
     document.title = title;
 
-    // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', description);
@@ -74,17 +70,14 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       document.head.appendChild(meta);
     }
 
-    // Add comprehensive social media and geo tags
     addOpenGraphTags(title, description, '/bespoke-logo.png');
     addCanonicalUrl(window.location.origin + '/');
 
-    // Preload critical images
     preloadCriticalImages([
-    '/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png', // Hero image
-    '/bespoke-logo.png' // Logo
+    '/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png',
+    '/bespoke-logo.png'
     ]);
 
-    // Add structured data for local business and FAQ
     const combinedSchema = {
       "@context": "https://schema.org",
       "@graph": [businessSchema, faqSchema]
@@ -92,7 +85,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
     addStructuredData(combinedSchema);
   }, []);
 
-  // Load LightWidget script
   React.useEffect(() => {
     if (!document.querySelector('script[src*="lightwidget"]')) {
       const script = document.createElement('script');
@@ -116,7 +108,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       "Hydrophobic surface makes cleaning easier and repels water and dirt",
       "Optically clear - virtually invisible once applied",
       "Can be removed without damaging original paint"],
-
       coverage: "We offer full-front coverage, full-body coverage, or custom packages tailored to your needs. Popular areas include hood, fenders, bumper, mirrors, door edges, and rocker panels.",
       warranty: "XPEL Ultimate Plus comes with a 10-year manufacturer warranty and lifetime installation warranty from Bespoke Auto Design."
     }
@@ -136,7 +127,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       "Enhanced gloss and depth - makes paint colors pop",
       "Reduces swirl marks and light scratches during washing",
       "Lasts 5+ years with proper maintenance"],
-
       coverage: "Applied to all painted surfaces, wheels, glass, and trim. We offer multi-year warranties depending on the package selected.",
       warranty: "5-year warranty on Fusion Plus coating with annual maintenance inspections included."
     }
@@ -156,7 +146,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       "Can be repaired in sections if damaged",
       "Maintains vehicle resale value by preserving original paint",
       "Durable 5-7 year lifespan with proper care"],
-
       coverage: "Full vehicle wraps, partial wraps, accent wraps, and chrome delete packages available. We use only premium 3M and Avery Dennison films.",
       warranty: "Manufacturer warranty on materials plus our installation warranty against peeling and lifting."
     }
@@ -176,7 +165,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       "Nano-ceramic technology - no metal, won't corrode",
       "Reduces glare for safer driving",
       "Shatter-resistant - holds glass together in accidents"],
-
       coverage: "Available in multiple shades to meet legal requirements. We tint all windows including windshield strip, front windows, rear window, and sunroof.",
       warranty: "Lifetime manufacturer warranty against fading, bubbling, peeling, and cracking. Lifetime installation warranty."
     }
@@ -196,9 +184,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
             <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 shadow-glow text-base px-6 py-2 font-semibold animate-pulse">
               Premium Automotive Protection
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight font-playfair">Miami’s Leading Paint Protection Film (PPF) & Vehicle Wrap Specialists
-
-              </h1>
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight font-playfair">Miami's Leading Paint Protection Film (PPF) & Vehicle Wrap Specialists</h1>
             <p className="text-xl md:text-2xl mb-8 text-white max-w-2xl mx-auto font-semibold" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>
               Miami's Most Trusted Car Protection Boutique
             </p>
@@ -253,7 +239,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
               </div>
             </div>
             
-
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
