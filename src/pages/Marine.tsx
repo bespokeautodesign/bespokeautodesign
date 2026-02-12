@@ -10,6 +10,7 @@ import { MarineFAQ } from "@/components/MarineFAQ";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuoteModal } from "@/components/QuoteModal";
 import { addStructuredData } from "@/utils/seoHelpers";
+import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
 
 const Marine = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
@@ -30,25 +31,38 @@ const Marine = () => {
       document.head.appendChild(meta);
     }
 
+    addOpenGraphTags(
+      "Marine Protection Services Miami | Boat PPF & Ceramic Coating | Bespoke Auto Design",
+      "Professional marine protection services for boats and yachts in Miami. XPEL marine PPF, ceramic coating, and window tint."
+    );
+    addCanonicalUrl("https://bespokeautodesign.com/marine");
+
     // Add marine-specific structured data
-    const marineSchema = {
+    addStructuredData({
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Marine Protection Services",
-      "description": "Specialized XPEL protection services for boats, yachts, and marine vessels in Miami",
+      "description": "Specialized XPEL protection services for boats, yachts, and marine vessels in Miami, FL",
       "provider": {
         "@type": "AutomotiveBusiness",
         "name": "Bespoke Auto Design",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "7943 NW 64th St",
           "addressLocality": "Miami",
-          "addressRegion": "FL"
-        }
+          "addressRegion": "FL",
+          "postalCode": "33166",
+          "addressCountry": "US"
+        },
+        "telephone": "+1-786-395-9172"
       },
-      "areaServed": "South Florida",
+      "areaServed": [
+        { "@type": "City", "name": "Miami" },
+        { "@type": "City", "name": "Miami Beach" },
+        { "@type": "City", "name": "Fort Lauderdale" }
+      ],
       "serviceType": "Marine Protection"
-    };
-    addStructuredData(marineSchema);
+    });
   }, []);
 
   const marineServices = [{

@@ -13,6 +13,7 @@ import { ColorPPFHero } from '@/components/ColorPPFHero';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { QuoteModal } from '@/components/QuoteModal';
 import { addStructuredData } from '@/utils/seoHelpers';
+import { addOpenGraphTags, addCanonicalUrl } from '@/utils/metaHelpers';
 
 interface XPELColor {
   name: string;
@@ -54,16 +55,36 @@ const XPELColorPPF = () => {
       meta.content = 'Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors available in gloss, satin, and metallic finishes. Protection meets style.';
       document.head.appendChild(meta);
     }
+
+    // Add OG tags & canonical
+    addOpenGraphTags(
+      "XPEL COLOR PPF Miami | Colored Paint Protection Film | Bespoke Auto Design",
+      "Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors in gloss, satin, and metallic finishes."
+    );
+    addCanonicalUrl("https://bespokeautodesign.com/colorppf");
+
     addStructuredData({
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "XPEL COLOR Paint Protection Film",
-      "description": "Premium colored paint protection film available in 16 vibrant colors with gloss, satin, and metallic finishes",
+      "description": "Premium colored paint protection film available in 16 vibrant colors with gloss, satin, and metallic finishes. Installed in Miami, FL.",
       "brand": { "@type": "Brand", "name": "XPEL" },
       "offers": {
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
-        "seller": { "@type": "Organization", "name": "Bespoke Auto Design" }
+        "seller": {
+          "@type": "AutomotiveBusiness",
+          "name": "Bespoke Auto Design",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "7943 NW 64th St",
+            "addressLocality": "Miami",
+            "addressRegion": "FL",
+            "postalCode": "33166",
+            "addressCountry": "US"
+          },
+          "telephone": "+1-786-395-9172"
+        }
       }
     });
   }, []);
