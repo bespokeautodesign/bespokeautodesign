@@ -432,7 +432,7 @@ const PaintProtectionFilm = () => {
 
       <RelatedServices currentSlug="paint-protection-film" />
       <Footer />
-      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} preselectedService="Paint Protection Film (PPF)" />
     </div>;
 };
 export default PaintProtectionFilm;

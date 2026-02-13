@@ -453,7 +453,7 @@ const CeramicTint = () => {
 
       <RelatedServices currentSlug="ceramic-tint" />
       <Footer />
-      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} preselectedService="Ceramic Tint" />
     </div>
   );
 };

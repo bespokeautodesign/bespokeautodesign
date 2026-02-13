@@ -466,7 +466,7 @@ const CeramicCoating = () => {
 
       <RelatedServices currentSlug="ceramic-coating" />
       <Footer />
-      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} preselectedService="Ceramic Coating" />
     </div>
   );
 };
