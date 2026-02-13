@@ -29,6 +29,9 @@ export const ColorPPFHero = ({ onGetQuote }: ColorPPFHeroProps) => {
             The world's first colored paint protection film. Change your vehicle's color while adding 
             industry-leading protection against chips, scratches, and UV damage — all in one film.
           </p>
+          <p className="text-lg font-semibold text-white/90 mb-2">
+            Starting at $5,000 • Free Consultation
+          </p>
           <p className="text-base text-white/60 max-w-xl mb-8">
             16 stunning colors • Gloss, Satin & Metallic finishes • 10-year warranty
           </p>

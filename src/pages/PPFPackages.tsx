@@ -18,14 +18,14 @@ const packages = [{
 }, {
   id: "track",
   name: "Track Package",
-  startingPrice: "$2,499",
+  startingPrice: "$2,500",
   image: "/lovable-uploads/ppf-track-package.png",
   description: "Designed for performance enthusiasts who push their vehicles to the limit. The Track Package extends protection beyond the full front to include rocker panels, rear bumper, A-pillars, and lower door edges — areas especially susceptible to rock chips, tire debris, and track-day wear.",
   benefits: ["Full front coverage plus rockers, rear bumper & A-pillars", "Engineered for spirited driving and track days", "Guards against stone chips and tire marbles at speed", "Maintains a flawless finish even under extreme conditions"]
 }, {
   id: "full-body",
   name: "Full Body",
-  startingPrice: "$4,499",
+  startingPrice: "$4,000",
   image: "/lovable-uploads/ppf-full-body.png",
   description: "The ultimate in paint protection. Every painted surface on your vehicle is wrapped in XPEL's industry-leading film, creating an invisible armor that defends against scratches, rock chips, UV fading, bird droppings, and environmental contaminants — while keeping your factory finish looking showroom-new for years.",
   benefits: ["Complete bumper-to-bumper coverage on every panel", "Maximum protection against all environmental hazards", "10-year manufacturer warranty backed by XPEL", "The gold standard for exotic and luxury vehicle owners"]

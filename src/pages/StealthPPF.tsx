@@ -110,6 +110,9 @@ const StealthPPF = () => {
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               Transform any gloss finish into a head-turning satin look — or preserve your factory matte paint — with XPEL's self-healing Stealth paint protection film.
             </p>
+            <p className="text-lg font-semibold text-white/90">
+              Starting at $4,500 • Free Consultation
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
                 Get a Free Quote <ChevronRight className="h-4 w-4" />
