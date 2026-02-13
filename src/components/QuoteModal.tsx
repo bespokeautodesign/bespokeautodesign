@@ -8,9 +8,10 @@ interface QuoteModalProps {
   preselectedService?: string;
   preselectedPpfType?: string;
   preselectedPpfPackage?: string;
+  preselectedMessage?: string;
 }
 
-export const QuoteModal = ({ open, onOpenChange, preselectedService, preselectedPpfType, preselectedPpfPackage }: QuoteModalProps) => {
+export const QuoteModal = ({ open, onOpenChange, preselectedService, preselectedPpfType, preselectedPpfPackage, preselectedMessage }: QuoteModalProps) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [selectedService, setSelectedService] = useState("");
   const [ppfType, setPpfType] = useState("");
@@ -22,8 +23,14 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
       if (preselectedService) setSelectedService(preselectedService);
       if (preselectedPpfType) setPpfType(preselectedPpfType);
       if (preselectedPpfPackage) setPpfPackage(preselectedPpfPackage);
+      if (preselectedMessage) {
+        setTimeout(() => {
+          const msgField = document.querySelector('textarea[name="message"]') as HTMLTextAreaElement;
+          if (msgField) msgField.value = preselectedMessage;
+        }, 100);
+      }
     }
-  }, [open, preselectedService, preselectedPpfType, preselectedPpfPackage]);
+  }, [open, preselectedService, preselectedPpfType, preselectedPpfPackage, preselectedMessage]);
 
   // Reset PPF type when service changes away from PPF
   useEffect(() => {
