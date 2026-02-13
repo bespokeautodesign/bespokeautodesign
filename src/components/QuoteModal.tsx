@@ -11,13 +11,22 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [selectedService, setSelectedService] = useState("");
   const [ppfType, setPpfType] = useState("");
+  const [ppfPackage, setPpfPackage] = useState("");
 
   // Reset PPF type when service changes away from PPF
   useEffect(() => {
     if (selectedService !== "Paint Protection Film (PPF)") {
       setPpfType("");
+      setPpfPackage("");
     }
   }, [selectedService]);
+
+  // Reset package when PPF type changes away from Clear
+  useEffect(() => {
+    if (ppfType !== "Clear Paint Protection Film") {
+      setPpfPackage("");
+    }
+  }, [ppfType]);
 
   const handleSubmit = async () => {
     const form = document.querySelector('#quote-modal-form') as HTMLFormElement;
@@ -37,6 +46,9 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
       let serviceValue = formData.get('service') as string;
       if (serviceValue === "Paint Protection Film (PPF)" && ppfType) {
         serviceValue = `PPF - ${ppfType}`;
+        if (ppfType === "Clear Paint Protection Film" && ppfPackage) {
+          serviceValue += ` (${ppfPackage})`;
+        }
       }
       
       const { error } = await supabase.functions.invoke('send-quote-email', {
@@ -58,6 +70,7 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
       form.reset();
       setSelectedService("");
       setPpfType("");
+      setPpfPackage("");
       
       // Close modal after 2 seconds
       setTimeout(() => {
@@ -138,6 +151,23 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
                   <option value="Clear Paint Protection Film">Clear Paint Protection Film</option>
                   <option value="Stealth (Satin Finish)">Stealth (Satin Finish)</option>
                   <option value="Color PPF">Color PPF</option>
+                </select>
+              </div>
+            )}
+            {ppfType === "Clear Paint Protection Film" && (
+              <div className="space-y-2">
+                <label className="text-sm font-medium">PPF Package *</label>
+                <select 
+                  name="ppfPackage" 
+                  required 
+                  className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                  value={ppfPackage}
+                  onChange={(e) => setPpfPackage(e.target.value)}
+                >
+                  <option value="">Select a package...</option>
+                  <option value="Full Front Package">Full Front Package</option>
+                  <option value="Track Package">Track Package</option>
+                  <option value="Full Body">Full Body</option>
                 </select>
               </div>
             )}
