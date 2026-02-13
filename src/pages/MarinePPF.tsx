@@ -196,7 +196,7 @@ const MarinePPF = () => {
         </div>
       </section>
       <Footer />
-      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} preselectedService="Marine PPF" />
     </div>
   );
 };

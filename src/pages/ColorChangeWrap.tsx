@@ -563,7 +563,7 @@ const ColorChangeWrap = () => {
 
       <RelatedServices currentSlug="color-change-wrap" />
       <Footer />
-      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} preselectedService="Vinyl Wrap" />
     </div>
   );
 };

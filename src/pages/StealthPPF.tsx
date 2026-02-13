@@ -395,7 +395,7 @@ const StealthPPF = () => {
 
       <RelatedServices currentSlug="stealth-ppf" />
       <Footer />
-      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} preselectedService="Paint Protection Film (PPF)" preselectedPpfType="Stealth (Satin Finish)" />
     </div>;
 };
 export default StealthPPF;
