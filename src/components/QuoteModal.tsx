@@ -5,13 +5,25 @@ import { Button } from "@/components/ui/button";
 interface QuoteModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  preselectedService?: string;
+  preselectedPpfType?: string;
+  preselectedPpfPackage?: string;
 }
 
-export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
+export const QuoteModal = ({ open, onOpenChange, preselectedService, preselectedPpfType, preselectedPpfPackage }: QuoteModalProps) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [selectedService, setSelectedService] = useState("");
   const [ppfType, setPpfType] = useState("");
   const [ppfPackage, setPpfPackage] = useState("");
+
+  // Apply preselections when modal opens
+  useEffect(() => {
+    if (open) {
+      if (preselectedService) setSelectedService(preselectedService);
+      if (preselectedPpfType) setPpfType(preselectedPpfType);
+      if (preselectedPpfPackage) setPpfPackage(preselectedPpfPackage);
+    }
+  }, [open, preselectedService, preselectedPpfType, preselectedPpfPackage]);
 
   // Reset PPF type when service changes away from PPF
   useEffect(() => {
