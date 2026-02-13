@@ -43,6 +43,7 @@ const xpelColors: XPELColor[] = [
 const XPELColorPPF = () => {
   const [selectedColor, setSelectedColor] = useState<XPELColor>(xpelColors[0]);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
+  const [quoteColor, setQuoteColor] = useState("");
 
   React.useEffect(() => {
     document.title = "XPEL COLOR PPF Miami | Colored Paint Protection Film | 16 Colors Available";
@@ -231,7 +232,7 @@ const XPELColorPPF = () => {
                     <div className="flex items-center gap-2 text-xs text-muted-foreground"><Star className="h-3 w-3 text-primary" /><span>UV resistant</span></div>
                     <div className="flex items-center gap-2 text-xs text-muted-foreground"><Droplet className="h-3 w-3 text-primary" /><span>Hydrophobic</span></div>
                   </div>
-                  <Button className="w-full mt-6" onClick={() => setQuoteModalOpen(true)}>
+                  <Button className="w-full mt-6" onClick={() => { setQuoteColor(selectedColor.name); setQuoteModalOpen(true); }}>
                     Get Quote for {selectedColor.name.replace('XPEL ', '')}
                   </Button>
                 </div>
@@ -248,7 +249,7 @@ const XPELColorPPF = () => {
       <ColorPPFFAQ />
 
       <Footer />
-      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} preselectedService="Paint Protection Film (PPF)" preselectedPpfType="Color PPF" preselectedMessage={quoteColor ? `Interested in ${quoteColor}` : undefined} />
     </div>
   );
 };
