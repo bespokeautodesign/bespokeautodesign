@@ -98,6 +98,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
   const services = [{
     title: "Paint Protection Film (PPF)",
     description: "Premium protection for your vehicle's paint with virtually invisible film technology.",
+    startingPrice: "$1,499",
     image: ppfWorkImage,
     link: "/paint-protection-film",
     features: ["Self-healing technology", "10-year warranty", "UV protection", "Maintains original appearance"],
@@ -116,6 +117,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
   }, {
     title: "Ceramic Coating",
     description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
+    startingPrice: "$799",
     image: "/lovable-uploads/210820a3-2a16-4238-857f-70b41f9e1807.png",
     link: "/ceramic-coating",
     features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"],
@@ -135,6 +137,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
   }, {
     title: "Vinyl Wraps",
     description: "Transform your vehicle's appearance with high-quality color change vinyl wraps.",
+    startingPrice: "$2,500",
     image: vinylGT2RSImage,
     link: "/color-change-wrap",
     features: ["Color customization", "Removable protection", "Premium materials", "Professional installation"],
@@ -154,6 +157,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
   }, {
     title: "Ceramic Tint",
     description: "Superior window tinting with ceramic technology for maximum comfort and protection.",
+    startingPrice: "$299",
     image: tintWorkImage,
     link: "/ceramic-tint",
     features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"],
@@ -274,6 +278,11 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                 <div className="relative h-64 overflow-hidden">
                   <LazyImage src={service.image} alt={service.title} className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${index === 1 ? "object-[center_30%]" : ""}`} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute top-4 right-4">
+                    <Badge className="bg-primary text-primary-foreground text-sm font-semibold px-3 py-1">
+                      Starting at {service.startingPrice}
+                    </Badge>
+                  </div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-2xl font-bold text-white font-playfair">{service.title}</h3>
                   </div>

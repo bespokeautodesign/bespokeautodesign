@@ -134,6 +134,9 @@ const CeramicCoating = () => {
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
               XPEL Fusion Plus™ — a professional-grade nano-ceramic coating that delivers unmatched gloss, UV defense, and hydrophobic performance, engineered to thrive in Miami's extreme climate.
             </p>
+            <p className="text-lg font-semibold text-white/90 drop-shadow-md">
+              Starting at $799 • Free Consultation
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
                 Get a Free Quote <ChevronRight className="h-4 w-4" />

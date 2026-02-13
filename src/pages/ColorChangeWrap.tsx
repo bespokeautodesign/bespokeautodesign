@@ -250,6 +250,9 @@ const ColorChangeWrap = () => {
               Transform your vehicle into something truly one-of-a-kind. We use only premium-grade cast vinyl films
               and expert installation techniques to deliver a finish that turns heads everywhere you go in Miami.
             </p>
+            <p className="text-lg font-semibold text-white/90">
+              Starting at $2,500 • Free Consultation
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
                 Get a Free Quote <ChevronRight className="h-4 w-4" />
