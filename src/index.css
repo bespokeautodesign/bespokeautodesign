@@ -7,15 +7,15 @@
 @layer base {
   :root {
     /* Core Background & Text */
-    --background: 0 0% 98%;
+    --background: 40 20% 96%;
     --foreground: 0 0% 8%;
 
     /* Card Styling */
-    --card: 0 0% 100%;
+    --card: 40 15% 98%;
     --card-foreground: 0 0% 8%;
 
     /* Popover */
-    --popover: 0 0% 100%;
+    --popover: 40 15% 98%;
     --popover-foreground: 0 0% 8%;
 
     /* Primary - Deep Charcoal */
@@ -29,11 +29,11 @@
     --secondary-dark: 0 0% 65%;
 
     /* Muted Grays */
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 35 12% 90%;
+    --muted-foreground: 30 5% 40%;
 
     /* Accent - Premium Silver */
-    --accent: 0 0% 88%;
+    --accent: 35 10% 86%;
     --accent-foreground: 0 0% 8%;
 
     /* Xpel Yellow */
@@ -56,8 +56,8 @@
     --success-foreground: 0 0% 98%;
 
     /* Borders & Inputs */
-    --border: 0 0% 85%;
-    --input: 0 0% 90%;
+    --border: 35 12% 85%;
+    --input: 35 10% 88%;
     --ring: 0 0% 8%;
 
     /* Design System Extensions */
