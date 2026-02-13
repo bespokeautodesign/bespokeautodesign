@@ -133,6 +133,9 @@ const CeramicTint = () => {
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               The world's most advanced ceramic window film — blocking 99% of UV rays, rejecting up to 98% of infrared heat, and recommended by The Skin Cancer Foundation.
             </p>
+            <p className="text-lg font-semibold text-white/90">
+              Starting at $299 • Free Consultation
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
                 Get a Free Quote <ChevronRight className="h-4 w-4" />

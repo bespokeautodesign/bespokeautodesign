@@ -11,18 +11,21 @@ import xpelLogo from "@/assets/xpel-logo.svg";
 const packages = [{
   id: "full-front",
   name: "Full Front Package",
+  startingPrice: "$1,499",
   image: "/lovable-uploads/ppf-full-front.png",
   description: "Our most popular package protects the areas most vulnerable to road debris. The Full Front Package covers the entire hood, front fenders, front bumper, headlights, and mirror caps — the zones that take the hardest hits during daily driving and highway commutes.",
   benefits: ["Shields the hood, bumper, fenders, headlights & mirrors", "Ideal for daily drivers and highway commuters", "Preserves resale value by protecting high-impact areas", "Self-healing film eliminates light scratches with heat"]
 }, {
   id: "track",
   name: "Track Package",
+  startingPrice: "$2,499",
   image: "/lovable-uploads/ppf-track-package.png",
   description: "Designed for performance enthusiasts who push their vehicles to the limit. The Track Package extends protection beyond the full front to include rocker panels, rear bumper, A-pillars, and lower door edges — areas especially susceptible to rock chips, tire debris, and track-day wear.",
   benefits: ["Full front coverage plus rockers, rear bumper & A-pillars", "Engineered for spirited driving and track days", "Guards against stone chips and tire marbles at speed", "Maintains a flawless finish even under extreme conditions"]
 }, {
   id: "full-body",
   name: "Full Body",
+  startingPrice: "$4,499",
   image: "/lovable-uploads/ppf-full-body.png",
   description: "The ultimate in paint protection. Every painted surface on your vehicle is wrapped in XPEL's industry-leading film, creating an invisible armor that defends against scratches, rock chips, UV fading, bird droppings, and environmental contaminants — while keeping your factory finish looking showroom-new for years.",
   benefits: ["Complete bumper-to-bumper coverage on every panel", "Maximum protection against all environmental hazards", "10-year manufacturer warranty backed by XPEL", "The gold standard for exotic and luxury vehicle owners"]
@@ -122,6 +125,7 @@ const PPFPackages = () => {
                 {/* Content */}
                 <div className="w-full lg:w-1/2 space-y-6">
                   <h2 className="text-3xl md:text-4xl font-bold font-playfair">{pkg.name}</h2>
+                  <p className="text-2xl font-semibold text-primary">Starting at {pkg.startingPrice}</p>
                   <p className="text-muted-foreground text-lg leading-relaxed">{pkg.description}</p>
                   <ul className="space-y-3">
                     {pkg.benefits.map(b => <li key={b} className="flex items-start gap-3">

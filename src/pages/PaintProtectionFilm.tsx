@@ -129,6 +129,9 @@ const PaintProtectionFilm = () => {
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               Invisible, self-healing armor that shields your vehicle's paint from rock chips, scratches, UV fading, and Miami's harsh environmental elements — backed by a 10-year XPEL warranty.
             </p>
+            <p className="text-lg font-semibold text-white/90">
+              Starting at $1,499 • Free Consultation
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
                 Get a Free Quote <ChevronRight className="h-4 w-4" />
