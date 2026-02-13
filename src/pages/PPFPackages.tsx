@@ -32,6 +32,7 @@ const packages = [{
 }];
 const PPFPackages = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
+  const [selectedPackage, setSelectedPackage] = React.useState("");
   const location = useLocation();
   useEffect(() => {
     document.title = "PPF Packages | XPEL Paint Protection Film | Bespoke Auto Design Miami";
@@ -125,7 +126,6 @@ const PPFPackages = () => {
                 {/* Content */}
                 <div className="w-full lg:w-1/2 space-y-6">
                   <h2 className="text-3xl md:text-4xl font-bold font-playfair">{pkg.name}</h2>
-                  <p className="text-2xl font-semibold text-primary">Starting at {pkg.startingPrice}</p>
                   <p className="text-muted-foreground text-lg leading-relaxed">{pkg.description}</p>
                   <ul className="space-y-3">
                     {pkg.benefits.map(b => <li key={b} className="flex items-start gap-3">
@@ -133,7 +133,8 @@ const PPFPackages = () => {
                         <span className="text-foreground">{b}</span>
                       </li>)}
                   </ul>
-                  <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
+                  <p className="text-2xl font-semibold text-primary">Starting at {pkg.startingPrice}</p>
+                  <Button variant="premium" size="lg" onClick={() => { setSelectedPackage(pkg.name); setQuoteModalOpen(true); }}>
                     Get a Quote <ChevronRight className="h-4 w-4" />
                   </Button>
                 </div>
@@ -194,7 +195,7 @@ const PPFPackages = () => {
       </section>
 
       <Footer />
-      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} preselectedService="Paint Protection Film (PPF)" preselectedPpfType="Clear Paint Protection Film" preselectedPpfPackage={selectedPackage} />
     </div>;
 };
 export default PPFPackages;
