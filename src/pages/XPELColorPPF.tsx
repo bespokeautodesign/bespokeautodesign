@@ -96,38 +96,25 @@ const XPELColorPPF = () => {
       {/* Hero */}
       <ColorPPFHero onGetQuote={() => setQuoteModalOpen(true)} />
 
-      {/* Installation & Showcase Images */}
-      <div className="container mx-auto px-6 py-12 max-w-6xl space-y-8">
-        <div className="relative rounded-2xl overflow-hidden shadow-lg">
-          <img 
-            src="/lovable-uploads/8b43fed7-f7fb-4afb-9e85-d49fe7a3f5dc.png" 
-            alt="Professional XPEL COLOR PPF installation process at Bespoke Auto Design Miami" 
-            className="w-full h-64 md:h-80 object-cover"
-          />
-        </div>
-        <div className="relative rounded-2xl overflow-hidden shadow-lg">
-          <img 
-            src="/lovable-uploads/4b56ee72-ca4c-452a-9f3a-9a3df7fca4e0.png" 
-            alt="XPEL COLOR Paint Protection Film benefits" 
-            className="w-full h-auto max-h-[400px] md:h-[500px] object-cover object-[60%_80%] md:object-[50%_60%]"
-          />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-            <img src="/lovable-uploads/79c435f6-2f6b-4ece-87b1-9dce26b621a7.png" alt="XPEL PPF Color Motion" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors duration-300"></div>
-            <div className="absolute bottom-4 left-4 text-primary-foreground">
-              <h4 className="font-semibold text-lg">Dynamic Protection</h4>
-              <p className="text-sm opacity-90">Advanced film technology</p>
+      {/* Editorial Image — Installation */}
+      <div className="container mx-auto px-6 max-w-6xl py-16">
+        <div className="flex flex-col lg:flex-row gap-10 items-center">
+          <div className="w-full lg:w-3/5">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/8b43fed7-f7fb-4afb-9e85-d49fe7a3f5dc.png" 
+                alt="Professional XPEL COLOR PPF installation process at Bespoke Auto Design Miami" 
+                className="w-full h-72 md:h-96 object-cover"
+              />
             </div>
           </div>
-          <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-            <img src="/lovable-uploads/86d579b0-d6bd-414a-a58b-23744306a9dd.png" alt="XPEL PPF Color Spectrum" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors duration-300"></div>
-            <div className="absolute bottom-4 left-4 text-primary-foreground">
-              <h4 className="font-semibold text-lg">Vibrant Colors</h4>
-              <p className="text-sm opacity-90">Endless customization options</p>
-            </div>
+          <div className="w-full lg:w-2/5 space-y-4">
+            <Badge variant="outline">PRECISION CRAFT</Badge>
+            <h2 className="text-3xl font-bold font-playfair text-foreground">Installed by Certified Specialists</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Every XPEL COLOR PPF installation at Bespoke Auto Design is performed by factory-trained technicians using computer-cut DAP templates — ensuring flawless, edge-to-edge coverage on every panel.
+            </p>
+            <Button variant="premium" onClick={() => setQuoteModalOpen(true)}>Get a Quote</Button>
           </div>
         </div>
       </div>
@@ -135,8 +122,52 @@ const XPELColorPPF = () => {
       {/* Benefits Section */}
       <ColorPPFBenefits />
 
+      {/* Editorial Image — Showcase (offset right) */}
+      <div className="container mx-auto px-6 max-w-6xl py-16">
+        <div className="flex flex-col lg:flex-row-reverse gap-10 items-center">
+          <div className="w-full lg:w-3/5">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/4b56ee72-ca4c-452a-9f3a-9a3df7fca4e0.png" 
+                alt="XPEL COLOR Paint Protection Film benefits" 
+                className="w-full h-72 md:h-96 object-cover object-[60%_80%] md:object-[50%_60%]"
+              />
+            </div>
+          </div>
+          <div className="w-full lg:w-2/5 space-y-4">
+            <Badge variant="outline">SUPERIOR FINISH</Badge>
+            <h2 className="text-3xl font-bold font-playfair text-foreground">Indistinguishable from Factory Paint</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Unlike vinyl wraps, XPEL COLOR PPF delivers a depth and clarity that rivals a professional respray — with the added benefit of self-healing protection and a 10-year warranty.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Comparison Table */}
       <ColorPPFComparison />
+
+      {/* Editorial Images — Side by side between comparison and color selector */}
+      <div className="container mx-auto px-6 max-w-6xl py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+            <img src="/lovable-uploads/79c435f6-2f6b-4ece-87b1-9dce26b621a7.png" alt="XPEL PPF Color Motion" className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="absolute bottom-5 left-5 text-white">
+              <h4 className="font-semibold text-lg">Dynamic Protection</h4>
+              <p className="text-sm text-white/80">Advanced self-healing film technology</p>
+            </div>
+          </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-lg group">
+            <img src="/lovable-uploads/86d579b0-d6bd-414a-a58b-23744306a9dd.png" alt="XPEL PPF Color Spectrum" className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="absolute bottom-5 left-5 text-white">
+              <h4 className="font-semibold text-lg">Vibrant Colors</h4>
+              <p className="text-sm text-white/80">16 stunning shades to choose from</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Color Selector */}
       <section className="py-16 bg-background">
