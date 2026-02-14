@@ -15,7 +15,11 @@ serve(async (req) => {
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     
     if (!LOVABLE_API_KEY) {
-      throw new Error("LOVABLE_API_KEY is not configured");
+      console.error("LOVABLE_API_KEY is not configured");
+      return new Response(
+        JSON.stringify({ error: "Service temporarily unavailable. Please try again later.", code: "CONFIG_ERROR" }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
 
     console.log("Processing chat request with", messages.length, "messages");
@@ -79,17 +83,19 @@ Be conversational, helpful, and encourage users to request a quote if they're in
         );
       }
       
-      throw new Error(`AI gateway returned ${response.status}`);
+      console.error("AI gateway error:", response.status, errorText);
+      throw new Error("AI gateway error");
     }
 
     return new Response(response.body, {
       headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
     });
   } catch (error) {
-    console.error("Chat error:", error);
+    console.error("Chat error:", error instanceof Error ? error.message : String(error));
     return new Response(
       JSON.stringify({ 
-        error: error instanceof Error ? error.message : "An unexpected error occurred" 
+        error: "Unable to process chat request. Please try again later.",
+        code: "CHAT_ERROR"
       }),
       {
         status: 500,
