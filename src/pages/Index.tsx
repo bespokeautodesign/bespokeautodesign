@@ -532,31 +532,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       </section>
 
 
-      {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Client Reviews</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">What Our Clients Say</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From luxury sports cars to premium yachts, our clients trust us with their most prized possessions.
-            </p>
-          </div>
-          
-          <TestimonialCarousel />
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
-              Get Your Free Quote
-            </Button>
-            <Button variant="silver" size="lg" asChild>
-              <a href="tel:+17863959172">
-                <Phone className="h-4 w-4" /> (786) 395-9172
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Testimonials Section - temporarily removed, component preserved in TestimonialCarousel.tsx */}
 
 
       {/* Google Review CTA */}
