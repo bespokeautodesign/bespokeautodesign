@@ -184,27 +184,80 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative text-primary-foreground py-44 md:py-36">
+      <section className="relative text-primary-foreground py-32 md:py-36">
         <div className="container mx-auto px-6 relative z-10">
           <header className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center gap-4 mb-6">
               <img src={xpelLogo} alt="XPEL Authorized Dealer" className="h-16 md:h-20 w-auto brightness-0 invert opacity-90 translate-y-1.5" />
               <span className="text-lg md:text-xl font-semibold tracking-widest uppercase text-white/90 border-l border-white/30 pl-4">Authorized Dealer</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight font-playfair">Miami's Leading Paint Protection Film (PPF) & Vehicle Wrap Specialists</h1>
-            <p className="text-xl md:text-2xl mb-8 text-white max-w-2xl mx-auto font-semibold" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>
-              Miami's Most Trusted Car Protection Boutique
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight font-playfair">
+              Premier Paint Protection Film (PPF) Installation in Miami
+            </h1>
+            <p className="text-lg md:text-xl mb-6 text-white/90 max-w-2xl mx-auto" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>
+              Protect Your Vehicle From Rock Chips, Scratches & Miami Road Damage — Installed by Certified XPEL Experts
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <p className="text-sm md:text-base text-white/60 mb-6 tracking-wide">
+              Limited weekly installation spots available — book yours today
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              <Button
+                  variant="premium"
+                  size="lg"
+                  className="text-lg px-10 py-5 shadow-premium hover:shadow-glow transform hover:scale-105 transition-all duration-300 animate-fade-in"
+                  onClick={() => setQuoteModalOpen(true)}>
+                Get a Free PPF Quote
+              </Button>
               <Button
                   variant="outline"
                   size="lg"
-                  className="text-lg px-10 py-5 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50 shadow-premium hover:shadow-glow transform hover:scale-105 transition-all duration-300 animate-fade-in"
-                  onClick={() => setQuoteModalOpen(true)}>
-                Book Now
+                  className="text-lg px-10 py-5 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+                  asChild>
+                <a href="tel:+17863959172">
+                  <Phone className="h-5 w-5" /> Call Now
+                </a>
               </Button>
             </div>
+            {/* Trust signals */}
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/80" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.6)' }}>
+              <span className="flex items-center gap-1.5">
+                <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" /> 5-Star Rated
+              </span>
+              <span className="hidden sm:inline text-white/30">•</span>
+              <span className="flex items-center gap-1.5">
+                <Shield className="h-4 w-4" /> Certified XPEL Installers
+              </span>
+              <span className="hidden sm:inline text-white/30">•</span>
+              <span>Up to 10-Year Warranty</span>
+              <span className="hidden sm:inline text-white/30">•</span>
+              <span>500+ Vehicles Protected</span>
+            </div>
           </header>
+        </div>
+      </section>
+
+      {/* Quick Process Bar */}
+      <section className="bg-primary/95 backdrop-blur-sm py-5 border-y border-primary-foreground/10">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-primary-foreground">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-primary-foreground/20 flex items-center justify-center text-sm font-bold">1</div>
+              <span className="text-sm font-medium">Request a Quote</span>
+            </div>
+            <ArrowRight className="hidden md:block h-4 w-4 text-primary-foreground/40" />
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-primary-foreground/20 flex items-center justify-center text-sm font-bold">2</div>
+              <span className="text-sm font-medium">Bring Your Vehicle In</span>
+            </div>
+            <ArrowRight className="hidden md:block h-4 w-4 text-primary-foreground/40" />
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-primary-foreground/20 flex items-center justify-center text-sm font-bold">3</div>
+              <span className="text-sm font-medium">Leave Protected</span>
+            </div>
+          </div>
+          <p className="text-center text-primary-foreground/60 text-xs mt-3">
+            Get a free quote within 24 hours • PPF starting at $1,499 • Ceramic Coating from $799
+          </p>
         </div>
       </section>
 
