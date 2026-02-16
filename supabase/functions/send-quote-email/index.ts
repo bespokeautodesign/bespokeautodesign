@@ -19,6 +19,15 @@ interface QuoteRequest {
   message: string;
 }
 
+function escapeHtml(unsafe: string): string {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -33,13 +42,13 @@ const handler = async (req: Request): Promise<Response> => {
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #333;">New Quote Request</h2>
         <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px;">
-          <p><strong>Name:</strong> ${quoteData.firstName} ${quoteData.lastName}</p>
-          <p><strong>Email:</strong> ${quoteData.email}</p>
-          <p><strong>Phone:</strong> ${quoteData.phone}</p>
-          <p><strong>Vehicle:</strong> ${quoteData.vehicle}</p>
-          <p><strong>Service:</strong> ${quoteData.service}</p>
-          <p><strong>Preferred Contact:</strong> ${quoteData.contactMethods.join(', ')}</p>
-          <p><strong>Message:</strong><br/>${quoteData.message}</p>
+          <p><strong>Name:</strong> ${escapeHtml(quoteData.firstName)} ${escapeHtml(quoteData.lastName)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(quoteData.email)}</p>
+          <p><strong>Phone:</strong> ${escapeHtml(quoteData.phone)}</p>
+          <p><strong>Vehicle:</strong> ${escapeHtml(quoteData.vehicle)}</p>
+          <p><strong>Service:</strong> ${escapeHtml(quoteData.service)}</p>
+          <p><strong>Preferred Contact:</strong> ${quoteData.contactMethods.map(escapeHtml).join(', ')}</p>
+          <p><strong>Message:</strong><br/>${escapeHtml(quoteData.message).replace(/\n/g, '<br/>')}</p>
         </div>
       </div>
     `;
