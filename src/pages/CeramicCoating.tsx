@@ -117,21 +117,21 @@ const CeramicCoating = () => {
       <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
           <img src={clearPPFVehicles[9].image} alt="2023 Corvette Z06 with ceramic coating" className="w-full h-full object-cover object-[center_60%] brightness-125" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 via-60% to-black/50" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex flex-col items-center gap-3">
               <img src={xpelLogo} alt="XPEL" className="h-16 w-auto opacity-80 brightness-200" />
-              <span className="text-white font-semibold tracking-wider uppercase text-sm">
+              <span className="text-white font-semibold tracking-wider uppercase text-sm drop-shadow-md" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.7)' }}>
                 Authorized XPEL Ceramic Installer
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white drop-shadow-lg">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white drop-shadow-lg" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.4)' }}>
               XPEL Ceramic Coating <br className="hidden md:block" />
-              <span className="text-white/70">in Miami</span>
+              <span className="text-white/80">in Miami</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+            <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed drop-shadow-md" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.7)' }}>
               XPEL Fusion Plus™ — a professional-grade nano-ceramic coating that delivers unmatched gloss, UV defense, and hydrophobic performance, engineered to thrive in Miami's extreme climate.
             </p>
             <p className="text-lg font-semibold text-white/90 drop-shadow-md">
