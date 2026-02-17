@@ -112,7 +112,7 @@ const PaintProtectionFilm = () => {
          ═══════════════════════════════════════════════════════ */}
       <section className="relative py-28 md:py-36 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src={clearPPFVehicles[5].image} alt="Ferrari F8 Tributo with PPF" className="w-full h-full object-cover object-[center_45%]" />
+          <img src="/lovable-uploads/ppf-hero-ferrari.png" alt="Black Ferrari F8 Tributo with XPEL PPF at Bespoke Auto Design" className="w-full h-full object-cover object-[center_40%]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent via-60% to-black/40" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
