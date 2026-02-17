@@ -17,6 +17,7 @@ import { addOpenGraphTags, addCanonicalUrl, preloadCriticalImages } from "@/util
 import { LazyImage } from "@/components/LazyImage";
 import HeroVideoBackground from "@/components/HeroVideoBackground";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { CompetitiveEdge } from "@/components/CompetitiveEdge";
 import { ServiceCategoryCards } from "@/components/ServiceCategoryCards";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png";
 const ceramicWorkImage = "/lovable-uploads/83f64f7b-88e3-468d-9f88-d13e551c6289.png";
@@ -370,6 +371,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
 
       {/* Why Choose Us */}
       <WhyChooseUs variant="homepage" />
+
+      {/* Competitive Edge */}
+      <CompetitiveEdge onQuoteClick={() => setQuoteModalOpen(true)} />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-background/80 backdrop-blur-sm">
