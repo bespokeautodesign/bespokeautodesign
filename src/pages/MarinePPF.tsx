@@ -72,7 +72,7 @@ const MarinePPF = () => {
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Marine Services", path: "/marine" }, { name: "Marine PPF", path: "/marine-ppf", current: true }]} />
 
       {/* Hero */}
-      <header className="relative py-20 md:py-28 hero-parallax">
+      <header className="relative py-14 md:py-20 hero-parallax">
         <div className="hero-parallax-bg">
           <img src="/lovable-uploads/19e444ef-f150-42ce-b195-9a306b95f8d5.png" alt="Marine paint protection film installation" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60" />

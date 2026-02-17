@@ -110,29 +110,29 @@ const PaintProtectionFilm = () => {
       {/* ═══════════════════════════════════════════════════════
          HERO SECTION
          ═══════════════════════════════════════════════════════ */}
-      <section className="relative py-20 md:py-28 hero-parallax">
+      <section className="relative py-14 md:py-20 hero-parallax">
         <div className="hero-parallax-bg">
           <img src="/lovable-uploads/ppf-hero-ferrari.png" alt="Black Ferrari F8 Tributo with XPEL PPF at Bespoke Auto Design" className="w-full h-full object-cover object-[center_40%]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 via-60% to-black/60" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
+          <div className="max-w-4xl mx-auto text-center space-y-3 md:space-y-4">
             <div className="flex items-center justify-center gap-3">
-              <img src={xpelLogo} alt="XPEL" className="h-8 w-auto opacity-80 brightness-200" />
-              <span className="text-white font-semibold tracking-wider uppercase text-sm drop-shadow-md" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}>
+              <img src={xpelLogo} alt="XPEL" className="h-6 md:h-8 w-auto opacity-80 brightness-200" />
+              <span className="text-white font-semibold tracking-wider uppercase text-xs md:text-sm drop-shadow-md" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}>
                 Miami's XPEL Certified Installer
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white drop-shadow-lg" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.4)' }}>XPEL Paint Protection Film<br className="hidden md:block" />
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-playfair leading-tight text-white drop-shadow-lg" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.4)' }}>XPEL Paint Protection Film<br className="hidden md:block" />
               <span className="text-white/80"> in Miami, FL</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>
               Invisible, self-healing armor that shields your vehicle's paint from rock chips, scratches, UV fading, and Miami's harsh environmental elements — backed by a 10-year XPEL warranty.
             </p>
-            <p className="text-lg font-semibold text-white/90 drop-shadow-md" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}>
+            <p className="text-base md:text-lg font-semibold text-white/90 drop-shadow-md" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}>
               Starting at $1,499 • Free Consultation
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
               <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
                 Get a Free Quote <ChevronRight className="h-4 w-4" />
               </Button>
@@ -147,7 +147,7 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* Seamless dark-to-background transition */}
-      <div className="h-24 bg-gradient-to-b from-black/40 to-background" />
+      <div className="h-12 bg-gradient-to-b from-black/40 to-background" />
 
       {/* ═══════════════════════════════════════════════════════
          WHAT IS PPF?

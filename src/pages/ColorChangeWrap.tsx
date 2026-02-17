@@ -232,7 +232,7 @@ const ColorChangeWrap = () => {
       <Navbar />
 
       {/* ═══════════════════ HERO ═══════════════════ */}
-      <section className="relative py-20 md:py-28 hero-parallax">
+      <section className="relative py-14 md:py-20 hero-parallax">
         <div className="hero-parallax-bg">
           <img src="/lovable-uploads/mercedes-amg-green-wrap.jpg" alt="Mercedes AMG color change wrap" className="w-full h-full object-cover object-[center_55%] saturate-[1.25] contrast-[1.05]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 via-60% to-background/80 to-90%" />
