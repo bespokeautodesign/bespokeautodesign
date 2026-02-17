@@ -70,7 +70,7 @@ const MarineCeramicCoating = () => {
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Marine Services", path: "/marine" }, { name: "Marine Ceramic Coating", path: "/marine-ceramic-coating", current: true }]} />
 
       {/* Hero */}
-      <header className="relative py-14 md:py-20 hero-parallax">
+      <header className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
           <img src="/lovable-uploads/b0ee1d07-d81d-4edf-8181-95046e093b94.png" alt="Marine ceramic coating application" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60" />

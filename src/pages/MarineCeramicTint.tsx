@@ -70,7 +70,7 @@ const MarineCeramicTint = () => {
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Marine Services", path: "/marine" }, { name: "Marine Ceramic Tint", path: "/marine-ceramic-tint", current: true }]} />
 
       {/* Hero */}
-      <header className="relative py-14 md:py-20 hero-parallax">
+      <header className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
           <img src="/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.png" alt="Marine ceramic window tinting" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60" />
