@@ -92,7 +92,7 @@ const PPFPackages = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative py-14 md:py-20 overflow-hidden">
+      <section className="relative py-8 md:py-12 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-accent/20" />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">

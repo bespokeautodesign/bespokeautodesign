@@ -113,7 +113,7 @@ const CeramicTint = () => {
       {/* ═══════════════════════════════════════════════════════
           HERO SECTION
           ═══════════════════════════════════════════════════════ */}
-      <section className="relative py-14 md:py-20 hero-parallax">
+      <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
           <img src="/lovable-uploads/ceramic-tint-lexus.png" alt="Red Lexus LC with XPEL ceramic window tint at Bespoke Auto Design" className="w-full h-full object-cover saturate-[1.25] contrast-[1.05]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent via-60% to-black/40" />

@@ -92,7 +92,7 @@ const StealthPPF = () => {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative py-14 md:py-20 hero-parallax">
+      <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
           <img src="/lovable-uploads/stealth-ppf-rolls-royce.png" alt="Rolls Royce with Stealth PPF" className="w-full h-full object-cover object-[center_55%]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent via-60% to-black/40" />
