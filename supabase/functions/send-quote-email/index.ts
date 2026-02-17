@@ -28,16 +28,47 @@ function escapeHtml(unsafe: string): string {
     .replace(/'/g, "&#039;");
 }
 
+function validateQuoteData(data: unknown): string | null {
+  if (!data || typeof data !== "object") return "Invalid request data";
+  const d = data as Record<string, unknown>;
+  if (!d.firstName || typeof d.firstName !== "string" || d.firstName.length > 100) return "Invalid first name";
+  if (d.lastName !== undefined && d.lastName !== "" && (typeof d.lastName !== "string" || (d.lastName as string).length > 100)) return "Invalid last name";
+  if (!d.email || typeof d.email !== "string" || d.email.length > 255 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) return "Invalid email address";
+  if (!d.phone || typeof d.phone !== "string" || d.phone.length > 30) return "Invalid phone number";
+  if (!d.vehicle || typeof d.vehicle !== "string" || d.vehicle.length > 200) return "Invalid vehicle information";
+  if (!d.service || typeof d.service !== "string" || d.service.length > 200) return "Invalid service selection";
+  if (!Array.isArray(d.contactMethods) || d.contactMethods.length > 10 || !d.contactMethods.every((m: unknown) => typeof m === "string" && (m as string).length < 50)) return "Invalid contact methods";
+  if (!d.message || typeof d.message !== "string" || d.message.length > 5000) return "Message is required and must be under 5000 characters";
+  return null;
+}
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const quoteData: QuoteRequest = await req.json();
-    
-    console.log("Received quote request:", { email: quoteData.email, service: quoteData.service });
+    let rawBody: unknown;
+    try {
+      rawBody = await req.json();
+    } catch {
+      return new Response(
+        JSON.stringify({ error: "Invalid request body" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
 
+    const validationError = validateQuoteData(rawBody);
+    if (validationError) {
+      return new Response(
+        JSON.stringify({ error: validationError }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    const quoteData = rawBody as QuoteRequest;
+    
+    console.log("Received quote request:", { service: quoteData.service });
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #333;">New Quote Request</h2>
@@ -70,10 +101,10 @@ const handler = async (req: Request): Promise<Response> => {
         headers: { "Content-Type": "application/json", ...corsHeaders },
       }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error sending quote email:", error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Unable to send quote request. Please try again or contact us at (786) 395-9172." }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
