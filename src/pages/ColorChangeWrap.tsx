@@ -235,7 +235,7 @@ const ColorChangeWrap = () => {
       <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
           <img src="/lovable-uploads/mercedes-amg-green-wrap.jpg" alt="Mercedes AMG color change wrap" className="w-full h-full object-cover object-[center_55%] saturate-[1.25] contrast-[1.05]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 via-60% to-background/80 to-90%" />
+          <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
