@@ -116,7 +116,7 @@ const CeramicCoating = () => {
           ═══════════════════════════════════════════════════════ */}
       <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src={clearPPFVehicles[9].image} alt="2023 Corvette Z06 with ceramic coating" className="w-full h-full object-cover object-[center_60%] brightness-125" />
+          <img src={clearPPFVehicles[9].image} alt="2023 Corvette Z06 with ceramic coating" className="w-full h-full object-cover object-[center_75%] brightness-125" />
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
