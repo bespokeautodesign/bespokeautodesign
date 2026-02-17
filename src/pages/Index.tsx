@@ -77,8 +77,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
 
     preloadCriticalImages([
     '/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png',
-    '/bespoke-logo.png'
-    ]);
+    '/bespoke-logo.png']
+    );
 
     const combinedSchema = {
       "@context": "https://schema.org",
@@ -255,9 +255,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
               <span className="text-sm font-medium">Leave Protected</span>
             </div>
           </div>
-          <p className="text-center text-primary-foreground/60 text-xs mt-3">
-            Get a free quote within 24 hours • PPF starting at $1,499 • Ceramic Coating from $799
-          </p>
+          <p className="text-center text-primary-foreground/60 text-xs mt-3">Get a free quote within 30 minutes • PPF starting at $1,499 • Ceramic Coating from $799
+
+            </p>
         </div>
       </section>
 
@@ -326,7 +326,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
           </header>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {services.map((service, index) => (
+            {services.map((service, index) =>
               <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 group cursor-pointer" onClick={() => setSelectedService(index)}>
                 <div className="relative h-64 overflow-hidden">
                   <LazyImage src={service.image} alt={service.title} className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${index === 1 ? "object-[center_30%]" : ""}`} />
@@ -343,12 +343,12 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                 <CardContent className="pt-6">
                   <p className="text-muted-foreground mb-4">{service.description}</p>
                   <div className="grid grid-cols-2 gap-2 mb-4">
-                    {service.features.map((feature, fIndex) => (
-                      <div key={fIndex} className="flex items-center gap-2 text-sm">
+                    {service.features.map((feature, fIndex) =>
+                    <div key={fIndex} className="flex items-center gap-2 text-sm">
                         <Shield className="h-3 w-3 text-primary flex-shrink-0" />
                         <span>{feature}</span>
                       </div>
-                    ))}
+                    )}
                   </div>
                   <div className="flex gap-3">
                     <Button variant="outline" size="sm" asChild className="flex-1">
@@ -356,13 +356,13 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                         Learn More <ArrowRight className="h-3 w-3 ml-1" />
                       </Link>
                     </Button>
-                    <Button variant="premium" size="sm" className="flex-1" onClick={(e) => { e.stopPropagation(); setQuoteModalOpen(true); }}>
+                    <Button variant="premium" size="sm" className="flex-1" onClick={(e) => {e.stopPropagation();setQuoteModalOpen(true);}}>
                       Get Quote
                     </Button>
                   </div>
                 </CardContent>
               </Card>
-            ))}
+              )}
           </div>
         </div>
       </section>
