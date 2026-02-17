@@ -114,7 +114,7 @@ const CeramicCoating = () => {
       {/* ═══════════════════════════════════════════════════════
           HERO SECTION
           ═══════════════════════════════════════════════════════ */}
-      <section className="relative py-28 md:py-36 hero-parallax">
+      <section className="relative py-20 md:py-28 hero-parallax">
         <div className="hero-parallax-bg">
           <img src={clearPPFVehicles[9].image} alt="2023 Corvette Z06 with ceramic coating" className="w-full h-full object-cover object-[center_60%] brightness-125" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 via-60% to-black/50" />
