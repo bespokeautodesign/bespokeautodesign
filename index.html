@@ -123,7 +123,7 @@
     </script>
 
     <!-- Google tag (gtag.js) - default denied until consent -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11469882843"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XL1F2W2GVV"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -135,6 +135,7 @@
       // Only auto-config if user already accepted
       if (localStorage.getItem('bespoke_cookie_consent') === 'accepted') {
         gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'granted' });
+        gtag('config', 'G-XL1F2W2GVV');
         gtag('config', 'AW-11469882843');
       }
     </script>
