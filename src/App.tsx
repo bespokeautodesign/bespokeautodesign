@@ -4,8 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-import CookieConsent from "@/components/CookieConsent";
 import { LiveChat } from "@/components/LiveChat";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
@@ -31,7 +29,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <GoogleAnalytics />
+        
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/quote" element={<Index autoScrollToContact />} />
@@ -53,7 +51,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
       <LiveChat />
-      <CookieConsent />
+      
     </TooltipProvider>
   </QueryClientProvider>
 );
