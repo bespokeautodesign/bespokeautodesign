@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
@@ -12,7 +13,7 @@ interface QuoteModalProps {
 }
 
 export const QuoteModal = ({ open, onOpenChange, preselectedService, preselectedPpfType, preselectedPpfPackage, preselectedMessage }: QuoteModalProps) => {
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const navigate = useNavigate();
   const [selectedService, setSelectedService] = useState("");
   const [ppfType, setPpfType] = useState("");
   const [ppfPackage, setPpfPackage] = useState("");
@@ -85,17 +86,12 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
 
       if (error) throw error;
 
-      setFormSubmitted(true);
       form.reset();
       setSelectedService("");
       setPpfType("");
       setPpfPackage("");
-      
-      // Close modal after 2 seconds
-      setTimeout(() => {
-        onOpenChange(false);
-        setFormSubmitted(false);
-      }, 2000);
+      onOpenChange(false);
+      navigate("/thank-you");
     } catch (error) {
       console.error('Error sending quote:', error);
       alert('There was an error sending your quote. Please try again or call us at (786) 395-9172.');
@@ -209,12 +205,6 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
             </div>
           </form>
           
-          {formSubmitted && (
-            <div className="p-4 bg-primary/10 border border-primary/20 rounded-md text-primary">
-              <p className="font-medium">✓ Quote request sent successfully!</p>
-              <p className="text-sm mt-1">We'll get back to you soon!</p>
-            </div>
-          )}
           
           <Button variant="premium" className="w-full" onClick={handleSubmit}>
             Submit Request
