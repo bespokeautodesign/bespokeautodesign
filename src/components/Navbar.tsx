@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { Phone, ChevronDown } from "lucide-react";
 import MobileMenu from "@/components/MobileMenu";
+import { trackPhoneCall } from "@/utils/gadsConversions";
 import { QuoteModal } from "@/components/QuoteModal";
 
 const ppfSubItems = [
@@ -167,7 +168,7 @@ const Navbar = () => {
             {/* CTAs */}
             <div className="flex items-center gap-3 flex-shrink-0">
               <a
-                href="tel:7863959172"
+                href="tel:7863959172" onClick={() => trackPhoneCall()}
                 className="hidden xl:flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
 
                 <Phone className="h-4 w-4" />
@@ -182,7 +183,7 @@ const Navbar = () => {
                 Get Quote
               </Button>
               <a
-                href="tel:7863959172"
+                href="tel:7863959172" onClick={() => trackPhoneCall()}
                 className="xl:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
 
                 <Phone className="h-5 w-5" />

@@ -1,3 +1,4 @@
+import { trackPhoneCall, trackFormSubmission } from "@/utils/gadsConversions";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,8 @@ import { CheckCircle, Phone, ArrowLeft } from "lucide-react";
 const ThankYou = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    // Backup: also fire conversion on ThankYou page load (covers direct visits)
+    trackFormSubmission();
   }, []);
 
   return (
@@ -33,7 +36,7 @@ const ThankYou = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button variant="premium" size="lg" asChild>
-              <a href="tel:+17863959172">
+              <a href="tel:+17863959172" onClick={() => trackPhoneCall()}>
                 <Phone className="w-4 h-4" />
                 Call (786) 395-9172
               </a>

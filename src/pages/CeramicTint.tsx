@@ -1,3 +1,4 @@
+import { trackPhoneCall } from "@/utils/gadsConversions";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
 
@@ -141,7 +142,7 @@ const CeramicTint = () => {
                 Get a Free Quote <ChevronRight className="h-4 w-4" />
               </Button>
               <Button variant="silver" size="lg" asChild>
-                <a href="tel:7863959172" className="flex items-center gap-2">
+                <a href="tel:7863959172" onClick={() => trackPhoneCall()} className="flex items-center gap-2">
                   <Clock className="h-4 w-4" /> Call (786) 395-9172
                 </a>
               </Button>
@@ -443,7 +444,7 @@ const CeramicTint = () => {
               Request a Free Quote <ChevronRight className="h-4 w-4" />
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="tel:7863959172" className="flex items-center gap-2">
+              <a href="tel:7863959172" onClick={() => trackPhoneCall()} className="flex items-center gap-2">
                 <Clock className="h-4 w-4" /> Call (786) 395-9172
               </a>
             </Button>

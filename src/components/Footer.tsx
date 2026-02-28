@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
+import { trackPhoneCall } from "@/utils/gadsConversions";
 
 const Footer = () => {
   return (
@@ -31,7 +32,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center gap-3 text-sm text-primary-foreground/80">
               <Phone className="h-4 w-4 flex-shrink-0" />
-              <a href="tel:+17863959172" className="hover:text-primary-foreground transition-colors">(786) 395-9172</a>
+              <a href="tel:+17863959172" onClick={() => trackPhoneCall()} className="hover:text-primary-foreground transition-colors">(786) 395-9172</a>
             </div>
             <div className="flex items-center gap-3 text-sm text-primary-foreground/80">
               <Mail className="h-4 w-4 flex-shrink-0" />

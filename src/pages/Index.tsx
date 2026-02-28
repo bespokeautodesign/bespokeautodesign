@@ -13,6 +13,7 @@ import { QuoteModal } from "@/components/QuoteModal";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import { addStructuredData, businessSchema, faqSchema } from "@/utils/seoHelpers";
+import { trackFormSubmission, trackPhoneCall } from "@/utils/gadsConversions";
 import { addOpenGraphTags, addCanonicalUrl, preloadCriticalImages } from "@/utils/metaHelpers";
 import { LazyImage } from "@/components/LazyImage";
 import HeroVideoBackground from "@/components/HeroVideoBackground";
@@ -214,7 +215,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                   size="lg"
                   className="text-lg px-10 py-5 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                   asChild>
-                <a href="tel:+17863959172">
+                <a href="tel:+17863959172" onClick={() => trackPhoneCall()}>
                   <Phone className="h-5 w-5" /> Call Now
                 </a>
               </Button>
@@ -306,7 +307,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                 Request a Free Quote
               </Button>
               <Button variant="silver" size="lg" asChild>
-                <a href="tel:+17863959172">
+                <a href="tel:+17863959172" onClick={() => trackPhoneCall()}>
                   <Phone className="h-4 w-4" /> Call (786) 395-9172
                 </a>
               </Button>
@@ -485,6 +486,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
 
                         if (error) throw error;
 
+                        trackFormSubmission();
                         setFormSubmitted(true);
                         form.reset();
                       } catch (error) {
@@ -508,7 +510,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                    <a href="tel:+17863959172" className="text-muted-foreground hover:text-primary transition-colors">(786) 395-9172</a>
+                    <a href="tel:+17863959172" onClick={() => trackPhoneCall()} className="text-muted-foreground hover:text-primary transition-colors">(786) 395-9172</a>
                   </div>
                 </div>
                 
@@ -652,7 +654,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
           Get Quote
         </Button>
         <Button variant="silver" className="flex-1" asChild>
-          <a href="tel:+17863959172">
+          <a href="tel:+17863959172" onClick={() => trackPhoneCall()}>
             <Phone className="h-4 w-4" /> Call Now
           </a>
         </Button>

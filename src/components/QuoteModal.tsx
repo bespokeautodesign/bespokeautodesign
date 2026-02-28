@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { trackFormSubmission } from "@/utils/gadsConversions";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
@@ -85,6 +86,9 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
       });
 
       if (error) throw error;
+
+      // Fire Google Ads conversion before navigating
+      trackFormSubmission();
 
       form.reset();
       setSelectedService("");
