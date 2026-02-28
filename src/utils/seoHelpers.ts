@@ -17,7 +17,7 @@ export const businessSchema = {
   "@type": "AutomotiveBusiness",
   "name": "Bespoke Auto Design",
   "description": "Premium automotive protection services specializing in XPEL paint protection film, ceramic coating, and window tint installation in Miami, Florida.",
-  "url": "https://bespokeautodesign.com",
+  "url": "https://www.bespokeauto.design",
   "telephone": "+1-786-395-9172",
   "email": "sales@bespokeauto.design",
   "address": {
