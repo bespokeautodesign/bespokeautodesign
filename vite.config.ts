@@ -32,6 +32,9 @@ export default defineConfig(({ mode }) => ({
       ],
       renderer: new PuppeteerRenderer({
         renderAfterTime: 5000,
+        navigationOptions: {
+          timeout: 120000,
+        },
       }),
     }),
   ].filter(Boolean),

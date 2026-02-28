@@ -67,7 +67,7 @@ const CeramicCoating = () => {
       "Ceramic Coating Miami | Professional Paint Protection | Bespoke Auto Design",
       "Miami's premier ceramic coating installer. Multi-layer protection with extreme gloss, UV defense, and hydrophobic performance for luxury and exotic vehicles."
     );
-    addCanonicalUrl("https://bespokeautodesign.com/ceramic-coating");
+    addCanonicalUrl("https://www.bespokeauto.design/ceramic-coating");
     addStructuredData({
       "@context": "https://schema.org",
       "@graph": [

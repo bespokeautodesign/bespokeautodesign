@@ -72,7 +72,7 @@ const MarineCeramicCoating = () => {
       {/* Hero */}
       <header className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/b0ee1d07-d81d-4edf-8181-95046e093b94.png" alt="Marine ceramic coating application" className="w-full h-full object-cover" />
+          <img src="/lovable-uploads/b0ee1d07-d81d-4edf-8181-95046e093b94.webp" alt="Marine ceramic coating application" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">

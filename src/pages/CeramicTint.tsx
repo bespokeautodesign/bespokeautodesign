@@ -66,7 +66,7 @@ const CeramicTint = () => {
       "Ceramic Window Tint Miami | XPEL XR Plus | Bespoke Auto Design",
       "Miami's premier XPEL XR Plus ceramic tint installer. 99% UV rejection, 98% infrared heat rejection. Recommended by The Skin Cancer Foundation."
     );
-    addCanonicalUrl("https://bespokeautodesign.com/ceramic-tint");
+    addCanonicalUrl("https://www.bespokeauto.design/ceramic-tint");
     addStructuredData({
       "@context": "https://schema.org",
       "@graph": [
@@ -115,7 +115,7 @@ const CeramicTint = () => {
           ═══════════════════════════════════════════════════════ */}
       <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/ceramic-tint-lexus.png" alt="Red Lexus LC with XPEL ceramic window tint at Bespoke Auto Design" className="w-full h-full object-cover saturate-[1.25] contrast-[1.05]" />
+          <img src="/lovable-uploads/ceramic-tint-lexus.webp" alt="Red Lexus LC with XPEL ceramic window tint at Bespoke Auto Design" className="w-full h-full object-cover saturate-[1.25] contrast-[1.05]" />
           <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="container mx-auto px-6 relative z-10">

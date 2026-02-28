@@ -72,7 +72,7 @@ const MarineCeramicTint = () => {
       {/* Hero */}
       <header className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.png" alt="Marine ceramic window tinting" className="w-full h-full object-cover" />
+          <img src="/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.webp" alt="Marine ceramic window tinting" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -158,7 +158,7 @@ const MarineCeramicTint = () => {
               </ul>
             </div>
             <div className="flex justify-center">
-              <img src="/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.png" alt="Marine ceramic tint options" className="w-full max-w-md rounded-lg shadow-premium" />
+              <img src="/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.webp" alt="Marine ceramic tint options" className="w-full max-w-md rounded-lg shadow-premium" />
             </div>
           </div>
         </div>

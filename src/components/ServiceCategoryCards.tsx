@@ -8,7 +8,7 @@ const categories = [
   {
     title: "Automotive",
     icon: Car,
-    image: "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png",
+    image: "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.webp",
     description:
       "Unleash your vehicle's full potential with Miami's premier protection services. From cutting-edge XPEL paint protection film to ceramic coatings, window tinting, and color change wraps — we elevate every aspect of your vehicle while safeguarding it from Florida's harsh elements.",
     services: [
@@ -23,7 +23,7 @@ const categories = [
   {
     title: "Marine",
     icon: Anchor,
-    image: "/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.png",
+    image: "/lovable-uploads/85878bee-0172-4227-b604-871ac11dfddf.webp",
     description:
       "Set sail with confidence. Our team specializes in applying ceramic coatings, paint protection film, and ceramic tint to boats and yachts with precision. Our marine services ensure your vessel not only looks impeccable but withstands Miami's salt water and sun.",
     services: [

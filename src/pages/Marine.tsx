@@ -35,7 +35,7 @@ const Marine = () => {
       "Marine Protection Services Miami | Boat PPF & Ceramic Coating | Bespoke Auto Design",
       "Professional marine protection services for boats and yachts in Miami. XPEL marine PPF, ceramic coating, and window tint."
     );
-    addCanonicalUrl("https://bespokeautodesign.com/marine");
+    addCanonicalUrl("https://www.bespokeauto.design/marine");
 
     // Add marine-specific structured data
     addStructuredData({
@@ -68,19 +68,19 @@ const Marine = () => {
   const marineServices = [{
     title: "Marine Paint Protection Film",
     description: "Protect your vessel's gel coat and paint from saltwater, UV rays, and harsh marine conditions.",
-    image: "/lovable-uploads/19e444ef-f150-42ce-b195-9a306b95f8d5.png",
+    image: "/lovable-uploads/19e444ef-f150-42ce-b195-9a306b95f8d5.webp",
     features: ["Saltwater resistance", "UV protection", "Impact protection", "Maintains resale value"],
     href: "/marine-ppf"
   }, {
     title: "Marine Ceramic Coating",
     description: "Advanced marine-grade ceramic coating for superior protection and easy maintenance.",
-    image: "/lovable-uploads/b0ee1d07-d81d-4edf-8181-95046e093b94.png",
+    image: "/lovable-uploads/b0ee1d07-d81d-4edf-8181-95046e093b94.webp",
     features: ["Hydrophobic surface", "Stain resistance", "Anti-fouling properties", "Extended protection"],
     href: "/marine-ceramic-coating"
   }, {
     title: "Marine Ceramic Tint",
     description: "Premium window tinting for boats and yachts providing comfort and protection on the water.",
-    image: "/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.png",
+    image: "/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.webp",
     features: ["Glare reduction", "UV protection", "Heat rejection", "Enhanced privacy"],
     href: "/marine-ceramic-tint"
   }];
@@ -91,7 +91,7 @@ const Marine = () => {
       <div 
         className="fixed inset-0 w-screen bg-cover bg-no-repeat z-0"
         style={{
-          backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.png')`,
+          backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.webp')`,
           backgroundPosition: 'center top'
         }}
       ></div>
@@ -144,7 +144,7 @@ const Marine = () => {
               </div>
               <div className="flex justify-center">
                 <img 
-                  src="/lovable-uploads/8225318e-5a65-40a0-90ed-9a488787ed64.png" 
+                  src="/lovable-uploads/8225318e-5a65-40a0-90ed-9a488787ed64.webp" 
                   alt="XPEL Marine Protection Solutions for boats and yachts in Miami Florida" 
                   className="w-full max-w-md rounded-lg shadow-premium"
                 />

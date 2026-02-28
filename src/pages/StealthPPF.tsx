@@ -50,7 +50,7 @@ const StealthPPF = () => {
       metaDesc.setAttribute("content", "XPEL Stealth PPF installation in Miami. Transform your gloss paint to satin or protect factory matte finishes. Self-healing matte paint protection film with 10-year warranty.");
     }
     addOpenGraphTags("Stealth PPF Miami | Matte Paint Protection Film | Bespoke Auto Design", "Miami's premier XPEL Stealth PPF installer. Convert gloss to satin or protect factory matte paint with self-healing, invisible matte protection film.");
-    addCanonicalUrl("https://bespokeautodesign.com/stealth-ppf");
+    addCanonicalUrl("https://www.bespokeauto.design/stealth-ppf");
     addStructuredData({
       "@context": "https://schema.org",
       "@graph": [
@@ -94,7 +94,7 @@ const StealthPPF = () => {
       {/* HERO */}
       <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/stealth-ppf-rolls-royce.png" alt="Rolls Royce with Stealth PPF" className="w-full h-full object-cover object-[center_55%]" />
+          <img src="/lovable-uploads/stealth-ppf-rolls-royce.webp" alt="Rolls Royce with Stealth PPF" className="w-full h-full object-cover object-[center_55%]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent via-60% to-black/40" />
         </div>
         <div className="container mx-auto px-6 relative z-10">

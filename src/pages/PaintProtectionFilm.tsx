@@ -48,7 +48,7 @@ const PaintProtectionFilm = () => {
       metaDesc.setAttribute("content", "Professional XPEL paint protection film (PPF) installation in Miami, FL. Self-healing, invisible protection for luxury and exotic cars. Certified installer with 10-year warranty.");
     }
     addOpenGraphTags("Paint Protection Film Miami | XPEL PPF | Bespoke Auto Design", "Miami's premier XPEL PPF installer. Full Front, Track, and Full Body packages with 10-year warranty. Protect your vehicle from rock chips, scratches, and UV damage.");
-    addCanonicalUrl("https://bespokeautodesign.com/paint-protection-film");
+    addCanonicalUrl("https://www.bespokeauto.design/paint-protection-film");
     addStructuredData({
       "@context": "https://schema.org",
       "@graph": [
@@ -112,7 +112,7 @@ const PaintProtectionFilm = () => {
          ═══════════════════════════════════════════════════════ */}
       <section className="relative py-20 md:py-28 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/ppf-hero-ferrari.png" alt="Black Ferrari F8 Tributo with XPEL PPF at Bespoke Auto Design" className="w-full h-full object-cover object-[center_40%]" />
+          <img src="/lovable-uploads/ppf-hero-ferrari.webp" alt="Black Ferrari F8 Tributo with XPEL PPF at Bespoke Auto Design" className="w-full h-full object-cover object-[center_40%]" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 via-60% to-black/60" />
         </div>
         <div className="container mx-auto px-6 relative z-10">

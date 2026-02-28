@@ -74,7 +74,7 @@ const MarinePPF = () => {
       {/* Hero */}
       <header className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/19e444ef-f150-42ce-b195-9a306b95f8d5.png" alt="Marine paint protection film installation" className="w-full h-full object-cover" />
+          <img src="/lovable-uploads/19e444ef-f150-42ce-b195-9a306b95f8d5.webp" alt="Marine paint protection film installation" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -154,7 +154,7 @@ const MarinePPF = () => {
               </ul>
             </div>
             <div className="flex justify-center">
-              <img src="/lovable-uploads/8225318e-5a65-40a0-90ed-9a488787ed64.png" alt="XPEL marine PPF coverage areas" className="w-full max-w-md rounded-lg shadow-premium" />
+              <img src="/lovable-uploads/8225318e-5a65-40a0-90ed-9a488787ed64.webp" alt="XPEL marine PPF coverage areas" className="w-full max-w-md rounded-lg shadow-premium" />
             </div>
           </div>
         </div>

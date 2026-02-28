@@ -19,10 +19,10 @@ import HeroVideoBackground from "@/components/HeroVideoBackground";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { CompetitiveEdge } from "@/components/CompetitiveEdge";
 import { ServiceCategoryCards } from "@/components/ServiceCategoryCards";
-import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.png";
-const ceramicWorkImage = "/lovable-uploads/83f64f7b-88e3-468d-9f88-d13e551c6289.png";
-import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.png";
-import tintWorkImage from "/lovable-uploads/870ad52a-53a2-4536-922b-33d54d2f71e0.png";
+import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.webp";
+const ceramicWorkImage = "/lovable-uploads/83f64f7b-88e3-468d-9f88-d13e551c6289.webp";
+import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.webp";
+import tintWorkImage from "/lovable-uploads/870ad52a-53a2-4536-922b-33d54d2f71e0.webp";
 import ppfInstallationImage from "@/assets/ppf-installation.jpg";
 import ceramicCoatingImage from "@/assets/ceramic-coating.jpg";
 import vinylWrapImage from "@/assets/vinyl-wrap.jpg";
@@ -77,7 +77,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
     addCanonicalUrl(window.location.origin + '/');
 
     preloadCriticalImages([
-    '/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.png',
+    '/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.webp',
     '/bespoke-logo.png']
     );
 
@@ -119,7 +119,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
     title: "Ceramic Coating",
     description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
     startingPrice: "$799",
-    image: "/lovable-uploads/210820a3-2a16-4238-857f-70b41f9e1807.png",
+    image: "/lovable-uploads/210820a3-2a16-4238-857f-70b41f9e1807.webp",
     link: "/ceramic-coating",
     features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"],
     detailedInfo: {

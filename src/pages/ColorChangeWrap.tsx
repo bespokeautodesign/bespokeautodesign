@@ -188,7 +188,7 @@ const ColorChangeWrap = () => {
       "Color Change Vinyl Wrap Miami | Custom Vehicle Wraps | Bespoke Auto Design",
       "Premium color change vinyl wraps in Miami. Full body wraps, chrome deletes, and custom finishes for luxury and exotic vehicles using top-quality materials."
     );
-    addCanonicalUrl("https://bespokeautodesign.com/color-change-wrap");
+    addCanonicalUrl("https://www.bespokeauto.design/color-change-wrap");
     addStructuredData({
       "@context": "https://schema.org",
       "@type": "Service",
@@ -234,7 +234,7 @@ const ColorChangeWrap = () => {
       {/* ═══════════════════ HERO ═══════════════════ */}
       <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/mercedes-amg-green-wrap.jpg" alt="Mercedes AMG color change wrap" className="w-full h-full object-cover object-[center_55%] saturate-[1.25] contrast-[1.05]" />
+          <img src="/lovable-uploads/mercedes-amg-green-wrap.webp" alt="Mercedes AMG color change wrap" className="w-full h-full object-cover object-[center_55%] saturate-[1.25] contrast-[1.05]" />
           <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
