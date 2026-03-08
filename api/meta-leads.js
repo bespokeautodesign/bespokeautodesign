@@ -51,7 +51,7 @@ export default async function handler(req, res) {
 
           // Try to fetch full lead data from Meta Graph API
           let leadData = null;
-          const pageToken = process.env.META_PAGE_ACCESS_TOKEN || 'EAAUsFQJkNrIBQZBTNYc90oFh8h0XZA7N8BAPYUjW2Ai9xVORn57a5ultcXIII1FxkB3IwjZB4cGuE9muwPFQJh2JUrFOwpZAyPMVnhVvChfQpGsrQg0bwL1bdEZBonEtZCGN1acASvpEFw9ASc7oDkdpeQWaDOXA1p0XZA7qDYrYpUrcp3I2aGqVyoJiFBAa5bSfgZDZD';
+          const pageToken = process.env.META_PAGE_ACCESS_TOKEN || 'EAAUsFQJkNrIBQ3arcfUEaSIKYFRKk99EimqZAOkZBebaQjHz3uDdEbeh30VmFiBTZB5QmYeEkQ4AZC3pxRtukSO0GyoaW5ZAq7ZAJljAPltm4vAPhNEAyzt9T0S63QouSBHv0aYfIjoJfZAG6R1mUmbhkpWKYkymMUudT1eFXvZAlPLbHwhp6mZBFRDVUoeUtlqBVQUYZD';
           
           if (pageToken && leadgenId) {
             try {
