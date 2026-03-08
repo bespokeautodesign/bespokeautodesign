@@ -87,6 +87,27 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
 
       if (error) throw error;
 
+      // Save lead to CRM database (non-blocking — email already sent)
+      try {
+        const CRM_URL = 'https://miguincxgowtkemqeciw.supabase.co/rest/v1/leads';
+        const CRM_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1pZ3VpbmN4Z293dGtlbXFlY2l3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5ODc3OTAsImV4cCI6MjA4ODU2Mzc5MH0.KVViZvjQQuxrqP4TMJNOYwb1-UBC-k7D8_uTx-wEQ8E';
+        await fetch(CRM_URL, {
+          method: 'POST',
+          headers: { 'apikey': CRM_KEY, 'Authorization': `Bearer ${CRM_KEY}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: `${formData.get('firstName')} ${formData.get('lastName') || ''}`.trim(),
+            phone: formData.get('phone'),
+            email: formData.get('email'),
+            vehicle: formData.get('vehicle'),
+            service: serviceValue,
+            source: 'Website',
+            status: 'new',
+            notes: formData.get('message'),
+            contact_methods: contactMethods,
+          }),
+        });
+      } catch (_) { /* CRM save failed silently — email was already sent */ }
+
       // Fire Google Ads conversion before navigating
       trackFormSubmission();
 
