@@ -226,7 +226,7 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Message *</label>
-              <textarea name="message" required className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
+              <textarea name="message" className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
             </div>
           </form>
           
