@@ -12,6 +12,7 @@ import { Shield, Check, ChevronRight, Palette, Sun, Zap, Car, Clock, Award, Spar
 import PageSEO from "@/components/PageSEO";
 import { WhyChooseUs, wrapDifferentiators } from "@/components/WhyChooseUs";
 import { RelatedServices } from "@/components/RelatedServices";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { vinylWrapVehicles } from "@/data/portfolioVehicles";
 
 const brands = [

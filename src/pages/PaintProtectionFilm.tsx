@@ -13,6 +13,7 @@ import PageSEO from "@/components/PageSEO";
 import { Link } from "react-router-dom";
 import { WhyChooseUs, ppfDifferentiators } from "@/components/WhyChooseUs";
 import { RelatedServices } from "@/components/RelatedServices";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { clearPPFVehicles, clearPPFImageStyles } from "@/data/portfolioVehicles";
 const ppfFaqs = [{

@@ -12,6 +12,7 @@ import { Shield, Check, ChevronRight, Sun, Thermometer, Clock, Award, Eye, Zap, 
 import PageSEO from "@/components/PageSEO";
 import { WhyChooseUs, tintDifferentiators } from "@/components/WhyChooseUs";
 import { RelatedServices } from "@/components/RelatedServices";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import xpelLogo from "@/assets/xpel-logo.svg";
 
 const tintFaqs = [
