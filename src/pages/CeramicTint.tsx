@@ -105,9 +105,9 @@ const CeramicTint = () => {
                 Authorized XPEL Window Film Installer
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
-              XPEL XR Plus <br className="hidden md:block" />
-              <span className="text-white/70">Ceramic Tint in Miami</span>
+             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
+               Ceramic Window Tint <br className="hidden md:block" /> in Miami, FL
+             </h1>
             </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               The world's most advanced ceramic window film — blocking 99% of UV rays, rejecting up to 98% of infrared heat, and recommended by The Skin Cancer Foundation.
@@ -413,6 +413,176 @@ const CeramicTint = () => {
                 </Accordion>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          WHY CERAMIC TINT IS A MUST IN MIAMI
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4">Miami Heat Defense</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+                Why Ceramic Tint Is a Must in Miami
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Miami is one of the hottest and sunniest cities in the United States, with average summer temperatures exceeding 90°F and a UV index that regularly reaches "extreme" levels from April through October. If you commute on I-95, US-1, or the Palmetto Expressway, you're sitting in direct sunlight for extended periods — and your vehicle's interior is absorbing that punishment. Without ceramic window tint, cabin temperatures in a parked car can exceed 150°F in Miami's summer sun, causing leather seats to crack and fade, dashboard materials to warp and discolor, and steering wheels to become too hot to touch.
+              </p>
+              <p>
+                XPEL Prime XR Plus™ ceramic tint blocks over 99% of harmful UVA and UVB rays — the same rays responsible for skin cancer, premature skin aging, and sun damage. This is particularly important for Miami drivers who spend significant time in their vehicles. The film is officially recommended by <strong className="text-foreground">The Skin Cancer Foundation</strong> as an effective UV protectant, making it one of the most meaningful investments you can make for your health and your family's health.
+              </p>
+              <p>
+                Beyond UV protection, XPEL XR Plus rejects up to 98% of infrared heat — the invisible energy that makes your car feel like an oven. This means dramatically cooler cabin temperatures, reduced strain on your air conditioning system, and better fuel efficiency (or battery range for EVs). Many of our Miami clients report that their A/C reaches comfortable temperatures 2–3 minutes faster after ceramic tint installation, and that their vehicles feel noticeably cooler even when parked in direct sun for hours.
+              </p>
+              <p>
+                Miami's intense sun also causes significant glare, especially during the morning eastbound commute on the Dolphin Expressway and afternoon westbound drive on I-195. Ceramic tint reduces glare without making your windows too dark to see through at night — a critical safety advantage over cheap dyed tints that sacrifice nighttime visibility for daytime shade.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          XPEL XR PLUS VS STANDARD TINT
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4">Comparison Guide</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+                XPEL XR Plus vs Standard Window Tint
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Not all window tint is created equal. Understanding the differences between tint technologies will help you make the best investment for your Miami vehicle.
+              </p>
+              <p>
+                <strong className="text-foreground">Dyed Window Tint</strong> is the cheapest option available, typically costing $100–$200 for a full vehicle. It works by absorbing sunlight into a dyed polyester layer, which darkens the window and provides moderate privacy. However, dyed tint offers minimal heat rejection (usually 15–30% of infrared), almost no UV protection, and degrades rapidly in Miami's intense sun — turning purple, bubbling, and peeling within 1–3 years. It's the "fast fashion" of tint: cheap, temporary, and ultimately more expensive when you factor in replacement costs.
+              </p>
+              <p>
+                <strong className="text-foreground">Metallic Window Tint</strong> uses embedded metallic particles to reflect heat away from the vehicle. It performs better than dyed tint for heat rejection (typically 40–60% of infrared) and lasts longer. However, metallic tint interferes with electronic signals — GPS, cell reception, Bluetooth, satellite radio, toll transponders (SunPass/E-PASS), and keyless entry systems. For modern vehicles loaded with electronics, metallic tint creates persistent connectivity problems that outweigh its benefits.
+              </p>
+              <p>
+                <strong className="text-foreground">XPEL Prime XR Plus™ Ceramic Tint</strong> uses multi-layer nano-ceramic particle technology that is 100% metal-free. It rejects up to 98% of infrared heat and blocks 99% of UV — far exceeding both dyed and metallic alternatives. Because it contains no metals, it causes zero interference with any electronic device in your vehicle. The film will never fade, turn purple, bubble, or peel — it's engineered for extreme longevity even in Miami's brutal UV environment. It comes with XPEL's manufacturer warranty and delivers performance that no budget tint can match.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          WINDOW TINT LAWS IN FLORIDA
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4">Legal Guide</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+                Window Tint Laws in Florida
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Florida has specific regulations governing how dark your window tint can be, and understanding these laws will help you choose the right shade that maximizes heat rejection while keeping you legal. Here's what Florida Statute 316.2953 requires:
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  { title: "Front Side Windows", desc: "Must allow at least 28% of visible light transmission (VLT). This means you can go fairly dark while still meeting the legal requirement. XPEL XR Plus in 30% VLT is a popular choice that keeps you legal while providing excellent heat rejection." },
+                  { title: "Rear Side Windows", desc: "Florida places no darkness limit on rear side windows. You can go as dark as you want — including 5% \"limo tint\" — for maximum privacy and heat rejection. XPEL XR Plus in 15% or 5% are popular choices for rear windows." },
+                  { title: "Rear Window", desc: "Like rear side windows, there is no VLT limit for the rear window. Many clients choose 15% or 5% for the rear to match their side windows and create a uniform dark appearance from behind." },
+                  { title: "Windshield", desc: "Florida allows a non-reflective tint strip along the top of the windshield, extending down to the manufacturer's AS-1 line (typically 5-6 inches). Full windshield tint with a clear ceramic film (70% VLT) is increasingly popular for heat and UV rejection without darkening the glass." },
+                ].map((item) => (
+                  <div key={item.title} className="bg-card border border-border rounded-xl p-5 space-y-2">
+                    <h4 className="font-bold text-foreground">{item.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <p>
+                At Bespoke Auto Design, we help every client choose the optimal tint darkness that balances their privacy preferences, heat rejection goals, and legal compliance. We carry XPEL XR Plus in a full range of shades — from a barely-there 70% VLT (ideal for windshields and those who want maximum clarity) to an ultra-private 5% VLT. Our installers will walk you through the options and show you samples on your actual vehicle before installation begins.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          CERAMIC TINT FOR EVERY VEHICLE
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-12">
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4">Vehicle Coverage</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+                Ceramic Tint for Every Vehicle
+              </h2>
+            </div>
+            <div className="space-y-10 text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground font-playfair">Tesla Model 3, Model Y & Model X</h3>
+                <p>
+                  Tesla's massive glass roofs are a double-edged sword — stunning to look through but brutal in Miami's heat. The panoramic roof on a Model 3 or Model Y allows enormous amounts of infrared heat into the cabin, overwhelming the A/C and significantly reducing battery range. XPEL XR Plus ceramic tint on the roof glass alone can drop cabin temperatures by 10–15°F and noticeably improve range during summer months. Combined with side and rear window tinting, it transforms the Tesla driving experience in South Florida from "constantly battling heat" to effortlessly cool.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground font-playfair">BMW, Mercedes-Benz & Luxury Sedans</h3>
+                <p>
+                  Luxury sedans like the BMW 5 Series, Mercedes-Benz S-Class, and Audi A8 feature premium leather interiors that are particularly vulnerable to Miami's UV radiation. Without tint, leather surfaces fade, crack, and dry out within a few years — destroying thousands of dollars in interior value. Ceramic tint preserves these materials by blocking the UV and heat that accelerate degradation, while also enhancing the vehicle's refined appearance with a consistent, elegant shade across all windows.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground font-playfair">Trucks & SUVs: F-150, Tahoe, Range Rover</h3>
+                <p>
+                  Trucks and large SUVs have significantly more glass surface area than sedans, which means more heat intrusion and more UV exposure. Vehicles like the Ford F-150, Chevrolet Tahoe, GMC Yukon, Toyota 4Runner, and Range Rover benefit enormously from ceramic tint because the heat rejection compounds across all that glass — the larger the vehicle, the more dramatic the temperature difference. For truck owners who park outdoors at job sites or construction zones across Miami-Dade, ceramic tint is the single best investment for interior comfort and preservation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          SERVING MIAMI-DADE COUNTY
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4">Service Area</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+                Serving Miami-Dade County
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Bespoke Auto Design is located at <strong className="text-foreground">7943 NW 64th St, Miami, FL 33166</strong> in Doral — minutes from Miami International Airport, easily accessible from the Palmetto Expressway (SR-826) and Dolphin Expressway (SR-836).
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {[
+                  "Doral", "Brickell", "Coral Gables", "Miami Beach", "Aventura",
+                  "Coconut Grove", "Wynwood", "Kendall", "Hialeah", "Miami Lakes",
+                  "Pinecrest", "Key Biscayne", "Sunny Isles Beach", "South Miami",
+                  "Fort Lauderdale", "Hollywood", "Weston"
+                ].map((area) => (
+                  <div key={area} className="flex items-center gap-2 text-sm font-medium text-foreground">
+                    <Check className="h-4 w-4 text-primary shrink-0" />
+                    {area}
+                  </div>
+                ))}
+              </div>
+              <p>
+                Whether you're battling the sun on your daily commute down US-1 from Coconut Grove, parking outdoors in the Brickell Financial District, or hauling equipment across Hialeah — our ceramic tint services will transform your driving comfort. We offer same-day installations for most vehicles and flexible scheduling to fit your routine.
+              </p>
+            </div>
           </div>
         </div>
       </section>
