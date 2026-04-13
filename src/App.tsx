@@ -67,9 +67,9 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
+        <LiveChat />
+        <StickyMobileCTA />
       </BrowserRouter>
-      <LiveChat />
-      <StickyMobileCTA />
       
       
     </TooltipProvider>
