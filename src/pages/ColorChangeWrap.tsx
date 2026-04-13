@@ -223,7 +223,6 @@ const ColorChangeWrap = () => {
              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
                Color Change Vinyl Wraps <br className="hidden md:block" /> in Miami, FL
              </h1>
-            </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               Transform your vehicle into something truly one-of-a-kind. We use only premium-grade cast vinyl films
               and expert installation techniques to deliver a finish that turns heads everywhere you go in Miami.
