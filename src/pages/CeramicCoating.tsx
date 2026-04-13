@@ -84,7 +84,7 @@ const CeramicCoating = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Ceramic Coating Miami | Starting at $799 | Bespoke Auto Design"
+        title="Ceramic Coating Miami | Starting at $599 | Bespoke Auto Design"
         description="Professional ceramic coating in Miami, FL. Multi-layer nano-ceramic protection for luxury and exotic cars. Extreme gloss, UV defense, and hydrophobic performance. Get a free quote today."
         canonical="https://www.bespokeauto.design/ceramic-coating"
         structuredData={ceramicStructuredData}
@@ -117,7 +117,7 @@ const CeramicCoating = () => {
               XPEL Fusion Plus™ — a professional-grade nano-ceramic coating that delivers unmatched gloss, UV defense, and hydrophobic performance, engineered to thrive in Miami's extreme climate.
             </p>
             <p className="text-lg font-semibold text-white/90 drop-shadow-md">
-              Starting at $799 • Free Consultation
+              Starting at $599 • Free Consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
@@ -393,7 +393,7 @@ const CeramicCoating = () => {
         title="Ceramic Coating Pricing"
         subtitle="Professional-grade nano-ceramic protection with multi-stage paint correction included."
         tiers={[
-          { name: "Ceramic Coating", price: "$799", priceLabel: "Starting at", description: "Professional ceramic coating with paint correction and long-lasting hydrophobic protection.", features: ["Multi-stage paint correction", "Nano-ceramic bonded layer", "Extreme hydrophobic finish", "5-year warranty", "UV & chemical resistance"], popular: true },
+          { name: "Ceramic Coating", price: "$599", priceLabel: "Starting at", description: "Professional ceramic coating with paint correction and long-lasting hydrophobic protection.", features: ["Multi-stage paint correction", "Nano-ceramic bonded layer", "Extreme hydrophobic finish", "5-year warranty", "UV & chemical resistance"], popular: true },
         ]}
         onGetQuote={() => setQuoteModalOpen(true)}
         footnote="Final pricing depends on vehicle size, paint condition, and coating package selected."

@@ -83,7 +83,7 @@ const CeramicTint = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Ceramic Tint Miami | Window Tint from $299 | Bespoke Auto Design"
+        title="Ceramic Tint Miami | Window Tint from $150 | Bespoke Auto Design"
         description="Professional XPEL XR Plus ceramic window tint in Miami, FL. Blocks 99% UV rays, rejects up to 98% infrared heat. Recommended by The Skin Cancer Foundation. Free quote."
         canonical="https://www.bespokeauto.design/ceramic-tint"
         structuredData={tintStructuredData}
@@ -116,7 +116,7 @@ const CeramicTint = () => {
               The world's most advanced ceramic window film — blocking 99% of UV rays, rejecting up to 98% of infrared heat, and recommended by The Skin Cancer Foundation.
             </p>
             <p className="text-lg font-semibold text-white/90">
-              Starting at $299 • Free Consultation
+              Starting at $150 • Free Consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
@@ -380,7 +380,7 @@ const CeramicTint = () => {
         title="Ceramic Tint Pricing"
         subtitle="XPEL Prime XR Plus™ ceramic tint — recommended by the Skin Cancer Foundation."
         tiers={[
-          { name: "Ceramic Window Tint", price: "$299", priceLabel: "Starting at", description: "Full vehicle ceramic tint with up to 98% infrared heat rejection.", features: ["XPEL Prime XR Plus™ film", "99% UV ray protection", "Up to 98% infrared heat rejection", "Zero electronic interference", "Lifetime warranty"], popular: true },
+          { name: "Ceramic Window Tint", price: "$150", priceLabel: "Starting at", description: "Full vehicle ceramic tint with up to 98% infrared heat rejection.", features: ["XPEL Prime XR Plus™ film", "99% UV ray protection", "Up to 98% infrared heat rejection", "Zero electronic interference", "Lifetime warranty"], popular: true },
         ]}
         onGetQuote={() => setQuoteModalOpen(true)}
         footnote="Pricing varies by vehicle type, number of windows, and windshield tinting."

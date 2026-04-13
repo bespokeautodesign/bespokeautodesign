@@ -93,7 +93,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
   }, {
     title: "Ceramic Coating",
     description: "Advanced nanotechnology coating providing long-lasting protection and enhanced gloss.",
-    startingPrice: "$799",
+    startingPrice: "$599",
     image: "/lovable-uploads/210820a3-2a16-4238-857f-70b41f9e1807.webp",
     link: "/ceramic-coating",
     features: ["Hydrophobic properties", "Enhanced durability", "Chemical resistance", "Easy maintenance"],
@@ -133,7 +133,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
   }, {
     title: "Ceramic Tint",
     description: "Superior window tinting with ceramic technology for maximum comfort and protection.",
-    startingPrice: "$299",
+    startingPrice: "$150",
     image: tintWorkImage,
     link: "/ceramic-tint",
     features: ["Heat rejection", "UV protection", "Enhanced privacy", "Lifetime warranty"],
@@ -168,7 +168,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       {/* Urgency Banner */}
       <div className="bg-amber-500/90 text-black text-center py-2 px-4 text-sm font-medium tracking-wide">
         <Calendar className="inline-block w-4 h-4 mr-1.5 -mt-0.5" />
-        Currently booking 2–3 weeks out. <span className="font-semibold">Reserve your spot today.</span>
+        Currently booking 1–2 weeks out. <span className="font-semibold">Reserve your spot today.</span>
       </div>
 
       {/* Hero Section */}
@@ -243,7 +243,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
               <span className="text-sm font-medium">Leave Protected</span>
             </div>
           </div>
-          <p className="text-center text-primary-foreground/60 text-xs mt-3">Get a free quote within 30 minutes • PPF starting at $1,499 • Ceramic Coating from $799
+          <p className="text-center text-primary-foreground/60 text-xs mt-3">Get a free quote within 30 minutes • PPF starting at $1,499 • Ceramic Coating from $599
 
             </p>
         </div>
