@@ -303,19 +303,19 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-background/80 backdrop-blur-sm">
+      <section id="services" className="py-20" style={{ backgroundColor: '#0f0f0f' }}>
         <div className="container mx-auto px-6">
           <header className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Our Services</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">Premium Protection Services</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <Badge variant="outline" className="mb-4 border-white/20 text-white/70">Our Services</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair text-white">Premium Protection Services</h2>
+            <p className="text-xl text-white/60 max-w-2xl mx-auto">
               Comprehensive vehicle protection solutions using only the finest XPEL products. Every service backed by manufacturer warranties.
             </p>
           </header>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) =>
-              <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 group cursor-pointer" onClick={() => setSelectedService(index)}>
+              <div key={index} className="overflow-hidden rounded-lg transition-all duration-500 group cursor-pointer hover:shadow-[0_0_20px_rgba(255,215,0,0.15)]" style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.08)' }} onClick={() => setSelectedService(index)}>
                 <div className="relative h-64 overflow-hidden">
                   <LazyImage src={service.image} alt={service.title} className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${index === 1 ? "object-[center_30%]" : ""}`} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -328,18 +328,18 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                     <h3 className="text-2xl font-bold text-white font-playfair">{service.title}</h3>
                   </div>
                 </div>
-                <CardContent className="pt-6">
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
+                <div className="p-6">
+                  <p className="text-[#e5e5e5]/70 mb-4">{service.description}</p>
                   <div className="grid grid-cols-2 gap-2 mb-4">
                     {service.features.map((feature, fIndex) =>
-                    <div key={fIndex} className="flex items-center gap-2 text-sm">
-                        <Shield className="h-3 w-3 text-primary flex-shrink-0" />
+                    <div key={fIndex} className="flex items-center gap-2 text-sm text-[#e5e5e5]">
+                        <Shield className="h-3 w-3 text-amber-400 flex-shrink-0" />
                         <span>{feature}</span>
                       </div>
                     )}
                   </div>
                   <div className="flex gap-3">
-                    <Button variant="outline" size="sm" asChild className="flex-1">
+                    <Button variant="outline" size="sm" asChild className="flex-1 border-white/20 text-white hover:bg-white/10">
                       <Link to={service.link}>
                         Learn More <ArrowRight className="h-3 w-3 ml-1" />
                       </Link>
@@ -348,8 +348,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                       Get Quote
                     </Button>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
               )}
           </div>
         </div>
@@ -367,12 +367,12 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       <CompetitiveEdge onQuoteClick={() => setQuoteModalOpen(true)} />
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-background/80 backdrop-blur-sm">
+      <section id="contact" className="py-20" style={{ backgroundColor: '#111111' }}>
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Get In Touch</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <Badge variant="outline" className="mb-4 border-white/20 text-white/70">Get In Touch</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Contact Us</h2>
+            <p className="text-xl text-white/60 max-w-2xl mx-auto">
               Ready to protect and enhance your vehicle? Get in touch with our expert team today.
             </p>
           </div>
@@ -380,38 +380,38 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Right Column - Quote Form (Mobile: First, Desktop: Second) */}
             <div className="flex flex-col order-1 md:order-2">
-              <Card className="shadow-premium flex-1">
-                <CardHeader>
-                  <CardTitle>Request a Quote</CardTitle>
-                  <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
+              <div className="shadow-premium flex-1 rounded-lg p-6" style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <div className="mb-4">
+                  <h3 className="text-xl font-semibold text-white">Request a Quote</h3>
+                  <p className="text-sm text-white/50">Fill out the form below and we'll get back to you within 24 hours.</p>
+                </div>
+                <div className="space-y-4">
                   <form id="quote-form">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <label className="text-sm font-medium">First Name *</label>
-                        <input name="firstName" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
+                        <label className="text-sm font-medium text-white/80">First Name *</label>
+                        <input name="firstName" required className="w-full px-3 py-2 rounded-md text-white placeholder:text-white/30" style={{ backgroundColor: '#222', border: '1px solid rgba(255,255,255,0.15)' }} placeholder="John" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-sm font-medium">Last Name</label>
-                        <input name="lastName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
+                        <label className="text-sm font-medium text-white/80">Last Name</label>
+                        <input name="lastName" className="w-full px-3 py-2 rounded-md text-white placeholder:text-white/30" style={{ backgroundColor: '#222', border: '1px solid rgba(255,255,255,0.15)' }} placeholder="Doe" />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Phone *</label>
-                      <input name="phone" type="tel" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
+                      <label className="text-sm font-medium text-white/80">Phone *</label>
+                      <input name="phone" type="tel" required className="w-full px-3 py-2 rounded-md text-white placeholder:text-white/30" style={{ backgroundColor: '#222', border: '1px solid rgba(255,255,255,0.15)' }} placeholder="(786) 395-9172" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Email</label>
-                      <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
+                      <label className="text-sm font-medium text-white/80">Email</label>
+                      <input name="email" type="email" className="w-full px-3 py-2 rounded-md text-white placeholder:text-white/30" style={{ backgroundColor: '#222', border: '1px solid rgba(255,255,255,0.15)' }} placeholder="john@example.com" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Vehicle Make & Model *</label>
-                      <input name="vehicle" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
+                      <label className="text-sm font-medium text-white/80">Vehicle Make & Model *</label>
+                      <input name="vehicle" required className="w-full px-3 py-2 rounded-md text-white placeholder:text-white/30" style={{ backgroundColor: '#222', border: '1px solid rgba(255,255,255,0.15)' }} placeholder="2024 Porsche 911" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Service Interest *</label>
-                      <select name="service" required className="w-full px-3 py-2 border border-input rounded-md bg-background">
+                      <label className="text-sm font-medium text-white/80">Service Interest *</label>
+                      <select name="service" required className="w-full px-3 py-2 rounded-md text-white" style={{ backgroundColor: '#222', border: '1px solid rgba(255,255,255,0.15)' }}>
                         <option value="">Select a service...</option>
                         <option>Paint Protection Film (PPF)</option>
                         <option>Ceramic Coating</option>
@@ -424,21 +424,21 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                       </select>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Preferred Contact Method</label>
+                      <label className="text-sm font-medium text-white/80">Preferred Contact Method</label>
                       <div className="flex gap-4">
-                        <label className="flex items-center space-x-2">
-                          <input type="checkbox" name="contactMethod" value="text" className="rounded border-input" />
+                        <label className="flex items-center space-x-2 text-white/70">
+                          <input type="checkbox" name="contactMethod" value="text" className="rounded" />
                           <span className="text-sm">Text</span>
                         </label>
-                        <label className="flex items-center space-x-2">
-                          <input type="checkbox" name="contactMethod" value="phone" className="rounded border-input" />
+                        <label className="flex items-center space-x-2 text-white/70">
+                          <input type="checkbox" name="contactMethod" value="phone" className="rounded" />
                           <span className="text-sm">Phone</span>
                         </label>
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium">Message</label>
-                      <textarea name="message" className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
+                      <label className="text-sm font-medium text-white/80">Message</label>
+                      <textarea name="message" className="w-full px-3 py-2 rounded-md text-white placeholder:text-white/30 min-h-24" style={{ backgroundColor: '#222', border: '1px solid rgba(255,255,255,0.15)' }} placeholder="Tell us about your project..."></textarea>
                     </div>
                   </form>
                   {formSubmitted &&
@@ -495,42 +495,42 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
               {/* Contact Information - Top Left */}
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary text-primary-foreground rounded-full p-3">
-                    <Phone className="h-6 w-6" />
+                  <div className="rounded-full p-3" style={{ backgroundColor: '#222' }}>
+                    <Phone className="h-6 w-6 text-amber-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                    <a href="tel:+17863959172" onClick={() => trackPhoneCall()} className="text-muted-foreground hover:text-primary transition-colors">(786) 395-9172</a>
+                    <h3 className="font-semibold text-lg mb-1 text-white">Phone</h3>
+                    <a href="tel:+17863959172" onClick={() => trackPhoneCall()} className="text-white/60 hover:text-amber-400 transition-colors">(786) 395-9172</a>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary text-primary-foreground rounded-full p-3">
-                    <Mail className="h-6 w-6" />
+                  <div className="rounded-full p-3" style={{ backgroundColor: '#222' }}>
+                    <Mail className="h-6 w-6 text-amber-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">Email</h3>
-                    <a href="mailto:sales@bespokeauto.design" className="text-muted-foreground hover:text-primary transition-colors">sales@bespokeauto.design</a>
+                    <h3 className="font-semibold text-lg mb-1 text-white">Email</h3>
+                    <a href="mailto:sales@bespokeauto.design" className="text-white/60 hover:text-amber-400 transition-colors">sales@bespokeauto.design</a>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary text-primary-foreground rounded-full p-3">
-                    <MapPin className="h-6 w-6" />
+                  <div className="rounded-full p-3" style={{ backgroundColor: '#222' }}>
+                    <MapPin className="h-6 w-6 text-amber-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">Location</h3>
-                    <a href="https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">7943 NW 64th St<br />Miami, FL 33166</a>
+                    <h3 className="font-semibold text-lg mb-1 text-white">Location</h3>
+                    <a href="https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-amber-400 transition-colors">7943 NW 64th St<br />Miami, FL 33166</a>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary text-primary-foreground rounded-full p-3">
-                    <Clock className="h-6 w-6" />
+                  <div className="rounded-full p-3" style={{ backgroundColor: '#222' }}>
+                    <Clock className="h-6 w-6 text-amber-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg mb-1">Hours</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="font-semibold text-lg mb-1 text-white">Hours</h3>
+                    <p className="text-white/60">
                       Monday - Friday: 9:00 AM - 6:00 PM<br />
                       Saturday: 10:00 AM - 4:00 PM<br />
                       Sunday: Closed
@@ -541,11 +541,11 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
               
               {/* Interactive Map - Bottom Left */}
               <div className="flex-1">
-                <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                  <MapPin className="h-5 w-5" />
+                <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 text-white">
+                  <MapPin className="h-5 w-5 text-amber-400" />
                   Visit Our Shop
                 </h3>
-                <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg border">
+                <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                   <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.8746624265947!2d-80.33659262378845!3d25.838912777359095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9c3e8f5f5f5f5%3A0x1234567890abcdef!2s7943%20NW%2064th%20St%2C%20Miami%2C%20FL%2033166!5e0!3m2!1sen!2sus!4v1234567890123&q=7943+NW+64th+St+Miami+FL+33166"
                       width="100%"
@@ -562,15 +562,15 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                   <Button
                       variant="outline"
                       size="sm"
+                      className="border-white/20 text-white hover:bg-white/10"
                       onClick={() => window.location.href = 'https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166'}>
-
                     Open in Google Maps
                   </Button>
                   <Button
                       variant="outline"
                       size="sm"
+                      className="border-white/20 text-white hover:bg-white/10"
                       onClick={() => window.location.href = 'https://maps.apple.com/?q=7943+NW+64th+St+Miami+FL+33166'}>
-
                     Apple Maps
                   </Button>
                 </div>
@@ -613,11 +613,11 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       </section>
 
       {/* Instagram Feed Section */}
-      <section className="py-12 bg-background/80 backdrop-blur-sm text-foreground">
+      <section className="py-12" style={{ backgroundColor: '#0f0f0f' }}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <Badge variant="outline" className="mb-4">Follow Us</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">Latest from Instagram</h2>
+            <Badge variant="outline" className="mb-4 border-white/20 text-white/70">Follow Us</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Latest from Instagram</h2>
           </div>
           <div className="max-w-6xl mx-auto">
             <iframe

@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 
@@ -60,36 +59,32 @@ const homeFaqData = [
 
 export const HomeFAQ = () => {
   return (
-    <section className="py-20 bg-background/80 backdrop-blur-sm">
+    <section className="py-20" style={{ backgroundColor: '#0f0f0f' }}>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">Frequently Asked Questions</Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Expert Answers</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <Badge variant="outline" className="mb-4 border-white/20 text-white/70">Frequently Asked Questions</Badge>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Expert Answers</h2>
+          <p className="text-xl text-white/60 max-w-2xl mx-auto">
             Get answers to the most common questions about PPF, ceramic coating, and ceramic tint services.
           </p>
         </div>
         
         <div className="max-w-4xl mx-auto">
-          <Card className="shadow-premium">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center">Protection Services FAQ</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Accordion type="single" collapsible className="w-full">
-                {homeFaqData.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-left">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </CardContent>
-          </Card>
+          <div className="rounded-lg p-6" style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <h3 className="text-2xl font-semibold text-center text-white mb-6">Protection Services FAQ</h3>
+            <Accordion type="single" collapsible className="w-full">
+              {homeFaqData.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border-white/10">
+                  <AccordionTrigger className="text-left text-white/90 hover:text-white">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-white/60">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </div>
     </section>
