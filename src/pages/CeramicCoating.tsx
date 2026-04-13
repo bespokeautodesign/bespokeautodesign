@@ -90,6 +90,9 @@ const CeramicCoating = () => {
         structuredData={ceramicStructuredData}
       />
       <Navbar />
+      <div className="container mx-auto px-6">
+        <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Ceramic Coating", path: "/ceramic-coating", current: true }]} />
+      </div>
 
       {/* ═══════════════════════════════════════════════════════
           HERO SECTION

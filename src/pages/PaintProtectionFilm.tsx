@@ -88,6 +88,9 @@ const PaintProtectionFilm = () => {
         structuredData={ppfStructuredData}
       />
       <Navbar />
+      <div className="container mx-auto px-6">
+        <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Paint Protection Film", path: "/paint-protection-film", current: true }]} />
+      </div>
 
       {/* ═══════════════════════════════════════════════════════
          HERO SECTION

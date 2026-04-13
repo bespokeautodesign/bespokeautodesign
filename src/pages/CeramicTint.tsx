@@ -89,6 +89,9 @@ const CeramicTint = () => {
         structuredData={tintStructuredData}
       />
       <Navbar />
+      <div className="container mx-auto px-6">
+        <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Ceramic Window Tint", path: "/ceramic-tint", current: true }]} />
+      </div>
 
       {/* ═══════════════════════════════════════════════════════
           HERO SECTION

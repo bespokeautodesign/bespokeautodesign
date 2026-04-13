@@ -209,6 +209,9 @@ const ColorChangeWrap = () => {
         structuredData={wrapStructuredData}
       />
       <Navbar />
+      <div className="container mx-auto px-6">
+        <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Color Change Wraps", path: "/color-change-wrap", current: true }]} />
+      </div>
 
       {/* ═══════════════════ HERO ═══════════════════ */}
       <section className="relative py-8 md:py-12 hero-parallax">
