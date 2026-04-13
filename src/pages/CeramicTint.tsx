@@ -82,7 +82,7 @@ const CeramicTint = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Ceramic Window Tint Miami | XPEL XR Plus Installation | Bespoke Auto Design"
+        title="Ceramic Tint Miami | Window Tint from $299 | Bespoke Auto Design"
         description="Professional XPEL XR Plus ceramic window tint in Miami, FL. Blocks 99% UV rays, rejects up to 98% infrared heat. Recommended by The Skin Cancer Foundation. Free quote."
         canonical="https://www.bespokeauto.design/ceramic-tint"
         structuredData={tintStructuredData}
