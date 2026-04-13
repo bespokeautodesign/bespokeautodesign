@@ -158,3 +158,27 @@
     bottom: 0;
   }
 }
+
+/* Crawler-safe animation defaults: ensure animated elements are visible
+   even when animations don't run (e.g. bots that skip scroll/JS triggers) */
+@layer utilities {
+  .animate-fade-in,
+  .animate-scale-in,
+  .animate-slide-left,
+  .animate-slide-right {
+    animation-fill-mode: forwards;
+  }
+}
+
+/* Ensure content is visible when animations are disabled (prefers-reduced-motion
+   or crawlers/bots that don't trigger animations) */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-scale-in,
+  .animate-slide-left,
+  .animate-slide-right {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
