@@ -1,4 +1,5 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { PricingCards } from "@/components/PricingCards";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -481,6 +482,17 @@ const ColorChangeWrap = () => {
           </div>
         </div>
       </section>
+
+      {/* Pricing */}
+      <PricingCards
+        title="Vinyl Wrap Pricing"
+        subtitle="Premium color change wraps using 3M, Avery Dennison, and KPMF films."
+        tiers={[
+          { name: "Full Color Change Wrap", price: "$2,500", priceLabel: "Starting at", description: "Complete vehicle color transformation with premium cast vinyl film.", features: ["Full body coverage", "100+ color & finish options", "Protects original paint underneath", "Reversible — remove anytime", "3–5 year film durability"], popular: true },
+        ]}
+        onGetQuote={() => setQuoteModalOpen(true)}
+        footnote="Pricing depends on vehicle size, complexity, and film brand selected."
+      />
 
       {/* Why Choose Bespoke */}
       <WhyChooseUs variant="service" differentiators={wrapDifferentiators} title="Why Choose Bespoke for Wraps" />

@@ -1,4 +1,5 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { PricingCards } from "@/components/PricingCards";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -383,6 +384,17 @@ const CeramicCoating = () => {
         </div>
       </section>
 
+
+      {/* Pricing */}
+      <PricingCards
+        title="Ceramic Coating Pricing"
+        subtitle="Professional-grade nano-ceramic protection with multi-stage paint correction included."
+        tiers={[
+          { name: "Ceramic Coating", price: "$799", priceLabel: "Starting at", description: "Professional ceramic coating with paint correction and long-lasting hydrophobic protection.", features: ["Multi-stage paint correction", "Nano-ceramic bonded layer", "Extreme hydrophobic finish", "5-year warranty", "UV & chemical resistance"], popular: true },
+        ]}
+        onGetQuote={() => setQuoteModalOpen(true)}
+        footnote="Final pricing depends on vehicle size, paint condition, and coating package selected."
+      />
 
       {/* Why Choose Bespoke */}
       <WhyChooseUs variant="service" differentiators={ceramicDifferentiators} title="Why Choose Bespoke for Ceramic Coating" />

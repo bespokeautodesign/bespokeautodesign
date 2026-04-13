@@ -1,4 +1,5 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { PricingCards, PricingTier } from "@/components/PricingCards";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -353,6 +354,19 @@ const PaintProtectionFilm = () => {
           </div>
         </div>
       </section>
+
+      {/* Pricing */}
+      <PricingCards
+        title="PPF Packages & Pricing"
+        subtitle="Transparent pricing for every level of protection. All packages include XPEL Ultimate Plus™ with a 10-year warranty."
+        tiers={[
+          { name: "Full Front", price: "$1,499", priceLabel: "Starting at", description: "Hood, bumper, fenders, headlights & mirrors.", features: ["Most vulnerable areas protected", "Ideal for daily drivers", "Self-healing top coat", "10-year XPEL warranty"], popular: false },
+          { name: "Track Package", price: "$2,500", priceLabel: "Starting at", description: "Full front plus rockers, rear bumper & A-pillars.", features: ["Everything in Full Front", "Rocker & rear bumper coverage", "Built for performance driving", "10-year XPEL warranty"], popular: true },
+          { name: "Full Body", price: "$4,000", priceLabel: "Starting at", description: "Bumper-to-bumper protection on every painted panel.", features: ["Complete 360° coverage", "Maximum resale value", "Ultimate peace of mind", "10-year XPEL warranty"], popular: false },
+        ]}
+        onGetQuote={(tier) => { setQuoteModalOpen(true); }}
+        footnote="Pricing varies by vehicle size and complexity. Contact us for an exact quote."
+      />
 
       {/* Why Choose Bespoke */}
       <WhyChooseUs variant="service" differentiators={ppfDifferentiators} title="Why Choose Bespoke for PPF" />
