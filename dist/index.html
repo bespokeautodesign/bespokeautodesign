@@ -9,8 +9,11 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'AW-11469882843');
-      gtag('config', 'G-XL1F2W2GVV');
+      // Defer non-critical config to after page load
+      window.addEventListener('load', function() {
+        gtag('config', 'AW-11469882843');
+        gtag('config', 'G-XL1F2W2GVV');
+      });
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,10 +37,11 @@
     <!-- Favicon -->
     <link rel="icon" href="/lovable-uploads/393ed204-ead2-41d4-b454-4aafbe24f7a5.png" type="image/png" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts - non-render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap" /></noscript>
 
     <!-- Inline critical CSS to prevent render blocking -->
     <style>
@@ -147,7 +151,7 @@
         ]
       }
     </script>
-    <script type="module" crossorigin src="/assets/index-MfSBxYv1.js"></script>
+    <script type="module" crossorigin src="/assets/index-C_dyHc9V.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BPYinsbO.css">
   </head>
 
