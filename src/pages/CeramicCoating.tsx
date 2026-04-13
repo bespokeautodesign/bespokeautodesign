@@ -94,13 +94,13 @@ const CeramicCoating = () => {
           ═══════════════════════════════════════════════════════ */}
       <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src={clearPPFVehicles[9].image} alt="2023 Corvette Z06 with ceramic coating" className="w-full h-full object-cover object-[center_75%] brightness-125" />
+          <img src={clearPPFVehicles[9].image} alt="2023 Corvette Z06 with ceramic coating" className="w-full h-full object-cover object-[center_75%] brightness-125"  width={1920} height={1080} />
           <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex flex-col items-center gap-3">
-              <img src={xpelLogo} alt="XPEL" className="h-16 w-auto opacity-80 brightness-200" />
+              <img src={xpelLogo} alt="XPEL" className="h-16 w-auto opacity-80 brightness-200"  width={200} height={60} />
               <span className="text-white font-semibold tracking-wider uppercase text-sm drop-shadow-md" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.7)' }}>
                 Authorized XPEL Ceramic Installer
               </span>
@@ -270,7 +270,7 @@ const CeramicCoating = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="text-center space-y-4">
-              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80" />
+              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80"  width={200} height={60} />
               <Badge variant="outline">Why XPEL Fusion Plus?</Badge>
               <h2 className="text-3xl md:text-5xl font-bold font-playfair">
                 The XPEL Fusion Plus™ Advantage

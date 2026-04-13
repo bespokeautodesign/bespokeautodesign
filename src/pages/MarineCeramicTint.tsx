@@ -60,11 +60,11 @@ const MarineCeramicTint = () => {
       {/* Hero */}
       <header className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.webp" alt="Marine ceramic window tinting" className="w-full h-full object-cover" />
+          <img src="/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.webp" alt="Marine ceramic window tinting" className="w-full h-full object-cover"  width={1920} height={1080} />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <img src={xpelLogo} alt="XPEL" className="h-20 md:h-28 mx-auto mb-4 opacity-80" />
+          <img src={xpelLogo} alt="XPEL" className="h-20 md:h-28 mx-auto mb-4 opacity-80"  width={200} height={60} />
           <p className="text-sm uppercase tracking-widest text-white/60 mb-6">Authorized Dealer</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">Marine Ceramic Tint</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
@@ -95,7 +95,7 @@ const MarineCeramicTint = () => {
       <section className="py-16 bg-card border-y border-border">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <img src={xpelLogo} alt="XPEL" className="h-12 mx-auto mb-6 opacity-70" />
+            <img src={xpelLogo} alt="XPEL" className="h-12 mx-auto mb-6 opacity-70"  width={200} height={60} />
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">XPEL Prime XR Plus™ Marine Ceramic Tint</h2>
             <p className="text-muted-foreground mb-6 max-w-3xl mx-auto">
               We install XPEL Prime XR Plus™ — the most advanced ceramic window film available. Utilizing multi-layer nano-ceramic particle technology, it delivers up to 98% infrared heat rejection and 99% UV blocking without signal interference. Recommended by the Skin Cancer Foundation as an effective UV protectant, it's the premium choice for marine applications.
@@ -146,7 +146,7 @@ const MarineCeramicTint = () => {
               </ul>
             </div>
             <div className="flex justify-center">
-              <img src="/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.webp" alt="Marine ceramic tint options" className="w-full max-w-md rounded-lg shadow-premium" />
+              <img src="/lovable-uploads/e718d34b-ad4c-4a28-b853-895d849751ea.webp" alt="Marine ceramic tint options" className="w-full max-w-md rounded-lg shadow-premium"  width={448} height={300} />
             </div>
           </div>
         </div>

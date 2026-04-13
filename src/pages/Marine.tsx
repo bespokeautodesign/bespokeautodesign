@@ -119,7 +119,7 @@ const Marine = () => {
                   src="/lovable-uploads/8225318e-5a65-40a0-90ed-9a488787ed64.webp" 
                   alt="XPEL Marine Protection Solutions for boats and yachts in Miami Florida" 
                   className="w-full max-w-md rounded-lg shadow-premium"
-                />
+                 width={448} height={300} />
               </div>
             </div>
           </div>
@@ -133,7 +133,7 @@ const Marine = () => {
             {marineServices.map((service, index) => (
               <Card key={index} className="overflow-hidden shadow-premium hover:shadow-glow transition-all duration-500 transform hover:scale-105">
                 <div className="aspect-video overflow-hidden">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover object-[center_30%] transition-transform duration-300 hover:scale-110" />
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover object-[center_30%] transition-transform duration-300 hover:scale-110"  width={1920} height={1080} />
                 </div>
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">

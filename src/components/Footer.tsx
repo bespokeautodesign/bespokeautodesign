@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src="/bespoke-logo.png" alt="Bespoke Auto Design Logo" className="h-10 w-auto" />
+              <img src="/bespoke-logo.png" alt="Bespoke Auto Design Logo" className="h-10 w-auto"  width={200} height={48} />
               <span className="text-lg font-bold">
                 <span className="text-silver">Bespoke</span> Auto Design
               </span>

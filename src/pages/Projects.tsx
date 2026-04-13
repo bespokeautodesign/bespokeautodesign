@@ -176,7 +176,7 @@ const Projects = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-3">
-              <img src="/bespoke-logo.png" alt="Bespoke Auto Design Logo" className="h-12 w-auto" />
+              <img src="/bespoke-logo.png" alt="Bespoke Auto Design Logo" className="h-12 w-auto"  width={200} height={48} />
               <span className="text-xl font-bold text-primary">
                 <span className="text-silver">Bespoke</span> Auto Design
               </span>
@@ -254,7 +254,7 @@ const Projects = () => {
                                ? { imageRendering: 'auto', filter: 'contrast(1.1) brightness(1.05)', transform: 'translateZ(0)' }
                                : undefined
                            }
-                        />
+                         width={1200} height={800} />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                         <div className="absolute bottom-4 left-4 text-white">
                           <h3 className="font-bold text-lg">{vehicle.name}</h3>
@@ -307,7 +307,7 @@ const Projects = () => {
                               vehicle.name === "Mercedes G-Wagon G63 AMG" ? "object-[center_45%] scale-85" :
                               vehicle.name === "Mercedes GLC 300 AMG" ? "object-[center_80%]" : "object-[center_70%]"
                             }`}
-                        />
+                         width={1200} height={800} />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                         <div className="absolute bottom-4 left-4 text-white">
                           <h3 className="font-bold text-lg">{vehicle.name}</h3>
@@ -363,7 +363,7 @@ const Projects = () => {
                                  : 'md:group-hover:opacity-0'
                              }`}
                              style={{ objectPosition: vehicle.name === "McLaren 570S" ? 'center 75%' : 'center 60%' }}
-                           />
+                            width={1200} height={800} />
                            <img
                              src={vehicle.afterImage}
                              alt={`${vehicle.name} - After`}
@@ -373,7 +373,7 @@ const Projects = () => {
                                  : 'opacity-0 md:group-hover:opacity-100'
                              }`}
                              style={{ objectPosition: vehicle.name === "Aston Martin DBX" ? 'center 70%' : vehicle.name === "McLaren 570S" ? 'center 75%' : 'center 75%' }}
-                           />
+                            width={1200} height={800} />
                          </div>
                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                          <div className="absolute top-4 right-4">
@@ -435,7 +435,7 @@ const Projects = () => {
                     src={project.image}
                     alt={project.title}
                     className={`w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 ${project.id === 1 ? 'object-[center_65%]' : ''} ${project.id === 2 ? 'object-[center_75%]' : ''} ${project.id === 3 ? 'object-[center_45%]' : ''} ${project.id === 4 ? 'object-[center_45%]' : ''} ${project.id === 5 ? 'object-[center_50%]' : ''} ${project.id === 6 ? 'object-[center_80%]' : ''}`}
-                  />
+                   width={800} height={256} />
                   <div className="absolute top-4 left-4">
                     <Badge className={`flex items-center gap-1 ${getCategoryColor(project.category)}`}>
                       {getCategoryIcon(project.category)}

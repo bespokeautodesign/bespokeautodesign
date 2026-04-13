@@ -93,13 +93,13 @@ const CeramicTint = () => {
           ═══════════════════════════════════════════════════════ */}
       <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/ceramic-tint-lexus.webp" alt="Red Lexus LC with XPEL ceramic window tint at Bespoke Auto Design" className="w-full h-full object-cover saturate-[1.25] contrast-[1.05]" />
+          <img src="/lovable-uploads/ceramic-tint-lexus.webp" alt="Red Lexus LC with XPEL ceramic window tint at Bespoke Auto Design" className="w-full h-full object-cover saturate-[1.25] contrast-[1.05]"  width={1920} height={1080} />
           <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex flex-col items-center gap-3">
-              <img src={xpelLogo} alt="XPEL" className="h-16 w-auto opacity-80 brightness-200" />
+              <img src={xpelLogo} alt="XPEL" className="h-16 w-auto opacity-80 brightness-200"  width={200} height={60} />
               <span className="text-white/60 font-semibold tracking-wider uppercase text-sm">
                 Authorized XPEL Window Film Installer
               </span>
@@ -302,7 +302,7 @@ const CeramicTint = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="text-center space-y-4">
-              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80" />
+              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80"  width={200} height={60} />
               <Badge variant="outline">The XR Plus Difference</Badge>
               <h2 className="text-3xl md:text-5xl font-bold font-playfair">
                 Why We Exclusively Install XPEL XR Plus

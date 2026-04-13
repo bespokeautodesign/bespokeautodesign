@@ -92,13 +92,13 @@ const PaintProtectionFilm = () => {
          ═══════════════════════════════════════════════════════ */}
       <section className="relative py-20 md:py-28 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/ppf-hero-ferrari.webp" alt="Black Ferrari F8 Tributo with XPEL PPF at Bespoke Auto Design" className="w-full h-full object-cover object-[center_40%]" />
+          <img src="/lovable-uploads/ppf-hero-ferrari.webp" alt="Black Ferrari F8 Tributo with XPEL PPF at Bespoke Auto Design" className="w-full h-full object-cover object-[center_40%]"  width={1920} height={1080} />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 via-60% to-black/60" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-3 md:space-y-4">
             <div className="flex items-center justify-center gap-3">
-              <img src={xpelLogo} alt="XPEL" className="h-6 md:h-8 w-auto opacity-80 brightness-200" />
+              <img src={xpelLogo} alt="XPEL" className="h-6 md:h-8 w-auto opacity-80 brightness-200"  width={200} height={60} />
               <span className="text-white font-semibold tracking-wider uppercase text-xs md:text-sm drop-shadow-md" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}>
                 Miami's XPEL Certified Installer
               </span>
@@ -151,14 +151,14 @@ const PaintProtectionFilm = () => {
             </div>
             <div className="space-y-4">
               <div className="rounded-2xl overflow-hidden shadow-premium">
-                <img src={clearPPFVehicles[0].image} alt="Ferrari California T with clear PPF" loading="lazy" className="w-full h-[300px] md:h-[400px] object-cover object-[center_60%]" />
+                <img src={clearPPFVehicles[0].image} alt="Ferrari California T with clear PPF" loading="lazy" className="w-full h-[300px] md:h-[400px] object-cover object-[center_60%]"  width={800} height={300} />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden shadow-premium">
-                  <img src={clearPPFVehicles[3].image} alt="Aston Martin Vantage with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_60%]" />
+                  <img src={clearPPFVehicles[3].image} alt="Aston Martin Vantage with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_60%]"  width={800} height={150} />
                 </div>
                 <div className="rounded-xl overflow-hidden shadow-premium">
-                  <img src={clearPPFVehicles[4].image} alt="2024 BMW M4 with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_75%]" />
+                  <img src={clearPPFVehicles[4].image} alt="2024 BMW M4 with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_75%]"  width={800} height={150} />
                 </div>
               </div>
             </div>
@@ -273,7 +273,7 @@ const PaintProtectionFilm = () => {
       <section className="py-16">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto relative rounded-2xl overflow-hidden">
-            <img src={clearPPFVehicles[1].image} alt="Rolls-Royce Cullinan with XPEL PPF" loading="lazy" className="w-full h-[350px] md:h-[500px] object-cover object-[center_65%]" />
+            <img src={clearPPFVehicles[1].image} alt="Rolls-Royce Cullinan with XPEL PPF" loading="lazy" className="w-full h-[350px] md:h-[500px] object-cover object-[center_65%]"  width={800} height={350} />
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 md:p-12 max-w-lg">
               <Badge className="bg-primary text-primary-foreground mb-4">Full Body PPF</Badge>
@@ -291,7 +291,7 @@ const PaintProtectionFilm = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="text-center space-y-4">
-              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80" />
+              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80"  width={200} height={60} />
               <Badge variant="outline">Why XPEL?</Badge>
               <h2 className="text-3xl md:text-5xl font-bold font-playfair">
                 The XPEL Advantage

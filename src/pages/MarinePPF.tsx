@@ -63,11 +63,11 @@ const MarinePPF = () => {
       {/* Hero */}
       <header className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/19e444ef-f150-42ce-b195-9a306b95f8d5.webp" alt="Marine paint protection film installation" className="w-full h-full object-cover" />
+          <img src="/lovable-uploads/19e444ef-f150-42ce-b195-9a306b95f8d5.webp" alt="Marine paint protection film installation" className="w-full h-full object-cover"  width={1920} height={1080} />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <img src={xpelLogo} alt="XPEL" className="h-20 md:h-28 mx-auto mb-4 opacity-80" />
+          <img src={xpelLogo} alt="XPEL" className="h-20 md:h-28 mx-auto mb-4 opacity-80"  width={200} height={60} />
           <p className="text-sm uppercase tracking-widest text-white/60 mb-6">Authorized Dealer</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">Marine Paint Protection Film</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
@@ -98,7 +98,7 @@ const MarinePPF = () => {
       <section className="py-16 bg-card border-y border-border">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <img src={xpelLogo} alt="XPEL" className="h-12 mx-auto mb-6 opacity-70" />
+            <img src={xpelLogo} alt="XPEL" className="h-12 mx-auto mb-6 opacity-70"  width={200} height={60} />
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">XPEL Ultimate Plus™ Marine PPF</h2>
             <p className="text-muted-foreground mb-6 max-w-3xl mx-auto">
               We exclusively install XPEL Ultimate Plus™ paint protection film — the industry's leading self-healing urethane film. Engineered with an elastomeric polymer top coat, it eliminates swirl marks and light scratches on contact with heat. Backed by a 10-year manufacturer warranty against yellowing, cracking, peeling, and staining.
@@ -143,7 +143,7 @@ const MarinePPF = () => {
               </ul>
             </div>
             <div className="flex justify-center">
-              <img src="/lovable-uploads/8225318e-5a65-40a0-90ed-9a488787ed64.webp" alt="XPEL marine PPF coverage areas" className="w-full max-w-md rounded-lg shadow-premium" />
+              <img src="/lovable-uploads/8225318e-5a65-40a0-90ed-9a488787ed64.webp" alt="XPEL marine PPF coverage areas" className="w-full max-w-md rounded-lg shadow-premium"  width={448} height={300} />
             </div>
           </div>
         </div>

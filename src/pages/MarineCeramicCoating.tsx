@@ -60,11 +60,11 @@ const MarineCeramicCoating = () => {
       {/* Hero */}
       <header className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/b0ee1d07-d81d-4edf-8181-95046e093b94.webp" alt="Marine ceramic coating application" className="w-full h-full object-cover" />
+          <img src="/lovable-uploads/b0ee1d07-d81d-4edf-8181-95046e093b94.webp" alt="Marine ceramic coating application" className="w-full h-full object-cover"  width={1920} height={1080} />
           <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center">
-          <img src={xpelLogo} alt="XPEL" className="h-20 md:h-28 mx-auto mb-4 opacity-80" />
+          <img src={xpelLogo} alt="XPEL" className="h-20 md:h-28 mx-auto mb-4 opacity-80"  width={200} height={60} />
           <p className="text-sm uppercase tracking-widest text-white/60 mb-6">Authorized Dealer</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">Marine Ceramic Coating</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
@@ -95,7 +95,7 @@ const MarineCeramicCoating = () => {
       <section className="py-16 bg-card border-y border-border">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <img src={xpelLogo} alt="XPEL" className="h-12 mx-auto mb-6 opacity-70" />
+            <img src={xpelLogo} alt="XPEL" className="h-12 mx-auto mb-6 opacity-70"  width={200} height={60} />
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">XPEL Fusion Plus™ Marine Ceramic Coating</h2>
             <p className="text-muted-foreground mb-6 max-w-3xl mx-auto">
               We apply XPEL Fusion Plus™ ceramic coating — a professional-grade nano-ceramic formulation with high concentrations of SiO₂ and TiO₂. This marine-specific coating creates a permanent bond with the surface, delivering extreme hydrophobic performance, chemical resistance, and UV protection engineered for the harshest saltwater environments.
