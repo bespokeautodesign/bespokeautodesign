@@ -1,15 +1,13 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Droplets, CheckCircle, Shield, Award } from "lucide-react";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
-
 import Navbar from "@/components/Navbar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuoteModal } from "@/components/QuoteModal";
-import { addStructuredData } from "@/utils/seoHelpers";
+import PageSEO from "@/components/PageSEO";
 import { WhyChooseUs, marineCeramicDifferentiators } from "@/components/WhyChooseUs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
@@ -39,33 +37,23 @@ const faqItems = [
 
 const MarineCeramicCoating = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.title = "Marine Ceramic Coating Miami | Boat Ceramic Protection | Bespoke Auto Design";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const content = "Professional marine ceramic coating for boats and yachts in Miami. Advanced hydrophobic protection against saltwater, UV, and marine fouling.";
-    if (metaDescription) {
-      metaDescription.setAttribute("content", content);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = content;
-      document.head.appendChild(meta);
-    }
-    addStructuredData({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      name: "Marine Ceramic Coating",
-      description: "Professional marine-grade ceramic coating for boats and yachts in South Florida",
-      provider: { "@type": "AutomotiveBusiness", name: "Bespoke Auto Design" },
-      areaServed: "South Florida",
-    });
-  }, []);
+  const marineCeramicStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Marine Ceramic Coating",
+    "description": "Professional marine-grade ceramic coating for boats and yachts in South Florida",
+    "provider": { "@type": "AutomotiveBusiness", "name": "Bespoke Auto Design" },
+    "areaServed": "South Florida"
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="Marine Ceramic Coating Miami | Boat Ceramic Protection | Bespoke Auto Design"
+        description="Professional marine ceramic coating for boats and yachts in Miami. Advanced hydrophobic protection against saltwater, UV, and marine fouling."
+        canonical="https://www.bespokeauto.design/marine-ceramic-coating"
+        structuredData={marineCeramicStructuredData}
+      />
       <Navbar />
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Marine Services", path: "/marine" }, { name: "Marine Ceramic Coating", path: "/marine-ceramic-coating", current: true }]} />
 

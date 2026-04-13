@@ -1,15 +1,13 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sun, CheckCircle, Eye, Award, Shield } from "lucide-react";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
-
 import Navbar from "@/components/Navbar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuoteModal } from "@/components/QuoteModal";
-import { addStructuredData } from "@/utils/seoHelpers";
+import PageSEO from "@/components/PageSEO";
 import { WhyChooseUs, marineTintDifferentiators } from "@/components/WhyChooseUs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
@@ -39,33 +37,23 @@ const faqItems = [
 
 const MarineCeramicTint = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.title = "Marine Ceramic Tint Miami | Boat Window Tinting | Bespoke Auto Design";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const content = "Professional marine ceramic window tinting for boats and yachts in Miami. Superior glare reduction, UV protection, and heat rejection for your vessel.";
-    if (metaDescription) {
-      metaDescription.setAttribute("content", content);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = content;
-      document.head.appendChild(meta);
-    }
-    addStructuredData({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      name: "Marine Ceramic Tint",
-      description: "Premium ceramic window tinting for boats and yachts in South Florida",
-      provider: { "@type": "AutomotiveBusiness", name: "Bespoke Auto Design" },
-      areaServed: "South Florida",
-    });
-  }, []);
+  const marineTintStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Marine Ceramic Tint",
+    "description": "Premium ceramic window tinting for boats and yachts in South Florida",
+    "provider": { "@type": "AutomotiveBusiness", "name": "Bespoke Auto Design" },
+    "areaServed": "South Florida"
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="Marine Ceramic Tint Miami | Boat Window Tinting | Bespoke Auto Design"
+        description="Professional marine ceramic window tinting for boats and yachts in Miami. Superior glare reduction, UV protection, and heat rejection for your vessel."
+        canonical="https://www.bespokeauto.design/marine-ceramic-tint"
+        structuredData={marineTintStructuredData}
+      />
       <Navbar />
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Marine Services", path: "/marine" }, { name: "Marine Ceramic Tint", path: "/marine-ceramic-tint", current: true }]} />
 

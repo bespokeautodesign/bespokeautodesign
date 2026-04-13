@@ -1,7 +1,6 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -9,10 +8,9 @@ import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award, Sparkles, Layers } from "lucide-react";
-import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
+import PageSEO from "@/components/PageSEO";
 import { WhyChooseUs, ceramicDifferentiators } from "@/components/WhyChooseUs";
 import { RelatedServices } from "@/components/RelatedServices";
-import { addStructuredData } from "@/utils/seoHelpers";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { clearPPFVehicles } from "@/data/portfolioVehicles";
 
@@ -53,63 +51,42 @@ const ceramicFaqs = [
 
 const CeramicCoating = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
-  
-
-  useEffect(() => {
-    document.title = "Ceramic Coating Miami | Professional Paint Protection | Bespoke Auto Design";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute(
-        "content",
-        "Professional ceramic coating in Miami, FL. Multi-layer nano-ceramic protection for luxury and exotic cars. Extreme gloss, UV defense, and hydrophobic performance. Get a free quote today."
-      );
-    }
-    addOpenGraphTags(
-      "Ceramic Coating Miami | Professional Paint Protection | Bespoke Auto Design",
-      "Miami's premier ceramic coating installer. Multi-layer protection with extreme gloss, UV defense, and hydrophobic performance for luxury and exotic vehicles."
-    );
-    addCanonicalUrl("https://www.bespokeauto.design/ceramic-coating");
-    addStructuredData({
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "name": "Ceramic Coating Installation",
-          "provider": {
-            "@type": "AutomotiveBusiness",
-            "name": "Bespoke Auto Design",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "7943 NW 64th St",
-              "addressLocality": "Miami",
-              "addressRegion": "FL",
-              "postalCode": "33166",
-              "addressCountry": "US"
-            },
-            "telephone": "+1-786-395-9172"
-          },
-          "areaServed": [
-            { "@type": "City", "name": "Miami" },
-            { "@type": "City", "name": "Miami Beach" },
-            { "@type": "City", "name": "Coral Gables" },
-            { "@type": "City", "name": "Brickell" }
-          ],
-          "description": "Professional ceramic coating installation in Miami. Multi-layer nano-ceramic protection for luxury and exotic vehicles."
+  const ceramicStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Ceramic Coating Installation",
+        "provider": {
+          "@type": "AutomotiveBusiness",
+          "name": "Bespoke Auto Design",
+          "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
+          "telephone": "+1-786-395-9172"
         },
-        {
-          "@type": "FAQPage",
-          "mainEntity": ceramicFaqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-          }))
-        }
-      ]
-    });
-  }, []);
+        "areaServed": [
+          { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Coral Gables" }, { "@type": "City", "name": "Brickell" }
+        ],
+        "description": "Professional ceramic coating installation in Miami. Multi-layer nano-ceramic protection for luxury and exotic vehicles."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": ceramicFaqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+        }))
+      }
+    ]
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="Ceramic Coating Miami | Professional Paint Protection | Bespoke Auto Design"
+        description="Professional ceramic coating in Miami, FL. Multi-layer nano-ceramic protection for luxury and exotic cars. Extreme gloss, UV defense, and hydrophobic performance. Get a free quote today."
+        canonical="https://www.bespokeauto.design/ceramic-coating"
+        structuredData={ceramicStructuredData}
+      />
       <Navbar />
 
       {/* ═══════════════════════════════════════════════════════

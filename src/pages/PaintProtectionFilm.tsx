@@ -8,8 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award } from "lucide-react";
-import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
-import { addStructuredData } from "@/utils/seoHelpers";
+import PageSEO from "@/components/PageSEO";
 import { Link } from "react-router-dom";
 import { WhyChooseUs, ppfDifferentiators } from "@/components/WhyChooseUs";
 import { RelatedServices } from "@/components/RelatedServices";
@@ -42,56 +41,31 @@ const ppfFaqs = [{
 }];
 const PaintProtectionFilm = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
-  useEffect(() => {
-    document.title = "Paint Protection Film Miami | XPEL PPF Installation | Bespoke Auto Design";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Professional XPEL paint protection film (PPF) installation in Miami, FL. Self-healing, invisible protection for luxury and exotic cars. Certified installer with 10-year warranty.");
-    }
-    addOpenGraphTags("Paint Protection Film Miami | XPEL PPF | Bespoke Auto Design", "Miami's premier XPEL PPF installer. Full Front, Track, and Full Body packages with 10-year warranty. Protect your vehicle from rock chips, scratches, and UV damage.");
-    addCanonicalUrl("https://www.bespokeauto.design/paint-protection-film");
-    addStructuredData({
-      "@context": "https://schema.org",
-      "@graph": [
+  const ppfStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
       {
         "@type": "Service",
         "name": "Paint Protection Film Installation",
         "provider": {
           "@type": "AutomotiveBusiness",
           "name": "Bespoke Auto Design",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "7943 NW 64th St",
-            "addressLocality": "Miami",
-            "addressRegion": "FL",
-            "postalCode": "33166",
-            "addressCountry": "US"
-          },
+          "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
           "telephone": "+1-786-395-9172",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5.0",
-            "reviewCount": "47",
-            "bestRating": "5",
-            "worstRating": "1"
-          }
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47", "bestRating": "5", "worstRating": "1" }
         },
         "areaServed": [
-        { "@type": "City", "name": "Miami" },
-        { "@type": "City", "name": "Miami Beach" },
-        { "@type": "City", "name": "Coral Gables" },
-        { "@type": "City", "name": "Doral" },
-        { "@type": "City", "name": "Brickell" }],
-
+          { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Coral Gables" }, { "@type": "City", "name": "Doral" }, { "@type": "City", "name": "Brickell" }
+        ],
         "description": "Professional XPEL paint protection film installation in Miami. Self-healing, invisible armor for luxury and exotic vehicles.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "PPF Packages",
           "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Front PPF Package" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Track PPF Package" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Body PPF" } }]
-
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Front PPF Package" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Track PPF Package" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Body PPF" } }
+          ]
         }
       },
       {
@@ -101,11 +75,16 @@ const PaintProtectionFilm = () => {
           "name": faq.question,
           "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
         }))
-      }]
-
-    });
-  }, []);
+      }
+    ]
+  };
   return <div className="min-h-screen bg-background">
+      <PageSEO
+        title="Paint Protection Film Miami | XPEL PPF Installation | Bespoke Auto Design"
+        description="Professional XPEL paint protection film (PPF) installation in Miami, FL. Self-healing, invisible protection for luxury and exotic cars. Certified installer with 10-year warranty."
+        canonical="https://www.bespokeauto.design/paint-protection-film"
+        structuredData={ppfStructuredData}
+      />
       <Navbar />
 
       {/* ═══════════════════════════════════════════════════════

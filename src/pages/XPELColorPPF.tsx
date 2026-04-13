@@ -12,8 +12,7 @@ import { ColorPPFProcess } from '@/components/ColorPPFProcess';
 import { ColorPPFHero } from '@/components/ColorPPFHero';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import { QuoteModal } from '@/components/QuoteModal';
-import { addStructuredData } from '@/utils/seoHelpers';
-import { addOpenGraphTags, addCanonicalUrl } from '@/utils/metaHelpers';
+import PageSEO from '@/components/PageSEO';
 
 interface XPELColor {
   name: string;
@@ -45,53 +44,32 @@ const XPELColorPPF = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [quoteColor, setQuoteColor] = useState("");
 
-  React.useEffect(() => {
-    document.title = "XPEL COLOR PPF Miami | Colored Paint Protection Film | 16 Colors Available";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors available in gloss, satin, and metallic finishes. Protection meets style.');
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = 'Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors available in gloss, satin, and metallic finishes. Protection meets style.';
-      document.head.appendChild(meta);
-    }
-
-    // Add OG tags & canonical
-    addOpenGraphTags(
-      "XPEL COLOR PPF Miami | Colored Paint Protection Film | Bespoke Auto Design",
-      "Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors in gloss, satin, and metallic finishes."
-    );
-    addCanonicalUrl("https://www.bespokeauto.design/colorppf");
-
-    addStructuredData({
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "XPEL COLOR Paint Protection Film",
-      "description": "Premium colored paint protection film available in 16 vibrant colors with gloss, satin, and metallic finishes. Installed in Miami, FL.",
-      "brand": { "@type": "Brand", "name": "XPEL" },
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "AutomotiveBusiness",
-          "name": "Bespoke Auto Design",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "7943 NW 64th St",
-            "addressLocality": "Miami",
-            "addressRegion": "FL",
-            "postalCode": "33166",
-            "addressCountry": "US"
-          },
-          "telephone": "+1-786-395-9172"
-        }
+  const colorPPFStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "XPEL COLOR Paint Protection Film",
+    "description": "Premium colored paint protection film available in 16 vibrant colors with gloss, satin, and metallic finishes. Installed in Miami, FL.",
+    "brand": { "@type": "Brand", "name": "XPEL" },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "AutomotiveBusiness",
+        "name": "Bespoke Auto Design",
+        "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
+        "telephone": "+1-786-395-9172"
       }
-    });
-  }, []);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="XPEL COLOR PPF Miami | Colored Paint Protection Film | 16 Colors Available"
+        description="Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors available in gloss, satin, and metallic finishes. Protection meets style."
+        canonical="https://www.bespokeauto.design/colorppf"
+        structuredData={colorPPFStructuredData}
+      />
       <Navbar />
 
       {/* Hero */}

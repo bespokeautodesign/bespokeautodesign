@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Anchor, CheckCircle, Award } from "lucide-react";
@@ -7,12 +6,10 @@ import { Link } from "react-router-dom";
 import { WhyChooseUs, marinePPFDifferentiators } from "@/components/WhyChooseUs";
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
-
 import Navbar from "@/components/Navbar";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuoteModal } from "@/components/QuoteModal";
-import { MarineFAQ } from "@/components/MarineFAQ";
-import { addStructuredData } from "@/utils/seoHelpers";
+import PageSEO from "@/components/PageSEO";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge as UIBadge } from "@/components/ui/badge";
@@ -43,31 +40,23 @@ const MarinePPF = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.title = "Marine Paint Protection Film Miami | Boat PPF | Bespoke Auto Design";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const content = "Professional marine paint protection film for boats and yachts in Miami. XPEL marine PPF protects against saltwater, UV, and impact damage. Expert installation.";
-    if (metaDescription) {
-      metaDescription.setAttribute("content", content);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = content;
-      document.head.appendChild(meta);
-    }
-    addStructuredData({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      name: "Marine Paint Protection Film",
-      description: "XPEL marine PPF installation for boats and yachts in South Florida",
-      provider: { "@type": "AutomotiveBusiness", name: "Bespoke Auto Design" },
-      areaServed: "South Florida",
-    });
-  }, []);
+  const marinePPFStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Marine Paint Protection Film",
+    "description": "XPEL marine PPF installation for boats and yachts in South Florida",
+    "provider": { "@type": "AutomotiveBusiness", "name": "Bespoke Auto Design" },
+    "areaServed": "South Florida"
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="Marine Paint Protection Film Miami | Boat PPF | Bespoke Auto Design"
+        description="Professional marine paint protection film for boats and yachts in Miami. XPEL marine PPF protects against saltwater, UV, and impact damage. Expert installation."
+        canonical="https://www.bespokeauto.design/marine-ppf"
+        structuredData={marinePPFStructuredData}
+      />
       <Navbar />
       <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Marine Services", path: "/marine" }, { name: "Marine PPF", path: "/marine-ppf", current: true }]} />
 
