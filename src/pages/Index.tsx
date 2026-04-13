@@ -12,9 +12,9 @@ import { XPELTeaser } from "@/components/XPELTeaser";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
-import { addStructuredData, businessSchema, faqSchema } from "@/utils/seoHelpers";
+import { businessSchema, faqSchema } from "@/utils/seoHelpers";
 import { trackFormSubmission, trackPhoneCall } from "@/utils/gadsConversions";
-import { addOpenGraphTags, addCanonicalUrl, preloadCriticalImages } from "@/utils/metaHelpers";
+import PageSEO from "@/components/PageSEO";
 import { LazyImage } from "@/components/LazyImage";
 import HeroVideoBackground from "@/components/HeroVideoBackground";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
@@ -58,36 +58,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
     }
   }, [autoScrollToContact, autoScrollToServices]);
 
-  React.useEffect(() => {
-    const title = "Premium PPF, Ceramic Coating & Window Tint Miami | Bespoke Auto Design";
-    const description = "Professional XPEL paint protection film, ceramic coating & window tint installation in Miami. Authorized dealer with lifetime warranties. Protect your luxury vehicle investment.";
-
-    document.title = title;
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', description);
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = description;
-      document.head.appendChild(meta);
-    }
-
-    addOpenGraphTags(title, description, '/bespoke-logo.png');
-    addCanonicalUrl(window.location.origin + '/');
-
-    preloadCriticalImages([
-    '/lovable-uploads/34fc4d04-6eac-424d-946f-ca9c48793493.webp',
-    '/bespoke-logo.png']
-    );
-
-    const combinedSchema = {
-      "@context": "https://schema.org",
-      "@graph": [businessSchema, faqSchema]
-    };
-    addStructuredData(combinedSchema);
-  }, []);
+  const indexTitle = "Premium PPF, Ceramic Coating & Window Tint Miami | Bespoke Auto Design";
+  const indexDescription = "Professional XPEL paint protection film, ceramic coating & window tint installation in Miami. Authorized dealer with lifetime warranties. Protect your luxury vehicle investment.";
+  const indexSchema = { "@context": "https://schema.org", "@graph": [businessSchema, faqSchema] };
 
   React.useEffect(() => {
     if (!document.querySelector('script[src*="lightwidget"]')) {
