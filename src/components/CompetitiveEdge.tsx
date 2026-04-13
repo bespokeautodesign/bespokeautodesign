@@ -26,8 +26,7 @@ interface CompetitiveEdgeProps {
 
 export const CompetitiveEdge = ({ onQuoteClick }: CompetitiveEdgeProps) => {
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
-      {/* Subtle diagonal accent */}
+    <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#0f0f0f' }}>
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive/40 via-transparent to-primary" />
 
       <div className="container mx-auto px-6">
@@ -35,10 +34,10 @@ export const CompetitiveEdge = ({ onQuoteClick }: CompetitiveEdgeProps) => {
           <Badge variant="outline" className="mb-4 border-destructive/30 text-destructive">
             BUYER BEWARE
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-playfair text-foreground">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-playfair" style={{ color: '#ffffff' }}>
             Not All Shops Are Created Equal
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg max-w-3xl mx-auto" style={{ color: '#a3a3a3' }}>
             Miami is full of "PPF guys" working out of garages with no certifications and no warranties.
             Here's what's really at stake when you choose the wrong installer.
           </p>
@@ -51,13 +50,13 @@ export const CompetitiveEdge = ({ onQuoteClick }: CompetitiveEdgeProps) => {
               <div className="w-10 h-10 rounded-full bg-destructive/10 flex items-center justify-center">
                 <ShieldAlert className="h-5 w-5 text-destructive" />
               </div>
-              <h3 className="text-xl font-bold text-foreground">The Average Shop</h3>
+              <h3 className="text-xl font-bold" style={{ color: '#ffffff' }}>The Average Shop</h3>
             </div>
-            <div className="space-y-4 bg-destructive/[0.03] border border-destructive/10 rounded-2xl p-6">
+            <div className="space-y-4 rounded-2xl p-6" style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.08)' }}>
               {risks.map((risk, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <risk.icon className="h-5 w-5 text-destructive/70 mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-muted-foreground leading-relaxed">{risk.text}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#e5e5e5' }}>{risk.text}</p>
                 </div>
               ))}
             </div>
@@ -69,13 +68,13 @@ export const CompetitiveEdge = ({ onQuoteClick }: CompetitiveEdgeProps) => {
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                 <ShieldCheck className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-foreground">Bespoke Auto Design</h3>
+              <h3 className="text-xl font-bold" style={{ color: '#ffffff' }}>Bespoke Auto Design</h3>
             </div>
-            <div className="space-y-4 bg-primary/[0.03] border border-primary/10 rounded-2xl p-6">
+            <div className="space-y-4 rounded-2xl p-6" style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.08)' }}>
               {bespokeAdvantages.map((adv, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <adv.icon className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <p className="text-sm text-foreground leading-relaxed">{adv.text}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#e5e5e5' }}>{adv.text}</p>
                 </div>
               ))}
             </div>
@@ -84,7 +83,7 @@ export const CompetitiveEdge = ({ onQuoteClick }: CompetitiveEdgeProps) => {
 
         {/* Bottom CTA */}
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-5 text-sm max-w-xl mx-auto">
+          <p className="mb-5 text-sm max-w-xl mx-auto" style={{ color: '#a3a3a3' }}>
             Your vehicle deserves more than a gamble. Get it done right the first time — by Miami's most trusted certified installers.
           </p>
           {onQuoteClick && (
