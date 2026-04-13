@@ -486,8 +486,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                     }}>
                     Submit Request
                   </Button>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
             
             {/* Left Column - Contact Info + Map (Mobile: Second, Desktop: First) */}
