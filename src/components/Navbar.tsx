@@ -22,7 +22,7 @@ const navItemsBefore = [
 { label: "Color Change Wrap", href: "/color-change-wrap" }];
 
 const navItemsAfter: {label: string;href: string;}[] = [
-  // { label: "Portfolio", href: "/portfolio" },
+  { label: "Gallery", href: "/gallery" },
 ];
 
 const NavLink = ({ href, active, children, className = "" }: {href: string;active: boolean;children: React.ReactNode;className?: string;}) =>
