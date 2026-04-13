@@ -53,7 +53,9 @@ const HeroVideoBackground = () => {
       v0.load();
       v0.play().catch(() => {});
     }
+    // Only preload the next video's metadata — don't download full content yet
     if (v1) {
+      v1.preload = "metadata";
       v1.src = videoSources[slotsRef.current[1]].src;
       v1.load();
     }
@@ -110,7 +112,7 @@ const HeroVideoBackground = () => {
           }}
           muted
           playsInline
-          preload="auto"
+          preload={slot === 0 ? "auto" : "metadata"}
           onEnded={activeSlot === slot ? handleEnded : undefined}
         />
       ))}
