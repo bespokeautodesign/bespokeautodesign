@@ -152,6 +152,12 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
   }];
   return (
     <div className="min-h-screen bg-background relative">
+      <PageSEO
+        title={indexTitle}
+        description={indexDescription}
+        canonical="https://www.bespokeauto.design/"
+        structuredData={indexSchema}
+      />
       {/* Background Video - Rotating */}
       <HeroVideoBackground />
       <div className="relative z-10 min-h-screen">
