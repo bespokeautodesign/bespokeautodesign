@@ -47,7 +47,7 @@ const MobileMenu = () => {
           <div className="flex flex-col h-full">
             {/* Header */}
             <div className="flex items-center gap-3 px-6 pt-8 pb-6 border-b border-[hsl(var(--nav-border))]">
-              <img src="/bespoke-logo.png" alt="Bespoke Auto Design Logo" className="h-8 w-auto flex-shrink-0" />
+              <img src="/bespoke-logo.png" alt="Bespoke Auto Design Logo" className="h-8 w-auto flex-shrink-0"  width={200} height={48} />
               <div className="flex flex-col leading-none">
                 <span className="text-[10px] tracking-[0.2em] uppercase font-light text-[hsl(var(--nav-foreground))]">Bespoke</span>
                 <span className="text-xs font-bold tracking-wider uppercase text-[hsl(var(--nav-foreground-active))]">Auto Design</span>

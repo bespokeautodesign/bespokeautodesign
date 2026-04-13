@@ -81,7 +81,7 @@ const PPFPackages = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-accent/20" />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <img src={xpelLogo} alt="XPEL" className="h-8 w-auto opacity-80" />
+            <img src={xpelLogo} alt="XPEL" className="h-8 w-auto opacity-80"  width={200} height={60} />
             <span className="text-primary font-semibold tracking-wider uppercase text-sm">XPEL AUTHORIZED DEALER</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-playfair">
@@ -101,7 +101,7 @@ const PPFPackages = () => {
                 {/* Image */}
                 <div className="w-full lg:w-1/2">
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border">
-                    <img src={pkg.image} alt={`${pkg.name} — XPEL PPF coverage diagram`} className="w-full h-auto" loading={index === 0 ? "eager" : "lazy"} />
+                    <img src={pkg.image} alt={`${pkg.name} — XPEL PPF coverage diagram`} className="w-full h-auto" loading={index === 0 ? "eager" : "lazy"}  width={800} height={600} />
                     <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-lg border border-border">
                       <span className="text-primary font-bold text-lg">{pkg.name}</span>
                     </div>
@@ -132,7 +132,7 @@ const PPFPackages = () => {
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80 mb-6" />
+            <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80 mb-6"  width={200} height={60} />
             <h2 className="text-3xl md:text-4xl font-bold font-playfair">Why XPEL Paint Protection Film?</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               XPEL is the global leader in automotive paint protection technology. Their Ultimate Plus™ film features a proprietary self-healing clear coat that eliminates fine scratches and swirl marks with exposure to heat — keeping your vehicle looking flawless year after year. With industry-leading optical clarity and a 10-year manufacturer warranty, XPEL sets the standard that every other film tries to match.

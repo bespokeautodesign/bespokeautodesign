@@ -211,7 +211,7 @@ const ColorChangeWrap = () => {
       {/* ═══════════════════ HERO ═══════════════════ */}
       <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/mercedes-amg-green-wrap.webp" alt="Mercedes AMG color change wrap" className="w-full h-full object-cover object-[center_55%] saturate-[1.25] contrast-[1.05]" />
+          <img src="/lovable-uploads/mercedes-amg-green-wrap.webp" alt="Mercedes AMG color change wrap" className="w-full h-full object-cover object-[center_55%] saturate-[1.25] contrast-[1.05]"  width={1920} height={1080} />
           <div className="absolute inset-0 bg-black/30" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
@@ -260,11 +260,11 @@ const ColorChangeWrap = () => {
             </div>
             <div className="space-y-4">
               <div className="relative rounded-2xl overflow-hidden shadow-premium">
-                <img src={vinylWrapVehicles[0].beforeImage} alt="Aston Martin DBX — before wrap" loading="lazy" className="w-full h-[280px] object-cover object-[center_70%]" />
+                <img src={vinylWrapVehicles[0].beforeImage} alt="Aston Martin DBX — before wrap" loading="lazy" className="w-full h-[280px] object-cover object-[center_70%]"  width={800} height={280} />
                 <div className="absolute bottom-3 left-3"><Badge className="bg-white/90 text-black">Before</Badge></div>
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-premium">
-                <img src={vinylWrapVehicles[0].afterImage} alt="Aston Martin DBX — after wrap" loading="lazy" className="w-full h-[280px] object-cover object-[center_70%]" />
+                <img src={vinylWrapVehicles[0].afterImage} alt="Aston Martin DBX — after wrap" loading="lazy" className="w-full h-[280px] object-cover object-[center_70%]"  width={800} height={280} />
                 <div className="absolute bottom-3 left-3"><Badge className="bg-primary text-primary-foreground">After</Badge></div>
               </div>
             </div>
@@ -278,7 +278,7 @@ const ColorChangeWrap = () => {
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             {/* Image first on this one — reversed layout */}
             <div className="relative rounded-2xl overflow-hidden shadow-premium md:order-1">
-              <img src={vinylWrapVehicles[1].afterImage} alt="Mazda Miata wrapped" loading="lazy" className="w-full h-[400px] md:h-[500px] object-cover object-[center_70%]" />
+              <img src={vinylWrapVehicles[1].afterImage} alt="Mazda Miata wrapped" loading="lazy" className="w-full h-[400px] md:h-[500px] object-cover object-[center_70%]"  width={800} height={400} />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               <div className="absolute bottom-4 left-4 text-white">
                 <p className="font-bold text-lg">{vinylWrapVehicles[1].name}</p>
@@ -398,11 +398,11 @@ const ColorChangeWrap = () => {
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="relative rounded-2xl overflow-hidden shadow-premium">
-                <img src={vinylWrapVehicles[2].beforeImage} alt="McLaren 570S before wrap" loading="lazy" className="w-full h-[300px] md:h-[380px] object-cover object-[center_70%]" />
+                <img src={vinylWrapVehicles[2].beforeImage} alt="McLaren 570S before wrap" loading="lazy" className="w-full h-[300px] md:h-[380px] object-cover object-[center_70%]"  width={800} height={300} />
                 <div className="absolute bottom-3 left-3"><Badge className="bg-white/90 text-black">Before</Badge></div>
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-premium">
-                <img src={vinylWrapVehicles[2].afterImage} alt="McLaren 570S after wrap" loading="lazy" className="w-full h-[300px] md:h-[380px] object-cover object-[center_70%]" />
+                <img src={vinylWrapVehicles[2].afterImage} alt="McLaren 570S after wrap" loading="lazy" className="w-full h-[300px] md:h-[380px] object-cover object-[center_70%]"  width={800} height={300} />
                 <div className="absolute bottom-3 left-3"><Badge className="bg-primary text-primary-foreground">After</Badge></div>
               </div>
             </div>

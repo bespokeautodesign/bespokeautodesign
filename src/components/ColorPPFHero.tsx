@@ -9,7 +9,7 @@ export const ColorPPFHero = ({ onGetQuote }: ColorPPFHeroProps) => {
   return (
     <section className="relative py-8 md:py-12 hero-parallax">
       <div className="hero-parallax-bg">
-        <img src="/lovable-uploads/color-ppf-gt2rs.webp" alt="Porsche GT2 RS with XPEL Color PPF" className="w-full h-full object-cover object-[center_45%]" />
+        <img src="/lovable-uploads/color-ppf-gt2rs.webp" alt="Porsche GT2 RS with XPEL Color PPF" className="w-full h-full object-cover object-[center_45%]"  width={1920} height={1080} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 via-60% to-black/70 to-100%" />
       </div>
       <div className="container mx-auto px-6 relative z-10">
@@ -18,7 +18,7 @@ export const ColorPPFHero = ({ onGetQuote }: ColorPPFHeroProps) => {
             src={xpelLogo} 
             alt="XPEL Authorized Dealer" 
             className="h-20 mb-6 opacity-80 brightness-200" 
-          />
+           width={200} height={60} />
           <p className="text-sm tracking-widest uppercase text-white/60 mb-4">
             Authorized XPEL Dealer • Miami, FL
           </p>

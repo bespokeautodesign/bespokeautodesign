@@ -5,9 +5,11 @@ interface LazyImageProps {
   alt: string;
   className?: string;
   style?: React.CSSProperties;
+  width?: number | string;
+  height?: number | string;
 }
 
-export const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, style }) => {
+export const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, style, width, height }) => {
   return (
     <img 
       src={src} 
@@ -16,6 +18,8 @@ export const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, style
       style={style}
       loading="lazy"
       decoding="async"
+      width={width}
+      height={height}
     />
   );
 };

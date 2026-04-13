@@ -81,13 +81,13 @@ const StealthPPF = () => {
       {/* HERO */}
       <section className="relative py-8 md:py-12 hero-parallax">
         <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/stealth-ppf-rolls-royce.webp" alt="Rolls Royce with Stealth PPF" className="w-full h-full object-cover object-[center_55%]" />
+          <img src="/lovable-uploads/stealth-ppf-rolls-royce.webp" alt="Rolls Royce with Stealth PPF" className="w-full h-full object-cover object-[center_55%]"  width={1920} height={1080} />
           <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent via-60% to-black/40" />
         </div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <div className="flex flex-col items-center gap-3">
-              <img src={xpelLogo} alt="XPEL" className="h-28 w-auto opacity-80 brightness-200" />
+              <img src={xpelLogo} alt="XPEL" className="h-28 w-auto opacity-80 brightness-200"  width={200} height={60} />
               <span className="text-white font-semibold tracking-wider uppercase text-sm">AUTHORIZED XPEL DEALER</span>
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
@@ -134,14 +134,14 @@ const StealthPPF = () => {
             </div>
             <div className="space-y-4">
               <div className="rounded-2xl overflow-hidden shadow-premium">
-                <img src={stealthPPFVehicles[1].image} alt="Mercedes G-Wagon G63 AMG with Stealth PPF" loading="lazy" className="w-full h-[300px] md:h-[400px] object-cover object-[center_45%]" />
+                <img src={stealthPPFVehicles[1].image} alt="Mercedes G-Wagon G63 AMG with Stealth PPF" loading="lazy" className="w-full h-[300px] md:h-[400px] object-cover object-[center_45%]"  width={800} height={300} />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden shadow-premium">
-                  <img src={stealthPPFVehicles[2].image} alt="BMW M2 with Stealth PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_80%]" />
+                  <img src={stealthPPFVehicles[2].image} alt="BMW M2 with Stealth PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_80%]"  width={800} height={150} />
                 </div>
                 <div className="rounded-xl overflow-hidden shadow-premium">
-                  <img src={stealthPPFVehicles[5].image} alt="Porsche 911 with Stealth PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_70%]" />
+                  <img src={stealthPPFVehicles[5].image} alt="Porsche 911 with Stealth PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_70%]"  width={800} height={150} />
                 </div>
               </div>
             </div>
@@ -264,7 +264,7 @@ const StealthPPF = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="text-center space-y-4">
-              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80" />
+              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80"  width={200} height={60} />
               <h2 className="text-3xl md:text-5xl font-bold font-playfair">
                 XPEL Stealth Technology
               </h2>

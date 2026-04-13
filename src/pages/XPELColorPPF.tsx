@@ -84,7 +84,7 @@ const XPELColorPPF = () => {
                 src="/lovable-uploads/8b43fed7-f7fb-4afb-9e85-d49fe7a3f5dc.webp" 
                 alt="Professional XPEL COLOR PPF installation process at Bespoke Auto Design Miami" 
                 className="w-full h-72 md:h-96 object-cover"
-              />
+               width={1200} height={800} />
             </div>
           </div>
           <div className="w-full lg:w-2/5 space-y-4">
@@ -110,7 +110,7 @@ const XPELColorPPF = () => {
                 src="/lovable-uploads/4b56ee72-ca4c-452a-9f3a-9a3df7fca4e0.webp" 
                 alt="XPEL COLOR Paint Protection Film benefits" 
                 className="w-full h-72 md:h-96 object-cover object-[60%_55%] md:object-[50%_50%]"
-              />
+               width={1200} height={800} />
             </div>
           </div>
           <div className="w-full lg:w-2/5 space-y-4">
@@ -130,7 +130,7 @@ const XPELColorPPF = () => {
       <div className="container mx-auto px-6 max-w-6xl py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-            <img src="/lovable-uploads/79c435f6-2f6b-4ece-87b1-9dce26b621a7.webp" alt="XPEL PPF Color Motion" className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="/lovable-uploads/79c435f6-2f6b-4ece-87b1-9dce26b621a7.webp" alt="XPEL PPF Color Motion" className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"  width={800} height={256} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             <div className="absolute bottom-5 left-5 text-white">
               <h4 className="font-semibold text-lg">Dynamic Protection</h4>
@@ -138,7 +138,7 @@ const XPELColorPPF = () => {
             </div>
           </div>
           <div className="relative rounded-2xl overflow-hidden shadow-lg group">
-            <img src="/lovable-uploads/86d579b0-d6bd-414a-a58b-23744306a9dd.webp" alt="XPEL PPF Color Spectrum" className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+            <img src="/lovable-uploads/86d579b0-d6bd-414a-a58b-23744306a9dd.webp" alt="XPEL PPF Color Spectrum" className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"  width={800} height={256} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             <div className="absolute bottom-5 left-5 text-white">
               <h4 className="font-semibold text-lg">Vibrant Colors</h4>
