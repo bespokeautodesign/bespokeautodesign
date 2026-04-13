@@ -108,7 +108,6 @@ const CeramicTint = () => {
              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
                Ceramic Window Tint <br className="hidden md:block" /> in Miami, FL
              </h1>
-            </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               The world's most advanced ceramic window film — blocking 99% of UV rays, rejecting up to 98% of infrared heat, and recommended by The Skin Cancer Foundation.
             </p>
