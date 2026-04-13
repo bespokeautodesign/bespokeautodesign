@@ -200,6 +200,12 @@ const ColorChangeWrap = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="Color Change Vinyl Wrap Miami | Custom Vehicle Wraps | Bespoke Auto Design"
+        description="Premium color change vinyl wraps in Miami. Full body wraps, chrome deletes, and custom finishes for luxury and exotic vehicles using top-quality materials. Get a free quote."
+        canonical="https://www.bespokeauto.design/color-change-wrap"
+        structuredData={wrapStructuredData}
+      />
       <Navbar />
 
       {/* ═══════════════════ HERO ═══════════════════ */}

@@ -1,7 +1,6 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -9,10 +8,9 @@ import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Eye, Paintbrush, Sun, Car, Clock, Award, Layers } from "lucide-react";
-import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
+import PageSEO from "@/components/PageSEO";
 import { WhyChooseUs, stealthDifferentiators } from "@/components/WhyChooseUs";
 import { RelatedServices } from "@/components/RelatedServices";
-import { addStructuredData } from "@/utils/seoHelpers";
 import { Link } from "react-router-dom";
 import xpelLogo from "@/assets/xpel-logo.svg";
 import { stealthPPFVehicles, stealthPPFImageStyles } from "@/data/portfolioVehicles";
@@ -44,52 +42,40 @@ const stealthFaqs = [{
 const StealthPPF = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
   
-  useEffect(() => {
-    document.title = "Stealth PPF Miami | Matte & Satin Paint Protection Film | Bespoke Auto Design";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "XPEL Stealth PPF installation in Miami. Transform your gloss paint to satin or protect factory matte finishes. Self-healing matte paint protection film with 10-year warranty.");
-    }
-    addOpenGraphTags("Stealth PPF Miami | Matte Paint Protection Film | Bespoke Auto Design", "Miami's premier XPEL Stealth PPF installer. Convert gloss to satin or protect factory matte paint with self-healing, invisible matte protection film.");
-    addCanonicalUrl("https://www.bespokeauto.design/stealth-ppf");
-    addStructuredData({
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "name": "Stealth PPF (Matte Paint Protection Film) Installation",
-          "provider": {
-            "@type": "AutomotiveBusiness",
-            "name": "Bespoke Auto Design",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "7943 NW 64th St",
-              "addressLocality": "Miami",
-              "addressRegion": "FL",
-              "postalCode": "33166",
-              "addressCountry": "US"
-            },
-            "telephone": "+1-786-395-9172"
-          },
-          "areaServed": [
-            { "@type": "City", "name": "Miami" },
-            { "@type": "City", "name": "Miami Beach" },
-            { "@type": "City", "name": "Coral Gables" }
-          ],
-          "description": "Professional XPEL Stealth matte/satin paint protection film installation in Miami. Self-healing technology with 10-year warranty."
+  const stealthStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Stealth PPF (Matte Paint Protection Film) Installation",
+        "provider": {
+          "@type": "AutomotiveBusiness",
+          "name": "Bespoke Auto Design",
+          "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
+          "telephone": "+1-786-395-9172"
         },
-        {
-          "@type": "FAQPage",
-          "mainEntity": stealthFaqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-          }))
-        }
-      ]
-    });
-  }, []);
+        "areaServed": [
+          { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Coral Gables" }
+        ],
+        "description": "Professional XPEL Stealth matte/satin paint protection film installation in Miami. Self-healing technology with 10-year warranty."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": stealthFaqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+        }))
+      }
+    ]
+  };
   return <div className="min-h-screen bg-background">
+      <PageSEO
+        title="Stealth PPF Miami | Matte & Satin Paint Protection Film | Bespoke Auto Design"
+        description="XPEL Stealth PPF installation in Miami. Transform your gloss paint to satin or protect factory matte finishes. Self-healing matte paint protection film with 10-year warranty."
+        canonical="https://www.bespokeauto.design/stealth-ppf"
+        structuredData={stealthStructuredData}
+      />
       <Navbar />
 
       {/* HERO */}
