@@ -68,6 +68,12 @@ const PPFPackages = () => {
     }
   }, [location.hash]);
   return <div className="min-h-screen bg-background">
+      <PageSEO
+        title="PPF Packages | XPEL Paint Protection Film | Bespoke Auto Design Miami"
+        description="Explore our XPEL PPF packages — Full Front, Track, and Full Body. Professional paint protection film installation in Miami by Bespoke Auto Design."
+        canonical="https://www.bespokeauto.design/ppf-packages"
+        structuredData={ppfPkgStructuredData}
+      />
       <Navbar />
 
       {/* Hero */}

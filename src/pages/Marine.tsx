@@ -9,61 +9,27 @@ import Navbar from "@/components/Navbar";
 import { MarineFAQ } from "@/components/MarineFAQ";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuoteModal } from "@/components/QuoteModal";
-import { addStructuredData } from "@/utils/seoHelpers";
-import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
+import PageSEO from "@/components/PageSEO";
 
 const Marine = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    
-    // Set page title and meta description for SEO
-    document.title = "Marine Protection Services Miami | Boat PPF & Ceramic Coating | Bespoke Auto Design";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Professional marine protection services for boats and yachts in Miami. XPEL marine PPF, ceramic coating, and window tint. Protect your vessel from saltwater and UV damage.');
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = 'Professional marine protection services for boats and yachts in Miami. XPEL marine PPF, ceramic coating, and window tint. Protect your vessel from saltwater and UV damage.';
-      document.head.appendChild(meta);
-    }
-
-    addOpenGraphTags(
-      "Marine Protection Services Miami | Boat PPF & Ceramic Coating | Bespoke Auto Design",
-      "Professional marine protection services for boats and yachts in Miami. XPEL marine PPF, ceramic coating, and window tint."
-    );
-    addCanonicalUrl("https://www.bespokeauto.design/marine");
-
-    // Add marine-specific structured data
-    addStructuredData({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Marine Protection Services",
-      "description": "Specialized XPEL protection services for boats, yachts, and marine vessels in Miami, FL",
-      "provider": {
-        "@type": "AutomotiveBusiness",
-        "name": "Bespoke Auto Design",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "7943 NW 64th St",
-          "addressLocality": "Miami",
-          "addressRegion": "FL",
-          "postalCode": "33166",
-          "addressCountry": "US"
-        },
-        "telephone": "+1-786-395-9172"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Miami" },
-        { "@type": "City", "name": "Miami Beach" },
-        { "@type": "City", "name": "Fort Lauderdale" }
-      ],
-      "serviceType": "Marine Protection"
-    });
-  }, []);
+  const marineStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Marine Protection Services",
+    "description": "Specialized XPEL protection services for boats, yachts, and marine vessels in Miami, FL",
+    "provider": {
+      "@type": "AutomotiveBusiness",
+      "name": "Bespoke Auto Design",
+      "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
+      "telephone": "+1-786-395-9172"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Fort Lauderdale" }
+    ],
+    "serviceType": "Marine Protection"
+  };
 
   const marineServices = [{
     title: "Marine Paint Protection Film",
