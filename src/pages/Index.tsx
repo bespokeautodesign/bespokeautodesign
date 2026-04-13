@@ -19,6 +19,7 @@ import { LazyImage } from "@/components/LazyImage";
 import HeroVideoBackground from "@/components/HeroVideoBackground";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { CompetitiveEdge } from "@/components/CompetitiveEdge";
+import { AnimatedStats } from "@/components/AnimatedStats";
 import { ServiceCategoryCards } from "@/components/ServiceCategoryCards";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.webp";
 const ceramicWorkImage = "/lovable-uploads/83f64f7b-88e3-468d-9f88-d13e551c6289.webp";
@@ -355,6 +356,10 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       </section>
 
 
+
+      {/* Animated Stats */}
+      <AnimatedStats />
+
       {/* Why Choose Us */}
       <WhyChooseUs variant="homepage" />
 
@@ -633,17 +638,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       <Footer />
       </div>
 
-      {/* Sticky Mobile CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background/95 backdrop-blur-md border-t border-border px-4 py-3 flex gap-3">
-        <Button variant="premium" className="flex-1" onClick={() => setQuoteModalOpen(true)}>
-          Get Quote
-        </Button>
-        <Button variant="silver" className="flex-1" asChild>
-          <a href="tel:+17863959172" onClick={() => trackPhoneCall()}>
-            <Phone className="h-4 w-4" /> Call Now
-          </a>
-        </Button>
-      </div>
 
       <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
       

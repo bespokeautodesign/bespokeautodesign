@@ -83,7 +83,7 @@ const CeramicCoating = () => {
   return (
     <div className="min-h-screen bg-background">
       <PageSEO
-        title="Ceramic Coating Miami | Professional Paint Protection | Bespoke Auto Design"
+        title="Ceramic Coating Miami | Starting at $799 | Bespoke Auto Design"
         description="Professional ceramic coating in Miami, FL. Multi-layer nano-ceramic protection for luxury and exotic cars. Extreme gloss, UV defense, and hydrophobic performance. Get a free quote today."
         canonical="https://www.bespokeauto.design/ceramic-coating"
         structuredData={ceramicStructuredData}

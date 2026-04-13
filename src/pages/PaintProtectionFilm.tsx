@@ -81,7 +81,7 @@ const PaintProtectionFilm = () => {
   };
   return <div className="min-h-screen bg-background">
       <PageSEO
-        title="Paint Protection Film Miami | XPEL PPF Installation | Bespoke Auto Design"
+        title="PPF Miami | Paint Protection Film from $1,499 | Bespoke Auto Design"
         description="Professional XPEL paint protection film (PPF) installation in Miami, FL. Self-healing, invisible protection for luxury and exotic cars. Certified installer with 10-year warranty."
         canonical="https://www.bespokeauto.design/paint-protection-film"
         structuredData={ppfStructuredData}
