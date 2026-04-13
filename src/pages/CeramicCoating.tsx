@@ -106,10 +106,9 @@ const CeramicCoating = () => {
                 Authorized XPEL Ceramic Installer
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white drop-shadow-lg" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.4)' }}>
-              XPEL Ceramic Coating <br className="hidden md:block" />
-              <span className="text-white/80">in Miami</span>
-            </h1>
+             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white drop-shadow-lg" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.4)' }}>
+               Professional Ceramic Coating <br className="hidden md:block" /> in Miami, FL
+             </h1>
             <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed drop-shadow-md" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.7)' }}>
               XPEL Fusion Plus™ — a professional-grade nano-ceramic coating that delivers unmatched gloss, UV defense, and hydrophobic performance, engineered to thrive in Miami's extreme climate.
             </p>
@@ -426,6 +425,188 @@ const CeramicCoating = () => {
                 </Accordion>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          WHY CERAMIC COATING IS ESSENTIAL IN MIAMI
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4">Miami Climate Defense</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+                Why Ceramic Coating Is Essential in Miami
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Miami's tropical climate is beautiful to live in — but brutal on automotive paint. With over 3,000 hours of direct sunlight per year, Miami vehicles endure some of the most intense ultraviolet radiation in the continental United States. This constant UV bombardment breaks down the molecular bonds in your clear coat, causing oxidation, fading, and a chalky appearance that ages your vehicle prematurely. A professional-grade ceramic coating like XPEL Fusion Plus™ creates a UV-resistant barrier that blocks these harmful rays and preserves your paint's depth, gloss, and color for years.
+              </p>
+              <p>
+                But UV is only one threat. Miami's proximity to the Atlantic Ocean and Biscayne Bay means that salt-laden air is constantly settling on your vehicle's surfaces — even if you never drive to the beach. This microscopic salt film accelerates corrosion of exposed metal trim and degrades clear coat integrity over time. The region's high humidity (averaging 73% year-round) compounds the problem by trapping moisture and contaminants against the paint surface, creating the perfect conditions for water spot etching and mineral deposit bonding.
+              </p>
+              <p>
+                South Florida's frequent afternoon thunderstorms deposit acidic rain that contains pollutants, sulfur compounds, and dissolved minerals. When this rain evaporates on a hot paint surface, it leaves behind mineral rings and acid etch marks that permanently damage unprotected clear coat. Ceramic coating's extreme hydrophobic properties cause water to bead and sheet off the surface before it has a chance to evaporate and etch — effectively eliminating one of Miami's most common forms of paint damage.
+              </p>
+              <p>
+                Then there are the organic hazards that plague South Florida vehicles year-round: bird droppings (which contain uric acid that can etch paint within hours in Miami's heat), tree sap from banyan and ficus trees, love bug splatter during the biannual swarm season, and pollen that bonds to warm surfaces and stains untreated paint. XPEL Fusion Plus™ creates a sacrificial nano-ceramic layer that prevents these contaminants from chemically bonding to your paint — they sit on top of the coating and wipe off effortlessly with a simple rinse.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          OUR CERAMIC COATING PROCESS
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4">Our Process</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+                Our XPEL Fusion Plus Ceramic Coating Process
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                A professional ceramic coating is only as good as the preparation that precedes it. Our meticulous multi-step process ensures your coating bonds to a flawless surface and delivers maximum performance and longevity.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { step: "1. Thorough Hand Wash & Decontamination", desc: "Your vehicle receives a multi-stage hand wash using pH-neutral shampoo, followed by an iron-removing chemical decontamination spray that dissolves embedded brake dust, industrial fallout, and ferrous particles invisible to the naked eye. In Miami's environment, these contaminants accumulate rapidly due to construction dust, road salt, and coastal mineral deposits." },
+                { step: "2. Clay Bar Treatment", desc: "A professional-grade synthetic clay bar is worked across every painted panel to physically remove bonded surface contaminants that chemical washes leave behind — including tree sap, tar spots, overspray from Miami's constant construction activity, and stubborn mineral deposits from hard water. The result is a glass-smooth surface ready for correction." },
+                { step: "3. Multi-Stage Paint Correction", desc: "This is the most critical — and most time-consuming — step. Using dual-action polishers with progressively finer cutting compounds, we remove swirl marks, wash scratches, light marring, and UV-induced oxidation. Since ceramic coating permanently locks in whatever finish is underneath, we ensure the paint is flawless before a single drop of coating is applied. Paint correction alone can take 4–12 hours depending on the vehicle's condition." },
+                { step: "4. Surface Preparation & IPA Wipe", desc: "After correction, every panel is wiped down with an isopropyl alcohol (IPA) solution to strip all polishing oils, residual compounds, and surface tension modifiers. This ensures the ceramic coating bonds directly to bare, corrected paint — not to a layer of polish residue that would compromise adhesion and longevity." },
+                { step: "5. XPEL Fusion Plus Application", desc: "In our climate-controlled facility (critical in Miami's humidity), XPEL Fusion Plus™ is applied panel by panel using cross-hatch application technique. Each panel is coated, allowed to flash for the precise recommended time, then leveled with a microfiber towel. The SiO₂ ceramic particles bond at a molecular level to the clear coat, creating a permanent layer of protection with a 9H hardness rating." },
+                { step: "6. 24-Hour Controlled Cure & Final Inspection", desc: "Your vehicle remains in our climate-controlled bay for a full 24-hour cure period, during which temperature and humidity are carefully maintained to ensure complete cross-linking of the ceramic molecules. After curing, a comprehensive final inspection under LED inspection lighting verifies uniform application, proper leveling, and the absence of high spots or streaking." },
+              ].map((item) => (
+                <div key={item.step} className="bg-card border border-border rounded-xl p-5 space-y-2">
+                  <h4 className="font-bold text-foreground">{item.step}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          CERAMIC COATING FOR EVERY VEHICLE TYPE
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-12">
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4">Vehicle Coverage</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+                Ceramic Coating for Every Vehicle Type
+              </h2>
+            </div>
+            <div className="space-y-10 text-lg text-muted-foreground leading-relaxed">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground font-playfair">Luxury Sedans & EVs: Tesla, BMW, Mercedes-Benz</h3>
+                <p>
+                  Ceramic coating has become the go-to protection for Miami's growing fleet of Tesla Model 3 and Model Y owners. Tesla's factory paint — while visually stunning — is notoriously thin and soft, making it highly susceptible to swirl marks from automatic car washes, water spot etching from Miami's mineral-rich tap water, and UV-induced oxidation. XPEL Fusion Plus adds a 9H-hardness sacrificial layer that resists these threats while making your Tesla dramatically easier to keep clean. The hydrophobic finish means that after a rainstorm, your car looks like it was just washed — water beads and sheets off, carrying contaminants with it.
+                </p>
+                <p>
+                  For BMW M-series owners (M3, M4, M5) and Mercedes-AMG drivers, ceramic coating preserves the deep metallic and pearlescent finishes that these manufacturers are known for. The coating's light-refracting properties actually enhance the depth and clarity of factory paint, producing a "wet look" gloss that wax and sealants simply cannot replicate. In Miami's intense sunlight, this difference is immediately visible — coated vehicles have a mirror-like depth that uncoated cars lose within months of exposure.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground font-playfair">Sports Cars & Exotics: Porsche, Corvette, McLaren</h3>
+                <p>
+                  High-performance vehicles like the Porsche 911, Chevrolet Corvette Z06, and McLaren 720S deserve protection that matches their engineering. These vehicles are often driven aggressively, parked at car shows and rallies, and washed frequently — all of which introduce swirl marks and micro-marring into the paint. Ceramic coating provides a hardened surface that resists these everyday paint degradation sources while delivering a showroom-quality finish that makes these vehicles stand out at Festivals of Speed, Cars and Coffee Aventura, and Miami Concours events.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground font-playfair">SUVs & Trucks: Porsche Cayenne, Range Rover, Ford F-150</h3>
+                <p>
+                  Larger vehicles like the Porsche Cayenne, Range Rover Sport, Land Rover Defender, and Ford F-150 have significantly more painted surface area — which means more surface exposed to Miami's UV, salt air, and environmental contaminants. Ceramic coating these vehicles provides comprehensive protection across every panel, including door jambs, lower cladding, and painted bumper surfaces that are particularly vulnerable to water spot etching from sprinkler overspray and road grime accumulation. Many of our SUV clients combine ceramic coating with PPF on the front end for a complete protection package.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-foreground font-playfair">New Car Preparation</h3>
+                <p>
+                  The best time to ceramic coat a vehicle is when it's brand new — before Miami's environment has a chance to damage the factory finish. New car paint typically requires only light correction (removing dealer wash marks and transport-induced marring) before coating application, which reduces preparation time and cost. We recommend new vehicle owners schedule ceramic coating within the first 30 days of ownership for optimal results. Many of our clients coordinate with their dealership to have the vehicle delivered directly to Bespoke Auto Design before they even drive it — ensuring the paint is protected from day one.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          CERAMIC COATING VS PPF VS WAX
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4">Comparison Guide</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+                Ceramic Coating vs PPF vs Wax: Understanding Your Options
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Choosing the right paint protection for your Miami vehicle can be confusing. Here's a straightforward breakdown of the three main options — and why many of our clients ultimately choose more than one.
+              </p>
+              <p>
+                <strong className="text-foreground">Traditional Wax & Sealants</strong> provide a temporary sacrificial layer that adds gloss and mild water-beading capability. However, wax typically lasts only 4–8 weeks in Miami's climate before UV and heat break it down. You're essentially re-applying product every month to maintain any meaningful protection — and even at its peak performance, wax offers minimal defense against UV damage, chemical etching, or hard water spotting. For a vehicle parked outdoors in Brickell or Miami Beach, wax is not a viable long-term solution.
+              </p>
+              <p>
+                <strong className="text-foreground">Ceramic Coating (XPEL Fusion Plus™)</strong> is a semi-permanent nano-ceramic layer that chemically bonds to your paint's clear coat. Once cured, it cannot be washed off — it becomes part of the paint surface. Ceramic coating provides 2–7+ years of hydrophobic protection, UV resistance, chemical resistance, and enhanced gloss. It makes washing dramatically easier and protects against water spots, bird dropping etching, and oxidation. However, ceramic coating is a thin chemical layer (typically 1–2 microns) — it does not provide physical impact protection against rock chips or scratches.
+              </p>
+              <p>
+                <strong className="text-foreground">Paint Protection Film (PPF)</strong> is a thick (8-mil) thermoplastic urethane film that provides a physical barrier against rock chips, gravel, road debris, key scratches, and shopping cart dings. PPF is the only product that can prevent paint damage from physical contact. It also offers UV protection and self-healing properties. However, PPF alone doesn't provide the same hydrophobic, self-cleaning surface that ceramic coating delivers.
+              </p>
+              <p>
+                <strong className="text-foreground">The Ultimate Combination:</strong> Our most popular package among discerning Miami car owners is PPF on the high-impact areas (full front or full body) with XPEL Fusion Plus ceramic coating applied over the entire vehicle — including over the PPF. This gives you the rock-chip and scratch resistance of PPF combined with the hydrophobic self-cleaning, UV defense, and extreme gloss of ceramic coating. The ceramic layer on top of PPF also extends the film's cosmetic lifespan, prevents yellowing, and makes it dramatically easier to clean. Contact us about our bundled PPF + Ceramic Coating packages for the best value.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+          SERVING MIAMI-DADE COUNTY
+          ═══════════════════════════════════════════════════════ */}
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4">Service Area</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+                Serving Miami-Dade County
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Bespoke Auto Design is located at <strong className="text-foreground">7943 NW 64th St, Miami, FL 33166</strong>, in the Doral business district — minutes from Miami International Airport and directly accessible from the Palmetto Expressway (SR-826) and Dolphin Expressway (SR-836). Our facility serves vehicle owners across all of Miami-Dade County and the greater South Florida region.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                {[
+                  "Doral", "Brickell", "Coral Gables", "Miami Beach", "Aventura",
+                  "Coconut Grove", "Wynwood", "Kendall", "Hialeah", "Miami Lakes",
+                  "Pinecrest", "Key Biscayne", "South Miami", "Sunny Isles Beach",
+                  "Fort Lauderdale", "Hollywood", "Weston", "Pembroke Pines"
+                ].map((area) => (
+                  <div key={area} className="flex items-center gap-2 text-sm font-medium text-foreground">
+                    <Check className="h-4 w-4 text-primary shrink-0" />
+                    {area}
+                  </div>
+                ))}
+              </div>
+              <p>
+                Whether you're a condo resident in Brickell looking for low-maintenance paint protection, a Coral Gables homeowner who wants showroom gloss year-round, or a business professional in Doral tired of water spots on your daily driver — our ceramic coating services are designed for the unique demands of Miami's climate. We offer flexible scheduling, early drop-off, and after-hours pickup by appointment to accommodate your busy schedule.
+              </p>
+            </div>
           </div>
         </div>
       </section>
