@@ -1,4 +1,5 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { PricingCards } from "@/components/PricingCards";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -327,6 +328,17 @@ const StealthPPF = () => {
         </div>
       </section>
 
+
+      {/* Pricing */}
+      <PricingCards
+        title="Stealth PPF Pricing"
+        subtitle="Transform any gloss paint into a stunning satin finish with XPEL Stealth."
+        tiers={[
+          { name: "Stealth PPF", price: "$4,500", priceLabel: "Starting at", description: "Full body satin/matte finish with complete paint protection.", features: ["Satin finish transformation", "Self-healing top coat", "Same protection as clear PPF", "10-year XPEL warranty", "Fully reversible"], popular: true },
+        ]}
+        onGetQuote={() => setQuoteModalOpen(true)}
+        footnote="Pricing varies by vehicle size and complexity. Partial coverage options available."
+      />
 
       {/* Why Choose Bespoke */}
       <WhyChooseUs variant="service" differentiators={stealthDifferentiators} title="Why Choose Bespoke for Stealth PPF" />

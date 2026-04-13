@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { PricingCards } from "@/components/PricingCards";
 import Footer from "@/components/Footer";
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -222,6 +223,17 @@ const XPELColorPPF = () => {
 
       {/* Installation Process */}
       <ColorPPFProcess />
+
+      {/* Pricing */}
+      <PricingCards
+        title="Color PPF Pricing"
+        subtitle="Change your color and protect your paint in one step — 16 stunning XPEL colors."
+        tiers={[
+          { name: "Color PPF Full Body", price: "$5,000", priceLabel: "Starting at", description: "Complete color change with built-in paint protection film.", features: ["16 XPEL color options", "Gloss, Satin & Metallic finishes", "Self-healing protection", "10-year XPEL warranty", "Reversible color change"], popular: true },
+        ]}
+        onGetQuote={() => setQuoteModalOpen(true)}
+        footnote="Pricing depends on vehicle size and color availability. Contact us for a custom quote."
+      />
 
       {/* FAQ */}
       <ColorPPFFAQ />

@@ -1,4 +1,5 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { PricingCards } from "@/components/PricingCards";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -370,6 +371,17 @@ const CeramicTint = () => {
         </div>
       </section>
 
+
+      {/* Pricing */}
+      <PricingCards
+        title="Ceramic Tint Pricing"
+        subtitle="XPEL Prime XR Plus™ ceramic tint — recommended by the Skin Cancer Foundation."
+        tiers={[
+          { name: "Ceramic Window Tint", price: "$299", priceLabel: "Starting at", description: "Full vehicle ceramic tint with up to 98% infrared heat rejection.", features: ["XPEL Prime XR Plus™ film", "99% UV ray protection", "Up to 98% infrared heat rejection", "Zero electronic interference", "Lifetime warranty"], popular: true },
+        ]}
+        onGetQuote={() => setQuoteModalOpen(true)}
+        footnote="Pricing varies by vehicle type, number of windows, and windshield tinting."
+      />
 
       {/* Why Choose Bespoke */}
       <WhyChooseUs variant="service" differentiators={tintDifferentiators} title="Why Choose Bespoke for Ceramic Tint" />
