@@ -53,6 +53,12 @@ const Marine = () => {
 
   return (
     <div className="min-h-screen bg-background relative">
+      <PageSEO
+        title="Marine Protection Services Miami | Boat PPF & Ceramic Coating | Bespoke Auto Design"
+        description="Professional marine protection services for boats and yachts in Miami. XPEL marine PPF, ceramic coating, and window tint. Protect your vessel from saltwater and UV damage."
+        canonical="https://www.bespokeauto.design/marine"
+        structuredData={marineStructuredData}
+      />
       {/* Background Image - Full width coverage */}
       <div 
         className="fixed inset-0 w-screen bg-cover bg-no-repeat z-0"

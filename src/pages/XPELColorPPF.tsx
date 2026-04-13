@@ -64,6 +64,12 @@ const XPELColorPPF = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="XPEL COLOR PPF Miami | Colored Paint Protection Film | 16 Colors Available"
+        description="Transform your vehicle with XPEL COLOR paint protection film in Miami. 16 vibrant colors available in gloss, satin, and metallic finishes. Protection meets style."
+        canonical="https://www.bespokeauto.design/colorppf"
+        structuredData={colorPPFStructuredData}
+      />
       <Navbar />
 
       {/* Hero */}
