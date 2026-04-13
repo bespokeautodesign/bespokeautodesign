@@ -1,7 +1,6 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -9,10 +8,9 @@ import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Palette, Sun, Zap, Car, Clock, Award, Sparkles, Layers, Paintbrush, RefreshCw, Eye } from "lucide-react";
-import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
+import PageSEO from "@/components/PageSEO";
 import { WhyChooseUs, wrapDifferentiators } from "@/components/WhyChooseUs";
 import { RelatedServices } from "@/components/RelatedServices";
-import { addStructuredData } from "@/utils/seoHelpers";
 import { vinylWrapVehicles } from "@/data/portfolioVehicles";
 
 const brands = [
@@ -173,60 +171,32 @@ const faqs = [
 
 const ColorChangeWrap = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
-  
-  
-
-  useEffect(() => {
-    document.title = "Color Change Vinyl Wrap Miami | Custom Vehicle Wraps | Bespoke Auto Design";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute(
-        "content",
-        "Premium color change vinyl wraps in Miami. Full body wraps, chrome deletes, and custom finishes for luxury and exotic vehicles using top-quality materials. Get a free quote."
-      );
-    }
-    addOpenGraphTags(
-      "Color Change Vinyl Wrap Miami | Custom Vehicle Wraps | Bespoke Auto Design",
-      "Premium color change vinyl wraps in Miami. Full body wraps, chrome deletes, and custom finishes for luxury and exotic vehicles using top-quality materials."
-    );
-    addCanonicalUrl("https://www.bespokeauto.design/color-change-wrap");
-    addStructuredData({
+  const wrapStructuredData = [
+    {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "Color Change Vinyl Wrap",
-      provider: {
+      "name": "Color Change Vinyl Wrap",
+      "provider": {
         "@type": "AutomotiveBusiness",
-        name: "Bespoke Auto Design",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "7943 NW 64th St",
-          addressLocality: "Miami",
-          addressRegion: "FL",
-          postalCode: "33166",
-          addressCountry: "US",
-        },
-        telephone: "+1-786-395-9172",
+        "name": "Bespoke Auto Design",
+        "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
+        "telephone": "+1-786-395-9172"
       },
-      areaServed: [
-        { "@type": "City", name: "Miami" },
-        { "@type": "City", name: "Miami Beach" },
-        { "@type": "City", name: "Coral Gables" },
-        { "@type": "City", name: "Doral" },
-        { "@type": "City", name: "Wynwood" }
+      "areaServed": [
+        { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Coral Gables" }, { "@type": "City", "name": "Doral" }, { "@type": "City", "name": "Wynwood" }
       ],
-      description:
-        "Professional color change vinyl wraps in Miami using premium-grade cast vinyl films for complete vehicle customization.",
-    });
-    addStructuredData({
+      "description": "Professional color change vinyl wraps in Miami using premium-grade cast vinyl films for complete vehicle customization."
+    },
+    {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: faqs.map((f) => ({
+      "mainEntity": faqs.map((f) => ({
         "@type": "Question",
-        name: f.question,
-        acceptedAnswer: { "@type": "Answer", text: f.answer },
-      })),
-    });
-  }, []);
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+      }))
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-background">

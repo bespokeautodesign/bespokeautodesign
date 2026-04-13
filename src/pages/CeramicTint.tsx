@@ -1,7 +1,6 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -9,10 +8,9 @@ import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Sun, Thermometer, Clock, Award, Eye, Zap, Car, Heart } from "lucide-react";
-import { addOpenGraphTags, addCanonicalUrl } from "@/utils/metaHelpers";
+import PageSEO from "@/components/PageSEO";
 import { WhyChooseUs, tintDifferentiators } from "@/components/WhyChooseUs";
 import { RelatedServices } from "@/components/RelatedServices";
-import { addStructuredData } from "@/utils/seoHelpers";
 import xpelLogo from "@/assets/xpel-logo.svg";
 
 const tintFaqs = [
@@ -52,63 +50,42 @@ const tintFaqs = [
 
 const CeramicTint = () => {
   const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
-  
-
-  useEffect(() => {
-    document.title = "Ceramic Window Tint Miami | XPEL XR Plus Installation | Bespoke Auto Design";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute(
-        "content",
-        "Professional XPEL XR Plus ceramic window tint in Miami, FL. Blocks 99% UV rays, rejects up to 98% infrared heat. Recommended by The Skin Cancer Foundation. Free quote."
-      );
-    }
-    addOpenGraphTags(
-      "Ceramic Window Tint Miami | XPEL XR Plus | Bespoke Auto Design",
-      "Miami's premier XPEL XR Plus ceramic tint installer. 99% UV rejection, 98% infrared heat rejection. Recommended by The Skin Cancer Foundation."
-    );
-    addCanonicalUrl("https://www.bespokeauto.design/ceramic-tint");
-    addStructuredData({
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "name": "Ceramic Window Tint Installation",
-          "provider": {
-            "@type": "AutomotiveBusiness",
-            "name": "Bespoke Auto Design",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "7943 NW 64th St",
-              "addressLocality": "Miami",
-              "addressRegion": "FL",
-              "postalCode": "33166",
-              "addressCountry": "US"
-            },
-            "telephone": "+1-786-395-9172"
-          },
-          "areaServed": [
-            { "@type": "City", "name": "Miami" },
-            { "@type": "City", "name": "Miami Beach" },
-            { "@type": "City", "name": "Doral" },
-            { "@type": "City", "name": "Wynwood" }
-          ],
-          "description": "Professional XPEL XR Plus ceramic window tint installation in Miami. Blocks 99% UV, rejects up to 98% infrared heat. Skin Cancer Foundation recommended."
+  const tintStructuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Ceramic Window Tint Installation",
+        "provider": {
+          "@type": "AutomotiveBusiness",
+          "name": "Bespoke Auto Design",
+          "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
+          "telephone": "+1-786-395-9172"
         },
-        {
-          "@type": "FAQPage",
-          "mainEntity": tintFaqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
-          }))
-        }
-      ]
-    });
-  }, []);
+        "areaServed": [
+          { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Doral" }, { "@type": "City", "name": "Wynwood" }
+        ],
+        "description": "Professional XPEL XR Plus ceramic window tint installation in Miami. Blocks 99% UV, rejects up to 98% infrared heat. Skin Cancer Foundation recommended."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": tintFaqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+        }))
+      }
+    ]
+  };
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSEO
+        title="Ceramic Window Tint Miami | XPEL XR Plus Installation | Bespoke Auto Design"
+        description="Professional XPEL XR Plus ceramic window tint in Miami, FL. Blocks 99% UV rays, rejects up to 98% infrared heat. Recommended by The Skin Cancer Foundation. Free quote."
+        canonical="https://www.bespokeauto.design/ceramic-tint"
+        structuredData={tintStructuredData}
+      />
       <Navbar />
 
       {/* ═══════════════════════════════════════════════════════
