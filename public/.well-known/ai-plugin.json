@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Bespoke Auto Design",
+  "name_for_model": "bespoke_auto_design",
+  "description_for_human": "Premium automotive protection studio in Miami, FL — XPEL PPF, ceramic coating, window tint, color change wraps, and marine services.",
+  "description_for_model": "Bespoke Auto Design is a premium automotive protection studio in Miami, Florida. Services include XPEL paint protection film (PPF) installation (Ultimate Plus, Stealth, Color PPF), ceramic coating (starting at $599), ceramic window tint (starting at $150), color change vinyl wraps, and marine protection (PPF, ceramic coating, tint for boats and yachts). Authorized XPEL dealer. Located at 7943 NW 64th St, Miami, FL 33166. Phone: (786) 395-9172. Serves Miami, Miami Beach, Coral Gables, Brickell, Doral, Fort Lauderdale, and surrounding South Florida areas.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "none",
+    "url": "https://www.bespokeauto.design"
+  },
+  "logo_url": "https://www.bespokeauto.design/lovable-uploads/bespoke-logo.webp",
+  "contact_email": "sales@bespokeauto.design",
+  "legal_info_url": "https://www.bespokeauto.design"
+}
