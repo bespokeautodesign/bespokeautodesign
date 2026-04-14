@@ -1,4 +1,5 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { PricingCards } from "@/components/PricingCards";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";

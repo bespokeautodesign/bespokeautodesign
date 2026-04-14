@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Anchor, Waves, Shield } from "lucide-react";

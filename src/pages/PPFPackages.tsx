@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";

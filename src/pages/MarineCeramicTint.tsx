@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { Badge } from "@/components/ui/badge";
 import { Sun, CheckCircle, Eye, Award, Shield } from "lucide-react";
 import xpelLogo from "@/assets/xpel-logo.svg";
