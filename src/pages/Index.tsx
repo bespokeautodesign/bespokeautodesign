@@ -339,7 +339,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                     )}
                   </div>
                   <div className="flex gap-3">
-                    <Button variant="outline" size="sm" asChild className="flex-1 border-white/20 text-white hover:bg-white/10">
+                    <Button variant="outline" size="sm" asChild className="flex-1 bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500">
                       <Link to={service.link}>
                         Learn More <ArrowRight className="h-3 w-3 ml-1" />
                       </Link>

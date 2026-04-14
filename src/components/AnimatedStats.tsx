@@ -50,7 +50,7 @@ const StatCounter = ({ stat, inView }: { stat: StatItem; inView: boolean }) => {
       <div className="text-3xl md:text-4xl font-bold tracking-tight">
         {isLifetime ? (inView ? "Lifetime" : "—") : `${count}${stat.suffix}`}
       </div>
-      <div className="text-sm text-muted-foreground">{stat.label}</div>
+      <div className="text-sm text-white/80">{stat.label}</div>
     </div>
   );
 };
