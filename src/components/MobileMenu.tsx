@@ -23,6 +23,17 @@ const otherItemsBefore = [
   { label: "Color Change Wrap", href: "/color-change-wrap" },
 ];
 
+const serviceAreaItems = [
+  { label: "Brickell", href: "/service-areas/brickell" },
+  { label: "Coral Gables", href: "/service-areas/coral-gables" },
+  { label: "Bal Harbour", href: "/service-areas/bal-harbour" },
+  { label: "Key Biscayne", href: "/service-areas/key-biscayne" },
+  { label: "Sunny Isles", href: "/service-areas/sunny-isles" },
+  { label: "Coconut Grove", href: "/service-areas/coconut-grove" },
+  { label: "Aventura", href: "/service-areas/aventura" },
+  { label: "Miami Beach", href: "/service-areas/miami-beach" },
+];
+
 const otherItemsAfter: { label: string; href: string }[] = [
   { label: "Gallery", href: "/gallery" },
 ];
@@ -31,6 +42,7 @@ const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [ppfExpanded, setPpfExpanded] = useState(false);
   const [marineExpanded, setMarineExpanded] = useState(false);
+  const [areasExpanded, setAreasExpanded] = useState(false);
 
   const linkClasses = "text-lg text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] transition-all duration-300 py-3 border-b border-[hsl(var(--nav-border))]";
   const subLinkClasses = "text-base text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-highlight))] transition-all duration-200 py-1.5";
@@ -113,6 +125,27 @@ const MobileMenu = () => {
                   {item.label}
                 </Link>
               ))}
+
+              {/* Service Areas Dropdown */}
+              <div className="border-b border-[hsl(var(--nav-border))]">
+                <div className="flex items-center justify-between py-3">
+                  <span className="text-lg text-[hsl(var(--nav-foreground))]">
+                    Service Areas
+                  </span>
+                  <button onClick={() => setAreasExpanded(!areasExpanded)} className="p-1 rounded hover:bg-[hsl(var(--nav-foreground-active)/0.08)] transition-colors">
+                    <ChevronDown className={`h-5 w-5 text-[hsl(var(--nav-foreground))] transition-transform duration-300 ${areasExpanded ? "rotate-180" : ""}`} />
+                  </button>
+                </div>
+                {areasExpanded && (
+                  <div className="flex flex-col pl-4 pb-3 gap-1 border-l-2 border-[hsl(var(--nav-highlight)/0.3)] ml-2">
+                    {serviceAreaItems.map((item) => (
+                      <Link key={item.href} to={item.href} onClick={() => setIsOpen(false)} className={subLinkClasses}>
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Bottom CTAs */}
