@@ -21,6 +21,8 @@ import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { CompetitiveEdge } from "@/components/CompetitiveEdge";
 import { AnimatedStats } from "@/components/AnimatedStats";
 import { ServiceCategoryCards } from "@/components/ServiceCategoryCards";
+import { GoogleRatingChip } from "@/components/GoogleRatingChip";
+import { GoogleReviewsSection } from "@/components/GoogleReviewsSection";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.webp";
 const ceramicWorkImage = "/lovable-uploads/83f64f7b-88e3-468d-9f88-d13e551c6289.webp";
 import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.webp";
@@ -208,9 +210,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
             </div>
             {/* Trust signals */}
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/80" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.6)' }}>
-              <span className="flex items-center gap-1.5">
-                <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" /> 5-Star Rated
-              </span>
+              <GoogleRatingChip />
               <span className="hidden sm:inline text-white/30">•</span>
               <span className="flex items-center gap-1.5">
                 <Shield className="h-4 w-4" /> Certified XPEL Installers
@@ -633,6 +633,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
 
       {/* FAQ Section */}
       <HomeFAQ />
+
+      {/* Google Reviews Section */}
+      <GoogleReviewsSection />
 
       {/* Footer */}
       <Footer />

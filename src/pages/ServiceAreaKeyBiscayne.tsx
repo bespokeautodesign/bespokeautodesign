@@ -7,6 +7,7 @@ import { Shield, Sun, Thermometer, Car, Phone, Waves, Star, Award, ArrowRight } 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageSEO from "@/components/PageSEO";
+import { GoogleRatingChip } from "@/components/GoogleRatingChip";
 
 const faqData = [
   { question: "Do you pick up vehicles from Key Biscayne?", answer: "Yes — we offer concierge pickup and return service from Key Biscayne residences and the Crandon Park area. Skip the Causeway drive and let us handle the logistics. Just request it when you book your quote." },
@@ -67,7 +68,7 @@ const ServiceAreaKeyBiscayne = () => (
           <a href="tel:+17863959172"><Button size="lg" variant="outline" className="bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> Call (786) 395-9172</Button></a>
         </div>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/60">
-          <span className="flex items-center gap-1.5"><Star className="w-4 h-4 text-amber-500" /> 5-Star Rated</span><span>•</span>
+          <GoogleRatingChip /><span>•</span>
           <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-amber-500" /> XPEL Authorized Dealer</span><span className="hidden sm:inline">•</span>
           <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-amber-500" /> Up to 10-Year Warranty</span><span className="hidden sm:inline">•</span>
           <span className="flex items-center gap-1.5"><Car className="w-4 h-4 text-amber-500" /> Concierge Pickup Available</span>
