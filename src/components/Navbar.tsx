@@ -16,6 +16,17 @@ const marineSubItems = [
 { label: "Marine Ceramic Coating", href: "/marine-ceramic-coating" },
 { label: "Marine Ceramic Tint", href: "/marine-ceramic-tint" }];
 
+const serviceAreaItems = [
+  { label: "Brickell", href: "/service-areas/brickell" },
+  { label: "Coral Gables", href: "/service-areas/coral-gables" },
+  { label: "Bal Harbour", href: "/service-areas/bal-harbour" },
+  { label: "Key Biscayne", href: "/service-areas/key-biscayne" },
+  { label: "Sunny Isles", href: "/service-areas/sunny-isles" },
+  { label: "Coconut Grove", href: "/service-areas/coconut-grove" },
+  { label: "Aventura", href: "/service-areas/aventura" },
+  { label: "Miami Beach", href: "/service-areas/miami-beach" },
+];
+
 const navItemsBefore = [
 { label: "Ceramic Coating", href: "/ceramic-coating" },
 { label: "Ceramic Tint", href: "/ceramic-tint" },
@@ -41,17 +52,21 @@ const Navbar = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [ppfOpen, setPpfOpen] = useState(false);
   const [marineOpen, setMarineOpen] = useState(false);
+  const [areasOpen, setAreasOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const marineDropdownRef = useRef<HTMLDivElement>(null);
+  const areasDropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const isPPFActive = ppfSubItems.some((item) => location.pathname === item.href);
   const isMarineActive = marineSubItems.some((item) => location.pathname === item.href);
+  const isAreasActive = serviceAreaItems.some((item) => location.pathname === item.href);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) setPpfOpen(false);
       if (marineDropdownRef.current && !marineDropdownRef.current.contains(e.target as Node)) setMarineOpen(false);
+      if (areasDropdownRef.current && !areasDropdownRef.current.contains(e.target as Node)) setAreasOpen(false);
     };
     const handleScroll = () => setScrolled(window.scrollY > 20);
     document.addEventListener("mousedown", handleClickOutside);
@@ -157,12 +172,37 @@ const Navbar = () => {
                 }
               </div>
 
-              {/* Portfolio */}
+              {/* After items (Gallery) */}
               {navItemsAfter.map((item) =>
               <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-3 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
                   {item.label}
                 </NavLink>
               )}
+
+              {/* Service Areas Dropdown */}
+              <div className="relative" ref={areasDropdownRef} onMouseLeave={() => setAreasOpen(false)}>
+                <button
+                  onMouseEnter={() => setAreasOpen(true)}
+                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm xl:text-base whitespace-nowrap transition-all duration-300 ${
+                  isAreasActive ?
+                  "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
+                  "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
+                  }>
+                  Service Areas
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${areasOpen ? "rotate-180" : ""}`} />
+                </button>
+                {areasOpen &&
+                <div className={dropdownClasses}>
+                    <div className={`w-52 ${dropdownInnerClasses}`}>
+                      {serviceAreaItems.map((item) =>
+                    <Link key={item.href} to={item.href} onClick={() => setAreasOpen(false)} className={dropdownLinkClasses(location.pathname === item.href)}>
+                          {item.label}
+                        </Link>
+                    )}
+                    </div>
+                  </div>
+                }
+              </div>
             </div>
 
             {/* CTAs */}
