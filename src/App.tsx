@@ -66,6 +66,7 @@ const App = () => (
             <Route path="/ppf-packages" element={<PPFPackages />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/service-areas/brickell" element={<ServiceAreaBrickell />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
