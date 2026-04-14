@@ -2,58 +2,53 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Badge } from "@/components/ui/badge";
 
 const homeFaqData = [
-  // PPF Section
   {
-    question: "What is paint protection film (PPF)?",
-    answer: "Paint protection film (PPF) is a transparent, durable polyurethane film designed to protect a vehicle's paint from scratches, chips, stains, and environmental damage. PPF maintains the car's aesthetic appeal while providing long-lasting protection against everyday wear and tear."
+    question: "How much does ceramic coating cost in Miami?",
+    answer: "At Bespoke Auto Design in Miami, ceramic coating starts at $599 for entry-level packages and ranges up to $1,500+ for multi-year XPEL Fusion Plus protection. Pricing depends on vehicle size, paint condition, and the coating tier you choose. All packages include thorough paint decontamination and machine polishing before application in our climate-controlled facility — critical for proper bonding in Miami's humidity."
   },
   {
-    question: "How long does PPF last?",
-    answer: "Paint protection film (PPF) typically lasts between 5 to 10 years, depending on factors such as the quality of the film, installation techniques, and environmental conditions. High-quality films like XPEL offer durable protection and are backed by substantial warranties."
+    question: "What's the best PPF installer in Miami?",
+    answer: "Bespoke Auto Design is Miami's premier XPEL Authorized Dealer with 7+ years of experience and 500+ vehicles protected. We're certified by XPEL — the industry's leading manufacturer — and specialize in luxury and exotic vehicles including Ferrari, Lamborghini, Rolls-Royce, and Bentley. All work is done in a climate-controlled facility and backed by up to a 10-year manufacturer warranty."
   },
   {
-    question: "Does PPF protect against rock chips?",
-    answer: "Yes, paint protection film (PPF) effectively protects against rock chips by creating a durable, transparent barrier over your vehicle's paint. This protective layer absorbs the impact of rocks and debris, preventing damage and maintaining the pristine appearance of your car's exterior."
+    question: "Does ceramic coating work in Miami's humidity and heat?",
+    answer: "Yes — but only if applied correctly. Miami's high humidity makes climate-controlled application essential, because moisture during curing can ruin a ceramic coating's bond. Bespoke Auto Design uses a sealed, climate-controlled installation bay specifically to ensure flawless curing. Properly applied XPEL Fusion Plus ceramic coating actually thrives in Miami — repelling water, salt, UV, and bird droppings that destroy unprotected paint."
   },
   {
-    question: "Will removing PPF harm my vehicle's paint?",
-    answer: "No, removing paint protection film (PPF) will not harm your vehicle's paint when done correctly. High-quality films like XPEL are designed to be safely removed, leaving the original paint intact and free from residue."
-  },
-  
-  // Ceramic Coating Section
-  {
-    question: "What does ceramic coating do for a car?",
-    answer: "Ceramic coating provides a protective shield against environmental damage like UV rays, bird droppings, and road grime. It also reduces the need for frequent washing by making the surface hydrophobic and dirt-resistant, while enhancing the vehicle's gloss and shine."
+    question: "How long does PPF last in Florida?",
+    answer: "Quality XPEL Paint Protection Film lasts 7-10 years in Florida when professionally installed and properly maintained. Miami's intense UV and heat are tough on lesser films, but XPEL's self-healing topcoat resists yellowing and degradation. Bespoke Auto Design's installations include a 10-year manufacturer warranty against yellowing, cracking, and peeling — the strongest in the industry."
   },
   {
-    question: "Does ceramic coating protect paint?",
-    answer: "Yes, ceramic coating offers a protective barrier that helps prevent paint from fading, oxidizing, and being damaged by contaminants. It also makes the paint more resilient to minor scratches and swirl marks while providing long-lasting protection."
+    question: "Is ceramic coating or PPF better for Miami drivers?",
+    answer: "For maximum protection, both. PPF is a thick urethane film that physically blocks rock chips, sand, and road debris — critical for Miami's highway driving and construction zones. Ceramic coating is a thin chemical layer that adds gloss, hydrophobic properties, and UV protection. Many of our luxury clients combine the two: PPF on high-impact areas (hood, fenders, mirrors) plus full-car ceramic coating on top."
   },
   {
-    question: "How long does ceramic coating last?",
-    answer: "Ceramic coating typically lasts 2-5 years depending on the quality of the product, environmental conditions, and maintenance. Professional-grade coatings like XPEL's Fusion Plus are designed to withstand harsh conditions and provide extended protection."
+    question: "What's the legal window tint percentage in Florida?",
+    answer: "Florida law allows 28% VLT (visible light transmission) on front side windows and 15% VLT on rear side and back windows for sedans. SUVs and vans can have any darkness on rear windows. Bespoke Auto Design uses XPEL Prime XR Plus ceramic tint, which delivers up to 98% infrared heat rejection and 99% UV blocking — even at legal-friendly shades — making a real difference in Miami summers."
   },
   {
-    question: "Can you apply ceramic coating over PPF?",
-    answer: "Yes, ceramic coating can be applied over paint protection film for enhanced protection and easier maintenance. XPEL COLOR PPF and other XPEL films are specifically designed to be compatible with ceramic coatings for optimal performance."
-  },
-
-  // Ceramic Tint Section
-  {
-    question: "What is ceramic window tint?",
-    answer: "Ceramic window tint is a premium film that uses nano-ceramic technology to block heat, UV rays, and infrared light without compromising visibility. It offers superior performance compared to traditional tint films, providing advanced protection and comfort."
+    question: "How much does it cost to wrap a car in Miami?",
+    answer: "Color change wraps at Bespoke Auto Design start at $2,500 and range up to $7,500+ depending on the vehicle, film brand, and coverage. We use premium 3M, Avery Dennison, and KPMF films with hundreds of finishes including gloss, satin, matte, chrome, and color-shift. All wraps are removable and protect your factory paint underneath."
   },
   {
-    question: "Does window film reduce heat in a car?",
-    answer: "Yes, XPEL's ceramic window films are engineered to reduce heat by blocking infrared and UV rays. Ceramic films offer superior heat rejection, keeping your car cooler and more comfortable while reducing air conditioning usage."
+    question: "How long does PPF installation take?",
+    answer: "Most full-front PPF installations take 1-2 days at Bespoke Auto Design, while full-body coverage takes 4-7 days. We never rush — proper paint decontamination, precision DAP-cut templates, and careful edge work are what separate a 10-year install from one that peels in 6 months. We're currently booking 1-2 weeks out for new installations."
   },
   {
-    question: "How long does window film last?",
-    answer: "XPEL automotive window films are designed to be durable and long-lasting, with an average lifespan of 5 to 10 years depending on the film type and installation quality. Proper care and maintenance can extend the life of the film."
+    question: "Will PPF damage my car's paint when removed?",
+    answer: "No — quality PPF is designed to remove cleanly without damaging factory paint. XPEL Ultimate Plus uses a removable adhesive that won't pull clear coat or leave residue when removed by a professional. In fact, PPF preserves your original paint underneath for years, often making the protected paint look better than unprotected sections at trade-in time."
   },
   {
-    question: "What is the warranty for XPEL's automotive window film?",
-    answer: "XPEL automotive window films come with a lifetime warranty, covering issues like peeling, cracking, fading, and discoloration. This ensures that your investment in window film is protected for the long term."
+    question: "Do you offer ceramic coating for boats and yachts in Miami?",
+    answer: "Yes — Bespoke Auto Design specializes in marine ceramic coating, marine PPF, and marine window tint for boats and yachts in the Miami area. Saltwater, intense sun, and constant moisture destroy unprotected gel coat and paint. Our marine ceramic coatings provide hydrophobic protection, UV defense, and gloss enhancement that significantly extend the life of your vessel's finish."
+  },
+  {
+    question: "What's included in your XPEL ceramic coating packages?",
+    answer: "Every Bespoke Auto Design ceramic coating package includes thorough hand wash, full paint decontamination (clay bar + iron remover), multi-stage paint correction to remove existing swirls and scratches, panel-by-panel application of XPEL Fusion Plus ceramic, infrared curing, and a maintenance guide. Manufacturer warranties range from 5 years to lifetime depending on the package."
+  },
+  {
+    question: "Where is Bespoke Auto Design located?",
+    answer: "Bespoke Auto Design is located at 7943 NW 64th St, Miami, FL 33166 — easily accessible from Brickell, Coral Gables, Bal Harbour, Key Biscayne, Sunny Isles, Aventura, Miami Beach, and Coconut Grove. Our climate-controlled installation facility is purpose-built for flawless XPEL paint protection film, ceramic coating, and ceramic window tint installations. Call (786) 395-9172 or email sales@bespokeauto.design for a free quote."
   }
 ];
 
