@@ -1,4 +1,5 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { PricingCards } from "@/components/PricingCards";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
@@ -59,16 +60,15 @@ const CeramicCoating = () => {
       {
         "@type": "Service",
         "name": "Ceramic Coating Installation",
-        "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Bespoke Auto Design",
-          "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
-          "telephone": "+1-786-395-9172"
-        },
-        "areaServed": [
-          { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Coral Gables" }, { "@type": "City", "name": "Brickell" }
-        ],
-        "description": "Professional ceramic coating installation in Miami. Multi-layer nano-ceramic protection for luxury and exotic vehicles."
+        "provider": providerSchema,
+        "areaServed": areaServed,
+        "description": "Professional ceramic coating installation in Miami. Multi-layer nano-ceramic protection for luxury and exotic vehicles.",
+        "offers": {
+          "@type": "Offer",
+          "price": "599",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "FAQPage",

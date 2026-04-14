@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { Badge } from "@/components/ui/badge";
 import { Sun, CheckCircle, Eye, Award, Shield } from "lucide-react";
 import xpelLogo from "@/assets/xpel-logo.svg";
@@ -42,8 +43,8 @@ const MarineCeramicTint = () => {
     "@type": "Service",
     "name": "Marine Ceramic Tint",
     "description": "Premium ceramic window tinting for boats and yachts in South Florida",
-    "provider": { "@type": "AutomotiveBusiness", "name": "Bespoke Auto Design" },
-    "areaServed": "South Florida"
+    "provider": providerSchema,
+    "areaServed": areaServed
   };
 
   return (

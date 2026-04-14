@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { providerSchema } from "@/utils/seoHelpers";
 import { PricingCards } from "@/components/PricingCards";
 import Footer from "@/components/Footer";
 import { Badge } from '@/components/ui/badge';
@@ -54,12 +55,7 @@ const XPELColorPPF = () => {
     "offers": {
       "@type": "Offer",
       "availability": "https://schema.org/InStock",
-      "seller": {
-        "@type": "AutomotiveBusiness",
-        "name": "Bespoke Auto Design",
-        "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
-        "telephone": "+1-786-395-9172"
-      }
+      "seller": providerSchema
     }
   };
 

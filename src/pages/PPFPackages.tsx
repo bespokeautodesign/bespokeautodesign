@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
@@ -37,16 +38,15 @@ const PPFPackages = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "PPF Packages - Paint Protection Film Installation",
-    "provider": {
-      "@type": "AutomotiveBusiness",
-      "name": "Bespoke Auto Design",
-      "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
-      "telephone": "+1-786-395-9172"
-    },
-    "areaServed": [
-      { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Coral Gables" }, { "@type": "City", "name": "Doral" }, { "@type": "City", "name": "Fort Lauderdale" }
-    ],
+    "provider": providerSchema,
+    "areaServed": areaServed,
     "description": "XPEL paint protection film packages in Miami. Full Front, Track, and Full Body coverage options with 10-year warranty.",
+    "offers": {
+      "@type": "Offer",
+      "price": "1499",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "PPF Packages",

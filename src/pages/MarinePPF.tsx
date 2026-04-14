@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Anchor, CheckCircle, Award } from "lucide-react";
 import xpelLogo from "@/assets/xpel-logo.svg";
@@ -45,8 +46,8 @@ const MarinePPF = () => {
     "@type": "Service",
     "name": "Marine Paint Protection Film",
     "description": "XPEL marine PPF installation for boats and yachts in South Florida",
-    "provider": { "@type": "AutomotiveBusiness", "name": "Bespoke Auto Design" },
-    "areaServed": "South Florida"
+    "provider": providerSchema,
+    "areaServed": areaServed
   };
 
   return (

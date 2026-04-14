@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Anchor, Waves, Shield } from "lucide-react";
@@ -19,15 +20,8 @@ const Marine = () => {
     "@type": "Service",
     "name": "Marine Protection Services",
     "description": "Specialized XPEL protection services for boats, yachts, and marine vessels in Miami, FL",
-    "provider": {
-      "@type": "AutomotiveBusiness",
-      "name": "Bespoke Auto Design",
-      "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
-      "telephone": "+1-786-395-9172"
-    },
-    "areaServed": [
-      { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Fort Lauderdale" }
-    ],
+    "provider": providerSchema,
+    "areaServed": areaServed,
     "serviceType": "Marine Protection"
   };
 

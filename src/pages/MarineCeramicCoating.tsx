@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { Badge } from "@/components/ui/badge";
 import { Droplets, CheckCircle, Shield, Award } from "lucide-react";
 import xpelLogo from "@/assets/xpel-logo.svg";
@@ -42,8 +43,8 @@ const MarineCeramicCoating = () => {
     "@type": "Service",
     "name": "Marine Ceramic Coating",
     "description": "Professional marine-grade ceramic coating for boats and yachts in South Florida",
-    "provider": { "@type": "AutomotiveBusiness", "name": "Bespoke Auto Design" },
-    "areaServed": "South Florida"
+    "provider": providerSchema,
+    "areaServed": areaServed
   };
 
   return (

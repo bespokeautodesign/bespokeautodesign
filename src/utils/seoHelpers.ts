@@ -12,6 +12,32 @@ export const addStructuredData = (schemaData: object) => {
   document.head.appendChild(script);
 };
 
+const areaServed = [
+  { "@type": "City", "name": "Miami" },
+  { "@type": "City", "name": "Brickell" },
+  { "@type": "City", "name": "Coral Gables" },
+  { "@type": "City", "name": "Bal Harbour" },
+  { "@type": "City", "name": "Key Biscayne" },
+  { "@type": "City", "name": "Sunny Isles" },
+  { "@type": "City", "name": "Coconut Grove" },
+  { "@type": "City", "name": "Aventura" },
+  { "@type": "City", "name": "Miami Beach" },
+  { "@type": "City", "name": "South Miami" },
+  { "@type": "City", "name": "Doral" },
+  { "@type": "City", "name": "Pinecrest" }
+];
+
+export const providerSchema = {
+  "@type": "AutomotiveBusiness",
+  "name": "Bespoke Auto Design",
+  "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
+  "telephone": "+1-786-395-9172",
+  "geo": { "@type": "GeoCoordinates", "latitude": "25.823", "longitude": "-80.318" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47", "bestRating": "5", "worstRating": "1" }
+};
+
+export { areaServed };
+
 export const businessSchema = {
   "@context": "https://schema.org",
   "@type": "AutomotiveBusiness",
@@ -20,6 +46,9 @@ export const businessSchema = {
   "url": "https://www.bespokeauto.design",
   "telephone": "+1-786-395-9172",
   "email": "sales@bespokeauto.design",
+  "slogan": "Miami's Premier XPEL-Certified Auto Protection Studio",
+  "priceRange": "$$$",
+  "founder": { "@type": "Person", "name": "Alessandro" },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "7943 NW 64th St",
@@ -30,23 +59,19 @@ export const businessSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "25.838912",
-    "longitude": "-80.33659"
+    "latitude": "25.823",
+    "longitude": "-80.318"
   },
-  "openingHours": [
-    "Mo-Fr 09:00-18:00",
-    "Sa 10:00-16:00"
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "16:00" }
   ],
-  "priceRange": "$$$$",
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": "25.838912",
-      "longitude": "-80.33659"
-    },
-    "geoRadius": "50000"
-  },
+  areaServed,
+  "knowsAbout": [
+    "Paint Protection Film", "PPF Installation", "Ceramic Coating", "XPEL",
+    "Ceramic Window Tint", "Color Change Wrap", "Vehicle Wrap",
+    "Automotive Detailing", "Marine Ceramic Coating"
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Automotive Protection Services",
@@ -80,7 +105,7 @@ export const businessSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
-    "reviewCount": "40",
+    "reviewCount": "47",
     "bestRating": "5",
     "worstRating": "1"
   },

@@ -1,4 +1,5 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { PricingCards } from "@/components/PricingCards";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
@@ -49,15 +50,8 @@ const StealthPPF = () => {
       {
         "@type": "Service",
         "name": "Stealth PPF (Matte Paint Protection Film) Installation",
-        "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Bespoke Auto Design",
-          "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
-          "telephone": "+1-786-395-9172"
-        },
-        "areaServed": [
-          { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Coral Gables" }
-        ],
+        "provider": providerSchema,
+        "areaServed": areaServed,
         "description": "Professional XPEL Stealth matte/satin paint protection film installation in Miami. Self-healing technology with 10-year warranty."
       },
       {
