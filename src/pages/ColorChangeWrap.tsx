@@ -178,16 +178,15 @@ const ColorChangeWrap = () => {
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Color Change Vinyl Wrap",
-      "provider": {
-        "@type": "AutomotiveBusiness",
-        "name": "Bespoke Auto Design",
-        "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
-        "telephone": "+1-786-395-9172"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Coral Gables" }, { "@type": "City", "name": "Doral" }, { "@type": "City", "name": "Wynwood" }
-      ],
-      "description": "Professional color change vinyl wraps in Miami using premium-grade cast vinyl films for complete vehicle customization."
+      "provider": providerSchema,
+      "areaServed": areaServed,
+      "description": "Professional color change vinyl wraps in Miami using premium-grade cast vinyl films for complete vehicle customization.",
+      "offers": {
+        "@type": "Offer",
+        "price": "2500",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
     },
     {
       "@context": "https://schema.org",

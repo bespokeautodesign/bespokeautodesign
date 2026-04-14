@@ -1,4 +1,5 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { PricingCards, PricingTier } from "@/components/PricingCards";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
@@ -49,17 +50,15 @@ const PaintProtectionFilm = () => {
       {
         "@type": "Service",
         "name": "Paint Protection Film Installation",
-        "provider": {
-          "@type": "AutomotiveBusiness",
-          "name": "Bespoke Auto Design",
-          "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
-          "telephone": "+1-786-395-9172",
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47", "bestRating": "5", "worstRating": "1" }
-        },
-        "areaServed": [
-          { "@type": "City", "name": "Miami" }, { "@type": "City", "name": "Miami Beach" }, { "@type": "City", "name": "Coral Gables" }, { "@type": "City", "name": "Doral" }, { "@type": "City", "name": "Brickell" }
-        ],
+        "provider": providerSchema,
+        "areaServed": areaServed,
         "description": "Professional XPEL paint protection film installation in Miami. Self-healing, invisible armor for luxury and exotic vehicles.",
+        "offers": {
+          "@type": "Offer",
+          "price": "1499",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "PPF Packages",
