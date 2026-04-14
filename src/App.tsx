@@ -31,6 +31,10 @@ const ServiceAreaBrickell = lazy(() => import("./pages/ServiceAreaBrickell"));
 const ServiceAreaCoralGables = lazy(() => import("./pages/ServiceAreaCoralGables"));
 const ServiceAreaBalHarbour = lazy(() => import("./pages/ServiceAreaBalHarbour"));
 const ServiceAreaKeyBiscayne = lazy(() => import("./pages/ServiceAreaKeyBiscayne"));
+const ServiceAreaCoconutGrove = lazy(() => import("./pages/ServiceAreaCoconutGrove"));
+const ServiceAreaSunnyIsles = lazy(() => import("./pages/ServiceAreaSunnyIsles"));
+const ServiceAreaAventura = lazy(() => import("./pages/ServiceAreaAventura"));
+const ServiceAreaMiamiBeach = lazy(() => import("./pages/ServiceAreaMiamiBeach"));
 
 const queryClient = new QueryClient();
 
@@ -73,6 +77,10 @@ const App = () => (
             <Route path="/service-areas/coral-gables" element={<ServiceAreaCoralGables />} />
             <Route path="/service-areas/bal-harbour" element={<ServiceAreaBalHarbour />} />
             <Route path="/service-areas/key-biscayne" element={<ServiceAreaKeyBiscayne />} />
+            <Route path="/service-areas/coconut-grove" element={<ServiceAreaCoconutGrove />} />
+            <Route path="/service-areas/sunny-isles" element={<ServiceAreaSunnyIsles />} />
+            <Route path="/service-areas/aventura" element={<ServiceAreaAventura />} />
+            <Route path="/service-areas/miami-beach" element={<ServiceAreaMiamiBeach />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
