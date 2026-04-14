@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { GOOGLE_PLACES_API_KEY, GOOGLE_PLACE_ID } from "@/config/places";
 
-const CACHE_KEY = "bespoke-reviews-v1";
+const CACHE_KEY = "bespoke-reviews-v2";
 const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
 
 interface ReviewAuthor {
@@ -51,7 +51,10 @@ export function useGoogleReviews(): UseGoogleReviewsReturn {
       if (cached) {
         const parsed: CachedData = JSON.parse(cached);
         if (Date.now() - parsed.timestamp < CACHE_TTL) {
-          setData({ rating: parsed.rating, reviewCount: parsed.reviewCount, reviews: parsed.reviews });
+          const sortedCached = [...parsed.reviews].sort(
+            (a, b) => new Date(b.publishTime).getTime() - new Date(a.publishTime).getTime()
+          );
+          setData({ rating: parsed.rating, reviewCount: parsed.reviewCount, reviews: sortedCached });
           setLoading(false);
           return;
         }

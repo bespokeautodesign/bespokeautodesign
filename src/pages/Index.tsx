@@ -366,9 +366,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       {/* Competitive Edge */}
       <CompetitiveEdge onQuoteClick={() => setQuoteModalOpen(true)} />
 
-      {/* FAQ Section */}
-      <HomeFAQ />
-
       {/* Contact Section */}
       <section id="contact" className="py-20" style={{ backgroundColor: '#111111' }}>
         <div className="container mx-auto px-6">
@@ -605,6 +602,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <HomeFAQ />
 
       {/* Footer */}
       <Footer />
