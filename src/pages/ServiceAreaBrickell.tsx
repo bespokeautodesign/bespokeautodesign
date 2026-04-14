@@ -139,8 +139,7 @@ const ServiceAreaBrickell = () => {
           </div>
           {/* Stat strip */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/60">
-            <span className="flex items-center gap-1.5"><Star className="w-4 h-4 text-amber-500" /> 5-Star Rated</span>
-            <span>•</span>
+            <GoogleRatingChip />
             <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-amber-500" /> XPEL Authorized Dealer</span>
             <span className="hidden sm:inline">•</span>
             <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-amber-500" /> Up to 10-Year Warranty</span>
