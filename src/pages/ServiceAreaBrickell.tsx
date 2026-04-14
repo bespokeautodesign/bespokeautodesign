@@ -7,6 +7,7 @@ import { Shield, Sun, Thermometer, Car, Phone, MapPin, Star, Award, Clock, Arrow
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageSEO from "@/components/PageSEO";
+import { GoogleRatingChip } from "@/components/GoogleRatingChip";
 import { providerSchema, areaServed } from "@/utils/seoHelpers";
 
 const brickellFaqData = [
