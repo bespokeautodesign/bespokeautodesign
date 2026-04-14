@@ -27,6 +27,7 @@ const StealthPPF = lazy(() => import("./pages/StealthPPF"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Gallery = lazy(() => import("./pages/Gallery"));
+const ServiceAreaBrickell = lazy(() => import("./pages/ServiceAreaBrickell"));
 
 const queryClient = new QueryClient();
 
@@ -65,6 +66,7 @@ const App = () => (
             <Route path="/ppf-packages" element={<PPFPackages />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/service-areas/brickell" element={<ServiceAreaBrickell />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
