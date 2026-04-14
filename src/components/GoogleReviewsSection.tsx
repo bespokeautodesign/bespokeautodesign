@@ -1,10 +1,17 @@
-import { Star, ExternalLink } from "lucide-react";
+import { Star, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 import { useGoogleReviews, type GoogleReview } from "@/hooks/useGoogleReviews";
-import { GOOGLE_WRITE_REVIEW_URL, GOOGLE_REVIEWS_URL } from "@/config/places";
+import { GOOGLE_WRITE_REVIEW_URL, GOOGLE_REVIEWS_URL, GOOGLE_PLACE_ID } from "@/config/places";
 
 function ReviewCard({ review }: { review: GoogleReview }) {
   const text = review.text?.text ?? "";
@@ -17,7 +24,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
     .toUpperCase();
 
   return (
-    <div className="bg-[#1a1a1a] rounded-xl p-6 border border-[#333] hover:border-amber-500/40 transition-colors">
+    <div className="bg-[#1a1a1a] rounded-xl p-6 border border-[#333] hover:border-amber-500/40 transition-colors h-full flex flex-col">
       <div className="flex items-center gap-3 mb-3">
         <Avatar className="h-10 w-10">
           {review.authorAttribution.photoUri && (
@@ -37,8 +44,29 @@ function ReviewCard({ review }: { review: GoogleReview }) {
           <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
         ))}
       </div>
-      {truncated && <p className="text-white/70 text-sm leading-relaxed">{truncated}</p>}
+      {truncated && <p className="text-white/70 text-sm leading-relaxed flex-1">{truncated}</p>}
     </div>
+  );
+}
+
+function SeeAllCard({ reviewCount }: { reviewCount: number }) {
+  return (
+    <a
+      href={`https://www.google.com/maps/place/?q=place_id:${GOOGLE_PLACE_ID}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-[#1a1a1a] rounded-xl p-6 border-2 border-amber-500/50 hover:border-amber-500 transition-colors h-full flex flex-col items-center justify-center gap-4 text-center group"
+    >
+      <div className="w-14 h-14 rounded-full bg-amber-500/20 flex items-center justify-center">
+        <Star className="h-7 w-7 fill-amber-400 text-amber-400" />
+      </div>
+      <p className="text-white font-semibold text-lg">
+        See all {reviewCount}+ Google reviews ↗
+      </p>
+      <p className="text-white/50 text-sm group-hover:text-amber-400 transition-colors">
+        View on Google Maps
+      </p>
+    </a>
   );
 }
 
@@ -63,7 +91,6 @@ function ReviewSkeleton() {
 
 export function GoogleReviewsSection() {
   const { rating, reviewCount, reviews, loading } = useGoogleReviews();
-  const displayReviews = reviews.slice(0, 6);
 
   return (
     <section className="py-20 px-4" style={{ backgroundColor: "#0f0f0f" }}>
@@ -80,20 +107,35 @@ export function GoogleReviewsSection() {
           </p>
         </div>
 
-        {/* Review Cards */}
+        {/* Review Carousel */}
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[...Array(3)].map((_, i) => (
               <ReviewSkeleton key={i} />
             ))}
           </div>
-        ) : displayReviews.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {displayReviews.map((review, i) => (
-              <ReviewCard key={i} review={review} />
-            ))}
+        ) : (
+          <div className="mb-12">
+            <Carousel
+              opts={{ loop: true, align: "start" }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {reviews.map((review, i) => (
+                  <CarouselItem key={i} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                    <ReviewCard review={review} />
+                  </CarouselItem>
+                ))}
+                {/* "See all" card */}
+                <CarouselItem className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <SeeAllCard reviewCount={reviewCount} />
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="hidden lg:flex -left-12 border-amber-500/50 text-amber-400 hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 bg-[#1a1a1a]" />
+              <CarouselNext className="hidden lg:flex -right-12 border-amber-500/50 text-amber-400 hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 bg-[#1a1a1a]" />
+            </Carousel>
           </div>
-        ) : null}
+        )}
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-6 border-t border-[#333]">

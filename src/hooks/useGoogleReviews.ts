@@ -73,10 +73,13 @@ export function useGoogleReviews(): UseGoogleReviewsReturn {
         return res.json();
       })
       .then((json) => {
+        const sortedReviews = ((json.reviews ?? []) as GoogleReview[]).sort(
+          (a, b) => new Date(b.publishTime).getTime() - new Date(a.publishTime).getTime()
+        );
         const result = {
           rating: json.rating ?? DEFAULTS.rating,
           reviewCount: json.userRatingCount ?? DEFAULTS.reviewCount,
-          reviews: (json.reviews ?? []) as GoogleReview[],
+          reviews: sortedReviews,
         };
         setData(result);
 

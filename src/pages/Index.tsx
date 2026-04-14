@@ -581,36 +581,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       </section>
 
 
-      {/* Testimonials Section - temporarily removed, component preserved in TestimonialCarousel.tsx */}
 
-
-      {/* Google Review CTA */}
-      <section className="py-16 bg-black/90 backdrop-blur-md">
-        <div className="container mx-auto px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="flex justify-center gap-1 mb-4">
-              {[...Array(5)].map((_, i) =>
-                <Star key={i} className="h-7 w-7 fill-yellow-400 text-yellow-400" />
-                )}
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Love Your Experience?</h2>
-            <p className="text-lg text-white/70 mb-8">
-              Your feedback means the world to us. Share your experience and help others discover Miami's most trusted car boutique.
-            </p>
-            <Button
-                variant="premium"
-                size="lg"
-                className="text-lg px-10"
-                asChild>
-
-              <a href="https://g.page/r/CVyMGIzAlqxEEAE/review" target="_blank" rel="noopener noreferrer">
-                <Star className="h-5 w-5 mr-2" />
-                Leave a Google Review
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Google Reviews Section */}
+      <GoogleReviewsSection />
 
       {/* Instagram Feed Section */}
       <section className="py-12" style={{ backgroundColor: '#0f0f0f' }}>
@@ -626,16 +599,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                 allowTransparency={true}
                 className="lightwidget-widget w-full border-0 overflow-hidden"
                 title="Bespoke Auto Design Instagram Feed" />
-
           </div>
         </div>
       </section>
-
-      {/* FAQ Section */}
-      <HomeFAQ />
-
-      {/* Google Reviews Section */}
-      <GoogleReviewsSection />
 
       {/* Footer */}
       <Footer />
