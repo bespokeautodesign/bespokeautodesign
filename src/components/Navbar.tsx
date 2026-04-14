@@ -39,7 +39,7 @@ const navItemsAfter: {label: string;href: string;}[] = [
 const NavLink = ({ href, active, children, className = "" }: {href: string;active: boolean;children: React.ReactNode;className?: string;}) =>
 <Link
   to={href}
-  className={`text-sm xl:text-base whitespace-nowrap transition-all duration-300 ${
+  className={`text-xs xl:text-sm whitespace-nowrap transition-all duration-300 ${
   active ?
   "text-[hsl(var(--nav-foreground-active))] font-semibold" :
   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))]"} ${
@@ -110,18 +110,18 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-1 xl:gap-2 min-w-0">
+            <div className="hidden lg:flex items-center gap-0.5 xl:gap-1 min-w-0">
               {/* PPF Dropdown */}
               <div className="relative" ref={dropdownRef} onMouseLeave={() => setPpfOpen(false)}>
                 <Link
                   to="/paint-protection-film"
                   onMouseEnter={() => setPpfOpen(true)}
-                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm xl:text-base whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md text-xs xl:text-sm whitespace-nowrap transition-all duration-300 ${
                   isPPFActive || location.pathname === "/paint-protection-film" ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
                   }>
-                  Xpel Paint Protection Film
+                  PPF
 
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${ppfOpen ? "rotate-180" : ""}`} />
                 </Link>
@@ -140,7 +140,7 @@ const Navbar = () => {
 
               {/* Middle nav items */}
               {navItemsBefore.map((item) =>
-              <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-3 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
+              <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-2 xl:px-3 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
                   {item.label}
                 </NavLink>
               )}
@@ -150,7 +150,7 @@ const Navbar = () => {
                 <Link
                   to="/marine"
                   onMouseEnter={() => setMarineOpen(true)}
-                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm xl:text-base whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md text-xs xl:text-sm whitespace-nowrap transition-all duration-300 ${
                   isMarineActive || location.pathname === "/marine" ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
@@ -174,7 +174,7 @@ const Navbar = () => {
 
               {/* After items (Gallery) */}
               {navItemsAfter.map((item) =>
-              <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-3 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
+              <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-2 xl:px-3 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
                   {item.label}
                 </NavLink>
               )}
@@ -183,12 +183,12 @@ const Navbar = () => {
               <div className="relative" ref={areasDropdownRef} onMouseLeave={() => setAreasOpen(false)}>
                 <button
                   onMouseEnter={() => setAreasOpen(true)}
-                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-sm xl:text-base whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md text-xs xl:text-sm whitespace-nowrap transition-all duration-300 ${
                   isAreasActive ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
                   }>
-                  Service Areas
+                  Areas
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${areasOpen ? "rotate-180" : ""}`} />
                 </button>
                 {areasOpen &&
@@ -206,25 +206,25 @@ const Navbar = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="flex items-center gap-2 flex-shrink-0">
               <a
                 href="tel:7863959172" onClick={() => trackPhoneCall()}
-                className="hidden xl:flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
+                className="hidden lg:flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
 
                 <Phone className="h-4 w-4" />
-                (786) 395-9172
+                <span className="hidden 2xl:inline">(786) 395-9172</span>
               </a>
               <Button
                 variant="premium"
                 size="sm"
                 onClick={() => setQuoteModalOpen(true)}
-                className="hidden xl:flex bg-[hsl(var(--nav-foreground-active))] text-[hsl(var(--nav-bg))] hover:bg-[hsl(var(--nav-foreground))] font-bold tracking-wide">
+                className="hidden lg:flex bg-[hsl(var(--nav-foreground-active))] text-[hsl(var(--nav-bg))] hover:bg-[hsl(var(--nav-foreground))] font-bold tracking-wide text-xs">
 
                 Get Quote
               </Button>
               <a
                 href="tel:7863959172" onClick={() => trackPhoneCall()}
-                className="xl:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
+                className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
 
                 <Phone className="h-5 w-5" />
               </a>
