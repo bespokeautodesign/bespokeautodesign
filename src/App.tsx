@@ -27,6 +27,7 @@ const StealthPPF = lazy(() => import("./pages/StealthPPF"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Gallery = lazy(() => import("./pages/Gallery"));
+const ServiceAreaBrickell = lazy(() => import("./pages/ServiceAreaBrickell"));
 
 const queryClient = new QueryClient();
 
