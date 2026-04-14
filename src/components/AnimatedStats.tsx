@@ -47,7 +47,7 @@ const StatCounter = ({ stat, inView }: { stat: StatItem; inView: boolean }) => {
           <Icon className="h-6 w-6 text-primary" />
         </div>
       </div>
-      <div className="text-3xl md:text-4xl font-bold tracking-tight">
+      <div className="text-3xl md:text-4xl font-bold tracking-tight text-white">
         {isLifetime ? (inView ? "Lifetime" : "—") : `${count}${stat.suffix}`}
       </div>
       <div className="text-sm text-white/80">{stat.label}</div>
@@ -71,7 +71,7 @@ export const AnimatedStats = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-16 bg-accent/30">
+    <section ref={ref} className="relative py-16 bg-black/70">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
           {stats.map((stat) => (
