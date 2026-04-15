@@ -53,6 +53,9 @@ const InstantQuote = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
+  // interaction tracking for inline validation
+  const [touched, setTouched] = useState({ vehicle: false, services: false });
+
   // form fields
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
