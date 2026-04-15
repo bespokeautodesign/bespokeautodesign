@@ -469,8 +469,19 @@ const InstantQuote = () => {
 
               <Textarea placeholder="Additional notes (optional)" value={message} onChange={e => setMessage(e.target.value)} rows={3} className="bg-[#1a1a1a] border-[#333] text-white placeholder:text-white/40 resize-none" />
 
+              {formError && (
+                <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-300 text-sm">
+                  {formError}
+                </div>
+              )}
+
               <Button type="submit" variant="premium" size="lg" className="w-full text-base font-bold" disabled={formSubmitting}>
-                {formSubmitting ? "Sending..." : "Submit Quote Request"}
+                {formSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending…
+                  </span>
+                ) : "Submit Quote Request"}
               </Button>
             </form>
           )}
