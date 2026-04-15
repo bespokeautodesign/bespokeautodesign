@@ -74,7 +74,7 @@ const InstantQuote = () => {
         next.delete(s);
         if (s === "ppf") setPpfPkg(null);
         if (s === "coating") setCoatingPkg(null);
-        if (s === "tint") { setTintPkg(null); }
+        if (s === "tint") { setTintPkg(null); setWindshieldTint(false); }
         if (s === "wrap") setWrapPkg(null);
       } else {
         next.add(s);
@@ -88,10 +88,10 @@ const InstantQuote = () => {
     if (services.size === 0) return false;
     if (services.has("ppf") && !ppfPkg) return false;
     if (services.has("coating") && !coatingPkg) return false;
-    if (services.has("tint") && !tintPkg) return false;
+    if (services.has("tint") && !tintPkg && !windshieldTint) return false;
     if (services.has("wrap") && !wrapPkg) return false;
     return true;
-  }, [services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
+  }, [services, ppfPkg, coatingPkg, tintPkg, windshieldTint, wrapPkg]);
 
   const formReady = Boolean(vehicle && services.size > 0 && allPackagesSelected);
 
@@ -107,9 +107,14 @@ const InstantQuote = () => {
       const r = coatingPricing[coatingPkg][vehicle];
       min += r[0]; max += r[1];
     }
-    if (services.has("tint") && tintPkg) {
-      const r = tintPricing[tintPkg][vehicle];
-      min += r[0]; max += r[1];
+    if (services.has("tint")) {
+      if (tintPkg) {
+        const r = tintPricing[tintPkg][vehicle];
+        min += r[0]; max += r[1];
+      }
+      if (windshieldTint) {
+        min += WINDSHIELD_ADDON[0]; max += WINDSHIELD_ADDON[1];
+      }
     }
     if (services.has("wrap") && wrapPkg) {
       const r = wrapPricing[wrapPkg][vehicle];
@@ -117,7 +122,7 @@ const InstantQuote = () => {
     }
     if (min === 0 && max === 0) return null;
     return { min, max };
-  }, [vehicle, services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
+  }, [vehicle, services, ppfPkg, coatingPkg, tintPkg, windshieldTint, wrapPkg]);
 
   const selectedSummary = useMemo(() => {
     const items: string[] = [];
