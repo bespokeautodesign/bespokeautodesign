@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Shield, Award, Car, ChevronRight, Calculator, Check, Star, ArrowRight, Phone } from "lucide-react";
 import {
   VehicleType, ServiceType,
@@ -52,6 +53,9 @@ const InstantQuote = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
+  // interaction tracking for inline validation
+  const [touched, setTouched] = useState({ vehicle: false, services: false });
+
   // form fields
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -60,6 +64,7 @@ const InstantQuote = () => {
   const [message, setMessage] = useState("");
 
   const toggleService = (s: ServiceType) => {
+    setTouched(prev => ({ ...prev, services: true }));
     setServices(prev => {
       const next = new Set(prev);
       if (next.has(s)) {
@@ -74,6 +79,18 @@ const InstantQuote = () => {
       return next;
     });
   };
+
+  // Check all selected services have a package chosen
+  const allPackagesSelected = useMemo(() => {
+    if (services.size === 0) return false;
+    if (services.has("ppf") && !ppfPkg) return false;
+    if (services.has("coating") && !coatingPkg) return false;
+    if (services.has("tint") && !tintPkg) return false;
+    if (services.has("wrap") && !wrapPkg) return false;
+    return true;
+  }, [services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
+
+  const formReady = Boolean(vehicle && services.size > 0 && allPackagesSelected);
 
   // price calculation
   const priceRange = useMemo(() => {
@@ -279,7 +296,7 @@ const InstantQuote = () => {
                 {vehicleTypes.map(v => (
                   <button
                     key={v.key}
-                    onClick={() => setVehicle(v.key)}
+                    onClick={() => { setVehicle(v.key); setTouched(prev => ({ ...prev, vehicle: true })); }}
                     className={`p-4 rounded-lg border-2 text-left transition-all duration-200 ${
                       vehicle === v.key
                         ? "border-amber-500 bg-amber-500/10 shadow-[0_0_20px_rgba(245,158,11,0.15)]"
@@ -292,6 +309,9 @@ const InstantQuote = () => {
                   </button>
                 ))}
               </div>
+              {touched.vehicle && !vehicle && (
+                <p className="text-amber-400/80 text-xs mt-2">Please select your vehicle</p>
+              )}
             </div>
 
             {/* GROUP 2: Services */}
@@ -320,6 +340,9 @@ const InstantQuote = () => {
                   </button>
                 ))}
               </div>
+              {touched.services && services.size === 0 && (
+                <p className="text-amber-400/80 text-xs mt-2">Please select at least one service</p>
+              )}
             </div>
 
             {/* GROUP 3: Packages (accordion) */}
@@ -356,6 +379,7 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
+                        {!ppfPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
                       </AccordionContent>
                     </AccordionItem>
                   )}
@@ -385,6 +409,7 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
+                        {!coatingPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
                       </AccordionContent>
                     </AccordionItem>
                   )}
@@ -414,6 +439,7 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
+                        {!tintPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
                       </AccordionContent>
                     </AccordionItem>
                   )}
@@ -443,6 +469,7 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
+                        {!wrapPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
                       </AccordionContent>
                     </AccordionItem>
                   )}
@@ -553,14 +580,33 @@ const InstantQuote = () => {
                 </div>
               )}
 
-              <Button type="submit" variant="premium" size="lg" className="w-full text-base font-bold" disabled={formSubmitting}>
-                {formSubmitting ? (
-                  <span className="flex items-center gap-2">
-                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending…
-                  </span>
-                ) : "Submit Quote Request"}
-              </Button>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <span className="w-full">
+                      <Button
+                        type="submit"
+                        variant="premium"
+                        size="lg"
+                        className={`w-full text-base font-bold transition-all ${!formReady && !formSubmitting ? "opacity-40 cursor-not-allowed border-amber-500/30" : ""}`}
+                        disabled={formSubmitting || !formReady}
+                      >
+                        {formSubmitting ? (
+                          <span className="flex items-center gap-2">
+                            <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                            Sending…
+                          </span>
+                        ) : "Submit Quote Request"}
+                      </Button>
+                    </span>
+                  </TooltipTrigger>
+                  {!formReady && (
+                    <TooltipContent side="top" className="bg-[#222] border-[#444] text-amber-400 text-sm">
+                      Please complete your selections to continue
+                    </TooltipContent>
+                  )}
+                </Tooltip>
+              </TooltipProvider>
             </form>
           )}
         </div>
