@@ -85,6 +85,8 @@ const ServiceAreaBalHarbour = () => (
     </div>
 
     <section className="py-20 px-4 bg-[#141414]">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="font-playfair text-2xl md:text-4xl font-bold text-white text-center mb-12">Why Bal Harbour Drivers Choose Bespoke</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {whyCards.map((card, i) => (
             <Card key={i} className="bg-[#1a1a1a] border-[#333] text-[#e5e5e5]">
