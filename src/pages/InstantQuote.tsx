@@ -171,6 +171,7 @@ const InstantQuote = () => {
         `Vehicle Size Category: ${vehicle || "Not selected"}`,
         `Selected Services: ${servicesList}`,
         `Estimated Price Range: ${rangeStr}`,
+        windshieldAddon ? `Windshield Tint Add-On: Yes` : (services.has("tint") ? `Windshield Tint Add-On: No` : ""),
         message.trim() ? `\nAdditional Notes: ${message.trim()}` : "",
       ].filter(Boolean).join("\n");
 
