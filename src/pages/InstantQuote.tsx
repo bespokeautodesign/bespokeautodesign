@@ -19,6 +19,7 @@ import {
   ppfPackages, coatingPackages, tintPackages, wrapPackages,
   ppfPricing, coatingPricing, tintPricing, wrapPricing,
   PPFPackage, CoatingPackage, TintPackage, WrapPackage,
+  WINDSHIELD_ADDON,
 } from "@/config/pricing";
 
 // ── FAQ data ───────────────────────────────────────────────
@@ -48,6 +49,7 @@ const InstantQuote = () => {
   const [coatingPkg, setCoatingPkg] = useState<CoatingPackage | null>(null);
   const [tintPkg, setTintPkg] = useState<TintPackage | null>(null);
   const [wrapPkg, setWrapPkg] = useState<WrapPackage | null>(null);
+  const [windshieldAddon, setWindshieldAddon] = useState(false);
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -71,7 +73,7 @@ const InstantQuote = () => {
         next.delete(s);
         if (s === "ppf") setPpfPkg(null);
         if (s === "coating") setCoatingPkg(null);
-        if (s === "tint") setTintPkg(null);
+        if (s === "tint") { setTintPkg(null); setWindshieldAddon(false); }
         if (s === "wrap") setWrapPkg(null);
       } else {
         next.add(s);
@@ -107,6 +109,9 @@ const InstantQuote = () => {
     if (services.has("tint") && tintPkg) {
       const r = tintPricing[tintPkg][vehicle];
       min += r[0]; max += r[1];
+      if (windshieldAddon) {
+        min += WINDSHIELD_ADDON[0]; max += WINDSHIELD_ADDON[1];
+      }
     }
     if (services.has("wrap") && wrapPkg) {
       const r = wrapPricing[wrapPkg][vehicle];
@@ -114,13 +119,16 @@ const InstantQuote = () => {
     }
     if (min === 0 && max === 0) return null;
     return { min, max };
-  }, [vehicle, services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
+  }, [vehicle, services, ppfPkg, coatingPkg, tintPkg, wrapPkg, windshieldAddon]);
 
   const selectedSummary = useMemo(() => {
     const items: string[] = [];
     if (services.has("ppf") && ppfPkg) items.push(`PPF — ${ppfPackages.find(p => p.key === ppfPkg)?.label}`);
     if (services.has("coating") && coatingPkg) items.push(`Ceramic Coating — ${coatingPackages.find(p => p.key === coatingPkg)?.label}`);
-    if (services.has("tint") && tintPkg) items.push(`Window Tint — ${tintPackages.find(p => p.key === tintPkg)?.label}`);
+    if (services.has("tint") && tintPkg) {
+      const tintLabel = `Window Tint — ${tintPackages.find(p => p.key === tintPkg)?.label}${windshieldAddon ? " + Windshield" : ""}`;
+      items.push(tintLabel);
+    }
     if (services.has("wrap") && wrapPkg) items.push(`Color Change Wrap — ${wrapPackages.find(p => p.key === wrapPkg)?.label}`);
     return items;
   }, [services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
@@ -163,6 +171,7 @@ const InstantQuote = () => {
         `Vehicle Size Category: ${vehicle || "Not selected"}`,
         `Selected Services: ${servicesList}`,
         `Estimated Price Range: ${rangeStr}`,
+        windshieldAddon ? `Windshield Tint Add-On: Yes` : (services.has("tint") ? `Windshield Tint Add-On: No` : ""),
         message.trim() ? `\nAdditional Notes: ${message.trim()}` : "",
       ].filter(Boolean).join("\n");
 
@@ -439,6 +448,20 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
+                        {/* Windshield add-on */}
+                        {tintPkg && (
+                          <label className="flex items-center gap-3 mt-3 p-3 rounded-md border border-dashed border-amber-500/40 bg-amber-500/5 cursor-pointer">
+                            <Checkbox
+                              checked={windshieldAddon}
+                              onCheckedChange={(checked) => setWindshieldAddon(checked === true)}
+                              className="border-amber-500/60 data-[state=checked]:bg-amber-500 data-[state=checked]:border-amber-500"
+                            />
+                            <div>
+                              <span className="text-sm font-medium text-white">Add Windshield Tint</span>
+                              <span className="text-xs text-amber-400/70 ml-2">(+$180–$250)</span>
+                            </div>
+                          </label>
+                        )}
                         {!tintPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
                       </AccordionContent>
                     </AccordionItem>

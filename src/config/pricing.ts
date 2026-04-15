@@ -26,7 +26,7 @@ export const serviceOptions: { key: ServiceType; label: string }[] = [
 
 // ── Package types per service ──────────────────────────────
 export type PPFPackage = "partialFront" | "fullFront" | "track" | "fullBody";
-export type CoatingPackage = "entry" | "fusionPlus" | "topTier";
+export type CoatingPackage = "entry" | "fusionPlus";
 export type TintPackage = "front2" | "allWindows";
 export type WrapPackage = "standard" | "premium";
 
@@ -37,9 +37,8 @@ export const ppfPackages: { key: PPFPackage; label: string }[] = [
   { key: "fullBody", label: "Full Body" },
 ];
 export const coatingPackages: { key: CoatingPackage; label: string }[] = [
-  { key: "entry", label: "Entry (1–2 yr)" },
-  { key: "fusionPlus", label: "Multi-Stage Fusion Plus (3–5 yr)" },
-  { key: "topTier", label: "Top-Tier with Paint Correction (7–10 yr / Lifetime)" },
+  { key: "entry", label: "1–2 Year Ceramic" },
+  { key: "fusionPlus", label: "3–5 Year Ceramic" },
 ];
 export const tintPackages: { key: TintPackage; label: string }[] = [
   { key: "front2", label: "Front 2 Windows Only" },
@@ -64,14 +63,14 @@ export const ppfPricing: Record<PPFPackage, VehiclePriceMap> = {
 export const coatingPricing: Record<CoatingPackage, VehiclePriceMap> = {
   entry: { Coupe: [599, 749], Sedan: [649, 799], SmallSUV: [699, 849], LargeSUV: [799, 999], Truck: [749, 949], Exotic: [899, 1099] },
   fusionPlus: { Coupe: [799, 999], Sedan: [849, 1049], SmallSUV: [899, 1099], LargeSUV: [999, 1299], Truck: [949, 1199], Exotic: [1099, 1399] },
-  topTier: { Coupe: [999, 1199], Sedan: [1049, 1249], SmallSUV: [1099, 1299], LargeSUV: [1199, 1399], Truck: [1149, 1349], Exotic: [1299, 1499] },
 };
 
-const tintFront2All: PriceRange = [150, 299];
 export const tintPricing: Record<TintPackage, VehiclePriceMap> = {
-  front2: { Coupe: tintFront2All, Sedan: tintFront2All, SmallSUV: tintFront2All, LargeSUV: tintFront2All, Truck: tintFront2All, Exotic: tintFront2All },
-  allWindows: { Coupe: [299, 449], Sedan: [350, 500], SmallSUV: [400, 600], LargeSUV: [500, 800], Truck: [450, 700], Exotic: [650, 1100] },
+  front2: { Coupe: [149, 199], Sedan: [149, 199], SmallSUV: [169, 219], LargeSUV: [199, 249], Truck: [149, 199], Exotic: [169, 219] },
+  allWindows: { Coupe: [399, 499], Sedan: [449, 549], SmallSUV: [499, 599], LargeSUV: [599, 799], Truck: [399, 499], Exotic: [449, 569] },
 };
+
+export const WINDSHIELD_ADDON: PriceRange = [180, 250];
 
 export const wrapPricing: Record<WrapPackage, VehiclePriceMap> = {
   standard: { Coupe: [2500, 3500], Sedan: [2700, 3700], SmallSUV: [2999, 3999], LargeSUV: [3499, 4499], Truck: [3299, 4299], Exotic: [3799, 4999] },
