@@ -131,7 +131,7 @@ const InstantQuote = () => {
     }
     if (services.has("wrap") && wrapPkg) items.push(`Color Change Wrap — ${wrapPackages.find(p => p.key === wrapPkg)?.label}`);
     return items;
-  }, [services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
+  }, [services, ppfPkg, coatingPkg, tintPkg, wrapPkg, windshieldAddon]);
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth" });
