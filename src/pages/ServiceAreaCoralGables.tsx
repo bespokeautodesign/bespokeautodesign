@@ -56,7 +56,7 @@ const faqPageSchema = {
 
 const ServiceAreaCoralGables = () => (
   <div className="min-h-screen bg-[#0f0f0f] text-[#e5e5e5]">
-    <PageSEO title="Premium PPF & Ceramic Coating in Coral Gables, Miami | Bespoke Auto Design" description="Coral Gables' XPEL Authorized Dealer for Paint Protection Film, Ceramic Coating, and Window Tint. Climate-controlled installations, 7+ years experience. Concierge pickup available." canonical="https://www.bespokeauto.design/service-areas/coral-gables" structuredData={[localBusinessSchema, faqPageSchema]} />
+    <PageSEO title="PPF, Ceramic Coating & Window Tint in Coral Gables, Miami | Bespoke Auto Design" description="Certified XPEL paint protection film, ceramic coating, and ceramic window tint installation serving Coral Gables, Miami. Serving Coral Gables homeowners along Miracle Mile, Old Cutler Road, and Granada Boulevard. Specializing in PPF for classic and luxury vehicles in Miami's historic Mediterranean neighborhood. Free quotes, 10-year warranty, concierge pickup." canonical="https://www.bespokeauto.design/service-areas/coral-gables" structuredData={[localBusinessSchema, faqPageSchema]} />
     <Navbar />
 
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 bg-gradient-to-b from-[#0f0f0f] via-[#141414] to-[#0f0f0f]">

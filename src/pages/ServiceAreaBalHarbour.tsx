@@ -56,7 +56,7 @@ const faqPageSchema = {
 
 const ServiceAreaBalHarbour = () => (
   <div className="min-h-screen bg-[#0f0f0f] text-[#e5e5e5]">
-    <PageSEO title="Exotic Auto Protection in Bal Harbour | Bespoke Auto Design Miami" description="Bal Harbour's premier XPEL Authorized Dealer for exotic and luxury vehicle protection. Salt-air ceramic coating, PPF, ceramic tint. Concierge pickup available." canonical="https://www.bespokeauto.design/service-areas/bal-harbour" structuredData={[localBusinessSchema, faqPageSchema]} />
+    <PageSEO title="PPF, Ceramic Coating & Window Tint in Bal Harbour, Miami | Bespoke Auto Design" description="Certified XPEL paint protection film, ceramic coating, and ceramic window tint installation serving Bal Harbour, Miami. Discreet, by-appointment protection for the most exclusive vehicles in Bal Harbour. PPF and ceramic coatings for supercars, hypercars, and collector vehicles. Free quotes, 10-year warranty, concierge pickup." canonical="https://www.bespokeauto.design/service-areas/bal-harbour" structuredData={[localBusinessSchema, faqPageSchema]} />
     <Navbar />
 
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 bg-gradient-to-b from-[#0f0f0f] via-[#141414] to-[#0f0f0f]">

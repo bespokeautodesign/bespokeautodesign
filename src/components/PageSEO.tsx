@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 interface PageSEOProps {
@@ -7,6 +8,31 @@ interface PageSEOProps {
   ogImage?: string;
   structuredData?: object | object[];
 }
+
+const upsertHeadTag = (
+  tagName: "meta" | "link",
+  selector: string,
+  attributes: Record<string, string>,
+  valueAttribute: "content" | "href",
+  value: string,
+) => {
+  if (typeof document === "undefined") return;
+
+  const existingTags = Array.from(document.head.querySelectorAll(selector)) as HTMLElement[];
+  const element = existingTags[0] ?? document.createElement(tagName);
+
+  Object.entries(attributes).forEach(([key, attrValue]) => {
+    element.setAttribute(key, attrValue);
+  });
+
+  element.setAttribute(valueAttribute, value);
+
+  if (!existingTags.length) {
+    document.head.appendChild(element);
+  }
+
+  existingTags.slice(1).forEach((tag) => tag.remove());
+};
 
 const PageSEO = ({
   title,
@@ -20,6 +46,22 @@ const PageSEO = ({
       ? structuredData
       : [structuredData]
     : [];
+
+  useEffect(() => {
+    document.title = title;
+
+    upsertHeadTag("meta", 'meta[name="description"]', { name: "description" }, "content", description);
+    upsertHeadTag("link", 'link[rel="canonical"]', { rel: "canonical" }, "href", canonical);
+
+    upsertHeadTag("meta", 'meta[property="og:title"]', { property: "og:title" }, "content", title);
+    upsertHeadTag("meta", 'meta[property="og:description"]', { property: "og:description" }, "content", description);
+    upsertHeadTag("meta", 'meta[property="og:url"]', { property: "og:url" }, "content", canonical);
+    upsertHeadTag("meta", 'meta[property="og:image"]', { property: "og:image" }, "content", ogImage);
+
+    upsertHeadTag("meta", 'meta[name="twitter:title"]', { name: "twitter:title" }, "content", title);
+    upsertHeadTag("meta", 'meta[name="twitter:description"]', { name: "twitter:description" }, "content", description);
+    upsertHeadTag("meta", 'meta[name="twitter:image"]', { name: "twitter:image" }, "content", ogImage);
+  }, [canonical, description, ogImage, title]);
 
   return (
     <Helmet>

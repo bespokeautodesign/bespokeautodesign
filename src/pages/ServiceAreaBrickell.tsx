@@ -110,8 +110,8 @@ const ServiceAreaBrickell = () => {
   return (
     <div className="min-h-screen bg-[#0f0f0f] text-[#e5e5e5]">
       <PageSEO
-        title="Premium PPF & Ceramic Coating in Brickell, Miami | Bespoke Auto Design"
-        description="Bespoke Auto Design is Brickell's premier XPEL Authorized Dealer for Paint Protection Film, Ceramic Coating, and Window Tint. Climate-controlled facility, 7+ years experience. Concierge pickup available. Free quotes."
+        title="PPF, Ceramic Coating & Window Tint in Brickell, Miami | Bespoke Auto Design"
+        description="Certified XPEL paint protection film, ceramic coating, and ceramic window tint installation serving Brickell, Miami. Protecting exotic and luxury vehicles parked in high-rise condo garages across Miami's financial district. Ideal for daily-driven Ferraris, Porsches, and G-Wagons navigating Brickell Avenue. Free quotes, 10-year warranty, concierge pickup."
         canonical="https://www.bespokeauto.design/service-areas/brickell"
         structuredData={structuredData}
       />

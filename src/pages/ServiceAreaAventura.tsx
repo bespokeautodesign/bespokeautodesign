@@ -56,7 +56,7 @@ const faqPageSchema = {
 
 const ServiceAreaAventura = () => (
   <div className="min-h-screen bg-[#0f0f0f] text-[#e5e5e5]">
-    <PageSEO title="Premium PPF & Ceramic Coating in Aventura | Bespoke Auto Design Miami" description="Aventura's premier XPEL Authorized Dealer for Paint Protection Film, Ceramic Coating, and Window Tint. Climate-controlled installations, concierge pickup available." canonical="https://www.bespokeauto.design/service-areas/aventura" structuredData={[localBusinessSchema, faqPageSchema]} />
+    <PageSEO title="PPF, Ceramic Coating & Window Tint in Aventura, Miami | Bespoke Auto Design" description="Certified XPEL paint protection film, ceramic coating, and ceramic window tint installation serving Aventura, Miami. Trusted by Aventura residents from Williams Island to the Aventura Mall area. Full XPEL PPF and ceramic coating installs for luxury SUVs and performance sedans. Free quotes, 10-year warranty, concierge pickup." canonical="https://www.bespokeauto.design/service-areas/aventura" structuredData={[localBusinessSchema, faqPageSchema]} />
     <Navbar />
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 bg-gradient-to-b from-[#0f0f0f] via-[#141414] to-[#0f0f0f]">
       <div className="max-w-4xl mx-auto text-center">
