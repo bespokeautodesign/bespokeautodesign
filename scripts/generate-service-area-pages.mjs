@@ -183,8 +183,11 @@ for (const area of SERVICE_AREAS) {
   const jsonLdTag = `<script type="application/ld+json">${localBusinessJson}</script>`;
   html = html.replace("</head>", `${jsonLdTag}\n</head>`);
 
-  // Inject body content inside <div id="root">
-  html = html.replace('<div id="root"></div>', `<div id="root">${bodyHtml}</div>`);
+  // Replace everything inside <div id="root">...</div> with neighborhood-specific body
+  html = html.replace(
+    /(<div id="root">)[\s\S]*?(<\/div>\s*<noscript>)/,
+    `$1${bodyHtml}$2`
+  );
 
   // Write file
   const dir = join(DIST, "service-areas", area.slug);
