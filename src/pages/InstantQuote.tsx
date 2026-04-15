@@ -117,23 +117,40 @@ const InstantQuote = () => {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
     setFormSubmitting(true);
+    setFormError(null);
     try {
-      const body = {
-        name: name.trim(),
-        phone: phone.trim(),
-        email: email.trim(),
-        vehicle: vehicleInfo.trim(),
-        service: selectedSummary.join(", "),
-        vehicleType: vehicle,
-        estimatedRange: priceRange ? `$${priceRange.min.toLocaleString()} – $${priceRange.max.toLocaleString()}` : "N/A",
-        message: message.trim(),
-        preferredContact: "Phone",
-      };
-      await supabase.functions.invoke("send-quote-email", { body });
+      const nameParts = name.trim().split(/\s+/);
+      const firstName = nameParts[0] || "";
+      const lastName = nameParts.slice(1).join(" ") || "";
+
+      const servicesList = selectedSummary.join(", ") || "Not specified";
+      const rangeStr = priceRange ? `$${priceRange.min.toLocaleString()} – $${priceRange.max.toLocaleString()}` : "N/A";
+
+      const messageBody = [
+        `Vehicle Size Category: ${vehicle || "Not selected"}`,
+        `Selected Services: ${servicesList}`,
+        `Estimated Price Range: ${rangeStr}`,
+        message.trim() ? `\nAdditional Notes: ${message.trim()}` : "",
+      ].filter(Boolean).join("\n");
+
+      const { error } = await supabase.functions.invoke("send-quote-email", {
+        body: {
+          firstName,
+          lastName,
+          email: email.trim() || "noemail@placeholder.com",
+          phone: phone.trim(),
+          vehicle: vehicleInfo.trim() || "Not specified",
+          service: `Instant Quote — ${servicesList}`,
+          contactMethods: ["phone"],
+          message: messageBody,
+        },
+      });
+
+      if (error) throw error;
       setFormSubmitted(true);
-    } catch {
-      // silent fail — show success anyway to not block user
-      setFormSubmitted(true);
+    } catch (err) {
+      console.error("Quote submission error:", err);
+      setFormError("Unable to send your quote request. Please call (786) 395-9172 or email sales@bespokeauto.design directly.");
     } finally {
       setFormSubmitting(false);
     }
