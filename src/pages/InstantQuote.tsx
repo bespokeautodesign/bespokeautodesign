@@ -437,11 +437,12 @@ const InstantQuote = () => {
                         Window Tint Package
                       </AccordionTrigger>
                       <AccordionContent className="px-5 pb-4 pt-2">
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <p className="text-xs text-white/50 mb-2">Select a window package, windshield tint, or both</p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {tintPackages.map(p => (
                             <button
                               key={p.key}
-                              onClick={() => setTintPkg(p.key)}
+                              onClick={() => setTintPkg(prev => prev === p.key ? null : p.key)}
                               className={`p-3 rounded-md border text-left text-sm transition-all ${
                                 tintPkg === p.key
                                   ? "border-amber-500 bg-amber-500/10 text-white"
@@ -457,7 +458,22 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
-                        {!tintPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
+                        <div className="mt-3">
+                          <button
+                            onClick={() => setWindshieldTint(prev => !prev)}
+                            className={`w-full p-3 rounded-md border text-left text-sm transition-all ${
+                              windshieldTint
+                                ? "border-amber-500 bg-amber-500/10 text-white"
+                                : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
+                            }`}
+                          >
+                            <div className="font-medium">Windshield Tint</div>
+                            <div className="text-xs text-amber-400/70 mt-1">
+                              {fmt(WINDSHIELD_ADDON[0])} – {fmt(WINDSHIELD_ADDON[1])}
+                            </div>
+                          </button>
+                        </div>
+                        {!tintPkg && !windshieldTint && <p className="text-amber-400/80 text-xs mt-2">Please choose at least one option</p>}
                       </AccordionContent>
                     </AccordionItem>
                   )}
