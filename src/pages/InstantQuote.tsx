@@ -109,6 +109,9 @@ const InstantQuote = () => {
     if (services.has("tint") && tintPkg) {
       const r = tintPricing[tintPkg][vehicle];
       min += r[0]; max += r[1];
+      if (windshieldAddon) {
+        min += WINDSHIELD_ADDON[0]; max += WINDSHIELD_ADDON[1];
+      }
     }
     if (services.has("wrap") && wrapPkg) {
       const r = wrapPricing[wrapPkg][vehicle];
@@ -116,13 +119,16 @@ const InstantQuote = () => {
     }
     if (min === 0 && max === 0) return null;
     return { min, max };
-  }, [vehicle, services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
+  }, [vehicle, services, ppfPkg, coatingPkg, tintPkg, wrapPkg, windshieldAddon]);
 
   const selectedSummary = useMemo(() => {
     const items: string[] = [];
     if (services.has("ppf") && ppfPkg) items.push(`PPF — ${ppfPackages.find(p => p.key === ppfPkg)?.label}`);
     if (services.has("coating") && coatingPkg) items.push(`Ceramic Coating — ${coatingPackages.find(p => p.key === coatingPkg)?.label}`);
-    if (services.has("tint") && tintPkg) items.push(`Window Tint — ${tintPackages.find(p => p.key === tintPkg)?.label}`);
+    if (services.has("tint") && tintPkg) {
+      const tintLabel = `Window Tint — ${tintPackages.find(p => p.key === tintPkg)?.label}${windshieldAddon ? " + Windshield" : ""}`;
+      items.push(tintLabel);
+    }
     if (services.has("wrap") && wrapPkg) items.push(`Color Change Wrap — ${wrapPackages.find(p => p.key === wrapPkg)?.label}`);
     return items;
   }, [services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
