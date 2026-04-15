@@ -447,6 +447,20 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
+                        {/* Windshield add-on */}
+                        {tintPkg && (
+                          <label className="flex items-center gap-3 mt-3 p-3 rounded-md border border-dashed border-amber-500/40 bg-amber-500/5 cursor-pointer">
+                            <Checkbox
+                              checked={windshieldAddon}
+                              onCheckedChange={(checked) => setWindshieldAddon(checked === true)}
+                              className="border-amber-500/60 data-[state=checked]:bg-amber-500 data-[state=checked]:border-amber-500"
+                            />
+                            <div>
+                              <span className="text-sm font-medium text-white">Add Windshield Tint</span>
+                              <span className="text-xs text-amber-400/70 ml-2">(+$180–$250)</span>
+                            </div>
+                          </label>
+                        )}
                         {!tintPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
                       </AccordionContent>
                     </AccordionItem>
