@@ -128,10 +128,19 @@ const InstantQuote = () => {
     const items: string[] = [];
     if (services.has("ppf") && ppfPkg) items.push(`PPF — ${ppfPackages.find(p => p.key === ppfPkg)?.label}`);
     if (services.has("coating") && coatingPkg) items.push(`Ceramic Coating — ${coatingPackages.find(p => p.key === coatingPkg)?.label}`);
-    if (services.has("tint") && tintPkg) items.push(`Window Tint — ${tintPackages.find(p => p.key === tintPkg)?.label}`);
+    if (services.has("tint")) {
+      const tintLabel = tintPkg ? tintPackages.find(p => p.key === tintPkg)?.label : null;
+      if (tintLabel && windshieldTint) {
+        items.push(`Ceramic Tint — ${tintLabel} + Windshield`);
+      } else if (tintLabel) {
+        items.push(`Ceramic Tint — ${tintLabel}`);
+      } else if (windshieldTint) {
+        items.push(`Ceramic Tint — Windshield Only`);
+      }
+    }
     if (services.has("wrap") && wrapPkg) items.push(`Color Change Wrap — ${wrapPackages.find(p => p.key === wrapPkg)?.label}`);
     return items;
-  }, [services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
+  }, [services, ppfPkg, coatingPkg, tintPkg, windshieldTint, wrapPkg]);
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth" });
