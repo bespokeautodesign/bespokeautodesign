@@ -440,6 +440,8 @@ const InstantQuote = () => {
                           ))}
                         </div>
                         {!tintPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
+                      </AccordionContent>
+                    </AccordionItem>
                   )}
                   {services.has("wrap") && (
                     <AccordionItem value="wrap" className="border border-[#333] rounded-lg bg-[#1a1a1a] overflow-hidden">
@@ -468,6 +470,8 @@ const InstantQuote = () => {
                           ))}
                         </div>
                         {!wrapPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
+                      </AccordionContent>
+                    </AccordionItem>
                   )}
                 </Accordion>
               </div>
