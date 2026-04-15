@@ -56,7 +56,7 @@ const faqPageSchema = {
 
 const ServiceAreaCoconutGrove = () => (
   <div className="min-h-screen bg-[#0f0f0f] text-[#e5e5e5]">
-    <PageSEO title="Premium PPF & Ceramic Coating in Coconut Grove | Bespoke Auto Design" description="Coconut Grove's XPEL Authorized Dealer for Paint Protection Film, Ceramic Coating, and Window Tint. Climate-controlled installations, 7+ years experience. Concierge pickup available." canonical="https://www.bespokeauto.design/service-areas/coconut-grove" structuredData={[localBusinessSchema, faqPageSchema]} />
+    <PageSEO title="PPF, Ceramic Coating & Window Tint in Coconut Grove, Miami | Bespoke Auto Design" description="Certified XPEL paint protection film, ceramic coating, and ceramic window tint installation serving Coconut Grove, Miami. Coconut Grove's bohemian heart meets luxury protection. PPF, ceramic coating, and marine ceramic for residents and boat owners in Miami's oldest neighborhood. Free quotes, 10-year warranty, concierge pickup." canonical="https://www.bespokeauto.design/service-areas/coconut-grove" structuredData={[localBusinessSchema, faqPageSchema]} />
     <Navbar />
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 bg-gradient-to-b from-[#0f0f0f] via-[#141414] to-[#0f0f0f]">
       <div className="max-w-4xl mx-auto text-center">

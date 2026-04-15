@@ -56,7 +56,7 @@ const faqPageSchema = {
 
 const ServiceAreaKeyBiscayne = () => (
   <div className="min-h-screen bg-[#0f0f0f] text-[#e5e5e5]">
-    <PageSEO title="Premium PPF & Ceramic Coating in Key Biscayne | Bespoke Auto Design" description="Key Biscayne's XPEL Authorized Dealer for island-tough Paint Protection Film, Ceramic Coating, and Window Tint. Salt-air protection, climate-controlled installs." canonical="https://www.bespokeauto.design/service-areas/key-biscayne" structuredData={[localBusinessSchema, faqPageSchema]} />
+    <PageSEO title="PPF, Ceramic Coating & Window Tint in Key Biscayne, Miami | Bespoke Auto Design" description="Certified XPEL paint protection film, ceramic coating, and ceramic window tint installation serving Key Biscayne, Miami. Specialized salt-air and UV protection for vehicles crossing the Rickenbacker Causeway daily. Ceramic coatings engineered for Key Biscayne's island environment. Free quotes, 10-year warranty, concierge pickup." canonical="https://www.bespokeauto.design/service-areas/key-biscayne" structuredData={[localBusinessSchema, faqPageSchema]} />
     <Navbar />
 
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 bg-gradient-to-b from-[#0f0f0f] via-[#141414] to-[#0f0f0f]">

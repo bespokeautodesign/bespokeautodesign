@@ -56,7 +56,7 @@ const faqPageSchema = {
 
 const ServiceAreaSunnyIsles = () => (
   <div className="min-h-screen bg-[#0f0f0f] text-[#e5e5e5]">
-    <PageSEO title="Premium PPF & Ceramic Coating in Sunny Isles Beach | Bespoke Auto Design" description="Sunny Isles Beach's premier XPEL Authorized Dealer for Paint Protection Film, Ceramic Coating, and Window Tint. Climate-controlled installations, concierge pickup available." canonical="https://www.bespokeauto.design/service-areas/sunny-isles" structuredData={[localBusinessSchema, faqPageSchema]} />
+    <PageSEO title="PPF, Ceramic Coating & Window Tint in Sunny Isles, Miami | Bespoke Auto Design" description="Certified XPEL paint protection film, ceramic coating, and ceramic window tint installation serving Sunny Isles, Miami. Serving Sunny Isles Beach high-rise residents at Trump Royale, Porsche Design Tower, and Jade Ocean. Concierge PPF installation with pickup from your building's valet. Free quotes, 10-year warranty, concierge pickup." canonical="https://www.bespokeauto.design/service-areas/sunny-isles" structuredData={[localBusinessSchema, faqPageSchema]} />
     <Navbar />
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 bg-gradient-to-b from-[#0f0f0f] via-[#141414] to-[#0f0f0f]">
       <div className="max-w-4xl mx-auto text-center">
