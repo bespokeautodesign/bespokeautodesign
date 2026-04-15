@@ -48,8 +48,9 @@ const InstantQuote = () => {
   const [ppfPkg, setPpfPkg] = useState<PPFPackage | null>(null);
   const [coatingPkg, setCoatingPkg] = useState<CoatingPackage | null>(null);
   const [tintPkg, setTintPkg] = useState<TintPackage | null>(null);
+  const [windshieldTint, setWindshieldTint] = useState(false);
   const [wrapPkg, setWrapPkg] = useState<WrapPackage | null>(null);
-  
+
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
