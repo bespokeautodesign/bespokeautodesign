@@ -410,6 +410,8 @@ const InstantQuote = () => {
                           ))}
                         </div>
                         {!coatingPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
+                      </AccordionContent>
+                    </AccordionItem>
                   )}
                   {services.has("tint") && (
                     <AccordionItem value="tint" className="border border-[#333] rounded-lg bg-[#1a1a1a] overflow-hidden">
