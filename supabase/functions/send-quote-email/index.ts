@@ -33,7 +33,7 @@ function validateQuoteData(data: unknown): string | null {
   const d = data as Record<string, unknown>;
   if (!d.firstName || typeof d.firstName !== "string" || d.firstName.length > 100) return "Invalid first name";
   if (d.lastName !== undefined && d.lastName !== "" && (typeof d.lastName !== "string" || (d.lastName as string).length > 100)) return "Invalid last name";
-  if (!d.email || typeof d.email !== "string" || d.email.length > 255 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) return "Invalid email address";
+  if (d.email && d.email !== "" && (typeof d.email !== "string" || d.email.length > 255 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email))) return "Invalid email address";
   if (!d.phone || typeof d.phone !== "string" || d.phone.length > 30) return "Invalid phone number";
   if (!d.vehicle || typeof d.vehicle !== "string" || d.vehicle.length > 200) return "Invalid vehicle information";
   if (!d.service || typeof d.service !== "string" || d.service.length > 200) return "Invalid service selection";
