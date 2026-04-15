@@ -169,7 +169,7 @@ const InstantQuote = () => {
       const payload = {
         firstName,
         lastName,
-        email: email.trim() || "noemail@placeholder.com",
+        email: email.trim() || "",
         phone: phone.trim(),
         vehicle: vehicleInfo.trim() || "Not specified",
         service: `Instant Quote — ${servicesList}`,
