@@ -49,6 +49,7 @@ const InstantQuote = () => {
   const [tintPkg, setTintPkg] = useState<TintPackage | null>(null);
   const [wrapPkg, setWrapPkg] = useState<WrapPackage | null>(null);
   const [formSubmitting, setFormSubmitting] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
 
