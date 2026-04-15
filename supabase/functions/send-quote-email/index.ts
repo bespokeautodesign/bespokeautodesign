@@ -84,12 +84,16 @@ const handler = async (req: Request): Promise<Response> => {
       </div>
     `;
 
+    const replyTo = quoteData.email && quoteData.email !== "noemail@placeholder.com"
+      ? quoteData.email
+      : "sales@bespokeauto.design";
+
     const emailResponse = await resend.emails.send({
-      from: "Bespoke Auto Design <onboarding@resend.dev>",
+      from: "Bespoke Auto Design <quotes@bespokeauto.design>",
       to: ["sales@bespokeauto.design"],
       subject: `Quote Request - ${quoteData.service}`,
       html: emailHtml,
-      reply_to: quoteData.email,
+      reply_to: replyTo,
     });
 
     console.log("Email sent successfully:", emailResponse);
