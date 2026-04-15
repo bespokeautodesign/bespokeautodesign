@@ -19,7 +19,7 @@ import {
   ppfPackages, coatingPackages, tintPackages, wrapPackages,
   ppfPricing, coatingPricing, tintPricing, wrapPricing,
   PPFPackage, CoatingPackage, TintPackage, WrapPackage,
-  
+  WINDSHIELD_ADDON,
 } from "@/config/pricing";
 
 // ── FAQ data ───────────────────────────────────────────────
@@ -48,8 +48,9 @@ const InstantQuote = () => {
   const [ppfPkg, setPpfPkg] = useState<PPFPackage | null>(null);
   const [coatingPkg, setCoatingPkg] = useState<CoatingPackage | null>(null);
   const [tintPkg, setTintPkg] = useState<TintPackage | null>(null);
+  const [windshieldTint, setWindshieldTint] = useState(false);
   const [wrapPkg, setWrapPkg] = useState<WrapPackage | null>(null);
-  
+
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -73,7 +74,7 @@ const InstantQuote = () => {
         next.delete(s);
         if (s === "ppf") setPpfPkg(null);
         if (s === "coating") setCoatingPkg(null);
-        if (s === "tint") { setTintPkg(null); }
+        if (s === "tint") { setTintPkg(null); setWindshieldTint(false); }
         if (s === "wrap") setWrapPkg(null);
       } else {
         next.add(s);
@@ -87,10 +88,10 @@ const InstantQuote = () => {
     if (services.size === 0) return false;
     if (services.has("ppf") && !ppfPkg) return false;
     if (services.has("coating") && !coatingPkg) return false;
-    if (services.has("tint") && !tintPkg) return false;
+    if (services.has("tint") && !tintPkg && !windshieldTint) return false;
     if (services.has("wrap") && !wrapPkg) return false;
     return true;
-  }, [services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
+  }, [services, ppfPkg, coatingPkg, tintPkg, windshieldTint, wrapPkg]);
 
   const formReady = Boolean(vehicle && services.size > 0 && allPackagesSelected);
 
@@ -106,9 +107,14 @@ const InstantQuote = () => {
       const r = coatingPricing[coatingPkg][vehicle];
       min += r[0]; max += r[1];
     }
-    if (services.has("tint") && tintPkg) {
-      const r = tintPricing[tintPkg][vehicle];
-      min += r[0]; max += r[1];
+    if (services.has("tint")) {
+      if (tintPkg) {
+        const r = tintPricing[tintPkg][vehicle];
+        min += r[0]; max += r[1];
+      }
+      if (windshieldTint) {
+        min += WINDSHIELD_ADDON[0]; max += WINDSHIELD_ADDON[1];
+      }
     }
     if (services.has("wrap") && wrapPkg) {
       const r = wrapPricing[wrapPkg][vehicle];
@@ -116,16 +122,25 @@ const InstantQuote = () => {
     }
     if (min === 0 && max === 0) return null;
     return { min, max };
-  }, [vehicle, services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
+  }, [vehicle, services, ppfPkg, coatingPkg, tintPkg, windshieldTint, wrapPkg]);
 
   const selectedSummary = useMemo(() => {
     const items: string[] = [];
     if (services.has("ppf") && ppfPkg) items.push(`PPF — ${ppfPackages.find(p => p.key === ppfPkg)?.label}`);
     if (services.has("coating") && coatingPkg) items.push(`Ceramic Coating — ${coatingPackages.find(p => p.key === coatingPkg)?.label}`);
-    if (services.has("tint") && tintPkg) items.push(`Window Tint — ${tintPackages.find(p => p.key === tintPkg)?.label}`);
+    if (services.has("tint")) {
+      const tintLabel = tintPkg ? tintPackages.find(p => p.key === tintPkg)?.label : null;
+      if (tintLabel && windshieldTint) {
+        items.push(`Ceramic Tint — ${tintLabel} + Windshield`);
+      } else if (tintLabel) {
+        items.push(`Ceramic Tint — ${tintLabel}`);
+      } else if (windshieldTint) {
+        items.push(`Ceramic Tint — Windshield Only`);
+      }
+    }
     if (services.has("wrap") && wrapPkg) items.push(`Color Change Wrap — ${wrapPackages.find(p => p.key === wrapPkg)?.label}`);
     return items;
-  }, [services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
+  }, [services, ppfPkg, coatingPkg, tintPkg, windshieldTint, wrapPkg]);
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -422,11 +437,12 @@ const InstantQuote = () => {
                         Window Tint Package
                       </AccordionTrigger>
                       <AccordionContent className="px-5 pb-4 pt-2">
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <p className="text-xs text-white/50 mb-2">Select a window package, windshield tint, or both</p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                           {tintPackages.map(p => (
                             <button
                               key={p.key}
-                              onClick={() => setTintPkg(p.key)}
+                              onClick={() => setTintPkg(prev => prev === p.key ? null : p.key)}
                               className={`p-3 rounded-md border text-left text-sm transition-all ${
                                 tintPkg === p.key
                                   ? "border-amber-500 bg-amber-500/10 text-white"
@@ -442,7 +458,22 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
-                        {!tintPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
+                        <div className="mt-3">
+                          <button
+                            onClick={() => setWindshieldTint(prev => !prev)}
+                            className={`w-full p-3 rounded-md border text-left text-sm transition-all ${
+                              windshieldTint
+                                ? "border-amber-500 bg-amber-500/10 text-white"
+                                : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
+                            }`}
+                          >
+                            <div className="font-medium">Windshield Tint</div>
+                            <div className="text-xs text-amber-400/70 mt-1">
+                              {fmt(WINDSHIELD_ADDON[0])} – {fmt(WINDSHIELD_ADDON[1])}
+                            </div>
+                          </button>
+                        </div>
+                        {!tintPkg && !windshieldTint && <p className="text-amber-400/80 text-xs mt-2">Please choose at least one option</p>}
                       </AccordionContent>
                     </AccordionItem>
                   )}

@@ -27,7 +27,9 @@ export const serviceOptions: { key: ServiceType; label: string }[] = [
 // ── Package types per service ──────────────────────────────
 export type PPFPackage = "partialFront" | "fullFront" | "track" | "fullBody";
 export type CoatingPackage = "entry" | "fusionPlus";
-export type TintPackage = "front2" | "allWindows" | "allPlusWindshield";
+export type TintPackage = "front2" | "allWindows";
+
+export const WINDSHIELD_ADDON: [number, number] = [180, 250];
 export type WrapPackage = "standard" | "premium";
 
 export const ppfPackages: { key: PPFPackage; label: string }[] = [
@@ -41,9 +43,8 @@ export const coatingPackages: { key: CoatingPackage; label: string }[] = [
   { key: "fusionPlus", label: "3–5 Year Ceramic" },
 ];
 export const tintPackages: { key: TintPackage; label: string }[] = [
-  { key: "front2", label: "Front 2 Windows Only" },
+  { key: "front2", label: "Front 2 Windows" },
   { key: "allWindows", label: "All Windows" },
-  { key: "allPlusWindshield", label: "All Windows + Windshield" },
 ];
 export const wrapPackages: { key: WrapPackage; label: string }[] = [
   { key: "standard", label: "Standard Finish (Gloss / Satin / Matte)" },
@@ -69,7 +70,6 @@ export const coatingPricing: Record<CoatingPackage, VehiclePriceMap> = {
 export const tintPricing: Record<TintPackage, VehiclePriceMap> = {
   front2: { Coupe: [149, 199], Sedan: [149, 199], SmallSUV: [169, 219], LargeSUV: [199, 249], Truck: [149, 199], Exotic: [169, 219] },
   allWindows: { Coupe: [399, 499], Sedan: [449, 549], SmallSUV: [499, 599], LargeSUV: [599, 799], Truck: [399, 499], Exotic: [449, 569] },
-  allPlusWindshield: { Coupe: [579, 749], Sedan: [629, 799], SmallSUV: [679, 849], LargeSUV: [779, 1049], Truck: [579, 749], Exotic: [629, 819] },
 };
 
 export const wrapPricing: Record<WrapPackage, VehiclePriceMap> = {
