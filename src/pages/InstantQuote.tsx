@@ -19,6 +19,7 @@ import {
   ppfPackages, coatingPackages, tintPackages, wrapPackages,
   ppfPricing, coatingPricing, tintPricing, wrapPricing,
   PPFPackage, CoatingPackage, TintPackage, WrapPackage,
+  WINDSHIELD_ADDON,
 } from "@/config/pricing";
 
 // ── FAQ data ───────────────────────────────────────────────
@@ -48,6 +49,7 @@ const InstantQuote = () => {
   const [coatingPkg, setCoatingPkg] = useState<CoatingPackage | null>(null);
   const [tintPkg, setTintPkg] = useState<TintPackage | null>(null);
   const [wrapPkg, setWrapPkg] = useState<WrapPackage | null>(null);
+  const [windshieldAddon, setWindshieldAddon] = useState(false);
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -71,7 +73,7 @@ const InstantQuote = () => {
         next.delete(s);
         if (s === "ppf") setPpfPkg(null);
         if (s === "coating") setCoatingPkg(null);
-        if (s === "tint") setTintPkg(null);
+        if (s === "tint") { setTintPkg(null); setWindshieldAddon(false); }
         if (s === "wrap") setWrapPkg(null);
       } else {
         next.add(s);
