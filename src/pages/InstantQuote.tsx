@@ -340,6 +340,9 @@ const InstantQuote = () => {
                   </button>
                 ))}
               </div>
+              {touched.services && services.size === 0 && (
+                <p className="text-amber-400/80 text-xs mt-2">Please select at least one service</p>
+              )}
             </div>
 
             {/* GROUP 3: Packages (accordion) */}
@@ -376,7 +379,7 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
-                      </AccordionContent>
+                        {!ppfPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
                     </AccordionItem>
                   )}
                   {services.has("coating") && (
@@ -405,8 +408,7 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
-                      </AccordionContent>
-                    </AccordionItem>
+                        {!coatingPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
                   )}
                   {services.has("tint") && (
                     <AccordionItem value="tint" className="border border-[#333] rounded-lg bg-[#1a1a1a] overflow-hidden">
@@ -434,8 +436,7 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
-                      </AccordionContent>
-                    </AccordionItem>
+                        {!tintPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
                   )}
                   {services.has("wrap") && (
                     <AccordionItem value="wrap" className="border border-[#333] rounded-lg bg-[#1a1a1a] overflow-hidden">
@@ -463,8 +464,7 @@ const InstantQuote = () => {
                             </button>
                           ))}
                         </div>
-                      </AccordionContent>
-                    </AccordionItem>
+                        {!wrapPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
                   )}
                 </Accordion>
               </div>
@@ -573,14 +573,33 @@ const InstantQuote = () => {
                 </div>
               )}
 
-              <Button type="submit" variant="premium" size="lg" className="w-full text-base font-bold" disabled={formSubmitting}>
-                {formSubmitting ? (
-                  <span className="flex items-center gap-2">
-                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending…
-                  </span>
-                ) : "Submit Quote Request"}
-              </Button>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <span className="w-full">
+                      <Button
+                        type="submit"
+                        variant="premium"
+                        size="lg"
+                        className={`w-full text-base font-bold transition-all ${!formReady && !formSubmitting ? "opacity-40 cursor-not-allowed border-amber-500/30" : ""}`}
+                        disabled={formSubmitting || !formReady}
+                      >
+                        {formSubmitting ? (
+                          <span className="flex items-center gap-2">
+                            <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                            Sending…
+                          </span>
+                        ) : "Submit Quote Request"}
+                      </Button>
+                    </span>
+                  </TooltipTrigger>
+                  {!formReady && (
+                    <TooltipContent side="top" className="bg-[#222] border-[#444] text-amber-400 text-sm">
+                      Please complete your selections to continue
+                    </TooltipContent>
+                  )}
+                </Tooltip>
+              </TooltipProvider>
             </form>
           )}
         </div>
