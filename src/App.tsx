@@ -27,6 +27,7 @@ const StealthPPF = lazy(() => import("./pages/StealthPPF"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Gallery = lazy(() => import("./pages/Gallery"));
+const InstantQuote = lazy(() => import("./pages/InstantQuote"));
 const ServiceAreaBrickell = lazy(() => import("./pages/ServiceAreaBrickell"));
 const ServiceAreaCoralGables = lazy(() => import("./pages/ServiceAreaCoralGables"));
 const ServiceAreaBalHarbour = lazy(() => import("./pages/ServiceAreaBalHarbour"));
@@ -73,6 +74,7 @@ const App = () => (
             <Route path="/ppf-packages" element={<PPFPackages />} />
             <Route path="/thank-you" element={<ThankYou />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/instant-quote" element={<InstantQuote />} />
             <Route path="/service-areas/brickell" element={<ServiceAreaBrickell />} />
             <Route path="/service-areas/coral-gables" element={<ServiceAreaCoralGables />} />
             <Route path="/service-areas/bal-harbour" element={<ServiceAreaBalHarbour />} />

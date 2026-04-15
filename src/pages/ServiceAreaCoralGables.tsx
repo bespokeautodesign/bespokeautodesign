@@ -76,6 +76,14 @@ const ServiceAreaCoralGables = () => (
       </div>
     </section>
 
+    {/* Instant Quote CTA */}
+    <div className="bg-amber-500/10 border-y border-amber-500/20">
+      <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-center gap-3 text-sm">
+        <span className="text-amber-400 font-medium">💡 Get an instant price range for your vehicle</span>
+        <Link to="/instant-quote" className="inline-flex items-center gap-1 text-amber-400 font-bold hover:text-amber-300 underline underline-offset-2">Try the Instant Quote Calculator <ArrowRight className="w-3.5 h-3.5" /></Link>
+      </div>
+    </div>
+
     <section className="py-20 px-4 bg-[#141414]">
       <div className="max-w-6xl mx-auto">
         <h2 className="font-playfair text-2xl md:text-4xl font-bold text-white text-center mb-12">Why Coral Gables Drivers Choose Bespoke</h2>

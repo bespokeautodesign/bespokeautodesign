@@ -34,6 +34,7 @@ const navItemsBefore = [
 
 const navItemsAfter: {label: string;href: string;}[] = [
   { label: "Gallery", href: "/gallery" },
+  { label: "Instant Quote", href: "/instant-quote" },
 ];
 
 const NavLink = ({ href, active, children, className = "" }: {href: string;active: boolean;children: React.ReactNode;className?: string;}) =>

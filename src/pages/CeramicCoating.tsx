@@ -11,6 +11,7 @@ import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award, Sparkles, Layers } from "lucide-react";
 import PageSEO from "@/components/PageSEO";
+import { Link } from "react-router-dom";
 import { WhyChooseUs, ceramicDifferentiators } from "@/components/WhyChooseUs";
 import { RelatedServices } from "@/components/RelatedServices";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -92,6 +93,14 @@ const CeramicCoating = () => {
       <Navbar />
       <div className="container mx-auto px-6">
         <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Ceramic Coating", path: "/ceramic-coating", current: true }]} />
+      </div>
+
+      {/* Instant Quote CTA */}
+      <div className="bg-amber-500/10 border-y border-amber-500/20">
+        <div className="container mx-auto px-6 py-3 flex items-center justify-center gap-3 text-sm">
+          <span className="text-amber-400 font-medium">💡 Get an instant price range for your vehicle</span>
+          <Link to="/instant-quote" className="inline-flex items-center gap-1 text-amber-400 font-bold hover:text-amber-300 underline underline-offset-2">Try the Instant Quote Calculator <ChevronRight className="w-3.5 h-3.5" /></Link>
+        </div>
       </div>
 
       {/* ═══════════════════════════════════════════════════════
