@@ -64,6 +64,7 @@ const InstantQuote = () => {
   const [message, setMessage] = useState("");
 
   const toggleService = (s: ServiceType) => {
+    setTouched(prev => ({ ...prev, services: true }));
     setServices(prev => {
       const next = new Set(prev);
       if (next.has(s)) {
@@ -78,6 +79,18 @@ const InstantQuote = () => {
       return next;
     });
   };
+
+  // Check all selected services have a package chosen
+  const allPackagesSelected = useMemo(() => {
+    if (services.size === 0) return false;
+    if (services.has("ppf") && !ppfPkg) return false;
+    if (services.has("coating") && !coatingPkg) return false;
+    if (services.has("tint") && !tintPkg) return false;
+    if (services.has("wrap") && !wrapPkg) return false;
+    return true;
+  }, [services, ppfPkg, coatingPkg, tintPkg, wrapPkg]);
+
+  const formReady = Boolean(vehicle && services.size > 0 && allPackagesSelected);
 
   // price calculation
   const priceRange = useMemo(() => {
