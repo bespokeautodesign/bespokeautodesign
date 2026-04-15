@@ -296,7 +296,7 @@ const InstantQuote = () => {
                 {vehicleTypes.map(v => (
                   <button
                     key={v.key}
-                    onClick={() => setVehicle(v.key)}
+                    onClick={() => { setVehicle(v.key); setTouched(prev => ({ ...prev, vehicle: true })); }}
                     className={`p-4 rounded-lg border-2 text-left transition-all duration-200 ${
                       vehicle === v.key
                         ? "border-amber-500 bg-amber-500/10 shadow-[0_0_20px_rgba(245,158,11,0.15)]"
@@ -309,6 +309,9 @@ const InstantQuote = () => {
                   </button>
                 ))}
               </div>
+              {touched.vehicle && !vehicle && (
+                <p className="text-amber-400/80 text-xs mt-2">Please select your vehicle</p>
+              )}
             </div>
 
             {/* GROUP 2: Services */}
