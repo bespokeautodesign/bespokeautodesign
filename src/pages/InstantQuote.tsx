@@ -12,7 +12,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Shield, Award, Car, ChevronRight, Calculator, Check, Star, ArrowRight, Phone } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import {
   VehicleType, ServiceType,
   vehicleTypes, serviceOptions,
@@ -115,9 +114,26 @@ const InstantQuote = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !phone.trim()) return;
+
+    console.log("[InstantQuote] handleSubmit:start", {
+      name: name.trim(),
+      phone: phone.trim(),
+      emailProvided: Boolean(email.trim()),
+      vehicleInfo: vehicleInfo.trim(),
+      vehicleCategory: vehicle,
+      selectedServices: selectedSummary,
+      estimatedRange: priceRange,
+    });
+
+    if (!name.trim() || !phone.trim()) {
+      console.log("[InstantQuote] handleSubmit:blocked-missing-required-fields");
+      return;
+    }
+
     setFormSubmitting(true);
     setFormError(null);
+    setFormSubmitted(false);
+
     try {
       const nameParts = name.trim().split(/\s+/);
       const firstName = nameParts[0] || "";
@@ -133,24 +149,86 @@ const InstantQuote = () => {
         message.trim() ? `\nAdditional Notes: ${message.trim()}` : "",
       ].filter(Boolean).join("\n");
 
-      const { error } = await supabase.functions.invoke("send-quote-email", {
+      const payload = {
+        firstName,
+        lastName,
+        email: email.trim() || "noemail@placeholder.com",
+        phone: phone.trim(),
+        vehicle: vehicleInfo.trim() || "Not specified",
+        service: `Instant Quote — ${servicesList}`,
+        contactMethods: ["phone"],
+        message: messageBody,
+      };
+
+      const { supabase } = await import("@/integrations/supabase/client");
+
+      console.log("[InstantQuote] handleSubmit:beforeInvoke", {
+        functionName: "send-quote-email",
+        projectUrl: import.meta.env.VITE_SUPABASE_URL,
+        payload,
+      });
+
+      let { data, error } = await supabase.functions.invoke("send-quote-email", {
         body: {
-          firstName,
-          lastName,
-          email: email.trim() || "noemail@placeholder.com",
-          phone: phone.trim(),
-          vehicle: vehicleInfo.trim() || "Not specified",
-          service: `Instant Quote — ${servicesList}`,
-          contactMethods: ["phone"],
-          message: messageBody,
+          ...payload,
         },
       });
 
-      if (error) throw error;
+      console.log("[InstantQuote] handleSubmit:afterInvoke", { data, error });
+
+      if (error || !data?.success) {
+        const functionUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-quote-email`;
+
+        console.log("[InstantQuote] handleSubmit:beforeDirectFetch", {
+          functionUrl,
+          projectUrl: import.meta.env.VITE_SUPABASE_URL,
+        });
+
+        const response = await fetch(functionUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            apikey: import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY,
+            Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const responseText = await response.text();
+        let parsedResponse: unknown = null;
+
+        try {
+          parsedResponse = responseText ? JSON.parse(responseText) : null;
+        } catch {
+          parsedResponse = responseText;
+        }
+
+        console.log("[InstantQuote] handleSubmit:afterDirectFetch", {
+          status: response.status,
+          ok: response.ok,
+          data: parsedResponse,
+        });
+
+        if (!response.ok) {
+          const fetchError = typeof parsedResponse === "object" && parsedResponse && "error" in parsedResponse
+            ? String((parsedResponse as { error?: unknown }).error)
+            : `Request failed with status ${response.status}`;
+          throw new Error(fetchError);
+        }
+
+        data = parsedResponse as { success?: boolean; message?: string } | null;
+      }
+
+      if (!data || (typeof data === "object" && "success" in data && !data.success)) {
+        throw new Error("No success response returned from quote endpoint");
+      }
+
+      console.log("[InstantQuote] handleSubmit:success", { data });
       setFormSubmitted(true);
     } catch (err) {
-      console.error("Quote submission error:", err);
-      setFormError("Unable to send your quote request. Please call (786) 395-9172 or email sales@bespokeauto.design directly.");
+      console.error("[InstantQuote] handleSubmit:catch", err);
+      const errorMessage = err instanceof Error ? err.message : "Unknown submission error";
+      setFormError(`${errorMessage}. Call (786) 395-9172 or email sales@bespokeauto.design directly.`);
     } finally {
       setFormSubmitting(false);
     }
