@@ -19,7 +19,7 @@ import {
   ppfPackages, coatingPackages, tintPackages, wrapPackages,
   ppfPricing, coatingPricing, tintPricing, wrapPricing,
   PPFPackage, CoatingPackage, TintPackage, WrapPackage,
-  
+  WINDSHIELD_ADDON,
 } from "@/config/pricing";
 
 // ── FAQ data ───────────────────────────────────────────────
