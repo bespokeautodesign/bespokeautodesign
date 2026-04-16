@@ -1,3 +1,4 @@
+import { trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -65,7 +66,7 @@ const ServiceAreaBalHarbour = () => (
         <p className="text-lg md:text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">Bespoke Auto Design protects Bal Harbour's exotic and luxury vehicles against salt air, ocean UV, and sand abrasion — installed in our climate-controlled Miami facility 25 minutes south.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Link to="/#contact"><Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button></Link>
-          <a href="tel:+17863959172"><Button size="lg" variant="outline" className="bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> Call (786) 395-9172</Button></a>
+          <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_bal_harbour')}><Button size="lg" variant="outline" className="bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> Call (786) 395-9172</Button></a>
         </div>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/60">
           <GoogleRatingChip /><span>•</span>
@@ -142,7 +143,7 @@ const ServiceAreaBalHarbour = () => (
         <p className="text-white/60 text-lg mb-8">Get a free quote within 30 minutes — currently booking 1-2 weeks out</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link to="/#contact"><Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button></Link>
-          <a href="tel:+17863959172"><Button size="lg" variant="outline" className="bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> (786) 395-9172</Button></a>
+          <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_bal_harbour')}><Button size="lg" variant="outline" className="bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> (786) 395-9172</Button></a>
         </div>
       </div>
     </section>

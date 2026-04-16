@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import { businessSchema, faqSchema } from "@/utils/seoHelpers";
 import { trackFormSubmission, trackPhoneCall } from "@/utils/gadsConversions";
+import { trackAdsConversion, trackLead, trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
 import PageSEO from "@/components/PageSEO";
 import { LazyImage } from "@/components/LazyImage";
 import HeroVideoBackground from "@/components/HeroVideoBackground";
@@ -194,8 +195,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
               <Button
                   variant="premium"
                   size="lg"
-                  className="text-lg px-10 py-5 shadow-premium hover:shadow-glow transform hover:scale-105 transition-all duration-300 animate-fade-in"
-                  asChild>
+                   className="text-lg px-10 py-5 shadow-premium hover:shadow-glow transform hover:scale-105 transition-all duration-300 animate-fade-in"
+                   onClick={() => trackQuoteButton('hero')}
+                   asChild>
                 <Link to="/instant-quote">Get a Free PPF Quote</Link>
               </Button>
               <Button
@@ -203,7 +205,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                   size="lg"
                   className="text-lg px-10 py-5 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                   asChild>
-                <a href="tel:+17863959172" onClick={() => trackPhoneCall()}>
+                <a href="tel:+17863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('hero_cta'); }}>
                   <Phone className="h-5 w-5" /> Call Now
                 </a>
               </Button>
@@ -289,11 +291,11 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
             
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-              <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
+              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton('xpel_section'); setQuoteModalOpen(true); }}>
                 Request a Free Quote
               </Button>
               <Button variant="silver" size="lg" asChild>
-                <a href="tel:+17863959172" onClick={() => trackPhoneCall()}>
+                <a href="tel:+17863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('xpel_section'); }}>
                   <Phone className="h-4 w-4" /> Call (786) 395-9172
                 </a>
               </Button>
@@ -477,6 +479,11 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                         if (error) throw error;
 
                         trackFormSubmission();
+                        trackLead({
+                          form: 'contact',
+                          service: String(formData.get('service') || ''),
+                          vehicle: String(formData.get('vehicle') || ''),
+                        });
                         setFormSubmitted(true);
                         form.reset();
                       } catch (error) {
@@ -500,7 +507,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-white">Phone</h3>
-                    <a href="tel:+17863959172" onClick={() => trackPhoneCall()} className="text-white/60 hover:text-amber-400 transition-colors">(786) 395-9172</a>
+                    <a href="tel:+17863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('contact_section'); }} className="text-white/60 hover:text-amber-400 transition-colors">(786) 395-9172</a>
                   </div>
                 </div>
                 
@@ -652,8 +659,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                 </div>
                 
                 <div className="pt-4 border-t">
-                  <Button variant="premium" className="w-full" onClick={() => {
+                <Button variant="premium" className="w-full" onClick={() => {
                   setSelectedService(null);
+                  trackQuoteButton('service_detail_modal');
                   scrollToQuote();
                 }}>
                     Get a Quote for {services[selectedService].title}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { trackFormSubmission } from "@/utils/gadsConversions";
+import { trackLead } from "@/lib/analytics";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
@@ -110,6 +111,11 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
 
       // Fire Google Ads conversion before navigating
       trackFormSubmission();
+      trackLead({
+        form: 'quote_modal',
+        service: serviceValue,
+        vehicle: String(formData.get('vehicle') || ''),
+      });
 
       form.reset();
       setSelectedService("");

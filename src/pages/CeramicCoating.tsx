@@ -1,4 +1,5 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
 import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { PricingCards } from "@/components/PricingCards";
 import React, { useEffect } from "react";
@@ -129,11 +130,11 @@ const CeramicCoating = () => {
               Starting at $599 • Free Consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
+              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_coating"); setQuoteModalOpen(true); }}>
                 Get a Free Quote <ChevronRight className="h-4 w-4" />
               </Button>
               <Button variant="silver" size="lg" asChild>
-                <a href="tel:7863959172" onClick={() => trackPhoneCall()} className="flex items-center gap-2">
+                <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("ceramic_coating"); }} className="flex items-center gap-2">
                   <Clock className="h-4 w-4" /> Call (786) 395-9172
                 </a>
               </Button>
@@ -388,7 +389,7 @@ const CeramicCoating = () => {
               ))}
             </div>
             <div className="text-center pt-4">
-              <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
+              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_coating"); setQuoteModalOpen(true); }}>
                 Get a PPF + Ceramic Quote <ChevronRight className="h-4 w-4" />
               </Button>
             </div>
@@ -636,11 +637,11 @@ const CeramicCoating = () => {
             Miami's premier ceramic coating installer. Schedule a consultation and get a custom quote — no obligation, no pressure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
+            <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_coating"); setQuoteModalOpen(true); }}>
               Request a Free Quote <ChevronRight className="h-4 w-4" />
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="tel:7863959172" onClick={() => trackPhoneCall()} className="flex items-center gap-2">
+              <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("ceramic_coating"); }} className="flex items-center gap-2">
                 <Clock className="h-4 w-4" /> Call (786) 395-9172
               </a>
             </Button>

@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { QuoteModal } from "@/components/QuoteModal";
 import PageSEO from "@/components/PageSEO";
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { trackPhoneClick } from "@/lib/analytics";
 
 interface ProjectCard {
   title: string;
@@ -105,7 +106,7 @@ const Gallery = () => {
                 Get a Free Quote <ChevronRight className="h-4 w-4" />
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="tel:7863959172" onClick={() => trackPhoneCall()} className="flex items-center gap-2">
+                <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("gallery"); }} className="flex items-center gap-2">
                   <Phone className="h-4 w-4" /> Call (786) 395-9172
                 </a>
               </Button>
