@@ -1,3 +1,4 @@
+import { trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -132,7 +133,7 @@ const ServiceAreaBrickell = () => {
                 Get a Free Quote
               </Button>
             </Link>
-            <a href="tel:+17863959172">
+            <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_brickell')}>
               <Button size="lg" variant="outline" className="bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 px-8 py-6 text-lg w-full sm:w-auto">
                 <Phone className="w-5 h-5 mr-2" /> Call (786) 395-9172
               </Button>
@@ -270,7 +271,7 @@ const ServiceAreaBrickell = () => {
                 Get a Free Quote
               </Button>
             </Link>
-            <a href="tel:+17863959172">
+            <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_brickell')}>
               <Button size="lg" variant="outline" className="bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 px-8 py-6 text-lg w-full sm:w-auto">
                 <Phone className="w-5 h-5 mr-2" /> (786) 395-9172
               </Button>
