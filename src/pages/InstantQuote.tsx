@@ -259,6 +259,19 @@ const InstantQuote = () => {
       }
 
       console.log("[InstantQuote] handleSubmit:success", { data });
+
+      // ── Conversion tracking ──
+      const { trackAdsConversion, trackLead } = await import("@/lib/analytics");
+      trackAdsConversion();
+      trackLead({
+        form: 'instant_quote',
+        currency: 'USD',
+        value: priceRange?.max ?? 0,
+        service: Array.from(services).map(s => serviceOptions.find(o => o.key === s)?.label).filter(Boolean).join(', '),
+        vehicle: vehicle ?? undefined,
+        package: selectedSummary.join(', '),
+      });
+
       setFormSubmitted(true);
     } catch (err) {
       console.error("[InstantQuote] handleSubmit:catch", err);

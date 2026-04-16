@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link } from "react-router-dom";
 import { Menu, ChevronDown, Phone } from "lucide-react";
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
 
 const ppfSubItems = [
   { label: "PPF Packages", href: "/ppf-packages" },
@@ -152,7 +153,7 @@ const MobileMenu = () => {
             {/* Bottom CTAs */}
             <div className="px-6 py-6 border-t border-[hsl(var(--nav-border))] space-y-3">
               <a
-                href="tel:7863959172" onClick={() => trackPhoneCall()}
+                href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('mobile_menu'); }}
                 className="flex items-center justify-center gap-2 w-full py-3 text-sm font-semibold rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] transition-all duration-300"
               >
                 <Phone className="h-4 w-4" />
@@ -163,6 +164,7 @@ const MobileMenu = () => {
                 size="lg"
                 className="w-full bg-[hsl(var(--nav-foreground-active))] text-[hsl(var(--nav-bg))] hover:bg-[hsl(var(--nav-foreground))] font-bold tracking-wide"
                 onClick={() => {
+                  trackQuoteButton('mobile_menu');
                   setIsOpen(false);
                   window.location.href = '/#contact';
                 }}
