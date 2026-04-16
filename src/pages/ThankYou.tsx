@@ -1,4 +1,5 @@
 import { trackPhoneCall, trackFormSubmission } from "@/utils/gadsConversions";
+import { trackPhoneClick } from "@/lib/analytics";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -36,7 +37,7 @@ const ThankYou = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button variant="premium" size="lg" asChild>
-              <a href="tel:+17863959172" onClick={() => trackPhoneCall()}>
+              <a href="tel:+17863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("thank_you"); }}>
                 <Phone className="w-4 h-4" />
                 Call (786) 395-9172
               </a>

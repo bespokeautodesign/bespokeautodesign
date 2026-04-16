@@ -1,4 +1,5 @@
 import { trackPhoneCall } from "@/utils/gadsConversions";
+import { trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
 import { areaServed, providerSchema } from "@/utils/seoHelpers";
 import { PricingCards } from "@/components/PricingCards";
 import React, { useEffect } from "react";
@@ -128,11 +129,11 @@ const CeramicTint = () => {
               Starting at $150 • Free Consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
+              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_tint"); setQuoteModalOpen(true); }}>
                 Get a Free Quote <ChevronRight className="h-4 w-4" />
               </Button>
               <Button variant="silver" size="lg" asChild>
-                <a href="tel:7863959172" onClick={() => trackPhoneCall()} className="flex items-center gap-2">
+                <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("ceramic_tint"); }} className="flex items-center gap-2">
                   <Clock className="h-4 w-4" /> Call (786) 395-9172
                 </a>
               </Button>
@@ -611,11 +612,11 @@ const CeramicTint = () => {
             Miami's premier XPEL XR Plus ceramic tint installer. Protect your skin, your interior, and your comfort — schedule a consultation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
+            <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_tint"); setQuoteModalOpen(true); }}>
               Request a Free Quote <ChevronRight className="h-4 w-4" />
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <a href="tel:7863959172" onClick={() => trackPhoneCall()} className="flex items-center gap-2">
+              <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("ceramic_tint"); }} className="flex items-center gap-2">
                 <Clock className="h-4 w-4" /> Call (786) 395-9172
               </a>
             </Button>
