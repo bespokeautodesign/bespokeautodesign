@@ -1,13 +1,13 @@
 /**
  * Centralized conversion-event tracking helpers.
  *
- * Every helper guards on `window.gtag` so callers don't need to check.
- * When Meta Pixel (fbq) is added later, drop the calls in here alongside gtag.
+ * Every helper guards on `window.gtag` / `window.fbq` so callers don't need to check.
  */
 
 declare global {
   interface Window {
     gtag?: (...args: any[]) => void;
+    fbq?: (...args: any[]) => void;
   }
 }
 
@@ -43,6 +43,14 @@ export function trackLead(params: LeadParams): void {
       package: params.package,
     });
   }
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', 'Lead', {
+      content_name: params.form,
+      content_category: params.service,
+      value: params.value || undefined,
+      currency: 'USD',
+    });
+  }
 }
 
 /* ── Phone click ──────────────────────────────────────────── */
@@ -51,6 +59,9 @@ export function trackPhoneClick(source: string): void {
   if (typeof window.gtag === 'function') {
     window.gtag('event', 'phone_click', { source });
   }
+  if (typeof window.fbq === 'function') {
+    window.fbq('track', 'Contact', { content_name: 'phone_click', source });
+  }
 }
 
 /* ── Quote-button upper-funnel click ──────────────────────── */
@@ -58,5 +69,8 @@ export function trackPhoneClick(source: string): void {
 export function trackQuoteButton(source: string): void {
   if (typeof window.gtag === 'function') {
     window.gtag('event', 'quote_button_click', { source });
+  }
+  if (typeof window.fbq === 'function') {
+    window.fbq('trackCustom', 'QuoteButtonClick', { source });
   }
 }
