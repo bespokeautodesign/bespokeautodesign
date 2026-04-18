@@ -12,7 +12,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Shield, Award, Car, ChevronRight, Calculator, Check, Star, ArrowRight, Phone } from "lucide-react";
+import { Shield, Award, ChevronRight, Calculator, Check, Star, ArrowRight, Phone } from "lucide-react";
+import { vehicleSvgData } from "@/data/vehicleSvgData";
 import {
   VehicleType, ServiceType,
   vehicleTypes, serviceOptions,
@@ -22,6 +23,26 @@ import {
   WINDSHIELD_ADDON,
 } from "@/config/pricing";
 
+// ── Vehicle silhouette SVG ─────────────────────────────────
+interface VehicleSilhouetteProps {
+  vehicleType: string;
+  isSelected: boolean;
+  className?: string;
+}
+
+const VehicleSilhouette = ({ vehicleType, isSelected, className = "w-8 h-6" }: VehicleSilhouetteProps) => {
+  const svgData = vehicleSvgData[vehicleType];
+  if (!svgData) return null;
+  const fillColor = isSelected ? "#f59e0b" : "#555555";
+  return (
+    <svg viewBox={svgData.viewBox} fill={fillColor} xmlns="http://www.w3.org/2000/svg" className={className}>
+      {svgData.paths.map((d, i) => (
+        <path key={i} d={d} />
+      ))}
+    </svg>
+  );
+};
+
 // ── FAQ data ───────────────────────────────────────────────
 const faqs = [
   { q: "Why is this only a price range?", a: "Every vehicle's paint condition, surface prep needs, and exact square footage varies. The range reflects typical costs for your vehicle size and package; final quote comes after a quick in-person inspection where we assess paint condition, measure specific panels, and confirm scope." },
@@ -29,6 +50,14 @@ const faqs = [
   { q: "What if my vehicle isn't listed?", a: "No problem. Select the closest match (e.g., for a Rolls-Royce Cullinan choose 'Large SUV', for a McLaren choose 'Exotic') and submit your quote request — we'll confirm the exact number once we see the vehicle." },
   { q: "Do you offer financing?", a: "Yes — we partner with financing providers for installs over $2,000. Mention financing when you submit your quote and we'll send over the application options along with your exact quote." },
   { q: "Can I see example work before booking?", a: "Absolutely — check our Gallery page for recent installs, and read our 44+ 5-star Google reviews. You're also welcome to visit our climate-controlled Miami facility to see work in progress by appointment." },
+  { q: "How much does full body PPF cost in Miami?", a: "Full body PPF typically ranges from $4,500 to $5,500. Larger SUVs/trucks land toward the higher end. Includes XPEL Ultimate Plus or Stealth film, surface prep, and 10-year warranty." },
+  { q: "Is ceramic coating worth the price?", a: "For South Florida vehicles, absolutely. Protects from UV damage, salt air corrosion, and hard water etching. $599-$999 is cost-effective to preserve finish and resale value." },
+  { q: "How much does window tint cost in Miami?", a: "Ceramic tint starts at $149-$199 for front two windows. Full vehicle: $399-$799. Windshield: $180-$250." },
+  { q: "Can I combine PPF and ceramic coating?", a: "Yes, recommended. PPF handles physical protection, ceramic adds chemical resistance and hydrophobic properties. Package pricing available when bundling." },
+  { q: "Why is PPF so expensive?", a: "Premium material (XPEL Ultimate Plus engineered thermoplastic urethane), climate-controlled installation environment, and 3-5 days of skilled labor per full body application." },
+  { q: "How long does PPF last in Miami's climate?", a: "XPEL Ultimate Plus is rated 10+ years. Budget alternatives yellow/crack in 2-3 years in South Florida. Backed by our 10-year warranty." },
+  { q: "What's included in a ceramic coating service?", a: "Multi-stage wash, chemical decontamination, clay bar treatment, paint correction (machine polishing), coating application, and controlled environment curing. 1-2 full days." },
+  { q: "Do you offer payment plans or financing?", a: "Yes, financing is available to split costs into monthly payments for PPF, ceramic coating, or bundled packages." },
 ];
 
 const faqSchema = {
