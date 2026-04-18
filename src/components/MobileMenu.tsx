@@ -36,7 +36,6 @@ const serviceAreaItems = [
 ];
 
 const otherItemsAfter: { label: string; href: string }[] = [
-  { label: "Gallery", href: "/gallery" },
   { label: "Instant Quote", href: "/instant-quote" },
 ];
 

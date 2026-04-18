@@ -711,7 +711,7 @@ const InstantQuote = () => {
           <GoogleRatingChip />
           <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-amber-500" /> Certified XPEL Installers</span>
           <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-amber-500" /> Up to 10-Yr Warranty</span>
-          <span className="flex items-center gap-1.5"><VehicleSilhouette vehicleType="sedan" isSelected className="w-5 h-4" /> Concierge Pickup Available</span>
+          <span className="flex items-center gap-1.5"><VehicleSilhouette vehicleType="Sedan" isSelected className="w-5 h-4" /> Concierge Pickup Available</span>
         </div>
       </section>
 
