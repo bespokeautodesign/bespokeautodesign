@@ -73,7 +73,7 @@ const App = () => (
             <Route path="/stealth-ppf" element={<StealthPPF />} />
             <Route path="/ppf-packages" element={<PPFPackages />} />
             <Route path="/thank-you" element={<ThankYou />} />
-            <Route path="/gallery" element={<Gallery />} />
+            
             <Route path="/instant-quote" element={<InstantQuote />} />
             <Route path="/service-areas/brickell" element={<ServiceAreaBrickell />} />
             <Route path="/service-areas/coral-gables" element={<ServiceAreaCoralGables />} />
