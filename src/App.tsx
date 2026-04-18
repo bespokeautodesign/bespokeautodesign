@@ -26,7 +26,7 @@ const PPFPackages = lazy(() => import("./pages/PPFPackages"));
 const StealthPPF = lazy(() => import("./pages/StealthPPF"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const NotFound = lazy(() => import("./pages/NotFound"));
-const Gallery = lazy(() => import("./pages/Gallery"));
+
 const InstantQuote = lazy(() => import("./pages/InstantQuote"));
 const ServiceAreaBrickell = lazy(() => import("./pages/ServiceAreaBrickell"));
 const ServiceAreaCoralGables = lazy(() => import("./pages/ServiceAreaCoralGables"));
