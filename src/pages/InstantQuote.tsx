@@ -363,7 +363,7 @@ const InstantQuote = () => {
                         : "border-[#333] bg-[#1a1a1a] hover:border-[#555] hover:bg-[#222]"
                     }`}
                   >
-                    <Car className={`w-5 h-5 mb-2 ${vehicle === v.key ? "text-amber-400" : "text-white/40"}`} />
+                    <VehicleSilhouette vehicleType={v.key} isSelected={vehicle === v.key} className="w-8 h-6 mb-2" />
                     <div className="font-semibold text-white text-sm">{v.label}</div>
                     <div className="text-xs text-white/50 mt-0.5">{v.sub}</div>
                   </button>
@@ -600,7 +600,7 @@ const InstantQuote = () => {
 
                   {vehicle && (
                     <div className="flex items-center gap-2 text-sm text-white/60">
-                      <Car className="w-4 h-4 text-amber-500/60" />
+                      <VehicleSilhouette vehicleType={vehicle} isSelected className="w-5 h-4" />
                       {vehicleTypes.find(v => v.key === vehicle)?.label}
                     </div>
                   )}
@@ -711,7 +711,51 @@ const InstantQuote = () => {
           <GoogleRatingChip />
           <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-amber-500" /> Certified XPEL Installers</span>
           <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-amber-500" /> Up to 10-Yr Warranty</span>
-          <span className="flex items-center gap-1.5"><Car className="w-4 h-4 text-amber-500" /> Concierge Pickup Available</span>
+          <span className="flex items-center gap-1.5"><VehicleSilhouette vehicleType="sedan" isSelected className="w-5 h-4" /> Concierge Pickup Available</span>
+        </div>
+      </section>
+
+      {/* ═══ SEO CONTENT ═══ */}
+      <section className="py-16 px-4 bg-[#0f0f0f] border-t border-[#222]">
+        <div className="max-w-4xl mx-auto space-y-12 text-white/80 leading-relaxed">
+          <div>
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-amber-400 mb-4">
+              PPF & Ceramic Coating Cost Guide — Miami 2026
+            </h2>
+            <p className="mb-4">
+              For most vehicles in the Miami area, a full front PPF package — covering the hood, fenders, bumper, and mirrors — runs between <span className="text-white font-semibold">$1,499 and $1,899</span>. Extended coverage with the track package: <span className="text-white font-semibold">$2,499 to $2,999</span>. Full body PPF: <span className="text-white font-semibold">$4,500 to $5,500</span> depending on vehicle size and complexity. These prices reflect professional-grade XPEL film, proper surface preparation, and installation by certified technicians.
+            </p>
+            <p>
+              Factors affecting price: vehicle size (Porsche 911 vs Escalade), film brand/grade (XPEL Ultimate Plus and XPEL Stealth exclusively), paint condition (correction needed before film), and shop quality (climate control, lighting, dust management). Miami pricing runs slightly higher due to intense UV, salt air, and humidity. Bespoke Auto Design backs every PPF installation with a 10-year warranty, works in a climate-controlled facility, and maintains XPEL certification.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-amber-400 mb-4">
+              Ceramic Coating Pricing in Miami
+            </h2>
+            <p>
+              1-2 year ceramic coating on a coupe/sedan: <span className="text-white font-semibold">$599 to $749</span>. 3-5 year professional-grade coating: <span className="text-white font-semibold">$799 to $999</span> for standard vehicles, scaling up for SUVs, trucks, and exotics. Every service includes full decontamination wash, clay bar treatment, and paint correction before coating application. Vehicle cures in a controlled environment.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-amber-400 mb-4">
+              Ceramic Window Tint Cost
+            </h2>
+            <p>
+              Front two windows: <span className="text-white font-semibold">$149 to $199</span>. Full vehicle tint (all side and rear): <span className="text-white font-semibold">$399 to $799</span>. Ceramic windshield tint: <span className="text-white font-semibold">$180 to $250</span>. We use ceramic tint exclusively — blocks up to 99% of UV rays and rejects significantly more heat without interfering with electronics.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-amber-400 mb-4">
+              What Affects Your Final Price
+            </h2>
+            <p>
+              Vehicle size, service combinations (bundling qualifies for discounts), paint condition, and coverage area selection all influence the final number. Bundling PPF with ceramic coating or adding ceramic tint at the same time typically unlocks package pricing not available on standalone services.
+            </p>
+          </div>
         </div>
       </section>
 
