@@ -34,7 +34,6 @@ const navItemsBefore = [
 { label: "Color Change Wrap", href: "/color-change-wrap" }];
 
 const navItemsAfter: {label: string;href: string;}[] = [
-  { label: "Gallery", href: "/gallery" },
   { label: "Instant Quote", href: "/instant-quote" },
 ];
 
