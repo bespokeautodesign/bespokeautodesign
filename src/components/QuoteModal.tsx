@@ -131,10 +131,10 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card border-border/60 text-foreground">
         <DialogHeader>
-          <DialogTitle>Request a Quote</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-foreground">Request a Quote</DialogTitle>
+          <DialogDescription className="text-muted-foreground">
             Fill out the form below and we'll get back to you within 24 hours.
           </DialogDescription>
         </DialogHeader>
@@ -144,31 +144,31 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label className="text-sm font-medium">First Name *</label>
-                <input name="firstName" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="John" />
+                <input name="firstName" required className="w-full px-3 py-2 border border-border/60 rounded-md bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="John" />
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-medium">Last Name</label>
-                <input name="lastName" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="Doe" />
+                <input name="lastName" className="w-full px-3 py-2 border border-border/60 rounded-md bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Doe" />
               </div>
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Phone *</label>
-              <input name="phone" type="tel" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="(786) 395-9172" />
+              <input name="phone" type="tel" required className="w-full px-3 py-2 border border-border/60 rounded-md bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="(786) 395-9172" />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Email</label>
-              <input name="email" type="email" className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="john@example.com" />
+              <input name="email" type="email" className="w-full px-3 py-2 border border-border/60 rounded-md bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="john@example.com" />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Vehicle Make & Model *</label>
-              <input name="vehicle" required className="w-full px-3 py-2 border border-input rounded-md bg-background" placeholder="2024 Porsche 911" />
+              <input name="vehicle" required className="w-full px-3 py-2 border border-border/60 rounded-md bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="2024 Porsche 911" />
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Service Interest *</label>
               <select 
                 name="service" 
                 required 
-                className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                className="w-full px-3 py-2 border border-border/60 rounded-md bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
                 value={selectedService}
                 onChange={(e) => setSelectedService(e.target.value)}
               >
@@ -189,7 +189,7 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
                 <select 
                   name="ppfType" 
                   required 
-                  className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                  className="w-full px-3 py-2 border border-border/60 rounded-md bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
                   value={ppfType}
                   onChange={(e) => setPpfType(e.target.value)}
                 >
@@ -206,7 +206,7 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
                 <select 
                   name="ppfPackage" 
                   required 
-                  className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                  className="w-full px-3 py-2 border border-border/60 rounded-md bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
                   value={ppfPackage}
                   onChange={(e) => setPpfPackage(e.target.value)}
                 >
@@ -232,7 +232,7 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">Message</label>
-              <textarea name="message" className="w-full px-3 py-2 border border-input rounded-md bg-background min-h-24" placeholder="Tell us about your project..."></textarea>
+              <textarea name="message" className="w-full px-3 py-2 border border-border/60 rounded-md bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring min-h-24" placeholder="Tell us about your project..."></textarea>
             </div>
           </form>
           
