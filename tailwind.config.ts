@@ -61,6 +61,11 @@ export default {
 					yellow: 'hsl(var(--xpel-yellow))',
 					'yellow-dark': 'hsl(var(--xpel-yellow-dark))'
 				},
+				gold: {
+					DEFAULT: 'hsl(var(--gold))',
+					foreground: 'hsl(var(--gold-foreground))',
+					dark: 'hsl(var(--gold-dark))'
+				},
 				success: {
 					DEFAULT: 'hsl(var(--success))',
 					foreground: 'hsl(var(--success-foreground))'
@@ -85,7 +90,8 @@ export default {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-silver': 'var(--gradient-silver)',
 				'gradient-xpel': 'var(--gradient-xpel)',
-				'gradient-hero': 'var(--gradient-hero)'
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-gold': 'var(--gradient-gold)'
 			},
 			boxShadow: {
 				'premium': 'var(--shadow-premium)',
