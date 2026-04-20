@@ -218,7 +218,7 @@ const PaintProtectionFilm = () => {
             icon: Award,
             title: "10-Year XPEL Warranty",
             desc: "Every installation is backed by XPEL's comprehensive 10-year manufacturer warranty against yellowing, cracking, peeling, staining, and delamination — even in Florida's harsh climate."
-          }].map((item) => <Card key={item.title} className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300">
+          }].map((item) => <Card key={item.title} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <item.icon className="h-6 w-6 text-primary" />
@@ -264,7 +264,7 @@ const PaintProtectionFilm = () => {
             coverage: "Every painted surface, bumper to bumper",
             ideal: "Exotic & luxury vehicles",
             highlight: "Maximum Protection"
-          }].map((pkg) => <Card key={pkg.name} className="bg-background border-border shadow-premium text-center">
+          }].map((pkg) => <Card key={pkg.name} className="bg-card border-border/60 shadow-premium text-center">
                 <CardContent className="pt-8 pb-6 px-6 space-y-5">
                   <Badge className="bg-primary text-primary-foreground">{pkg.highlight}</Badge>
                   <h3 className="text-2xl font-bold font-playfair">{pkg.name}</h3>

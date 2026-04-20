@@ -216,7 +216,7 @@ const CeramicCoating = () => {
                 desc: "A ceramic-coated vehicle maintains showroom-quality paint condition for years. When it's time to sell or trade in, your vehicle's pristine exterior commands a premium in the competitive South Florida market.",
               },
             ].map((item) => (
-              <Card key={item.title} className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300">
+              <Card key={item.title} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <item.icon className="h-6 w-6 text-primary" />

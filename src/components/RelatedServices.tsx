@@ -32,7 +32,7 @@ export const RelatedServices = ({ currentSlug }: RelatedServicesProps) => {
         </div>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {related.map(service => (
-            <Card key={service.slug} className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300">
+            <Card key={service.slug} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
               <CardContent className="pt-6 pb-5 px-6 space-y-3">
                 <h3 className="text-lg font-bold">{service.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{service.desc}</p>

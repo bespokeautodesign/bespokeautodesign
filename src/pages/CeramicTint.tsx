@@ -174,7 +174,7 @@ const CeramicTint = () => {
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <Card className="bg-background border-border shadow-premium overflow-hidden">
+            <Card className="bg-card border-border/60 shadow-premium overflow-hidden">
               <CardContent className="p-8 md:p-12">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="flex-shrink-0">
@@ -248,7 +248,7 @@ const CeramicTint = () => {
                 desc: "UV rays destroy your vehicle's interior — cracking dashboards, fading leather, and deteriorating trim. XR Plus preserves your interior's factory condition, protecting your investment and resale value.",
               },
             ].map((item) => (
-              <Card key={item.title} className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300">
+              <Card key={item.title} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <item.icon className="h-6 w-6 text-primary" />
