@@ -55,7 +55,7 @@ const colorPpfFaqData = [
 
 export const ColorPPFFAQ = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-muted">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-4">COLOR PPF FAQ</Badge>
