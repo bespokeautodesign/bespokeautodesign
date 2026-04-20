@@ -37,8 +37,13 @@
     --accent-foreground: 0 0% 92%;
 
     /* Xpel Yellow */
-    --xpel-yellow: 45 100% 50%;
-    --xpel-yellow-dark: 45 100% 40%;
+    --xpel-yellow: 41 60% 58%;
+    --xpel-yellow-dark: 41 55% 45%;
+
+    /* Gold Accent (alias for premium highlights) */
+    --gold: 41 60% 58%;
+    --gold-foreground: 0 0% 8%;
+    --gold-dark: 41 55% 45%;
 
     /* Navbar - Dark Premium */
     --nav-bg: 0 0% 5%;
@@ -59,6 +64,9 @@
     --border: 0 0% 18%;
     --input: 0 0% 14%;
     --ring: 45 100% 50%;
+    
+    /* Gold gradient */
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-dark)));
 
     /* Design System Extensions */
     --radius: 0.75rem;
