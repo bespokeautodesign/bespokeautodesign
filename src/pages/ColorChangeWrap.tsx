@@ -341,7 +341,7 @@ const ColorChangeWrap = () => {
             {brands.map((brand) => (
               <Card
                 key={brand.name}
-                className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300"
+                className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300"
               >
                 <CardContent className="pt-8 pb-6 px-6 space-y-5">
                   <div>
@@ -384,7 +384,7 @@ const ColorChangeWrap = () => {
             {benefits.map((item) => (
               <Card
                 key={item.title}
-                className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300"
+                className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300"
               >
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">

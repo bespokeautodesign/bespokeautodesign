@@ -161,7 +161,7 @@ const StealthPPF = () => {
 
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
             {/* Stealth Card */}
-            <Card className="bg-background border-border shadow-premium">
+            <Card className="bg-card border-border/60 shadow-premium">
               <CardContent className="pt-8 pb-6 px-6 space-y-5">
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-xl bg-primary flex items-center justify-center">
@@ -182,7 +182,7 @@ const StealthPPF = () => {
             </Card>
 
             {/* Clear Card */}
-            <Card className="bg-background border-border shadow-premium">
+            <Card className="bg-card border-border/60 shadow-premium">
               <CardContent className="pt-8 pb-6 px-6 space-y-5">
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-xl bg-secondary flex items-center justify-center">
@@ -239,7 +239,7 @@ const StealthPPF = () => {
             icon: Shield,
             title: "Lease Return Protection",
             desc: "Protect your leased vehicle's paint throughout the lease term. When it's time to return, remove the Stealth PPF and reveal flawless paint — avoiding costly turn-in penalties for chips, scratches, and wear."
-          }].map(item => <Card key={item.title} className="bg-background border-border shadow-premium hover:shadow-glow transition-shadow duration-300">
+          }].map(item => <Card key={item.title} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
                   <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <item.icon className="h-6 w-6 text-primary" />
