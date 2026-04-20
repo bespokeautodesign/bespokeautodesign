@@ -65,21 +65,22 @@ export const HomeFAQ = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          <div className="rounded-lg p-6" style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.08)' }}>
-            <h3 className="text-2xl font-semibold text-center text-white mb-6">Protection Services FAQ</h3>
-            <Accordion type="single" collapsible className="w-full">
-              {homeFaqData.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="border-white/10">
-                  <AccordionTrigger className="text-left text-white/90 hover:text-white">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-white/60">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+          <Accordion type="single" collapsible className="w-full space-y-3">
+            {homeFaqData.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="bg-card border border-border/60 rounded-lg px-5 shadow-premium"
+              >
+                <AccordionTrigger className="text-left text-foreground hover:text-gold hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>

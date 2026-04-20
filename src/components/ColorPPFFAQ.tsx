@@ -66,25 +66,22 @@ export const ColorPPFFAQ = () => {
         </div>
         
         <div className="max-w-4xl mx-auto">
-          <Card className="shadow-premium">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center">XPEL COLOR PPF FAQ</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Accordion type="single" collapsible className="w-full">
-                {colorPpfFaqData.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-left">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground">
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </CardContent>
-          </Card>
+          <Accordion type="single" collapsible className="w-full space-y-3">
+            {colorPpfFaqData.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="bg-card border border-border/60 rounded-lg px-5 shadow-premium"
+              >
+                <AccordionTrigger className="text-left text-foreground hover:text-gold hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
