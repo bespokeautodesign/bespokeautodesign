@@ -29,20 +29,20 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <nav aria-label="Breadcrumb" className="py-4">
-        <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+        <ol className="flex items-center space-x-2 text-sm text-gold/70">
           {items.map((item, index) => (
             <li key={item.path} className="flex items-center">
               {index > 0 && (
-                <span className="mx-2 text-muted-foreground/50">/</span>
+                <span className="mx-2 text-gold/40">/</span>
               )}
               {item.current ? (
-                <span className="text-foreground font-medium" aria-current="page">
+                <span className="text-gold font-medium" aria-current="page">
                   {item.name}
                 </span>
               ) : (
                 <Link 
                   to={item.path} 
-                  className="hover:text-foreground transition-colors"
+                  className="hover:text-gold transition-colors"
                 >
                   {item.name}
                 </Link>
