@@ -10,7 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
-import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award } from "lucide-react";
+import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award, Calculator } from "lucide-react";
 import PageSEO from "@/components/PageSEO";
 import { Link } from "react-router-dom";
 import { WhyChooseUs, ppfDifferentiators } from "@/components/WhyChooseUs";
@@ -93,10 +93,10 @@ const PaintProtectionFilm = () => {
       </div>
 
       {/* Instant Quote CTA */}
-      <div className="bg-brand-red/10 border-y border-brand-red/40">
-        <div className="container mx-auto px-6 py-3 flex items-center justify-center gap-3 text-sm">
-          <span className="text-brand-red font-medium">💡 Get an instant price range for your vehicle</span>
-          <Link to="/instant-quote" className="inline-flex items-center gap-1 text-brand-red font-bold hover:text-brand-red underline underline-offset-2">Try the Instant Quote Calculator <ChevronRight className="w-3.5 h-3.5" /></Link>
+      <div className="bg-black border-y border-silver-muted/40">
+        <div className="container mx-auto px-6 py-2.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-silver">
+          <span className="font-medium flex items-center gap-1.5"><Calculator className="w-4 h-4 text-silver-muted" /> Get an instant price range for your vehicle</span>
+          <Link to="/instant-quote" className="inline-flex items-center gap-1 text-silver font-semibold underline-offset-4 hover:underline">Try the Instant Quote Calculator <ChevronRight className="w-3.5 h-3.5" /></Link>
         </div>
       </div>
 
