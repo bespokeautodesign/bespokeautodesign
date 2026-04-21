@@ -33,7 +33,7 @@ interface VehicleSilhouetteProps {
 const VehicleSilhouette = ({ vehicleType, isSelected, className = "w-8 h-6" }: VehicleSilhouetteProps) => {
   const svgData = vehicleSvgData[vehicleType];
   if (!svgData) return null;
-  const fillColor = isSelected ? "#f59e0b" : "#555555";
+  const fillColor = isSelected ? "#DED9D0" : "#555555";
   return (
     <svg viewBox={svgData.viewBox} fill={fillColor} xmlns="http://www.w3.org/2000/svg" className={className}>
       {svgData.paths.map((d, i) => (
@@ -359,8 +359,8 @@ const InstantQuote = () => {
                     onClick={() => { setVehicle(v.key); setTouched(prev => ({ ...prev, vehicle: true })); }}
                     className={`p-4 rounded-lg border-2 text-left transition-all duration-200 ${
                       vehicle === v.key
-                        ? "border-brand-red bg-brand-red/10 shadow-[0_0_20px_rgba(245,158,11,0.15)]"
-                        : "border-[#333] bg-[#1a1a1a] hover:border-[#555] hover:bg-[#222]"
+                        ? "border-silver bg-silver/10 shadow-[0_0_20px_rgba(222,217,208,0.18)]"
+                        : "border-[#333] bg-[#1a1a1a] hover:border-silver-muted hover:bg-[#222]"
                     }`}
                   >
                     <VehicleSilhouette vehicleType={v.key} isSelected={vehicle === v.key} className="w-8 h-6 mb-2" />
