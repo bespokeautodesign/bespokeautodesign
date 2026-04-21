@@ -10,7 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
 import { QuoteModal } from "@/components/QuoteModal";
-import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award } from "lucide-react";
+import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award, Calculator } from "lucide-react";
 import PageSEO from "@/components/PageSEO";
 import { Link } from "react-router-dom";
 import { WhyChooseUs, ppfDifferentiators } from "@/components/WhyChooseUs";
