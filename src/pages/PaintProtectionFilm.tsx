@@ -220,8 +220,8 @@ const PaintProtectionFilm = () => {
             desc: "Every installation is backed by XPEL's comprehensive 10-year manufacturer warranty against yellowing, cracking, peeling, staining, and delamination — even in Florida's harsh climate."
           }].map((item) => <Card key={item.title} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
-                  <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <item.icon className="h-6 w-6 text-primary" />
+                  <div className="h-12 w-12 rounded-xl bg-gold/10 flex items-center justify-center">
+                    <item.icon className="h-6 w-6 text-gold" />
                   </div>
                   <h3 className="text-xl font-bold">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -266,7 +266,7 @@ const PaintProtectionFilm = () => {
             highlight: "Maximum Protection"
           }].map((pkg) => <Card key={pkg.name} className="bg-card border-border/60 shadow-premium text-center">
                 <CardContent className="pt-8 pb-6 px-6 space-y-5">
-                  <Badge className="bg-primary text-primary-foreground">{pkg.highlight}</Badge>
+                  <Badge className="bg-primary text-gold-foreground">{pkg.highlight}</Badge>
                   <h3 className="text-2xl font-bold font-playfair">{pkg.name}</h3>
                   <p className="text-muted-foreground">{pkg.coverage}</p>
                   <p className="text-sm text-muted-foreground italic">Ideal for: {pkg.ideal}</p>
@@ -288,7 +288,7 @@ const PaintProtectionFilm = () => {
             <img src={clearPPFVehicles[1].image} alt="Rolls-Royce Cullinan with XPEL PPF" loading="lazy" className="w-full h-[350px] md:h-[500px] object-cover object-[center_65%]"  width={800} height={350} />
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 md:p-12 max-w-lg">
-              <Badge className="bg-primary text-primary-foreground mb-4">Full Body PPF</Badge>
+              <Badge className="bg-primary text-gold-foreground mb-4">Full Body PPF</Badge>
               <h3 className="text-2xl md:text-3xl font-bold font-playfair text-white mb-3">Rolls-Royce Cullinan</h3>
               <p className="text-white/80 leading-relaxed">Complete bumper-to-bumper XPEL Ultimate Plus™ protection — preserving the finish on one of the world's most prestigious SUVs.</p>
             </div>
@@ -315,7 +315,7 @@ const PaintProtectionFilm = () => {
               </p>
               <div className="grid sm:grid-cols-2 gap-6 py-4">
                 {["Precision DAP templates for 100,000+ vehicle fitments", "Optically clear — invisible on any paint color", "Self-healing top coat eliminates swirl marks", "Stain-resistant against bird droppings & tree sap", "Non-yellowing formula engineered for high-UV climates", "Edge-seal technology prevents lifting and peeling", "Transferable 10-year manufacturer warranty", "Safe removal with zero paint damage"].map((point) => <div key={point} className="flex items-start gap-3">
-                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <Check className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
                     <span className="text-foreground">{point}</span>
                   </div>)}
               </div>
@@ -356,7 +356,7 @@ const PaintProtectionFilm = () => {
             title: "Quality Inspection",
             desc: "Multi-point inspection under controlled lighting ensures flawless coverage before delivery."
           }].map((item) => <div key={item.step} className="space-y-4 text-center">
-                <div className="h-16 w-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
+                <div className="h-16 w-16 rounded-full bg-primary text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-bold">{item.title}</h3>
@@ -568,7 +568,7 @@ const PaintProtectionFilm = () => {
                   "Fort Lauderdale", "Hollywood", "Weston"
                 ].map((area) => (
                   <div key={area} className="flex items-center gap-2 text-sm font-medium text-foreground">
-                    <Check className="h-4 w-4 text-primary shrink-0" />
+                    <Check className="h-4 w-4 text-gold shrink-0" />
                     {area}
                   </div>
                 ))}

@@ -161,7 +161,7 @@ const XPELColorPPF = () => {
                 <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                   {xpelColors.map((color) => (
                     <div key={color.name} className="flex flex-col items-center space-y-3 group cursor-pointer" onClick={() => setSelectedColor(color)}>
-                      <div className={`relative w-16 h-16 rounded-full border-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg ${selectedColor.name === color.name ? 'border-primary shadow-xl scale-110' : 'border-border group-hover:border-primary/50'}`}>
+                      <div className={`relative w-16 h-16 rounded-full border-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg ${selectedColor.name === color.name ? 'border-gold shadow-xl scale-110' : 'border-border group-hover:border-gold/50'}`}>
                         <div className="w-full h-full rounded-full overflow-hidden" style={{
                           backgroundColor: color.color,
                           background: color.finish === 'Metallic' ? `linear-gradient(135deg, ${color.color}, #ffffff60, ${color.color})` : color.color,
@@ -169,12 +169,12 @@ const XPELColorPPF = () => {
                         }} />
                         {selectedColor.name === color.name && (
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <CheckCircle className="w-6 h-6 text-primary bg-background rounded-full" />
+                            <CheckCircle className="w-6 h-6 text-gold bg-background rounded-full" />
                           </div>
                         )}
                       </div>
                       <div className="text-center">
-                        <p className={`text-sm font-medium transition-colors ${selectedColor.name === color.name ? 'text-primary' : 'text-foreground'}`}>
+                        <p className={`text-sm font-medium transition-colors ${selectedColor.name === color.name ? 'text-gold' : 'text-foreground'}`}>
                           {color.name.replace('XPEL ', '')}
                         </p>
                         <Badge variant={selectedColor.name === color.name ? 'default' : 'secondary'} className="text-xs mt-1">{color.finish}</Badge>
@@ -202,10 +202,10 @@ const XPELColorPPF = () => {
                   <h4 className="text-xl font-bold text-foreground mb-2">{selectedColor.name}</h4>
                   <p className="text-sm text-muted-foreground mb-4">{selectedColor.finish} Finish</p>
                   <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground"><Shield className="h-3 w-3 text-primary" /><span>10-year warranty</span></div>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground"><Zap className="h-3 w-3 text-primary" /><span>Self-healing</span></div>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground"><Star className="h-3 w-3 text-primary" /><span>UV resistant</span></div>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground"><Droplet className="h-3 w-3 text-primary" /><span>Hydrophobic</span></div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground"><Shield className="h-3 w-3 text-gold" /><span>10-year warranty</span></div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground"><Zap className="h-3 w-3 text-gold" /><span>Self-healing</span></div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground"><Star className="h-3 w-3 text-gold" /><span>UV resistant</span></div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground"><Droplet className="h-3 w-3 text-gold" /><span>Hydrophobic</span></div>
                   </div>
                   <Button className="w-full mt-6" onClick={() => { setQuoteColor(selectedColor.name); setQuoteModalOpen(true); }}>
                     Get Quote for {selectedColor.name.replace('XPEL ', '')}

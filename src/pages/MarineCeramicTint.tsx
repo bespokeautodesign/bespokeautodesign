@@ -83,7 +83,7 @@ const MarineCeramicTint = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((b, i) => (
               <div key={i} className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
-                <Sun className="h-6 w-6 text-primary mb-3" />
+                <Sun className="h-6 w-6 text-gold mb-3" />
                 <h3 className="font-semibold text-foreground mb-2">{b.title}</h3>
                 <p className="text-sm text-muted-foreground">{b.description}</p>
               </div>
@@ -103,17 +103,17 @@ const MarineCeramicTint = () => {
             </p>
             <div className="grid sm:grid-cols-3 gap-6 mt-8">
               <div className="flex flex-col items-center gap-2">
-                <Award className="h-8 w-8 text-primary" />
+                <Award className="h-8 w-8 text-gold" />
                 <span className="font-semibold text-foreground">98% IR Rejection</span>
                 <span className="text-sm text-muted-foreground">Industry-leading heat block</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <Sun className="h-8 w-8 text-primary" />
+                <Sun className="h-8 w-8 text-gold" />
                 <span className="font-semibold text-foreground">99% UV Protection</span>
                 <span className="text-sm text-muted-foreground">Skin Cancer Foundation recommended</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <Shield className="h-8 w-8 text-primary" />
+                <Shield className="h-8 w-8 text-gold" />
                 <span className="font-semibold text-foreground">Signal-Safe</span>
                 <span className="text-sm text-muted-foreground">No electronics interference</span>
               </div>
@@ -140,7 +140,7 @@ const MarineCeramicTint = () => {
                   "Custom combinations tailored to your vessel's layout",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3">
-                    <Eye className="h-5 w-5 text-primary flex-shrink-0" />
+                    <Eye className="h-5 w-5 text-gold flex-shrink-0" />
                     <span className="text-foreground">{item}</span>
                   </li>
                 ))}

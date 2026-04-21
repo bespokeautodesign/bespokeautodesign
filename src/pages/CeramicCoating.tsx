@@ -218,8 +218,8 @@ const CeramicCoating = () => {
             ].map((item) => (
               <Card key={item.title} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
-                  <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <item.icon className="h-6 w-6 text-primary" />
+                  <div className="h-12 w-12 rounded-xl bg-gold/10 flex items-center justify-center">
+                    <item.icon className="h-6 w-6 text-gold" />
                   </div>
                   <h3 className="text-xl font-bold">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -251,7 +251,7 @@ const CeramicCoating = () => {
                   <th className="py-4 px-6 text-lg font-bold">Feature</th>
                   <th className="py-4 px-6 text-lg font-bold text-muted-foreground">Wax</th>
                   <th className="py-4 px-6 text-lg font-bold text-muted-foreground">Paint Sealant</th>
-                  <th className="py-4 px-6 text-lg font-bold text-primary">Ceramic Coating</th>
+                  <th className="py-4 px-6 text-lg font-bold text-gold">Ceramic Coating</th>
                 </tr>
               </thead>
               <tbody className="text-muted-foreground">
@@ -310,7 +310,7 @@ const CeramicCoating = () => {
                 "Installed by certified XPEL technicians only",
               ].map((point) => (
                 <div key={point} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
                   <span className="text-foreground">{point}</span>
                 </div>
               ))}
@@ -342,7 +342,7 @@ const CeramicCoating = () => {
               { step: "05", title: "Curing & Inspection", desc: "Infrared curing followed by multi-point quality inspection under specialized lighting." },
             ].map((item) => (
               <div key={item.step} className="space-y-4 text-center">
-                <div className="h-16 w-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
+                <div className="h-16 w-16 rounded-full bg-primary text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
                 <h3 className="text-lg font-bold">{item.title}</h3>
@@ -383,7 +383,7 @@ const CeramicCoating = () => {
                 "The choice of exotic and luxury car owners worldwide",
               ].map((point) => (
                 <div key={point} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
                   <span className="text-foreground">{point}</span>
                 </div>
               ))}
@@ -612,7 +612,7 @@ const CeramicCoating = () => {
                   "Fort Lauderdale", "Hollywood", "Weston", "Pembroke Pines"
                 ].map((area) => (
                   <div key={area} className="flex items-center gap-2 text-sm font-medium text-foreground">
-                    <Check className="h-4 w-4 text-primary shrink-0" />
+                    <Check className="h-4 w-4 text-gold shrink-0" />
                     {area}
                   </div>
                 ))}

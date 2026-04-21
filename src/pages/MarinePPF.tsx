@@ -86,7 +86,7 @@ const MarinePPF = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((b, i) => (
               <div key={i} className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
-                <CheckCircle className="h-6 w-6 text-primary mb-3" />
+                <CheckCircle className="h-6 w-6 text-gold mb-3" />
                 <h3 className="font-semibold text-foreground mb-2">{b.title}</h3>
                 <p className="text-sm text-muted-foreground">{b.description}</p>
               </div>
@@ -106,17 +106,17 @@ const MarinePPF = () => {
             </p>
             <div className="grid sm:grid-cols-3 gap-6 mt-8">
               <div className="flex flex-col items-center gap-2">
-                <Award className="h-8 w-8 text-primary" />
+                <Award className="h-8 w-8 text-gold" />
                 <span className="font-semibold text-foreground">10-Year Warranty</span>
                 <span className="text-sm text-muted-foreground">Manufacturer backed</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <Shield className="h-8 w-8 text-primary" />
+                <Shield className="h-8 w-8 text-gold" />
                 <span className="font-semibold text-foreground">8.5 mil Thickness</span>
                 <span className="text-sm text-muted-foreground">Superior impact protection</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <CheckCircle className="h-8 w-8 text-primary" />
+                <CheckCircle className="h-8 w-8 text-gold" />
                 <span className="font-semibold text-foreground">Self-Healing</span>
                 <span className="text-sm text-muted-foreground">Elastomeric top coat</span>
               </div>
@@ -137,7 +137,7 @@ const MarinePPF = () => {
               <ul className="space-y-3">
                 {["Bow & hull leading edges", "Waterline & boot stripe areas", "Swim platforms & transom", "Rub rails & fender zones", "Gel coat & painted surfaces"].map((area, i) => (
                   <li key={i} className="flex items-center gap-3">
-                    <Shield className="h-5 w-5 text-primary flex-shrink-0" />
+                    <Shield className="h-5 w-5 text-gold flex-shrink-0" />
                     <span className="text-foreground">{area}</span>
                   </li>
                 ))}

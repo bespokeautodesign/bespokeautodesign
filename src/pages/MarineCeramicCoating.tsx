@@ -83,7 +83,7 @@ const MarineCeramicCoating = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((b, i) => (
               <div key={i} className="bg-card border border-border rounded-xl p-6 hover:shadow-lg transition-shadow">
-                <Droplets className="h-6 w-6 text-primary mb-3" />
+                <Droplets className="h-6 w-6 text-gold mb-3" />
                 <h3 className="font-semibold text-foreground mb-2">{b.title}</h3>
                 <p className="text-sm text-muted-foreground">{b.description}</p>
               </div>
@@ -103,17 +103,17 @@ const MarineCeramicCoating = () => {
             </p>
             <div className="grid sm:grid-cols-3 gap-6 mt-8">
               <div className="flex flex-col items-center gap-2">
-                <Award className="h-8 w-8 text-primary" />
+                <Award className="h-8 w-8 text-gold" />
                 <span className="font-semibold text-foreground">Professional Grade</span>
                 <span className="text-sm text-muted-foreground">High SiO₂/TiO₂ concentration</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <Droplets className="h-8 w-8 text-primary" />
+                <Droplets className="h-8 w-8 text-gold" />
                 <span className="font-semibold text-foreground">Extreme Hydrophobic</span>
                 <span className="text-sm text-muted-foreground">120°+ water contact angle</span>
               </div>
               <div className="flex flex-col items-center gap-2">
-                <Shield className="h-8 w-8 text-primary" />
+                <Shield className="h-8 w-8 text-gold" />
                 <span className="font-semibold text-foreground">Multi-Year Protection</span>
                 <span className="text-sm text-muted-foreground">Permanent surface bond</span>
               </div>
@@ -135,7 +135,7 @@ const MarineCeramicCoating = () => {
               { step: "5", title: "Curing & Inspection", desc: "Controlled curing period followed by a detailed final inspection to ensure flawless coating adhesion and finish." },
             ].map((s, i) => (
               <div key={i} className="flex gap-6 items-start">
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg flex-shrink-0">{s.step}</div>
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-gold-foreground font-bold text-lg flex-shrink-0">{s.step}</div>
                 <div>
                   <h3 className="font-semibold text-foreground text-lg mb-1">{s.title}</h3>
                   <p className="text-muted-foreground">{s.desc}</p>

@@ -279,7 +279,7 @@ const ColorChangeWrap = () => {
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-premium">
                 <img src={vinylWrapVehicles[0].afterImage} alt="Aston Martin DBX — after wrap" loading="lazy" className="w-full h-[280px] object-cover object-[center_70%]"  width={800} height={280} />
-                <div className="absolute bottom-3 left-3"><Badge className="bg-primary text-primary-foreground">After</Badge></div>
+                <div className="absolute bottom-3 left-3"><Badge className="bg-primary text-gold-foreground">After</Badge></div>
               </div>
             </div>
           </div>
@@ -346,7 +346,7 @@ const ColorChangeWrap = () => {
                 <CardContent className="pt-8 pb-6 px-6 space-y-5">
                   <div>
                     <h3 className="text-xl font-bold">{brand.name}</h3>
-                    <p className="text-sm text-primary font-semibold tracking-wide uppercase mt-1">
+                    <p className="text-sm text-gold font-semibold tracking-wide uppercase mt-1">
                       {brand.tagline}
                     </p>
                   </div>
@@ -354,7 +354,7 @@ const ColorChangeWrap = () => {
                   <ul className="space-y-2">
                     {brand.highlights.map((h) => (
                       <li key={h} className="flex items-start gap-2 text-sm">
-                        <Check className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                        <Check className="h-4 w-4 text-gold mt-0.5 flex-shrink-0" />
                         <span className="text-muted-foreground">{h}</span>
                       </li>
                     ))}
@@ -387,8 +387,8 @@ const ColorChangeWrap = () => {
                 className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300"
               >
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
-                  <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <item.icon className="h-6 w-6 text-primary" />
+                  <div className="h-12 w-12 rounded-xl bg-gold/10 flex items-center justify-center">
+                    <item.icon className="h-6 w-6 text-gold" />
                   </div>
                   <h3 className="text-lg font-bold">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed text-sm">{item.desc}</p>
@@ -417,7 +417,7 @@ const ColorChangeWrap = () => {
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-premium">
                 <img src={vinylWrapVehicles[2].afterImage} alt="McLaren 570S after wrap" loading="lazy" className="w-full h-[300px] md:h-[380px] object-cover object-[center_70%]"  width={800} height={300} />
-                <div className="absolute bottom-3 left-3"><Badge className="bg-primary text-primary-foreground">After</Badge></div>
+                <div className="absolute bottom-3 left-3"><Badge className="bg-primary text-gold-foreground">After</Badge></div>
               </div>
             </div>
           </div>
@@ -442,7 +442,7 @@ const ColorChangeWrap = () => {
                 <tr className="border-b border-border">
                   <th className="py-4 px-6 text-lg font-bold">Feature</th>
                   <th className="py-4 px-6 text-lg font-bold text-muted-foreground">Full Respray</th>
-                  <th className="py-4 px-6 text-lg font-bold text-primary">Vinyl Wrap</th>
+                  <th className="py-4 px-6 text-lg font-bold text-gold">Vinyl Wrap</th>
                 </tr>
               </thead>
               <tbody className="text-muted-foreground">
@@ -483,7 +483,7 @@ const ColorChangeWrap = () => {
           <div className="max-w-4xl mx-auto space-y-8">
             {processSteps.map((item) => (
               <div key={item.step} className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold">
+                <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-primary text-gold-foreground flex items-center justify-center text-lg font-bold">
                   {item.step}
                 </div>
                 <div>
@@ -708,7 +708,7 @@ const ColorChangeWrap = () => {
                   "Fort Lauderdale", "Hollywood", "Weston"
                 ].map((area) => (
                   <div key={area} className="flex items-center gap-2 text-sm font-medium text-foreground">
-                    <Check className="h-4 w-4 text-primary shrink-0" />
+                    <Check className="h-4 w-4 text-gold shrink-0" />
                     {area}
                   </div>
                 ))}
