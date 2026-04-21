@@ -70,7 +70,7 @@ const ServiceAreaCoralGables = () => (
         </div>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/60">
           <GoogleRatingChip /><span>•</span>
-          <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-brand-red" /> XPEL Authorized Dealer</span><span className="hidden sm:inline">•</span>
+          <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-xpel-yellow" /> XPEL Authorized Dealer</span><span className="hidden sm:inline">•</span>
           <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-brand-red" /> Up to 10-Year Warranty</span><span className="hidden sm:inline">•</span>
           <span className="flex items-center gap-1.5"><Car className="w-4 h-4 text-brand-red" /> Concierge Pickup Available</span>
         </div>
