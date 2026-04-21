@@ -107,6 +107,7 @@ const faqPageSchema = {
 };
 
 const ServiceAreaBrickell = () => {
+  const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
   const structuredData = [localBusinessSchema, faqPageSchema];
 
   return (
@@ -278,6 +279,7 @@ const ServiceAreaBrickell = () => {
       </section>
 
       <Footer />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );
 };
