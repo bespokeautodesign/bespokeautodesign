@@ -253,7 +253,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
 
       {/* XPEL Partnership Section */}
       <section id="xpel" className="py-20 bg-black text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 opacity-95"></div>
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse at top, hsl(0 0% 10%) 0%, hsl(0 0% 4%) 70%)'
+        }}></div>
         <div className="container mx-auto px-6 relative z-10">
           <article className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-xpel-yellow text-primary">
