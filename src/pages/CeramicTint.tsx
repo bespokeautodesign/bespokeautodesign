@@ -178,7 +178,7 @@ const CeramicTint = () => {
               <CardContent className="p-8 md:p-12">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="flex-shrink-0">
-                    <div className="h-24 w-24 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
+                    <div className="h-24 w-24 rounded-full bg-gold/10 border border-silver-muted flex items-center justify-center">
                       <Heart className="h-12 w-12 text-gold" fill="currentColor" />
                     </div>
                   </div>
@@ -250,7 +250,7 @@ const CeramicTint = () => {
             ].map((item) => (
               <Card key={item.title} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
-                  <div className="h-12 w-12 rounded-xl bg-gold/15 border border-gold/30 flex items-center justify-center shrink-0">
+                  <div className="h-12 w-12 rounded-xl bg-gold/15 border border-silver-muted flex items-center justify-center shrink-0">
                     <item.icon className="h-6 w-6 text-gold" />
                   </div>
                   <h3 className="text-xl font-bold">{item.title}</h3>

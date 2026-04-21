@@ -161,7 +161,7 @@ const XPELColorPPF = () => {
                 <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                   {xpelColors.map((color) => (
                     <div key={color.name} className="flex flex-col items-center space-y-3 group cursor-pointer" onClick={() => setSelectedColor(color)}>
-                      <div className={`relative w-16 h-16 rounded-full border-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg ${selectedColor.name === color.name ? 'border-gold shadow-xl scale-110' : 'border-border group-hover:border-gold/50'}`}>
+                      <div className={`relative w-16 h-16 rounded-full border-4 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg ${selectedColor.name === color.name ? 'border-silver-muted shadow-xl scale-110' : 'border-border group-hover:border-silver-muted'}`}>
                         <div className="w-full h-full rounded-full overflow-hidden" style={{
                           backgroundColor: color.color,
                           background: color.finish === 'Metallic' ? `linear-gradient(135deg, ${color.color}, #ffffff60, ${color.color})` : color.color,

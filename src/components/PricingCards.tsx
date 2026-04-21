@@ -35,7 +35,7 @@ export const PricingCards = ({ title, subtitle, tiers, onGetQuote, footnote }: P
               key={tier.name}
               className={`relative rounded-2xl border p-8 flex flex-col transition-shadow hover:shadow-lg ${
                 tier.popular
-                  ? 'border-gold bg-card shadow-md ring-2 ring-gold/20'
+                  ? 'border-silver-muted bg-card shadow-md ring-2 ring-gold/20'
                   : 'border-border bg-card'
               }`}
             >

@@ -112,7 +112,7 @@ export const WhyChooseUs = ({ variant = 'homepage', differentiators, title }: Wh
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
-              <Badge variant="secondary" className="mb-3 bg-xpel-yellow text-primary">WHY BESPOKE</Badge>
+              <Badge variant="secondary" className="mb-3 bg-silver-muted/20 text-silver border border-silver-muted/40">WHY BESPOKE</Badge>
               <h2 className="text-2xl md:text-3xl font-bold font-playfair">
                 {title || "Why Choose Bespoke Auto Design"}
               </h2>
@@ -120,8 +120,8 @@ export const WhyChooseUs = ({ variant = 'homepage', differentiators, title }: Wh
             <div className="grid md:grid-cols-2 gap-6">
               {items.map((item, index) => (
                 <div key={index} className="flex gap-4 items-start bg-primary-foreground/5 border border-primary-foreground/10 rounded-xl p-5">
-                  <div className="w-10 h-10 bg-xpel-yellow/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <item.icon className="h-5 w-5 text-xpel-yellow" />
+                  <div className="w-10 h-10 bg-silver/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <item.icon className="h-5 w-5 text-silver" />
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-primary-foreground mb-1">{item.title}</h3>
@@ -148,7 +148,7 @@ export const WhyChooseUs = ({ variant = 'homepage', differentiators, title }: Wh
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 bg-xpel-yellow text-primary">
+          <Badge variant="secondary" className="mb-4 bg-silver-muted/20 text-silver border border-silver-muted/40">
             Why Choose Bespoke
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold mb-4 font-playfair">
@@ -168,7 +168,7 @@ export const WhyChooseUs = ({ variant = 'homepage', differentiators, title }: Wh
             { value: "Lifetime", label: "Tint Warranty" },
           ].map((stat, i) => (
             <div key={i} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-xpel-yellow font-playfair">{stat.value}</div>
+              <div className="text-3xl md:text-4xl font-bold text-silver font-playfair">{stat.value}</div>
               <div className="text-sm text-primary-foreground/60 mt-1 uppercase tracking-wider">{stat.label}</div>
             </div>
           ))}
@@ -181,8 +181,8 @@ export const WhyChooseUs = ({ variant = 'homepage', differentiators, title }: Wh
               key={index}
               className="group relative bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-6 hover:bg-primary-foreground/10 transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-xpel-yellow/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-xpel-yellow/20 transition-colors">
-                <item.icon className="h-6 w-6 text-xpel-yellow" />
+              <div className="w-12 h-12 bg-silver/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-silver/20 transition-colors">
+                <item.icon className="h-6 w-6 text-silver" />
               </div>
               <h3 className="text-lg font-semibold text-primary-foreground mb-2">{item.title}</h3>
               <p className="text-sm text-primary-foreground/60 leading-relaxed">{item.description}</p>
