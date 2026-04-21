@@ -93,10 +93,10 @@ const FlipCard = ({ category }: { category: (typeof categories)[0] }) => {
                 key={svc.href}
                 to={svc.href}
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center justify-between px-4 py-2.5 rounded-lg bg-accent/50 hover:bg-accent text-foreground text-sm font-medium transition-colors duration-200 group"
+                className="flex items-center justify-between px-4 py-2.5 rounded-lg bg-accent/50 hover:bg-accent text-foreground text-sm font-medium transition-colors duration-200 group hover:text-silver"
               >
                 {svc.label}
-                <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-silver transition-colors" />
               </Link>
             ))}
           </div>

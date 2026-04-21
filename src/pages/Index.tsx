@@ -253,7 +253,9 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
 
       {/* XPEL Partnership Section */}
       <section id="xpel" className="py-20 bg-black text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900 opacity-95"></div>
+        <div className="absolute inset-0 pointer-events-none" style={{
+          background: 'radial-gradient(ellipse at top, hsl(0 0% 10%) 0%, hsl(0 0% 4%) 70%)'
+        }}></div>
         <div className="container mx-auto px-6 relative z-10">
           <article className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-xpel-yellow text-primary">
@@ -317,7 +319,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) =>
-              <div key={index} className="overflow-hidden rounded-lg transition-all duration-500 group cursor-pointer hover:shadow-[0_0_20px_rgba(255,215,0,0.15)]" style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.08)' }} onClick={() => setSelectedService(index)}>
+              <div key={index} className="overflow-hidden rounded-lg transition-all duration-500 group cursor-pointer hover:shadow-[0_0_24px_rgba(222,217,208,0.18)] hover:border-silver/40" style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.08)' }} onClick={() => setSelectedService(index)}>
                 <div className="relative h-64 overflow-hidden">
                   <LazyImage src={service.image} alt={service.title} className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${index === 1 ? "object-[center_30%]" : ""}`} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -361,9 +363,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
 
       {/* Animated Stats */}
       <AnimatedStats />
-
-      {/* Why Choose Us */}
-      <WhyChooseUs variant="homepage" />
 
       {/* Competitive Edge */}
       <CompetitiveEdge onQuoteClick={() => setQuoteModalOpen(true)} />
