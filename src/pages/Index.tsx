@@ -169,7 +169,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       <Navbar />
 
       {/* Urgency Banner */}
-      <div className="bg-amber-500/90 text-black text-center py-2 px-4 text-sm font-medium tracking-wide">
+      <div className="bg-black border-y border-silver-muted/40 text-silver text-center py-2 px-4 text-sm font-medium tracking-wide">
         <Calendar className="inline-block w-4 h-4 mr-1.5 -mt-0.5" />
         Currently booking 1–2 weeks out. <span className="font-semibold">Reserve your spot today.</span>
       </div>
