@@ -266,7 +266,7 @@ const PaintProtectionFilm = () => {
             highlight: "Maximum Protection"
           }].map((pkg) => <Card key={pkg.name} className="bg-card border-border/60 shadow-premium text-center">
                 <CardContent className="pt-8 pb-6 px-6 space-y-5">
-                  <Badge className="bg-primary text-gold-foreground">{pkg.highlight}</Badge>
+                  <Badge className="bg-gold text-gold-foreground">{pkg.highlight}</Badge>
                   <h3 className="text-2xl font-bold font-playfair">{pkg.name}</h3>
                   <p className="text-muted-foreground">{pkg.coverage}</p>
                   <p className="text-sm text-muted-foreground italic">Ideal for: {pkg.ideal}</p>
@@ -288,7 +288,7 @@ const PaintProtectionFilm = () => {
             <img src={clearPPFVehicles[1].image} alt="Rolls-Royce Cullinan with XPEL PPF" loading="lazy" className="w-full h-[350px] md:h-[500px] object-cover object-[center_65%]"  width={800} height={350} />
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
             <div className="absolute bottom-0 left-0 p-8 md:p-12 max-w-lg">
-              <Badge className="bg-primary text-gold-foreground mb-4">Full Body PPF</Badge>
+              <Badge className="bg-gold text-gold-foreground mb-4">Full Body PPF</Badge>
               <h3 className="text-2xl md:text-3xl font-bold font-playfair text-white mb-3">Rolls-Royce Cullinan</h3>
               <p className="text-white/80 leading-relaxed">Complete bumper-to-bumper XPEL Ultimate Plus™ protection — preserving the finish on one of the world's most prestigious SUVs.</p>
             </div>
@@ -356,7 +356,7 @@ const PaintProtectionFilm = () => {
             title: "Quality Inspection",
             desc: "Multi-point inspection under controlled lighting ensures flawless coverage before delivery."
           }].map((item) => <div key={item.step} className="space-y-4 text-center">
-                <div className="h-16 w-16 rounded-full bg-primary text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
+                <div className="h-16 w-16 rounded-full bg-gold text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-bold">{item.title}</h3>

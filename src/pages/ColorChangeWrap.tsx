@@ -279,7 +279,7 @@ const ColorChangeWrap = () => {
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-premium">
                 <img src={vinylWrapVehicles[0].afterImage} alt="Aston Martin DBX — after wrap" loading="lazy" className="w-full h-[280px] object-cover object-[center_70%]"  width={800} height={280} />
-                <div className="absolute bottom-3 left-3"><Badge className="bg-primary text-gold-foreground">After</Badge></div>
+                <div className="absolute bottom-3 left-3"><Badge className="bg-gold text-gold-foreground">After</Badge></div>
               </div>
             </div>
           </div>
@@ -417,7 +417,7 @@ const ColorChangeWrap = () => {
               </div>
               <div className="relative rounded-2xl overflow-hidden shadow-premium">
                 <img src={vinylWrapVehicles[2].afterImage} alt="McLaren 570S after wrap" loading="lazy" className="w-full h-[300px] md:h-[380px] object-cover object-[center_70%]"  width={800} height={300} />
-                <div className="absolute bottom-3 left-3"><Badge className="bg-primary text-gold-foreground">After</Badge></div>
+                <div className="absolute bottom-3 left-3"><Badge className="bg-gold text-gold-foreground">After</Badge></div>
               </div>
             </div>
           </div>
@@ -483,7 +483,7 @@ const ColorChangeWrap = () => {
           <div className="max-w-4xl mx-auto space-y-8">
             {processSteps.map((item) => (
               <div key={item.step} className="flex gap-6 items-start">
-                <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-primary text-gold-foreground flex items-center justify-center text-lg font-bold">
+                <div className="flex-shrink-0 w-14 h-14 rounded-2xl bg-gold text-gold-foreground flex items-center justify-center text-lg font-bold">
                   {item.step}
                 </div>
                 <div>

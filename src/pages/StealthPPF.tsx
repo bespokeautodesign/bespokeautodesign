@@ -164,7 +164,7 @@ const StealthPPF = () => {
             <Card className="bg-card border-border/60 shadow-premium">
               <CardContent className="pt-8 pb-6 px-6 space-y-5">
                 <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-xl bg-primary flex items-center justify-center">
+                  <div className="h-12 w-12 rounded-xl bg-gold/15 border border-gold/30 flex items-center justify-center">
                     <Paintbrush className="h-6 w-6 text-gold-foreground" />
                   </div>
                   <h3 className="text-2xl font-bold font-playfair">XPEL Stealth</h3>
@@ -313,7 +313,7 @@ const StealthPPF = () => {
             title: "Avoid High Pressure",
             desc: "When rinsing, keep the pressure washer at a safe distance and avoid spraying directly on film edges, especially during the first two weeks."
           }].map(item => <div key={item.step} className="space-y-4 text-center">
-                <div className="h-16 w-16 rounded-full bg-primary text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
+                <div className="h-16 w-16 rounded-full bg-gold text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-bold">{item.title}</h3>

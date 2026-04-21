@@ -342,7 +342,7 @@ const CeramicCoating = () => {
               { step: "05", title: "Curing & Inspection", desc: "Infrared curing followed by multi-point quality inspection under specialized lighting." },
             ].map((item) => (
               <div key={item.step} className="space-y-4 text-center">
-                <div className="h-16 w-16 rounded-full bg-primary text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
+                <div className="h-16 w-16 rounded-full bg-gold text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
                 <h3 className="text-lg font-bold">{item.title}</h3>

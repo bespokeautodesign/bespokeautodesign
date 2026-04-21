@@ -183,7 +183,7 @@ const CeramicTint = () => {
                     </div>
                   </div>
                   <div className="space-y-4 text-center md:text-left">
-                    <Badge className="bg-primary text-gold-foreground">Health Protection</Badge>
+                    <Badge className="bg-gold text-gold-foreground">Health Protection</Badge>
                     <h2 className="text-2xl md:text-3xl font-bold font-playfair">
                       Recommended by The Skin Cancer Foundation
                     </h2>
@@ -373,7 +373,7 @@ const CeramicTint = () => {
               { step: "04", title: "Inspection & Cure", desc: "Every window is inspected under controlled lighting for imperfections. We provide care instructions for the 3–5 day curing period." },
             ].map((item) => (
               <div key={item.step} className="space-y-4 text-center">
-                <div className="h-16 w-16 rounded-full bg-primary text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
+                <div className="h-16 w-16 rounded-full bg-gold text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
                 <h3 className="text-lg font-bold">{item.title}</h3>

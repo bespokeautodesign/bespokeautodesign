@@ -135,7 +135,7 @@ const MarineCeramicCoating = () => {
               { step: "5", title: "Curing & Inspection", desc: "Controlled curing period followed by a detailed final inspection to ensure flawless coating adhesion and finish." },
             ].map((s, i) => (
               <div key={i} className="flex gap-6 items-start">
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-gold-foreground font-bold text-lg flex-shrink-0">{s.step}</div>
+                <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-gold-foreground font-bold text-lg flex-shrink-0">{s.step}</div>
                 <div>
                   <h3 className="font-semibold text-foreground text-lg mb-1">{s.title}</h3>
                   <p className="text-muted-foreground">{s.desc}</p>
