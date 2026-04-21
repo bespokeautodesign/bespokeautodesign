@@ -293,7 +293,11 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
             
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton('xpel_section'); setQuoteModalOpen(true); }}>
+              <Button
+                size="lg"
+                className="bg-xpel-yellow text-black font-semibold hover:bg-xpel-yellow-dark hover:shadow-glow transform hover:scale-105 transition-all duration-300"
+                onClick={() => { trackQuoteButton('xpel_section'); setQuoteModalOpen(true); }}
+              >
                 Request a Free Quote
               </Button>
               <Button variant="silver" size="lg" asChild>
