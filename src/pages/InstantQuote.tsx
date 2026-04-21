@@ -349,7 +349,7 @@ const InstantQuote = () => {
             {/* GROUP 1: Vehicle */}
             <div>
               <h2 className="font-playfair text-xl md:text-2xl font-bold text-white mb-5 flex items-center gap-2">
-                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-red/15 text-brand-red text-sm font-bold">1</span>
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-silver/15 text-silver text-sm font-bold border border-silver-muted/40">1</span>
                 Select Your Vehicle
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -377,7 +377,7 @@ const InstantQuote = () => {
             {/* GROUP 2: Services */}
             <div>
               <h2 className="font-playfair text-xl md:text-2xl font-bold text-white mb-5 flex items-center gap-2">
-                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-red/15 text-brand-red text-sm font-bold">2</span>
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-silver/15 text-silver text-sm font-bold border border-silver-muted/40">2</span>
                 Select Services
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -409,7 +409,7 @@ const InstantQuote = () => {
             {services.size > 0 && (
               <div>
                 <h2 className="font-playfair text-xl md:text-2xl font-bold text-white mb-5 flex items-center gap-2">
-                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-red/15 text-brand-red text-sm font-bold">3</span>
+                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-silver/15 text-silver text-sm font-bold border border-silver-muted/40">3</span>
                   Choose Your Package
                 </h2>
                 <Accordion type="multiple" className="space-y-3">
