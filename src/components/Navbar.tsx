@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, ChevronDown } from "lucide-react";
+import { Phone, ChevronDown, Instagram, Facebook } from "lucide-react";
 import MobileMenu from "@/components/MobileMenu";
 import { trackPhoneCall } from "@/utils/gadsConversions";
 import { trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
@@ -90,6 +90,36 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Top utility bar */}
+      <div className="hidden md:block bg-[#1a1a1a] border-b border-white/5">
+        <div className="container mx-auto px-6 h-9 flex items-center justify-between text-[11px] text-silver-muted">
+          <div className="flex items-center gap-3">
+            <span>By Appointment · Mon–Sat 9–6</span>
+            <span className="text-white/20">|</span>
+            <span>Est. 2018</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <a
+              href="https://www.instagram.com/bespokeautodesign/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:text-silver transition-colors"
+            >
+              <Instagram className="h-3.5 w-3.5" />
+            </a>
+            <a
+              href="https://www.facebook.com/bespokeautodesign"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="hover:text-silver transition-colors"
+            >
+              <Facebook className="h-3.5 w-3.5" />
+            </a>
+          </div>
+        </div>
+      </div>
       <nav className={`sticky top-0 z-50 bg-[hsl(var(--nav-bg))] border-b border-[hsl(var(--nav-border))] transition-all duration-500 ${scrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : ""}`}>
         <div className="container mx-auto px-6 py-3">
           <div className="flex items-center justify-between gap-6 min-w-0">
