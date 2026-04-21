@@ -13,13 +13,13 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-gold/50 bg-transparent text-foreground hover:bg-gold hover:text-gold-foreground hover:border-gold",
+          "border border-gold/60 bg-transparent text-primary-foreground hover:bg-gold hover:text-gold-foreground hover:border-gold",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         premium: "bg-gradient-gold text-gold-foreground font-semibold hover:shadow-glow transform hover:scale-105",
-        silver: "bg-transparent text-foreground border border-gold/50 hover:bg-gold hover:text-gold-foreground hover:border-gold transform hover:scale-105",
+        silver: "bg-transparent text-primary-foreground border border-gold/60 hover:bg-gold hover:text-gold-foreground hover:border-gold transform hover:scale-105",
         xpel: "bg-gradient-xpel text-primary-foreground hover:shadow-glow transform hover:scale-105",
       },
       size: {
