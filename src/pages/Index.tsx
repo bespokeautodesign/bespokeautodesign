@@ -383,7 +383,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
             <div className="flex flex-col order-1 md:order-2">
               <div className="shadow-premium flex-1 rounded-lg p-6" style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.08)' }}>
                 <div className="mb-4">
-                  <h3 className="text-xl font-semibold text-white">Request a Quote</h3>
+                  <h3 className="text-xl font-semibold text-white">Request a Consultation</h3>
                   <p className="text-sm text-white/50">Fill out the form below and we'll get back to you within 24 hours.</p>
                 </div>
                 <div className="space-y-4">
@@ -490,7 +490,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                         alert('There was an error sending your quote. Please try again or call us at (786) 395-9172.');
                       }
                     }}>
-                    Submit Request
+                    Request Consultation
                   </Button>
                 </div>
               </div>
