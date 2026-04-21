@@ -284,7 +284,7 @@ const CeramicCoating = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="text-center space-y-4">
-              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-80"  width={200} height={60} />
+              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-30 brightness-200"  width={200} height={60} />
               <Badge variant="outline">Why XPEL Fusion Plus?</Badge>
               <h2 className="text-3xl md:text-5xl font-bold font-playfair">
                 The XPEL Fusion Plus™ Advantage
