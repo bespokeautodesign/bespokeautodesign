@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Shield, Sun, Thermometer, Car, Phone, TreePine, Star, Award, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { QuoteModal } from "@/components/QuoteModal";
 import PageSEO from "@/components/PageSEO";
 import { GoogleRatingChip } from "@/components/GoogleRatingChip";
 
@@ -55,7 +56,9 @@ const faqPageSchema = {
   "mainEntity": faqData.map(f => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } }))
 };
 
-const ServiceAreaCoconutGrove = () => (
+const ServiceAreaCoconutGrove = () => {
+  const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
+  return (
   <div className="min-h-screen bg-[#0f0f0f] text-[#e5e5e5]">
     <PageSEO title="PPF, Ceramic Coating & Window Tint in Coconut Grove, Miami | Bespoke Auto Design" description="Certified XPEL paint protection film, ceramic coating, and ceramic window tint installation serving Coconut Grove, Miami. Coconut Grove's bohemian heart meets luxury protection. PPF, ceramic coating, and marine ceramic for residents and boat owners in Miami's oldest neighborhood. Free quotes, 10-year warranty, concierge pickup." canonical="https://www.bespokeauto.design/service-areas/coconut-grove" structuredData={[localBusinessSchema, faqPageSchema]} />
     <Navbar />
@@ -64,7 +67,7 @@ const ServiceAreaCoconutGrove = () => (
         <h1 className="font-playfair text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Premium PPF, Ceramic Coating & Window Tint in Coconut Grove</h1>
         <p className="text-lg md:text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">Bespoke Auto Design protects Coconut Grove vehicles from tree sap, leaf-acid staining, Bayshore Drive UV, and Sailing Club salt exposure — installed in our climate-controlled Miami facility a short drive away.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Link to="/#contact"><Button size="lg" className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button></Link>
+          <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button>
           <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_coconut_grove')}><Button size="lg" variant="outline" className="bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> Call (786) 395-9172</Button></a>
         </div>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/60">
@@ -81,9 +84,11 @@ const ServiceAreaCoconutGrove = () => (
     <section className="py-20 px-4 bg-[#0f0f0f]"><div className="max-w-6xl mx-auto"><h2 className="font-playfair text-2xl md:text-4xl font-bold text-white text-center mb-12">Services Available for Coconut Grove Clients</h2><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">{services.map((svc, i) => (<Card key={i} className="bg-[#1a1a1a] border-[#333] text-[#e5e5e5] flex flex-col"><CardHeader><CardTitle className="text-lg text-white">{svc.title}</CardTitle><p className="text-brand-red font-bold text-xl mt-1">From {svc.price}</p></CardHeader><CardContent className="flex flex-col flex-1"><p className="text-white/70 text-sm leading-relaxed mb-6 flex-1">{svc.desc}</p><Link to={svc.link}><Button variant="outline" className="w-full bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red">Learn More <ArrowRight className="w-4 h-4 ml-2" /></Button></Link></CardContent></Card>))}</div></div></section>
     <section className="py-20 px-4 bg-[#141414]"><div className="max-w-4xl mx-auto"><h2 className="font-playfair text-2xl md:text-4xl font-bold text-white text-center mb-8">Getting to Bespoke From Coconut Grove</h2><p className="text-white/70 leading-relaxed text-center mb-10 max-w-3xl mx-auto">Our Miami facility at 7943 NW 64th St is approximately 25 minutes north of Coconut Grove via US-1 N to NW 7th Avenue, then west on NW 64th. Most Grove clients drop off in the morning and pick up the same or next business day.</p><div className="rounded-xl overflow-hidden border border-[#333]"><iframe title="Bespoke Auto Design Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3590.5!2d-80.318!3d25.823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDQ5JzIyLjgiTiA4MMKwMTknMDQuOCJX!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="350" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" /></div></div></section>
     <section className="py-20 px-4 bg-[#0f0f0f]"><div className="max-w-3xl mx-auto"><h2 className="font-playfair text-2xl md:text-4xl font-bold text-white text-center mb-12">Coconut Grove FAQ</h2><Accordion type="single" collapsible className="space-y-3">{faqData.map((faq, i) => (<AccordionItem key={i} value={`faq-${i}`} className="bg-[#1a1a1a] border border-[#333] rounded-lg px-6"><AccordionTrigger className="text-white hover:text-brand-red text-left py-5 text-base font-medium">{faq.question}</AccordionTrigger><AccordionContent className="text-white/70 leading-relaxed pb-5">{faq.answer}</AccordionContent></AccordionItem>))}</Accordion></div></section>
-    <section className="py-20 px-4 bg-gradient-to-b from-[#141414] to-[#0f0f0f]"><div className="max-w-3xl mx-auto text-center"><h2 className="font-playfair text-2xl md:text-4xl font-bold text-white mb-4">Ready to Protect Your Coconut Grove Vehicle?</h2><p className="text-white/60 text-lg mb-8">Get a free quote within 30 minutes — currently booking 1-2 weeks out</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Link to="/#contact"><Button size="lg" className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button></Link><a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_coconut_grove')}><Button size="lg" variant="outline" className="bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> (786) 395-9172</Button></a></div></div></section>
+    <section className="py-20 px-4 bg-gradient-to-b from-[#141414] to-[#0f0f0f]"><div className="max-w-3xl mx-auto text-center"><h2 className="font-playfair text-2xl md:text-4xl font-bold text-white mb-4">Ready to Protect Your Coconut Grove Vehicle?</h2><p className="text-white/60 text-lg mb-8">Get a free quote within 30 minutes — currently booking 1-2 weeks out</p><div className="flex flex-col sm:flex-row gap-4 justify-center"><Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button><a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_coconut_grove')}><Button size="lg" variant="outline" className="bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> (786) 395-9172</Button></a></div></div></section>
     <Footer />
+    <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
   </div>
-);
+  );
+};
 
 export default ServiceAreaCoconutGrove;
