@@ -210,16 +210,16 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                 </a>
               </Button>
             </div>
-            {/* Trust signals */}
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/80" style={{ textShadow: '0 1px 3px rgba(0,0,0,0.6)' }}>
+            {/* Trust signals — flex with auto-hiding separators (CSS-only) */}
+            <div
+              className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm md:text-base text-white/80 [&>*+*]:before:content-['•'] [&>*+*]:before:mr-5 [&>*+*]:before:text-white/30"
+              style={{ textShadow: '0 1px 3px rgba(0,0,0,0.6)' }}
+            >
               <GoogleRatingChip />
-              <span className="hidden sm:inline text-white/30">•</span>
               <span className="flex items-center gap-1.5">
                 <Shield className="h-4 w-4" /> Certified XPEL Installers
               </span>
-              <span className="hidden sm:inline text-white/30">•</span>
               <span>Up to 10-Year Warranty</span>
-              <span className="hidden sm:inline text-white/30">•</span>
               <span>500+ Vehicles Protected</span>
             </div>
           </header>
