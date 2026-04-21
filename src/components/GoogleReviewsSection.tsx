@@ -24,13 +24,13 @@ function ReviewCard({ review }: { review: GoogleReview }) {
     .toUpperCase();
 
   return (
-    <div className="bg-[#1a1a1a] rounded-xl p-6 border border-[#333] hover:border-amber-500/40 transition-colors h-full flex flex-col">
+    <div className="bg-[#1a1a1a] rounded-xl p-6 border border-[#333] hover:border-brand-red/40 transition-colors h-full flex flex-col">
       <div className="flex items-center gap-3 mb-3">
         <Avatar className="h-10 w-10">
           {review.authorAttribution.photoUri && (
             <AvatarImage src={review.authorAttribution.photoUri} alt={review.authorAttribution.displayName} />
           )}
-          <AvatarFallback className="bg-amber-500/20 text-amber-400 text-sm font-semibold">
+          <AvatarFallback className="bg-brand-red/15 text-brand-red text-sm font-semibold">
             {initials}
           </AvatarFallback>
         </Avatar>
@@ -55,15 +55,15 @@ function SeeAllCard({ reviewCount }: { reviewCount: number }) {
       href={`https://www.google.com/maps/place/?q=place_id:${GOOGLE_PLACE_ID}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-[#1a1a1a] rounded-xl p-6 border-2 border-amber-500/50 hover:border-amber-500 transition-colors h-full flex flex-col items-center justify-center gap-4 text-center group"
+      className="bg-[#1a1a1a] rounded-xl p-6 border-2 border-brand-red/50 hover:border-brand-red transition-colors h-full flex flex-col items-center justify-center gap-4 text-center group"
     >
-      <div className="w-14 h-14 rounded-full bg-amber-500/20 flex items-center justify-center">
+      <div className="w-14 h-14 rounded-full bg-brand-red/15 flex items-center justify-center">
         <Star className="h-7 w-7 fill-amber-400 text-amber-400" />
       </div>
       <p className="text-white font-semibold text-lg">
         See all {reviewCount}+ Google reviews ↗
       </p>
-      <p className="text-white/50 text-sm group-hover:text-amber-400 transition-colors">
+      <p className="text-white/50 text-sm group-hover:text-brand-red transition-colors">
         View on Google Maps
       </p>
     </a>
@@ -96,7 +96,7 @@ export function GoogleReviewsSection() {
     <section className="py-20 px-4" style={{ backgroundColor: "#0f0f0f" }}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <Badge variant="outline" className="mb-4 border-amber-500/30 text-amber-400">
+          <Badge variant="outline" className="mb-4 border-brand-red/40 text-brand-red">
             Google Reviews
           </Badge>
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-white mb-4">
@@ -131,8 +131,8 @@ export function GoogleReviewsSection() {
                   <SeeAllCard reviewCount={reviewCount} />
                 </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious className="hidden lg:flex -left-12 border-amber-500/50 text-amber-400 hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 bg-[#1a1a1a]" />
-              <CarouselNext className="hidden lg:flex -right-12 border-amber-500/50 text-amber-400 hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 bg-[#1a1a1a]" />
+              <CarouselPrevious className="hidden lg:flex -left-12 border-brand-red/50 text-brand-red hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red bg-[#1a1a1a]" />
+              <CarouselNext className="hidden lg:flex -right-12 border-brand-red/50 text-brand-red hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red bg-[#1a1a1a]" />
             </Carousel>
           </div>
         )}
@@ -154,7 +154,7 @@ export function GoogleReviewsSection() {
             <span className="text-white/50 text-sm ml-1">based on {reviewCount} Google reviews</span>
           </a>
           <Button
-            className="bg-amber-500 hover:bg-amber-600 text-[#1a1a1a] font-bold px-8"
+            className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8"
             asChild
           >
             <a href={GOOGLE_WRITE_REVIEW_URL} target="_blank" rel="noopener noreferrer">

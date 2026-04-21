@@ -19,7 +19,7 @@ export const ColorPPFHero = ({ onGetQuote }: ColorPPFHeroProps) => {
             alt="XPEL Authorized Dealer" 
             className="h-20 mb-6 opacity-80 brightness-200" 
            width={200} height={60} />
-          <p className="text-sm tracking-widest uppercase text-white/60 mb-4">
+          <p className="text-sm tracking-widest uppercase text-xpel-yellow mb-4">
             Authorized XPEL Dealer • Miami, FL
           </p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-playfair leading-tight text-white">

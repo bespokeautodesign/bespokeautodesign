@@ -326,7 +326,7 @@ const InstantQuote = () => {
       {/* ═══ HERO ═══ */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-20 px-4 bg-gradient-to-b from-[#0f0f0f] via-[#141414] to-[#0f0f0f]">
         <div className="max-w-4xl mx-auto text-center">
-          <Badge className="bg-amber-500/20 text-amber-400 border-amber-500/30 mb-6">
+          <Badge className="bg-brand-red/15 text-brand-red border-brand-red/40 mb-6">
             <Calculator className="w-3.5 h-3.5 mr-1.5" /> Instant Price Calculator
           </Badge>
           <h1 className="font-playfair text-3xl md:text-5xl font-bold text-white mb-5 leading-tight">
@@ -335,7 +335,7 @@ const InstantQuote = () => {
           <p className="text-base md:text-lg text-white/70 mb-4 max-w-3xl mx-auto leading-relaxed">
             Select your vehicle and services to see an estimated price range in real time. Final quote confirmed after a quick in-person inspection. Climate-controlled installs by XPEL-certified technicians at our Miami facility.
           </p>
-          <p className="text-sm text-amber-400/80 font-medium tracking-wide">
+          <p className="text-sm text-brand-red/80 font-medium tracking-wide">
             Free estimates • Typically respond within 30 minutes
           </p>
         </div>
@@ -349,7 +349,7 @@ const InstantQuote = () => {
             {/* GROUP 1: Vehicle */}
             <div>
               <h2 className="font-playfair text-xl md:text-2xl font-bold text-white mb-5 flex items-center gap-2">
-                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold">1</span>
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-red/15 text-brand-red text-sm font-bold">1</span>
                 Select Your Vehicle
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -359,7 +359,7 @@ const InstantQuote = () => {
                     onClick={() => { setVehicle(v.key); setTouched(prev => ({ ...prev, vehicle: true })); }}
                     className={`p-4 rounded-lg border-2 text-left transition-all duration-200 ${
                       vehicle === v.key
-                        ? "border-amber-500 bg-amber-500/10 shadow-[0_0_20px_rgba(245,158,11,0.15)]"
+                        ? "border-brand-red bg-brand-red/10 shadow-[0_0_20px_rgba(245,158,11,0.15)]"
                         : "border-[#333] bg-[#1a1a1a] hover:border-[#555] hover:bg-[#222]"
                     }`}
                   >
@@ -370,14 +370,14 @@ const InstantQuote = () => {
                 ))}
               </div>
               {touched.vehicle && !vehicle && (
-                <p className="text-amber-400/80 text-xs mt-2">Please select your vehicle</p>
+                <p className="text-brand-red/80 text-xs mt-2">Please select your vehicle</p>
               )}
             </div>
 
             {/* GROUP 2: Services */}
             <div>
               <h2 className="font-playfair text-xl md:text-2xl font-bold text-white mb-5 flex items-center gap-2">
-                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold">2</span>
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-red/15 text-brand-red text-sm font-bold">2</span>
                 Select Services
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -387,12 +387,12 @@ const InstantQuote = () => {
                     onClick={() => toggleService(s.key)}
                     className={`p-4 rounded-lg border-2 text-left flex items-center gap-3 transition-all duration-200 ${
                       services.has(s.key)
-                        ? "border-amber-500 bg-amber-500/10"
+                        ? "border-brand-red bg-brand-red/10"
                         : "border-[#333] bg-[#1a1a1a] hover:border-[#555] hover:bg-[#222]"
                     }`}
                   >
                     <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 ${
-                      services.has(s.key) ? "border-amber-500 bg-amber-500" : "border-[#555]"
+                      services.has(s.key) ? "border-brand-red bg-brand-red" : "border-[#555]"
                     }`}>
                       {services.has(s.key) && <Check className="w-3 h-3 text-black" />}
                     </div>
@@ -401,7 +401,7 @@ const InstantQuote = () => {
                 ))}
               </div>
               {touched.services && services.size === 0 && (
-                <p className="text-amber-400/80 text-xs mt-2">Please select at least one service</p>
+                <p className="text-brand-red/80 text-xs mt-2">Please select at least one service</p>
               )}
             </div>
 
@@ -409,7 +409,7 @@ const InstantQuote = () => {
             {services.size > 0 && (
               <div>
                 <h2 className="font-playfair text-xl md:text-2xl font-bold text-white mb-5 flex items-center gap-2">
-                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold">3</span>
+                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-red/15 text-brand-red text-sm font-bold">3</span>
                   Choose Your Package
                 </h2>
                 <Accordion type="multiple" className="space-y-3">
@@ -426,13 +426,13 @@ const InstantQuote = () => {
                               onClick={() => setPpfPkg(p.key)}
                               className={`p-3 rounded-md border text-left text-sm transition-all ${
                                 ppfPkg === p.key
-                                  ? "border-amber-500 bg-amber-500/10 text-white"
+                                  ? "border-brand-red bg-brand-red/10 text-white"
                                   : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                               }`}
                             >
                               <div className="font-medium">{p.label}</div>
                               {vehicle && (
-                                <div className="text-xs text-amber-400/70 mt-1">
+                                <div className="text-xs text-brand-red/70 mt-1">
                                   {fmt(ppfPricing[p.key][vehicle][0])} – {fmt(ppfPricing[p.key][vehicle][1])}
                                 </div>
                               )}
@@ -444,19 +444,19 @@ const InstantQuote = () => {
                             onClick={() => setPpfPkg(ppfPkg === "fullBody" ? null : "fullBody")}
                             className={`w-full p-3 rounded-md border text-left text-sm transition-all ${
                               ppfPkg === "fullBody"
-                                ? "border-amber-500 bg-amber-500/10 text-white"
+                                ? "border-brand-red bg-brand-red/10 text-white"
                                 : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                             }`}
                           >
                             <div className="font-medium">Full Body</div>
                             {vehicle && (
-                              <div className="text-xs text-amber-400/70 mt-1">
+                              <div className="text-xs text-brand-red/70 mt-1">
                                 {fmt(ppfPricing["fullBody"][vehicle][0])} – {fmt(ppfPricing["fullBody"][vehicle][1])}
                               </div>
                             )}
                           </button>
                         </div>
-                        {!ppfPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
+                        {!ppfPkg && <p className="text-brand-red/80 text-xs mt-2">Please choose a package</p>}
                       </AccordionContent>
                     </AccordionItem>
                   )}
@@ -473,20 +473,20 @@ const InstantQuote = () => {
                               onClick={() => setCoatingPkg(p.key)}
                               className={`p-3 rounded-md border text-left text-sm transition-all ${
                                 coatingPkg === p.key
-                                  ? "border-amber-500 bg-amber-500/10 text-white"
+                                  ? "border-brand-red bg-brand-red/10 text-white"
                                   : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                               }`}
                             >
                               <div className="font-medium">{p.label}</div>
                               {vehicle && (
-                                <div className="text-xs text-amber-400/70 mt-1">
+                                <div className="text-xs text-brand-red/70 mt-1">
                                   {fmt(coatingPricing[p.key][vehicle][0])} – {fmt(coatingPricing[p.key][vehicle][1])}
                                 </div>
                               )}
                             </button>
                           ))}
                         </div>
-                        {!coatingPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
+                        {!coatingPkg && <p className="text-brand-red/80 text-xs mt-2">Please choose a package</p>}
                       </AccordionContent>
                     </AccordionItem>
                   )}
@@ -504,13 +504,13 @@ const InstantQuote = () => {
                               onClick={() => setTintPkg(prev => prev === p.key ? null : p.key)}
                               className={`p-3 rounded-md border text-left text-sm transition-all ${
                                 tintPkg === p.key
-                                  ? "border-amber-500 bg-amber-500/10 text-white"
+                                  ? "border-brand-red bg-brand-red/10 text-white"
                                   : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                               }`}
                             >
                               <div className="font-medium">{p.label}</div>
                               {vehicle && (
-                                <div className="text-xs text-amber-400/70 mt-1">
+                                <div className="text-xs text-brand-red/70 mt-1">
                                   {fmt(tintPricing[p.key][vehicle][0])} – {fmt(tintPricing[p.key][vehicle][1])}
                                 </div>
                               )}
@@ -522,17 +522,17 @@ const InstantQuote = () => {
                             onClick={() => setWindshieldTint(prev => !prev)}
                             className={`w-full p-3 rounded-md border text-left text-sm transition-all ${
                               windshieldTint
-                                ? "border-amber-500 bg-amber-500/10 text-white"
+                                ? "border-brand-red bg-brand-red/10 text-white"
                                 : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                             }`}
                           >
                             <div className="font-medium">Windshield Tint</div>
-                            <div className="text-xs text-amber-400/70 mt-1">
+                            <div className="text-xs text-brand-red/70 mt-1">
                               {fmt(WINDSHIELD_ADDON[0])} – {fmt(WINDSHIELD_ADDON[1])}
                             </div>
                           </button>
                         </div>
-                        {!tintPkg && !windshieldTint && <p className="text-amber-400/80 text-xs mt-2">Please choose at least one option</p>}
+                        {!tintPkg && !windshieldTint && <p className="text-brand-red/80 text-xs mt-2">Please choose at least one option</p>}
                       </AccordionContent>
                     </AccordionItem>
                   )}
@@ -549,20 +549,20 @@ const InstantQuote = () => {
                               onClick={() => setWrapPkg(p.key)}
                               className={`p-3 rounded-md border text-left text-sm transition-all ${
                                 wrapPkg === p.key
-                                  ? "border-amber-500 bg-amber-500/10 text-white"
+                                  ? "border-brand-red bg-brand-red/10 text-white"
                                   : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                               }`}
                             >
                               <div className="font-medium">{p.label}</div>
                               {vehicle && (
-                                <div className="text-xs text-amber-400/70 mt-1">
+                                <div className="text-xs text-brand-red/70 mt-1">
                                   {fmt(wrapPricing[p.key][vehicle][0])} – {fmt(wrapPricing[p.key][vehicle][1])}
                                 </div>
                               )}
                             </button>
                           ))}
                         </div>
-                        {!wrapPkg && <p className="text-amber-400/80 text-xs mt-2">Please choose a package</p>}
+                        {!wrapPkg && <p className="text-brand-red/80 text-xs mt-2">Please choose a package</p>}
                       </AccordionContent>
                     </AccordionItem>
                   )}
@@ -579,7 +579,7 @@ const InstantQuote = () => {
                   <div className="text-center">
                     <div className="text-sm text-white/50 mb-1 uppercase tracking-wider font-medium">Estimated Range</div>
                     {priceRange ? (
-                      <div className="text-3xl md:text-4xl font-bold text-amber-400 font-playfair">
+                      <div className="text-3xl md:text-4xl font-bold text-brand-red font-playfair">
                         {fmt(priceRange.min)} – {fmt(priceRange.max)}
                       </div>
                     ) : (
@@ -591,7 +591,7 @@ const InstantQuote = () => {
                     <ul className="space-y-2 text-sm">
                       {selectedSummary.map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-white/80">
-                          <Check className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                          <Check className="w-4 h-4 text-brand-red mt-0.5 flex-shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -632,10 +632,10 @@ const InstantQuote = () => {
             Request Your Exact Quote
           </h2>
           {formSubmitted ? (
-            <Card className="bg-[#1a1a1a] border-amber-500/30">
+            <Card className="bg-[#1a1a1a] border-brand-red/40">
               <CardContent className="p-8 text-center space-y-4">
-                <div className="w-16 h-16 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto">
-                  <Check className="w-8 h-8 text-amber-400" />
+                <div className="w-16 h-16 rounded-full bg-brand-red/15 flex items-center justify-center mx-auto">
+                  <Check className="w-8 h-8 text-brand-red" />
                 </div>
                 <h3 className="text-xl font-bold text-white">Quote Request Received!</h3>
                 <p className="text-white/70">We'll respond within 30 minutes during business hours with your exact pricing. Check your phone for a text.</p>
@@ -658,7 +658,7 @@ const InstantQuote = () => {
                     {selectedSummary.map((s, i) => <li key={i}>• {s}</li>)}
                   </ul>
                   {priceRange && (
-                    <div className="mt-2 text-sm font-semibold text-amber-400">
+                    <div className="mt-2 text-sm font-semibold text-brand-red">
                       Estimated: {fmt(priceRange.min)} – {fmt(priceRange.max)}
                     </div>
                   )}
@@ -681,7 +681,7 @@ const InstantQuote = () => {
                         type="submit"
                         variant="premium"
                         size="lg"
-                        className={`w-full text-base font-bold transition-all ${!formReady && !formSubmitting ? "opacity-40 cursor-not-allowed border-amber-500/30" : ""}`}
+                        className={`w-full text-base font-bold transition-all ${!formReady && !formSubmitting ? "opacity-40 cursor-not-allowed border-brand-red/40" : ""}`}
                         disabled={formSubmitting || !formReady}
                       >
                         {formSubmitting ? (
@@ -694,7 +694,7 @@ const InstantQuote = () => {
                     </span>
                   </TooltipTrigger>
                   {!formReady && (
-                    <TooltipContent side="top" className="bg-[#222] border-[#444] text-amber-400 text-sm">
+                    <TooltipContent side="top" className="bg-[#222] border-[#444] text-brand-red text-sm">
                       Please complete your selections to continue
                     </TooltipContent>
                   )}
@@ -709,8 +709,8 @@ const InstantQuote = () => {
       <section className="py-10 px-4 border-t border-[#222]">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/60">
           <GoogleRatingChip />
-          <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-amber-500" /> Certified XPEL Installers</span>
-          <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-amber-500" /> Up to 10-Yr Warranty</span>
+          <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-brand-red" /> Certified XPEL Installers</span>
+          <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-brand-red" /> Up to 10-Yr Warranty</span>
           <span className="flex items-center gap-1.5"><VehicleSilhouette vehicleType="Sedan" isSelected className="w-5 h-4" /> Concierge Pickup Available</span>
         </div>
       </section>
@@ -719,7 +719,7 @@ const InstantQuote = () => {
       <section className="py-16 px-4 bg-[#0f0f0f] border-t border-[#222]">
         <div className="max-w-4xl mx-auto space-y-12 text-white/80 leading-relaxed">
           <div>
-            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-amber-400 mb-4">
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-brand-red mb-4">
               PPF & Ceramic Coating Cost Guide — Miami 2026
             </h2>
             <p className="mb-4">
@@ -731,7 +731,7 @@ const InstantQuote = () => {
           </div>
 
           <div>
-            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-amber-400 mb-4">
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-brand-red mb-4">
               Ceramic Coating Pricing in Miami
             </h2>
             <p>
@@ -740,7 +740,7 @@ const InstantQuote = () => {
           </div>
 
           <div>
-            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-amber-400 mb-4">
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-brand-red mb-4">
               Ceramic Window Tint Cost
             </h2>
             <p>
@@ -749,7 +749,7 @@ const InstantQuote = () => {
           </div>
 
           <div>
-            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-amber-400 mb-4">
+            <h2 className="font-playfair text-2xl md:text-3xl font-bold text-brand-red mb-4">
               What Affects Your Final Price
             </h2>
             <p>

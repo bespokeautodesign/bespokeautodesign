@@ -169,7 +169,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       <Navbar />
 
       {/* Urgency Banner */}
-      <div className="bg-amber-500/90 text-black text-center py-2 px-4 text-sm font-medium tracking-wide">
+      <div className="bg-black border-y border-silver-muted/40 text-silver text-center py-2 px-4 text-sm font-medium tracking-wide">
         <Calendar className="inline-block w-4 h-4 mr-1.5 -mt-0.5" />
         Currently booking 1–2 weeks out. <span className="font-semibold">Reserve your spot today.</span>
       </div>
@@ -335,13 +335,13 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                   <div className="grid grid-cols-2 gap-2 mb-4">
                     {service.features.map((feature, fIndex) =>
                     <div key={fIndex} className="flex items-center gap-2 text-sm text-[#e5e5e5]">
-                        <Shield className="h-3 w-3 text-amber-400 flex-shrink-0" />
+                        <Shield className="h-3 w-3 text-brand-red flex-shrink-0" />
                         <span>{feature}</span>
                       </div>
                     )}
                   </div>
                   <div className="flex gap-3">
-                    <Button variant="outline" size="sm" asChild className="flex-1 bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500">
+                    <Button variant="outline" size="sm" asChild className="flex-1 bg-transparent border-brand-red/50 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red">
                       <Link to={service.link}>
                         Learn More <ArrowRight className="h-3 w-3 ml-1" />
                       </Link>
@@ -503,37 +503,37 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="rounded-full p-3" style={{ backgroundColor: '#222' }}>
-                    <Phone className="h-6 w-6 text-amber-400" />
+                    <Phone className="h-6 w-6 text-brand-red" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-white">Phone</h3>
-                    <a href="tel:+17863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('contact_section'); }} className="text-white/60 hover:text-amber-400 transition-colors">(786) 395-9172</a>
+                    <a href="tel:+17863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('contact_section'); }} className="text-white/60 hover:text-brand-red transition-colors">(786) 395-9172</a>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
                   <div className="rounded-full p-3" style={{ backgroundColor: '#222' }}>
-                    <Mail className="h-6 w-6 text-amber-400" />
+                    <Mail className="h-6 w-6 text-brand-red" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-white">Email</h3>
-                    <a href="mailto:sales@bespokeauto.design" className="text-white/60 hover:text-amber-400 transition-colors">sales@bespokeauto.design</a>
+                    <a href="mailto:sales@bespokeauto.design" className="text-white/60 hover:text-brand-red transition-colors">sales@bespokeauto.design</a>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
                   <div className="rounded-full p-3" style={{ backgroundColor: '#222' }}>
-                    <MapPin className="h-6 w-6 text-amber-400" />
+                    <MapPin className="h-6 w-6 text-brand-red" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-white">Location</h3>
-                    <a href="https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-amber-400 transition-colors">7943 NW 64th St<br />Miami, FL 33166</a>
+                    <a href="https://maps.google.com/?q=7943+NW+64th+St+Miami+FL+33166" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-brand-red transition-colors">7943 NW 64th St<br />Miami, FL 33166</a>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
                   <div className="rounded-full p-3" style={{ backgroundColor: '#222' }}>
-                    <Clock className="h-6 w-6 text-amber-400" />
+                    <Clock className="h-6 w-6 text-brand-red" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1 text-white">Hours</h3>
@@ -549,7 +549,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
               {/* Interactive Map - Bottom Left */}
               <div className="flex-1">
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 text-white">
-                  <MapPin className="h-5 w-5 text-amber-400" />
+                  <MapPin className="h-5 w-5 text-brand-red" />
                   Visit Our Shop
                 </h3>
                 <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>

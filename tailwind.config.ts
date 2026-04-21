@@ -66,6 +66,15 @@ export default {
 					foreground: 'hsl(var(--gold-foreground))',
 					dark: 'hsl(var(--gold-dark))'
 				},
+				silver: {
+					DEFAULT: 'hsl(var(--silver))',
+					muted: 'hsl(var(--silver-muted))'
+				},
+				'brand-red': {
+					DEFAULT: 'hsl(var(--brand-red))',
+					dark: 'hsl(var(--brand-red-dark))',
+					foreground: 'hsl(var(--brand-red-foreground))'
+				},
 				success: {
 					DEFAULT: 'hsl(var(--success))',
 					foreground: 'hsl(var(--success-foreground))'
