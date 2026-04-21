@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Shield, Sun, Thermometer, Car, Phone, Waves, Star, Award, ArrowRight } from "lucide-react";
+import { Shield, Sun, Thermometer, Car, Phone, Waves, Star, Award, ArrowRight, Calculator } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { QuoteModal } from "@/components/QuoteModal";
@@ -81,12 +81,12 @@ const ServiceAreaKeyBiscayne = () => {
     </section>
 
     {/* Instant Quote CTA */}
-    <div className="bg-brand-red/10 border-y border-brand-red/40">
-      <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-center gap-3 text-sm">
-        <span className="text-brand-red font-medium">💡 Get an instant price range for your vehicle</span>
-        <Link to="/instant-quote" className="inline-flex items-center gap-1 text-brand-red font-bold hover:text-brand-red underline underline-offset-2">Try the Instant Quote Calculator <ArrowRight className="w-3.5 h-3.5" /></Link>
+    <div className="bg-black border-y border-silver-muted/40">
+        <div className="container mx-auto px-6 py-2.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm text-silver">
+          <span className="font-medium flex items-center gap-1.5"><Calculator className="w-4 h-4 text-silver-muted" /> Get an instant price range for your vehicle</span>
+          <Link to="/instant-quote" className="inline-flex items-center gap-1 text-silver font-semibold underline-offset-4 hover:underline">Try the Instant Quote Calculator <ArrowRight className="w-3.5 h-3.5" /></Link>
+        </div>
       </div>
-    </div>
 
     <section className="py-20 px-4 bg-[#141414]">
       <div className="max-w-6xl mx-auto">
