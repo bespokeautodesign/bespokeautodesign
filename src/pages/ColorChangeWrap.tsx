@@ -246,8 +246,7 @@ const ColorChangeWrap = () => {
               Starting at $2,500 • Free Consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("color_change_wrap"); setQuoteModalOpen(true); }}>
-                Get a Free Quote <ChevronRight className="h-4 w-4" />
+              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("color_change_wrap"); setQuoteModalOpen(true); }}>Request a Consultation<ChevronRight className="h-4 w-4" />
               </Button>
               <Button variant="silver" size="lg" asChild>
                 <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("color_change_wrap"); }} className="flex items-center gap-2">
@@ -733,8 +732,7 @@ const ColorChangeWrap = () => {
               Get a free, no-obligation quote for your color change wrap. We'll help you choose the perfect color, finish, and film for your vision.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("color_change_wrap"); setQuoteModalOpen(true); }}>
-                Get a Free Quote <ChevronRight className="h-4 w-4" />
+              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("color_change_wrap"); setQuoteModalOpen(true); }}>Request a Consultation<ChevronRight className="h-4 w-4" />
               </Button>
               <Button variant="silver" size="lg" asChild>
                 <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("color_change_wrap"); }} className="flex items-center gap-2">

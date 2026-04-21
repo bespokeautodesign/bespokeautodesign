@@ -130,8 +130,7 @@ const CeramicTint = () => {
               Starting at $150 • Free Consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_tint"); setQuoteModalOpen(true); }}>
-                Get a Free Quote <ChevronRight className="h-4 w-4" />
+              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_tint"); setQuoteModalOpen(true); }}>Request a Consultation<ChevronRight className="h-4 w-4" />
               </Button>
               <Button variant="silver" size="lg" asChild>
                 <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("ceramic_tint"); }} className="flex items-center gap-2">
@@ -613,8 +612,7 @@ const CeramicTint = () => {
             Miami's premier XPEL XR Plus ceramic tint installer. Protect your skin, your interior, and your comfort — schedule a consultation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_tint"); setQuoteModalOpen(true); }}>
-              Request a Free Quote <ChevronRight className="h-4 w-4" />
+            <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_tint"); setQuoteModalOpen(true); }}>Request a Consultation<ChevronRight className="h-4 w-4" />
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("ceramic_tint"); }} className="flex items-center gap-2">

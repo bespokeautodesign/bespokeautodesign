@@ -126,8 +126,7 @@ const PaintProtectionFilm = () => {
               Starting at $1,499 • Free Consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ppf"); setQuoteModalOpen(true); }}>
-                Get a Free Quote <ChevronRight className="h-4 w-4" />
+              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ppf"); setQuoteModalOpen(true); }}>Request a Consultation<ChevronRight className="h-4 w-4" />
               </Button>
               <Link to="/ppf-packages">
                 <Button variant="silver" size="lg">
@@ -597,8 +596,7 @@ const PaintProtectionFilm = () => {
             Miami's premier XPEL paint protection film installer. Schedule a consultation and get a custom quote for your vehicle — no obligation, no pressure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ppf"); setQuoteModalOpen(true); }}>
-              Request a Free Quote <ChevronRight className="h-4 w-4" />
+            <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ppf"); setQuoteModalOpen(true); }}>Request a Consultation<ChevronRight className="h-4 w-4" />
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("ppf"); }} className="flex items-center gap-2">

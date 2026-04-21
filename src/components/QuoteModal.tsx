@@ -133,7 +133,7 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-card border-border/60 text-foreground">
         <DialogHeader>
-          <DialogTitle className="text-foreground">Request a Quote</DialogTitle>
+          <DialogTitle className="text-foreground">Request a Consultation</DialogTitle>
           <DialogDescription className="text-muted-foreground">
             Fill out the form below and we'll get back to you within 24 hours.
           </DialogDescription>
@@ -238,7 +238,7 @@ export const QuoteModal = ({ open, onOpenChange, preselectedService, preselected
           
           
           <Button variant="premium" className="w-full" onClick={handleSubmit}>
-            Submit Request
+            Request Consultation
           </Button>
         </div>
       </DialogContent>

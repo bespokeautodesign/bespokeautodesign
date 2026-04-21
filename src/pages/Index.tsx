@@ -197,9 +197,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                   variant="premium"
                   size="lg"
                    className="text-lg px-10 py-5 shadow-premium hover:shadow-glow transform hover:scale-105 transition-all duration-300 animate-fade-in"
-                   onClick={() => { trackQuoteButton('hero'); setQuoteModalOpen(true); }}>
-                Get a Free PPF Quote
-              </Button>
+                   onClick={() => { trackQuoteButton('hero'); setQuoteModalOpen(true); }}>Request a Consultation</Button>
               <Button
                   variant="outline"
                   size="lg"
@@ -297,9 +295,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                 size="lg"
                 className="bg-xpel-yellow text-black font-semibold hover:bg-xpel-yellow-dark hover:shadow-glow transform hover:scale-105 transition-all duration-300"
                 onClick={() => { trackQuoteButton('xpel_section'); setQuoteModalOpen(true); }}
-              >
-                Request a Free Quote
-              </Button>
+              >Request a Consultation</Button>
               <Button variant="silver" size="lg" asChild>
                 <a href="tel:+17863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('xpel_section'); }}>
                   <Phone className="h-4 w-4" /> Call (786) 395-9172
@@ -387,7 +383,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
             <div className="flex flex-col order-1 md:order-2">
               <div className="shadow-premium flex-1 rounded-lg p-6" style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.08)' }}>
                 <div className="mb-4">
-                  <h3 className="text-xl font-semibold text-white">Request a Quote</h3>
+                  <h3 className="text-xl font-semibold text-white">Request a Consultation</h3>
                   <p className="text-sm text-white/50">Fill out the form below and we'll get back to you within 24 hours.</p>
                 </div>
                 <div className="space-y-4">
@@ -494,7 +490,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                         alert('There was an error sending your quote. Please try again or call us at (786) 395-9172.');
                       }
                     }}>
-                    Submit Request
+                    Request Consultation
                   </Button>
                 </div>
               </div>
