@@ -40,10 +40,22 @@
     --xpel-yellow: 41 60% 58%;
     --xpel-yellow-dark: 41 55% 45%;
 
-    /* Gold Accent (alias for premium highlights) */
-    --gold: 41 60% 58%;
+    /* Brand Red - Bespoke signature accent */
+    --brand-red: 354 78% 44%;        /* #C8192C */
+    --brand-red-dark: 354 78% 36%;
+    --brand-red-foreground: 0 0% 100%;
+
+    /* Silver palette - primary brand accents on dark */
+    --silver: 40 14% 84%;            /* #DED9D0 */
+    --silver-muted: 40 5% 54%;       /* #938F85 */
+
+    /* Gold token retained as ALIAS to silver so legacy `text-gold`/`bg-gold/X`
+       classes automatically render in the brand silver. Borders that use
+       `border-gold/X` are remapped via a utility layer below to silver-muted
+       for restraint. XPEL partner contexts must use `xpel-yellow` directly. */
+    --gold: var(--silver);
     --gold-foreground: 0 0% 8%;
-    --gold-dark: 41 55% 45%;
+    --gold-dark: var(--silver-muted);
 
     /* Navbar - Dark Premium */
     --nav-bg: 0 0% 5%;
@@ -52,7 +64,7 @@
     --nav-border: 0 0% 15%;
     --nav-dropdown-bg: 0 0% 8%;
     --nav-dropdown-border: 0 0% 18%;
-    --nav-highlight: 45 100% 50%;
+    --nav-highlight: 354 78% 44%;
 
     /* Status Colors */
     --destructive: 0 84% 60%;
@@ -63,10 +75,11 @@
     /* Borders & Inputs */
     --border: 0 0% 18%;
     --input: 0 0% 14%;
-    --ring: 45 100% 50%;
-    
-    /* Gold gradient */
-    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-dark)));
+    --ring: 354 78% 44%;
+
+    /* Brand red gradient (kept solid via same-stop for "no gradient" rule) */
+    --gradient-gold: linear-gradient(135deg, hsl(var(--brand-red)), hsl(var(--brand-red)));
+    --gradient-red: linear-gradient(135deg, hsl(var(--brand-red)), hsl(var(--brand-red-dark)));
 
     /* Design System Extensions */
     --radius: 0.75rem;
