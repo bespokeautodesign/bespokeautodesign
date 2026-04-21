@@ -75,7 +75,8 @@ const Marine = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-gold/20 text-gold-foreground border-silver-muted backdrop-blur-sm">Marine Division</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gold-foreground">Professional Marine Protection Services Miami</h1>
+            <p className="text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-silver-muted mb-3">Boutique Auto Protection · Miami</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gold-foreground">Professional <span className="text-brand-red">Marine</span> Protection Services Miami</h1>
             <p className="text-xl text-gold-foreground/80 max-w-2xl mx-auto mb-8">
               Specialized XPEL protection services for boats, yachts, and marine vessels. Expert protection against saltwater, UV damage, and harsh marine environments in South Florida.
             </p>

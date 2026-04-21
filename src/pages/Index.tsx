@@ -182,7 +182,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
               <img src={xpelLogo} alt="XPEL Authorized Dealer" className="h-16 md:h-20 w-auto brightness-0 invert opacity-90 translate-y-1.5"  width={200} height={60} />
               <span className="text-lg md:text-xl font-semibold tracking-widest uppercase text-white/90 border-l border-white/30 pl-4">Authorized Dealer</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight font-playfair">Xpel Premier Paint Protection Film (PPF) Installation in Miami
+            <p className="text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-silver-muted mb-3">Boutique Auto Protection · Miami</p>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight font-playfair">Xpel Premier Paint Protection Film (PPF) Installation in <span className="text-brand-red">Miami</span>
 
               </h1>
             <p className="text-lg md:text-xl mb-6 text-white/90 max-w-2xl mx-auto" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>

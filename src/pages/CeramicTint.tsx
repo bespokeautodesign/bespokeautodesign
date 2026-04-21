@@ -119,8 +119,9 @@ const CeramicTint = () => {
                 Authorized XPEL Window Film Installer
               </span>
             </div>
+            <p className="text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-silver-muted">Boutique Auto Protection · Miami</p>
              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
-               Ceramic Window Tint <br className="hidden md:block" /> in Miami, FL
+               <span className="text-brand-red">Ceramic</span> Window <span className="text-brand-red">Tint</span> <br className="hidden md:block" /> in Miami, FL
              </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               The world's most advanced ceramic window film — blocking 99% of UV rays, rejecting up to 98% of infrared heat, and recommended by The Skin Cancer Foundation.
