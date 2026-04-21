@@ -120,8 +120,9 @@ const CeramicCoating = () => {
                 Authorized XPEL Ceramic Installer
               </span>
             </div>
+            <p className="text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-silver-muted">Boutique Auto Protection · Miami</p>
              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white drop-shadow-lg" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.4)' }}>
-               Professional Ceramic Coating <br className="hidden md:block" /> in Miami, FL
+               Professional <span className="text-brand-red">Ceramic Coating</span> <br className="hidden md:block" /> in Miami, FL
              </h1>
             <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto leading-relaxed drop-shadow-md" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.7)' }}>
               XPEL Fusion Plus™ — a professional-grade nano-ceramic coating that delivers unmatched gloss, UV defense, and hydrophobic performance, engineered to thrive in Miami's extreme climate.

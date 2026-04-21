@@ -64,7 +64,8 @@ const ServiceAreaMiamiBeach = () => {
     <Navbar />
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 bg-gradient-to-b from-[#0f0f0f] via-[#141414] to-[#0f0f0f]">
       <div className="max-w-4xl mx-auto text-center">
-        <h1 className="font-playfair text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Built for the Harshest Sun in Florida — Premium Protection for Miami Beach</h1>
+        <p className="text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-silver-muted mb-3">Boutique Auto Protection · MIAMI BEACH</p>
+        <h1 className="font-playfair text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Built for the Harshest Sun in Florida — Premium Protection for <span className="text-brand-red">Miami Beach</span></h1>
         <p className="text-lg md:text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">Bespoke Auto Design protects Miami Beach exotics, convertibles, and daily drivers from year-round UV, salt mist, sand abrasion, and Ocean Drive valet damage — installed in our climate-controlled mainland facility 20 minutes west.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button>

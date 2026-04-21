@@ -234,8 +234,9 @@ const ColorChangeWrap = () => {
             <Badge variant="outline" className="text-sm tracking-wider border-white/30 text-white">
               PREMIUM VINYL WRAPS
             </Badge>
+            <p className="text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-silver-muted">Boutique Auto Protection · Miami</p>
              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white">
-               Color Change Vinyl Wraps <br className="hidden md:block" /> in Miami, FL
+               <span className="text-brand-red">Color Change</span> Vinyl Wraps <br className="hidden md:block" /> in Miami, FL
              </h1>
             <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               Transform your vehicle into something truly one-of-a-kind. We use only premium-grade cast vinyl films
