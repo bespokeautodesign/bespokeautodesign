@@ -362,9 +362,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       {/* Animated Stats */}
       <AnimatedStats />
 
-      {/* Why Choose Us */}
-      <WhyChooseUs variant="homepage" />
-
       {/* Competitive Edge */}
       <CompetitiveEdge onQuoteClick={() => setQuoteModalOpen(true)} />
 
