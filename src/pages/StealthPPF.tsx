@@ -164,8 +164,8 @@ const StealthPPF = () => {
             <Card className="bg-card border-border/60 shadow-premium">
               <CardContent className="pt-8 pb-6 px-6 space-y-5">
                 <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-xl bg-primary flex items-center justify-center">
-                    <Paintbrush className="h-6 w-6 text-primary-foreground" />
+                  <div className="h-12 w-12 rounded-xl bg-gold/15 border border-gold/30 flex items-center justify-center">
+                    <Paintbrush className="h-6 w-6 text-gold" />
                   </div>
                   <h3 className="text-2xl font-bold font-playfair">XPEL Stealth</h3>
                 </div>
@@ -174,7 +174,7 @@ const StealthPPF = () => {
                 </p>
                 <ul className="space-y-3">
                   {["Converts gloss paint to satin/matte finish", "Preserves factory matte paint (BMW, Mercedes, Porsche)", "Understated, luxury aesthetic", "Same self-healing technology as Ultimate Plus™", "Unique two-tone options when combined with clear PPF", "Ideal for high-end and exotic vehicles"].map(item => <li key={item} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                      <Check className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
                       <span className="text-foreground text-sm">{item}</span>
                     </li>)}
                 </ul>
@@ -241,8 +241,8 @@ const StealthPPF = () => {
             desc: "Protect your leased vehicle's paint throughout the lease term. When it's time to return, remove the Stealth PPF and reveal flawless paint — avoiding costly turn-in penalties for chips, scratches, and wear."
           }].map(item => <Card key={item.title} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
-                  <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <item.icon className="h-6 w-6 text-primary" />
+                  <div className="h-12 w-12 rounded-xl bg-gold/10 flex items-center justify-center">
+                    <item.icon className="h-6 w-6 text-gold" />
                   </div>
                   <h3 className="text-xl font-bold">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
@@ -275,7 +275,7 @@ const StealthPPF = () => {
             </div>
             <div className="grid sm:grid-cols-2 gap-6 py-4">
               {["Self-healing satin top coat", "UV-stabilized — no yellowing in Florida sun", "8-mil thick impact protection", "Stain-resistant surface", "Preserves factory matte texture exactly", "Clean removal with zero paint damage", "Precision DAP cut templates", "10-year XPEL manufacturer warranty"].map(point => <div key={point} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <Check className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
                   <span className="text-foreground">{point}</span>
                 </div>)}
             </div>
@@ -313,7 +313,7 @@ const StealthPPF = () => {
             title: "Avoid High Pressure",
             desc: "When rinsing, keep the pressure washer at a safe distance and avoid spraying directly on film edges, especially during the first two weeks."
           }].map(item => <div key={item.step} className="space-y-4 text-center">
-                <div className="h-16 w-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
+                <div className="h-16 w-16 rounded-full bg-gold text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-bold">{item.title}</h3>

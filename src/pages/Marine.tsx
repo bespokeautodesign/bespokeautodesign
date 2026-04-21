@@ -71,12 +71,12 @@ const Marine = () => {
       />
 
       {/* Hero Section */}
-      <header className="relative text-primary-foreground min-h-screen flex items-center justify-center">
+      <header className="relative text-gold-foreground min-h-screen flex items-center justify-center">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6 bg-primary/20 text-primary-foreground border-primary/40 backdrop-blur-sm">Marine Division</Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary-foreground">Professional Marine Protection Services Miami</h1>
-            <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8">
+            <Badge variant="secondary" className="mb-6 bg-gold/20 text-gold-foreground border-gold/40 backdrop-blur-sm">Marine Division</Badge>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gold-foreground">Professional Marine Protection Services Miami</h1>
+            <p className="text-xl text-gold-foreground/80 max-w-2xl mx-auto mb-8">
               Specialized XPEL protection services for boats, yachts, and marine vessels. Expert protection against saltwater, UV damage, and harsh marine environments in South Florida.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

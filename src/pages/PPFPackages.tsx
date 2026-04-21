@@ -82,7 +82,7 @@ const PPFPackages = () => {
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
             <img src={xpelLogo} alt="XPEL" className="h-8 w-auto opacity-80"  width={200} height={60} />
-            <span className="text-primary font-semibold tracking-wider uppercase text-sm">XPEL AUTHORIZED DEALER</span>
+            <span className="text-gold font-semibold tracking-wider uppercase text-sm">XPEL AUTHORIZED DEALER</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-playfair">
             PPF Packages
@@ -103,7 +103,7 @@ const PPFPackages = () => {
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border">
                     <img src={pkg.image} alt={`${pkg.name} — XPEL PPF coverage diagram`} className="w-full h-auto" loading={index === 0 ? "eager" : "lazy"}  width={800} height={600} />
                     <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-lg border border-border">
-                      <span className="text-primary font-bold text-lg">{pkg.name}</span>
+                      <span className="text-gold font-bold text-lg">{pkg.name}</span>
                     </div>
                   </div>
                 </div>
@@ -114,11 +114,11 @@ const PPFPackages = () => {
                   <p className="text-muted-foreground text-lg leading-relaxed">{pkg.description}</p>
                   <ul className="space-y-3">
                     {pkg.benefits.map(b => <li key={b} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                        <Check className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
                         <span className="text-foreground">{b}</span>
                       </li>)}
                   </ul>
-                  <p className="text-2xl font-semibold text-primary">Starting at {pkg.startingPrice}</p>
+                  <p className="text-2xl font-semibold text-gold">Starting at {pkg.startingPrice}</p>
                   <Button variant="premium" size="lg" onClick={() => { setSelectedPackage(pkg.name); setQuoteModalOpen(true); }}>
                     Get a Quote <ChevronRight className="h-4 w-4" />
                   </Button>
@@ -148,7 +148,7 @@ const PPFPackages = () => {
               title: "10-Year Warranty",
               desc: "XPEL backs every installation with a comprehensive manufacturer warranty against yellowing, cracking, and peeling."
             }].map(item => <div key={item.title} className="p-6 rounded-xl bg-background border border-border space-y-3">
-                  <h3 className="text-xl font-bold text-primary">{item.title}</h3>
+                  <h3 className="text-xl font-bold text-gold">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
                 </div>)}
             </div>
