@@ -165,7 +165,7 @@ const StealthPPF = () => {
               <CardContent className="pt-8 pb-6 px-6 space-y-5">
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-xl bg-gold/15 border border-gold/30 flex items-center justify-center">
-                    <Paintbrush className="h-6 w-6 text-gold-foreground" />
+                    <Paintbrush className="h-6 w-6 text-gold" />
                   </div>
                   <h3 className="text-2xl font-bold font-playfair">XPEL Stealth</h3>
                 </div>
