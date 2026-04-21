@@ -197,9 +197,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                   variant="premium"
                   size="lg"
                    className="text-lg px-10 py-5 shadow-premium hover:shadow-glow transform hover:scale-105 transition-all duration-300 animate-fade-in"
-                   onClick={() => { trackQuoteButton('hero'); setQuoteModalOpen(true); }}>
-                Get a Free PPF Quote
-              </Button>
+                   onClick={() => { trackQuoteButton('hero'); setQuoteModalOpen(true); }}>Request a Consultation</Button>
               <Button
                   variant="outline"
                   size="lg"
@@ -297,9 +295,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                 size="lg"
                 className="bg-xpel-yellow text-black font-semibold hover:bg-xpel-yellow-dark hover:shadow-glow transform hover:scale-105 transition-all duration-300"
                 onClick={() => { trackQuoteButton('xpel_section'); setQuoteModalOpen(true); }}
-              >
-                Request a Free Quote
-              </Button>
+              >Request a Consultation</Button>
               <Button variant="silver" size="lg" asChild>
                 <a href="tel:+17863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('xpel_section'); }}>
                   <Phone className="h-4 w-4" /> Call (786) 395-9172

@@ -69,7 +69,7 @@ const ServiceAreaCoralGables = () => {
         <h1 className="font-playfair text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Premium PPF, Ceramic Coating & Window Tint in <span className="text-brand-red">Coral Gables</span>, Miami</h1>
         <p className="text-lg md:text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">Bespoke Auto Design protects Coral Gables' most treasured daily-drivers and weekend exotics from tree sap, sun, and Old Cutler pavement chips — installed in our climate-controlled facility just minutes away.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button>
+          <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Request a Consultation</Button>
           <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_coral_gables')}><Button size="lg" variant="outline" className="bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> Call (786) 395-9172</Button></a>
         </div>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/60">
@@ -146,7 +146,7 @@ const ServiceAreaCoralGables = () => {
         <h2 className="font-playfair text-2xl md:text-4xl font-bold text-white mb-4">Ready to Protect Your Coral Gables Vehicle?</h2>
         <p className="text-white/60 text-lg mb-8">Get a free quote within 30 minutes — currently booking 1-2 weeks out</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button>
+          <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Request a Consultation</Button>
           <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_coral_gables')}><Button size="lg" variant="outline" className="bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> (786) 395-9172</Button></a>
         </div>
       </div>

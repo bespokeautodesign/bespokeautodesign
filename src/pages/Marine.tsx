@@ -81,9 +81,7 @@ const Marine = () => {
               Specialized XPEL protection services for boats, yachts, and marine vessels. Expert protection against saltwater, UV damage, and harsh marine environments in South Florida.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
-                Get Marine Quote
-              </Button>
+              <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>Request a Consultation</Button>
             </div>
           </div>
         </div>

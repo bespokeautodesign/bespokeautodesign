@@ -173,8 +173,7 @@ const PPFPackages = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Our team will assess your driving habits, vehicle type, and budget to recommend the ideal level of protection. Reach out today for a free consultation.
           </p>
-          <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>
-            Request a Free Quote <ChevronRight className="h-4 w-4" />
+          <Button variant="premium" size="lg" onClick={() => setQuoteModalOpen(true)}>Request a Consultation<ChevronRight className="h-4 w-4" />
           </Button>
         </div>
       </section>

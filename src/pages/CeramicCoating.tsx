@@ -131,8 +131,7 @@ const CeramicCoating = () => {
               Starting at $599 • Free Consultation
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_coating"); setQuoteModalOpen(true); }}>
-                Get a Free Quote <ChevronRight className="h-4 w-4" />
+              <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_coating"); setQuoteModalOpen(true); }}>Request a Consultation<ChevronRight className="h-4 w-4" />
               </Button>
               <Button variant="silver" size="lg" asChild>
                 <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("ceramic_coating"); }} className="flex items-center gap-2">
@@ -638,8 +637,7 @@ const CeramicCoating = () => {
             Miami's premier ceramic coating installer. Schedule a consultation and get a custom quote — no obligation, no pressure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_coating"); setQuoteModalOpen(true); }}>
-              Request a Free Quote <ChevronRight className="h-4 w-4" />
+            <Button variant="premium" size="lg" onClick={() => { trackQuoteButton("ceramic_coating"); setQuoteModalOpen(true); }}>Request a Consultation<ChevronRight className="h-4 w-4" />
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick("ceramic_coating"); }} className="flex items-center gap-2">
