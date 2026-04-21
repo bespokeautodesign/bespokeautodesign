@@ -129,12 +129,12 @@ const ServiceAreaBrickell = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link to="/#contact">
-              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">
+              <Button size="lg" className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">
                 Get a Free Quote
               </Button>
             </Link>
             <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_brickell')}>
-              <Button size="lg" variant="outline" className="bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 px-8 py-6 text-lg w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red px-8 py-6 text-lg w-full sm:w-auto">
                 <Phone className="w-5 h-5 mr-2" /> Call (786) 395-9172
               </Button>
             </a>
@@ -142,20 +142,20 @@ const ServiceAreaBrickell = () => {
           {/* Stat strip */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/60">
             <GoogleRatingChip />
-            <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-amber-500" /> XPEL Authorized Dealer</span>
+            <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-brand-red" /> XPEL Authorized Dealer</span>
             <span className="hidden sm:inline">•</span>
-            <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-amber-500" /> Up to 10-Year Warranty</span>
+            <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-brand-red" /> Up to 10-Year Warranty</span>
             <span className="hidden sm:inline">•</span>
-            <span className="flex items-center gap-1.5"><Car className="w-4 h-4 text-amber-500" /> Concierge Pickup Available</span>
+            <span className="flex items-center gap-1.5"><Car className="w-4 h-4 text-brand-red" /> Concierge Pickup Available</span>
           </div>
         </div>
       </section>
 
       {/* Instant Quote CTA */}
-      <div className="bg-amber-500/10 border-y border-amber-500/20">
+      <div className="bg-brand-red/10 border-y border-brand-red/40">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-center gap-3 text-sm">
-          <span className="text-amber-400 font-medium">💡 Get an instant price range for your vehicle</span>
-          <Link to="/instant-quote" className="inline-flex items-center gap-1 text-amber-400 font-bold hover:text-amber-300 underline underline-offset-2">Try the Instant Quote Calculator <ArrowRight className="w-3.5 h-3.5" /></Link>
+          <span className="text-brand-red font-medium">💡 Get an instant price range for your vehicle</span>
+          <Link to="/instant-quote" className="inline-flex items-center gap-1 text-brand-red font-bold hover:text-brand-red underline underline-offset-2">Try the Instant Quote Calculator <ArrowRight className="w-3.5 h-3.5" /></Link>
         </div>
       </div>
 
@@ -169,8 +169,8 @@ const ServiceAreaBrickell = () => {
               <Card key={i} className="bg-[#1a1a1a] border-[#333] text-[#e5e5e5]">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-lg bg-amber-500/10">
-                      <card.icon className="w-6 h-6 text-amber-500" />
+                    <div className="p-2 rounded-lg bg-brand-red/10">
+                      <card.icon className="w-6 h-6 text-brand-red" />
                     </div>
                     <CardTitle className="text-lg text-white">{card.title}</CardTitle>
                   </div>
@@ -195,12 +195,12 @@ const ServiceAreaBrickell = () => {
               <Card key={i} className="bg-[#1a1a1a] border-[#333] text-[#e5e5e5] flex flex-col">
                 <CardHeader>
                   <CardTitle className="text-lg text-white">{svc.title}</CardTitle>
-                  <p className="text-amber-500 font-bold text-xl mt-1">From {svc.price}</p>
+                  <p className="text-brand-red font-bold text-xl mt-1">From {svc.price}</p>
                 </CardHeader>
                 <CardContent className="flex flex-col flex-1">
                   <p className="text-white/70 text-sm leading-relaxed mb-6 flex-1">{svc.desc}</p>
                   <Link to={svc.link}>
-                    <Button variant="outline" className="w-full bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500">
+                    <Button variant="outline" className="w-full bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red">
                       Learn More <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
                   </Link>
@@ -244,7 +244,7 @@ const ServiceAreaBrickell = () => {
           <Accordion type="single" collapsible className="space-y-3">
             {brickellFaqData.map((faq, i) => (
               <AccordionItem key={i} value={`brickell-faq-${i}`} className="bg-[#1a1a1a] border border-[#333] rounded-lg px-6">
-                <AccordionTrigger className="text-white hover:text-amber-500 text-left py-5 text-base font-medium">
+                <AccordionTrigger className="text-white hover:text-brand-red text-left py-5 text-base font-medium">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-white/70 leading-relaxed pb-5">
@@ -267,12 +267,12 @@ const ServiceAreaBrickell = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/#contact">
-              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">
+              <Button size="lg" className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">
                 Get a Free Quote
               </Button>
             </Link>
             <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_brickell')}>
-              <Button size="lg" variant="outline" className="bg-transparent border-amber-500/50 text-white hover:bg-amber-500 hover:text-[#1a1a1a] hover:border-amber-500 px-8 py-6 text-lg w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red px-8 py-6 text-lg w-full sm:w-auto">
                 <Phone className="w-5 h-5 mr-2" /> (786) 395-9172
               </Button>
             </a>

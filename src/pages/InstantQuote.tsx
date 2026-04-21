@@ -591,7 +591,7 @@ const InstantQuote = () => {
                     <ul className="space-y-2 text-sm">
                       {selectedSummary.map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-white/80">
-                          <Check className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                          <Check className="w-4 h-4 text-brand-red mt-0.5 flex-shrink-0" />
                           {item}
                         </li>
                       ))}
@@ -709,8 +709,8 @@ const InstantQuote = () => {
       <section className="py-10 px-4 border-t border-[#222]">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-white/60">
           <GoogleRatingChip />
-          <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-amber-500" /> Certified XPEL Installers</span>
-          <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-amber-500" /> Up to 10-Yr Warranty</span>
+          <span className="flex items-center gap-1.5"><Award className="w-4 h-4 text-brand-red" /> Certified XPEL Installers</span>
+          <span className="flex items-center gap-1.5"><Shield className="w-4 h-4 text-brand-red" /> Up to 10-Yr Warranty</span>
           <span className="flex items-center gap-1.5"><VehicleSilhouette vehicleType="Sedan" isSelected className="w-5 h-4" /> Concierge Pickup Available</span>
         </div>
       </section>
