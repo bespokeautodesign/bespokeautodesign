@@ -107,6 +107,7 @@ const faqPageSchema = {
 };
 
 const ServiceAreaBrickell = () => {
+  const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
   const structuredData = [localBusinessSchema, faqPageSchema];
 
   return (
@@ -129,11 +130,9 @@ const ServiceAreaBrickell = () => {
             Bespoke Auto Design protects Brickell's daily-driver luxury and exotic vehicles from Miami's harshest road and sun conditions — installed in our climate-controlled facility just minutes from downtown.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link to="/#contact">
-              <Button size="lg" className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">
-                Get a Free Quote
-              </Button>
-            </Link>
+            <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">
+              Get a Free Quote
+            </Button>
             <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_brickell')}>
               <Button size="lg" variant="outline" className="bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red px-8 py-6 text-lg w-full sm:w-auto">
                 <Phone className="w-5 h-5 mr-2" /> Call (786) 395-9172
@@ -267,11 +266,9 @@ const ServiceAreaBrickell = () => {
             Get a free quote within 30 minutes — currently booking 1-2 weeks out
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/#contact">
-              <Button size="lg" className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">
-                Get a Free Quote
-              </Button>
-            </Link>
+            <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">
+              Get a Free Quote
+            </Button>
             <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_brickell')}>
               <Button size="lg" variant="outline" className="bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red px-8 py-6 text-lg w-full sm:w-auto">
                 <Phone className="w-5 h-5 mr-2" /> (786) 395-9172
@@ -282,6 +279,7 @@ const ServiceAreaBrickell = () => {
       </section>
 
       <Footer />
+      <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
     </div>
   );
 };
