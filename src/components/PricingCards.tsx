@@ -35,13 +35,13 @@ export const PricingCards = ({ title, subtitle, tiers, onGetQuote, footnote }: P
               key={tier.name}
               className={`relative rounded-2xl border p-8 flex flex-col transition-shadow hover:shadow-lg ${
                 tier.popular
-                  ? 'border-primary bg-card shadow-md ring-2 ring-primary/20'
+                  ? 'border-gold bg-card shadow-md ring-2 ring-gold/20'
                   : 'border-border bg-card'
               }`}
             >
               {tier.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-primary text-primary-foreground px-3 py-1 text-xs font-semibold">
+                  <Badge className="bg-gold text-gold-foreground px-3 py-1 text-xs font-semibold">
                     Most Popular
                   </Badge>
                 </div>
@@ -62,7 +62,7 @@ export const PricingCards = ({ title, subtitle, tiers, onGetQuote, footnote }: P
               <ul className="space-y-3 mb-8 flex-1">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2 text-sm">
-                    <Check className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                    <Check className="h-4 w-4 text-gold mt-0.5 shrink-0" />
                     <span>{feature}</span>
                   </li>
                 ))}
