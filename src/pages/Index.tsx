@@ -196,9 +196,8 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                   variant="premium"
                   size="lg"
                    className="text-lg px-10 py-5 shadow-premium hover:shadow-glow transform hover:scale-105 transition-all duration-300 animate-fade-in"
-                   onClick={() => trackQuoteButton('hero')}
-                   asChild>
-                <Link to="/instant-quote">Get a Free PPF Quote</Link>
+                   onClick={() => { trackQuoteButton('hero'); setQuoteModalOpen(true); }}>
+                Get a Free PPF Quote
               </Button>
               <Button
                   variant="outline"
