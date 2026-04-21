@@ -178,8 +178,8 @@ const CeramicTint = () => {
               <CardContent className="p-8 md:p-12">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="flex-shrink-0">
-                    <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Heart className="h-12 w-12 text-primary" />
+                    <div className="h-24 w-24 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center">
+                      <Heart className="h-12 w-12 text-gold" fill="currentColor" />
                     </div>
                   </div>
                   <div className="space-y-4 text-center md:text-left">
