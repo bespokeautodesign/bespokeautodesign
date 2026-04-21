@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Shield, Sun, Thermometer, Car, Phone, Waves, Star, Award, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { QuoteModal } from "@/components/QuoteModal";
 import PageSEO from "@/components/PageSEO";
 import { GoogleRatingChip } from "@/components/GoogleRatingChip";
 
@@ -55,7 +56,9 @@ const faqPageSchema = {
   "mainEntity": faqData.map(f => ({ "@type": "Question", "name": f.question, "acceptedAnswer": { "@type": "Answer", "text": f.answer } }))
 };
 
-const ServiceAreaBalHarbour = () => (
+const ServiceAreaBalHarbour = () => {
+  const [quoteModalOpen, setQuoteModalOpen] = React.useState(false);
+  return (
   <div className="min-h-screen bg-[#0f0f0f] text-[#e5e5e5]">
     <PageSEO title="PPF, Ceramic Coating & Window Tint in Bal Harbour, Miami | Bespoke Auto Design" description="Certified XPEL paint protection film, ceramic coating, and ceramic window tint installation serving Bal Harbour, Miami. Discreet, by-appointment protection for the most exclusive vehicles in Bal Harbour. PPF and ceramic coatings for supercars, hypercars, and collector vehicles. Free quotes, 10-year warranty, concierge pickup." canonical="https://www.bespokeauto.design/service-areas/bal-harbour" structuredData={[localBusinessSchema, faqPageSchema]} />
     <Navbar />
@@ -65,7 +68,7 @@ const ServiceAreaBalHarbour = () => (
         <h1 className="font-playfair text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Exotic-Caliber PPF, Ceramic Coating & Window Tint for Bal Harbour</h1>
         <p className="text-lg md:text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">Bespoke Auto Design protects Bal Harbour's exotic and luxury vehicles against salt air, ocean UV, and sand abrasion — installed in our climate-controlled Miami facility 25 minutes south.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Link to="/#contact"><Button size="lg" className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button></Link>
+          <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button>
           <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_bal_harbour')}><Button size="lg" variant="outline" className="bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> Call (786) 395-9172</Button></a>
         </div>
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm md:text-base text-white/60">
@@ -142,14 +145,16 @@ const ServiceAreaBalHarbour = () => (
         <h2 className="font-playfair text-2xl md:text-4xl font-bold text-white mb-4">Ready to Protect Your Bal Harbour Exotic?</h2>
         <p className="text-white/60 text-lg mb-8">Get a free quote within 30 minutes — currently booking 1-2 weeks out</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/#contact"><Button size="lg" className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button></Link>
+          <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Get a Free Quote</Button>
           <a href="tel:+17863959172" onClick={() => trackPhoneClick('service_area_bal_harbour')}><Button size="lg" variant="outline" className="bg-transparent border-brand-red/40 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red px-8 py-6 text-lg w-full sm:w-auto"><Phone className="w-5 h-5 mr-2" /> (786) 395-9172</Button></a>
         </div>
       </div>
     </section>
 
     <Footer />
+    <QuoteModal open={quoteModalOpen} onOpenChange={setQuoteModalOpen} />
   </div>
-);
+  );
+};
 
 export default ServiceAreaBalHarbour;

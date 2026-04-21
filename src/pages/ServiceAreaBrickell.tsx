@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Shield, Sun, Thermometer, Car, Phone, MapPin, Star, Award, Clock, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { QuoteModal } from "@/components/QuoteModal";
 import PageSEO from "@/components/PageSEO";
 import { GoogleRatingChip } from "@/components/GoogleRatingChip";
 import { providerSchema, areaServed } from "@/utils/seoHelpers";
