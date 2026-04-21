@@ -49,13 +49,12 @@
     --silver: 40 14% 84%;            /* #DED9D0 */
     --silver-muted: 40 5% 54%;       /* #938F85 */
 
-    /* Gold token retained as ALIAS to silver so legacy `text-gold`/`bg-gold/X`
-       classes automatically render in the brand silver. Borders that use
-       `border-gold/X` are remapped via a utility layer below to silver-muted
-       for restraint. XPEL partner contexts must use `xpel-yellow` directly. */
-    --gold: var(--silver);
+    /* Gold token retained as ALIAS to silver-primary so legacy `text-gold` /
+       `bg-gold/X` classes automatically render in the brand silver. XPEL
+       partner contexts must use `xpel-yellow` directly. */
+    --gold: 40 14% 84%;              /* alias -> silver */
     --gold-foreground: 0 0% 8%;
-    --gold-dark: var(--silver-muted);
+    --gold-dark: 40 5% 54%;          /* alias -> silver-muted */
 
     /* Navbar - Dark Premium */
     --nav-bg: 0 0% 5%;
