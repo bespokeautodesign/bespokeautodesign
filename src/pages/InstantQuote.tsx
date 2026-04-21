@@ -387,12 +387,12 @@ const InstantQuote = () => {
                     onClick={() => toggleService(s.key)}
                     className={`p-4 rounded-lg border-2 text-left flex items-center gap-3 transition-all duration-200 ${
                       services.has(s.key)
-                        ? "border-brand-red bg-brand-red/10"
+                        ? "border-silver bg-silver/10 shadow-[0_0_16px_rgba(222,217,208,0.15)]"
                         : "border-[#333] bg-[#1a1a1a] hover:border-[#555] hover:bg-[#222]"
                     }`}
                   >
                     <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 ${
-                      services.has(s.key) ? "border-brand-red bg-brand-red" : "border-[#555]"
+                      services.has(s.key) ? "border-silver bg-silver" : "border-[#555]"
                     }`}>
                       {services.has(s.key) && <Check className="w-3 h-3 text-black" />}
                     </div>
@@ -426,7 +426,7 @@ const InstantQuote = () => {
                               onClick={() => setPpfPkg(p.key)}
                               className={`p-3 rounded-md border text-left text-sm transition-all ${
                                 ppfPkg === p.key
-                                  ? "border-brand-red bg-brand-red/10 text-white"
+                                  ? "border-silver bg-silver/10 text-white shadow-[0_0_16px_rgba(222,217,208,0.15)]"
                                   : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                               }`}
                             >
@@ -444,7 +444,7 @@ const InstantQuote = () => {
                             onClick={() => setPpfPkg(ppfPkg === "fullBody" ? null : "fullBody")}
                             className={`w-full p-3 rounded-md border text-left text-sm transition-all ${
                               ppfPkg === "fullBody"
-                                ? "border-brand-red bg-brand-red/10 text-white"
+                                ? "border-silver bg-silver/10 text-white shadow-[0_0_16px_rgba(222,217,208,0.15)]"
                                 : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                             }`}
                           >
@@ -473,7 +473,7 @@ const InstantQuote = () => {
                               onClick={() => setCoatingPkg(p.key)}
                               className={`p-3 rounded-md border text-left text-sm transition-all ${
                                 coatingPkg === p.key
-                                  ? "border-brand-red bg-brand-red/10 text-white"
+                                  ? "border-silver bg-silver/10 text-white shadow-[0_0_16px_rgba(222,217,208,0.15)]"
                                   : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                               }`}
                             >
@@ -504,7 +504,7 @@ const InstantQuote = () => {
                               onClick={() => setTintPkg(prev => prev === p.key ? null : p.key)}
                               className={`p-3 rounded-md border text-left text-sm transition-all ${
                                 tintPkg === p.key
-                                  ? "border-brand-red bg-brand-red/10 text-white"
+                                  ? "border-silver bg-silver/10 text-white shadow-[0_0_16px_rgba(222,217,208,0.15)]"
                                   : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                               }`}
                             >
@@ -522,7 +522,7 @@ const InstantQuote = () => {
                             onClick={() => setWindshieldTint(prev => !prev)}
                             className={`w-full p-3 rounded-md border text-left text-sm transition-all ${
                               windshieldTint
-                                ? "border-brand-red bg-brand-red/10 text-white"
+                                ? "border-silver bg-silver/10 text-white shadow-[0_0_16px_rgba(222,217,208,0.15)]"
                                 : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                             }`}
                           >
@@ -549,7 +549,7 @@ const InstantQuote = () => {
                               onClick={() => setWrapPkg(p.key)}
                               className={`p-3 rounded-md border text-left text-sm transition-all ${
                                 wrapPkg === p.key
-                                  ? "border-brand-red bg-brand-red/10 text-white"
+                                  ? "border-silver bg-silver/10 text-white shadow-[0_0_16px_rgba(222,217,208,0.15)]"
                                   : "border-[#444] text-white/70 hover:border-[#666] hover:text-white"
                               }`}
                             >
