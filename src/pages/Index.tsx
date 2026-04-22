@@ -317,44 +317,71 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
             </p>
           </header>
           
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {services.map((service, index) =>
-              <div key={index} className="overflow-hidden rounded-lg transition-all duration-500 group cursor-pointer hover:shadow-[0_0_24px_rgba(222,217,208,0.18)] hover:border-silver/40" style={{ backgroundColor: '#1a1a1a', border: '1px solid rgba(255,255,255,0.08)' }} onClick={() => setSelectedService(index)}>
-                <div className="relative h-64 overflow-hidden">
-                  <LazyImage src={service.image} alt={service.title} className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${index === 1 ? "object-[center_30%]" : ""}`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-primary text-primary-foreground text-sm font-semibold px-3 py-1">
-                      Starting at {service.startingPrice}
-                    </Badge>
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-2xl font-bold text-white font-playfair">{service.title}</h3>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-[#e5e5e5]/70 mb-4">{service.description}</p>
-                  <div className="grid grid-cols-2 gap-2 mb-4">
-                    {service.features.map((feature, fIndex) =>
-                    <div key={fIndex} className="flex items-center gap-2 text-sm text-[#e5e5e5]">
-                        <Shield className="h-3 w-3 text-brand-red flex-shrink-0" />
-                        <span>{feature}</span>
+          <div className="space-y-0 -mx-6">
+            {services.map((service, index) => {
+              const splitImages = [
+                "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1600&q=80",
+                "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?auto=format&fit=crop&w=1600&q=80",
+                "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1600&q=80",
+                "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80",
+              ];
+              const photo = splitImages[index] || service.image;
+              const reverse = index % 2 === 1;
+              return (
+                <div
+                  key={index}
+                  className={`relative grid md:grid-cols-2 min-h-[500px] ${reverse ? 'md:[&>*:first-child]:order-2' : ''}`}
+                >
+                  {/* Text side */}
+                  <div className="relative z-20 flex items-center px-6 md:px-16 py-12 md:py-20" style={{ backgroundColor: '#111111' }}>
+                    <div className="max-w-xl">
+                      <h3 className="text-3xl md:text-5xl font-bold mb-5 font-playfair text-white">
+                        {service.title}
+                      </h3>
+                      <p className="text-base md:text-lg text-white/70 mb-6 leading-relaxed">
+                        {service.description}
+                      </p>
+                      <p className="text-2xl md:text-3xl font-playfair font-semibold mb-8" style={{ color: '#D4A84B' }}>
+                        Starting at {service.startingPrice}
+                      </p>
+                      <div className="flex flex-wrap gap-4">
+                        <Button variant="outline" asChild className="border-white/30 text-white hover:bg-white hover:text-[#111]">
+                          <Link to={service.link}>
+                            Learn More <ArrowRight className="h-4 w-4 ml-1" />
+                          </Link>
+                        </Button>
+                        <Button variant="premium" onClick={() => setQuoteModalOpen(true)}>
+                          Get Quote
+                        </Button>
                       </div>
-                    )}
+                    </div>
                   </div>
-                  <div className="flex gap-3">
-                    <Button variant="outline" size="sm" asChild className="flex-1 bg-transparent border-brand-red/50 text-white hover:bg-brand-red hover:text-[#1a1a1a] hover:border-brand-red">
-                      <Link to={service.link}>
-                        Learn More <ArrowRight className="h-3 w-3 ml-1" />
-                      </Link>
-                    </Button>
-                    <Button variant="premium" size="sm" className="flex-1" onClick={(e) => {e.stopPropagation();setQuoteModalOpen(true);}}>
-                      Get Quote
-                    </Button>
+
+                  {/* Photo side */}
+                  <div className="relative min-h-[300px] md:min-h-[500px] overflow-hidden">
+                    <LazyImage
+                      src={photo}
+                      alt={service.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    {/* Gradient that fades from dark text-side INTO photo, no hard border */}
+                    <div
+                      className="absolute inset-0 pointer-events-none hidden md:block"
+                      style={{
+                        background: reverse
+                          ? 'linear-gradient(to left, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)'
+                          : 'linear-gradient(to right, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)',
+                      }}
+                    />
+                    {/* Mobile top fade for legibility continuity */}
+                    <div
+                      className="absolute inset-0 pointer-events-none md:hidden"
+                      style={{ background: 'linear-gradient(to bottom, #111111 0%, rgba(17,17,17,0) 35%)' }}
+                    />
                   </div>
                 </div>
-              </div>
-              )}
+              );
+            })}
           </div>
         </div>
       </section>
