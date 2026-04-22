@@ -206,12 +206,12 @@ const PaintProtectionFilm = () => {
               </p>
               <ul className="space-y-4 pt-2">
                 {[
-                  { icon: Sun, title: "UV & Sun Protection", desc: "Blocks harmful UV that causes paint oxidation, fading, and clear coat failure." },
-                  { icon: Zap, title: "Rock Chip Defense", desc: "Absorbs impact from gravel and debris on I-95, the Palmetto, and the Turnpike." },
-                  { icon: Droplets, title: "Salt Air & Humidity", desc: "Impermeable barrier against corrosive coastal salt air and water spotting." },
-                  { icon: Award, title: "Bug & Sap Resistance", desc: "Stain-resistant top coat repels bug splatter, bird droppings, and tree sap." },
-                  { icon: Shield, title: "Self-Healing Technology", desc: "Elastomeric top coat erases light scratches and swirl marks with heat." },
-                  { icon: Car, title: "Resale Value Preservation", desc: "Keeps paint in concours condition — adding thousands to trade-in value." },
+                  { icon: Sun, title: "UV & Sun Protection", desc: "Miami ranks among the highest UV index cities in the U.S. XPEL PPF blocks harmful UV rays that cause paint oxidation, fading, and clear coat failure — keeping your finish factory-fresh." },
+                  { icon: Zap, title: "Rock Chip Defense", desc: "I-95, the Palmetto, and Florida's Turnpike are notorious for road debris. PPF absorbs impact energy from stones, gravel, and construction material that would otherwise chip your paint." },
+                  { icon: Droplets, title: "Salt Air & Humidity", desc: "Living near Miami Beach, Brickell, or the Keys means constant exposure to corrosive salt air. PPF creates an impermeable barrier that prevents salt-induced micro-corrosion and water spotting." },
+                  { icon: Award, title: "Bug & Sap Resistance", desc: "XPEL's stain-resistant top coat repels bug splatter, bird droppings, tree sap, and hard water spots — protecting your paint 24/7 against South Florida's organic and environmental contaminants." },
+                  { icon: Shield, title: "Self-Healing Technology", desc: "XPEL's elastomeric polymer top coat eliminates light scratches and swirl marks when exposed to heat. In Miami's sun, most surface blemishes disappear within minutes while parked." },
+                  { icon: Car, title: "Resale Value Preservation", desc: "Paint condition is one of the biggest factors in resale value. PPF keeps your paint in concours condition, adding thousands of dollars to your vehicle's trade-in or private sale price." },
                 ].map((item) => (
                   <li key={item.title} className="flex items-start gap-4">
                     <div className="h-10 w-10 rounded-lg bg-gold/15 border border-silver-muted/40 flex items-center justify-center shrink-0 mt-0.5">
