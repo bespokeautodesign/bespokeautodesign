@@ -558,10 +558,10 @@ const PaintProtectionFilm = () => {
                 Miami's Premier XPEL Installation Facility
               </h2>
               <p className="text-lg text-silver leading-relaxed">
-                Paint protection film installation is only as good as the environment it's performed in. Our purpose-built facility at <strong className="text-white">7943 NW 64th St</strong> in Miami's Doral area features a climate-controlled installation bay engineered for flawless PPF application — critical in South Florida's 90°F+ tropical climate.
+                Paint protection film installation is only as good as the environment it's performed in. At Bespoke Auto Design, our purpose-built facility at <strong className="text-white">7943 NW 64th St in Miami (Doral area)</strong> is engineered specifically for flawless PPF application. Our climate-controlled installation bay maintains consistent temperature and humidity levels — two factors that are absolutely critical for proper film adhesion, slip solution performance, and curing times.
               </p>
               <p className="text-lg text-silver leading-relaxed">
-                Every installation follows a rigorous multi-step process that begins long before the film touches your paint.
+                In Miami's tropical climate, where outdoor temperatures routinely exceed 90°F with 80%+ humidity, attempting PPF installation in an uncontrolled garage or outdoor setting leads to premature adhesive activation, trapped moisture, and edge lifting that can compromise the entire installation. Every PPF installation at Bespoke Auto Design follows a rigorous multi-step process that begins long before the film touches your paint.
               </p>
             </div>
           </div>
