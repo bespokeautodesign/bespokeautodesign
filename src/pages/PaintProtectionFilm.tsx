@@ -607,19 +607,19 @@ const PaintProtectionFilm = () => {
             <div className="max-w-xl space-y-5">
               <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">Comparison Guide</Badge>
               <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
-                PPF vs Ceramic Coating
+                PPF vs Ceramic Coating: Which Is Right for Your Miami Vehicle?
               </h2>
               <p className="text-base md:text-lg text-silver leading-relaxed">
-                These are complementary technologies that address different threats — for many Miami vehicle owners, the best solution combines both.
+                This is one of the most common questions we hear at Bespoke Auto Design, and the answer depends on what you're protecting against. Paint Protection Film and ceramic coating are complementary technologies that address different threats — and for many Miami vehicle owners, the best solution is combining both.
               </p>
               <p className="text-base md:text-lg text-silver leading-relaxed">
-                <strong className="text-white">PPF</strong> is a physical 8-mil barrier that absorbs impacts from rock chips, gravel, and road debris. It's the only product that prevents paint damage from physical contact, with a self-healing top coat that eliminates light scratches with heat.
+                <strong className="text-white">Paint Protection Film (PPF)</strong> is a physical barrier — a thick, flexible urethane film that absorbs impacts from rock chips, gravel, road debris, shopping cart dings, and even minor fender contact. It's the only product on the market that can actually prevent paint damage from physical contact. XPEL Ultimate Plus™ is 8 mils thick and features a self-healing top coat that eliminates light scratches automatically with heat exposure. For Miami drivers who commute on I-95, the Palmetto Expressway, or any construction-heavy corridor, PPF on the front end is the single most effective way to keep your paint chip-free.
               </p>
               <p className="text-base md:text-lg text-silver leading-relaxed">
-                <strong className="text-white">Ceramic Coating</strong> is a liquid nano-ceramic layer that bonds to paint or PPF — creating a hydrophobic surface with UV protection, chemical resistance, and extreme gloss. It does not prevent rock chips, but it dramatically simplifies washing and resists water spots, bird droppings, and acid rain.
+                <strong className="text-white">Ceramic Coating</strong>, on the other hand, is a liquid nano-ceramic layer that chemically bonds to your paint (or to PPF), creating a semi-permanent hydrophobic surface with enhanced UV protection, chemical resistance, and extreme gloss. Ceramic coating does not prevent rock chips — it's too thin for that. What it excels at is making your vehicle dramatically easier to wash, preventing water spots (a major issue in Miami's hard-water climate), blocking UV-induced paint oxidation, and resisting chemical etching from bird droppings, tree sap, and acid rain.
               </p>
               <p className="text-base md:text-lg text-silver leading-relaxed">
-                <strong className="text-gold">The Ultimate Stack:</strong> Full Front or Full Body PPF on impact areas + Fusion Plus™ ceramic coating over the entire vehicle. We offer bundled PPF + ceramic packages starting at $599 for ceramic that save vs. booking each service separately.
+                <strong className="text-gold">The Ultimate Protection Stack:</strong> Our most popular configuration among Miami luxury car owners is PPF on the high-impact areas (full front or full body) with ceramic coating applied over the entire vehicle — including over the PPF. This combination gives you the physical impact protection of PPF plus the hydrophobic self-cleaning properties, UV defense, and showroom gloss of ceramic coating. The ceramic layer on top of PPF also makes the film easier to clean, prevents staining, and extends the film's cosmetic life. We offer XPEL Fusion Plus™ ceramic coating starting at $599, and bundled PPF + ceramic packages that save you money compared to purchasing each service separately.
               </p>
             </div>
           </div>
