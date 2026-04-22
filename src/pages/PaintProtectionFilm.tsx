@@ -316,18 +316,22 @@ const PaintProtectionFilm = () => {
       {/* ═══════════════════════════════════════════════════════
          OUR PROCESS
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Our Process</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+      <section
+        className="relative min-h-[500px] bg-cover bg-center bg-no-repeat py-20 bg-fixed"
+        style={{ backgroundImage: `url(${clearPPFVehicles[2].image})` }}
+      >
+        <div className="absolute inset-0 bg-black/65" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-3xl mb-12">
+            <Badge variant="outline" className="mb-4 border-white/40 text-white">Our Process</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6 text-white">
               How We Install PPF
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-white/85">
               Every installation follows a meticulous multi-step process in our climate-controlled facility in Miami.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl">
             {[{
             step: "01",
             title: "Consultation",
@@ -344,12 +348,12 @@ const PaintProtectionFilm = () => {
             step: "04",
             title: "Quality Inspection",
             desc: "Multi-point inspection under controlled lighting ensures flawless coverage before delivery."
-          }].map((item) => <div key={item.step} className="space-y-4 text-center">
+          }].map((item) => <div key={item.step} className="bg-black/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 space-y-4 text-center">
                 <div className="h-16 w-16 rounded-full bg-gold text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                <p className="text-white/80 leading-relaxed text-sm">{item.desc}</p>
               </div>)}
           </div>
         </div>
