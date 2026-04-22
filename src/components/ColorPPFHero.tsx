@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import xpelLogo from '@/assets/xpel-logo.svg';
+import HeroVideoBackground from '@/components/HeroVideoBackground';
 
 interface ColorPPFHeroProps {
   onGetQuote: () => void;
@@ -7,11 +8,8 @@ interface ColorPPFHeroProps {
 
 export const ColorPPFHero = ({ onGetQuote }: ColorPPFHeroProps) => {
   return (
-    <section className="relative py-8 md:py-12 hero-parallax">
-      <div className="hero-parallax-bg">
-        <img src="/lovable-uploads/color-ppf-gt2rs.webp" alt="Porsche GT2 RS with XPEL Color PPF" className="w-full h-full object-cover object-[center_45%]"  width={1920} height={1080} />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 via-60% to-black/70 to-100%" />
-      </div>
+    <section className="relative py-8 md:py-12">
+      <HeroVideoBackground />
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <img 
