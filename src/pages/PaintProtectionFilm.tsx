@@ -143,7 +143,7 @@ const PaintProtectionFilm = () => {
          WHAT IS PPF? — Split row (text left / photo right)
          ═══════════════════════════════════════════════════════ */}
       <section className="relative" style={{ backgroundColor: '#111111' }}>
-        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+        <div className="relative grid md:grid-cols-[55%_45%] min-h-[500px]">
           <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24" style={{ backgroundColor: '#111111' }}>
             <div className="max-w-xl space-y-6">
               <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">What Is PPF?</Badge>
@@ -156,11 +156,20 @@ const PaintProtectionFilm = () => {
               <p className="text-lg text-silver leading-relaxed">
                 At Bespoke Auto Design in Miami, we exclusively install <strong className="text-white">XPEL Ultimate Plus™</strong> — the world's most advanced self-healing paint protection film.
               </p>
+              <div className="pt-2">
+                <Button
+                  size="lg"
+                  onClick={() => { trackQuoteButton("ppf"); setQuoteModalOpen(true); }}
+                  className="bg-brand-red hover:bg-brand-red/90 text-white font-semibold shadow-lg"
+                >
+                  Get a Free Quote <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
           </div>
           <div className="relative min-h-[300px] md:min-h-[500px]">
             <img src={clearPPFVehicles[0].image} alt="Ferrari California T with clear PPF" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-[center_60%]" width={1200} height={800} />
-            <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to right, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
+            <div className="absolute inset-0 hidden md:block pointer-events-none" style={{ background: 'linear-gradient(to right, #111111 0%, rgba(17,17,17,0.95) 10%, rgba(17,17,17,0.6) 30%, rgba(17,17,17,0) 60%)' }} />
           </div>
         </div>
       </section>
