@@ -294,17 +294,42 @@ const PaintProtectionFilm = () => {
         </div>
       </section>
 
-      {/* ═══════════════════ FEATURED VEHICLE ═══════════════════ */}
-      <section className="py-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto relative rounded-2xl overflow-hidden">
-            <img src={clearPPFVehicles[1].image} alt="Rolls-Royce Cullinan with XPEL PPF" loading="lazy" className="w-full h-[350px] md:h-[500px] object-cover object-[center_65%]"  width={800} height={350} />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 p-8 md:p-12 max-w-lg">
-              <Badge className="bg-gold text-gold-foreground mb-4">Full Body PPF</Badge>
-              <h3 className="text-2xl md:text-3xl font-bold font-playfair text-white mb-3">Rolls-Royce Cullinan</h3>
-              <p className="text-white/80 leading-relaxed">Complete bumper-to-bumper XPEL Ultimate Plus™ protection — preserving the finish on one of the world's most prestigious SUVs.</p>
+      {/* ═══════════════════ FEATURED VEHICLE — Split row (text left / photo right) ═══════════════════ */}
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-6">
+              <Badge className="bg-gold text-gold-foreground w-fit">Featured Install · Full Body PPF</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
+                Rolls-Royce Cullinan
+              </h2>
+              <p className="text-lg text-silver leading-relaxed">
+                Complete bumper-to-bumper XPEL Ultimate Plus™ protection — preserving the finish on one of the world's most prestigious SUVs. Every panel, edge, and trim line wrapped with precision-cut DAP templates for an invisible, factory-grade install.
+              </p>
+              <div className="pt-2">
+                <Button
+                  size="lg"
+                  onClick={() => { trackQuoteButton("ppf"); setQuoteModalOpen(true); }}
+                  className="bg-brand-red hover:bg-brand-red/90 text-white font-semibold shadow-lg"
+                >
+                  Get a Free Quote <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
             </div>
+          </div>
+          <div className="relative min-h-[300px] md:min-h-[500px]">
+            <img
+              src={clearPPFVehicles[1].image}
+              alt="Rolls-Royce Cullinan with full body XPEL PPF"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover object-[center_65%]"
+              width={1200}
+              height={800}
+            />
+            <div
+              className="absolute inset-0 hidden md:block pointer-events-none"
+              style={{ background: 'linear-gradient(to right, #111111 0%, rgba(17,17,17,0.95) 10%, rgba(17,17,17,0.6) 30%, rgba(17,17,17,0) 60%)' }}
+            />
           </div>
         </div>
       </section>
