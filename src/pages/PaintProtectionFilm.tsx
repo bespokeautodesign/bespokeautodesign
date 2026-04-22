@@ -140,38 +140,27 @@ const PaintProtectionFilm = () => {
       <div className="h-12 bg-gradient-to-b from-black/40 to-background" />
 
       {/* ═══════════════════════════════════════════════════════
-         WHAT IS PPF?
+         WHAT IS PPF? — Split row (text left / photo right)
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <Badge variant="outline" className="block w-fit">What Is PPF?</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair">
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-6">
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">What Is PPF?</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
                 The Ultimate Shield for Your Vehicle's Paint
               </h2>
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                <p>
-                  Paint Protection Film (PPF) is a virtually invisible, thermoplastic urethane film applied to your vehicle's exterior painted surfaces. Originally developed for military helicopter blades to resist sand and debris erosion, PPF technology has evolved into the gold standard for automotive paint preservation.
-                </p>
-                <p>
-                  At Bespoke Auto Design in Miami, we exclusively install <strong className="text-foreground">XPEL Ultimate Plus™</strong> — the world's most advanced self-healing paint protection film.
-                </p>
-              </div>
+              <p className="text-lg text-silver leading-relaxed">
+                Paint Protection Film (PPF) is a virtually invisible, thermoplastic urethane film applied to your vehicle's exterior painted surfaces. Originally developed for military helicopter blades to resist sand and debris erosion, PPF technology has evolved into the gold standard for automotive paint preservation.
+              </p>
+              <p className="text-lg text-silver leading-relaxed">
+                At Bespoke Auto Design in Miami, we exclusively install <strong className="text-white">XPEL Ultimate Plus™</strong> — the world's most advanced self-healing paint protection film.
+              </p>
             </div>
-            <div className="space-y-4">
-              <div className="rounded-2xl overflow-hidden shadow-premium">
-                <img src={clearPPFVehicles[0].image} alt="Ferrari California T with clear PPF" loading="lazy" className="w-full h-[300px] md:h-[400px] object-cover object-[center_60%]"  width={800} height={300} />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-xl overflow-hidden shadow-premium">
-                  <img src={clearPPFVehicles[3].image} alt="Aston Martin Vantage with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_60%]"  width={800} height={150} />
-                </div>
-                <div className="rounded-xl overflow-hidden shadow-premium">
-                  <img src={clearPPFVehicles[4].image} alt="2024 BMW M4 with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_75%]"  width={800} height={150} />
-                </div>
-              </div>
-            </div>
+          </div>
+          <div className="relative min-h-[300px] md:min-h-[500px]">
+            <img src={clearPPFVehicles[0].image} alt="Ferrari California T with clear PPF" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-[center_60%]" width={1200} height={800} />
+            <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to right, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
           </div>
         </div>
       </section>
