@@ -1,119 +1,107 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
+// Hero clips re-encoded at 720p / CRF 28 / no audio (each <250KB).
+// Total payload ~660KB for all 4 clips combined.
 const videoSources = [
-  { src: "/videos/hero-1.mp4?v=3", position: "center 55%" },
-  { src: "/videos/hero-2.mp4?v=2", position: "center 40%" },
-  { src: "/videos/hero-3.mp4?v=1", position: "center 50%" },
-  { src: "/videos/hero-4.mp4?v=1", position: "center 55%" },
-  { src: "/videos/hero-5.mp4?v=1", position: "center 55%" },
-  { src: "/videos/hero-6.mp4?v=1", position: "center 55%" },
-  { src: "/videos/hero-7.mp4?v=1", position: "center 55%" },
-  { src: "/videos/hero-8.mp4?v=1", position: "center 55%" },
-  { src: "/videos/hero-9.mp4?v=1", position: "center 55%" },
+  { src: "/videos/hero-1.mp4?v=4", poster: "/videos/hero-1.webp", position: "center 55%" }, // Rolls-Royce
+  { src: "/videos/hero-2.mp4?v=4", poster: "/videos/hero-2.webp", position: "center 40%" }, // Porsche 911
+  { src: "/videos/hero-5.mp4?v=4", poster: "/videos/hero-5.webp", position: "center 55%" }, // Ferrari (red sports car)
+  { src: "/videos/hero-6.mp4?v=4", poster: "/videos/hero-6.webp", position: "center 55%" }, // Green BMW M
 ];
-
-function shuffleArray<T>(arr: T[]): T[] {
-  const shuffled = [...arr];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
-function createShuffledOrder(): number[] {
-  return shuffleArray(Array.from({ length: videoSources.length }, (_, i) => i));
-}
 
 const HeroVideoBackground = () => {
   const isMobile = useIsMobile();
-  const [activeSlot, setActiveSlot] = useState<0 | 1>(0);
-  const activeSlotRef = useRef<0 | 1>(0);
-  const orderRef = useRef<number[]>(createShuffledOrder());
-  const posRef = useRef(0);
-  const slotsRef = useRef([orderRef.current[0], orderRef.current[1]]);
-  const [slots, setSlots] = useState(slotsRef.current);
-  const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  // One <video> element per clip, mounted once. We swap visibility via opacity
+  // — never unmount — so the browser caches the file instead of re-downloading it.
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>(
+    new Array(videoSources.length).fill(null)
+  );
+  // Tracks which clip indexes have had their src assigned (lazy-load gate).
+  // Clip 0 starts true so the hero is never empty.
+  const [loaded, setLoaded] = useState<boolean[]>(() =>
+    videoSources.map((_, i) => i === 0)
+  );
 
-  const getNextIndex = useCallback(() => {
-    posRef.current++;
-    if (posRef.current >= orderRef.current.length) {
-      orderRef.current = createShuffledOrder();
-      posRef.current = 0;
-    }
-    return orderRef.current[posRef.current];
-  }, []);
-
+  // Assign initial src for clip 0 and start playback
   useEffect(() => {
-    const v0 = videoRefs[0].current;
-    const v1 = videoRefs[1].current;
-    if (v0) {
-      v0.src = videoSources[slotsRef.current[0]].src;
+    const v0 = videoRefs.current[0];
+    if (v0 && !v0.src) {
+      v0.src = videoSources[0].src;
       v0.load();
       v0.play().catch(() => {});
     }
-    // Only preload the next video's metadata — don't download full content yet
-    if (v1) {
-      v1.preload = "metadata";
-      v1.src = videoSources[slotsRef.current[1]].src;
-      v1.load();
-    }
-    posRef.current = 1;
+  }, []);
 
-    // Safety net: if videos stall, restart the active one
+  // Lazy-load clips 1..N once the hero scrolls into view
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setLoaded((prev) => prev.map(() => true));
+          obs.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    obs.observe(containerRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  // When a clip becomes "loaded", assign its src
+  useEffect(() => {
+    loaded.forEach((isLoaded, i) => {
+      if (!isLoaded) return;
+      const v = videoRefs.current[i];
+      if (v && !v.src) {
+        v.src = videoSources[i].src;
+        v.load();
+      }
+    });
+  }, [loaded]);
+
+  // Safety net: if active video stalls, restart it
+  useEffect(() => {
     const interval = setInterval(() => {
-      const active = videoRefs[activeSlotRef.current].current;
+      const active = videoRefs.current[activeIndex];
       if (active && active.paused && active.readyState >= 2) {
         active.play().catch(() => {});
       }
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [activeIndex]);
 
-  const handleEnded = useCallback(() => {
-    const nextSlot = activeSlot === 0 ? 1 : 0;
-    const nextVideo = videoRefs[nextSlot].current;
-
+  const handleEnded = useCallback((i: number) => {
+    const next = (i + 1) % videoSources.length;
+    const nextVideo = videoRefs.current[next];
     if (nextVideo) {
-      nextVideo.currentTime = 0;
+      try { nextVideo.currentTime = 0; } catch {}
       nextVideo.play().catch(() => {});
     }
-
-    activeSlotRef.current = nextSlot as 0 | 1;
-    setActiveSlot(nextSlot as 0 | 1);
-
-    const finishedSlot = activeSlot;
-    const nextSourceIndex = getNextIndex();
-
-    setTimeout(() => {
-      const preloadVideo = videoRefs[finishedSlot].current;
-      if (preloadVideo) {
-        preloadVideo.src = videoSources[nextSourceIndex].src;
-        preloadVideo.load();
-      }
-      slotsRef.current[finishedSlot] = nextSourceIndex;
-      setSlots([...slotsRef.current]);
-    }, 1000);
-  }, [activeSlot, getNextIndex]);
+    setActiveIndex(next);
+  }, []);
 
   return (
-    <div className="fixed inset-0 w-screen h-screen z-0 overflow-hidden bg-black">
-      {[0, 1].map((slot) => (
+    <div ref={containerRef} className="fixed inset-0 w-screen h-screen z-0 overflow-hidden bg-black">
+      {videoSources.map((video, i) => (
         <video
-          key={slot}
-          ref={videoRefs[slot]}
+          key={video.src}
+          ref={(el) => (videoRefs.current[i] = el)}
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            objectPosition: isMobile ? "center 95%" : (videoSources[slots[slot]]?.position || "center 65%"),
-            opacity: activeSlot === slot ? 1 : 0,
+            objectPosition: isMobile ? "center 95%" : video.position,
+            opacity: activeIndex === i ? 1 : 0,
             willChange: "opacity",
             transform: "translateZ(0)",
           }}
           muted
           playsInline
-          preload={slot === 0 ? "auto" : "metadata"}
-          onEnded={activeSlot === slot ? handleEnded : undefined}
+          preload="metadata"
+          poster={video.poster}
+          onEnded={() => handleEnded(i)}
         />
       ))}
       <div className="absolute inset-0 bg-black/40" style={{ transform: "translateZ(0)" }} />
