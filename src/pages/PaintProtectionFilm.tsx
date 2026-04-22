@@ -646,10 +646,13 @@ const PaintProtectionFilm = () => {
                 Serving All of Miami-Dade County
               </h2>
               <p className="text-base md:text-lg text-silver leading-relaxed">
-                Bespoke Auto Design is located at <strong className="text-white">7943 NW 64th St, Miami, FL 33166</strong>, in the heart of the Doral business district — minutes from MIA and easily accessible from the Palmetto (SR-826) and Dolphin Expressway (SR-836).
+                Bespoke Auto Design is located at <strong className="text-white">7943 NW 64th St, Miami, FL 33166</strong>, in the heart of the Doral business district — just minutes from Miami International Airport and easily accessible from the Palmetto Expressway (SR-826) and the Dolphin Expressway (SR-836). Our central location makes us convenient for vehicle owners across the entire Miami-Dade metropolitan area.
               </p>
               <p className="text-base md:text-lg text-silver leading-relaxed">
-                Many of our clients drive from as far as Fort Lauderdale, Weston, and Palm Beach County for our XPEL-certified installation quality, transparent pricing, and attention to detail. Miami's salt air, 3,000+ annual hours of UV, acidic rain, and constant highway construction make PPF the only product that comprehensively addresses every threat at once.
+                Many of our clients drive from as far as Fort Lauderdale, Weston, and even Palm Beach County because of our reputation for XPEL-certified installation quality, transparent pricing, and attention to detail. Whether you're coming from a waterfront condo in Brickell, a family home in Kendall, or an office in the Doral business park, our facility is designed to accommodate your schedule — including early morning drop-offs and after-hours pickups by appointment.
+              </p>
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                Miami's unique geography means your vehicle faces environmental threats that cars in other cities simply don't encounter. The salt air blowing in from Biscayne Bay and the Atlantic corrodes unprotected clear coat over time. The intense tropical UV radiation — Miami receives over 3,000 hours of direct sunlight per year — accelerates paint oxidation and fading. Florida's frequent afternoon thunderstorms deposit acidic rain that etches into softened paint surfaces. And the endless road construction across Miami-Dade's expanding highway system creates a perpetual stream of loose gravel, concrete chips, and metal debris that bombards your vehicle's front end every day. PPF is the only product that comprehensively addresses all of these threats simultaneously.
               </p>
             </div>
           </div>
