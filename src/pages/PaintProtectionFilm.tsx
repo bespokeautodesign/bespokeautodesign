@@ -483,24 +483,39 @@ const PaintProtectionFilm = () => {
       })}
 
       {/* ═══════════════════════════════════════════════════════
-         INSTALLATION FACILITY
+         INSTALLATION FACILITY — Split row + process grid
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-accent/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-10">
-            <div className="text-center">
-              <Badge variant="outline" className="mb-4">Our Facility</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+          <div className="relative min-h-[300px] md:min-h-[500px] order-2 md:order-1">
+            <img src={clearPPFVehicles[1].image} alt="Rolls-Royce Cullinan in our Miami installation facility" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-[center_65%]" width={1200} height={800} />
+            <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to left, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
+          </div>
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24 order-1 md:order-2" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-6">
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">Our Facility</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
                 Miami's Premier XPEL Installation Facility
               </h2>
+              <p className="text-lg text-silver leading-relaxed">
+                Paint protection film installation is only as good as the environment it's performed in. Our purpose-built facility at <strong className="text-white">7943 NW 64th St</strong> in Miami's Doral area features a climate-controlled installation bay engineered for flawless PPF application — critical in South Florida's 90°F+ tropical climate.
+              </p>
+              <p className="text-lg text-silver leading-relaxed">
+                Every installation follows a rigorous multi-step process that begins long before the film touches your paint.
+              </p>
             </div>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Paint protection film installation is only as good as the environment it's performed in. At Bespoke Auto Design, our purpose-built facility at 7943 NW 64th St in Miami (Doral area) is engineered specifically for flawless PPF application. Our climate-controlled installation bay maintains consistent temperature and humidity levels — two factors that are absolutely critical for proper film adhesion, slip solution performance, and curing times. In Miami's tropical climate, where outdoor temperatures routinely exceed 90°F with 80%+ humidity, attempting PPF installation in an uncontrolled garage or outdoor setting leads to premature adhesive activation, trapped moisture, and edge lifting that can compromise the entire installation.
-              </p>
-              <p>
-                Every PPF installation at Bespoke Auto Design follows a rigorous multi-step process that begins long before the film touches your paint:
-              </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Installation steps grid */}
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto space-y-10">
+            <div className="text-center">
+              <Badge variant="outline" className="mb-4">Installation Process</Badge>
+              <h3 className="text-2xl md:text-4xl font-bold font-playfair">Six Steps to a Flawless Install</h3>
+            </div>
               <div className="grid md:grid-cols-2 gap-6">
                 {[
                   { step: "1. Full Decontamination Wash", desc: "Your vehicle receives a thorough hand wash using pH-neutral shampoo, followed by a chemical decontamination spray to dissolve embedded iron particles, brake dust, and industrial fallout that cling to Miami vehicles." },
@@ -516,10 +531,9 @@ const PaintProtectionFilm = () => {
                   </div>
                 ))}
               </div>
-              <p>
+            <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto">
                 Our XPEL-certified installers have collectively completed over 500 installations on vehicles ranging from Honda Civics to Ferrari F8 Tributos. Every technician is factory-trained through XPEL's certification program and participates in ongoing advanced training to stay current with new film technologies, application techniques, and vehicle-specific installation challenges.
               </p>
-            </div>
           </div>
         </div>
       </section>
