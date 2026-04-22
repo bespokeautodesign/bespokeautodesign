@@ -232,14 +232,29 @@ const PaintProtectionFilm = () => {
       {/* ═══════════════════════════════════════════════════════
          PPF PACKAGES OVERVIEW
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        {/* Background photo */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={clearPPFVehicles[2].image}
+            alt="XPEL PPF installation in progress on a Ferrari LaFerrari"
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover object-[center_45%]"
+            width={1920}
+            height={1080}
+          />
+          {/* Layered overlays for legibility */}
+          <div className="absolute inset-0 bg-black/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/90" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Our Packages</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+            <Badge variant="outline" className="mb-4 border-silver-muted/40 text-silver bg-black/30 backdrop-blur-sm">Our Packages</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6 text-white drop-shadow-lg" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.8)' }}>
               Choose Your Level of Protection
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-silver max-w-3xl mx-auto" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>
               From essential front-end defense to complete bumper-to-bumper coverage, we have a package for every vehicle and budget.
             </p>
           </div>
@@ -262,7 +277,7 @@ const PaintProtectionFilm = () => {
             coverage: "Every painted surface, bumper to bumper",
             ideal: "Exotic & luxury vehicles",
             highlight: "Maximum Protection"
-          }].map((pkg) => <Card key={pkg.name} className="bg-card border-border/60 shadow-premium text-center">
+          }].map((pkg) => <Card key={pkg.name} className="bg-card/90 backdrop-blur-md border-silver-muted/30 shadow-2xl text-center hover:border-gold/50 transition-colors duration-300">
                 <CardContent className="pt-8 pb-6 px-6 space-y-5">
                   <Badge className="bg-gold text-gold-foreground">{pkg.highlight}</Badge>
                   <h3 className="text-2xl font-bold font-playfair">{pkg.name}</h3>
