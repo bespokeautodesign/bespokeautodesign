@@ -58,7 +58,7 @@ function SeeAllCard({ reviewCount }: { reviewCount: number }) {
       className="bg-[#1a1a1a] rounded-xl p-6 border-2 border-brand-red/50 hover:border-brand-red transition-colors h-full flex flex-col items-center justify-center gap-4 text-center group"
     >
       <div className="w-14 h-14 rounded-full bg-brand-red/15 flex items-center justify-center">
-        <Star className="h-7 w-7 fill-amber-400 text-amber-400" />
+        <Star className="h-7 w-7 fill-xpel-yellow text-xpel-yellow" />
       </div>
       <p className="text-white font-semibold text-lg">
         See all {reviewCount}+ Google reviews ↗
@@ -148,7 +148,7 @@ export function GoogleReviewsSection() {
             <span className="text-3xl font-bold text-white">{rating.toFixed(1)}</span>
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
+                <Star key={i} className="h-5 w-5 fill-xpel-yellow text-xpel-yellow" />
               ))}
             </div>
             <span className="text-white/50 text-sm ml-1">based on {reviewCount} Google reviews</span>
