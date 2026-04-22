@@ -367,43 +367,52 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-         OUR PROCESS
+         OUR PROCESS — Split row (text left / photo right)
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Our Process</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
-              How We Install PPF
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Every installation follows a meticulous multi-step process in our climate-controlled facility in Miami.
-            </p>
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[600px]">
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-6">
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">Our Process</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
+                How We Install PPF
+              </h2>
+              <p className="text-lg text-silver leading-relaxed">
+                Every installation follows a meticulous multi-step process in our climate-controlled facility in Miami.
+              </p>
+              <ol className="space-y-5 pt-2">
+                {[
+                  { step: "01", title: "Consultation", desc: "We assess your vehicle, discuss your driving habits, and recommend the ideal coverage package." },
+                  { step: "02", title: "Surface Prep", desc: "Your vehicle is hand-washed, clay-barred, and any imperfections polished before film application." },
+                  { step: "03", title: "Precision Install", desc: "XPEL DAP templates are applied with surgical precision, edges tucked, every seam sealed." },
+                  { step: "04", title: "Quality Inspection", desc: "Multi-point inspection under controlled lighting ensures flawless coverage before delivery." },
+                ].map((item) => (
+                  <li key={item.step} className="flex items-start gap-4">
+                    <div className="h-12 w-12 rounded-full bg-gold text-gold-foreground flex items-center justify-center shrink-0 text-base font-bold font-playfair">
+                      {item.step}
+                    </div>
+                    <div className="space-y-1">
+                      <h3 className="text-lg font-bold text-white">{item.title}</h3>
+                      <p className="text-sm md:text-base text-silver leading-relaxed">{item.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {[{
-            step: "01",
-            title: "Consultation",
-            desc: "We assess your vehicle, discuss your driving habits, and recommend the ideal coverage package."
-          }, {
-            step: "02",
-            title: "Surface Prep",
-            desc: "Your vehicle is hand-washed, clay-barred, and any existing paint imperfections are polished before film application."
-          }, {
-            step: "03",
-            title: "Precision Install",
-            desc: "XPEL DAP templates are applied with surgical precision, edges are tucked, and every seam is sealed."
-          }, {
-            step: "04",
-            title: "Quality Inspection",
-            desc: "Multi-point inspection under controlled lighting ensures flawless coverage before delivery."
-          }].map((item) => <div key={item.step} className="space-y-4 text-center">
-                <div className="h-16 w-16 rounded-full bg-gold text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-              </div>)}
+          <div className="relative min-h-[300px] md:min-h-[600px]">
+            <img
+              src={clearPPFVehicles[9].image}
+              alt="Corvette Z06 during XPEL PPF installation"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover object-[center_55%]"
+              width={1200}
+              height={900}
+            />
+            <div
+              className="absolute inset-0 hidden md:block pointer-events-none"
+              style={{ background: 'linear-gradient(to right, #111111 0%, rgba(17,17,17,0.95) 10%, rgba(17,17,17,0.6) 30%, rgba(17,17,17,0) 60%)' }}
+            />
           </div>
         </div>
       </section>
