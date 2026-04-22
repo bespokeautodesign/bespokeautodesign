@@ -539,74 +539,81 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-         PPF VS CERAMIC COATING
+         PPF VS CERAMIC COATING — Split row (text left / photo right)
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-10">
-            <div className="text-center">
-              <Badge variant="outline" className="mb-4">Comparison Guide</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
-                PPF vs Ceramic Coating: Which Is Right for Your Miami Vehicle?
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-5">
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">Comparison Guide</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
+                PPF vs Ceramic Coating
               </h2>
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                These are complementary technologies that address different threats — for many Miami vehicle owners, the best solution combines both.
+              </p>
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                <strong className="text-white">PPF</strong> is a physical 8-mil barrier that absorbs impacts from rock chips, gravel, and road debris. It's the only product that prevents paint damage from physical contact, with a self-healing top coat that eliminates light scratches with heat.
+              </p>
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                <strong className="text-white">Ceramic Coating</strong> is a liquid nano-ceramic layer that bonds to paint or PPF — creating a hydrophobic surface with UV protection, chemical resistance, and extreme gloss. It does not prevent rock chips, but it dramatically simplifies washing and resists water spots, bird droppings, and acid rain.
+              </p>
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                <strong className="text-gold">The Ultimate Stack:</strong> Full Front or Full Body PPF on impact areas + Fusion Plus™ ceramic coating over the entire vehicle. We offer bundled PPF + ceramic packages starting at $599 for ceramic that save vs. booking each service separately.
+              </p>
             </div>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                This is one of the most common questions we hear at Bespoke Auto Design, and the answer depends on what you're protecting against. Paint Protection Film and ceramic coating are complementary technologies that address different threats — and for many Miami vehicle owners, the best solution is combining both.
+          </div>
+          <div className="relative min-h-[300px] md:min-h-[500px]">
+            <img src={clearPPFVehicles[6].image} alt="2024 Corvette Stingray with PPF and ceramic coating" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-[center_55%]" width={1200} height={800} />
+            <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to right, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════
+         SERVING ALL OF MIAMI-DADE — Split row + neighborhoods grid
+         ═══════════════════════════════════════════════════════ */}
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+          <div className="relative min-h-[300px] md:min-h-[500px] order-2 md:order-1">
+            <img src={clearPPFVehicles[8].image} alt="Ram 1500 with PPF in Miami" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-[center_55%]" width={1200} height={800} />
+            <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to left, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
+          </div>
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24 order-1 md:order-2" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-5">
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">Service Area</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
+                Serving All of Miami-Dade County
+              </h2>
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                Bespoke Auto Design is located at <strong className="text-white">7943 NW 64th St, Miami, FL 33166</strong>, in the heart of the Doral business district — minutes from MIA and easily accessible from the Palmetto (SR-826) and Dolphin Expressway (SR-836).
               </p>
-              <p>
-                <strong className="text-foreground">Paint Protection Film (PPF)</strong> is a physical barrier — a thick, flexible urethane film that absorbs impacts from rock chips, gravel, road debris, shopping cart dings, and even minor fender contact. It's the only product on the market that can actually prevent paint damage from physical contact. XPEL Ultimate Plus™ is 8 mils thick and features a self-healing top coat that eliminates light scratches automatically with heat exposure. For Miami drivers who commute on I-95, the Palmetto Expressway, or any construction-heavy corridor, PPF on the front end is the single most effective way to keep your paint chip-free.
-              </p>
-              <p>
-                <strong className="text-foreground">Ceramic Coating</strong>, on the other hand, is a liquid nano-ceramic layer that chemically bonds to your paint (or to PPF), creating a semi-permanent hydrophobic surface with enhanced UV protection, chemical resistance, and extreme gloss. Ceramic coating does not prevent rock chips — it's too thin for that. What it excels at is making your vehicle dramatically easier to wash, preventing water spots (a major issue in Miami's hard-water climate), blocking UV-induced paint oxidation, and resisting chemical etching from bird droppings, tree sap, and acid rain.
-              </p>
-              <p>
-                <strong className="text-foreground">The Ultimate Protection Stack:</strong> Our most popular configuration among Miami luxury car owners is PPF on the high-impact areas (full front or full body) with ceramic coating applied over the entire vehicle — including over the PPF. This combination gives you the physical impact protection of PPF plus the hydrophobic self-cleaning properties, UV defense, and showroom gloss of ceramic coating. The ceramic layer on top of PPF also makes the film easier to clean, prevents staining, and extends the film's cosmetic life. We offer XPEL Fusion Plus™ ceramic coating starting at $599, and bundled PPF + ceramic packages that save you money compared to purchasing each service separately.
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                Many of our clients drive from as far as Fort Lauderdale, Weston, and Palm Beach County for our XPEL-certified installation quality, transparent pricing, and attention to detail. Miami's salt air, 3,000+ annual hours of UV, acidic rain, and constant highway construction make PPF the only product that comprehensively addresses every threat at once.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-         SERVING ALL OF MIAMI-DADE
-         ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-accent/30">
+      {/* Neighborhoods grid */}
+      <section className="py-16 bg-accent/30">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-10">
-            <div className="text-center">
-              <Badge variant="outline" className="mb-4">Service Area</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
-                Serving All of Miami-Dade County
-              </h2>
-            </div>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Bespoke Auto Design is located at <strong className="text-foreground">7943 NW 64th St, Miami, FL 33166</strong>, in the heart of the Doral business district — just minutes from Miami International Airport and easily accessible from the Palmetto Expressway (SR-826) and the Dolphin Expressway (SR-836). Our central location makes us convenient for vehicle owners across the entire Miami-Dade metropolitan area.
-              </p>
-              <p>
-                We proudly serve clients from every corner of Miami-Dade County and beyond, including:
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {[
-                  "Doral", "Brickell", "Coral Gables", "Miami Beach", "Aventura",
-                  "Coconut Grove", "Wynwood", "Kendall", "Homestead", "Key Biscayne",
-                  "Hialeah", "Pinecrest", "Sunny Isles Beach", "Bal Harbour", "South Miami",
-                  "Fort Lauderdale", "Hollywood", "Weston"
-                ].map((area) => (
-                  <div key={area} className="flex items-center gap-2 text-sm font-medium text-foreground">
-                    <Check className="h-4 w-4 text-gold shrink-0" />
-                    {area}
-                  </div>
-                ))}
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold font-playfair">Neighborhoods We Serve</h3>
+          </div>
+          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3">
+            {[
+              "Doral", "Brickell", "Coral Gables", "Miami Beach", "Aventura",
+              "Coconut Grove", "Wynwood", "Kendall", "Homestead", "Key Biscayne",
+              "Hialeah", "Pinecrest", "Sunny Isles Beach", "Bal Harbour", "South Miami",
+              "Fort Lauderdale", "Hollywood", "Weston"
+            ].map((area) => (
+              <div key={area} className="flex items-center gap-2 text-sm font-medium text-foreground">
+                <Check className="h-4 w-4 text-gold shrink-0" />
+                {area}
               </div>
-              <p>
-                Many of our clients drive from as far as Fort Lauderdale, Weston, and even Palm Beach County because of our reputation for XPEL-certified installation quality, transparent pricing, and attention to detail. Whether you're coming from a waterfront condo in Brickell, a family home in Kendall, or an office in the Doral business park, our facility is designed to accommodate your schedule — including early morning drop-offs and after-hours pickups by appointment.
-              </p>
-              <p>
-                Miami's unique geography means your vehicle faces environmental threats that cars in other cities simply don't encounter. The salt air blowing in from Biscayne Bay and the Atlantic corrodes unprotected clear coat over time. The intense tropical UV radiation — Miami receives over 3,000 hours of direct sunlight per year — accelerates paint oxidation and fading. Florida's frequent afternoon thunderstorms deposit acidic rain that etches into softened paint surfaces. And the endless road construction across Miami-Dade's expanding highway system creates a perpetual stream of loose gravel, concrete chips, and metal debris that bombards your vehicle's front end every day. PPF is the only product that comprehensively addresses all of these threats simultaneously.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
