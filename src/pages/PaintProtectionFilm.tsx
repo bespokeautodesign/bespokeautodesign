@@ -484,8 +484,8 @@ const PaintProtectionFilm = () => {
           imagePos: "object-[center_75%]",
           alt: "BMW M4 with XPEL PPF",
           paragraphs: [
-            "Miami is one of the largest luxury car markets in the United States, and for good reason — the lifestyle demands it. But owning a Porsche 911, BMW M4, Mercedes-AMG GT, or Tesla Model S in South Florida means exposing premium paint finishes to some of the harshest driving conditions in the country. I-95 between downtown Miami and Fort Lauderdale is notorious for loose gravel, construction debris, and aggressive lane-changing that sends rocks flying.",
-            "XPEL Ultimate Plus™ paint protection film absorbs these impacts without transferring damage to the underlying paint. The film's self-healing top coat means that light scratches literally disappear in Miami's sun. For Tesla owners, PPF is particularly valuable because Tesla's factory paint is notoriously thin — often just 3.5–4.0 mils compared to the industry standard of 5.0–6.0 mils.",
+            "Miami is one of the largest luxury car markets in the United States, and for good reason — the lifestyle demands it. But owning a Porsche 911, BMW M4, Mercedes-AMG GT, or Tesla Model S in South Florida means exposing premium paint finishes to some of the harshest driving conditions in the country. I-95 between downtown Miami and Fort Lauderdale is notorious for loose gravel, construction debris, and aggressive lane-changing that sends rocks flying. A single highway commute can leave dozens of micro-chips in your hood and bumper paint that compound over time into costly repairs.",
+            "XPEL Ultimate Plus™ paint protection film absorbs these impacts without transferring damage to the underlying paint. The film's self-healing top coat means that light scratches — the kind you'd get from an automatic car wash or a careless parking lot neighbor — literally disappear in Miami's sun. For Tesla owners specifically, PPF is particularly valuable because Tesla's factory paint is notoriously thin (often measuring just 3.5–4.0 mils compared to the industry standard of 5.0–6.0 mils), making it extremely susceptible to chipping and marring.",
           ],
         },
         {
@@ -494,8 +494,8 @@ const PaintProtectionFilm = () => {
           imagePos: "object-[center_50%]",
           alt: "Ferrari LaFerrari with XPEL PPF",
           paragraphs: [
-            "If you own a Lamborghini Huracán, Ferrari 488 Spider, or McLaren 720S, paint protection film isn't optional — it's essential. These vehicles carry paint jobs worth $15,000 to $40,000 or more, and a single rock chip can mean a $2,000+ touch-up at a specialty body shop.",
-            "At Bespoke Auto Design, we've protected over 500 vehicles — including Ferraris, Lamborghinis, McLarens, Rolls-Royces, and Bentleys — with XPEL's precision-cut DAP templates. For exotic cars, we hand-finish every tuck and wrap to accommodate aggressive body lines, air intakes, and carbon fiber accents that generic films simply cannot handle.",
+            "If you own a Lamborghini Huracán, Ferrari 488 Spider, or McLaren 720S, paint protection film isn't optional — it's essential. These vehicles carry paint jobs worth $15,000 to $40,000 or more, and a single rock chip can mean a $2,000+ touch-up at a specialty body shop. Many exotic car owners in Miami drive their vehicles on the Palmetto Expressway and Dolphin Expressway, where construction zones create a gauntlet of loose aggregate, metal fragments, and kicked-up road debris that conventional waxes and sealants simply cannot stop.",
+            "At Bespoke Auto Design, we've protected over 500 vehicles — including Ferraris, Lamborghinis, McLarens, Rolls-Royces, and Bentleys — with XPEL's precision-cut DAP (Design Access Program) templates. These computer-generated patterns are specific to each make, model, and year, ensuring edge-to-edge coverage with no visible seams or gaps. For exotic cars, we hand-finish every tuck and wrap to accommodate aggressive body lines, air intakes, and carbon fiber accents that generic films simply cannot handle.",
           ],
         },
         {
@@ -504,8 +504,8 @@ const PaintProtectionFilm = () => {
           imagePos: "object-[center_55%]",
           alt: "Toyota Land Cruiser with XPEL PPF",
           paragraphs: [
-            "Trucks and SUVs face unique paint protection challenges in Miami. Vehicles like the Ford F-150 Raptor, Chevrolet Tahoe, GMC Yukon, Toyota 4Runner, and Range Rover Sport sit higher off the ground and have larger frontal areas that catch more road debris at highway speeds. Their rocker panels, wheel arches, and lower door panels are especially vulnerable to gravel spray.",
-            "Our Track Package ($2,500+) and Full Body coverage ($4,000+) are specifically popular with truck and SUV owners because they extend protection to the rocker panels, rear bumper, A-pillars, and door edges that take the brunt of daily driving abuse. The XPEL film is 8 mils thick — a substantial physical barrier that shrugs off impacts that would gouge bare paint.",
+            "Trucks and SUVs face unique paint protection challenges in Miami. Vehicles like the Ford F-150 Raptor, Chevrolet Tahoe, GMC Yukon, Toyota 4Runner, and Range Rover Sport sit higher off the ground and have larger frontal areas that catch more road debris at highway speeds. Their rocker panels, wheel arches, and lower door panels are especially vulnerable to gravel spray — both from their own tires and from vehicles in adjacent lanes. If you tow a boat from your driveway in Coral Gables to a marina on Key Biscayne, the road spray alone can pepper your truck bed sides and tailgate with hundreds of tiny chips over a single season.",
+            "Our Track Package ($2,500+) and Full Body coverage ($4,000+) are specifically popular with truck and SUV owners in Miami because they extend protection to the rocker panels, rear bumper, A-pillars, and door edges that take the brunt of daily driving abuse. The XPEL film is 8 mils thick — providing a substantial physical barrier that shrugs off impacts that would gouge bare paint.",
           ],
         },
         {
@@ -514,8 +514,8 @@ const PaintProtectionFilm = () => {
           imagePos: "object-[center_55%]",
           alt: "Tesla Model 3 with XPEL PPF",
           paragraphs: [
-            "You don't need a six-figure vehicle to benefit from PPF. If you commute on I-95, 826 (Palmetto Expressway), SR-836 (Dolphin Expressway), or the Turnpike, your car's front end is absorbing punishment every single day.",
-            "Our Full Front Package starting at $1,499 covers the hood, front bumper, fenders, headlights, and side mirrors — the areas that take 90% of road impact damage. Many of our daily-driver clients recoup the cost of PPF when they sell or trade in their vehicle, because a chip-free, pristine front end commands significantly higher resale prices.",
+            "You don't need a six-figure vehicle to benefit from PPF. If you commute on I-95, 826 (Palmetto Expressway), SR-836 (Dolphin Expressway), or the Turnpike, your car's front end is absorbing punishment every single day. Our Full Front Package starting at $1,499 covers the hood, front bumper, fenders, headlights, and side mirrors — the areas that take 90% of road impact damage.",
+            "This single investment can save you thousands in paint correction, touch-up paint pens, and diminished resale value over the life of your vehicle. Many of our daily-driver clients recoup the cost of PPF when they sell or trade in their vehicle, because a chip-free, pristine front end commands significantly higher resale prices.",
           ],
         },
       ].map((row, i) => {
