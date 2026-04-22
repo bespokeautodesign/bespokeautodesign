@@ -351,10 +351,10 @@ const PaintProtectionFilm = () => {
                 The XPEL Advantage
               </h2>
               <p className="text-lg text-silver leading-relaxed">
-                Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-white">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — DAP precision-cut templates, Ultimate Plus™ film, and Fusion Plus™ ceramic coating.
+                Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-white">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — from the Design Access Program (DAP) for precision-cut templates to the Ultimate Plus™ film and Fusion Plus™ ceramic coating for post-installation care.
               </p>
               <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pt-2">
-                {["Precision DAP templates", "Optically clear film", "Self-healing top coat", "Stain-resistant surface", "Non-yellowing formula", "Edge-seal technology", "10-year warranty", "Safe, residue-free removal"].map((point) => (
+                {["Precision DAP templates for 100,000+ vehicle fitments", "Optically clear — invisible on any paint color", "Self-healing top coat eliminates swirl marks", "Stain-resistant against bird droppings & tree sap", "Non-yellowing formula engineered for high-UV climates", "Edge-seal technology prevents lifting and peeling", "Transferable 10-year manufacturer warranty", "Safe removal with zero paint damage"].map((point) => (
                   <div key={point} className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
                     <span className="text-silver text-sm">{point}</span>
