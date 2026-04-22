@@ -41,7 +41,7 @@ function ReviewCard({ review }: { review: GoogleReview }) {
       </div>
       <div className="flex gap-0.5 mb-3">
         {[...Array(review.rating)].map((_, i) => (
-          <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+          <Star key={i} className="h-3.5 w-3.5 fill-xpel-yellow text-xpel-yellow" />
         ))}
       </div>
       {truncated && <p className="text-white/70 text-sm leading-relaxed flex-1">{truncated}</p>}
