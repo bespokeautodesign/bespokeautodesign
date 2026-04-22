@@ -319,13 +319,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
           
           <div className="space-y-0 -mx-6">
             {services.map((service, index) => {
-              const splitImages = [
-                "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1600&q=80",
-                "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?auto=format&fit=crop&w=1600&q=80",
-                "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1600&q=80",
-                "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80",
-              ];
-              const photo = splitImages[index] || service.image;
+              const photo = service.image;
               const reverse = index % 2 === 1;
               return (
                 <div
