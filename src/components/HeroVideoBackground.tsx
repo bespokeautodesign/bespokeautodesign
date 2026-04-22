@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Hero clips re-encoded at 720p / CRF 28 / no audio (each <250KB).
-// Total payload ~660KB for all 4 clips combined.
+// Hero clips re-encoded at 1080p / CRF 20 / no audio with lanczos upscale + unsharp.
+// ~0.7–1.4 MB per clip, ~4 MB total — sharp at full-screen without bloating the page.
 const videoSources = [
-  { src: "/videos/hero-1.mp4?v=4", poster: "/videos/hero-1.webp", position: "center 55%" }, // Rolls-Royce
-  { src: "/videos/hero-2.mp4?v=4", poster: "/videos/hero-2.webp", position: "center 40%" }, // Porsche 911
-  { src: "/videos/hero-5.mp4?v=4", poster: "/videos/hero-5.webp", position: "center 55%" }, // Ferrari (red sports car)
-  { src: "/videos/hero-6.mp4?v=4", poster: "/videos/hero-6.webp", position: "center 55%" }, // Green BMW M
+  { src: "/videos/hero-1.mp4?v=5", poster: "/videos/hero-1.webp", position: "center 55%" }, // Rolls-Royce
+  { src: "/videos/hero-2.mp4?v=5", poster: "/videos/hero-2.webp", position: "center 40%" }, // Porsche 911
+  { src: "/videos/hero-5.mp4?v=5", poster: "/videos/hero-5.webp", position: "center 55%" }, // Ferrari (red sports car)
+  { src: "/videos/hero-6.mp4?v=5", poster: "/videos/hero-6.webp", position: "center 55%" }, // Green BMW M
 ];
 
 const HeroVideoBackground = () => {
