@@ -109,7 +109,7 @@ export const businessSchema = {
     "bestRating": "5",
     "worstRating": "1"
   },
-  "image": "https://www.bespokeauto.design/lovable-uploads/bespoke-logo.webp",
+  "image": "https://www.bespokeauto.design/bespoke-logo.png",
   "sameAs": [
     "https://www.instagram.com/bespokeautodesign/",
     "https://www.facebook.com/bespokeautodesign"
