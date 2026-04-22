@@ -168,18 +168,22 @@ const PaintProtectionFilm = () => {
       {/* ═══════════════════════════════════════════════════════
          WHY PPF IN MIAMI?
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-accent/30">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Miami Climate Protection</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+      <section
+        className="relative min-h-[500px] bg-cover bg-center bg-no-repeat py-20 bg-fixed"
+        style={{ backgroundImage: `url(${clearPPFVehicles[1].image})` }}
+      >
+        <div className="absolute inset-0 bg-black/65" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-3xl mb-12">
+            <Badge variant="outline" className="mb-4 border-white/40 text-white">Miami Climate Protection</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6 text-white">
               Why Miami Vehicles Need PPF
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-white/85">
               South Florida's combination of extreme UV, salt air, highway debris, and year-round heat creates the perfect storm for paint damage. Here's how PPF fights back.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
             {[{
             icon: Sun,
             title: "UV & Sun Protection",
@@ -204,13 +208,13 @@ const PaintProtectionFilm = () => {
             icon: Award,
             title: "10-Year XPEL Warranty",
             desc: "Every installation is backed by XPEL's comprehensive 10-year manufacturer warranty against yellowing, cracking, peeling, staining, and delamination — even in Florida's harsh climate."
-          }].map((item) => <Card key={item.title} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
+          }].map((item) => <Card key={item.title} className="bg-black/60 backdrop-blur-sm border-white/10 shadow-premium">
                 <CardContent className="pt-8 pb-6 px-6 space-y-4">
-                  <div className="h-12 w-12 rounded-xl bg-gold/15 border border-silver-muted flex items-center justify-center shrink-0">
+                  <div className="h-12 w-12 rounded-xl bg-gold/15 border border-gold/40 flex items-center justify-center shrink-0">
                     <item.icon className="h-6 w-6 text-gold" />
                   </div>
-                  <h3 className="text-xl font-bold">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                  <p className="text-white/80 leading-relaxed">{item.desc}</p>
                 </CardContent>
               </Card>)}
           </div>
