@@ -9,6 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
+import HeroVideoBackground from "@/components/HeroVideoBackground";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Droplets, Sun, Zap, Car, Clock, Award, Calculator } from "lucide-react";
 import PageSEO from "@/components/PageSEO";
@@ -104,10 +105,7 @@ const PaintProtectionFilm = () => {
          HERO SECTION
          ═══════════════════════════════════════════════════════ */}
       <section className="relative py-20 md:py-28 hero-parallax">
-        <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/ppf-hero-ferrari.webp" alt="Black Ferrari F8 Tributo with XPEL PPF at Bespoke Auto Design" className="w-full h-full object-cover object-[center_40%]"  width={1920} height={1080} />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 via-60% to-black/60" />
-        </div>
+        <HeroVideoBackground />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-3 md:space-y-4">
             <div className="flex items-center justify-center gap-3">

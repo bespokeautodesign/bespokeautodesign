@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
+import HeroVideoBackground from "@/components/HeroVideoBackground";
 import { QuoteModal } from "@/components/QuoteModal";
 import { Shield, Check, ChevronRight, Palette, Sun, Zap, Car, Clock, Award, Sparkles, Layers, Paintbrush, RefreshCw, Eye, Calculator } from "lucide-react";
 import PageSEO from "@/components/PageSEO";
@@ -225,10 +226,7 @@ const ColorChangeWrap = () => {
 
       {/* ═══════════════════ HERO ═══════════════════ */}
       <section className="relative py-8 md:py-12 hero-parallax">
-        <div className="hero-parallax-bg">
-          <img src="/lovable-uploads/mercedes-amg-green-wrap.webp" alt="Mercedes AMG color change wrap" className="w-full h-full object-cover object-[center_55%] saturate-[1.25] contrast-[1.05]"  width={1920} height={1080} />
-          <div className="absolute inset-0 bg-black/30" />
-        </div>
+        <HeroVideoBackground />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <Badge variant="outline" className="text-sm tracking-wider border-white/30 text-white">
