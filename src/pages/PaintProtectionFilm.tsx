@@ -284,27 +284,31 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-         THE XPEL ADVANTAGE
+         THE XPEL ADVANTAGE — Split row (photo left / text right)
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-accent/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-10">
-            <div className="text-center space-y-4">
-              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-30 brightness-200"  width={200} height={60} />
-              <Badge variant="outline">Why XPEL?</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair">
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+          <div className="relative min-h-[300px] md:min-h-[500px] order-2 md:order-1">
+            <img src={clearPPFVehicles[5].image} alt="Ferrari F8 Tributo with XPEL PPF" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-[center_50%]" width={1200} height={800} />
+            <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to left, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
+          </div>
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24 order-1 md:order-2" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-6">
+              <img src={xpelLogo} alt="XPEL" className="h-10 w-auto opacity-70 brightness-200" width={200} height={60} />
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">Why XPEL?</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
                 The XPEL Advantage
               </h2>
-            </div>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-foreground">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — from the Design Access Program (DAP) for precision-cut templates to the Ultimate Plus™ film and Fusion Plus™ ceramic coating for post-installation care.
+              <p className="text-lg text-silver leading-relaxed">
+                Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-white">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — DAP precision-cut templates, Ultimate Plus™ film, and Fusion Plus™ ceramic coating.
               </p>
-              <div className="grid sm:grid-cols-2 gap-6 py-4">
-                {["Precision DAP templates for 100,000+ vehicle fitments", "Optically clear — invisible on any paint color", "Self-healing top coat eliminates swirl marks", "Stain-resistant against bird droppings & tree sap", "Non-yellowing formula engineered for high-UV climates", "Edge-seal technology prevents lifting and peeling", "Transferable 10-year manufacturer warranty", "Safe removal with zero paint damage"].map((point) => <div key={point} className="flex items-start gap-3">
+              <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pt-2">
+                {["Precision DAP templates", "Optically clear film", "Self-healing top coat", "Stain-resistant surface", "Non-yellowing formula", "Edge-seal technology", "10-year warranty", "Safe, residue-free removal"].map((point) => (
+                  <div key={point} className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground">{point}</span>
-                  </div>)}
+                    <span className="text-silver text-sm">{point}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
