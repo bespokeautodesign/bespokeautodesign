@@ -18,7 +18,7 @@ export function GoogleRatingChip() {
       className="inline-flex items-center gap-1.5 hover:opacity-80 transition-opacity"
     >
       {[...Array(5)].map((_, i) => (
-        <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+        <Star key={i} className="h-4 w-4 fill-xpel-yellow text-xpel-yellow" />
       ))}
       <span className="font-semibold ml-0.5">{rating.toFixed(1)}</span>
       <span className="text-white/50">({reviewCount} reviews)</span>
