@@ -383,8 +383,8 @@ const PaintProtectionFilm = () => {
               <ol className="space-y-5 pt-2">
                 {[
                   { step: "01", title: "Consultation", desc: "We assess your vehicle, discuss your driving habits, and recommend the ideal coverage package." },
-                  { step: "02", title: "Surface Prep", desc: "Your vehicle is hand-washed, clay-barred, and any imperfections polished before film application." },
-                  { step: "03", title: "Precision Install", desc: "XPEL DAP templates are applied with surgical precision, edges tucked, every seam sealed." },
+                  { step: "02", title: "Surface Prep", desc: "Your vehicle is hand-washed, clay-barred, and any existing paint imperfections are polished before film application." },
+                  { step: "03", title: "Precision Install", desc: "XPEL DAP templates are applied with surgical precision, edges are tucked, and every seam is sealed." },
                   { step: "04", title: "Quality Inspection", desc: "Multi-point inspection under controlled lighting ensures flawless coverage before delivery." },
                 ].map((item) => (
                   <li key={item.step} className="flex items-start gap-4">
