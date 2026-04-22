@@ -140,38 +140,27 @@ const PaintProtectionFilm = () => {
       <div className="h-12 bg-gradient-to-b from-black/40 to-background" />
 
       {/* ═══════════════════════════════════════════════════════
-         WHAT IS PPF?
+         WHAT IS PPF? — Split row (text left / photo right)
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <Badge variant="outline" className="block w-fit">What Is PPF?</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair">
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-6">
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">What Is PPF?</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
                 The Ultimate Shield for Your Vehicle's Paint
               </h2>
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                <p>
-                  Paint Protection Film (PPF) is a virtually invisible, thermoplastic urethane film applied to your vehicle's exterior painted surfaces. Originally developed for military helicopter blades to resist sand and debris erosion, PPF technology has evolved into the gold standard for automotive paint preservation.
-                </p>
-                <p>
-                  At Bespoke Auto Design in Miami, we exclusively install <strong className="text-foreground">XPEL Ultimate Plus™</strong> — the world's most advanced self-healing paint protection film.
-                </p>
-              </div>
+              <p className="text-lg text-silver leading-relaxed">
+                Paint Protection Film (PPF) is a virtually invisible, thermoplastic urethane film applied to your vehicle's exterior painted surfaces. Originally developed for military helicopter blades to resist sand and debris erosion, PPF technology has evolved into the gold standard for automotive paint preservation.
+              </p>
+              <p className="text-lg text-silver leading-relaxed">
+                At Bespoke Auto Design in Miami, we exclusively install <strong className="text-white">XPEL Ultimate Plus™</strong> — the world's most advanced self-healing paint protection film.
+              </p>
             </div>
-            <div className="space-y-4">
-              <div className="rounded-2xl overflow-hidden shadow-premium">
-                <img src={clearPPFVehicles[0].image} alt="Ferrari California T with clear PPF" loading="lazy" className="w-full h-[300px] md:h-[400px] object-cover object-[center_60%]"  width={800} height={300} />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-xl overflow-hidden shadow-premium">
-                  <img src={clearPPFVehicles[3].image} alt="Aston Martin Vantage with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_60%]"  width={800} height={150} />
-                </div>
-                <div className="rounded-xl overflow-hidden shadow-premium">
-                  <img src={clearPPFVehicles[4].image} alt="2024 BMW M4 with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_75%]"  width={800} height={150} />
-                </div>
-              </div>
-            </div>
+          </div>
+          <div className="relative min-h-[300px] md:min-h-[500px]">
+            <img src={clearPPFVehicles[0].image} alt="Ferrari California T with clear PPF" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-[center_60%]" width={1200} height={800} />
+            <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to right, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
           </div>
         </div>
       </section>
@@ -295,27 +284,31 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-         THE XPEL ADVANTAGE
+         THE XPEL ADVANTAGE — Split row (photo left / text right)
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-accent/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-10">
-            <div className="text-center space-y-4">
-              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-30 brightness-200"  width={200} height={60} />
-              <Badge variant="outline">Why XPEL?</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair">
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+          <div className="relative min-h-[300px] md:min-h-[500px] order-2 md:order-1">
+            <img src={clearPPFVehicles[5].image} alt="Ferrari F8 Tributo with XPEL PPF" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-[center_50%]" width={1200} height={800} />
+            <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to left, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
+          </div>
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24 order-1 md:order-2" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-6">
+              <img src={xpelLogo} alt="XPEL" className="h-10 w-auto opacity-70 brightness-200" width={200} height={60} />
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">Why XPEL?</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
                 The XPEL Advantage
               </h2>
-            </div>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-foreground">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — from the Design Access Program (DAP) for precision-cut templates to the Ultimate Plus™ film and Fusion Plus™ ceramic coating for post-installation care.
+              <p className="text-lg text-silver leading-relaxed">
+                Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-white">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — DAP precision-cut templates, Ultimate Plus™ film, and Fusion Plus™ ceramic coating.
               </p>
-              <div className="grid sm:grid-cols-2 gap-6 py-4">
-                {["Precision DAP templates for 100,000+ vehicle fitments", "Optically clear — invisible on any paint color", "Self-healing top coat eliminates swirl marks", "Stain-resistant against bird droppings & tree sap", "Non-yellowing formula engineered for high-UV climates", "Edge-seal technology prevents lifting and peeling", "Transferable 10-year manufacturer warranty", "Safe removal with zero paint damage"].map((point) => <div key={point} className="flex items-start gap-3">
+              <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pt-2">
+                {["Precision DAP templates", "Optically clear film", "Self-healing top coat", "Stain-resistant surface", "Non-yellowing formula", "Edge-seal technology", "10-year warranty", "Safe, residue-free removal"].map((point) => (
+                  <div key={point} className="flex items-start gap-2">
                     <Check className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground">{point}</span>
-                  </div>)}
+                    <span className="text-silver text-sm">{point}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -410,82 +403,119 @@ const PaintProtectionFilm = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-         PPF FOR EVERY MIAMI VEHICLE
+         PPF FOR EVERY MIAMI VEHICLE — Section intro + alternating split rows
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="text-center">
-              <Badge variant="outline" className="mb-4">Vehicle Coverage</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
-                PPF Protection for Every Miami Vehicle
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Whether you drive a daily commuter or a million-dollar supercar, Miami's roads and climate put your paint at constant risk. Here's how PPF protects every type of vehicle on South Florida's streets.
-              </p>
+      <section className="py-16 md:py-20" style={{ backgroundColor: '#111111' }}>
+        <div className="container mx-auto px-6 text-center">
+          <Badge variant="outline" className="mb-4 border-silver-muted/40 text-silver">Vehicle Coverage</Badge>
+          <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6 text-white">
+            PPF Protection for Every Miami Vehicle
+          </h2>
+          <p className="text-lg text-silver max-w-3xl mx-auto">
+            Whether you drive a daily commuter or a million-dollar supercar, Miami's roads and climate put your paint at constant risk. Here's how PPF protects every type of vehicle on South Florida's streets.
+          </p>
+        </div>
+      </section>
+
+      {[
+        {
+          heading: "Luxury Vehicles: Porsche, BMW, Mercedes-Benz & Tesla",
+          image: clearPPFVehicles[4].image,
+          imagePos: "object-[center_75%]",
+          alt: "BMW M4 with XPEL PPF",
+          paragraphs: [
+            "Miami is one of the largest luxury car markets in the United States, and for good reason — the lifestyle demands it. But owning a Porsche 911, BMW M4, Mercedes-AMG GT, or Tesla Model S in South Florida means exposing premium paint finishes to some of the harshest driving conditions in the country. I-95 between downtown Miami and Fort Lauderdale is notorious for loose gravel, construction debris, and aggressive lane-changing that sends rocks flying.",
+            "XPEL Ultimate Plus™ paint protection film absorbs these impacts without transferring damage to the underlying paint. The film's self-healing top coat means that light scratches literally disappear in Miami's sun. For Tesla owners, PPF is particularly valuable because Tesla's factory paint is notoriously thin — often just 3.5–4.0 mils compared to the industry standard of 5.0–6.0 mils.",
+          ],
+        },
+        {
+          heading: "Exotic & Supercar Protection: Lamborghini, Ferrari & McLaren",
+          image: clearPPFVehicles[2].image,
+          imagePos: "object-[center_50%]",
+          alt: "Ferrari LaFerrari with XPEL PPF",
+          paragraphs: [
+            "If you own a Lamborghini Huracán, Ferrari 488 Spider, or McLaren 720S, paint protection film isn't optional — it's essential. These vehicles carry paint jobs worth $15,000 to $40,000 or more, and a single rock chip can mean a $2,000+ touch-up at a specialty body shop.",
+            "At Bespoke Auto Design, we've protected over 500 vehicles — including Ferraris, Lamborghinis, McLarens, Rolls-Royces, and Bentleys — with XPEL's precision-cut DAP templates. For exotic cars, we hand-finish every tuck and wrap to accommodate aggressive body lines, air intakes, and carbon fiber accents that generic films simply cannot handle.",
+          ],
+        },
+        {
+          heading: "Trucks & SUVs: Ford F-150, Chevrolet Tahoe & Range Rover",
+          image: clearPPFVehicles[7].image,
+          imagePos: "object-[center_55%]",
+          alt: "Toyota Land Cruiser with XPEL PPF",
+          paragraphs: [
+            "Trucks and SUVs face unique paint protection challenges in Miami. Vehicles like the Ford F-150 Raptor, Chevrolet Tahoe, GMC Yukon, Toyota 4Runner, and Range Rover Sport sit higher off the ground and have larger frontal areas that catch more road debris at highway speeds. Their rocker panels, wheel arches, and lower door panels are especially vulnerable to gravel spray.",
+            "Our Track Package ($2,500+) and Full Body coverage ($4,000+) are specifically popular with truck and SUV owners because they extend protection to the rocker panels, rear bumper, A-pillars, and door edges that take the brunt of daily driving abuse. The XPEL film is 8 mils thick — a substantial physical barrier that shrugs off impacts that would gouge bare paint.",
+          ],
+        },
+        {
+          heading: "Daily Drivers & Commuters",
+          image: clearPPFVehicles[10].image,
+          imagePos: "object-[center_55%]",
+          alt: "Tesla Model 3 with XPEL PPF",
+          paragraphs: [
+            "You don't need a six-figure vehicle to benefit from PPF. If you commute on I-95, 826 (Palmetto Expressway), SR-836 (Dolphin Expressway), or the Turnpike, your car's front end is absorbing punishment every single day.",
+            "Our Full Front Package starting at $1,499 covers the hood, front bumper, fenders, headlights, and side mirrors — the areas that take 90% of road impact damage. Many of our daily-driver clients recoup the cost of PPF when they sell or trade in their vehicle, because a chip-free, pristine front end commands significantly higher resale prices.",
+          ],
+        },
+      ].map((row, i) => {
+        const reverse = i % 2 === 1;
+        return (
+          <section key={row.heading} className="relative" style={{ backgroundColor: '#111111' }}>
+            <div className="relative grid md:grid-cols-2 min-h-[500px]">
+              <div className={`relative min-h-[300px] md:min-h-[500px] order-2 ${reverse ? 'md:order-1' : 'md:order-2'}`}>
+                <img src={row.image} alt={row.alt} loading="lazy" className={`absolute inset-0 w-full h-full object-cover ${row.imagePos}`} width={1200} height={800} />
+                <div className="absolute inset-0 hidden md:block" style={{ background: reverse
+                  ? 'linear-gradient(to left, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)'
+                  : 'linear-gradient(to right, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
+              </div>
+              <div className={`relative z-20 flex items-center px-6 md:px-16 py-16 md:py-20 order-1 ${reverse ? 'md:order-2' : 'md:order-1'}`} style={{ backgroundColor: '#111111' }}>
+                <div className="max-w-xl space-y-5">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white font-playfair">{row.heading}</h3>
+                  {row.paragraphs.map((p, j) => (
+                    <p key={j} className="text-base md:text-lg text-silver leading-relaxed">{p}</p>
+                  ))}
+                </div>
+              </div>
             </div>
+          </section>
+        );
+      })}
 
-            <div className="space-y-10 text-lg text-muted-foreground leading-relaxed">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-foreground font-playfair">Luxury Vehicles: Porsche, BMW, Mercedes-Benz & Tesla</h3>
-                <p>
-                  Miami is one of the largest luxury car markets in the United States, and for good reason — the lifestyle demands it. But owning a Porsche 911, BMW M4, Mercedes-AMG GT, or Tesla Model S in South Florida means exposing premium paint finishes to some of the harshest driving conditions in the country. I-95 between downtown Miami and Fort Lauderdale is notorious for loose gravel, construction debris, and aggressive lane-changing that sends rocks flying. A single highway commute can leave dozens of micro-chips in your hood and bumper paint that compound over time into costly repairs.
-                </p>
-                <p>
-                  XPEL Ultimate Plus™ paint protection film absorbs these impacts without transferring damage to the underlying paint. The film's self-healing top coat means that light scratches — the kind you'd get from an automatic car wash or a careless parking lot neighbor — literally disappear in Miami's sun. For Tesla owners specifically, PPF is particularly valuable because Tesla's factory paint is notoriously thin (often measuring just 3.5–4.0 mils compared to the industry standard of 5.0–6.0 mils), making it extremely susceptible to chipping and marring.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-foreground font-playfair">Exotic & Supercar Protection: Lamborghini, Ferrari & McLaren</h3>
-                <p>
-                  If you own a Lamborghini Huracán, Ferrari 488 Spider, or McLaren 720S, paint protection film isn't optional — it's essential. These vehicles carry paint jobs worth $15,000 to $40,000 or more, and a single rock chip can mean a $2,000+ touch-up at a specialty body shop. Many exotic car owners in Miami drive their vehicles on the Palmetto Expressway and Dolphin Expressway, where construction zones create a gauntlet of loose aggregate, metal fragments, and kicked-up road debris that conventional waxes and sealants simply cannot stop.
-                </p>
-                <p>
-                  At Bespoke Auto Design, we've protected over 500 vehicles — including Ferraris, Lamborghinis, McLarens, Rolls-Royces, and Bentleys — with XPEL's precision-cut DAP (Design Access Program) templates. These computer-generated patterns are specific to each make, model, and year, ensuring edge-to-edge coverage with no visible seams or gaps. For exotic cars, we hand-finish every tuck and wrap to accommodate aggressive body lines, air intakes, and carbon fiber accents that generic films simply cannot handle.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-foreground font-playfair">Trucks & SUVs: Ford F-150, Chevrolet Tahoe & Range Rover</h3>
-                <p>
-                  Trucks and SUVs face unique paint protection challenges in Miami. Vehicles like the Ford F-150 Raptor, Chevrolet Tahoe, GMC Yukon, Toyota 4Runner, and Range Rover Sport sit higher off the ground and have larger frontal areas that catch more road debris at highway speeds. Their rocker panels, wheel arches, and lower door panels are especially vulnerable to gravel spray — both from their own tires and from vehicles in adjacent lanes. If you tow a boat from your driveway in Coral Gables to a marina on Key Biscayne, the road spray alone can pepper your truck bed sides and tailgate with hundreds of tiny chips over a single season.
-                </p>
-                <p>
-                  Our Track Package ($2,500+) and Full Body coverage ($4,000+) are specifically popular with truck and SUV owners in Miami because they extend protection to the rocker panels, rear bumper, A-pillars, and door edges that take the brunt of daily driving abuse. The XPEL film is 8 mils thick — providing a substantial physical barrier that shrugs off impacts that would gouge bare paint.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-foreground font-playfair">Daily Drivers & Commuters</h3>
-                <p>
-                  You don't need a six-figure vehicle to benefit from PPF. If you commute on I-95, 826 (Palmetto Expressway), SR-836 (Dolphin Expressway), or the Turnpike, your car's front end is absorbing punishment every single day. Our Full Front Package starting at $1,499 covers the hood, front bumper, fenders, headlights, and side mirrors — the areas that take 90% of road impact damage. This single investment can save you thousands in paint correction, touch-up paint pens, and diminished resale value over the life of your vehicle. Many of our daily-driver clients recoup the cost of PPF when they sell or trade in their vehicle, because a chip-free, pristine front end commands significantly higher resale prices.
-                </p>
-              </div>
+      {/* ═══════════════════════════════════════════════════════
+         INSTALLATION FACILITY — Split row + process grid
+         ═══════════════════════════════════════════════════════ */}
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+          <div className="relative min-h-[300px] md:min-h-[500px] order-2 md:order-1">
+            <img src={clearPPFVehicles[1].image} alt="Rolls-Royce Cullinan in our Miami installation facility" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-[center_65%]" width={1200} height={800} />
+            <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to left, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
+          </div>
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24 order-1 md:order-2" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-6">
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">Our Facility</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
+                Miami's Premier XPEL Installation Facility
+              </h2>
+              <p className="text-lg text-silver leading-relaxed">
+                Paint protection film installation is only as good as the environment it's performed in. Our purpose-built facility at <strong className="text-white">7943 NW 64th St</strong> in Miami's Doral area features a climate-controlled installation bay engineered for flawless PPF application — critical in South Florida's 90°F+ tropical climate.
+              </p>
+              <p className="text-lg text-silver leading-relaxed">
+                Every installation follows a rigorous multi-step process that begins long before the film touches your paint.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════
-         INSTALLATION FACILITY
-         ═══════════════════════════════════════════════════════ */}
+      {/* Installation steps grid */}
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-10">
+          <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center">
-              <Badge variant="outline" className="mb-4">Our Facility</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
-                Miami's Premier XPEL Installation Facility
-              </h2>
+              <Badge variant="outline" className="mb-4">Installation Process</Badge>
+              <h3 className="text-2xl md:text-4xl font-bold font-playfair">Six Steps to a Flawless Install</h3>
             </div>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Paint protection film installation is only as good as the environment it's performed in. At Bespoke Auto Design, our purpose-built facility at 7943 NW 64th St in Miami (Doral area) is engineered specifically for flawless PPF application. Our climate-controlled installation bay maintains consistent temperature and humidity levels — two factors that are absolutely critical for proper film adhesion, slip solution performance, and curing times. In Miami's tropical climate, where outdoor temperatures routinely exceed 90°F with 80%+ humidity, attempting PPF installation in an uncontrolled garage or outdoor setting leads to premature adhesive activation, trapped moisture, and edge lifting that can compromise the entire installation.
-              </p>
-              <p>
-                Every PPF installation at Bespoke Auto Design follows a rigorous multi-step process that begins long before the film touches your paint:
-              </p>
               <div className="grid md:grid-cols-2 gap-6">
                 {[
                   { step: "1. Full Decontamination Wash", desc: "Your vehicle receives a thorough hand wash using pH-neutral shampoo, followed by a chemical decontamination spray to dissolve embedded iron particles, brake dust, and industrial fallout that cling to Miami vehicles." },
@@ -501,83 +531,89 @@ const PaintProtectionFilm = () => {
                   </div>
                 ))}
               </div>
-              <p>
+            <p className="text-lg text-muted-foreground leading-relaxed text-center max-w-3xl mx-auto">
                 Our XPEL-certified installers have collectively completed over 500 installations on vehicles ranging from Honda Civics to Ferrari F8 Tributos. Every technician is factory-trained through XPEL's certification program and participates in ongoing advanced training to stay current with new film technologies, application techniques, and vehicle-specific installation challenges.
               </p>
-            </div>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-         PPF VS CERAMIC COATING
+         PPF VS CERAMIC COATING — Split row (text left / photo right)
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-10">
-            <div className="text-center">
-              <Badge variant="outline" className="mb-4">Comparison Guide</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
-                PPF vs Ceramic Coating: Which Is Right for Your Miami Vehicle?
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-5">
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">Comparison Guide</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
+                PPF vs Ceramic Coating
               </h2>
-            </div>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                This is one of the most common questions we hear at Bespoke Auto Design, and the answer depends on what you're protecting against. Paint Protection Film and ceramic coating are complementary technologies that address different threats — and for many Miami vehicle owners, the best solution is combining both.
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                These are complementary technologies that address different threats — for many Miami vehicle owners, the best solution combines both.
               </p>
-              <p>
-                <strong className="text-foreground">Paint Protection Film (PPF)</strong> is a physical barrier — a thick, flexible urethane film that absorbs impacts from rock chips, gravel, road debris, shopping cart dings, and even minor fender contact. It's the only product on the market that can actually prevent paint damage from physical contact. XPEL Ultimate Plus™ is 8 mils thick and features a self-healing top coat that eliminates light scratches automatically with heat exposure. For Miami drivers who commute on I-95, the Palmetto Expressway, or any construction-heavy corridor, PPF on the front end is the single most effective way to keep your paint chip-free.
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                <strong className="text-white">PPF</strong> is a physical 8-mil barrier that absorbs impacts from rock chips, gravel, and road debris. It's the only product that prevents paint damage from physical contact, with a self-healing top coat that eliminates light scratches with heat.
               </p>
-              <p>
-                <strong className="text-foreground">Ceramic Coating</strong>, on the other hand, is a liquid nano-ceramic layer that chemically bonds to your paint (or to PPF), creating a semi-permanent hydrophobic surface with enhanced UV protection, chemical resistance, and extreme gloss. Ceramic coating does not prevent rock chips — it's too thin for that. What it excels at is making your vehicle dramatically easier to wash, preventing water spots (a major issue in Miami's hard-water climate), blocking UV-induced paint oxidation, and resisting chemical etching from bird droppings, tree sap, and acid rain.
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                <strong className="text-white">Ceramic Coating</strong> is a liquid nano-ceramic layer that bonds to paint or PPF — creating a hydrophobic surface with UV protection, chemical resistance, and extreme gloss. It does not prevent rock chips, but it dramatically simplifies washing and resists water spots, bird droppings, and acid rain.
               </p>
-              <p>
-                <strong className="text-foreground">The Ultimate Protection Stack:</strong> Our most popular configuration among Miami luxury car owners is PPF on the high-impact areas (full front or full body) with ceramic coating applied over the entire vehicle — including over the PPF. This combination gives you the physical impact protection of PPF plus the hydrophobic self-cleaning properties, UV defense, and showroom gloss of ceramic coating. The ceramic layer on top of PPF also makes the film easier to clean, prevents staining, and extends the film's cosmetic life. We offer XPEL Fusion Plus™ ceramic coating starting at $599, and bundled PPF + ceramic packages that save you money compared to purchasing each service separately.
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                <strong className="text-gold">The Ultimate Stack:</strong> Full Front or Full Body PPF on impact areas + Fusion Plus™ ceramic coating over the entire vehicle. We offer bundled PPF + ceramic packages starting at $599 for ceramic that save vs. booking each service separately.
               </p>
             </div>
+          </div>
+          <div className="relative min-h-[300px] md:min-h-[500px]">
+            <img src={clearPPFVehicles[6].image} alt="2024 Corvette Stingray with PPF and ceramic coating" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-[center_55%]" width={1200} height={800} />
+            <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to right, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════
-         SERVING ALL OF MIAMI-DADE
+         SERVING ALL OF MIAMI-DADE — Split row + neighborhoods grid
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-accent/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto space-y-10">
-            <div className="text-center">
-              <Badge variant="outline" className="mb-4">Service Area</Badge>
-              <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-2 min-h-[500px]">
+          <div className="relative min-h-[300px] md:min-h-[500px] order-2 md:order-1">
+            <img src={clearPPFVehicles[8].image} alt="Ram 1500 with PPF in Miami" loading="lazy" className="absolute inset-0 w-full h-full object-cover object-[center_55%]" width={1200} height={800} />
+            <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to left, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
+          </div>
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24 order-1 md:order-2" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-5">
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">Service Area</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
                 Serving All of Miami-Dade County
               </h2>
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                Bespoke Auto Design is located at <strong className="text-white">7943 NW 64th St, Miami, FL 33166</strong>, in the heart of the Doral business district — minutes from MIA and easily accessible from the Palmetto (SR-826) and Dolphin Expressway (SR-836).
+              </p>
+              <p className="text-base md:text-lg text-silver leading-relaxed">
+                Many of our clients drive from as far as Fort Lauderdale, Weston, and Palm Beach County for our XPEL-certified installation quality, transparent pricing, and attention to detail. Miami's salt air, 3,000+ annual hours of UV, acidic rain, and constant highway construction make PPF the only product that comprehensively addresses every threat at once.
+              </p>
             </div>
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-              <p>
-                Bespoke Auto Design is located at <strong className="text-foreground">7943 NW 64th St, Miami, FL 33166</strong>, in the heart of the Doral business district — just minutes from Miami International Airport and easily accessible from the Palmetto Expressway (SR-826) and the Dolphin Expressway (SR-836). Our central location makes us convenient for vehicle owners across the entire Miami-Dade metropolitan area.
-              </p>
-              <p>
-                We proudly serve clients from every corner of Miami-Dade County and beyond, including:
-              </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {[
-                  "Doral", "Brickell", "Coral Gables", "Miami Beach", "Aventura",
-                  "Coconut Grove", "Wynwood", "Kendall", "Homestead", "Key Biscayne",
-                  "Hialeah", "Pinecrest", "Sunny Isles Beach", "Bal Harbour", "South Miami",
-                  "Fort Lauderdale", "Hollywood", "Weston"
-                ].map((area) => (
-                  <div key={area} className="flex items-center gap-2 text-sm font-medium text-foreground">
-                    <Check className="h-4 w-4 text-gold shrink-0" />
-                    {area}
-                  </div>
-                ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Neighborhoods grid */}
+      <section className="py-16 bg-accent/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold font-playfair">Neighborhoods We Serve</h3>
+          </div>
+          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3">
+            {[
+              "Doral", "Brickell", "Coral Gables", "Miami Beach", "Aventura",
+              "Coconut Grove", "Wynwood", "Kendall", "Homestead", "Key Biscayne",
+              "Hialeah", "Pinecrest", "Sunny Isles Beach", "Bal Harbour", "South Miami",
+              "Fort Lauderdale", "Hollywood", "Weston"
+            ].map((area) => (
+              <div key={area} className="flex items-center gap-2 text-sm font-medium text-foreground">
+                <Check className="h-4 w-4 text-gold shrink-0" />
+                {area}
               </div>
-              <p>
-                Many of our clients drive from as far as Fort Lauderdale, Weston, and even Palm Beach County because of our reputation for XPEL-certified installation quality, transparent pricing, and attention to detail. Whether you're coming from a waterfront condo in Brickell, a family home in Kendall, or an office in the Doral business park, our facility is designed to accommodate your schedule — including early morning drop-offs and after-hours pickups by appointment.
-              </p>
-              <p>
-                Miami's unique geography means your vehicle faces environmental threats that cars in other cities simply don't encounter. The salt air blowing in from Biscayne Bay and the Atlantic corrodes unprotected clear coat over time. The intense tropical UV radiation — Miami receives over 3,000 hours of direct sunlight per year — accelerates paint oxidation and fading. Florida's frequent afternoon thunderstorms deposit acidic rain that etches into softened paint surfaces. And the endless road construction across Miami-Dade's expanding highway system creates a perpetual stream of loose gravel, concrete chips, and metal debris that bombards your vehicle's front end every day. PPF is the only product that comprehensively addresses all of these threats simultaneously.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
