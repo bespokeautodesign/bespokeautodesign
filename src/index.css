@@ -36,9 +36,9 @@
     --accent: 0 0% 8%;
     --accent-foreground: 0 0% 92%;
 
-    /* Xpel Yellow */
-    --xpel-yellow: 41 60% 58%;
-    --xpel-yellow-dark: 41 55% 45%;
+    /* XPEL Yellow - Official PMS 123C (#FFB81C) */
+    --xpel-yellow: 41 100% 55%;
+    --xpel-yellow-dark: 41 100% 45%;
 
     /* Brand Red - Bespoke signature accent */
     --brand-red: 354 78% 44%;        /* #C8192C */
