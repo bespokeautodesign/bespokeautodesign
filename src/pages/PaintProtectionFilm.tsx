@@ -178,51 +178,53 @@ const PaintProtectionFilm = () => {
       {/* ═══════════════════════════════════════════════════════
          WHY PPF IN MIAMI?
          ═══════════════════════════════════════════════════════ */}
-      <section className="py-20 bg-accent/30">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Miami Climate Protection</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
-              Why Miami Vehicles Need PPF
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              South Florida's combination of extreme UV, salt air, highway debris, and year-round heat creates the perfect storm for paint damage. Here's how PPF fights back.
-            </p>
+      {/* Why Miami Vehicles Need PPF — Split row (photo left / text right) */}
+      <section className="relative" style={{ backgroundColor: '#111111' }}>
+        <div className="relative grid md:grid-cols-[45%_55%] min-h-[600px]">
+          <div className="relative min-h-[300px] md:min-h-[600px] order-2 md:order-1">
+            <img
+              src={clearPPFVehicles[5].image}
+              alt="Ferrari F8 Tributo protected from Miami's climate with XPEL PPF"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover object-[center_50%]"
+              width={1200}
+              height={800}
+            />
+            <div
+              className="absolute inset-0 hidden md:block pointer-events-none"
+              style={{ background: 'linear-gradient(to left, #111111 0%, rgba(17,17,17,0.95) 10%, rgba(17,17,17,0.6) 30%, rgba(17,17,17,0) 60%)' }}
+            />
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[{
-            icon: Sun,
-            title: "UV & Sun Protection",
-            desc: "Miami ranks among the highest UV index cities in the U.S. XPEL PPF blocks harmful UV rays that cause paint oxidation, fading, and clear coat failure — keeping your finish factory-fresh."
-          }, {
-            icon: Zap,
-            title: "Rock Chip Defense",
-            desc: "I-95, the Palmetto, and Florida's Turnpike are notorious for road debris. PPF absorbs impact energy from stones, gravel, and construction material that would otherwise chip your paint."
-          }, {
-            icon: Droplets,
-            title: "Salt Air & Humidity",
-            desc: "Living near Miami Beach, Brickell, or the Keys means constant exposure to corrosive salt air. PPF creates an impermeable barrier that prevents salt-induced micro-corrosion and water spotting."
-          }, {
-            icon: Shield,
-            title: "Self-Healing Technology",
-            desc: "XPEL's elastomeric polymer top coat eliminates light scratches and swirl marks when exposed to heat. In Miami's sun, most surface blemishes disappear within minutes while parked."
-          }, {
-            icon: Car,
-            title: "Resale Value Preservation",
-            desc: "Paint condition is one of the biggest factors in resale value. PPF keeps your paint in concours condition, adding thousands of dollars to your vehicle's trade-in or private sale price."
-          }, {
-            icon: Award,
-            title: "10-Year XPEL Warranty",
-            desc: "Every installation is backed by XPEL's comprehensive 10-year manufacturer warranty against yellowing, cracking, peeling, staining, and delamination — even in Florida's harsh climate."
-          }].map((item) => <Card key={item.title} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
-                <CardContent className="pt-8 pb-6 px-6 space-y-4">
-                  <div className="h-12 w-12 rounded-xl bg-gold/15 border border-silver-muted flex items-center justify-center shrink-0">
-                    <item.icon className="h-6 w-6 text-gold" />
-                  </div>
-                  <h3 className="text-xl font-bold">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-                </CardContent>
-              </Card>)}
+          <div className="relative z-20 flex items-center px-6 md:px-16 py-16 md:py-24 order-1 md:order-2" style={{ backgroundColor: '#111111' }}>
+            <div className="max-w-xl space-y-6">
+              <Badge variant="outline" className="block w-fit border-silver-muted/40 text-silver">Miami Climate Protection</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
+                Why Miami Vehicles Need PPF
+              </h2>
+              <p className="text-lg text-silver leading-relaxed">
+                South Florida's combination of extreme UV, salt air, highway debris, and year-round heat creates the perfect storm for paint damage. Here's how XPEL PPF fights back.
+              </p>
+              <ul className="space-y-4 pt-2">
+                {[
+                  { icon: Sun, title: "UV & Sun Protection", desc: "Blocks harmful UV that causes paint oxidation, fading, and clear coat failure." },
+                  { icon: Zap, title: "Rock Chip Defense", desc: "Absorbs impact from gravel and debris on I-95, the Palmetto, and the Turnpike." },
+                  { icon: Droplets, title: "Salt Air & Humidity", desc: "Impermeable barrier against corrosive coastal salt air and water spotting." },
+                  { icon: Award, title: "Bug & Sap Resistance", desc: "Stain-resistant top coat repels bug splatter, bird droppings, and tree sap." },
+                  { icon: Shield, title: "Self-Healing Technology", desc: "Elastomeric top coat erases light scratches and swirl marks with heat." },
+                  { icon: Car, title: "Resale Value Preservation", desc: "Keeps paint in concours condition — adding thousands to trade-in value." },
+                ].map((item) => (
+                  <li key={item.title} className="flex items-start gap-4">
+                    <div className="h-10 w-10 rounded-lg bg-gold/15 border border-silver-muted/40 flex items-center justify-center shrink-0 mt-0.5">
+                      <item.icon className="h-5 w-5 text-gold" />
+                    </div>
+                    <div className="space-y-0.5">
+                      <h3 className="text-base md:text-lg font-bold text-white">{item.title}</h3>
+                      <p className="text-sm md:text-base text-silver leading-relaxed">{item.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
