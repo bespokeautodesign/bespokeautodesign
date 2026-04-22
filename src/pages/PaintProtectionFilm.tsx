@@ -463,13 +463,13 @@ const PaintProtectionFilm = () => {
         return (
           <section key={row.heading} className="relative" style={{ backgroundColor: '#111111' }}>
             <div className="relative grid md:grid-cols-2 min-h-[500px]">
-              <div className={`relative min-h-[300px] md:min-h-[500px] ${reverse ? 'order-2 md:order-1' : 'order-2 md:order-2'}`}>
+              <div className={`relative min-h-[300px] md:min-h-[500px] order-2 ${reverse ? 'md:order-1' : 'md:order-2'}`}>
                 <img src={row.image} alt={row.alt} loading="lazy" className={`absolute inset-0 w-full h-full object-cover ${row.imagePos}`} width={1200} height={800} />
                 <div className="absolute inset-0 hidden md:block" style={{ background: reverse
                   ? 'linear-gradient(to left, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)'
                   : 'linear-gradient(to right, #111111 0%, rgba(17,17,17,0.85) 15%, rgba(17,17,17,0) 45%)' }} />
               </div>
-              <div className={`relative z-20 flex items-center px-6 md:px-16 py-16 md:py-20 ${reverse ? 'order-1 md:order-2' : 'order-1 md:order-1'}`} style={{ backgroundColor: '#111111' }}>
+              <div className={`relative z-20 flex items-center px-6 md:px-16 py-16 md:py-20 order-1 ${reverse ? 'md:order-2' : 'md:order-1'}`} style={{ backgroundColor: '#111111' }}>
                 <div className="max-w-xl space-y-5">
                   <h3 className="text-2xl md:text-3xl font-bold text-white font-playfair">{row.heading}</h3>
                   {row.paragraphs.map((p, j) => (
