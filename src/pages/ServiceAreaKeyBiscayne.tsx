@@ -47,7 +47,7 @@ const localBusinessSchema = {
   ],
   "areaServed": { "@type": "City", "name": "Key Biscayne, FL" },
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47", "bestRating": "5", "worstRating": "1" },
-  "image": "https://www.bespokeauto.design/lovable-uploads/bespoke-logo.webp",
+  "image": "https://www.bespokeauto.design/bespoke-logo.png",
   "sameAs": ["https://www.instagram.com/bespokeautodesign/", "https://www.facebook.com/bespokeautodesign"]
 };
 
