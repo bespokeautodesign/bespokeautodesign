@@ -143,23 +143,22 @@ const PaintProtectionFilm = () => {
          WHAT IS PPF?
          ═══════════════════════════════════════════════════════ */}
       <section
-        className="relative min-h-[500px] flex items-center bg-cover bg-center bg-no-repeat py-20"
+        className="relative bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{ backgroundImage: `url(${clearPPFVehicles[0].image})` }}
       >
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-2xl bg-black/65 backdrop-blur-sm p-8 md:p-12 rounded-2xl space-y-6">
-            <Badge variant="outline" className="block w-fit border-white/40 text-white">What Is PPF?</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
-              The Ultimate Shield for Your Vehicle's Paint
-            </h2>
-            <div className="space-y-5 text-lg text-white/85 leading-relaxed">
-              <p>
-                Paint Protection Film (PPF) is a virtually invisible, thermoplastic urethane film applied to your vehicle's exterior painted surfaces. Originally developed for military helicopter blades to resist sand and debris erosion, PPF technology has evolved into the gold standard for automotive paint preservation.
-              </p>
-              <p>
-                At Bespoke Auto Design in Miami, we exclusively install <strong className="text-white">XPEL Ultimate Plus™</strong> — the world's most advanced self-healing paint protection film.
-              </p>
-            </div>
+        <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-black/50 md:border-r-2 md:border-[#D4A84B]" />
+        <div className="relative z-10 w-full md:w-1/2 px-8 py-10 md:px-12 md:py-14 space-y-5">
+          <Badge variant="outline" className="block w-fit border-white/40 text-white">What Is PPF?</Badge>
+          <h2 className="text-2xl md:text-4xl font-bold font-playfair text-white">
+            The Ultimate Shield for Your Vehicle's Paint
+          </h2>
+          <div className="space-y-4 text-base md:text-lg text-white/90 leading-relaxed">
+            <p>
+              Paint Protection Film (PPF) is a virtually invisible, thermoplastic urethane film applied to your vehicle's exterior painted surfaces. Originally developed for military helicopter blades to resist sand and debris erosion, PPF technology has evolved into the gold standard for automotive paint preservation.
+            </p>
+            <p>
+              At Bespoke Auto Design in Miami, we exclusively install <strong className="text-white">XPEL Ultimate Plus™</strong> — the world's most advanced self-healing paint protection film.
+            </p>
           </div>
         </div>
       </section>
