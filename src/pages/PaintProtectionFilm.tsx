@@ -289,25 +289,24 @@ const PaintProtectionFilm = () => {
          THE XPEL ADVANTAGE
          ═══════════════════════════════════════════════════════ */}
       <section
-        className="relative min-h-[500px] flex items-center bg-cover bg-center bg-no-repeat py-20"
+        className="relative bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{ backgroundImage: `url(${clearPPFVehicles[5].image})` }}
       >
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-2xl bg-black/65 backdrop-blur-sm p-8 md:p-12 rounded-2xl space-y-6">
-            <img src={xpelLogo} alt="XPEL" className="h-10 w-auto opacity-90 brightness-200" width={200} height={60} />
-            <Badge variant="outline" className="block w-fit border-white/40 text-white">Why XPEL?</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair text-white">
-              The XPEL Advantage
-            </h2>
-            <p className="text-lg text-white/85 leading-relaxed">
-              Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-white">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — from the Design Access Program (DAP) for precision-cut templates to the Ultimate Plus™ film and Fusion Plus™ ceramic coating for post-installation care.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-x-6 gap-y-3 pt-2">
-              {["Precision DAP templates for 100,000+ vehicle fitments", "Optically clear — invisible on any paint color", "Self-healing top coat eliminates swirl marks", "Stain-resistant against bird droppings & tree sap", "Non-yellowing formula engineered for high-UV climates", "Edge-seal technology prevents lifting and peeling", "Transferable 10-year manufacturer warranty", "Safe removal with zero paint damage"].map((point) => <div key={point} className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
-                  <span className="text-white/90 text-sm">{point}</span>
-                </div>)}
-            </div>
+        <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-black/50 md:border-r-2 md:border-[#D4A84B]" />
+        <div className="relative z-10 w-full md:w-1/2 px-8 py-10 md:px-12 md:py-14 space-y-4">
+          <img src={xpelLogo} alt="XPEL" className="h-8 w-auto opacity-90 brightness-200" width={200} height={60} />
+          <Badge variant="outline" className="block w-fit border-white/40 text-white">Why XPEL?</Badge>
+          <h2 className="text-2xl md:text-4xl font-bold font-playfair text-white">
+            The XPEL Advantage
+          </h2>
+          <p className="text-sm md:text-base text-white/90 leading-relaxed">
+            Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-white">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — from the Design Access Program (DAP) for precision-cut templates to the Ultimate Plus™ film and Fusion Plus™ ceramic coating for post-installation care.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-x-5 gap-y-2 pt-1">
+            {["Precision DAP templates for 100,000+ vehicle fitments", "Optically clear — invisible on any paint color", "Self-healing top coat eliminates swirl marks", "Stain-resistant against bird droppings & tree sap", "Non-yellowing formula engineered for high-UV climates", "Edge-seal technology prevents lifting and peeling", "Transferable 10-year manufacturer warranty", "Safe removal with zero paint damage"].map((point) => <div key={point} className="flex items-start gap-2">
+                <Check className="h-4 w-4 text-gold mt-0.5 flex-shrink-0" />
+                <span className="text-white/90 text-xs">{point}</span>
+              </div>)}
           </div>
         </div>
       </section>
