@@ -142,23 +142,36 @@ const PaintProtectionFilm = () => {
       {/* ═══════════════════════════════════════════════════════
          WHAT IS PPF?
          ═══════════════════════════════════════════════════════ */}
-      <section
-        className="relative bg-cover bg-center bg-no-repeat overflow-hidden"
-        style={{ backgroundImage: `url(${clearPPFVehicles[0].image})` }}
-      >
-        <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-black/50 md:border-r-2 md:border-[#D4A84B]" />
-        <div className="relative z-10 w-full md:w-1/2 px-8 py-10 md:px-12 md:py-14 space-y-5">
-          <Badge variant="outline" className="block w-fit border-white/40 text-white">What Is PPF?</Badge>
-          <h2 className="text-2xl md:text-4xl font-bold font-playfair text-white">
-            The Ultimate Shield for Your Vehicle's Paint
-          </h2>
-          <div className="space-y-4 text-base md:text-lg text-white/90 leading-relaxed">
-            <p>
-              Paint Protection Film (PPF) is a virtually invisible, thermoplastic urethane film applied to your vehicle's exterior painted surfaces. Originally developed for military helicopter blades to resist sand and debris erosion, PPF technology has evolved into the gold standard for automotive paint preservation.
-            </p>
-            <p>
-              At Bespoke Auto Design in Miami, we exclusively install <strong className="text-white">XPEL Ultimate Plus™</strong> — the world's most advanced self-healing paint protection film.
-            </p>
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <Badge variant="outline" className="block w-fit">What Is PPF?</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair">
+                The Ultimate Shield for Your Vehicle's Paint
+              </h2>
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  Paint Protection Film (PPF) is a virtually invisible, thermoplastic urethane film applied to your vehicle's exterior painted surfaces. Originally developed for military helicopter blades to resist sand and debris erosion, PPF technology has evolved into the gold standard for automotive paint preservation.
+                </p>
+                <p>
+                  At Bespoke Auto Design in Miami, we exclusively install <strong className="text-foreground">XPEL Ultimate Plus™</strong> — the world's most advanced self-healing paint protection film.
+                </p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="rounded-2xl overflow-hidden shadow-premium">
+                <img src={clearPPFVehicles[0].image} alt="Ferrari California T with clear PPF" loading="lazy" className="w-full h-[300px] md:h-[400px] object-cover object-[center_60%]"  width={800} height={300} />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden shadow-premium">
+                  <img src={clearPPFVehicles[3].image} alt="Aston Martin Vantage with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_60%]"  width={800} height={150} />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-premium">
+                  <img src={clearPPFVehicles[4].image} alt="2024 BMW M4 with PPF" loading="lazy" className="w-full h-[150px] object-cover object-[center_75%]"  width={800} height={150} />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -167,22 +180,18 @@ const PaintProtectionFilm = () => {
       {/* ═══════════════════════════════════════════════════════
          WHY PPF IN MIAMI?
          ═══════════════════════════════════════════════════════ */}
-      <section
-        className="relative bg-cover bg-center bg-no-repeat overflow-hidden"
-        style={{ backgroundImage: `url(${clearPPFVehicles[1].image})` }}
-      >
-        <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-black/50 md:border-r-2 md:border-[#D4A84B]" />
-        <div className="relative z-10 w-full md:w-1/2 px-8 py-10 md:px-12 md:py-14">
-          <div className="mb-8">
-            <Badge variant="outline" className="mb-4 border-white/40 text-white">Miami Climate Protection</Badge>
-            <h2 className="text-2xl md:text-4xl font-bold font-playfair mb-4 text-white">
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <Badge variant="outline" className="mb-4">Miami Climate Protection</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
               Why Miami Vehicles Need PPF
             </h2>
-            <p className="text-base md:text-lg text-white/90">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               South Florida's combination of extreme UV, salt air, highway debris, and year-round heat creates the perfect storm for paint damage. Here's how PPF fights back.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[{
             icon: Sun,
             title: "UV & Sun Protection",
@@ -207,13 +216,13 @@ const PaintProtectionFilm = () => {
             icon: Award,
             title: "10-Year XPEL Warranty",
             desc: "Every installation is backed by XPEL's comprehensive 10-year manufacturer warranty against yellowing, cracking, peeling, staining, and delamination — even in Florida's harsh climate."
-          }].map((item) => <Card key={item.title} className="bg-black/40 backdrop-blur-sm border-white/10">
-                <CardContent className="p-4 space-y-2">
-                  <div className="h-9 w-9 rounded-lg bg-gold/15 border border-gold/40 flex items-center justify-center shrink-0">
-                    <item.icon className="h-4 w-4 text-gold" />
+          }].map((item) => <Card key={item.title} className="bg-card border-border/60 shadow-premium hover:shadow-glow transition-shadow duration-300">
+                <CardContent className="pt-8 pb-6 px-6 space-y-4">
+                  <div className="h-12 w-12 rounded-xl bg-gold/15 border border-silver-muted flex items-center justify-center shrink-0">
+                    <item.icon className="h-6 w-6 text-gold" />
                   </div>
-                  <h3 className="text-sm font-bold text-white">{item.title}</h3>
-                  <p className="text-white/80 leading-snug text-xs">{item.desc}</p>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
                 </CardContent>
               </Card>)}
           </div>
@@ -288,25 +297,27 @@ const PaintProtectionFilm = () => {
       {/* ═══════════════════════════════════════════════════════
          THE XPEL ADVANTAGE
          ═══════════════════════════════════════════════════════ */}
-      <section
-        className="relative bg-cover bg-center bg-no-repeat overflow-hidden"
-        style={{ backgroundImage: `url(${clearPPFVehicles[5].image})` }}
-      >
-        <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-black/50 md:border-r-2 md:border-[#D4A84B]" />
-        <div className="relative z-10 w-full md:w-1/2 px-8 py-10 md:px-12 md:py-14 space-y-4">
-          <img src={xpelLogo} alt="XPEL" className="h-8 w-auto opacity-90 brightness-200" width={200} height={60} />
-          <Badge variant="outline" className="block w-fit border-white/40 text-white">Why XPEL?</Badge>
-          <h2 className="text-2xl md:text-4xl font-bold font-playfair text-white">
-            The XPEL Advantage
-          </h2>
-          <p className="text-sm md:text-base text-white/90 leading-relaxed">
-            Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-white">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — from the Design Access Program (DAP) for precision-cut templates to the Ultimate Plus™ film and Fusion Plus™ ceramic coating for post-installation care.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-x-5 gap-y-2 pt-1">
-            {["Precision DAP templates for 100,000+ vehicle fitments", "Optically clear — invisible on any paint color", "Self-healing top coat eliminates swirl marks", "Stain-resistant against bird droppings & tree sap", "Non-yellowing formula engineered for high-UV climates", "Edge-seal technology prevents lifting and peeling", "Transferable 10-year manufacturer warranty", "Safe removal with zero paint damage"].map((point) => <div key={point} className="flex items-start gap-2">
-                <Check className="h-4 w-4 text-gold mt-0.5 flex-shrink-0" />
-                <span className="text-white/90 text-xs">{point}</span>
-              </div>)}
+      <section className="py-20 bg-accent/30">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto space-y-10">
+            <div className="text-center space-y-4">
+              <img src={xpelLogo} alt="XPEL" className="h-12 w-auto mx-auto opacity-30 brightness-200"  width={200} height={60} />
+              <Badge variant="outline">Why XPEL?</Badge>
+              <h2 className="text-3xl md:text-5xl font-bold font-playfair">
+                The XPEL Advantage
+              </h2>
+            </div>
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Not all paint protection films are created equal. XPEL has spent over two decades refining their films to deliver unmatched clarity, durability, and performance. As a <strong className="text-foreground">certified XPEL installer in Miami</strong>, Bespoke Auto Design uses the full XPEL ecosystem — from the Design Access Program (DAP) for precision-cut templates to the Ultimate Plus™ film and Fusion Plus™ ceramic coating for post-installation care.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-6 py-4">
+                {["Precision DAP templates for 100,000+ vehicle fitments", "Optically clear — invisible on any paint color", "Self-healing top coat eliminates swirl marks", "Stain-resistant against bird droppings & tree sap", "Non-yellowing formula engineered for high-UV climates", "Edge-seal technology prevents lifting and peeling", "Transferable 10-year manufacturer warranty", "Safe removal with zero paint damage"].map((point) => <div key={point} className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-gold mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground">{point}</span>
+                  </div>)}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -314,22 +325,18 @@ const PaintProtectionFilm = () => {
       {/* ═══════════════════════════════════════════════════════
          OUR PROCESS
          ═══════════════════════════════════════════════════════ */}
-      <section
-        className="relative bg-cover bg-center bg-no-repeat overflow-hidden"
-        style={{ backgroundImage: `url(${clearPPFVehicles[2].image})` }}
-      >
-        <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-black/50 md:border-r-2 md:border-[#D4A84B]" />
-        <div className="relative z-10 w-full md:w-1/2 px-8 py-10 md:px-12 md:py-14">
-          <div className="mb-6">
-            <Badge variant="outline" className="mb-4 border-white/40 text-white">Our Process</Badge>
-            <h2 className="text-2xl md:text-4xl font-bold font-playfair mb-3 text-white">
+      <section className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <Badge variant="outline" className="mb-4">Our Process</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6">
               How We Install PPF
             </h2>
-            <p className="text-base md:text-lg text-white/90">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Every installation follows a meticulous multi-step process in our climate-controlled facility in Miami.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-3">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {[{
             step: "01",
             title: "Consultation",
@@ -346,14 +353,12 @@ const PaintProtectionFilm = () => {
             step: "04",
             title: "Quality Inspection",
             desc: "Multi-point inspection under controlled lighting ensures flawless coverage before delivery."
-          }].map((item) => <div key={item.step} className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg p-3 flex gap-3 items-start">
-                <div className="h-10 w-10 rounded-full bg-gold text-gold-foreground flex items-center justify-center text-base font-bold font-playfair shrink-0">
+          }].map((item) => <div key={item.step} className="space-y-4 text-center">
+                <div className="h-16 w-16 rounded-full bg-gold text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
                   {item.step}
                 </div>
-                <div>
-                  <h3 className="text-sm font-bold text-white mb-1">{item.title}</h3>
-                  <p className="text-white/80 leading-snug text-xs">{item.desc}</p>
-                </div>
+                <h3 className="text-xl font-bold">{item.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>)}
           </div>
         </div>
