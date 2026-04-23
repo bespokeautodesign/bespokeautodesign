@@ -315,21 +315,21 @@ const PaintProtectionFilm = () => {
          OUR PROCESS
          ═══════════════════════════════════════════════════════ */}
       <section
-        className="relative min-h-[500px] bg-cover bg-center bg-no-repeat py-20 bg-fixed"
+        className="relative bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{ backgroundImage: `url(${clearPPFVehicles[2].image})` }}
       >
-        <div className="absolute inset-0 bg-black/65" />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mb-12">
+        <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-black/50 md:border-r-2 md:border-[#D4A84B]" />
+        <div className="relative z-10 w-full md:w-1/2 px-8 py-10 md:px-12 md:py-14">
+          <div className="mb-6">
             <Badge variant="outline" className="mb-4 border-white/40 text-white">Our Process</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-playfair mb-6 text-white">
+            <h2 className="text-2xl md:text-4xl font-bold font-playfair mb-3 text-white">
               How We Install PPF
             </h2>
-            <p className="text-xl text-white/85">
+            <p className="text-base md:text-lg text-white/90">
               Every installation follows a meticulous multi-step process in our climate-controlled facility in Miami.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl">
+          <div className="grid sm:grid-cols-2 gap-3">
             {[{
             step: "01",
             title: "Consultation",
@@ -346,12 +346,14 @@ const PaintProtectionFilm = () => {
             step: "04",
             title: "Quality Inspection",
             desc: "Multi-point inspection under controlled lighting ensures flawless coverage before delivery."
-          }].map((item) => <div key={item.step} className="bg-black/60 backdrop-blur-sm border border-white/10 rounded-xl p-6 space-y-4 text-center">
-                <div className="h-16 w-16 rounded-full bg-gold text-gold-foreground flex items-center justify-center mx-auto text-2xl font-bold font-playfair">
+          }].map((item) => <div key={item.step} className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg p-3 flex gap-3 items-start">
+                <div className="h-10 w-10 rounded-full bg-gold text-gold-foreground flex items-center justify-center text-base font-bold font-playfair shrink-0">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                <p className="text-white/80 leading-relaxed text-sm">{item.desc}</p>
+                <div>
+                  <h3 className="text-sm font-bold text-white mb-1">{item.title}</h3>
+                  <p className="text-white/80 leading-snug text-xs">{item.desc}</p>
+                </div>
               </div>)}
           </div>
         </div>
