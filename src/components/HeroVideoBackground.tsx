@@ -6,9 +6,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 const videoSources = [
   { src: "/videos/hero-1.mp4?v=7", poster: "/videos/hero-1.webp", position: "center 55%" }, // Rolls-Royce
   { src: "/videos/hero-2.mp4?v=7", poster: "/videos/hero-2.webp", position: "center 40%" }, // Porsche 911
-  { src: "/videos/hero-5.mp4?v=7", poster: "/videos/hero-5.webp", position: "center 55%" }, // Yellow Porsche 911 (rally stripes)
   { src: "/videos/hero-6.mp4?v=7", poster: "/videos/hero-6.webp", position: "center 55%" }, // Green BMW M
-  { src: "/videos/hero-7.mp4?v=7", poster: "/videos/hero-7.webp", position: "center 55%" }, // Blue Porsche 911 Turbo
 ];
 
 const HeroVideoBackground = () => {
