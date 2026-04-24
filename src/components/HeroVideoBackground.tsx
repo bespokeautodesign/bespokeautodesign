@@ -4,10 +4,11 @@ import { useIsMobile } from "@/hooks/use-mobile";
 // Original high-quality hero clips at 1280×2276 native resolution, no audio.
 // ~1.0–1.7 MB per clip, ~5.3 MB total — sharp at full-screen.
 const videoSources = [
-  { src: "/videos/hero-1.mp4?v=6", poster: "/videos/hero-1.webp", position: "center 55%" }, // Rolls-Royce
-  { src: "/videos/hero-2.mp4?v=6", poster: "/videos/hero-2.webp", position: "center 40%" }, // Porsche 911
-  { src: "/videos/hero-5.mp4?v=6", poster: "/videos/hero-5.webp", position: "center 55%" }, // Ferrari (red sports car)
-  { src: "/videos/hero-6.mp4?v=6", poster: "/videos/hero-6.webp", position: "center 55%" }, // Green BMW M
+  { src: "/videos/hero-1.mp4?v=7", poster: "/videos/hero-1.webp", position: "center 55%" }, // Rolls-Royce
+  { src: "/videos/hero-2.mp4?v=7", poster: "/videos/hero-2.webp", position: "center 40%" }, // Porsche 911
+  { src: "/videos/hero-5.mp4?v=7", poster: "/videos/hero-5.webp", position: "center 55%" }, // Yellow Porsche 911 (rally stripes)
+  { src: "/videos/hero-6.mp4?v=7", poster: "/videos/hero-6.webp", position: "center 55%" }, // Green BMW M
+  { src: "/videos/hero-7.mp4?v=7", poster: "/videos/hero-7.webp", position: "center 55%" }, // Blue Porsche 911 Turbo
 ];
 
 const HeroVideoBackground = () => {
