@@ -53,14 +53,6 @@ const Marine = () => {
         canonical="https://www.bespokeauto.design/marine"
         structuredData={marineStructuredData}
       />
-      {/* Background Image - Full width coverage */}
-      <div 
-        className="fixed inset-0 w-screen bg-cover bg-no-repeat z-0"
-        style={{
-          backgroundImage: `url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.webp')`,
-          backgroundPosition: 'center top'
-        }}
-      ></div>
       <div className="relative z-10 min-h-screen">
       <Navbar />
       <Breadcrumbs 
@@ -71,13 +63,26 @@ const Marine = () => {
       />
 
       {/* Hero Section */}
-      <header className="relative text-gold-foreground min-h-screen flex items-center justify-center">
-        <div className="container mx-auto px-6">
+      <header className="relative py-20 md:py-28 overflow-hidden text-white">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/lovable-uploads/e1bc0d57-a486-4aee-bdf8-ca28e3fc9453.webp')" }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-gold/20 text-gold-foreground border-silver-muted backdrop-blur-sm">Marine Division</Badge>
             <p className="text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-silver-muted mb-3">Boutique Auto Protection · Miami</p>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gold-foreground">Professional <span className="text-brand-red">Marine</span> Protection Services Miami</h1>
-            <p className="text-xl text-gold-foreground/80 max-w-2xl mx-auto mb-8">
+            <h1
+              className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg"
+              style={{ textShadow: '0 2px 16px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.4)' }}
+            >
+              Professional <span className="text-brand-red">Marine</span> Protection Services Miami
+            </h1>
+            <p
+              className="text-xl text-white/90 max-w-2xl mx-auto mb-8 drop-shadow-md"
+              style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}
+            >
               Specialized XPEL protection services for boats, yachts, and marine vessels. Expert protection against saltwater, UV damage, and harsh marine environments in South Florida.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
