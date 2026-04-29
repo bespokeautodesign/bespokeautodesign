@@ -73,7 +73,7 @@ export function useGoogleReviews(): UseGoogleReviewsReturn {
         );
         const result = {
           rating: json.rating ?? DEFAULTS.rating,
-          reviewCount: json.userRatingCount ?? DEFAULTS.reviewCount,
+          reviewCount: json.reviewCount ?? DEFAULTS.reviewCount,
           reviews: sortedReviews,
         };
         setData(result);
