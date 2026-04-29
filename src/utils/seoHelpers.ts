@@ -33,7 +33,7 @@ export const providerSchema = {
   "address": { "@type": "PostalAddress", "streetAddress": "7943 NW 64th St", "addressLocality": "Miami", "addressRegion": "FL", "postalCode": "33166", "addressCountry": "US" },
   "telephone": "+1-786-395-9172",
   "geo": { "@type": "GeoCoordinates", "latitude": "25.823", "longitude": "-80.318" },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47", "bestRating": "5", "worstRating": "1" }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "45", "bestRating": "5", "worstRating": "1" }
 };
 
 export { areaServed };
@@ -105,7 +105,7 @@ export const businessSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
-    "reviewCount": "47",
+    "reviewCount": "45",
     "bestRating": "5",
     "worstRating": "1"
   },
