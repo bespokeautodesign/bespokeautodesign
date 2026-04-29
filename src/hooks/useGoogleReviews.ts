@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { GOOGLE_PLACES_API_KEY, GOOGLE_PLACE_ID } from "@/config/places";
 
 const CACHE_KEY = "bespoke-reviews-v2";
 const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
@@ -35,7 +34,7 @@ interface UseGoogleReviewsReturn {
 
 const DEFAULTS: Omit<UseGoogleReviewsReturn, "loading" | "error"> = {
   rating: 5.0,
-  reviewCount: 44,
+  reviewCount: 45,
   reviews: [],
 };
 
@@ -63,14 +62,7 @@ export function useGoogleReviews(): UseGoogleReviewsReturn {
       // ignore cache errors
     }
 
-    const fieldMask = "rating,userRatingCount,reviews.rating,reviews.text,reviews.authorAttribution,reviews.relativePublishTimeDescription,reviews.publishTime";
-
-    fetch(`https://places.googleapis.com/v1/places/${GOOGLE_PLACE_ID}`, {
-      headers: {
-        "X-Goog-Api-Key": GOOGLE_PLACES_API_KEY,
-        "X-Goog-FieldMask": fieldMask,
-      },
-    })
+    fetch(`/api/google-reviews`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
