@@ -46,7 +46,7 @@ const localBusinessSchema = {
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "16:00" }
   ],
   "areaServed": { "@type": "City", "name": "Sunny Isles Beach, FL" },
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47", "bestRating": "5", "worstRating": "1" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "45", "bestRating": "5", "worstRating": "1" },
   "image": "https://www.bespokeauto.design/bespoke-logo.png",
   "sameAs": ["https://www.instagram.com/bespokeautodesign/", "https://www.facebook.com/bespokeautodesign"]
 };
