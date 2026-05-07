@@ -30,6 +30,12 @@ export type CoatingPackage = "entry" | "fusionPlus";
 export type TintPackage = "front2" | "allWindows";
 
 export const WINDSHIELD_ADDON: [number, number] = [180, 250];
+
+// Windshield PPF add-on (rock-chip protection for windshield)
+export const WINDSHIELD_PPF_STANDALONE = 600;
+export const WINDSHIELD_PPF_BUNDLED = 400;
+export const WINDSHIELD_PPF_BUNDLE_SAVINGS = WINDSHIELD_PPF_STANDALONE - WINDSHIELD_PPF_BUNDLED;
+
 export type WrapPackage = "standard" | "premium";
 
 export const ppfPackages: { key: PPFPackage; label: string }[] = [

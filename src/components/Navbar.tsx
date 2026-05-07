@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, ChevronDown, Instagram, Facebook } from "lucide-react";
+import { Phone, ChevronDown, Instagram } from "lucide-react";
 import MobileMenu from "@/components/MobileMenu";
 import { trackPhoneCall } from "@/utils/gadsConversions";
 import { trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
@@ -119,15 +119,6 @@ const Navbar = () => {
               className="hover:text-silver transition-colors"
             >
               <Instagram className="h-3.5 w-3.5" />
-            </a>
-            <a
-              href="https://www.facebook.com/bespokeautodesign"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="hover:text-silver transition-colors"
-            >
-              <Facebook className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>
@@ -256,6 +247,14 @@ const Navbar = () => {
 
                 <Phone className="h-4 w-4" />
                 <span className="hidden 2xl:inline">(786) 395-9172</span>
+              </a>
+              <a
+                href={SMS_NUMBER_HREF}
+                onClick={handleTextUsClick}
+                aria-label="Text us"
+                title="Text us at (786) 395-9172"
+                className="hidden lg:flex items-center justify-center px-3 py-2 rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
+                <IMessageBubbleIcon className="h-4 w-4" />
               </a>
               <Button
                 variant="premium"
