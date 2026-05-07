@@ -1,12 +1,23 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, ChevronDown, Instagram, Facebook, MessageSquare } from "lucide-react";
+import { Phone, ChevronDown, Instagram, Facebook } from "lucide-react";
 import MobileMenu from "@/components/MobileMenu";
 import { trackPhoneCall } from "@/utils/gadsConversions";
 import { trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
 import { QuoteModal } from "@/components/QuoteModal";
 import { SMS_NUMBER_HREF, handleTextUsClick } from "@/lib/smsContact";
+
+const IMessageBubbleIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+    className={className}
+  >
+    <path d="M12 3C6.48 3 2 6.81 2 11.5c0 2.62 1.4 4.96 3.6 6.5-.18 1.07-.78 2.4-1.78 3.4-.2.2-.07.55.21.6 1.97.32 4.06-.18 5.6-1.36.76.16 1.55.26 2.37.26 5.52 0 10-3.81 10-8.5S17.52 3 12 3z" />
+  </svg>
+);
 
 const ppfSubItems = [
 { label: "PPF Packages", href: "/ppf-packages" },
@@ -265,7 +276,7 @@ const Navbar = () => {
                 onClick={handleTextUsClick}
                 aria-label="Text us"
                 className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
-                <MessageSquare className="h-5 w-5" />
+                <IMessageBubbleIcon className="h-5 w-5" />
               </a>
               <div className="lg:hidden">
                 <MobileMenu />
