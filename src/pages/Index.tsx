@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, ArrowRight, Calendar } from "lucide-react";
+import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, ArrowRight, Calendar, MessageSquare } from "lucide-react";
 import Footer from "@/components/Footer";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { HomeFAQ } from "@/components/HomeFAQ";
@@ -24,6 +24,7 @@ import { AnimatedStats } from "@/components/AnimatedStats";
 import { ServiceCategoryCards } from "@/components/ServiceCategoryCards";
 import { GoogleRatingChip } from "@/components/GoogleRatingChip";
 import { GoogleReviewsSection } from "@/components/GoogleReviewsSection";
+import { SMS_NUMBER_HREF, handleTextUsClick } from "@/lib/smsContact";
 import ppfWorkImage from "/lovable-uploads/dc9fb3be-e06e-456a-b5a0-2a2b352dae8a.webp";
 const ceramicWorkImage = "/lovable-uploads/83f64f7b-88e3-468d-9f88-d13e551c6289.webp";
 import vinylWorkImage from "/lovable-uploads/46142ae2-d86c-47ab-bfdb-e96aa4c9b855.webp";
@@ -205,6 +206,15 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                   asChild>
                 <a href="tel:+17863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('hero_cta'); }}>
                   <Phone className="h-5 w-5" /> Call Now
+                </a>
+              </Button>
+              <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-lg px-10 py-5 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300"
+                  asChild>
+                <a href={SMS_NUMBER_HREF} onClick={handleTextUsClick}>
+                  <MessageSquare className="h-5 w-5" /> Text Us
                 </a>
               </Button>
             </div>
@@ -540,7 +550,17 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
                     <a href="mailto:sales@bespokeauto.design" className="text-white/60 hover:text-brand-red transition-colors">sales@bespokeauto.design</a>
                   </div>
                 </div>
-                
+
+                <div className="flex items-start gap-4">
+                  <div className="rounded-full p-3" style={{ backgroundColor: '#222' }}>
+                    <MessageSquare className="h-6 w-6 text-brand-red" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-1 text-white">Text</h3>
+                    <a href={SMS_NUMBER_HREF} onClick={handleTextUsClick} className="text-white/60 hover:text-brand-red transition-colors">(786) 395-9172</a>
+                  </div>
+                </div>
+
                 <div className="flex items-start gap-4">
                   <div className="rounded-full p-3" style={{ backgroundColor: '#222' }}>
                     <MapPin className="h-6 w-6 text-brand-red" />
