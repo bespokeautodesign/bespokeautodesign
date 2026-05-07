@@ -139,12 +139,12 @@ export const LiveChat = () => {
       {!isOpen && (
         <Button
           onClick={() => setIsOpen(true)}
-          className={`fixed right-4 md:right-6 z-50 rounded-full p-0
+          className={`fixed right-4 z-50 rounded-full p-0
             h-11 w-11 md:h-14 md:w-14
             bg-brand-red hover:bg-brand-red-dark text-white
             shadow-[0_4px_14px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_18px_rgba(0,0,0,0.3)]
             transition-shadow
-            bottom-[calc(env(safe-area-inset-bottom,0px)+80px)] md:bottom-6 ${pulse ? "animate-pulse-once" : ""}`}
+            bottom-[calc(env(safe-area-inset-bottom,0px)+16px)] md:bottom-6 ${pulse ? "animate-pulse-once" : ""}`}
           aria-label="Open chat"
         >
           <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
@@ -153,7 +153,10 @@ export const LiveChat = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 w-96 h-[500px] shadow-2xl z-50 flex flex-col border-2">
+        <Card className="fixed z-50 flex flex-col border-2 shadow-2xl
+          inset-x-0 bottom-0 w-full h-[100dvh] rounded-none
+          md:inset-auto md:bottom-6 md:right-6 md:w-96 md:h-[500px] md:rounded-lg"
+          style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground">
             <div className="flex items-center gap-2">
