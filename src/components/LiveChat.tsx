@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -18,6 +19,19 @@ export const LiveChat = () => {
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
+  const [pulse, setPulse] = useState(false);
+  const location = useLocation();
+
+  // Homepage-only: pulse once after 30s of inactivity to draw attention
+  useEffect(() => {
+    if (location.pathname !== "/") return;
+    if (isOpen) return;
+    const t = setTimeout(() => {
+      setPulse(true);
+      setTimeout(() => setPulse(false), 1200);
+    }, 30000);
+    return () => clearTimeout(t);
+  }, [location.pathname, isOpen]);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -125,10 +139,13 @@ export const LiveChat = () => {
       {!isOpen && (
         <Button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg bg-primary hover:bg-primary/90 z-50"
+          className={`fixed right-6 z-50 shadow-lg bg-primary hover:bg-primary/90 rounded-full
+            min-h-[56px] min-w-[56px] h-14 px-4 md:px-0 md:w-14 gap-2 ${pulse ? "animate-pulse-once" : ""}`}
+          style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 12px)" }}
           aria-label="Open chat"
         >
           <MessageCircle className="h-6 w-6" />
+          <span className="md:hidden text-sm font-medium">Ask AI</span>
         </Button>
       )}
 
