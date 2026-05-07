@@ -177,7 +177,8 @@ const InstantQuote = () => {
     if (services.has("wrap") && wrapPkg) items.push(`Color Change Wrap — ${wrapPackages.find(p => p.key === wrapPkg)?.label}`);
     if (windshieldPPF) {
       const bundled = services.has("ppf") && !!ppfPkg;
-      items.push(`Windshield PPF${bundled ? " (bundled −$200)" : ""} — ${bundled ? fmt(WINDSHIELD_PPF_BUNDLED) : fmt(WINDSHIELD_PPF_STANDALONE)}`);
+      const price = bundled ? WINDSHIELD_PPF_BUNDLED : WINDSHIELD_PPF_STANDALONE;
+      items.push(`Windshield PPF${bundled ? " (bundled −$200)" : ""} — $${price.toLocaleString()}`);
     }
     return items;
   }, [services, ppfPkg, coatingPkg, tintPkg, windshieldTint, wrapPkg, windshieldPPF]);
