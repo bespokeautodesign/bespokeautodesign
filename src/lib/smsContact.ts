@@ -1,3 +1,4 @@
+import type React from "react";
 import { toast } from "sonner";
 
 export const SMS_NUMBER_DISPLAY = "(786) 395-9172";
