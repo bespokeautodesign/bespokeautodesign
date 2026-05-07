@@ -21,6 +21,7 @@ import {
   ppfPricing, coatingPricing, tintPricing, wrapPricing,
   PPFPackage, CoatingPackage, TintPackage, WrapPackage,
   WINDSHIELD_ADDON,
+  WINDSHIELD_PPF_STANDALONE, WINDSHIELD_PPF_BUNDLED, WINDSHIELD_PPF_BUNDLE_SAVINGS,
 } from "@/config/pricing";
 
 // ── Vehicle silhouette SVG ─────────────────────────────────
@@ -79,6 +80,7 @@ const InstantQuote = () => {
   const [tintPkg, setTintPkg] = useState<TintPackage | null>(null);
   const [windshieldTint, setWindshieldTint] = useState(false);
   const [wrapPkg, setWrapPkg] = useState<WrapPackage | null>(null);
+  const [windshieldPPF, setWindshieldPPF] = useState(false);
 
   const [formSubmitting, setFormSubmitting] = useState(false);
   const [formError, setFormError] = useState<string | null>(null);
@@ -149,9 +151,14 @@ const InstantQuote = () => {
       const r = wrapPricing[wrapPkg][vehicle];
       min += r[0]; max += r[1];
     }
+    if (windshieldPPF) {
+      const bundled = services.has("ppf") && !!ppfPkg;
+      const price = bundled ? WINDSHIELD_PPF_BUNDLED : WINDSHIELD_PPF_STANDALONE;
+      min += price; max += price;
+    }
     if (min === 0 && max === 0) return null;
     return { min, max };
-  }, [vehicle, services, ppfPkg, coatingPkg, tintPkg, windshieldTint, wrapPkg]);
+  }, [vehicle, services, ppfPkg, coatingPkg, tintPkg, windshieldTint, wrapPkg, windshieldPPF]);
 
   const selectedSummary = useMemo(() => {
     const items: string[] = [];
@@ -168,8 +175,12 @@ const InstantQuote = () => {
       }
     }
     if (services.has("wrap") && wrapPkg) items.push(`Color Change Wrap — ${wrapPackages.find(p => p.key === wrapPkg)?.label}`);
+    if (windshieldPPF) {
+      const bundled = services.has("ppf") && !!ppfPkg;
+      items.push(`Windshield PPF${bundled ? " (bundled −$200)" : ""} — ${bundled ? fmt(WINDSHIELD_PPF_BUNDLED) : fmt(WINDSHIELD_PPF_STANDALONE)}`);
+    }
     return items;
-  }, [services, ppfPkg, coatingPkg, tintPkg, windshieldTint, wrapPkg]);
+  }, [services, ppfPkg, coatingPkg, tintPkg, windshieldTint, wrapPkg, windshieldPPF]);
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: "smooth" });
