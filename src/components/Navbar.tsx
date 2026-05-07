@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, ChevronDown, Instagram, Facebook } from "lucide-react";
+import { Phone, ChevronDown, Instagram, Facebook, MessageSquare } from "lucide-react";
 import MobileMenu from "@/components/MobileMenu";
 import { trackPhoneCall } from "@/utils/gadsConversions";
 import { trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
 import { QuoteModal } from "@/components/QuoteModal";
+import { SMS_NUMBER_HREF, handleTextUsClick } from "@/lib/smsContact";
 
 const ppfSubItems = [
 { label: "PPF Packages", href: "/ppf-packages" },
@@ -94,7 +95,7 @@ const Navbar = () => {
       <div className="hidden md:block bg-[#1a1a1a] border-b border-white/5">
         <div className="container mx-auto px-6 h-9 flex items-center justify-between text-[11px] text-silver-muted">
           <div className="flex items-center gap-3">
-            <span>By Appointment · Mon–Sat 9–6</span>
+            <span>By Appointment · Mon–Fri 9–6 · Sat 10–4</span>
             <span className="text-white/20">|</span>
             <span>Est. 2018</span>
           </div>
@@ -258,6 +259,13 @@ const Navbar = () => {
                 className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
 
                 <Phone className="h-5 w-5" />
+              </a>
+              <a
+                href={SMS_NUMBER_HREF}
+                onClick={handleTextUsClick}
+                aria-label="Text us"
+                className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
+                <MessageSquare className="h-5 w-5" />
               </a>
               <div className="lg:hidden">
                 <MobileMenu />
