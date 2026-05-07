@@ -139,12 +139,15 @@ export const LiveChat = () => {
       {!isOpen && (
         <Button
           onClick={() => setIsOpen(true)}
-          className={`fixed right-4 md:right-6 z-50 shadow-lg bg-primary hover:bg-primary/90 rounded-full
-            min-h-[56px] min-w-[56px] h-14 px-4 md:px-0 md:w-14 gap-2 bottom-[calc(env(safe-area-inset-bottom,0px)+80px)] md:bottom-6 ${pulse ? "animate-pulse-once" : ""}`}
+          className={`fixed right-4 md:right-6 z-50 rounded-full p-0
+            h-11 w-11 md:h-14 md:w-14
+            bg-brand-red hover:bg-brand-red-dark text-white
+            shadow-[0_4px_14px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_18px_rgba(0,0,0,0.3)]
+            transition-shadow
+            bottom-[calc(env(safe-area-inset-bottom,0px)+80px)] md:bottom-6 ${pulse ? "animate-pulse-once" : ""}`}
           aria-label="Open chat"
         >
-          <MessageCircle className="h-6 w-6" />
-          <span className="md:hidden text-sm font-medium">Ask AI</span>
+          <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
         </Button>
       )}
 
