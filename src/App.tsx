@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import { LiveChat } from "@/components/LiveChat";
-import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import React, { Suspense, lazy } from "react";
 
 // Eager load the homepage (critical path)
@@ -88,7 +87,6 @@ const App = () => (
           </Routes>
         </Suspense>
         <LiveChat />
-        <StickyMobileCTA />
       </BrowserRouter>
       
       
