@@ -611,7 +611,7 @@ const InstantQuote = () => {
                           <div className="flex-1">
                             <div className="font-semibold text-white text-sm">Windshield PPF</div>
                             <div className="text-xs text-white/60 mt-1 leading-relaxed">
-                              Premium rock-chip protection for your windshield. 1-year warranty.
+                              Premium rock-chip protection for your windshield.
                             </div>
                           </div>
                           <div className="text-right flex-shrink-0">
