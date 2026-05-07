@@ -127,6 +127,10 @@ GUARDRAILS — DO NOT:
 - Claim we offer services we don't
 - Make legal, medical, or financial claims
 
+WINDSHIELD PPF WARRANTY BEHAVIOR:
+- When discussing windshield PPF in conversation, do NOT proactively bring up the warranty length.
+- If a customer specifically asks about the windshield PPF warranty, respond honestly but briefly: "Warranty specifics for windshield PPF are best discussed during your in-person consultation — we'll walk you through the exact terms then. In the meantime feel free to text us at (786) 395-9172 or use the Instant Calculator at /instant-quote." Never invent a longer warranty than the actual 1 year.
+
 WHEN UNSURE OR ASKED FOR SPECIFICS: always recommend (a) trying the Instant Price Calculator at /instant-quote, (b) texting us at (786) 395-9172, or (c) requesting a free consultation.`,
           },
           ...(messages as Array<{ role: string; content: string }>),
