@@ -581,6 +581,66 @@ const InstantQuote = () => {
                 </Accordion>
               </div>
             )}
+
+            {/* GROUP 4: Add-Ons */}
+            <div>
+              <h2 className="font-playfair text-xl md:text-2xl font-bold text-white mb-5 flex items-center gap-2">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-silver/15 text-silver text-sm font-bold border border-silver-muted/40">{services.size > 0 ? 4 : 3}</span>
+                Add-Ons
+              </h2>
+              <div className="space-y-3">
+                {(() => {
+                  const bundled = services.has("ppf") && !!ppfPkg;
+                  const price = bundled ? WINDSHIELD_PPF_BUNDLED : WINDSHIELD_PPF_STANDALONE;
+                  return (
+                    <button
+                      onClick={() => setWindshieldPPF(prev => !prev)}
+                      className={`w-full p-4 rounded-lg border-2 text-left flex items-start gap-3 transition-all duration-200 ${
+                        windshieldPPF
+                          ? "border-silver bg-silver/10 shadow-[0_0_16px_rgba(222,217,208,0.15)]"
+                          : "border-[#333] bg-[#1a1a1a] hover:border-[#555] hover:bg-[#222]"
+                      }`}
+                    >
+                      <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 mt-0.5 ${
+                        windshieldPPF ? "border-silver bg-silver" : "border-[#555]"
+                      }`}>
+                        {windshieldPPF && <Check className="w-3 h-3 text-black" />}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="flex-1">
+                            <div className="font-semibold text-white text-sm">Windshield PPF</div>
+                            <div className="text-xs text-white/60 mt-1 leading-relaxed">
+                              Premium rock-chip protection for your windshield. 1-year warranty.
+                            </div>
+                          </div>
+                          <div className="text-right flex-shrink-0">
+                            {bundled ? (
+                              <>
+                                <div className="flex items-center gap-2 justify-end">
+                                  <span className="text-xs text-white/40 line-through">${WINDSHIELD_PPF_STANDALONE}</span>
+                                  <span className="text-base font-bold text-brand-red">${WINDSHIELD_PPF_BUNDLED}</span>
+                                </div>
+                                <span className="inline-block mt-1 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                                  Bundle saving: −${WINDSHIELD_PPF_BUNDLE_SAVINGS}
+                                </span>
+                              </>
+                            ) : (
+                              <div className="text-base font-bold text-brand-red">${price}</div>
+                            )}
+                          </div>
+                        </div>
+                        {!bundled && (
+                          <div className="text-[11px] text-white/50 mt-2">
+                            Save ${WINDSHIELD_PPF_BUNDLE_SAVINGS} when bundled with a Full Front, Track, or Full Body PPF package.
+                          </div>
+                        )}
+                      </div>
+                    </button>
+                  );
+                })()}
+              </div>
+            </div>
           </div>
 
           {/* Right — sticky price card (desktop sidebar / mobile bottom) */}
