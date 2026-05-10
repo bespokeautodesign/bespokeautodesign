@@ -32,6 +32,7 @@ const marineSubItems = [
 const serviceAreaItems = [
   { label: "Brickell", href: "/service-areas/brickell" },
   { label: "Coral Gables", href: "/service-areas/coral-gables" },
+  { label: "Design District", href: "/service-areas/design-district" },
   { label: "Bal Harbour", href: "/service-areas/bal-harbour" },
   { label: "Key Biscayne", href: "/service-areas/key-biscayne" },
   { label: "Sunny Isles", href: "/service-areas/sunny-isles" },

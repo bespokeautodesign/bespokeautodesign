@@ -35,6 +35,7 @@ const ServiceAreaCoconutGrove = lazy(() => import("./pages/ServiceAreaCoconutGro
 const ServiceAreaSunnyIsles = lazy(() => import("./pages/ServiceAreaSunnyIsles"));
 const ServiceAreaAventura = lazy(() => import("./pages/ServiceAreaAventura"));
 const ServiceAreaMiamiBeach = lazy(() => import("./pages/ServiceAreaMiamiBeach"));
+const ServiceAreaDesignDistrict = lazy(() => import("./pages/ServiceAreaDesignDistrict"));
 
 const queryClient = new QueryClient();
 
@@ -82,6 +83,7 @@ const App = () => (
             <Route path="/service-areas/sunny-isles" element={<ServiceAreaSunnyIsles />} />
             <Route path="/service-areas/aventura" element={<ServiceAreaAventura />} />
             <Route path="/service-areas/miami-beach" element={<ServiceAreaMiamiBeach />} />
+            <Route path="/service-areas/design-district" element={<ServiceAreaDesignDistrict />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
