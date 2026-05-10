@@ -36,6 +36,14 @@ const ServiceAreaSunnyIsles = lazy(() => import("./pages/ServiceAreaSunnyIsles")
 const ServiceAreaAventura = lazy(() => import("./pages/ServiceAreaAventura"));
 const ServiceAreaMiamiBeach = lazy(() => import("./pages/ServiceAreaMiamiBeach"));
 const ServiceAreaDesignDistrict = lazy(() => import("./pages/ServiceAreaDesignDistrict"));
+const ServiceAreaPinecrest = lazy(() => import("./pages/ServiceAreaPinecrest"));
+const ServiceAreaDoral = lazy(() => import("./pages/ServiceAreaDoral"));
+const ServiceAreaFisherIsland = lazy(() => import("./pages/ServiceAreaFisherIsland"));
+const ServiceAreaStarIsland = lazy(() => import("./pages/ServiceAreaStarIsland"));
+const ServiceAreaIndianCreek = lazy(() => import("./pages/ServiceAreaIndianCreek"));
+const ServiceAreaSurfside = lazy(() => import("./pages/ServiceAreaSurfside"));
+const ServiceAreaWynwood = lazy(() => import("./pages/ServiceAreaWynwood"));
+const ServiceAreaFortLauderdale = lazy(() => import("./pages/ServiceAreaFortLauderdale"));
 
 const queryClient = new QueryClient();
 
@@ -84,6 +92,14 @@ const App = () => (
             <Route path="/service-areas/aventura" element={<ServiceAreaAventura />} />
             <Route path="/service-areas/miami-beach" element={<ServiceAreaMiamiBeach />} />
             <Route path="/service-areas/design-district" element={<ServiceAreaDesignDistrict />} />
+            <Route path="/service-areas/pinecrest" element={<ServiceAreaPinecrest />} />
+            <Route path="/service-areas/doral" element={<ServiceAreaDoral />} />
+            <Route path="/service-areas/fisher-island" element={<ServiceAreaFisherIsland />} />
+            <Route path="/service-areas/star-island" element={<ServiceAreaStarIsland />} />
+            <Route path="/service-areas/indian-creek" element={<ServiceAreaIndianCreek />} />
+            <Route path="/service-areas/surfside" element={<ServiceAreaSurfside />} />
+            <Route path="/service-areas/wynwood" element={<ServiceAreaWynwood />} />
+            <Route path="/service-areas/fort-lauderdale" element={<ServiceAreaFortLauderdale />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

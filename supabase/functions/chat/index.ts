@@ -87,7 +87,7 @@ BUSINESS FACTS (authoritative — never modify or invent):
 - Phone: (786) 395-9172 — customers can call OR text (text is preferred by many)
 - Hours: Monday–Friday 9am–6pm, Saturday 10am–4pm by appointment, closed Sunday
 - Current booking window: typically 1–2 weeks out. For urgent availability, customers should call (786) 395-9172.
-- Service areas: Miami, Brickell, Coral Gables, Coconut Grove, Key Biscayne, Aventura, Sunny Isles, Bal Harbour, Miami Beach, Design District, Doral, South Florida
+- Service areas: Miami, Brickell, Coral Gables, Coconut Grove, Key Biscayne, Aventura, Sunny Isles, Bal Harbour, Miami Beach, Design District, Doral, Pinecrest, Surfside, Wynwood, Fisher Island, Star Island, Indian Creek, Fort Lauderdale, South Florida
 
 SERVICES OFFERED:
 1. Paint Protection Film (PPF) using XPEL Ultimate Plus and STEALTH variants

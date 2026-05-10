@@ -102,12 +102,92 @@ const SERVICE_AREAS = [
   {
     slug: "design-district",
     name: "Design District",
-    metaLine: "Premium protection for luxury and exotic vehicles in Miami's Design District. PPF, ceramic coating, and ceramic tint serving gallery district residents.",
+    metaLine: "XPEL paint protection film, ceramic coating, color change wraps, and tint for Design District residents and showroom-grade daily drivers. 11 minutes to our climate-controlled bay.",
     body: `
-      <p>Bespoke Auto Design is the Design District's premier XPEL Authorized Dealer for paint protection film, ceramic coating, and ceramic window tint installation. Located between Wynwood and Midtown Miami, this neighborhood's luxury condos, art galleries, and high-end retail attract a discerning clientele with equally refined vehicles — from daily-driven Range Rovers and G-Wagons to weekend Ferraris, Lamborghinis, and McLarens displayed alongside the district's world-class art.</p>
-      <p>Design District vehicles face a distinctive urban environment. The daily commute crosses the I-195 and Julia Tuttle Causeway — some of Miami's most debris-heavy stretches — while gallery-hopping and retail parking along NE 2nd Avenue and NE 40th Street expose paint to door dings, shopping cart encounters, and the relentless UV that reflects off concrete and glass. XPEL Ultimate Plus PPF absorbs highway rock chips and self-heals minor scratches, maintaining the flawless finish that complements the Design District's curated aesthetic.</p>
-      <p>Ceramic coating is essential for vehicles parked in the Design District's valet-heavy, sun-exposed environment. XPEL Fusion Plus nano-ceramic coating creates a hydrophobic UV-resistant barrier that prevents oxidation, water spots, and fading — keeping your vehicle's finish as pristine as the gallery walls surrounding it. Combined with XPEL Prime XR Plus ceramic window tint that blocks 98% of infrared heat and 99% of UV radiation, your vehicle stays cooler and protected through every season.</p>
-      <p>Our climate-controlled facility at 7943 NW 64th St is approximately 15-20 minutes north of the Design District via I-195 W to I-95 N. We offer concierge pickup and return from Design District condos and galleries — coordinate it when you request your quote and we handle the logistics. Full-front PPF installations take 1-2 days; full-body coverage 4-7 days. Currently booking 1-2 weeks out. Call (786) 395-9172 or request a free quote online — we respond within 30 minutes during business hours.</p>
+      <p>Bespoke Auto Design protects the Design District's showroom-grade daily drivers and exotic weekenders — XPEL Ultimate Plus on gloss, Stealth on matte, full color change in premium 3M, Avery Dennison, and KPMF films, all installed in our climate-controlled Doral bay 11 minutes away.</p>
+      <p>Your car is parked between Louis Vuitton and Hermès — the finish needs to look like it came off a stand at the ICA Miami. XPEL Ultimate Plus or Stealth applied in a sealed climate-controlled bay holds that finish for a decade. Custom XPEL Color PPF in 16 shades plus premium wrap films give you reversible color change without committing to paint.</p>
+      <p>We also work with several Design District-adjacent dealerships on new-delivery PPF and ceramic — ask about the delivery-day full-front package. Concierge pickup from your residence, retail location, or dealership service drop-off is recommended given the District's parking constraints.</p>
+      <p>Call (786) 395-9172 or request a free quote — we respond within 30 minutes during business hours.</p>
+    `,
+  },
+  {
+    slug: "pinecrest",
+    name: "Pinecrest",
+    metaLine: "XPEL-certified paint protection film, ceramic coating, and window tint for Pinecrest's luxury daily drivers and family SUVs. Climate-controlled install, concierge pickup.",
+    body: `
+      <p>Bespoke Auto Design protects Pinecrest families' daily drivers, weekend Teslas, and well-loved SUVs from Miami's harshest sun, sand, and sealcoat — installed in our climate-controlled Doral facility just up the Palmetto. XPEL Ultimate Plus PPF absorbs rock chips, lovebug splatter, and parking-lot dings without yellowing or peeling.</p>
+      <p>Most Pinecrest homes have long, exposed driveways. XPEL Fusion Plus ceramic coating adds a hydrophobic UV barrier that defends against oxidation and water spots from sprinklers — the two killers of South Florida paint.</p>
+      <p>Concierge pickup from Pinecrest homes, US-1 offices, and the US-1/Palmetto corridor is available — most pickups happen between 8–10 AM with same-day return between 4–6 PM for tint and small jobs. Call (786) 395-9172 or request a free quote online.</p>
+    `,
+  },
+  {
+    slug: "doral",
+    name: "Doral",
+    metaLine: "Doral's only XPEL Authorized Dealer with a climate-controlled install bay. Paint protection film, ceramic coating, and tint for daily drivers, executive fleets, and exotics — 6 minutes from Trump National.",
+    body: `
+      <p>Bespoke Auto Design is Doral's neighborhood XPEL studio. Located at 7943 NW 64th St, we're the closest XPEL Authorized Dealer to Doral residents and businesses — 6 minutes from the central business district. Drop off before a meeting at Trump National, walk over for lunch at Downtown Doral, pick up before sundown.</p>
+      <p>Doral professionals split their day between client sites across Miami-Dade. XPEL Ultimate Plus PPF protects against the rock chips, sand, and construction debris that come with that many freeway miles. Spanish-speaking clients are welcome — Alessandro handles every consultation personally.</p>
+      <p>Same-day turnaround for tint, front-half PPF, and quick coatings. Larger installs (full body, multi-stage paint correction) are coordinated to minimize daily-driver disruption. Call (786) 395-9172 or stop in.</p>
+    `,
+  },
+  {
+    slug: "fisher-island",
+    name: "Fisher Island",
+    metaLine: "Fully discreet XPEL paint protection film, ceramic coating, and window tint for Fisher Island residents. Climate-controlled install, ferry-terminal concierge transport, full NDA discretion.",
+    body: `
+      <p>Bespoke Auto Design coordinates fully discreet concierge transport from Fisher Island. Your vehicle is collected mainland-side at the Fisher Island Club ferry terminal by Alessandro or a vetted transport partner — fully insured, fully discreet, no public drop-off required.</p>
+      <p>NDA-level discretion is standard. No photos, no social media, no third-party detailers. Every install is performed personally by Alessandro in our climate-controlled bay, with the vehicle returned exactly as it left.</p>
+      <p>XPEL Ultimate Plus for gloss finishes and XPEL Stealth for matte and satin OEM finishes — both carry a 10-year manufacturer warranty when professionally installed. Multi-vehicle installs sequenced to minimize household disruption. Call (786) 395-9172 to coordinate.</p>
+    `,
+  },
+  {
+    slug: "star-island",
+    name: "Star Island",
+    metaLine: "Discreet XPEL PPF, ceramic coating, and tint for Star Island residents. Concierge pickup via MacArthur, climate-controlled install, NDA-level privacy. Personally installed by Alessandro.",
+    body: `
+      <p>Bespoke Auto Design coordinates concierge transport from Star Island via MacArthur Causeway — your vehicle is protected in our climate-controlled Doral facility under full discretion, with no public drop-off, photos, or third-party handlers.</p>
+      <p>Vehicle is collected at your gate, transported under cover when requested, and returned on your schedule. No social media, no public photos. NDA available on request. Alessandro handles every install personally.</p>
+      <p>XPEL Ultimate Plus on gloss, XPEL Stealth on matte and satin — the films we recommend on hypercar paint. One bay, one vehicle, one day. Multi-car installs sequenced to keep your fleet operational. Call (786) 395-9172.</p>
+    `,
+  },
+  {
+    slug: "indian-creek",
+    name: "Indian Creek",
+    metaLine: "Strictly discreet XPEL PPF, ceramic coating, and tint for Indian Creek residents. Concierge transport, climate-controlled install, NDA standard, off-hours coordination.",
+    body: `
+      <p>Bespoke Auto Design provides the most discreet automotive protection service available to Indian Creek's 41 residences — concierge transport across the bridge, climate-controlled install, NDA on file, and off-hours return when required.</p>
+      <p>Coordinated directly with your security detail or estate manager. Vehicle collected at the gate by Alessandro or a single vetted transport, no third-party handlers. NDA on file. No social posts, no portfolio inclusion, no client list mention.</p>
+      <p>XPEL Ultimate Plus (gloss) or Stealth (matte/satin), one vehicle per bay, documented privately, returned to specification. Off-hours drop-off and return available with 48-hour notice. Call (786) 395-9172.</p>
+    `,
+  },
+  {
+    slug: "surfside",
+    name: "Surfside",
+    metaLine: "XPEL paint protection film, ceramic coating, and window tint for Surfside daily drivers, beach SUVs, and luxury weekend cars. Salt-air protection, climate-controlled install.",
+    body: `
+      <p>Bespoke Auto Design protects Surfside's beachfront daily drivers and weekend specials from salt-air corrosion, sand abrasion, and sun-baked paint oxidation — installed in our climate-controlled facility just 25 minutes west.</p>
+      <p>Surfside's oceanfront block puts cars in constant salt-spray contact. XPEL Fusion Plus ceramic coating creates a hydrophobic barrier that prevents salt accumulation and oxidation. XPEL Ultimate Plus PPF absorbs daily sand abrasion and seasonal lovebug splatter that etches unprotected paint within hours.</p>
+      <p>Many Surfside condos have semi-open garage decks — XPEL Prime XR Plus ceramic tint blocks 98% of infrared heat, keeping interiors cool and reducing dashboard cracking. Concierge pickup from any Surfside address available. Call (786) 395-9172.</p>
+    `,
+  },
+  {
+    slug: "wynwood",
+    name: "Wynwood",
+    metaLine: "Color change wraps, XPEL Stealth matte PPF, ceramic coating, and tint for Wynwood's creative class. 3M, Avery, KPMF films. 12 minutes from Wynwood Walls.",
+    body: `
+      <p>Bespoke Auto Design is Wynwood's neighborhood studio for statement vehicles — XPEL Stealth matte conversions, custom-color PPF, full color change wraps in 3M 1080, Avery Dennison Supreme, and KPMF K75400, and ceramic protection for the daily driver.</p>
+      <p>Hundreds of finishes including satin, matte, gloss, chrome, and color-shift. Fully removable, paint-safe, and reversible. Custom XPEL Color PPF in 16 shades for color change without paint, with self-healing PPF underneath — the right move for leased exotics and fashion-forward dailies.</p>
+      <p>Walk-in consultations welcome — bring inspiration photos and we'll mock up the wrap or PPF combination. With your written permission, we'll photograph and document your install for social use. Call (786) 395-9172.</p>
+    `,
+  },
+  {
+    slug: "fort-lauderdale",
+    name: "Fort Lauderdale",
+    metaLine: "XPEL paint protection film, ceramic coating, and tint for Fort Lauderdale daily drivers and exotic owners. Broward concierge pickup, climate-controlled Miami install bay.",
+    body: `
+      <p>Bespoke Auto Design serves Fort Lauderdale's Las Olas residents, Coral Ridge daily drivers, and Rio Vista yachting community with concierge pickup, climate-controlled installs, and the same XPEL-Authorized service trusted by Miami's exotic owners.</p>
+      <p>Daily Broward concierge pickup from Las Olas, Coral Ridge, Rio Vista, Harbor Beach, Lauderdale-by-the-Sea, and Pompano. Your vehicle is collected, protected in our climate-controlled bay, and returned on your schedule — without you crossing the county line.</p>
+      <p>Range Rover SVRs, G-Wagons, Bentaygas, and full-size SUVs come standard in Fort Lauderdale — we've installed full body PPF on every one. Beyond the car: marine PPF on hulls, ceramic coating on gelcoat, ceramic tint on yacht windshields. One studio, both garages. Call (786) 395-9172.</p>
     `,
   },
 ];
