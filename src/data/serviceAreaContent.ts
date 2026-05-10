@@ -26,7 +26,7 @@ const standardServices = [
   { title: "Color Change Wrap", price: "$2,500", link: "/color-change-wrap", desc: "Premium 3M, Avery Dennison, and KPMF vinyl wraps in hundreds of finishes — fully removable, paint-safe." },
 ];
 
-const discreetServices = [
+const conciergeServices = [
   { title: "Paint Protection Film", price: "$1,499", link: "/paint-protection-film", desc: "XPEL Ultimate Plus on gloss, Stealth on matte and satin — the films we use on hypercar paint." },
   { title: "Ceramic Coating", price: "$599", link: "/ceramic-coating", desc: "XPEL Fusion Plus nano-ceramic coating, climate-controlled application, 10-year manufacturer warranty." },
   { title: "Ceramic Window Tint", price: "$150", link: "/ceramic-tint", desc: "XPEL Prime XR Plus — true heat rejection without compromising visibility or factory glass tone." },
@@ -110,7 +110,7 @@ export const serviceAreaContent: ServiceAreaContent[] = [
       { icon: "sun", title: "Content-Worthy Process, Camera-Ready Finish", text: "Every install is documented under controlled lighting. The result is photo- and video-quality content you can post — and that lives on our Instagram (@bespokeautodesign) when you give us the green light." },
       { icon: "thermo", title: "Multi-Vehicle Household Scheduling", text: "Most Fisher Island clients have more than one car. We sequence installs so at least one vehicle is always operational, with transport coordination handled directly with your house manager." },
     ],
-    services: discreetServices,
+    services: conciergeServices,
     gettingTitle: "Getting to Bespoke From Fisher Island",
     gettingBody: "We coordinate ferry-terminal pickup directly with your residence or house manager — no public drop-off required. Vehicles are transported under cover when requested, installed in our climate-controlled Doral bay, and returned camera-ready with full before-and-after documentation.",
     faq: [
@@ -138,7 +138,7 @@ export const serviceAreaContent: ServiceAreaContent[] = [
       { icon: "sun", title: "Camera-Ready Documentation", text: "Every install is shot under controlled lighting and color-corrected. The finished car comes back with social-ready content you can post immediately. Featured builds also land on our Instagram (@bespokeautodesign) when you give us the go-ahead." },
       { icon: "thermo", title: "Showroom-Grade Climate-Controlled Install", text: "PPF and ceramic only perform when installed in temperature- and humidity-controlled conditions. Our purpose-built bay is the difference between a 10-year warranty job and a 6-month peel." },
     ],
-    services: discreetServices,
+    services: conciergeServices,
     gettingTitle: "Getting to Bespoke From Star Island",
     gettingBody: "We pick up at your gate via the MacArthur Causeway and transport directly to our Doral facility (approximately 18 minutes from the Star Island bridge). Optional enclosed transport for matte, satin, or unique-spec vehicles. Return on your schedule — same day for tint, next day for PPF Full Front, sequenced for full-body installs.",
     faq: [
@@ -166,7 +166,7 @@ export const serviceAreaContent: ServiceAreaContent[] = [
       { icon: "thermo", title: "Estate-Manager Friendly Scheduling", text: "We coordinate directly with house managers and security teams, sequence multi-vehicle installs to keep at least one car operational, and handle every logistic detail from gate pickup to gate return." },
       { icon: "sun", title: "Camera-Ready Documentation", text: "Every install is shot under controlled lighting and color-corrected. You get the content for your own use, and featured builds land on our Instagram (@bespokeautodesign) when you give the go-ahead." },
     ],
-    services: discreetServices,
+    services: conciergeServices,
     gettingTitle: "Getting to Bespoke From Indian Creek",
     gettingBody: "We coordinate transport across the single bridge from Surfside directly to our Doral facility (approximately 25 minutes). Optional enclosed transport for any matte, satin, or unique-spec vehicle. Multi-vehicle households get sequenced installs with daily transport coordination handled by us.",
     faq: [
