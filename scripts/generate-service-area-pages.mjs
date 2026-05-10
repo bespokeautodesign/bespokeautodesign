@@ -99,6 +99,17 @@ const SERVICE_AREAS = [
       <p>Our facility is approximately 20 minutes from Coconut Grove via US-1 North and I-95. We offer concierge pickup from Grove residences and can coordinate with marina staff for marine projects. Call (786) 395-9172 for a free quote on automotive or marine protection — we respond within 30 minutes during business hours.</p>
     `,
   },
+  {
+    slug: "design-district",
+    name: "Design District",
+    metaLine: "Premium protection for luxury and exotic vehicles in Miami's Design District. PPF, ceramic coating, and ceramic tint serving gallery district residents.",
+    body: `
+      <p>Bespoke Auto Design is the Design District's premier XPEL Authorized Dealer for paint protection film, ceramic coating, and ceramic window tint installation. Located between Wynwood and Midtown Miami, this neighborhood's luxury condos, art galleries, and high-end retail attract a discerning clientele with equally refined vehicles — from daily-driven Range Rovers and G-Wagons to weekend Ferraris, Lamborghinis, and McLarens displayed alongside the district's world-class art.</p>
+      <p>Design District vehicles face a distinctive urban environment. The daily commute crosses the I-195 and Julia Tuttle Causeway — some of Miami's most debris-heavy stretches — while gallery-hopping and retail parking along NE 2nd Avenue and NE 40th Street expose paint to door dings, shopping cart encounters, and the relentless UV that reflects off concrete and glass. XPEL Ultimate Plus PPF absorbs highway rock chips and self-heals minor scratches, maintaining the flawless finish that complements the Design District's curated aesthetic.</p>
+      <p>Ceramic coating is essential for vehicles parked in the Design District's valet-heavy, sun-exposed environment. XPEL Fusion Plus nano-ceramic coating creates a hydrophobic UV-resistant barrier that prevents oxidation, water spots, and fading — keeping your vehicle's finish as pristine as the gallery walls surrounding it. Combined with XPEL Prime XR Plus ceramic window tint that blocks 98% of infrared heat and 99% of UV radiation, your vehicle stays cooler and protected through every season.</p>
+      <p>Our climate-controlled facility at 7943 NW 64th St is approximately 15-20 minutes north of the Design District via I-195 W to I-95 N. We offer concierge pickup and return from Design District condos and galleries — coordinate it when you request your quote and we handle the logistics. Full-front PPF installations take 1-2 days; full-body coverage 4-7 days. Currently booking 1-2 weeks out. Call (786) 395-9172 or request a free quote online — we respond within 30 minutes during business hours.</p>
+    `,
+  },
 ];
 
 for (const area of SERVICE_AREAS) {
