@@ -29,6 +29,7 @@
 
 - [Brickell](https://www.bespokeauto.design/service-areas/brickell)
 - [Coral Gables](https://www.bespokeauto.design/service-areas/coral-gables)
+- [Design District](https://www.bespokeauto.design/service-areas/design-district)
 - [Coconut Grove](https://www.bespokeauto.design/service-areas/coconut-grove)
 - [Key Biscayne](https://www.bespokeauto.design/service-areas/key-biscayne)
 - [Aventura](https://www.bespokeauto.design/service-areas/aventura)
