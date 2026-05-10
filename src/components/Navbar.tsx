@@ -39,6 +39,14 @@ const serviceAreaItems = [
   { label: "Coconut Grove", href: "/service-areas/coconut-grove" },
   { label: "Aventura", href: "/service-areas/aventura" },
   { label: "Miami Beach", href: "/service-areas/miami-beach" },
+  { label: "Pinecrest", href: "/service-areas/pinecrest" },
+  { label: "Doral", href: "/service-areas/doral" },
+  { label: "Surfside", href: "/service-areas/surfside" },
+  { label: "Wynwood", href: "/service-areas/wynwood" },
+  { label: "Fisher Island", href: "/service-areas/fisher-island" },
+  { label: "Star Island", href: "/service-areas/star-island" },
+  { label: "Indian Creek", href: "/service-areas/indian-creek" },
+  { label: "Fort Lauderdale", href: "/service-areas/fort-lauderdale" },
 ];
 
 const navItemsBefore = [

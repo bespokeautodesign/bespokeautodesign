@@ -36,6 +36,14 @@
 - [Sunny Isles](https://www.bespokeauto.design/service-areas/sunny-isles)
 - [Bal Harbour](https://www.bespokeauto.design/service-areas/bal-harbour)
 - [Miami Beach](https://www.bespokeauto.design/service-areas/miami-beach)
+- [Pinecrest](https://www.bespokeauto.design/service-areas/pinecrest)
+- [Doral](https://www.bespokeauto.design/service-areas/doral)
+- [Surfside](https://www.bespokeauto.design/service-areas/surfside)
+- [Wynwood](https://www.bespokeauto.design/service-areas/wynwood)
+- [Fisher Island](https://www.bespokeauto.design/service-areas/fisher-island)
+- [Star Island](https://www.bespokeauto.design/service-areas/star-island)
+- [Indian Creek](https://www.bespokeauto.design/service-areas/indian-creek)
+- [Fort Lauderdale](https://www.bespokeauto.design/service-areas/fort-lauderdale)
 
 ## Key facts
 
