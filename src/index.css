@@ -177,6 +177,22 @@
     right: 0;
     bottom: 0;
   }
+
+  .eyebrow-tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 0.75rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  @media (min-width: 768px) {
+    .eyebrow-tag {
+      font-size: 0.75rem;
+    }
+  }
 }
 
 /* Bodoni Moda title treatment — applied wherever the `font-playfair`
