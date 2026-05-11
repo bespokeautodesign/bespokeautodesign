@@ -34,7 +34,7 @@ interface UseGoogleReviewsReturn {
 
 const DEFAULTS: Omit<UseGoogleReviewsReturn, "loading" | "error"> = {
   rating: 5.0,
-  reviewCount: 45,
+  reviewCount: 46,
   reviews: [],
 };
 
