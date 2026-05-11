@@ -179,6 +179,16 @@
   }
 }
 
+/* Bodoni Moda title treatment — applied wherever the `font-playfair`
+   utility is used (all hero h1s, section h2s, final CTA titles). */
+@layer base {
+  .font-playfair {
+    font-family: "Bodoni Moda", serif;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+}
+
 /* Crawler-safe animation defaults: ensure animated elements are visible
    even when animations don't run (e.g. bots that skip scroll/JS triggers) */
 @layer utilities {

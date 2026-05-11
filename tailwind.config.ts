@@ -19,7 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'playfair': ['Libre Caslon Display', 'serif'],
+				'playfair': ['"Bodoni Moda"', 'serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
