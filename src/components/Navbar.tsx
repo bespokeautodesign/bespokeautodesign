@@ -134,7 +134,7 @@ const Navbar = () => {
       </div>
       <nav className={`sticky top-0 z-50 bg-[hsl(var(--nav-bg))] border-b border-[hsl(var(--nav-border))] transition-all duration-500 ${scrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : ""}`}>
         <div className="container mx-auto px-6 py-3">
-          <div className="flex items-center justify-between gap-6 min-w-0">
+          <div className="flex items-center justify-between gap-6 lg:gap-8 min-w-0">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
               <img
@@ -153,7 +153,7 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-0.5 xl:gap-1 min-w-0">
+            <div className="hidden lg:flex items-center gap-0.5 xl:gap-1 min-w-0 overflow-hidden">
               {/* PPF Dropdown */}
               <div className="relative" ref={dropdownRef} onMouseLeave={() => setPpfOpen(false)}>
                 <Link
@@ -249,7 +249,7 @@ const Navbar = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="flex items-center gap-2 flex-shrink-0 ml-2 lg:ml-4">
               <a
                 href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('header'); }}
                 className="hidden lg:flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
