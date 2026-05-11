@@ -171,12 +171,8 @@ const Navbar = () => {
             </Link>
 
             {/* XPEL Authorized Dealer — centered credential */}
-            <div className="hidden md:flex flex-col items-center justify-self-center">
-              <img
-                src={xpelLogo}
-                alt="XPEL"
-                className="h-10 lg:h-12 w-auto brightness-0 invert opacity-90"
-              />
+            <div className="hidden md:flex items-center justify-self-center">
+              <XPELLogoNav className="h-10 lg:h-12 w-auto text-white opacity-90" />
             </div>
 
             {/* Right utility CTAs */}
