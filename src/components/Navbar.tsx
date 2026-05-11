@@ -7,6 +7,7 @@ import { trackPhoneCall } from "@/utils/gadsConversions";
 import { trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
 import { QuoteModal } from "@/components/QuoteModal";
 import { SMS_NUMBER_HREF, handleTextUsClick } from "@/lib/smsContact";
+import xpelLogo from "@/assets/xpel-logo.svg";
 
 const IMessageBubbleIcon = ({ className }: { className?: string }) => (
   <svg
