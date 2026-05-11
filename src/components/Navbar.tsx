@@ -30,22 +30,22 @@ const marineSubItems = [
 { label: "Marine Ceramic Tint", href: "/marine-ceramic-tint" }];
 
 const serviceAreaItems = [
-  { label: "Brickell", href: "/service-areas/brickell" },
-  { label: "Coral Gables", href: "/service-areas/coral-gables" },
-  { label: "Design District", href: "/service-areas/design-district" },
-  { label: "Bal Harbour", href: "/service-areas/bal-harbour" },
-  { label: "Key Biscayne", href: "/service-areas/key-biscayne" },
-  { label: "Sunny Isles", href: "/service-areas/sunny-isles" },
-  { label: "Coconut Grove", href: "/service-areas/coconut-grove" },
   { label: "Aventura", href: "/service-areas/aventura" },
+  { label: "Bal Harbour", href: "/service-areas/bal-harbour" },
+  { label: "Brickell", href: "/service-areas/brickell" },
+  { label: "Coconut Grove", href: "/service-areas/coconut-grove" },
+  { label: "Coral Gables", href: "/service-areas/coral-gables" },
+  { label: "Key Biscayne", href: "/service-areas/key-biscayne" },
   { label: "Miami Beach", href: "/service-areas/miami-beach" },
+  { label: "Sunny Isles", href: "/service-areas/sunny-isles" },
   { label: "Pinecrest", href: "/service-areas/pinecrest" },
   { label: "Doral", href: "/service-areas/doral" },
-  { label: "Surfside", href: "/service-areas/surfside" },
-  { label: "Wynwood", href: "/service-areas/wynwood" },
   { label: "Fisher Island", href: "/service-areas/fisher-island" },
   { label: "Star Island", href: "/service-areas/star-island" },
   { label: "Indian Creek", href: "/service-areas/indian-creek" },
+  { label: "Surfside", href: "/service-areas/surfside" },
+  { label: "Wynwood", href: "/service-areas/wynwood" },
+  { label: "Design District", href: "/service-areas/design-district" },
   { label: "Fort Lauderdale", href: "/service-areas/fort-lauderdale" },
 ];
 
@@ -153,7 +153,7 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-0.5 xl:gap-1 min-w-0 overflow-hidden">
+            <div className="hidden xl:flex items-center gap-0.5 xl:gap-1 min-w-0 overflow-hidden">
               {/* PPF Dropdown */}
               <div className="relative" ref={dropdownRef} onMouseLeave={() => setPpfOpen(false)}>
                 <Link
@@ -222,9 +222,16 @@ const Navbar = () => {
                 </NavLink>
               )}
 
+            </div>
+
+            {/* CTAs */}
+            <div className="flex items-center gap-2 xl:gap-3 flex-shrink-0 ml-2 xl:ml-5">
               {/* Service Areas Dropdown */}
-              <div className="relative" ref={areasDropdownRef} onMouseLeave={() => setAreasOpen(false)}>
+              <div className="relative hidden xl:block mr-1" ref={areasDropdownRef} onMouseLeave={() => setAreasOpen(false)}>
                 <button
+                  type="button"
+                  aria-expanded={areasOpen}
+                  onClick={() => setAreasOpen((open) => !open)}
                   onMouseEnter={() => setAreasOpen(true)}
                   className={`flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md text-xs xl:text-sm whitespace-nowrap transition-all duration-300 ${
                   isAreasActive ?
@@ -235,8 +242,8 @@ const Navbar = () => {
                   <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${areasOpen ? "rotate-180" : ""}`} />
                 </button>
                 {areasOpen &&
-                <div className={dropdownClasses}>
-                    <div className={`w-52 ${dropdownInnerClasses}`}>
+                <div className="absolute top-full right-0 pt-3">
+                    <div className={`w-96 max-w-[calc(100vw-2rem)] grid grid-cols-2 ${dropdownInnerClasses}`}>
                       {serviceAreaItems.map((item) =>
                     <Link key={item.href} to={item.href} onClick={() => setAreasOpen(false)} className={dropdownLinkClasses(location.pathname === item.href)}>
                           {item.label}
@@ -246,13 +253,9 @@ const Navbar = () => {
                   </div>
                 }
               </div>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex items-center gap-2 flex-shrink-0 ml-2 lg:ml-4">
               <a
                 href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('header'); }}
-                className="hidden lg:flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
+                className="hidden xl:flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
 
                 <Phone className="h-4 w-4" />
                 <span className="hidden 2xl:inline">(786) 395-9172</span>
@@ -262,20 +265,20 @@ const Navbar = () => {
                 onClick={handleTextUsClick}
                 aria-label="Text us"
                 title="Text us at (786) 395-9172"
-                className="hidden lg:flex items-center justify-center px-3 py-2 rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
+                className="hidden xl:flex items-center justify-center px-3 py-2 rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
                 <IMessageBubbleIcon className="h-4 w-4" />
               </a>
               <Button
                 variant="premium"
                 size="sm"
                 onClick={() => { trackQuoteButton('header'); setQuoteModalOpen(true); }}
-                className="hidden lg:flex bg-[hsl(var(--nav-foreground-active))] text-[hsl(var(--nav-bg))] hover:bg-[hsl(var(--nav-foreground))] font-bold tracking-wide text-xs">
+                className="hidden xl:flex bg-[hsl(var(--nav-foreground-active))] text-[hsl(var(--nav-bg))] hover:bg-[hsl(var(--nav-foreground))] font-bold tracking-wide text-xs">
 
                 Get Quote
               </Button>
               <a
                 href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('header_mobile'); }}
-                className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
+                className="xl:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
 
                 <Phone className="h-5 w-5" />
               </a>
@@ -283,10 +286,10 @@ const Navbar = () => {
                 href={SMS_NUMBER_HREF}
                 onClick={handleTextUsClick}
                 aria-label="Text us"
-                className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
+                className="xl:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
                 <IMessageBubbleIcon className="h-5 w-5" />
               </a>
-              <div className="lg:hidden">
+              <div className="xl:hidden">
                 <MobileMenu />
               </div>
             </div>
