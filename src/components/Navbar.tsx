@@ -160,13 +160,8 @@ const Navbar = () => {
               <img
                 src={xpelLogo}
                 alt="XPEL"
-                className="h-6 brightness-0 invert opacity-90"
-                width={80}
-                height={24}
+                className="h-10 lg:h-12 w-auto brightness-0 invert opacity-90"
               />
-              <span className="text-[9px] tracking-[0.25em] uppercase text-white/70 mt-0.5">
-                Authorized Dealer
-              </span>
             </div>
 
             {/* Right utility CTAs */}
