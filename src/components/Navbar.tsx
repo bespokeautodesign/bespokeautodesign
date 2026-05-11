@@ -9,6 +9,21 @@ import { QuoteModal } from "@/components/QuoteModal";
 import { SMS_NUMBER_HREF, handleTextUsClick } from "@/lib/smsContact";
 import xpelLogo from "@/assets/xpel-logo.svg";
 
+const XPELLogoNav = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="70 420 1060 240"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    className={className}
+  >
+    <path fill="currentColor" d="M243.22,538.01c19.6,0,35.49-15.89,35.49-35.49s-15.89-35.49-35.49-35.49-35.49,15.89-35.49,35.49,15.89,35.49,35.49,35.49" />
+    <path fill="currentColor" d="M164.64,476.5c-14.37,0-26.02,11.65-26.02,26.02s11.65,26.02,26.02,26.02,26.02-11.65,26.02-26.02-11.65-26.02-26.02-26.02" />
+    <path fill="currentColor" d="M101.66,482.65c-10.97,0-19.87,8.9-19.87,19.87s8.9,19.87,19.87,19.87,19.87-8.9,19.87-19.87-8.9-19.87-19.87-19.87" />
+    <polygon fill="currentColor" points="999.28 590.42 1034.35 439.01 952.35 439.01 904.46 646.34 1087.41 646.34 1100.19 590.42 999.28 590.42" />
+    <path fill="currentColor" d="M899.98,563.71l9.86-42.69h-127.1l6.27-27.17h127.12l12.69-54.83h-209.36l-16.18,70.07c.66-4.93.79-10.17.75-15.24-.07-16.13-11.13-33.55-29.27-44.48-12.4-7.49-28.57-10.35-45.39-10.35h-133.2l52.85-53.69h-107.47l-56.84,59.04-35.27-59.04h-107.09l77.75,126.12-129.89,134.9h101.91l68.34-69.44,42.82,69.44h122.15l16.35-69.87h74.77c31.03,0,53.8-11.51,64.86-22.06,9.53-9.08,14.91-19.42,18.35-29.96l-28.14,121.89h209.29l12.92-55.92h-127.08l6.16-26.72h127.1ZM628.65,521.02h-155.36l-11.97,51.58-36.5-61.1,66.31-67.37-11.54,49.71h149.05c7.51,0,13.6,6.07,13.6,13.6s-6.09,13.58-13.6,13.58" />
+  </svg>
+);
+
 const IMessageBubbleIcon = ({ className }: { className?: string }) => (
   <svg
     viewBox="0 0 24 24"
@@ -156,12 +171,8 @@ const Navbar = () => {
             </Link>
 
             {/* XPEL Authorized Dealer — centered credential */}
-            <div className="hidden md:flex flex-col items-center justify-self-center">
-              <img
-                src={xpelLogo}
-                alt="XPEL"
-                className="h-10 lg:h-12 w-auto brightness-0 invert opacity-90"
-              />
+            <div className="hidden md:flex items-center justify-self-center">
+              <XPELLogoNav className="h-10 lg:h-12 w-auto text-white opacity-90" />
             </div>
 
             {/* Right utility CTAs */}
