@@ -34,7 +34,7 @@ export const providerSchema = {
   "telephone": "+1-786-395-9172",
   "geo": { "@type": "GeoCoordinates", "latitude": "25.823", "longitude": "-80.318" },
   // Update reviewCount manually when crossing review-count milestones — Google indexes this for rich snippets
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "45", "bestRating": "5", "worstRating": "1" }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "46", "bestRating": "5", "worstRating": "1" }
 };
 
 export { areaServed };
@@ -106,7 +106,7 @@ export const businessSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
-    "reviewCount": "45",
+    "reviewCount": "46",
     "bestRating": "5",
     "worstRating": "1"
   },
