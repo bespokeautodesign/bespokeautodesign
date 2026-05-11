@@ -72,7 +72,7 @@ const Marine = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6 bg-gold/20 text-gold-foreground border-silver-muted backdrop-blur-sm">Marine Division</Badge>
-            <p className="text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-silver-muted mb-3">Boutique Auto Protection · Miami</p>
+            <p className="eyebrow-tag">Boutique Auto Protection · Miami</p>
             <h1
               className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg"
               style={{ textShadow: '0 2px 16px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.4)' }}

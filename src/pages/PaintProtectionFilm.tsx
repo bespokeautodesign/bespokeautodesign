@@ -114,7 +114,7 @@ const PaintProtectionFilm = () => {
                 Miami's XPEL Certified Installer
               </span>
             </div>
-            <p className="text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-silver-muted">Boutique Auto Protection · Miami</p>
+            <p className="eyebrow-tag">Boutique Auto Protection · Miami</p>
              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-playfair leading-tight text-white drop-shadow-lg" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.4)' }}>XPEL <span className="text-brand-red">Paint Protection Film</span><br className="hidden md:block" /> (PPF) in Miami, FL
              </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>

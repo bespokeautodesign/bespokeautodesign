@@ -118,7 +118,7 @@ const CeramicCoating = () => {
                 Authorized XPEL Ceramic Installer
               </span>
             </div>
-            <p className="text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-silver-muted">Boutique Auto Protection · Miami</p>
+            <p className="eyebrow-tag">Boutique Auto Protection · Miami</p>
              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-playfair leading-tight text-white drop-shadow-lg" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.8), 0 4px 32px rgba(0,0,0,0.4)' }}>
                Professional <span className="text-brand-red">Ceramic Coating</span> <br className="hidden md:block" /> in Miami, FL
              </h1>
