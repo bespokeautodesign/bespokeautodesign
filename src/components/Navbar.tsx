@@ -227,7 +227,7 @@ const Navbar = () => {
             {/* CTAs */}
             <div className="flex items-center gap-2 xl:gap-3 flex-shrink-0 ml-2 xl:ml-5">
               {/* Service Areas Dropdown */}
-              <div className="relative hidden xl:block mr-1" ref={areasDropdownRef} onMouseLeave={() => setAreasOpen(false)}>
+              <div className="relative hidden xl:block mr-1" ref={areasDropdownRef}>
                 <button
                   type="button"
                   aria-expanded={areasOpen}
