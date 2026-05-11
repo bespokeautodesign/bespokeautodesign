@@ -5,26 +5,28 @@ type HeroClip = { src: string; position?: string };
 
 // Original hero clips (Rolls-Royce, Porsche 911, Yellow 911 rally, Green BMW M, Blue 911 Turbo)
 // followed by the newer Bentley / Purple 911 / Olive Wrap clips.
+// Desktop rotation. Originals (hero-1/2/6 are 1280x2276 portrait, hero-5/7 are
+// 1280x720 landscape with rotation metadata stripped) followed by the new
+// 1920x1080 landscape clips.
 const desktopSources: HeroClip[] = [
-  { src: "/videos/hero-1.mp4?v=7", position: "center 55%" }, // Rolls-Royce
-  { src: "/videos/hero-2.mp4?v=7", position: "center 40%" }, // Porsche 911
-  { src: "/videos/hero-5.mp4?v=7", position: "center 55%" }, // Yellow Porsche 911 (rally stripes)
-  { src: "/videos/hero-6.mp4?v=7", position: "center 55%" }, // Green BMW M
-  { src: "/videos/hero-7.mp4?v=7", position: "center 55%" }, // Blue Porsche 911 Turbo
+  { src: "/videos/hero-1.mp4?v=8", position: "center 55%" }, // Rolls-Royce
+  { src: "/videos/hero-2.mp4?v=8", position: "center 40%" }, // Porsche 911
+  { src: "/videos/hero-5.mp4?v=8", position: "center 55%" }, // Yellow Porsche 911 (rally stripes)
+  { src: "/videos/hero-6.mp4?v=8", position: "center 55%" }, // Green BMW M
+  { src: "/videos/hero-7.mp4?v=8", position: "center 55%" }, // Blue Porsche 911 Turbo
   { src: "/videos/hero/bentley-desktop.mp4", position: "center center" },
   { src: "/videos/hero/porsche-purple-desktop.mp4", position: "center center" },
   { src: "/videos/hero/porsche-olive-wide-desktop.mp4", position: "center center" },
   { src: "/videos/hero/porsche-olive-tight-desktop.mp4", position: "center center" },
 ];
 
-// Mobile rotation: same originals (portrait-native), then the new portrait clips.
-// On mobile, the elevated wrap-film backdrop (olive-4907) substitutes for olive-tight.
+// Mobile rotation. Only includes portrait-native originals (hero-1/2/6) and the
+// new 1080x1920 portrait clips. hero-5/7 are excluded on mobile because they
+// are landscape after rotation-metadata fix.
 const mobileSources: HeroClip[] = [
-  { src: "/videos/hero-1.mp4?v=7", position: "center 55%" },
-  { src: "/videos/hero-2.mp4?v=7", position: "center 40%" },
-  { src: "/videos/hero-5.mp4?v=7", position: "center 55%" },
-  { src: "/videos/hero-6.mp4?v=7", position: "center 55%" },
-  { src: "/videos/hero-7.mp4?v=7", position: "center 55%" },
+  { src: "/videos/hero-1.mp4?v=8", position: "center 55%" }, // Rolls-Royce
+  { src: "/videos/hero-2.mp4?v=8", position: "center 40%" }, // Porsche 911
+  { src: "/videos/hero-6.mp4?v=8", position: "center 55%" }, // Green BMW M
   { src: "/videos/hero/bentley-mobile.mp4", position: "center center" },
   { src: "/videos/hero/porsche-purple-mobile.mp4", position: "center center" },
   { src: "/videos/hero/porsche-olive-wide-mobile.mp4", position: "center center" },
