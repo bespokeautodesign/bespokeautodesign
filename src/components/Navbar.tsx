@@ -156,47 +156,52 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden xl:flex items-center gap-0.5 xl:gap-1 min-w-0 overflow-hidden">
-              {/* PPF Dropdown */}
-              <div className="relative" ref={dropdownRef} onMouseLeave={() => setPpfOpen(false)}>
-                <Link
-                  to="/paint-protection-film"
-                  onMouseEnter={() => setPpfOpen(true)}
-                  className={`flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md text-xs xl:text-sm whitespace-nowrap transition-all duration-300 ${
-                  isPPFActive || location.pathname === "/paint-protection-film" ?
+            <div className="hidden md:flex items-center gap-0.5 lg:gap-1 min-w-0 overflow-hidden">
+              {/* Services Dropdown */}
+              <div className="relative" ref={servicesDropdownRef} onMouseLeave={() => setServicesOpen(false)}>
+                <button
+                  type="button"
+                  aria-expanded={servicesOpen}
+                  onClick={() => setServicesOpen((open) => !open)}
+                  onMouseEnter={() => setServicesOpen(true)}
+                  className={`flex items-center gap-1 px-2 lg:px-3 py-2 rounded-md text-[13px] lg:text-sm whitespace-nowrap transition-all duration-300 ${
+                  isServicesActive ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
                   }>
-                  PPF
-
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${ppfOpen ? "rotate-180" : ""}`} />
-                </Link>
-                {ppfOpen &&
+                  Services
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {servicesOpen &&
                 <div className={dropdownClasses}>
-                    <div className={`w-52 ${dropdownInnerClasses}`}>
-                      {ppfSubItems.map((item) =>
-                    <Link key={item.href} to={item.href} onClick={() => setPpfOpen(false)} className={dropdownLinkClasses(location.pathname === item.href)}>
+                    <div className={`w-60 ${dropdownInnerClasses}`}>
+                      <Link to="/paint-protection-film" onClick={() => setServicesOpen(false)} className={dropdownLinkClasses(location.pathname === "/paint-protection-film")}>
+                        Paint Protection Film
+                      </Link>
+                      <div className="pl-3">
+                        {ppfSubItems.map((item) =>
+                          <Link key={item.href} to={item.href} onClick={() => setServicesOpen(false)} className={`${dropdownLinkClasses(location.pathname === item.href)} text-[13px]`}>
+                            — {item.label}
+                          </Link>
+                        )}
+                      </div>
+                      <div className="my-1 border-t border-[hsl(var(--nav-dropdown-border))]" />
+                      {servicesFlatItems.map((item) =>
+                        <Link key={item.href} to={item.href} onClick={() => setServicesOpen(false)} className={dropdownLinkClasses(location.pathname === item.href)}>
                           {item.label}
                         </Link>
-                    )}
+                      )}
                     </div>
                   </div>
                 }
               </div>
-
-              {/* Middle nav items */}
-              {navItemsBefore.map((item) =>
-              <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-2 xl:px-3 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
-                  {item.label}
-                </NavLink>
-              )}
 
               {/* Marine Dropdown */}
               <div className="relative" ref={marineDropdownRef} onMouseLeave={() => setMarineOpen(false)}>
                 <Link
                   to="/marine"
                   onMouseEnter={() => setMarineOpen(true)}
-                  className={`flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md text-xs xl:text-sm whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-2 lg:px-3 py-2 rounded-md text-[13px] lg:text-sm whitespace-nowrap transition-all duration-300 ${
                   isMarineActive || location.pathname === "/marine" ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
@@ -218,9 +223,9 @@ const Navbar = () => {
                 }
               </div>
 
-              {/* After items (Gallery) */}
+              {/* After items */}
               {navItemsAfter.map((item) =>
-              <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-2 xl:px-3 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
+              <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-2 lg:px-3 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
                   {item.label}
                 </NavLink>
               )}
@@ -228,15 +233,15 @@ const Navbar = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex items-center gap-2 xl:gap-3 flex-shrink-0 ml-2 xl:ml-5">
+            <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0 ml-2 md:ml-3 lg:ml-5">
               {/* Service Areas Dropdown */}
-              <div className="relative hidden xl:block mr-1" ref={areasDropdownRef}>
+              <div className="relative hidden md:block mr-1" ref={areasDropdownRef}>
                 <button
                   type="button"
                   aria-expanded={areasOpen}
                   onClick={() => setAreasOpen((open) => !open)}
                   onMouseEnter={() => setAreasOpen(true)}
-                  className={`flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md text-xs xl:text-sm whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-2 lg:px-3 py-2 rounded-md text-[13px] lg:text-sm whitespace-nowrap transition-all duration-300 ${
                   isAreasActive ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
@@ -258,7 +263,7 @@ const Navbar = () => {
               </div>
               <a
                 href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('header'); }}
-                className="hidden xl:flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
+                className="hidden md:flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
 
                 <Phone className="h-4 w-4" />
                 <span className="hidden 2xl:inline">(786) 395-9172</span>
@@ -268,20 +273,20 @@ const Navbar = () => {
                 onClick={handleTextUsClick}
                 aria-label="Text us"
                 title="Text us at (786) 395-9172"
-                className="hidden xl:flex items-center justify-center px-3 py-2 rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
+                className="hidden md:flex items-center justify-center px-3 py-2 rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
                 <IMessageBubbleIcon className="h-4 w-4" />
               </a>
               <Button
                 variant="premium"
                 size="sm"
                 onClick={() => { trackQuoteButton('header'); setQuoteModalOpen(true); }}
-                className="hidden xl:flex bg-[hsl(var(--nav-foreground-active))] text-[hsl(var(--nav-bg))] hover:bg-[hsl(var(--nav-foreground))] font-bold tracking-wide text-xs">
+                className="hidden md:flex bg-[hsl(var(--nav-foreground-active))] text-[hsl(var(--nav-bg))] hover:bg-[hsl(var(--nav-foreground))] font-bold tracking-wide text-xs">
 
                 Get Quote
               </Button>
               <a
                 href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('header_mobile'); }}
-                className="xl:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
+                className="md:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
 
                 <Phone className="h-5 w-5" />
               </a>
@@ -289,10 +294,10 @@ const Navbar = () => {
                 href={SMS_NUMBER_HREF}
                 onClick={handleTextUsClick}
                 aria-label="Text us"
-                className="xl:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
+                className="md:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
                 <IMessageBubbleIcon className="h-5 w-5" />
               </a>
-              <div className="xl:hidden">
+              <div className="md:hidden">
                 <MobileMenu />
               </div>
             </div>
