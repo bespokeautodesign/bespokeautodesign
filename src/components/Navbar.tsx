@@ -24,6 +24,11 @@ const ppfSubItems = [
 { label: "Stealth PPF", href: "/stealth-ppf" },
 { label: "Color PPF", href: "/colorppf" }];
 
+const servicesFlatItems = [
+{ label: "Ceramic Coating", href: "/ceramic-coating" },
+{ label: "Ceramic Tint", href: "/ceramic-tint" },
+{ label: "Color Change Wrap", href: "/color-change-wrap" }];
+
 const marineSubItems = [
 { label: "Marine PPF", href: "/marine-ppf" },
 { label: "Marine Ceramic Coating", href: "/marine-ceramic-coating" },
@@ -49,11 +54,6 @@ const serviceAreaItems = [
   { label: "Fort Lauderdale", href: "/service-areas/fort-lauderdale" },
 ];
 
-const navItemsBefore = [
-{ label: "Ceramic Coating", href: "/ceramic-coating" },
-{ label: "Ceramic Tint", href: "/ceramic-tint" },
-{ label: "Color Change Wrap", href: "/color-change-wrap" }];
-
 const navItemsAfter: {label: string;href: string;}[] = [
   { label: "Instant Quote", href: "/instant-quote" },
 ];
@@ -72,21 +72,24 @@ const NavLink = ({ href, active, children, className = "" }: {href: string;activ
 
 const Navbar = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  const [ppfOpen, setPpfOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [marineOpen, setMarineOpen] = useState(false);
   const [areasOpen, setAreasOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
   const marineDropdownRef = useRef<HTMLDivElement>(null);
   const areasDropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const isPPFActive = ppfSubItems.some((item) => location.pathname === item.href);
+  const isServicesActive =
+    ppfSubItems.some((item) => location.pathname === item.href) ||
+    servicesFlatItems.some((item) => location.pathname === item.href) ||
+    location.pathname === "/paint-protection-film";
   const isMarineActive = marineSubItems.some((item) => location.pathname === item.href);
   const isAreasActive = serviceAreaItems.some((item) => location.pathname === item.href);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) setPpfOpen(false);
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(e.target as Node)) setServicesOpen(false);
       if (marineDropdownRef.current && !marineDropdownRef.current.contains(e.target as Node)) setMarineOpen(false);
       if (areasDropdownRef.current && !areasDropdownRef.current.contains(e.target as Node)) setAreasOpen(false);
     };
