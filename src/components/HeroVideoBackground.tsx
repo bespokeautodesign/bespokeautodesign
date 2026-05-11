@@ -1,28 +1,42 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Original high-quality hero clips at 1280×2276 native resolution, no audio.
-// ~1.0–1.7 MB per clip, ~5.3 MB total — sharp at full-screen.
-const videoSources = [
-  { src: "/videos/hero-1.mp4?v=7", poster: "/videos/hero-1.webp", position: "center 55%" }, // Rolls-Royce
-  { src: "/videos/hero-2.mp4?v=7", poster: "/videos/hero-2.webp", position: "center 40%" }, // Porsche 911
-  { src: "/videos/hero-6.mp4?v=7", poster: "/videos/hero-6.webp", position: "center 55%" }, // Green BMW M
+type HeroClip = { src: string; position?: string };
+
+// Desktop landscape clips (1920x1080)
+const desktopSources: HeroClip[] = [
+  { src: "/videos/hero/bentley-desktop.mp4", position: "center center" },
+  { src: "/videos/hero/porsche-purple-desktop.mp4", position: "center center" },
+  { src: "/videos/hero/porsche-olive-wide-desktop.mp4", position: "center center" },
+  { src: "/videos/hero/porsche-olive-tight-desktop.mp4", position: "center center" },
+];
+
+// Mobile portrait clips (1080x1920)
+const mobileSources: HeroClip[] = [
+  { src: "/videos/hero/bentley-mobile.mp4", position: "center center" },
+  { src: "/videos/hero/porsche-purple-mobile.mp4", position: "center center" },
+  { src: "/videos/hero/porsche-olive-wide-mobile.mp4", position: "center center" },
+  { src: "/videos/hero/porsche-olive-4907-mobile.mp4", position: "center center" },
 ];
 
 const HeroVideoBackground = () => {
   const isMobile = useIsMobile();
+  const videoSources = isMobile ? mobileSources : desktopSources;
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  // One <video> element per clip, mounted once. We swap visibility via opacity
-  // — never unmount — so the browser caches the file instead of re-downloading it.
   const videoRefs = useRef<(HTMLVideoElement | null)[]>(
     new Array(videoSources.length).fill(null)
   );
-  // Tracks which clip indexes have had their src assigned (lazy-load gate).
-  // Clip 0 starts true so the hero is never empty.
   const [loaded, setLoaded] = useState<boolean[]>(() =>
     videoSources.map((_, i) => i === 0)
   );
+
+  // Reset refs/state when the source list switches between mobile and desktop
+  useEffect(() => {
+    videoRefs.current = new Array(videoSources.length).fill(null);
+    setLoaded(videoSources.map((_, i) => i === 0));
+    setActiveIndex(0);
+  }, [isMobile]);
 
   // Assign initial src for clip 0 and start playback
   useEffect(() => {
@@ -81,7 +95,7 @@ const HeroVideoBackground = () => {
       nextVideo.play().catch(() => {});
     }
     setActiveIndex(next);
-  }, []);
+  }, [videoSources.length]);
 
   return (
     <div ref={containerRef} className="fixed inset-0 w-screen h-screen z-0 overflow-hidden bg-black">
@@ -89,9 +103,9 @@ const HeroVideoBackground = () => {
         <video
           key={video.src}
           ref={(el) => (videoRefs.current[i] = el)}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
           style={{
-            objectPosition: isMobile ? "center 95%" : video.position,
+            objectPosition: video.position,
             opacity: activeIndex === i ? 1 : 0,
             willChange: "opacity",
             transform: "translateZ(0)",
@@ -99,7 +113,6 @@ const HeroVideoBackground = () => {
           muted
           playsInline
           preload="metadata"
-          poster={video.poster}
           onEnded={() => handleEnded(i)}
         />
       ))}
