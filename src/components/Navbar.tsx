@@ -134,7 +134,7 @@ const Navbar = () => {
       </div>
       <nav className={`sticky top-0 z-50 bg-[hsl(var(--nav-bg))] border-b border-[hsl(var(--nav-border))] transition-all duration-500 ${scrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : ""}`}>
         <div className="container mx-auto px-6 py-3">
-          <div className="flex items-center justify-between gap-6 min-w-0">
+          <div className="flex items-center justify-between gap-6 lg:gap-8 min-w-0">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
               <img
