@@ -249,7 +249,7 @@ const Navbar = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="flex items-center gap-2 flex-shrink-0 ml-2 lg:ml-4">
               <a
                 href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('header'); }}
                 className="hidden lg:flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
