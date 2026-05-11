@@ -184,12 +184,10 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
               <span className="text-lg md:text-xl font-semibold tracking-widest uppercase text-white/90 border-l border-white/30 pl-4">Authorized Dealer</span>
             </div>
             <p className="text-[11px] md:text-xs font-medium tracking-[0.2em] uppercase text-silver-muted mb-3">Boutique Auto Protection · Miami</p>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight font-playfair">Xpel Premier Paint Protection Film (PPF) Installation in <span className="text-brand-red">Miami</span>
-
-              </h1>
-            <p className="text-lg md:text-xl mb-6 text-white/90 max-w-2xl mx-auto" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>
-              Protect Your Vehicle From Rock Chips, Scratches & Miami Road Damage — Installed by Certified XPEL Experts
-            </p>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight font-playfair">Showroom Paint. <span className="text-brand-red">Year After Year.</span></h1>
+            <h2 className="text-lg md:text-xl mb-6 text-white/90 max-w-2xl mx-auto font-playfair" style={{ fontWeight: 500, fontStyle: 'italic', textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>
+              XPEL paint protection film, ceramic coating & ceramic window tint for Miami's luxury and exotic cars.
+            </h2>
             <p className="text-sm md:text-base text-white/60 mb-6 tracking-wide">
               Limited weekly installation spots available — book yours today
             </p>
