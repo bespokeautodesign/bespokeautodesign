@@ -25,22 +25,22 @@ const otherItemsBefore = [
 ];
 
 const serviceAreaItems = [
-  { label: "Brickell", href: "/service-areas/brickell" },
-  { label: "Coral Gables", href: "/service-areas/coral-gables" },
-  { label: "Design District", href: "/service-areas/design-district" },
-  { label: "Bal Harbour", href: "/service-areas/bal-harbour" },
-  { label: "Key Biscayne", href: "/service-areas/key-biscayne" },
-  { label: "Sunny Isles", href: "/service-areas/sunny-isles" },
-  { label: "Coconut Grove", href: "/service-areas/coconut-grove" },
   { label: "Aventura", href: "/service-areas/aventura" },
+  { label: "Bal Harbour", href: "/service-areas/bal-harbour" },
+  { label: "Brickell", href: "/service-areas/brickell" },
+  { label: "Coconut Grove", href: "/service-areas/coconut-grove" },
+  { label: "Coral Gables", href: "/service-areas/coral-gables" },
+  { label: "Key Biscayne", href: "/service-areas/key-biscayne" },
   { label: "Miami Beach", href: "/service-areas/miami-beach" },
+  { label: "Sunny Isles", href: "/service-areas/sunny-isles" },
   { label: "Pinecrest", href: "/service-areas/pinecrest" },
   { label: "Doral", href: "/service-areas/doral" },
-  { label: "Surfside", href: "/service-areas/surfside" },
-  { label: "Wynwood", href: "/service-areas/wynwood" },
   { label: "Fisher Island", href: "/service-areas/fisher-island" },
   { label: "Star Island", href: "/service-areas/star-island" },
   { label: "Indian Creek", href: "/service-areas/indian-creek" },
+  { label: "Surfside", href: "/service-areas/surfside" },
+  { label: "Wynwood", href: "/service-areas/wynwood" },
+  { label: "Design District", href: "/service-areas/design-district" },
   { label: "Fort Lauderdale", href: "/service-areas/fort-lauderdale" },
 ];
 
