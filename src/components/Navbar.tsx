@@ -7,6 +7,7 @@ import { trackPhoneCall } from "@/utils/gadsConversions";
 import { trackPhoneClick, trackQuoteButton } from "@/lib/analytics";
 import { QuoteModal } from "@/components/QuoteModal";
 import { SMS_NUMBER_HREF, handleTextUsClick } from "@/lib/smsContact";
+import xpelLogo from "@/assets/xpel-logo.svg";
 
 const IMessageBubbleIcon = ({ className }: { className?: string }) => (
   <svg
@@ -135,11 +136,11 @@ const Navbar = () => {
         </div>
       </div>
       <nav className={`sticky top-0 z-50 bg-[hsl(var(--nav-bg))] border-b border-[hsl(var(--nav-border))] transition-all duration-500 ${scrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : ""}`}>
-        {/* Row 1: brand + utility CTAs */}
+        {/* Row 1: brand + XPEL + utility CTAs */}
         <div className="container mx-auto px-6 py-3">
-          <div className="flex items-center justify-between gap-4 min-w-0">
+          <div className="grid grid-cols-3 items-center gap-4">
             {/* Logo + wordmark */}
-            <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
+            <Link to="/" className="flex items-center gap-3 flex-shrink-0 group justify-self-start">
               <img
                 src="/bespoke-logo.png"
                 alt="Bespoke Auto Design"
@@ -154,8 +155,22 @@ const Navbar = () => {
               </div>
             </Link>
 
+            {/* XPEL Authorized Dealer — centered credential */}
+            <div className="hidden md:flex flex-col items-center justify-self-center">
+              <img
+                src={xpelLogo}
+                alt="XPEL"
+                className="h-6 brightness-0 invert opacity-90"
+                width={80}
+                height={24}
+              />
+              <span className="text-[9px] tracking-[0.25em] uppercase text-white/70 mt-0.5">
+                Authorized Dealer
+              </span>
+            </div>
+
             {/* Right utility CTAs */}
-            <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="flex items-center gap-2 flex-shrink-0 justify-self-end">
               <a
                 href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('header'); }}
                 aria-label="Call (786) 395-9172"
