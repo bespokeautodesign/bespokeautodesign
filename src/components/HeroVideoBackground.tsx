@@ -95,7 +95,7 @@ const HeroVideoBackground = () => {
       nextVideo.play().catch(() => {});
     }
     setActiveIndex(next);
-  }, []);
+  }, [videoSources.length]);
 
   return (
     <div ref={containerRef} className="fixed inset-0 w-screen h-screen z-0 overflow-hidden bg-black">
