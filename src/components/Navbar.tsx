@@ -136,22 +136,13 @@ const Navbar = () => {
       </div>
       <nav className={`sticky top-0 z-50 bg-[hsl(var(--nav-bg))] border-b border-[hsl(var(--nav-border))] transition-all duration-500 ${scrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : ""}`}>
         <div className="container mx-auto px-6 py-3">
-          <div className="flex items-center justify-between gap-6 lg:gap-8 min-w-0">
+          <div className="flex items-center justify-between gap-3 lg:gap-4 min-w-0">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
+            <Link to="/" aria-label="Bespoke Auto Design — Home" className="flex items-center flex-shrink-0 group">
               <img
                 src="/bespoke-logo.png"
                 alt="Bespoke Auto Design"
                 className="h-9 lg:h-11 w-auto transition-transform duration-300 group-hover:scale-105" />
-
-              <div className="flex flex-col leading-none">
-                <span className="text-xs lg:text-sm tracking-[0.2em] uppercase font-bold text-[hsl(var(--nav-foreground-active))]">
-                  Bespoke
-                </span>
-                <span className="text-sm lg:text-base font-light tracking-wider uppercase text-[hsl(var(--nav-foreground))]">
-                  Auto Design
-                </span>
-              </div>
             </Link>
 
             {/* Desktop Nav */}
@@ -161,7 +152,7 @@ const Navbar = () => {
                 <Link
                   to="/paint-protection-film"
                   onMouseEnter={() => setPpfOpen(true)}
-                  className={`flex items-center gap-1 px-1.5 lg:px-2.5 py-2 rounded-md text-[13px] lg:text-[13px] xl:text-sm whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-1.5 lg:px-2 py-2 rounded-md text-[13px] whitespace-nowrap transition-all duration-300 ${
                   isPpfActive ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
@@ -184,7 +175,7 @@ const Navbar = () => {
 
               {/* Individual service links */}
               {servicesFlatItems.map((item) =>
-                <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-1.5 lg:px-2.5 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)] text-[13px] xl:text-sm">
+                <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="!text-[13px] px-1.5 lg:px-2 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
                   {item.label}
                 </NavLink>
               )}
@@ -194,7 +185,7 @@ const Navbar = () => {
                 <Link
                   to="/marine"
                   onMouseEnter={() => setMarineOpen(true)}
-                  className={`flex items-center gap-1 px-1.5 lg:px-2.5 py-2 rounded-md text-[13px] xl:text-sm whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-1.5 lg:px-2 py-2 rounded-md text-[13px] whitespace-nowrap transition-all duration-300 ${
                   isMarineActive || location.pathname === "/marine" ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
@@ -218,7 +209,7 @@ const Navbar = () => {
 
               {/* After items */}
               {navItemsAfter.map((item) =>
-              <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-1.5 lg:px-2.5 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)] text-[13px] xl:text-sm">
+              <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="!text-[13px] px-1.5 lg:px-2 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
                   {item.label}
                 </NavLink>
               )}
@@ -226,7 +217,7 @@ const Navbar = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex items-center gap-1.5 lg:gap-2 flex-shrink-0 ml-1 md:ml-2 lg:ml-3">
+            <div className="flex items-center gap-1.5 flex-shrink-0 ml-1">
               {/* Service Areas Dropdown */}
               <div className="relative hidden md:block mr-1" ref={areasDropdownRef}>
                 <button
@@ -234,7 +225,7 @@ const Navbar = () => {
                   aria-expanded={areasOpen}
                   onClick={() => setAreasOpen((open) => !open)}
                   onMouseEnter={() => setAreasOpen(true)}
-                  className={`flex items-center gap-1 px-1.5 lg:px-2.5 py-2 rounded-md text-[13px] xl:text-sm whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-1.5 lg:px-2 py-2 rounded-md text-[13px] whitespace-nowrap transition-all duration-300 ${
                   isAreasActive ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
@@ -256,25 +247,23 @@ const Navbar = () => {
               </div>
               <a
                 href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('header'); }}
-                className="hidden md:flex items-center gap-2 px-3 py-2 text-xs font-semibold rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
-
+                aria-label="Call (786) 395-9172"
+                className="hidden md:flex items-center justify-center w-8 h-8 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
                 <Phone className="h-4 w-4" />
-                <span className="hidden 2xl:inline">(786) 395-9172</span>
               </a>
               <a
                 href={SMS_NUMBER_HREF}
                 onClick={handleTextUsClick}
                 aria-label="Text us"
                 title="Text us at (786) 395-9172"
-                className="hidden md:flex items-center justify-center px-3 py-2 rounded-md border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
+                className="hidden md:flex items-center justify-center w-8 h-8 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
                 <IMessageBubbleIcon className="h-4 w-4" />
               </a>
               <Button
                 variant="premium"
                 size="sm"
                 onClick={() => { trackQuoteButton('header'); setQuoteModalOpen(true); }}
-                className="hidden md:flex bg-[hsl(var(--nav-foreground-active))] text-[hsl(var(--nav-bg))] hover:bg-[hsl(var(--nav-foreground))] font-bold tracking-wide text-xs">
-
+                className="hidden md:flex h-8 px-4 bg-[hsl(var(--nav-foreground-active))] text-[hsl(var(--nav-bg))] hover:bg-[hsl(var(--nav-foreground))] font-bold tracking-wide text-[12px]">
                 Get Quote
               </Button>
               <a
