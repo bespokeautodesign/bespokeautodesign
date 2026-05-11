@@ -72,24 +72,23 @@ const NavLink = ({ href, active, children, className = "" }: {href: string;activ
 
 const Navbar = () => {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [ppfOpen, setPpfOpen] = useState(false);
   const [marineOpen, setMarineOpen] = useState(false);
   const [areasOpen, setAreasOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const servicesDropdownRef = useRef<HTMLDivElement>(null);
+  const ppfDropdownRef = useRef<HTMLDivElement>(null);
   const marineDropdownRef = useRef<HTMLDivElement>(null);
   const areasDropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const isServicesActive =
+  const isPpfActive =
     ppfSubItems.some((item) => location.pathname === item.href) ||
-    servicesFlatItems.some((item) => location.pathname === item.href) ||
     location.pathname === "/paint-protection-film";
   const isMarineActive = marineSubItems.some((item) => location.pathname === item.href);
   const isAreasActive = serviceAreaItems.some((item) => location.pathname === item.href);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(e.target as Node)) setServicesOpen(false);
+      if (ppfDropdownRef.current && !ppfDropdownRef.current.contains(e.target as Node)) setPpfOpen(false);
       if (marineDropdownRef.current && !marineDropdownRef.current.contains(e.target as Node)) setMarineOpen(false);
       if (areasDropdownRef.current && !areasDropdownRef.current.contains(e.target as Node)) setAreasOpen(false);
     };
@@ -156,38 +155,25 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-0.5 lg:gap-1 min-w-0 overflow-hidden">
-              {/* Services Dropdown */}
-              <div className="relative" ref={servicesDropdownRef} onMouseLeave={() => setServicesOpen(false)}>
-                <button
-                  type="button"
-                  aria-expanded={servicesOpen}
-                  onClick={() => setServicesOpen((open) => !open)}
-                  onMouseEnter={() => setServicesOpen(true)}
-                  className={`flex items-center gap-1 px-2 lg:px-3 py-2 rounded-md text-[13px] lg:text-sm whitespace-nowrap transition-all duration-300 ${
-                  isServicesActive ?
+            <div className="hidden md:flex items-center gap-0.5 lg:gap-1 min-w-0">
+              {/* PPF Dropdown */}
+              <div className="relative" ref={ppfDropdownRef} onMouseLeave={() => setPpfOpen(false)}>
+                <Link
+                  to="/paint-protection-film"
+                  onMouseEnter={() => setPpfOpen(true)}
+                  className={`flex items-center gap-1 px-1.5 lg:px-2.5 py-2 rounded-md text-[13px] lg:text-[13px] xl:text-sm whitespace-nowrap transition-all duration-300 ${
+                  isPpfActive ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
                   }>
-                  Services
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`} />
-                </button>
-                {servicesOpen &&
+                  PPF
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${ppfOpen ? "rotate-180" : ""}`} />
+                </Link>
+                {ppfOpen &&
                 <div className={dropdownClasses}>
-                    <div className={`w-60 ${dropdownInnerClasses}`}>
-                      <Link to="/paint-protection-film" onClick={() => setServicesOpen(false)} className={dropdownLinkClasses(location.pathname === "/paint-protection-film")}>
-                        Paint Protection Film
-                      </Link>
-                      <div className="pl-3">
-                        {ppfSubItems.map((item) =>
-                          <Link key={item.href} to={item.href} onClick={() => setServicesOpen(false)} className={`${dropdownLinkClasses(location.pathname === item.href)} text-[13px]`}>
-                            — {item.label}
-                          </Link>
-                        )}
-                      </div>
-                      <div className="my-1 border-t border-[hsl(var(--nav-dropdown-border))]" />
-                      {servicesFlatItems.map((item) =>
-                        <Link key={item.href} to={item.href} onClick={() => setServicesOpen(false)} className={dropdownLinkClasses(location.pathname === item.href)}>
+                    <div className={`w-56 ${dropdownInnerClasses}`}>
+                      {ppfSubItems.map((item) =>
+                        <Link key={item.href} to={item.href} onClick={() => setPpfOpen(false)} className={dropdownLinkClasses(location.pathname === item.href)}>
                           {item.label}
                         </Link>
                       )}
@@ -196,12 +182,19 @@ const Navbar = () => {
                 }
               </div>
 
+              {/* Individual service links */}
+              {servicesFlatItems.map((item) =>
+                <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-1.5 lg:px-2.5 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)] text-[13px] xl:text-sm">
+                  {item.label}
+                </NavLink>
+              )}
+
               {/* Marine Dropdown */}
               <div className="relative" ref={marineDropdownRef} onMouseLeave={() => setMarineOpen(false)}>
                 <Link
                   to="/marine"
                   onMouseEnter={() => setMarineOpen(true)}
-                  className={`flex items-center gap-1 px-2 lg:px-3 py-2 rounded-md text-[13px] lg:text-sm whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-1.5 lg:px-2.5 py-2 rounded-md text-[13px] xl:text-sm whitespace-nowrap transition-all duration-300 ${
                   isMarineActive || location.pathname === "/marine" ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
@@ -225,7 +218,7 @@ const Navbar = () => {
 
               {/* After items */}
               {navItemsAfter.map((item) =>
-              <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-2 lg:px-3 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
+              <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="px-1.5 lg:px-2.5 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)] text-[13px] xl:text-sm">
                   {item.label}
                 </NavLink>
               )}
@@ -233,7 +226,7 @@ const Navbar = () => {
             </div>
 
             {/* CTAs */}
-            <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0 ml-2 md:ml-3 lg:ml-5">
+            <div className="flex items-center gap-1.5 lg:gap-2 flex-shrink-0 ml-1 md:ml-2 lg:ml-3">
               {/* Service Areas Dropdown */}
               <div className="relative hidden md:block mr-1" ref={areasDropdownRef}>
                 <button
@@ -241,7 +234,7 @@ const Navbar = () => {
                   aria-expanded={areasOpen}
                   onClick={() => setAreasOpen((open) => !open)}
                   onMouseEnter={() => setAreasOpen(true)}
-                  className={`flex items-center gap-1 px-2 lg:px-3 py-2 rounded-md text-[13px] lg:text-sm whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-1.5 lg:px-2.5 py-2 rounded-md text-[13px] xl:text-sm whitespace-nowrap transition-all duration-300 ${
                   isAreasActive ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`
