@@ -153,7 +153,7 @@ const Navbar = () => {
       <nav className={`sticky top-0 z-50 bg-[hsl(var(--nav-bg))] border-b border-[hsl(var(--nav-border))] transition-all duration-500 ${scrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : ""}`}>
         {/* Row 1: brand + XPEL + utility CTAs */}
         <div className="container mx-auto px-6 py-3">
-          <div className="grid grid-cols-3 items-center gap-4">
+          <div className="flex items-center justify-between gap-4 md:grid md:grid-cols-3">
             {/* Logo + wordmark */}
             <Link to="/" className="flex items-center gap-3 flex-shrink-0 group justify-self-start">
               <img
