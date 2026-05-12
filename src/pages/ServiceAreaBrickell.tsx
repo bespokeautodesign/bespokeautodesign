@@ -124,7 +124,7 @@ const ServiceAreaBrickell = () => {
       <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 bg-gradient-to-b from-[#0f0f0f] via-[#141414] to-[#0f0f0f]">
         <div className="max-w-4xl mx-auto text-center">
           <p className="eyebrow-tag">Boutique Auto Protection · BRICKELL</p>
-          <h1 className="font-playfair text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h1 className="font-sans text-[clamp(30px,5vw,54px)] font-medium text-white mb-6 leading-[1.05] uppercase tracking-[0.02em]">
             Premium PPF, Ceramic Coating & Window Tint in <span className="text-brand-red">Brickell</span>, Miami
           </h1>
           <p className="text-lg md:text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">

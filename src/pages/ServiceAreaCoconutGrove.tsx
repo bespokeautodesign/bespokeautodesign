@@ -65,7 +65,7 @@ const ServiceAreaCoconutGrove = () => {
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 bg-gradient-to-b from-[#0f0f0f] via-[#141414] to-[#0f0f0f]">
       <div className="max-w-4xl mx-auto text-center">
         <p className="eyebrow-tag">Boutique Auto Protection · COCONUT GROVE</p>
-        <h1 className="font-playfair text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Premium PPF, Ceramic Coating & Window Tint in <span className="text-brand-red">Coconut Grove</span></h1>
+        <h1 className="font-sans text-[clamp(30px,5vw,54px)] font-medium text-white mb-6 leading-[1.05] uppercase tracking-[0.02em]">Premium PPF, Ceramic Coating & Window Tint in <span className="text-brand-red">Coconut Grove</span></h1>
         <p className="text-lg md:text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">Bespoke Auto Design protects Coconut Grove vehicles from tree sap, leaf-acid staining, Bayshore Drive UV, and Sailing Club salt exposure — installed in our climate-controlled Miami facility a short drive away.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Request a Consultation</Button>
