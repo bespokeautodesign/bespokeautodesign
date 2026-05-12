@@ -89,7 +89,7 @@ const ServiceAreaTemplate = ({ content }: { content: ServiceAreaContent }) => {
           <p className="eyebrow-tag">
             {content.eyebrow}
           </p>
-          <h1 className="font-playfair text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h1 className="font-sans text-[clamp(30px,5vw,54px)] font-medium text-white mb-6 leading-[1.05] uppercase tracking-[0.02em]">
             {content.heroHeadline.before}
             <span className="text-brand-red">{content.heroHeadline.highlight}</span>
             {content.heroHeadline.after}
