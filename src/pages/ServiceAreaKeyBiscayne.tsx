@@ -66,7 +66,7 @@ const ServiceAreaKeyBiscayne = () => {
     <section className="relative pt-28 pb-20 md:pt-36 md:pb-28 px-4 bg-gradient-to-b from-[#0f0f0f] via-[#141414] to-[#0f0f0f]">
       <div className="max-w-4xl mx-auto text-center">
         <p className="eyebrow-tag">Boutique Auto Protection · KEY BISCAYNE</p>
-        <h1 className="font-sans text-[clamp(30px,5vw,54px)] font-medium text-white mb-6 leading-[1.05] uppercase tracking-[0.02em]">Island-Tough PPF, Ceramic Coating & Window Tint for <span className="text-brand-red">Key Biscayne</span></h1>
+        <h1 className="font-sans text-[clamp(30px,5vw,54px)] font-medium text-white mb-6 leading-[1.05] uppercase tracking-[0.02em]">Island-Tough PPF, Ceramic Coating & Window Tint for<br /><span className="text-brand-red">Key Biscayne</span></h1>
         <p className="text-lg md:text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">Bespoke Auto Design protects Key Biscayne vehicles from Rickenbacker salt spray, Crandon Park sand, and intense island sun — installed in our climate-controlled mainland facility just minutes across the Causeway.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <Button size="lg" onClick={() => setQuoteModalOpen(true)} className="bg-brand-red hover:bg-brand-red-dark text-[#1a1a1a] font-bold px-8 py-6 text-lg w-full sm:w-auto">Request a Consultation</Button>

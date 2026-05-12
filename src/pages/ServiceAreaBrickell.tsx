@@ -125,7 +125,7 @@ const ServiceAreaBrickell = () => {
         <div className="max-w-4xl mx-auto text-center">
           <p className="eyebrow-tag">Boutique Auto Protection · BRICKELL</p>
           <h1 className="font-sans text-[clamp(30px,5vw,54px)] font-medium text-white mb-6 leading-[1.05] uppercase tracking-[0.02em]">
-            Premium PPF, Ceramic Coating & Window Tint in <span className="text-brand-red">Brickell</span>, Miami
+            Premium PPF, Ceramic Coating & Window Tint in<br /><span className="text-brand-red">Brickell</span>, Miami
           </h1>
           <p className="text-lg md:text-xl text-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
             Bespoke Auto Design protects Brickell's daily-driver luxury and exotic vehicles from Miami's harshest road and sun conditions — installed in our climate-controlled facility just minutes from downtown.
