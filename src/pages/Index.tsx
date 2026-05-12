@@ -184,7 +184,7 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
               <span className="text-lg md:text-xl font-semibold tracking-widest uppercase text-white/90 border-l border-white/30 pl-4">Authorized Dealer</span>
             </div>
             <p className="eyebrow-tag">Boutique Auto Protection · Miami</p>
-            <h1 className="text-[clamp(30px,5vw,54px)] font-medium mb-4 leading-[1.05] font-sans uppercase tracking-[0.02em]">Showroom Paint. <span className="text-brand-red">Year After Year.</span></h1>
+            <h1 className="text-[clamp(30px,5vw,54px)] font-medium mb-4 leading-[1.05] font-sans uppercase tracking-[0.02em]">Showroom Paint.<br /><span className="text-brand-red">Year After Year.</span></h1>
             <h2 className="text-base md:text-lg lg:text-xl mb-6 text-white/90 max-w-2xl mx-auto font-sans font-normal tracking-[-0.01em] leading-relaxed" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(0,0,0,0.6)' }}>
               XPEL Paint Protection Film, Ceramic Coating & Ceramic Window Tint for Miami's Luxury and Exotic Cars.
             </h2>
