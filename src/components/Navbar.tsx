@@ -251,7 +251,7 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-3 flex-shrink-0">
-              <XPELLogoNav className="h-5 w-auto text-white opacity-90" aria-label="XPEL Authorized Dealer" />
+              <XPELLogoNav className="h-5 w-auto text-white opacity-90" />
               <Button
                 size="sm"
                 onClick={() => { trackQuoteButton('header'); setQuoteModalOpen(true); }}
