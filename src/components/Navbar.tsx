@@ -135,7 +135,7 @@ const Navbar = () => {
     <>
       {/* Top utility bar */}
       <div
-        className={`hidden md:block bg-[#1a1a1a] border-b border-white/5 sticky top-0 z-[51] transition-transform duration-200 ease-out ${hideUtility ? "-translate-y-full" : "translate-y-0"}`}
+        className={`hidden md:block bg-[#1a1a1a] border-b border-white/5 transition-all duration-200 ease-out overflow-hidden ${hideUtility ? "max-h-0 opacity-0" : "max-h-10 opacity-100"}`}
       >
         <div className="container mx-auto px-6 h-6 flex items-center justify-between text-[11px] tracking-[0.05em] text-silver-muted py-1">
           <div className="flex items-center gap-3">
