@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, ArrowRight, Calendar, MessageSquare } from "lucide-react";
+import { Star, Shield, Sun, Droplet, Phone, Mail, MapPin, Clock, Anchor, Waves, ArrowRight, MessageSquare } from "lucide-react";
 import Footer from "@/components/Footer";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { HomeFAQ } from "@/components/HomeFAQ";
@@ -168,12 +168,6 @@ const Index = ({ autoScrollToContact, autoScrollToServices }: {autoScrollToConta
       <div className="relative z-10 min-h-screen">
       {/* Navigation */}
       <Navbar />
-
-      {/* Urgency Banner */}
-      <div className="bg-xpel-yellow text-black text-center py-1 md:py-1.5 px-4 text-[12px] md:text-[12px] font-medium tracking-wide">
-        <Calendar className="inline-block w-3.5 h-3.5 mr-1.5 -mt-0.5" />
-        Currently booking 1–2 weeks out <span className="mx-1.5 text-black/40">·</span> <span className="font-semibold">Call for urgent availability</span>
-      </div>
 
       {/* Hero Section */}
       <section className="relative text-primary-foreground py-32 md:py-36">
