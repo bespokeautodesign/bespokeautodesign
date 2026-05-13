@@ -61,8 +61,8 @@ const MobileMenu = () => {
     <div>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
-          <button className="flex items-center justify-center w-10 h-10 rounded-md text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.08)] transition-all duration-300">
-            <Menu className="w-6 h-6" />
+          <button aria-label="Open menu" className="flex items-center justify-center w-8 h-8 rounded-md text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.08)] transition-all duration-300">
+            <Menu className="w-5 h-5" />
           </button>
         </SheetTrigger>
         <SheetContent side="right" className="w-80 bg-[hsl(var(--nav-bg))] border-l border-[hsl(var(--nav-border))] p-0">
