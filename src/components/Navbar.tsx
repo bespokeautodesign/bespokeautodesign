@@ -92,6 +92,7 @@ const Navbar = () => {
   const [marineOpen, setMarineOpen] = useState(false);
   const [areasOpen, setAreasOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hideUtility, setHideUtility] = useState(false);
   const ppfDropdownRef = useRef<HTMLDivElement>(null);
   const marineDropdownRef = useRef<HTMLDivElement>(null);
   const areasDropdownRef = useRef<HTMLDivElement>(null);
@@ -109,11 +110,14 @@ const Navbar = () => {
       if (areasDropdownRef.current && !areasDropdownRef.current.contains(e.target as Node)) setAreasOpen(false);
     };
     const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleUtilityScroll = () => setHideUtility(window.scrollY > 100);
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleUtilityScroll, { passive: true });
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleUtilityScroll);
     };
   }, []);
 
@@ -130,8 +134,10 @@ const Navbar = () => {
   return (
     <>
       {/* Top utility bar */}
-      <div className="hidden md:block bg-[#1a1a1a] border-b border-white/5">
-        <div className="container mx-auto px-6 h-9 flex items-center justify-between text-[11px] text-silver-muted">
+      <div
+        className={`hidden md:block bg-[#1a1a1a] border-b border-white/5 sticky top-0 z-[51] transition-transform duration-200 ease-out ${hideUtility ? "-translate-y-full" : "translate-y-0"}`}
+      >
+        <div className="container mx-auto px-6 h-6 flex items-center justify-between text-[11px] tracking-[0.05em] text-silver-muted py-1">
           <div className="flex items-center gap-3">
             <span>By Appointment · Mon–Fri 9–6 · Sat 10–4</span>
             <span className="text-white/20">|</span>
@@ -152,27 +158,27 @@ const Navbar = () => {
       </div>
       <nav className={`sticky top-0 z-50 bg-[hsl(var(--nav-bg))] border-b border-[hsl(var(--nav-border))] transition-all duration-500 ${scrolled ? "shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : ""}`}>
         {/* Row 1: brand + XPEL + utility CTAs */}
-        <div className="container mx-auto px-6 py-3">
+        <div className="container mx-auto px-6 py-2">
           <div className="flex items-center justify-between gap-4 md:grid md:grid-cols-3">
             {/* Logo + wordmark */}
             <Link to="/" className="flex items-center gap-3 flex-shrink-0 group justify-self-start">
               <img
                 src="/bespoke-logo.png"
                 alt="Bespoke Auto Design"
-                className="h-10 lg:h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
-              <div className="flex flex-col leading-none">
-                <span className="text-xs lg:text-sm tracking-[0.2em] uppercase font-bold text-[hsl(var(--nav-foreground-active))]">
+                className="h-7 md:h-9 w-auto transition-transform duration-300 group-hover:scale-105" />
+              <div className="hidden md:flex flex-col leading-none">
+                <span className="text-[11px] tracking-[0.12em] uppercase font-bold text-[hsl(var(--nav-foreground-active))]">
                   Bespoke
                 </span>
-                <span className="text-sm lg:text-base font-light tracking-wider uppercase text-[hsl(var(--nav-foreground))]">
+                <span className="text-[13px] font-light tracking-[0.12em] uppercase text-[hsl(var(--nav-foreground))]">
                   Auto Design
                 </span>
               </div>
             </Link>
 
             {/* XPEL Authorized Dealer — centered credential */}
-            <div className="hidden md:flex items-center justify-self-center">
-              <XPELLogoNav className="h-10 lg:h-12 w-auto text-white opacity-90" />
+            <div className="flex items-center justify-self-center md:justify-self-center absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0">
+              <XPELLogoNav className="h-7 md:h-9 w-auto text-white opacity-90" />
             </div>
 
             {/* Right utility CTAs */}
@@ -180,7 +186,7 @@ const Navbar = () => {
               <a
                 href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('header'); }}
                 aria-label="Call (786) 395-9172"
-                className="hidden md:flex items-center justify-center w-9 h-9 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
+                className="hidden md:flex items-center justify-center w-8 h-8 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
                 <Phone className="h-4 w-4" />
               </a>
               <a
@@ -188,29 +194,22 @@ const Navbar = () => {
                 onClick={handleTextUsClick}
                 aria-label="Text us"
                 title="Text us at (786) 395-9172"
-                className="hidden md:flex items-center justify-center w-9 h-9 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
+                className="hidden md:flex items-center justify-center w-8 h-8 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))] hover:bg-[hsl(var(--nav-highlight)/0.1)] hover:border-[hsl(var(--nav-highlight)/0.7)] transition-all duration-300">
                 <IMessageBubbleIcon className="h-4 w-4" />
               </a>
               <Button
                 variant="premium"
                 size="sm"
                 onClick={() => { trackQuoteButton('header'); setQuoteModalOpen(true); }}
-                className="hidden md:flex bg-[hsl(var(--nav-foreground-active))] text-[hsl(var(--nav-bg))] hover:bg-[hsl(var(--nav-foreground))] font-bold tracking-wide text-xs">
+                className="hidden md:flex h-8 px-4 py-2 bg-[hsl(var(--nav-foreground-active))] text-[hsl(var(--nav-bg))] hover:bg-[hsl(var(--nav-foreground))] font-bold tracking-wide text-[13px]">
                 Get Quote
               </Button>
               {/* Mobile utility icons */}
               <a
                 href="tel:7863959172" onClick={() => { trackPhoneCall(); trackPhoneClick('header_mobile'); }}
                 aria-label="Call"
-                className="md:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
-                <Phone className="h-5 w-5" />
-              </a>
-              <a
-                href={SMS_NUMBER_HREF}
-                onClick={handleTextUsClick}
-                aria-label="Text us"
-                className="md:hidden flex items-center justify-center w-10 h-10 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
-                <IMessageBubbleIcon className="h-5 w-5" />
+                className="md:hidden flex items-center justify-center w-8 h-8 rounded-full border border-[hsl(var(--nav-highlight)/0.4)] text-[hsl(var(--nav-highlight))]">
+                <Phone className="h-4 w-4" />
               </a>
               <div className="md:hidden">
                 <MobileMenu />
@@ -222,18 +221,18 @@ const Navbar = () => {
         {/* Row 2: primary navigation (desktop only) */}
         <div className="hidden md:block border-t border-white/5">
           <div className="container mx-auto px-6">
-            <div className="flex items-center justify-center gap-1 lg:gap-2 py-2">
+            <div className="flex items-center justify-center gap-1 lg:gap-2 py-1.5">
               {/* PPF Dropdown */}
               <div className="relative" ref={ppfDropdownRef} onMouseLeave={() => setPpfOpen(false)}>
                 <Link
                   to="/paint-protection-film"
                   onMouseEnter={() => setPpfOpen(true)}
-                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-[15px] whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-[13px] whitespace-nowrap transition-all duration-300 ${
                   isPpfActive ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`}>
                   PPF
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${ppfOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${ppfOpen ? "rotate-180" : ""}`} />
                 </Link>
                 {ppfOpen &&
                   <div className={dropdownClasses}>
@@ -249,7 +248,7 @@ const Navbar = () => {
               </div>
 
               {servicesFlatItems.map((item) =>
-                <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="!text-[15px] px-3 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
+                <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="!text-[13px] px-2.5 py-1.5 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
                   {item.label}
                 </NavLink>
               )}
@@ -259,12 +258,12 @@ const Navbar = () => {
                 <Link
                   to="/marine"
                   onMouseEnter={() => setMarineOpen(true)}
-                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-[15px] whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-[13px] whitespace-nowrap transition-all duration-300 ${
                   isMarineActive || location.pathname === "/marine" ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`}>
                   Marine
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${marineOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${marineOpen ? "rotate-180" : ""}`} />
                 </Link>
                 {marineOpen &&
                   <div className={dropdownClasses}>
@@ -280,7 +279,7 @@ const Navbar = () => {
               </div>
 
               {navItemsAfter.map((item) =>
-                <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="!text-[15px] px-3 py-2 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
+                <NavLink key={item.href} href={item.href} active={location.pathname === item.href} className="!text-[13px] px-2.5 py-1.5 rounded-md hover:bg-[hsl(var(--nav-foreground-active)/0.05)]">
                   {item.label}
                 </NavLink>
               )}
@@ -292,12 +291,12 @@ const Navbar = () => {
                   aria-expanded={areasOpen}
                   onClick={() => setAreasOpen((open) => !open)}
                   onMouseEnter={() => setAreasOpen(true)}
-                  className={`flex items-center gap-1 px-3 py-2 rounded-md text-[15px] whitespace-nowrap transition-all duration-300 ${
+                  className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-[13px] whitespace-nowrap transition-all duration-300 ${
                   isAreasActive ?
                   "text-[hsl(var(--nav-foreground-active))] font-semibold bg-[hsl(var(--nav-foreground-active)/0.08)]" :
                   "text-[hsl(var(--nav-foreground))] hover:text-[hsl(var(--nav-foreground-active))] hover:bg-[hsl(var(--nav-foreground-active)/0.05)]"}`}>
                   Areas
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${areasOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`h-3 w-3 transition-transform duration-300 ${areasOpen ? "rotate-180" : ""}`} />
                 </button>
                 {areasOpen &&
                   <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50">
